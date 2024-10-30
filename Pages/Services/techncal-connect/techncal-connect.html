@@ -511,9 +511,11 @@
                                                                         </div>
                                                                        </div>
                                                                     </div>
-                                                                    <div class="col-md-6 d-flex flex-column justify-content-end align-items-center ">
-                                                                    <img src="../../../images/qrcode 1.jpg"  >
-                                                                    <p>  <img src="../../../images/Frame 2608853.svg">   مسح رمز الإستجابة السريعة </p>
+                                                                    <div class="col-md-6 d-flex flex-column text-center" >
+                                                                     <div class="d-flex align-items-center justify-content-center h-100" id="QRArea">
+                                                                            <button type="button" class="border-0 bg-transparent" id="RegenerateQR"><img src="../../../images/qrcode 1.svg" ></button>
+                                                                     </div>
+                                                                     <p>  <img src="../../../images/Frame 2608853.svg">   مسح رمز الإستجابة السريعة </p>
                                                                     </div>
                                                                 </div>  
                                                             </div>
@@ -878,7 +880,67 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../../../scripts/Scripts.js"></script>
      <script src="../../../scripts/signature.js"></script>
-
+     <script>
+        let QRGenerated = false;
+        let QRScanned = true;
+    
+        function setupRegenerateButton() {
+            const RegenerateQR = document.getElementById('RegenerateQR');
+            const QRArea = document.getElementById('QRArea');
+    
+            RegenerateQR.addEventListener("click", function () {
+                RegenerateQR.classList.add('d-none');
+                QRArea.innerHTML = `<span class="loader"></span>`;
+    
+                setTimeout(() => {
+                    if (QRGenerated) {
+                        QRArea.innerHTML = `<img src="../../../images/qrcode 2.svg">`;
+    
+                        if (QRScanned) {
+                            setTimeout(() => {
+                                QRArea.innerHTML = `
+                                    <div class="row justify-content-center gap-2">
+                                        <div class="col-auto">
+                                            <img src="../../../images/whatsapp-icon.svg">
+                                        </div>
+                                        <div class="col-auto dots-div">
+                                            <span class="loader2"></span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <img src="../../../images/benan-icon.svg">
+                                        </div>
+                                        <p>... جاري ربطك بنظام بنان</p>
+                                    </div>`;
+                            }, 3000); 
+    
+                            setTimeout(() => {
+                                QRArea.innerHTML = `
+                                    <div class="col-auto d-flex gap-2 flex-column justify-content-center align-items-center">
+                                        <img src="../../../images/done.svg" style="width: 50px;">
+                                        <p>أنت الآن متصل ببنان</p>
+                                    </div>`;
+                            }, 6000);
+                        } else {
+                            QRArea.innerHTML = `
+                                <button type="button" class="border-0 bg-transparent" id="RegenerateQR">
+                                    <img src="../../../images/qrcode 1.svg">
+                                </button>`;
+                            setupRegenerateButton();
+                        }
+                    } else {
+                        QRArea.innerHTML = `
+                            <button type="button" class="border-0 bg-transparent" id="RegenerateQR">
+                                <img src="../../../images/qrcode 1.svg">
+                            </button>`;
+                        QRGenerated = true; 
+                        setupRegenerateButton();
+                    }
+                }, 1000); 
+            });
+        }
+    
+        setupRegenerateButton();
+    </script>
 </body>
 
 </html>
