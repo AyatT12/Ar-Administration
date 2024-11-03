@@ -157,14 +157,21 @@ direction: ltr;
 
 
 /* ================================================================================  inputs   ======================================================================================= */
-.counterCode {
-    border-radius: 0px 8px 8px 0px !important;
-    border-left: none;
-   border-right:2px solid #faa64d ;
-}
 .tel-input {
-    border-radius: 8px 0px 0px 8px !important;
-}
+    border-radius: 0px 8px 8px 0px !important
+  }
+  
+  .counterCode {
+    border-radius:8px 0px 0px 8px !important;
+    border-right: none;
+    background-color: white;
+    color: var(--primary-color);
+    direction: ltr;
+  
+  }
+  .input-group{
+    flex-direction: row-reverse;
+  }
 .number-input-container button{
     margin: 0px 7px 0px 0px;
 }
