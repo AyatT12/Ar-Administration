@@ -116,12 +116,7 @@
 
                                         </div>
                                     </div>
-                                    <li class="nav-link">
-                                        <a href=" #">
-                                            <img src="../../../images/cars.svg" class="icon" />
-                                            <span class="text nav-text"> السيارات </span>
-                                        </a>
-                                    </li>
+                                    
                                     <li class="nav-link">
                                         <a>
                                             <img src="../../../images/tenants.svg" class="icon"
@@ -143,32 +138,7 @@
                                                     class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                         </div>
                                     </div>
-                                    <li class="nav-link">
-                                        <a>
-                                            <img src="../../../images/employees.svg" class="icon"
-                                                data-bs-toggle="collapse" href="#employees-items" aria-expanded="false"
-                                                aria-controls="#employees-items" />
-                                            <span class="text nav-text collapsed" data-bs-toggle="collapse"
-                                                href="#employees-items" aria-expanded="false"
-                                                aria-controls="#employees-items"> الموظفين </span>
-                                        </a>
-                                    </li>
-                                    <div id="employees-items" class="collapse">
-                                        <div class="bg-white gap-3 collapse-inner rounded">
-                                            <a class="collapse-item"
-                                                href="../../../Pages/employees/employees list/employees.html"> قائمة
-                                                الموظفين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item"
-                                                href="../../../Pages/employees/System Permissions/employees.html">
-                                                صلاحيات النظام <i
-                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item"
-                                                href="../../../Pages/employees/Contract Permissions/employees.html">صلاحيات
-                                                العقد <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-
-
-                                        </div>
-                                    </div>
+                                   
                                     <li class="nav-link">
                                         <a>
                                             <img src="../../../images/accounts.svg" class="icon"
@@ -226,7 +196,7 @@
                                                 href="../../../Pages/reports/Existing contracts.html"> العقود القائمة <i
                                                     class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item "
-                                                href="../../../Pages/reports/Saved contracts.html"> العقود المحفوظة <i
+                                                href="../../../Pages/reports/Saved contracts.html"> العقود المحفوظة و الملغاه<i
                                                     class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item"
                                                 href="../../../Pages/reports/Pending contracts.html"> العقود المعلقة <i
@@ -291,6 +261,31 @@
 
                                         </div>
                                     </div>
+                                 
+                                    <li class="nav-link">
+                                        <a>
+                                            <img src="../../../images/employees.svg" class="icon" data-bs-toggle="collapse"
+                                                href="#employees-items" aria-expanded="false"
+                                                aria-controls="#employees-items" />
+                                            <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                                href="#employees-items" aria-expanded="false"
+                                                aria-controls="#employees-items"> الموظفين </span>
+                                        </a>
+                                    </li>
+                                    <div id="employees-items" class="collapse">
+                                        <div class="bg-white gap-3 collapse-inner rounded">
+                                            <a class="collapse-item"
+                                                href="../../../Pages/employees/employees list/employees.html"> بيانات الموظفين<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../../Pages/employees/System Permissions/employees.html"> صلاحيات
+                                                النظام <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../../Pages/employees/Contract Permissions/employees.html">صلاحيات
+                                                العقود <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+
+                                        </div>
+                                    </div>
                                     <li class="nav-link">
                                         <a>
                                             <img src="../../../images/services.svg" class="icon"
@@ -344,8 +339,8 @@
                                                         src="../../../images/stop.svg" /></button>
                                                 <button type="button" class="custom-img-btn"> <img
                                                         src="../../../images/delete (2).svg" /></button>
-                                                <a href="drivers.html"><img class="Chevron"
-                                                        src="../../../images/Chevron_Left.svg" /></a>
+                                                <button type="button" class="custom-img-btn"> <a href="drivers.html"><img class="Chevron"
+                                                        src="../../../images/Chevron_Left.svg" /></a></button>
                                             </div>
                                         </div>
                                         <main class="mt-4 g-3">
@@ -395,6 +390,7 @@
                                                                 <div class="row align-items-center">
                                                                     <div class="col-md-6 ">
                                                                         <label for="EndDate" class="form-label"> نهايتها
+                                                                            <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                         </label>
                                                                         <input type="date" id="EndDate"
                                                                             class="form-control inputs custom-date-input"
@@ -447,7 +443,7 @@
                                                                 <div class="row">
                                                                     <div class="col-md-6">
                                                                         <label for="email" class="form-label"> البريد
-                                                                            الإلكتروني </label>
+                                                                            الإلكتروني  <i class="fa-solid fa-star-of-life RequirdStar"></i></label>
                                                                         <input type="email" id="email"
                                                                             class="form-control inputs english-input"
                                                                             name="email" required>
@@ -459,6 +455,7 @@
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <label for="phone2" class="form-label"> الجوال
+                                                                            <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                         </label>
                                                                         <div class="input-group has-validation">
                                                                             <input type="tel"
@@ -551,15 +548,15 @@
                                                                 <div class="row">
                                                                     <div class="col-md-6">
                                                                         <label for="LicenceDate"
-                                                                            class="form-label">تاريخها</label>
+                                                                            class="form-label">تاريخها  <i class="fa-solid fa-star-of-life RequirdStar"></i></label>
                                                                         <input type="date" id="LicenceDate"
                                                                             class="form-control inputs custom-date-input"
-                                                                            name="LicenceDate" required>
+                                                                            name="LicenceDate" required >
                                                                         <div class="invalid-feedback">الحقل مطلوب</div>
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <label for="LicenceEndDate"
-                                                                            class="form-label">نهايتها</label>
+                                                                            class="form-label">نهايتها  <i class="fa-solid fa-star-of-life RequirdStar"></i></label>
                                                                         <input type="date" id="LicenceEndDate"
                                                                             class="form-control inputs custom-date-input"
                                                                             name="LicenceEndDate" required>

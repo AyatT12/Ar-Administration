@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> نظام الادارة- العقود المحفوظة </title>
+    <title> نظام الادارة- العقود المحفوظة و الملغاهو الملغاه</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -108,12 +108,7 @@
 
                                         </div>
                                     </div>
-                                    <li class="nav-link" >
-                                    <a href=" #">
-                                        <img src="../../images/cars.svg" class="icon" />
-                                        <span class="text nav-text"> السيارات </span>
-                                        </a>
-                                    </li>
+                                   
                                     <li class="nav-link">
                                         <a>
                                             <img src="../../images/tenants.svg" class="icon" data-bs-toggle="collapse"
@@ -133,24 +128,7 @@
 
                                         </div>
                                     </div>
-                                    <li class="nav-link">
-                                        <a>
-                                            <img src="../../images/employees.svg" class="icon"  data-bs-toggle="collapse" href="#employees-items" aria-expanded="false" aria-controls="#employees-items"/>
-                                            <span class="text nav-text collapsed" data-bs-toggle="collapse" href="#employees-items" aria-expanded="false" aria-controls="#employees-items"> الموظفين </span>
-                                        </a>
-                                    </li>
-                                    <div id="employees-items" class="collapse">
-                                        <div class="bg-white gap-3 collapse-inner rounded">
-                                            <a class="collapse-item" href="../../Pages/employees/employees list/employees.html"> قائمة الموظفين <i
-                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                             <a class="collapse-item" href="../../Pages/employees/System Permissions/employees.html"> صلاحيات النظام <i
-                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                              <a class="collapse-item" href="../../Pages/employees/Contract Permissions/employees.html">صلاحيات العقد <i
-                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-
-
-                                        </div>
-                                    </div>
+                                  
                                   <li class="nav-link">
                                         <a>
                                             <img src="../../images/accounts.svg" class="icon" data-bs-toggle="collapse" href="#Accounts-items" aria-expanded="false" aria-controls="#Accounts-items" />
@@ -181,7 +159,7 @@
                                             <a class="collapse-item" href="../../Pages/reports/Administrative procedures.html">  الإجراءات الإدارية  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item" href="../../Pages/reports/DailyReports.html"> اليومية  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item" href="../../Pages/reports/Existing contracts.html"> العقود القائمة    <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item active" href="../../Pages/reports/Saved contracts.html"> العقود المحفوظة  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item active" href="../../Pages/reports/Saved contracts.html"> العقود المحفوظة و الملغاه <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item" href="../../Pages/reports/Pending contracts.html"> العقود المعلقة  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item" href="../../Pages/reports/Closed Contracts.html"> العقود المغلقة  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item" href="../../Pages/reports/Cars contracts.html"> عقود السيارات  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
@@ -218,6 +196,31 @@
                                     </div>
                                     <li class="nav-link">
                                         <a>
+                                            <img src="../../images/employees.svg" class="icon" data-bs-toggle="collapse"
+                                                href="#employees-items" aria-expanded="false"
+                                                aria-controls="#employees-items" />
+                                            <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                                href="#employees-items" aria-expanded="false"
+                                                aria-controls="#employees-items"> الموظفين </span>
+                                        </a>
+                                    </li>
+                                    <div id="employees-items" class="collapse">
+                                        <div class="bg-white gap-3 collapse-inner rounded">
+                                            <a class="collapse-item"
+                                                href="../../Pages/employees/employees list/employees.html"> بيانات الموظفين<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../Pages/employees/System Permissions/employees.html"> صلاحيات
+                                                النظام <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../Pages/employees/Contract Permissions/employees.html">صلاحيات
+                                                العقود <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+
+                                        </div>
+                                    </div>
+                                    
+                                    <li class="nav-link">
+                                        <a>
                                             <img src="../../images/services.svg" class="icon" data-bs-toggle="collapse"
                                             href="#services-items" aria-expanded="false"
                                             aria-controls="#services-items" />
@@ -236,7 +239,8 @@
                                             <a class="collapse-item"
                                                 href="../../Pages/Services/techncal-connect/techncal-connect.html"> الربط
                                                 التقني <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-
+                                                <a class="collapse-item " href="../../Pages/Services/Rental policy/Rental policy.html">
+                                                    سياسة التأجير <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item" href="../../Pages/Services/drivers/drivers.html">
                                                 السائقين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
 
@@ -256,11 +260,55 @@
                 <div class="col d-flex align-items-center justify-content-center">
                     <div class="container main-container">
                         <form action="">
-                            <div class="row g-3 mb-5">
+                            <div class="row g-3 mb-3">
                                 <div class="col">
-                                    <h3> العقود المحفوظة</h3>
+                                    <h3>  العقود المحفوظة و الملغاهو الملغاه</h3>
                                 </div>
-                            
+                                <div class="row g-2">
+
+                                  
+                                    <div class="col-lg-8">
+                                        <div class="col-12 d-flex align-items-center Search-col  flex-wrap gap-2">
+                                            <div class="col-xl-4 d-flex  gap-3 align-items-center">
+                                                <label for="start-date">من</label>
+                                                <input type="date" class="form-control inputs custom-date-input" id="start-date" name="start-date" required>
+                                            </div>
+                                          <div class="col-xl-4 d-flex  gap-3 align-items-center">
+                                           <label for="end-date"> إلى </label>
+                                           <input type="date" class="form-control inputs custom-date-input" id="end-date" name="end-date" required>
+                                          </div>
+                                           
+                                            <button type="submit" class="btn btn-standard"> عرض </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 col-lg-4 search-input-col">
+                                        <div class="form-outline w-100" data-mdb-input-init>
+                                            <span class="fa fa-search"></span>
+                                            <input type="search" id="search" class="form-control inputs search-input"
+                                                name="search" aria-label="Search" autofocus autocomplete="off" />
+                                        </div>
+                                    </div>
+                                    <div class="col-12 filters-col">
+                                        <div class="filters-custom-order">
+                                           
+                                            <label class="form-check-label" for="all">الكل</label>
+                                            <input class="form-check-input custom" type="radio" name="Options" id="all"
+                                            value="All" checked />
+                                        </div>
+                                        <div class="filters-custom-order">
+                                          
+                                            <label class="form-check-label filter2" for="saved">محفوظ</label>
+                                            <input class="form-check-input custom" type="radio" name="Options" id="saved"
+                                            value="saved" />
+                                        </div>
+                                        <div class="filters-custom-order">
+                                          
+                                            <label class="form-check-label  filter3" for="canceld">ملغي</label>
+                                            <input class="form-check-input custom" type="radio" name="Options" id="canceld"
+                                            value="canceld" />
+                                        </div>
+                                 </div>
+                              </div>
                             </div>
                          
                             <div class="row table-row px-3">
@@ -301,7 +349,13 @@
                                                 </div>
                                             </td>
                                             <td>
-                                              1
+                                                <div class="filter-number-td">
+    
+                                                    <div class="filters filter3-div"></div>
+      
+                                                    <div>1</div>
+      
+                                                 </div>
                                                 
                                             </td>
                                        
@@ -328,7 +382,13 @@
                                                 </div>
                                             </td>
                                             <td>
-                                            2
+                                                <div class="filter-number-td">
+    
+                                                    <div class="filters filter2-div"></div>
+      
+                                                    <div>2</div>
+      
+                                                 </div>
                                                 
                                             </td>
                                        
@@ -355,8 +415,13 @@
                                                 </div>
                                             </td>
                                             <td>
-                                           3
-                                                
+                                                <div class="filter-number-td">
+    
+                                                    <div class="filters filter2-div"></div>
+      
+                                                    <div>3</div>
+      
+                                                 </div>   
                                             </td>
                                        
                                         </tr>
