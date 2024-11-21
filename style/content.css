@@ -28,7 +28,7 @@ body {
   background-color: var(--body-color);
   direction: rtl;
   font-size: .875rem;
-  font-weight: 500;
+  font-weight: 600;
   /* letter-spacing: 0.28px; */
 }
 
@@ -1563,7 +1563,7 @@ background-color: #DAE3F1
   }
 
   .NewUpdate-container form::-webkit-scrollbar-track {
-    background: rgba(255, 150, 38, 0.089);
+    background: rgba(224, 222, 220, 0.021);
     border-radius: 5px;
 
 
@@ -1635,3 +1635,116 @@ background-color: #DAE3F1
     height: 350px;
   }
 } */
+
+
+ /* edits  */
+ .RequirdStar{
+  font-size: 7px;
+  color: #C32222;
+}
+.invalid-feedback{
+  color: #C32222;
+
+}
+.custom-img-btn{
+  display: flex;
+  align-items: center;
+}
+.custom-img-btn img{
+  width: 37px;
+}
+.textarea-inputs {
+  margin-top: 7px;
+}
+/* system permission */
+.listCheck{
+  color: #96989c;
+}
+.data-check{
+  background-color: #96989c;
+
+}
+.cut-connect-btn:hover{
+  color: var(--main-color);
+  border: 1px solid rgba(217, 217, 217, 1);
+}
+.policies-card{
+  height: 65vh;
+  min-height: 400px;
+  box-shadow: 1px 1px 3px 1px rgba(255, 150, 38, 0.24);
+  border-radius: 6px;
+  padding: 20px 10px;
+  overflow-y: scroll;
+}
+.policy{
+  border: 1px solid var(--main-color);
+  border-radius: 8px;
+  position: relative;
+}
+.policy-state{
+display: flex;
+align-items: center;
+justify-content: end;
+position: absolute;
+top: 10px;
+left: 10px;
+gap: 5px;
+}
+
+.policies-card::-webkit-scrollbar {
+  width: 7px !important;
+  height: 5px;
+
+}
+
+.policies-card::-webkit-scrollbar-track {
+  background: rgba(224, 222, 220, 0.021);
+  border-radius: 5px;
+}
+
+.policies-card::-webkit-scrollbar-thumb {
+  background: rgba(255, 150, 38, 0.40);
+  border-radius: 5px;
+
+
+}
+
+.policies-card::-webkit-scrollbar-thumb:hover {
+  border-radius: 8px;
+  background: rgba(250, 136, 13, 0.4);
+}
+/*  */
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.checkmark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 48px;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+}
+
+.checkmark i{
+  color: green;
+}
+.checkmark p{
+  font-size: 21px;
+}
+
+
+.blur {
+  filter: blur(5px);
+}

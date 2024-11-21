@@ -545,7 +545,7 @@ body.dark .sidebar li a:hover .text {
   font-weight: 600;
 }
 .Company-Logo-img{
-  width: 145px;
+  width: 140px;
 }
 .bell{
   width: 25px;
@@ -693,10 +693,25 @@ body.dark .sidebar li a:hover .text {
 }
 /* ================================================================================    Media   ======================================================================================= */
 /* ================================================================================================================================================================================== */
-@media (max-width: 1300px) {
+
+.Company-Logo {
+  order: 2; /* Logo will appear second */
+}
+
+.Company-name {
+  order: 3; /* Company name will appear third */
+}
+
+.mobile-icon {
+  order: 1; /* Bars icon will appear first */
+}
+@media (max-width: 768px) {
   .Company-name{
     display: none;
   }
+  .Company-Logo{
+  display: none;
+} 
 }
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-nav .dropdown-menu {
@@ -715,15 +730,11 @@ body.dark .sidebar li a:hover .text {
     justify-content: center;
     text-align: center !important;
 }
-.Company-name{
-  display: none;
-}
+
 .mobile-icon{
   display: block;
 }
-.Company-Logo{
-  display: none;
-}
+
 .sidebar , .sidebar2{
   position: fixed;
   z-index: 10000;
