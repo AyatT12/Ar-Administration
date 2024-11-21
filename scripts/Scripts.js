@@ -213,7 +213,7 @@ const inputsAccordion = document.querySelectorAll(".inputs-accordion-item");
 
 inputsAccordion.forEach((item) => {
   item
-    .querySelector(".inputs-accordion-item-header")
+    .querySelector(".accordion-item-header-icon")
     .addEventListener("click", () => {
       item.classList.toggle("open");
       inputsAccordion.forEach((otherElement) => {
@@ -223,15 +223,15 @@ inputsAccordion.forEach((item) => {
       });
     });
 });
-
 // //***************************************************************** move foucs between fields*************************************************************************************** */
 document.addEventListener("DOMContentLoaded", function () {
   const accordionItems = document.querySelectorAll(".inputs-accordion-item");
 
   if (accordionItems.length > 0) {
     // Case for forms with accordion items
+    console.log("ki")
     accordionItems.forEach((item) => {
-      const header = item.querySelector(".inputs-accordion-item-header");
+      const header = item.querySelector(".accordion-item-header-icon");
       const focusableElements = item.querySelectorAll("input, select, textarea, button");
 
       // Set focus on the first input when the accordion item is clicked
