@@ -28,7 +28,6 @@ body {
   background-color: var(--body-color);
   direction: rtl;
   font-size: .875rem;
-  font-weight: 600;
   /* letter-spacing: 0.28px; */
 }
 

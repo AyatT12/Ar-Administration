@@ -445,3 +445,16 @@ document.querySelectorAll('input[type="email"]').forEach(function(input) {
   });
 });
 
+// //********************************************************************** تحديد طول اسم الموظف ********************************************************************************** */
+
+     function getFirstNCharactersSafely(name, n) {
+      return name.length > n ? name.substring(0, n) : name;
+  }
+
+  const employeeNames = document.querySelectorAll('.employee-name');
+
+  employeeNames.forEach(element => {
+      const originalName = element.textContent.trim(); 
+      const shortenedName = getFirstNCharactersSafely(originalName,22); 
+      element.textContent = shortenedName;
+  });
