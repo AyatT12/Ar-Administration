@@ -447,14 +447,18 @@ document.querySelectorAll('input[type="email"]').forEach(function(input) {
 
 // //********************************************************************** تحديد طول اسم الموظف ********************************************************************************** */
 
-     function getFirstNCharactersSafely(name, n) {
-      return name.length > n ? name.substring(0, n) : name;
-  }
+  function getFirstTwoWords(name) {
+    const words = name.split(' ');
+    return words.slice(0, 2).join(' ');
+    }
 
   const employeeNames = document.querySelectorAll('.employee-name');
 
   employeeNames.forEach(element => {
       const originalName = element.textContent.trim(); 
-      const shortenedName = getFirstNCharactersSafely(originalName,22); 
-      element.textContent = shortenedName;
+      const limitedName = getFirstTwoWords(originalName);
+      element.textContent = limitedName;
   });
+
+
+
