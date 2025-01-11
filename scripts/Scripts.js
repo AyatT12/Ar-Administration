@@ -407,29 +407,12 @@ document.querySelectorAll('input, select, textarea').forEach(el => {
 });
 
 // //********************************************************************** warning message script ********************************************************************************** */
-document.addEventListener('DOMContentLoaded', function() {
-  const warning = document.querySelector('.wornings');
-  const sidebar1 = document.querySelector('.sidebar');
-  const sidebar2 = document.querySelector('.sidebar2');
+MarqueeXmark = document.getElementById("marquee-xmark");
+warnings = document.getElementById("warnings");
 
-  function adjustSidebarsHeight() {
-      if (window.getComputedStyle(warning).display === 'none') {
-          sidebar1.style.height = 'calc(100vh - 92px)';
-          sidebar2.style.height = 'calc(100vh - 92px)';
-      } else {
-          const warningHeight = warning.offsetHeight;
-          sidebar1.style.height = `calc(100vh - 92px - ${warningHeight}px)`;
-          sidebar2.style.height = `calc(100vh - 92px - ${warningHeight}px)`;
-      }
-  }
-
-  adjustSidebarsHeight();
-
-  const observer = new MutationObserver(adjustSidebarsHeight);
-  observer.observe(warning, { attributes: true, childList: true, subtree: true });
-
-  window.addEventListener('resize', adjustSidebarsHeight);
-});
+MarqueeXmark.addEventListener('click',function(){
+  warnings.style.display="none"
+})
 // //********************************************************************** number inputs script prevent entering negitive values ********************************************************************************** */
 document.querySelectorAll('input[type="number"]').forEach(function(input) {
   input.addEventListener('keydown', function(event) {
