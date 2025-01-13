@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> نظام الادارة - الفروع</title>
+    <title> نظام الادارة - عقود المستأجرين </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -104,9 +104,9 @@
                                     </li>
                                     <div id="company-items" class="collapse">
                                         <div class="bg-white gap-3 collapse-inner rounded">
-                                            <a class="collapse-item active" href="Branches.html"> الفروع <i
+                                            <a class="collapse-item " href="../../../Pages/company/Branches/Branches.html"> الفروع <i
                                                     class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../owners/owners.html"> الملاك <i
+                                            <a class="collapse-item" href="../../../Pages/company/owners/owners.html"> الملاك <i
                                                     class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                              
 
@@ -126,8 +126,11 @@
                                     <div id="tenant-items" class="collapse">
                                         <div class="bg-white gap-3 collapse-inner rounded">
                                             
-                                            <a class="collapse-item" href="#"> بيانات المستأجرين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="#">   عقود المستأجرين   <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../../Pages/Tenants/TenantsData/TenantsData.html"> بيانات المستأجرين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                        <a class="collapse-item" href="../../../Pages/Tenants/TenantsContracts/TenantsContracts.html">   عقود المستأجرين   <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                        <a class="collapse-item" href="../../../Pages/Tenants/Tenants' debts/Tenantsdebts.html">  مديونيات المستأجرين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                        <a class="collapse-item" href="../../../Pages/Tenants/Messages/MessageTenants.html"> رسائل المستأجرين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
     
                                         </div>
                                     </div>
@@ -298,7 +301,7 @@
                 </div>
                 <div class="col d-flex align-items-center justify-content-center flex-column">
                       <!-- Alerts -->
-                      <div class="container-fluid">
+                      <!-- <div class="container-fluid">
                         <div class="row">
                             <div class="col-12 d-flex flex-column gap-1 w-100">
                                 <nav class="warnings navbar-expand-lg navbar-light py-2" id="warnings">
@@ -314,14 +317,14 @@
                                 </nav>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- --- -->
                     <div class="container main-container">
                         
                         <form action="">
-                            <div class="row g-3 mb-2">
+                            <div class="row g-3 mb-5">
                                 <div class="col">
-                                    <h3> الفروع </h3>
+                                    <h3> عقود المستأجرين  </h3>
                                 </div>
                                 <div class="col-12 col-lg-6 d-flex justify-content-end">
 
@@ -335,1082 +338,111 @@
 
                                 </div>
                             </div>
-                            <div class="row mb-3">
-                                <div class="col-12 filters-col">
-                                    <div class="filters-custom-order">
-
-                                        <label class="form-check-label" for="all">الكل</label>
-                                        <input class="form-check-input custom" type="radio" name="Options" id="all"
-                                            value="All" checked />
-                                    </div>
-
-                                    <div class="filters-custom-order">
-
-                                        <label class="form-check-label filter2" for="Active">نشط</label>
-                                        <input class="form-check-input custom" type="radio" name="Options" id="Active"
-                                            value="Active" />
-                                    </div>
-
-                                    <div class="filters-custom-order">
-
-                                        <label class="form-check-label  filter1" for="Stoped">موقوف</label>
-                                        <input class="form-check-input custom" type="radio" name="Options" id="Stoped"
-                                            value="Stoped" />
-                                    </div>
-                                    <div class="filters-custom-order">
-
-                                        <label class="form-check-label filter3" for="deleted">محذوف</label>
-                                        <input class="form-check-input custom" type="radio" name="Options" id="deleted"
-                                            value="deleted" />
-                                    </div>
-
-                                </div>
-                            </div>
+                          
                             <div class="row table-row px-3">
                                 <div class="col  scroll-table-div  table-responsive-sm  w-100  ">
-                                    <table class=" tables-style table table-borderless " id="Branches-table">
+                                    <table class=" tables-style table table-borderless " id="Table">
                                         <thead class="sticky-top">
                                             <tr>
-                                                <th scope="col">المستندات</th>
-                                                <th scope="col">المتاحة</th>
-                                                <th scope="col">الغير متاحة</th>
-                                                <th scope="col"> المؤجرة</th>
-                                                <th scope="col"> السيارات</th> 
-                                                <th scope="col"> نظام التأجير</th>
-                                                <th scope="col" class="DifferAlign"> الفرع</th>
+
+                                                <th scope="col"> عدد الكيلوات  </th>
+                                                <th scope="col">عدد الأيام</th>
+                                                <th scope="col"> عدد العقود </th>
+                                                <th scope="col"> آخر زيارة </th>
+                                                <th scope="col"> أول زيارة </th> 
+                                                <th scope="col" class="DifferAlign"> المستأجر</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="Branch-doc-td">
-                                                    <img class="Documents" src="../../../images/docs.svg" />
-                                                    <div class="dropdown-content ">
-                                                        <div class="container-fluid">
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data"> السجل التجاري </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <img src="../../../images/file not exist.svg"
-                                                                        class="file-status not-exist">
-                                                                </div>
-                                                                <div class="col text-end  ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data">اشتراك الغرفة التجارية
-                                                                        </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data"> تصريح هيئة النقل </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data"> رخصة البلدية </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data">البريد الوطني</p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="ExistFileData ">
-                                                        <div class="row mb-2">
-                                                            <div class="col-12 text-center">
-                                                                <p style="font-weight: 500;">السجل التجاري </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="container-fluid data-container" >
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data">400410010010</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p>رقم المستند </p>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data">4/11/2023</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p> تاريخه </p>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data">4/11/2023</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p> بدايته </p>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data"> 4/11/2023</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p> نهايته </p>
-                                                                </div>
-
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </td>
                                                 <td>
-                                                    <p>4</p>
+                                                   <p>11,165</p>
                                                 </td>
                                                 <td>
                                                     <p>20</p>
                                                 </td>
                                                 <td>
-                                                    <p>27</p>
+                                                    <p>17</p>
                                                 </td>
                                                 <td>
-                                                    <p>51</p>
+                                                    <p>17/08/2024</p>
                                                 </td>
-                                                <td></td>
+                                                <td>
+                                                    <p>10/12/2023</p>
+                                                </td>
                                                 <td class="DifferAlign">
-                                                    <p class="FirstLineP">الرئيسي</p>
-                                                    <p class="secondLineP">الشرقية - الدمام</p>
+                                                    <div class="d-flex gap-2 align-items-center">
+                                                        <div class="col">
+                                                            <p class="FirstLineP"> فواز سعيد فهد العضيبي </p>
+                                                            <p class="secondLineP"> 8002176700215983 </p>
+                                                        </div>
+                                                    </div>
                                                 </td>
                                                 <td>
-                                                    <div class="filter-number-td">
-
-                                                        <div class="filters filter2-div"></div>
-
+                                                   
                                                         <div>1</div>
 
-                                                    </div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="Branch-doc-td">
-                                                    <img class="Documents" src="../../../images/docs.svg" />
-                                                    <div class="dropdown-content ">
-                                                        <div class="container-fluid">
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data"> السجل التجاري </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <img src="../../../images/file not exist.svg"
-                                                                        class="file-status not-exist">
-                                                                </div>
-                                                                <div class="col text-end  ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data">اشتراك الغرفة التجارية
-                                                                        </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data"> تصريح هيئة النقل </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data"> رخصة البلدية </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data">البريد الوطني</p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="ExistFileData ">
-                                                        <div class="row mb-2">
-                                                            <div class="col-12 text-center">
-                                                                <p style="font-weight: 500;">السجل التجاري </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="container-fluid">
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data">400410010010</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p>رقم المستند </p>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data">4/11/2023</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p> تاريخه </p>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data">4/11/2023</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p> بدايته </p>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data"> 4/11/2023</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p> نهايته </p>
-                                                                </div>
-
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </td>
                                                 <td>
-                                                    <p>4</p>
+                                                   <p>11,165</p>
                                                 </td>
                                                 <td>
                                                     <p>20</p>
                                                 </td>
                                                 <td>
-                                                    <p>27</p>
+                                                    <p>17</p>
                                                 </td>
                                                 <td>
-                                                    <p>51</p>
+                                                    <p>17/08/2024</p>
                                                 </td>
-                                                <td></td>
+                                                <td>
+                                                    <p>10/12/2023</p>
+                                                </td>
                                                 <td class="DifferAlign">
-                                                    <p class="FirstLineP">الحزام الذهبي</p>
-                                                    <p class="secondLineP"> الشرقية - الخبر </p>
+                                                    <div class="d-flex gap-2 align-items-center">
+                                                        <div class="col">
+                                                            <p class="FirstLineP"> فيصل صالح بدر الربيعة </p>
+                                                            <p class="secondLineP"> 8002176700215983 </p>
+                                                        </div>
+                                                    </div>
                                                 </td>
                                                 <td>
-                                                    <div class="filter-number-td">
-
-                                                        <div class="filters filter2-div"></div>
-
+                                                   
                                                         <div>2</div>
 
-                                                    </div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="Branch-doc-td">
-                                                    <img class="Documents" src="../../../images/docs.svg" />
-                                                    <div class="dropdown-content ">
-                                                        <div class="container-fluid">
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data"> السجل التجاري </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <img src="../../../images/file not exist.svg"
-                                                                        class="file-status not-exist">
-                                                                </div>
-                                                                <div class="col text-end  ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data">اشتراك الغرفة التجارية
-                                                                        </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data"> تصريح هيئة النقل </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data"> رخصة البلدية </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data">البريد الوطني</p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="ExistFileData ">
-                                                        <div class="row mb-2">
-                                                            <div class="col-12 text-center">
-                                                                <p style="font-weight: 500;">السجل التجاري </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="container-fluid">
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data">400410010010</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p>رقم المستند </p>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data">4/11/2023</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p> تاريخه </p>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data">4/11/2023</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p> بدايته </p>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data"> 4/11/2023</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p> نهايته </p>
-                                                                </div>
-
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </td>
                                                 <td>
-                                                    <p>4</p>
+                                                   <p>11,165</p>
                                                 </td>
                                                 <td>
                                                     <p>20</p>
                                                 </td>
                                                 <td>
-                                                    <p>27</p>
+                                                    <p>17</p>
                                                 </td>
                                                 <td>
-                                                    <p>51</p>
+                                                    <p>17/08/2024</p>
                                                 </td>
-                                                <td></td>
+                                                <td>
+                                                    <p>10/12/2023</p>
+                                                </td>
                                                 <td class="DifferAlign">
-                                                    <p class="FirstLineP">الياسمين</p>
-                                                    <p class="secondLineP"> الرياض - الرياض </p>
+                                                    <div class="d-flex gap-2 align-items-center">
+                                                        <div class="col">
+                                                            <p class="FirstLineP"> أحمد هشام طارق التنيان</p>
+                                                            <p class="secondLineP"> 8002176700215983 </p>
+                                                        </div>
+                                                    </div>
                                                 </td>
                                                 <td>
-                                                    <div class="filter-number-td">
-
-                                                        <div class="filters filter2-div"></div>
-
+                                                   
                                                         <div>3</div>
 
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="Branch-doc-td">
-                                                    <img class="Documents" src="../../../images/docs.svg" />
-                                                    <div class="dropdown-content ">
-                                                        <div class="container-fluid">
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data"> السجل التجاري </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <img src="../../../images/file not exist.svg"
-                                                                        class="file-status not-exist">
-                                                                </div>
-                                                                <div class="col text-end  ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data">اشتراك الغرفة التجارية
-                                                                        </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data"> تصريح هيئة النقل </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data"> رخصة البلدية </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data">البريد الوطني</p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="ExistFileData ">
-                                                        <div class="row mb-2">
-                                                            <div class="col-12 text-center">
-                                                                <p style="font-weight: 500;">السجل التجاري </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="container-fluid">
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data">400410010010</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p>رقم المستند </p>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data">4/11/2023</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p> تاريخه </p>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data">4/11/2023</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p> بدايته </p>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data"> 4/11/2023</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p> نهايته </p>
-                                                                </div>
-
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p>4</p>
-                                                </td>
-                                                <td>
-                                                    <p>20</p>
-                                                </td>
-                                                <td>
-                                                    <p>27</p>
-                                                </td>
-                                                <td>
-                                                    <p>51</p>
-                                                </td>
-                                                <td></td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">المحمدية</p>
-                                                    <p class="secondLineP"> مكة المكرمة - جدة </p>
-                                                </td>
-                                                <td>
-                                                    <div class="filter-number-td">
-
-                                                        <div class="filters filter2-div"></div>
-
-                                                        <div>4</div>
-
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="Branch-doc-td">
-                                                    <img class="Documents" src="../../../images/docs.svg" />
-                                                    <div class="dropdown-content ">
-                                                        <div class="container-fluid">
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data"> السجل التجاري </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <img src="../../../images/file not exist.svg"
-                                                                        class="file-status not-exist">
-                                                                </div>
-                                                                <div class="col text-end  ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data">اشتراك الغرفة التجارية
-                                                                        </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data"> تصريح هيئة النقل </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data"> رخصة البلدية </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data">البريد الوطني</p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="ExistFileData ">
-                                                        <div class="row mb-2">
-                                                            <div class="col-12 text-center">
-                                                                <p style="font-weight: 500;">السجل التجاري </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="container-fluid">
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data">400410010010</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p>رقم المستند </p>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data">4/11/2023</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p> تاريخه </p>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data">4/11/2023</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p> بدايته </p>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data"> 4/11/2023</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p> نهايته </p>
-                                                                </div>
-
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p>4</p>
-                                                </td>
-                                                <td>
-                                                    <p>20</p>
-                                                </td>
-                                                <td>
-                                                    <p>27</p>
-                                                </td>
-                                                <td>
-                                                    <p>51</p>
-                                                </td>
-                                                <td></td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">البوادي</p>
-                                                    <p class="secondLineP"> عسير - خميس مشيط </p>
-                                                </td>
-                                                <td>
-                                                    <div class="filter-number-td">
-
-                                                        <div class="filters filter2-div"></div>
-
-                                                        <div>5</div>
-
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="Branch-doc-td">
-                                                    <img class="Documents" src="../../../images/docs.svg" />
-                                                    <div class="dropdown-content ">
-                                                        <div class="container-fluid">
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data"> السجل التجاري </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <img src="../../../images/file not exist.svg"
-                                                                        class="file-status not-exist">
-                                                                </div>
-                                                                <div class="col text-end  ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data">اشتراك الغرفة التجارية
-                                                                        </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data"> تصريح هيئة النقل </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data"> رخصة البلدية </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data">البريد الوطني</p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="ExistFileData ">
-                                                        <div class="row mb-2">
-                                                            <div class="col-12 text-center">
-                                                                <p style="font-weight: 500;">السجل التجاري </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="container-fluid">
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data">400410010010</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p>رقم المستند </p>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data">4/11/2023</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p> تاريخه </p>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data">4/11/2023</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p> بدايته </p>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data"> 4/11/2023</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p> نهايته </p>
-                                                                </div>
-
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p>4</p>
-                                                </td>
-                                                <td>
-                                                    <p>20</p>
-                                                </td>
-                                                <td>
-                                                    <p>27</p>
-                                                </td>
-                                                <td>
-                                                    <p>51</p>
-                                                </td>
-                                                <td></td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">التاخي</p>
-                                                    <p class="secondLineP"> المدينة المنورة - ينبع البحر </p>
-                                                </td>
-                                                <td>
-                                                    <div class="filter-number-td">
-
-                                                        <div class="filters filter2-div"></div>
-
-                                                        <div>6</div>
-
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="Branch-doc-td">
-                                                    <img class="Documents" src="../../../images/docs.svg" />
-                                                    <div class="dropdown-content ">
-                                                        <div class="container-fluid">
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data"> السجل التجاري </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <img src="../../../images/file not exist.svg"
-                                                                        class="file-status not-exist">
-                                                                </div>
-                                                                <div class="col text-end  ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data">اشتراك الغرفة التجارية
-                                                                        </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data"> تصريح هيئة النقل </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data"> رخصة البلدية </p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row dropdown-content-row pt-2">
-                                                                <div class="col-auto  ">
-                                                                    <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                        target="_blank"> <img
-                                                                            src="../../../images/Existing file.svg"
-                                                                            class="file-status existing"></a>
-                                                                </div>
-                                                                <div class="col text-end ">
-                                                                    <a class="Documents-anchor">
-                                                                        <p class="Saved-data">البريد الوطني</p>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            
-                                                        </div>
-
-
-                                                    </div>
-                                                    <div class="ExistFileData ">
-                                                        <div class="row mb-2">
-                                                            <div class="col-12 text-center">
-                                                                <p style="font-weight: 500;">السجل التجاري </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="container-fluid">
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data">400410010010</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p>رقم المستند </p>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data">4/11/2023</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p> تاريخه </p>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data">4/11/2023</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p> بدايته </p>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row mb-2">
-                                                                <div class="col">
-                                                                    <p class="Saved-data"> 4/11/2023</p>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <p> نهايته </p>
-                                                                </div>
-
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p>4</p>
-                                                </td>
-                                                <td>
-                                                    <p>20</p>
-                                                </td>
-                                                <td>
-                                                    <p>27</p>
-                                                </td>
-                                                <td>
-                                                    <p>51</p>
-                                                </td>
-                                                <td></td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">التاخي</p>
-                                                    <p class="secondLineP"> المدينة المنورة - ينبع البحر </p>
-                                                </td>
-                                                <td>
-                                                    <div class="filter-number-td">
-
-                                                        <div class="filters filter2-div"></div>
-
-                                                        <div>7</div>
-
-                                                    </div>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -1419,12 +451,9 @@
                                 </div>
                             </div>
                         </form>
-                        <a href="AddNewBranch.html" data-bs-toggle="tooltip" data-bs-placement="top"
-                            data-bs-custom-class="custom-tooltip" data-bs-title="إضافة فرع  " class="new-Page-icon"><img
-                                src="../../../images/new branch.svg" alt="new Branch"></a>
                         <a href="../../../index.html" data-bs-toggle="tooltip" data-bs-placement="top"
                             data-bs-custom-class="custom-tooltip" data-bs-title="العودة الي الرئيسية"
-                            class="main-page-icon"><img src="../../../images/back to main.svg" alt="man"></a>
+                            class="new-Page-icon"><img src="../../../images/back to main.svg" alt="man"></a>
                     </div>
                 </div>
                 <div class="col-auto sidebar2-col close2 close2">
@@ -1744,63 +773,20 @@
     <script src="../../../scripts/Scripts.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            var table = document.getElementById("Branches-table");
+            var table = document.getElementById("Table");
             var rows = table.getElementsByTagName("tr");
 
             for (var i = 0; i < rows.length; i++) {
                 var cells = rows[i].getElementsByTagName("td");
 
-                for (var j = 1; j < cells.length; j++) {
+                for (var j = 0; j < cells.length; j++) {
                     cells[j].addEventListener("click", function () {
-                        window.location.href = "UpdateBranch.html";
-                        localStorage.setItem('clickedAnchorText', "السجل التجاري");
-                        localStorage.setItem('imageStatus', "existing");
+                        window.location.href = "DetaildData.html";
                     });
                 }
             }
         });
     </script>
-    <script>
-        document.querySelectorAll('.Documents').forEach(img => {
-            img.addEventListener('click', function () {
-                const currentDropdown = this.closest('td').querySelector('.dropdown-content');
-                const isCurrentlyVisible = currentDropdown.style.display === 'block';
-
-                document.querySelectorAll('.dropdown-content').forEach(dropdown => {
-                    dropdown.style.display = 'none';
-                });
-
-                if (!isCurrentlyVisible) {
-                    currentDropdown.style.display = 'block';
-                }
-            });
-        });
-
-        document.querySelectorAll('.dropdown-content-row').forEach(row => {
-            row.addEventListener('click', function () {
-                const currentExistFileData = this.closest('td').querySelector('.ExistFileData');
-                const titleElement = currentExistFileData.querySelector('.col-12 p');
-                const documentAnchorText = this.querySelector('.Documents-anchor p').textContent;
-
-                titleElement.textContent = documentAnchorText;
-
-                currentExistFileData.style.display = 'block';
-            });
-
-            row.addEventListener('mouseleave', function () {
-                const currentExistFileData = this.closest('td').querySelector('.ExistFileData');
-                currentExistFileData.style.display = 'none';
-            });
-        });
-
-
-     
-    </script>
-
-
-
-
-
 
 </body>
 
