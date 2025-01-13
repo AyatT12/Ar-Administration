@@ -1747,3 +1747,156 @@ gap: 5px;
 .blur {
   filter: blur(5px);
 }
+
+
+/*=============================================================================tenants===================================================== */
+.tables-style th {
+  padding: 5px 10px;
+}
+.filter6{
+  color:#70CC33 ;
+}
+.filter6-div{
+  background-color:#70CC33 ;
+}
+.scroll-extended-table-div{
+  height: 55vh;
+  min-height: 400px;
+  overflow: auto;
+  padding: 5px;
+}
+#Tenants-Details-Table img{
+width: 30px;
+}
+.secondLineP-extra-small{
+    font-size: .65rem;
+    display: flex;
+    flex-wrap: nowrap;
+}
+/*================Tenants Messages =================================================== */
+#MessagesModalLabel{
+  color: var(--main-color);
+}
+.messageWay{
+  box-shadow: 0px 1px 4px 0px rgba(255, 150, 38, 0.24);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 3px  6px;
+}
+.messageWay.active{
+  border: 1px solid  var(--main-color);
+}
+.messageinput , .TitleInput{
+  border: 2px solid rgba(153, 153, 153, 1);
+  min-height: 50px;
+}
+.messageinput:focus{
+  box-shadow: none;
+  border-color:var(--main-color) ;
+}
+.TitleInput:focus{
+  box-shadow: none;
+  border-color:var(--main-color) ;
+}
+.TitleInput::placeholder {
+  color: rgba(217, 217, 217, 1);
+}
+.messageinput::placeholder {
+  color: rgba(217, 217, 217, 1);
+}
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.messageinput {
+  width: 100%;
+  padding-left: 30px;
+}
+
+.input-container #clip {
+  position: absolute;
+  top: 26%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: rgba(217, 217, 217, 1);
+  cursor: pointer;
+  transform: rotate(317deg);
+}
+.filename-container{
+  text-align: end;
+  display: flex;
+  flex-wrap: wrap;
+}
+.filename-container img{
+  width: 70px;
+}
+.file-thumbnail {
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 5px;
+  object-fit: contain; 
+  border-radius: 8px;  
+}
+
+.file-icon {
+  font-size: 30px;
+  color: #4271b3;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+.filename-container{
+  display: flex;
+  justify-content: flex-end;
+}
+.file-item{
+  /* width: 100px; */
+  position: relative;  
+  display: inline-block;
+  margin: 10px;
+}
+.remove-file-btn{
+  position: absolute;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  border: 2px solid gray;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  opacity: 0;
+  top: 5px;       
+  right: 5px;     
+  background-color: rgb(255, 255, 255);
+  color: gray;
+  padding: 5px;
+  cursor: pointer;
+  z-index: 10; 
+}
+.remove-file-btn i {
+  font-size: 12px;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5); 
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.file-item:hover .overlay {
+  opacity: 1;
+}
+.file-item:hover .remove-file-btn {
+  opacity: 1;
+} 

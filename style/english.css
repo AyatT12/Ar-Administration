@@ -200,3 +200,22 @@ direction: ltr;
         transform: translateX(-100%); 
     }
   }
+
+/*================Tenants Messages =================================================== */
+  /* message input  */
+  .messageinput {
+    padding-right: 30px;
+    padding-left: 6px;
+  }
+  
+  .input-container i {
+    right: 10px;
+    left: auto;
+  }
+  .sendmessage{
+    transform: rotate(180deg);
+  }
+  .input-container #clip{
+    right: 10px;
+    left: auto;
+  }
