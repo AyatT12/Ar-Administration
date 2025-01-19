@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="ar">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> نظام الادارة - بيانات المستأجرين</title>
+    <title> نظام الادارة - بيانات المستأجر</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -81,6 +82,7 @@
             </div>
         </nav>
 
+        <!-- end of tobar -->
         <div class="container-fluid h-100 main-container-fluid">
             <div class="row h-100 flex-nowrap">
                 <div class="col-auto sidebar1-col close close">
@@ -299,210 +301,237 @@
                         </div>
                     </nav>
                 </div>
-                <div class="col d-flex align-items-center justify-content-center flex-column">
-                      <!-- Alerts -->
-                      <!-- <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-12 d-flex flex-column gap-1 w-100">
-                                <nav class="warnings navbar-expand-lg navbar-light py-2" id="warnings">
-                                <div class="marquee">
-                                    <div class="marquee-content">
-                                    <p>الشركة موقوفة, تم تقليص بعض الخدمات </p>
-                                    <p>الخدمة مؤقتة حاليًا بسبب التحديثات</p>
-                                    <p>يرجى التواصل مع الدعم الفني في حالة الطوارئ</p>
-                                    <p>الشركة موقوفة, تم تقليص بعض الخدمات</p>
-                                    </div>
-                                </div>
-                                <i  class="fa-regular fa-circle-xmark marquee-xmark" id="marquee-xmark"></i>
-                                </nav>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- --- -->
-                    <div class="container main-container">
-                        
-                        <form action="">
-                            <div class="row g-3 mb-2">
-                                <div class="col">
-                                    <h3> بيانات المستأجرين </h3>
-                                </div>
-                                <div class="col-12 col-lg-6 d-flex justify-content-end">
 
-                                    <div class="col-12 col-md-8 search-input-col">
-                                        <div class="form-outline w-100" data-mdb-input-init>
-                                            <span class="fa fa-search"></span>
-                                            <input type="search" id="search" class="form-control inputs search-input"
-                                                name="search" aria-label="Search" autofocus autocomplete="off" />
+                <div class="col my-2 d-flex align-items-center justify-content-center">
+                    <div class="container NewUpdate-container">
+                        <form action="" class="needs-validation" novalidate>
+                            <div class="row mt-3 g-3">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-10">
+                                       <div class="row g-3 mt-1">
+                                        <div class="col">
+                                            <h3>بيانات المستأجر  </h3>
+                                        </div>
+                                        <div class="col-md-6 save-col">
+                                            <button type="submit" class="custom-img-btn"> <img
+                                                    src="../../../images/save.svg" /></button>
+                                        <div class="col-auto save-col">
+                                            <button type="button" class="custom-img-btn"> <a href="TenantsData.html"><img class="Chevron" src="../../../images/Chevron_Left.svg" /></a></button>
+                                        </div>
+                                        
+                                       </div>
+                                        <div class="row g-2">
+                                            <div class="col-md-12 mt-3 mb-2">
+                                                <h4 class="subtitle"> فواز سعيد فهد العضيبي</h4>
+                                                <div class="row align-items-center">
+                                                    <div class="col-auto">
+                                                        <p class="m-0">8002176700215983</p>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="row align-items-center justify-content-end">
+                                                        <div class="col-auto">
+                                                            <div class="signatureee">
+                                                                <img src="../../../images/توقيع.svg">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                      <div class="row">
+                                                        <div class="col-auto">
+                                                            <p class="DataTitle">تاريخ الميلاد  </p>
+                                                       </div>
+                                                       <div class="col-auto ">
+                                                         <p class="Saved-data">15/02/1998</p>
+                                                       </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="row">
+                                                          <div class="col-auto">
+                                                              <p class="DataTitle">نوع الهوية</p>
+                                                         </div>
+                                                         <div class="col-auto ">
+                                                           <p class="Saved-data">تصريح</p>
+                                                         </div>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                      <div class="row">
+                                                        <div class="col-auto">
+                                                            <p class="DataTitle">الجنس</p>
+                                                       </div>
+                                                       <div class="col-auto ">
+                                                         <p class="Saved-data">ذكر</p>
+                                                       </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="row">
+                                                          <div class="col-auto">
+                                                              <p class="DataTitle">الجنسية</p>
+                                                         </div>
+                                                         <div class="col-auto ">
+                                                           <p class="Saved-data">سعودي</p>
+                                                         </div>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                      <div class="row">
+                                                        <div class="col-auto">
+                                                            <p class="DataTitle">المهنة</p>
+                                                       </div>
+                                                       <div class="col-auto ">
+                                                         <p class="Saved-data">متقاعد</p>
+                                                       </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="row">
+                                                          <div class="col-auto">
+                                                              <p class="DataTitle">جهة العمل</p>
+                                                         </div>
+                                                         <div class="col-auto ">
+                                                           <p class="Saved-data">غير متوفرة</p>
+                                                         </div>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                      <div class="row">
+                                                        <div class="col-auto">
+                                                            <p class="DataTitle">رخصة القيادة</p>
+                                                       </div>
+                                                       <div class="col-auto ">
+                                                         <p class="Saved-data">خاصة</p>
+                                                       </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="row">
+                                                          <div class="col-auto">
+                                                              <p class="DataTitle">رقمها</p>
+                                                         </div>
+                                                         <div class="col-auto ">
+                                                           <p class="Saved-data">231186523102</p>
+                                                         </div>
+                                                        </div>
+                                                      </div>
+                                                      <div class="col-md-4">
+                                                        <div class="row">
+                                                          <div class="col-auto">
+                                                              <p class="DataTitle">نهايتها</p>
+                                                         </div>
+                                                         <div class="col-auto ">
+                                                           <p class="Saved-data">27/03/2026</p>
+                                                         </div>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                      <div class="row">
+                                                        <div class="col-auto">
+                                                            <p class="DataTitle">البنك</p>
+                                                       </div>
+                                                       <div class="col-auto ">
+                                                         <p class="Saved-data">اسم البنك </p>
+                                                       </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="row">
+                                                          <div class="col-auto">
+                                                              <p class="DataTitle">رقم الحساب</p>
+                                                         </div>
+                                                         <div class="col-auto ">
+                                                           <p class="Saved-data">رقم الحساب</p>
+                                                         </div>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                      <div class="row">
+                                                        <div class="col-auto">
+                                                            <p class="DataTitle">التقييم</p>
+                                                       </div>
+                                                       <div class="col-auto ">
+                                                         <p class="Saved-data">جيد</p>
+                                                       </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="row">
+                                                          <div class="col-auto">
+                                                              <p class="DataTitle">العضوية</p>
+                                                         </div>
+                                                         <div class="col-auto ">
+                                                           <p class="Saved-data">مشترك</p>
+                                                         </div>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                      <div class="row">
+                                                        <div class="col-auto">
+                                                            <p class="DataTitle">العنوان</p>
+                                                       </div>
+                                                       <div class="col-auto ">
+                                                         <p class="Saved-data">المدينة المنورة - ينبع</p>
+                                                       </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="row align-items-center mb-3 ">
+                                                    <div class="col-md-10">
+                                                        <div class="d-flex gap-3 align-items-center">
+                                                            <input class="form-check-input checkbox" type="checkbox"
+                                                                value="checked" id="blockUser"
+                                                                name="blockUser">
+                                                            <label class="form-check-label" for="blockUser">
+                                                                حظر المستخدم
+                                                            </label>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="row align-items-center ">
+                                                    <div class="col-md-10">
+                                                        <label>ملاحظات</label>
+                                                        <textarea class=" form-control textarea-inputs" rows="1"
+                                                            maxlength="100" name="notes" type="text"></textarea>
+                                                    </div>
+
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-12 filters-col">
-                                    <div class="filters-custom-order">
-
-                                        <label class="form-check-label" for="all">الكل</label>
-                                        <input class="form-check-input custom" type="radio" name="Options" id="all"
-                                            value="All" checked />
-                                    </div>
-
-                                    <div class="filters-custom-order">
-
-                                        <label class="form-check-label filter2" for="NotRenter">غير مستأجر</label>
-                                        <input class="form-check-input custom" type="radio" name="Options" id="NotRenter"
-                                            value="NotRenter" />
-                                    </div>
-
-                                    <div class="filters-custom-order">
-
-                                        <label class="form-check-label filter6" for="Renter">مستأجر</label>
-                                        <input class="form-check-input custom" type="radio" name="Options" id="Renter"
-                                            value="Renter" />
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="row table-row px-3">
-                                <div class="col  scroll-table-div  table-responsive-sm  w-100  ">
-                                    <table class=" tables-style table table-borderless " id="Table">
-                                        <thead class="sticky-top">
-                                            <tr>
-                                                <th scope="col" class="DifferAlign" >العنوان</th>
-                                                <th scope="col"> التقييم </th>
-                                                <th scope="col"> المهنة </th>
-                                                <th scope="col"> الجنسية </th> 
-                                                <th scope="col"> آخر زيارة </th>
-                                                <th scope="col" class="DifferAlign"> المستأجر</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="DifferAlign">
-                                                    <div class="d-flex gap-2 align-items-center">
-                                                        <div class="col">
-                                                            <p class="FirstLineP"> المدينة المنورة - ينبع    </p>
-                                                            <p class="secondLineP"> fawaz4957@gmail.com </p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p class="FirstLineP">جيد</p>
-                                                </td>
-                                                <td>
-                                                    <p class="FirstLineP">متقاعد</p>
-                                                </td>
-                                                <td>
-                                                    <p>سعودي</p>
-                                                </td>
-                                                <td>
-                                                    <p>17/08/2024</p>
-                                                </td>
-                                                <td class="DifferAlign">
-                                                    <div class="d-flex gap-2 align-items-center">
-                                                        <div class="col">
-                                                            <p class="FirstLineP"> فواز سعيد فهد العضيبي </p>
-                                                            <p class="secondLineP"> 8002176700215983 </p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="filter-number-td">
-
-                                                        <div class="filters filter2-div"></div>
-
-                                                        <div>1</div>
-
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="DifferAlign">
-                                                    <div class="d-flex gap-2 align-items-center">
-                                                        <div class="col">
-                                                            <p class="FirstLineP"> المدينة المنورة - ينبع    </p>
-                                                            <p class="secondLineP"> fawaz4957@gmail.com </p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p class="FirstLineP">جيد جدا </p>
-                                                </td>
-                                                <td>
-                                                    <p class="FirstLineP">متقاعد</p>
-                                                </td>
-                                                <td>
-                                                    <p>سعودي</p>
-                                                </td>
-                                                <td>
-                                                    <p>17/08/2024</p>
-                                                </td>
-                                                <td class="DifferAlign">
-                                                    <div class="d-flex gap-2 align-items-center">
-                                                        <div class="col">
-                                                            <p class="FirstLineP"> أحمد هشام طارق التنيان</p>
-                                                            <p class="secondLineP"> 8002176700215983 </p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="filter-number-td">
-
-                                                        <div class="filters filter6-div"></div>
-
-                                                        <div>2</div>
-
-                                                    </div>
-                                                </td>
-                                            </tr> <tr>
-                                                <td class="DifferAlign">
-                                                    <div class="d-flex gap-2 align-items-center">
-                                                        <div class="col">
-                                                            <p class="FirstLineP"> المدينة المنورة - ينبع    </p>
-                                                            <p class="secondLineP"> fawaz4957@gmail.com </p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p class="FirstLineP">مقبول</p>
-                                                </td>
-                                                <td>
-                                                    <p class="FirstLineP">متقاعد</p>
-                                                </td>
-                                                <td>
-                                                    <p>سعودي</p>
-                                                </td>
-                                                <td>
-                                                    <p>17/08/2024</p>
-                                                </td>
-                                                <td class="DifferAlign">
-                                                    <div class="d-flex gap-2 align-items-center">
-                                                        <div class="col">
-                                                            <p class="FirstLineP"> فيصل صالح بدر الربيعة </p>
-                                                            <p class="secondLineP"> 8002176700215983 </p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="filter-number-td">
-
-                                                        <div class="filters filter2-div"></div>
-
-                                                        <div>3</div>
-
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
                                 </div>
                             </div>
                         </form>
-                        <a href="../../../index.html" data-bs-toggle="tooltip" data-bs-placement="top"
-                            data-bs-custom-class="custom-tooltip" data-bs-title="العودة الي الرئيسية"
-                            class="new-Page-icon"><img src="../../../images/back to main.svg" alt="man"></a>
                     </div>
                 </div>
                 <div class="col-auto sidebar2-col close2 close2">
@@ -809,6 +838,7 @@
 
 
         </div>
+         
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -819,23 +849,9 @@
         crossorigin="anonymous"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="../../../scripts/Scripts.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var table = document.getElementById("Table");
-            var rows = table.getElementsByTagName("tr");
-
-            for (var i = 0; i < rows.length; i++) {
-                var cells = rows[i].getElementsByTagName("td");
-
-                for (var j = 0; j < cells.length; j++) {
-                    cells[j].addEventListener("click", function () {
-                        window.location.href = "DetaildData.html";
-                    });
-                }
-            }
-        });
-    </script>
+    <script src="../../../scripts/Scripts.js"></script>  
+ 
+    <!-- local scripts  -->
 
 </body>
 
