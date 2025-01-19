@@ -1773,6 +1773,9 @@ width: 30px;
     display: flex;
     flex-wrap: nowrap;
 }
+.signatureee img{
+  width:70px;
+}
 /*================Tenants Messages =================================================== */
 #MessagesModalLabel{
   color: var(--main-color);
@@ -1900,3 +1903,4 @@ width: 30px;
 .file-item:hover .remove-file-btn {
   opacity: 1;
 } 
+
