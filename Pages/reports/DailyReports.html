@@ -11,7 +11,12 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css?family=Cairo:500,400,700" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-
+    <!-- animate.css -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <!--  -->
     <link rel="stylesheet" href="../../style/Layout.css">
     <link rel="stylesheet" href="../../style/content.css">
     <!-- <link rel="stylesheet" href="../../style/english.css">   -->  
@@ -340,9 +345,11 @@
                                     </div>
                                 </div>
                                 <div class="col-auto col-lg-3 save-col">
-                                    <a href="" target="_blank" > <img
-                                            src="../../images/Frame (8).svg"> </a>
+                                    <button href="" target="_blank"  class="excel-icon bg-transparent border-0" > 
+                                        <img src="../../images/Frame (8).svg">
+                                    </button>
                                 </div>
+                                
                               </div>
                            </div>
                                     <div class="col-md-8">
@@ -995,111 +1002,7 @@
 
         </div>
         <!-- Modal -->
-       <!-- <div class="modal fade" tabindex="-1" aria-labelledby="DataModal" aria-hidden="true" id="DataModal">
-            <div class="modal-dialog modal-dialog-centered ">
-                <div class="modal-content reports-modal-content">
-                    <div class="modal-header flex-row-reverse border-0">
-                        <button type="button" class="modalClose" data-bs-dismiss="modal">&times;</button>
-
-                        <h5 class="modal-title card-title m-auto">بيانات تفاصيل القيد</h5>
-                    </div>
-                    <div class="modal-body p-0">
-                        <div class="data-details">
-                            <div class="row ">
-                                <div class="col-auto ">
-                                    <p>رقم القيد</p>
-                                </div>
-                                <div class="col-auto Saved-data">
-                                    <p> 24-1301-4001101-000092 </p>
-                                </div>
-                            </div>
-
-
-                            <div class="row ">
-                                <div class="col-md-7 ">
-                                    <div class="row">
-                                        <div class="col-auto ">
-                                            <P>رقم الحساب </P>
-                                        </div>
-                                        <div class="col-auto Saved-data">
-                                            <p>SA80004001100400001</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-auto  ">
-                                    <div class="row">
-                                        <div class="col-auto ">
-                                            <P> البنك</P>
-                                        </div>
-                                        <div class="col-auto Saved-data">
-                                            <P> مصرف الإنماء </P>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="row ">
-                                <div class="col-md-12 ">
-                                    <div class="row">
-                                        <div class="col-auto ">
-                                            <p> رقم العهدة</P>
-                                        </div>
-                                        <div class="col-auto Saved-data">
-                                            <P>24-1304-4001101-000044 </P>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-
-                            <div class="row ">
-                                <div class="col-md-7  ">
-                                    <div class="row">
-                                        <div class="col-auto ">
-                                            <p> المستلم</P>
-                                        </div>
-                                        <div class="col-auto Saved-data">
-                                            <P> عادل عبدالعزيز رائد</P>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-auto  ">
-                                    <div class="row">
-                                        <div class="col-auto ">
-                                            <P> تاريخ التسليم</P>
-                                        </div>
-                                        <div class="col-auto Saved-data">
-                                            <p>2024/02/03</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="row ">
-                                <div class="col-md-12 d-flex  flex-wrap">
-                                    <div class="row">
-                                        <div class="col-auto  text-end">
-                                            الملاحظات
-                                        </div>
-                                        <div class="col-auto Saved-data ">
-                                            <div class="notes_box">
-                                                <p> ملاحظاات </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>  -->
+      
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -1111,25 +1014,35 @@
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../../scripts/Scripts.js"></script>
-    <!-- <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var table = document.getElementById("table");
-            var rows = table.getElementsByTagName("tr");
-
-            for (var i = 0; i < rows.length; i++) {
-                var cells = rows[i].getElementsByTagName("td");
-
-                for (var j = 1; j < cells.length; j++) {
-                    cells[j].addEventListener("click", function () {
-                        var modal = new bootstrap.Modal(document.getElementById("DataModal"));
-                        modal.show();
-                    });
-                }
-            }
-        });
-    </script> -->
 
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const excelIcon = document.querySelector(".excel-icon");
+
+    excelIcon.addEventListener("click", function () {
+        excelIcon.classList.add("animate__animated", "animate__bounceIn");
+
+        setTimeout(() => {
+            excelIcon.classList.remove("animate__bounceIn");
+
+            excelIcon.classList.add("animate__flash", "animate__infinite");
+
+            setTimeout(() => {
+                excelIcon.classList.remove("animate__flash", "animate__infinite");
+                excelIcon.classList.add("animate__tada");
+
+                setTimeout(() => {
+                    excelIcon.classList.remove("animate__tada");
+                }, 1000);
+
+            }, 3000); 
+
+        }, 500); 
+    });
+});
+
+</script>
 
 
 </body>
