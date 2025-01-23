@@ -18,6 +18,10 @@
 
 <body>
     <div id="wrapper" class="home-wrapper d-flex flex-column ">
+          <!-- Loader  -->
+          <!-- <div class="min-loader-back">
+            <span class="Main-Loader"></span>
+        </div> -->
         <!-- Top Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light ">
             <div class="nav-container container-fluid">
@@ -99,6 +103,18 @@
 
                                     </div>
                                    </div>
+                                   <li class="nav-link" >
+                                        <img src="images/cars.svg"  data-bs-toggle="collapse" href="#Cars-items" aria-expanded="false" aria-controls="#Cars-items"  class="icon"/> 
+                                        <span class="text nav-text collapsed" data-bs-toggle="collapse" href="#Cars-items" aria-expanded="false" aria-controls="#Cars-items" > السيارات </span>
+                                   </li>
+                                <div id="Cars-items" class="collapse" >
+                                <div class="bg-white gap-3 collapse-inner rounded">
+                                    <a class="collapse-item" href="Pages/Cars/CarsData/">  بيانات السيارات     <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="Pages/Cars/CarsPrices/Prices.html">  الأسعار  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                   
+
+                                </div>
+                               </div>
                                    
                                    <li class="nav-link">
                                     <a >
@@ -218,10 +234,10 @@
 
                     </nav>
                 </div>
-
-
                 <!-- end of main sidebar -->
-                <div class="col my-2 home-wrapper1 flex-column"> 
+
+                <div class="col d-flex align-items-center flex-column"> 
+                  
                     <!-- Alerts -->
                     <div class="container-fluid">
                         <div class="row">
@@ -229,10 +245,10 @@
                                 <nav class="warnings navbar-expand-lg navbar-light py-2" id="warnings">
                                 <div class="marquee">
                                     <div class="marquee-content">
-                                     <p> <i class="fa-solid fa-circle-exclamation"></i> الشركة موقوفة, تم تقليص بعض الخدمات  </p>
-                                    <p> <i class="fa-solid fa-circle-exclamation"></i> الخدمة مؤقتة حاليًا بسبب التحديثات</p>
-                                    <p> <i class="fa-solid fa-circle-exclamation"></i> يرجى التواصل مع الدعم الفني في حالة الطوارئ</p>
-                                    <p> <i class="fa-solid fa-circle-exclamation"></i> الشركة موقوفة, تم تقليص بعض الخدمات</p>
+                                     <p>  الشركة موقوفة, تم تقليص بعض الخدمات  </p>
+                                    <p>  الخدمة مؤقتة حاليًا بسبب التحديثات</p>
+                                    <p>  يرجى التواصل مع الدعم الفني في حالة الطوارئ</p>
+                                    <p>  الشركة موقوفة, تم تقليص بعض الخدمات</p>
                                     </div>
                                 </div>
                                 <i  class="fa-regular fa-circle-xmark marquee-xmark" id="marquee-xmark"></i>
@@ -240,14 +256,13 @@
                             </div>
                         </div>
                     </div>
-                    <!-- --- -->
+                    <!-- Main backgroung vectors -->
                     <img src="images/Frame 2608906.svg" class="up">
                     <img src="images//car.svg" class="car">
                     <img src="images//Mask group down (1).svg" class="down">
                 </div>
-
-
                 <!-- end of content -->
+
 
                 <div class="col-auto sidebar2-col close2">
                     <nav class="sidebar2 close2">
