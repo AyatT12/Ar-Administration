@@ -303,16 +303,9 @@
                                     </div>
                                 
                                     <!-- Content Sections -->
-                                    <div id="Price-content-display"  ></div>
-                                
-                                    <!-- Navigation Buttons -->
-                                    <div class="mt-3 d-flex justify-content-between">
-                                        <button id="prev-btn" class="btn NextPrevBtn" onclick="prevContent()" disabled> <i class="fa-solid fa-chevron-right Chevron"></i>السابق </button>
-                                        <button id="next-btn" class="btn NextPrevBtn" onclick="nextContent()">التالي <i class="fa-solid fa-chevron-left Chevron"></i></button>
-                                    </div>
-                                </div>
-                                <!-- Hidden Content Data -->
-                                    <div id="content-container" class="hidden">
+                                    <div id="Price-content-display">
+                                          <!-- Hidden Content Data -->
+                                    <div id="content-container" >
                                         <main> 
                                            <div class="row  CarPriceContent ">
                                             <div class="col-lg-4">
@@ -603,6 +596,15 @@
                                             </div>
                                         </main>
                                     </div>
+                                    </div>
+                                
+                                    <!-- Navigation Buttons -->
+                                    <div class="mt-3 d-flex justify-content-between">
+                                        <button id="prev-btn" class="btn NextPrevBtn" onclick="prevContent()" disabled> <i class="fa-solid fa-chevron-right Chevron"></i>السابق </button>
+                                        <button id="next-btn" class="btn NextPrevBtn" onclick="nextContent()">التالي <i class="fa-solid fa-chevron-left Chevron"></i></button>
+                                    </div>
+                                </div>
+                              
 
                             </di>
                           </div>
@@ -916,10 +918,14 @@
 let currentIndex = 0; 
 const contents = Array.from(document.querySelectorAll("#content-container main"));
 const tabButtons = document.querySelectorAll(".PriceTabsBtn");
+
 function showContent(index) {
     if (index < 0 || index >= contents.length) return;
-    currentIndex = index;
-    document.getElementById("Price-content-display").innerHTML = contents[index].innerHTML;
+            currentIndex = index;
+    
+            contents.forEach((content, i) => {
+                content.style.display = i === index ? 'block' : 'none';
+    });
     updateButtons();
     updateActiveTab(index); 
 
