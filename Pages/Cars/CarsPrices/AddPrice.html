@@ -271,7 +271,7 @@
                                                 <label for="CarName" class="form-label "> السيارة </label>
                                             </div>
                                             <div class="col" style="position: relative;">
-                                                <input type="number" id="CarName" class="form-control inputs number-input" name="CarName" required>
+                                                <input type="text" id="CarName" class="form-control inputs " name="CarName" required>
                                                 <div id="CarsNameList"
                                                 class="autocomplete-items CarsNameList">
                                                 </div>
@@ -1139,8 +1139,12 @@ $(document).ready(function () {
             // إذا كان هناك خطأ، عرض القسم الذي يحتوي على خطأ
             if (firstErrorInput) {
                 const mainIndex = firstErrorInput.dataset.section; 
+                if(mainIndex){
+                    console.log(mainIndex)
                 showContent(parseInt(mainIndex)); 
                 firstErrorInput.focus(); // التركيز على المدخل الذي يحتوي على الخطأ
+                }
+               
             } else {
                 // متابعة إرسال النموذج إذا لم تكن هناك أخطاء
                 event.target.submit();
