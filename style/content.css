@@ -686,7 +686,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 #Branches-table p {
   margin-bottom: .2rem;
 }
-
+.documentDate {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.documentDate p , .documentDate span  {
+  font-size: .625rem;
+}
+.documentDate span{
+  color: rgba(80, 73, 73, 1);
+} 
+.dropdown-content-row{
+  justify-content: flex-end;
+  align-items: center;
+}
+.dropdown-content-hr{
+  margin: .1rem;
+}
 #table p {
   margin-bottom: .2rem;
 }
@@ -2027,7 +2043,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .CarPriceContent {
-  height: 29vh;
+  height: 33vh;
   min-height: 220px;
   overflow: auto;
   overflow-x: hidden;
@@ -2071,7 +2087,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   box-shadow: 0px 2px 2px 0px #FF96263D;
 
 }
-
+.PriceTabsBtn:disabled {
+  color: #504949;
+  background-color: #D9D9D9;
+  opacity: 1;
+}
 .NextPrevBtn {
   display: flex;
   gap: 10px;
@@ -2095,7 +2115,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .PriceTableContainer {
-  height: 29vh;
+  height: 33vh;
   min-height: 190px;
   overflow: auto;
 }
@@ -2119,6 +2139,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .CarPriceTable thead th {
   background-color: #fdc28214;
   border: 1px solid #f1b16c;
+  font-weight: inherit;
 }
 
 .CarPriceTable p {
@@ -2169,8 +2190,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .Table-inputs {
   border: none;
-  text-align: end;
   width: 100%;
+  min-width: 70px;
 }
 
 .TableChecks {
@@ -2238,4 +2259,43 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .PriceTabsBtn {
     font-size: .75rem;
   }
+}
+@media(min-width : 1024px) {
+  .NewUpdate-container {
+    height: 83vh !important;
+    min-height: 620px !important;
+  }
+
+  .NewUpdate-container .UpdatePriceRow {
+    height: 95%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  .NewUpdate-container .UpdatePriceRow::-webkit-scrollbar {
+    width: 7px !important;
+    height: 5px;
+
+  }
+
+  .NewUpdate-container .UpdatePriceRow::-webkit-scrollbar-track {
+    background: rgba(224, 222, 220, 0.021);
+    border-radius: 5px;
+
+
+  }
+
+  .NewUpdate-container .UpdatePriceRow::-webkit-scrollbar-thumb {
+    background: rgba(255, 150, 38, 0.40);
+    border-radius: 5px;
+
+
+  }
+
+  .NewUpdate-container .UpdatePriceRow::-webkit-scrollbar-thumb:hover {
+    border-radius: 8px;
+    background: rgba(250, 136, 13, 0.4);
+
+  }
+
 }
