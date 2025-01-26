@@ -273,7 +273,7 @@
                                                 <label for="CarName" class="form-label "> السيارة </label>
                                             </div>
                                             <div class="col" style="position: relative;">
-                                                <input type="text" id="CarName" class="form-control inputs" name="CarName" required>
+                                                <input type="number" id="CarName" class="form-control inputs number-input" name="CarName" required>
                                                 <div id="CarsNameList"
                                                 class="autocomplete-items CarsNameList">
                                                 </div>
@@ -327,16 +327,16 @@
                             <di class="col-md-12">
                                 <div class="row g-1">
                                     <div class="col-6 col-md-3">
-                                        <button class="btn PriceTabsBtn" type="button"><img src="../../../images/PriceIcon.svg" style="height: 24px;">السعر</button>
+                                        <button class="btn PriceTabsBtn" type="button" onclick="showContent(0)"><img src="../../../images/PriceIcon.svg" style="height: 24px;">السعر</button>
                                     </div>
                                     <div class="col-6 col-md-3">
-                                        <button class="btn PriceTabsBtn"  type="button"><img src="../../../images/RentTerms.svg"> بنود التأجير </button>
+                                        <button class="btn PriceTabsBtn"  type="button" onclick="showContent(1)"><img src="../../../images/RentTerms.svg"> بنود التأجير </button>
                                     </div>
                                     <div class="col-6 col-md-3">
-                                        <button class="btn PriceTabsBtn"  type="button"><img src="../../../images/PriceOption.svg"> الخيارات </button>
+                                        <button class="btn PriceTabsBtn"  type="button" onclick="showContent(2)"><img src="../../../images/PriceOption.svg"> الخيارات </button>
                                     </div>
                                     <div class="col-6 col-md-3">
-                                        <button class="btn PriceTabsBtn" type="button" ><img src="../../../images/PriceAddtions.svg"> الإضافات </button>
+                                        <button class="btn PriceTabsBtn" type="button" onclick="showContent(3)" ><img src="../../../images/PriceAddtions.svg"> الإضافات </button>
                                     </div>
                                 </div>
                             
@@ -351,7 +351,7 @@
                                                 <label for="DailyRent" class="form-label">الإيجار اليومي 
                                                     <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                 </label>
-                                                <input type="text" id="DailyRent" class="form-control inputs" name="DailyRent" required>
+                                                <input type="number" id="DailyRent" class="form-control inputs number-input" name="DailyRent" data-section="0" required>
                                                 <div class="invaild">
                                                     <div class="invalid-feedback">الحقل مطلوب</div>
                                                 </div>
@@ -360,7 +360,7 @@
                                                 <label for="WeekRent" class="form-label">الإيجار الأسبوعي   
                                                     <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                 </label>
-                                                <input type="text" id="WeekRent" class="form-control inputs" name="WeekRent" required>
+                                                <input type="number" id="WeekRent" class="form-control inputs number-input" name="WeekRent" data-section="0" required>
                                                 <div class="invaild">
                                                     <div class="invalid-feedback">الحقل مطلوب</div>
                                                 </div>
@@ -369,7 +369,7 @@
                                                 <label for="monthRent" class="form-label">الإيجار الشهري
                                                     <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                 </label>
-                                                <input type="text" id="monthRent" class="form-control inputs" name="monthRent" required>
+                                                <input type="number" id="monthRent" class="form-control inputs number-input" name="monthRent" data-section="0" required>
                                                 <div class="invaild">
                                                     <div class="invalid-feedback">الحقل مطلوب</div>
                                                 </div>
@@ -378,7 +378,7 @@
                                             <div class="col-lg-3">
                                                 <label for="extraKilometer" class="form-label">الكيلو الإضافي</label>
                                                 <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                <input type="text" id="extraKilometer" class="form-control inputs" name="extraKilometer"  required>
+                                                <input type="number" id="extraKilometer" class="form-control inputs number-input" name="extraKilometer"  data-section="0" required>
                                                 <div class="invaild">
                                                     <div class="invalid-feedback">الحقل مطلوب</div>
                                                 </div>
@@ -386,7 +386,7 @@
                                             <div class="col-lg-3">
                                                 <label for="extraHour" class="form-label">الساعة الإضافية</label>
                                                 <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                <input type="text" id="extraHour" class="form-control inputs" name="extraHour"  required>
+                                                <input type="number" id="extraHour" class="form-control inputs number-input" name="extraHour"  data-section="0" required>
                                                 <div class="invaild">
                                                     <div class="invalid-feedback">الحقل مطلوب</div>
                                                 </div>
@@ -394,7 +394,7 @@
                                             <div class="col-lg-3">
                                                 <label for="extraDriver" class="form-label">السائق الإضافي</label>
                                                 <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                <input type="text" id="extraDriver" class="form-control inputs" name="extraDriver"  required>
+                                                <input type="number" id="extraDriver" class="form-control inputs number-input" name="extraDriver"  data-section="0" required>
                                                 <div class="invaild">
                                                     <div class="invalid-feedback">الحقل مطلوب</div>
                                                 </div>
@@ -402,14 +402,15 @@
                                             <div class="col-lg-3">
                                                 <label for="PrivateDriver" class="form-label">السائق الخاص</label>
                                                 <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                <input type="text" id="PrivateDriver" class="form-control inputs" name="PrivateDriver" required>
+                                                <input type="number" id="PrivateDriver" class="form-control inputs number-input" name="PrivateDriver" data-section="0" required>
                                                 <div class="invaild">
                                                     <div class="invalid-feedback">الحقل مطلوب</div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-3">
                                                 <label for="internalAuthorizationFee" class="form-label"> التفويض الداخلي</label>
-                                                <input type="text" id="internalAuthorizationFee" class="form-control inputs" name="internalAuthorizationFee"  required>
+                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                <input type="number" id="internalAuthorizationFee" class="form-control inputs number-input" name="internalAuthorizationFee"  data-section="0" required>
                                                 <div class="invaild">
                                                     <div class="invalid-feedback">الحقل مطلوب</div>
                                                 </div>
@@ -417,7 +418,7 @@
                                             <div class="col-lg-3">
                                                 <label for="externalAuthorizationFee" class="form-label"> التفويض الخارجي</label>
                                                 <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                <input type="text" id="externalAuthorizationFee" class="form-control inputs" name="externalAuthorizationFee"  required>
+                                                <input type="number" id="externalAuthorizationFee" class="form-control inputs number-input" name="externalAuthorizationFee"  data-section="0" required>
                                                 <div class="invaild">
                                                     <div class="invalid-feedback">الحقل مطلوب</div>
                                                 </div>
@@ -425,7 +426,7 @@
                                             <div class="col-lg-3">
                                                 <label for="AnotherFee" class="form-label"> رسوم أخرى </label>
                                                 <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                <input type="text" id="AnotherFee" class="form-control inputs" name="AnotherFee"  required>
+                                                <input type="number" id="AnotherFee" class="form-control inputs number-input" name="AnotherFee"  data-section="0" required>
                                                 <div class="invaild">
                                                     <div class="invalid-feedback">الحقل مطلوب</div>
                                                 </div>
@@ -433,25 +434,25 @@
                                             <div class="col-lg-3">
                                                 <label for="taxRate" class="form-label">نسبة الضريبة</label>
                                                 <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                <input type="text" id="taxRate" class="form-control inputs" name="taxRate"  required>
+                                                <input type="number" id="taxRate" class="form-control inputs number-input" name="taxRate"  data-section="0" required>
                                                 <div class="invaild">
                                                     <div class="invalid-feedback">الحقل مطلوب</div>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <label for="notes" class="form-label">ملاحظات</label>
-                                                <input type="text" id="notes" class="form-control inputs" name="notes">
+                                                <input type="text" id="notes" class="form-control inputs number-input" name="notes">
                                             </div>
                                            </div>
                                                        
                                         </main>
-                                        <main> 
+                                        <main style="display: none;"> 
                                             <div class="row CarPriceContent">
                                                 <div class="col-lg-3">
                                                     <label for="freeDailyKilometers" class="form-label">الكيلو المجاني اليومي 
                                                         <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                     </label>
-                                                    <input type="text" id="freeDailyKilometers" class="form-control inputs" name="freeDailyKilometers" required>
+                                                    <input type="number" id="freeDailyKilometers" class="form-control inputs number-input" name="freeDailyKilometers" data-section="1" required>
                                                     <div class="invaild">
                                                         <div class="invalid-feedback">الحقل مطلوب</div>
                                                     </div>
@@ -460,7 +461,7 @@
                                                     <label for="freeHours" class="form-label">الساعة المجانية 
                                                         <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                     </label>
-                                                    <input type="text" id="freeHours" class="form-control inputs" name="freeHours" required>
+                                                    <input type="number" id="freeHours" class="form-control inputs number-input" name="freeHours" data-section="1" required>
                                                     <div class="invaild">
                                                         <div class="invalid-feedback">الحقل مطلوب</div>
                                                     </div>
@@ -469,7 +470,7 @@
                                                     <label for="maxHours" class="form-label">الحد الأعلى للساعات 
                                                         <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                     </label>
-                                                    <input type="text" id="maxHours" class="form-control inputs" name="maxHours" required>
+                                                    <input type="number" id="maxHours" class="form-control inputs number-input" name="maxHours" data-section="1" required>
                                                     <div class="invaild">
                                                         <div class="invalid-feedback">الحقل مطلوب</div>
                                                     </div>
@@ -478,7 +479,7 @@
                                                     <label for="contractCancellationHours" class="form-label">ساعات إلغاء العقد 
                                                         <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                     </label>
-                                                    <input type="text" id="contractCancellationHours" class="form-control inputs" name="contractCancellationHours" required>
+                                                    <input type="number" id="contractCancellationHours" class="form-control inputs number-input" name="contractCancellationHours" data-section="1" required>
                                                     <div class="invaild">
                                                         <div class="invalid-feedback">الحقل مطلوب</div>
                                                     </div>
@@ -489,7 +490,7 @@
                                                     <label for="minDriverAge" class="form-label">أقل عمر للسائق 
                                                         <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                     </label>
-                                                    <input type="text" id="minDriverAge" class="form-control inputs" name="minDriverAge" required>
+                                                    <input type="number" id="minDriverAge" class="form-control inputs number-input" name="minDriverAge" data-section="1" required>
                                                     <div class="invaild">
                                                         <div class="invalid-feedback">الحقل مطلوب</div>
                                                     </div>
@@ -498,7 +499,7 @@
                                                     <label for="maxDriverAge" class="form-label">أكبر عمر للسائق 
                                                         <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                     </label>
-                                                    <input type="text" id="maxDriverAge" class="form-control inputs" name="maxDriverAge" required>
+                                                    <input type="number" id="maxDriverAge" class="form-control inputs number-input" name="maxDriverAge" data-section="1" required>
                                                     <div class="invaild">
                                                         <div class="invalid-feedback">الحقل مطلوب</div>
                                                     </div>
@@ -519,7 +520,7 @@
                                                     <label for="accidentDeductible" class="form-label">تحمل الحادث 
                                                         <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                     </label>
-                                                    <input type="text" id="accidentDeductible" class="form-control inputs" name="accidentDeductible" required>
+                                                    <input type="number" id="accidentDeductible" class="form-control inputs number-input" name="accidentDeductible" data-section="1" required>
                                                     <div class="invaild">
                                                         <div class="invalid-feedback">الحقل مطلوب</div>
                                                     </div>
@@ -528,7 +529,7 @@
                                                     <label for="theftDeductible" class="form-label">تحمل السرقة 
                                                         <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                     </label>
-                                                    <input type="text" id="theftDeductible" class="form-control inputs" name="theftDeductible" required>
+                                                    <input type="number" id="theftDeductible" class="form-control inputs number-input" name="theftDeductible" data-section="1" required>
                                                     <div class="invaild">
                                                         <div class="invalid-feedback">الحقل مطلوب</div>
                                                     </div>
@@ -537,7 +538,7 @@
                                                     <label for="drowningDeductible" class="form-label">تحمل الغرق 
                                                         <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                     </label>
-                                                    <input type="text" id="drowningDeductible" class="form-control inputs" name="drowningDeductible" required>
+                                                    <input type="number" id="drowningDeductible" class="form-control inputs number-input" name="drowningDeductible" data-section="1" required>
                                                     <div class="invaild">
                                                         <div class="invalid-feedback">الحقل مطلوب</div>
                                                     </div>
@@ -546,7 +547,7 @@
                                                     <label for="fireDeductible" class="form-label">تحمل الحريق 
                                                         <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                     </label>
-                                                    <input type="text" id="fireDeductible" class="form-control inputs" name="fireDeductible" required>
+                                                    <input type="number" id="fireDeductible" class="form-control inputs number-input" name="fireDeductible" data-section="1" required>
                                                     <div class="invaild">
                                                         <div class="invalid-feedback">الحقل مطلوب</div>
                                                     </div>
@@ -554,7 +555,7 @@
                                             </div>
                                                         
                                          </main>
-                                        <main>
+                                        <main style="display: none;">
                                             <div class="row justify-content-center">
                                                 <div class="col-md-7 col-lg-6">
                                                     <div class="PriceTableContainer">
@@ -578,7 +579,7 @@
                                                                           </div>
                                                                         </td>
                                                                         <td>
-                                                                            <input class="Table-inputs">
+                                                                            <input class="Table-inputs number-input" type="number">
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -592,7 +593,7 @@
                                                                             
                                                                         </td>
                                                                         <td>
-                                                                            <input class="Table-inputs">
+                                                                            <input class="Table-inputs number-input" type="number">
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -605,7 +606,7 @@
                                                                            </div>
                                                                         </td>
                                                                         <td>
-                                                                            <input class="Table-inputs">
+                                                                            <input class="Table-inputs number-input" type="number">
                                                                         </td>
                                                                     </tr>
     
@@ -616,7 +617,7 @@
                                                 </div>
                                             </div>
                                         </main>
-                                        <main>
+                                        <main style="display: none;">
                                             <div class="row justify-content-center">
                                                 <div class="col-md-7 col-lg-6">
                                                     <div class="PriceTableContainer">
@@ -640,7 +641,7 @@
                                                                           </div>
                                                                         </td>
                                                                         <td>
-                                                                            <input class="Table-inputs">
+                                                                            <input class="Table-inputs number-input" type="number">
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -654,7 +655,7 @@
                                                                             
                                                                         </td>
                                                                         <td>
-                                                                            <input class="Table-inputs">
+                                                                            <input class="Table-inputs number-input" type="number">
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -668,7 +669,7 @@
                                                                             
                                                                         </td>
                                                                         <td>
-                                                                            <input class="Table-inputs">
+                                                                            <input class="Table-inputs number-input" type="number">
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>
@@ -1077,13 +1078,19 @@ $(document).ready(function () {
             if (index < 0 || index >= contents.length) return;
             currentIndex = index;
     
-            
+            // عرض المحتوى المقابل
             contents.forEach((content, i) => {
                 content.style.display = i === index ? 'block' : 'none';
             });
     
             updateButtons();
-            updateActiveTab(index); 
+            updateActiveTab(index);
+            focusFirstInput(index); // التركيز على أول مدخل في المحتوى المفتوح
+        }
+    
+        function focusFirstInput(index) {
+            const firstInput = contents[index].querySelector('input, textarea');
+            if (firstInput) firstInput.focus(); // التركيز على أول مدخل أو منطقة نص
         }
     
         function prevContent() {
@@ -1099,6 +1106,11 @@ $(document).ready(function () {
         }
     
         function updateButtons() {
+            // تعطيل جميع الأزرار باستثناء الزر الأول
+            tabButtons.forEach((btn, i) => {
+                btn.disabled = (i !== 0 && i > currentIndex);
+            });
+    
             document.getElementById("prev-btn").disabled = currentIndex === 0;
             document.getElementById("next-btn").disabled = currentIndex === contents.length - 1;
         }
@@ -1109,8 +1121,40 @@ $(document).ready(function () {
             });
         }
     
+        function handleSubmit(event) {
+            event.preventDefault(); // منع الإرسال الافتراضي للنموذج
+            const inputs = document.querySelectorAll('input, textarea');
+            let firstErrorInput = null; // متغير لتخزين المدخل الأول الذي يحتوي على خطأ
+    
+            // التحقق من وجود أخطاء في التحقق
+            inputs.forEach(input => {
+                if (!input.checkValidity()) {
+                    input.classList.add('error'); // إضافة الخطأ للمدخل
+                    if (!firstErrorInput) {
+                        firstErrorInput = input; // حفظ المدخل الأول الذي يحتوي على خطأ
+                    }
+                } else {
+                    input.classList.remove('error'); // إزالة الخطأ إذا كان صالحًا
+                }
+            });
+    
+            // إذا كان هناك خطأ، عرض القسم الذي يحتوي على خطأ
+            if (firstErrorInput) {
+                const mainIndex = firstErrorInput.dataset.section; 
+                showContent(parseInt(mainIndex)); 
+                firstErrorInput.focus(); // التركيز على المدخل الذي يحتوي على الخطأ
+            } else {
+                // متابعة إرسال النموذج إذا لم تكن هناك أخطاء
+                event.target.submit();
+            }
+        }
+    
         document.addEventListener('DOMContentLoaded', function() {
-            showContent(0);
+            updateButtons();
+            showContent(0); // عرض المحتوى الأول
+    
+            const form = document.querySelector('form'); 
+            form.addEventListener('submit', handleSubmit);
         });
     </script>
 </body>
