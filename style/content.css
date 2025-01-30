@@ -254,6 +254,7 @@ html {
   direction: ltr;
   font-size: .875rem;
   width: 100%;
+  white-space: nowrap;
 }
 
 .tables-style thead {
@@ -387,7 +388,13 @@ html {
   font-size: .875rem;
   color: var(--primary-color);
 }
-
+.select-style{
+  background-position: left .75rem center;
+  padding: .375rem .75rem .375rem 2.25rem !important;
+}
+.form-select.is-invalid, .was-validated .form-select:invalid {
+  background-position: left .75rem center, center right .5rem !important;
+}
 .select-style:focus,
 .inputs:focus,
 .textarea-inputs:focus {
@@ -2016,18 +2023,27 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .CarPhoto {
-  width: 60px;
+  width: 100px;
   border-radius: 50%;
 }
 
 .CarBorder {
   border: 1px solid #D9D9D9;
   border-radius: 50%;
-  width: 65px;
-  height: 65px;
+  width: 70px;
+  height: 70px;
   padding: 6px;
+  position: relative;
 }
-
+.Carstatue{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 2px;
+  right: 4px;
+  border: 1px solid white;
+}
 .tables-style td:last-child {
   width: 20px;
 }
@@ -2266,36 +2282,176 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     min-height: 620px !important;
   }
 
-  .NewUpdate-container .UpdatePriceRow {
+  .NewUpdate-container .CarPagesRow {
     height: 95%;
     overflow-y: scroll;
     overflow-x: hidden;
   }
 
-  .NewUpdate-container .UpdatePriceRow::-webkit-scrollbar {
+  .NewUpdate-container .CarPagesRow::-webkit-scrollbar {
     width: 7px !important;
     height: 5px;
 
   }
 
-  .NewUpdate-container .UpdatePriceRow::-webkit-scrollbar-track {
+  .NewUpdate-container .CarPagesRow::-webkit-scrollbar-track {
     background: rgba(224, 222, 220, 0.021);
     border-radius: 5px;
 
 
   }
 
-  .NewUpdate-container .UpdatePriceRow::-webkit-scrollbar-thumb {
+  .NewUpdate-container .CarPagesRow::-webkit-scrollbar-thumb {
     background: rgba(255, 150, 38, 0.40);
     border-radius: 5px;
 
 
   }
 
-  .NewUpdate-container .UpdatePriceRow::-webkit-scrollbar-thumb:hover {
+  .NewUpdate-container .CarPagesRow::-webkit-scrollbar-thumb:hover {
     border-radius: 8px;
     background: rgba(250, 136, 13, 0.4);
 
   }
 
+}
+/*================Car Data =================================================== */
+
+.CarBorder-CarData{
+  padding: 0px 6px;
+  border: none;
+}
+.CarColorDiv{
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  box-shadow: 0px 0.5px 6px 0px rgba(161, 161, 161, 0.7);
+
+}
+.plate-number{
+  width: 70px;
+}
+.plate-letters{
+  width: 100px;
+}
+#documentDetails{
+  margin-top: 20px;
+}
+#carsForm , #DocumentsForm ,#MaintenanceForm{
+  height: auto;
+  overflow: visible;
+}
+.drop-zone {
+  max-width: 100%;
+  height: 200px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  cursor: pointer;
+  color: rgba(80, 73, 73, 1);
+  font-size: 12px;
+  border: 2px solid #faa64d;
+  border-radius: 10px;
+}
+.drop-zone__prompt{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.drop-zone__prompt img{
+width: 35px;
+}
+.drop-zone--over {
+  border-style: solid;
+}
+
+.drop-zone__input {
+  display: none;
+}
+
+.drop-zone__thumb {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  background-position: center;
+}
+
+@media (min-width:768px) {
+  #DocumentsNotes{
+    height: 85%;
+  }
+}
+/*================Car repair =================================================== */
+.Under-maintenance{
+  background-color: rgba(255, 150, 38, 0.2);
+  color: var(--main-color);
+  padding: 2px;
+  border-radius: 8px;
+}
+.Under-maintenance p{
+  margin-bottom: 0px !important;
+}
+.Running{
+  background-color: rgba(112, 204, 51, 0.2);
+  color: rgba(112, 204, 51, 1);
+  padding: 2px;
+  border-radius: 8px;
+}
+.Running p{
+  margin-bottom: 0px !important;
+}
+.cars-modal-content{
+border: none;
+}
+.cars-modal-content .modalClose{
+  color: #000000;
+}
+.cars-modal-content .data-details {
+  border: 2px solid rgba(255, 150, 38, 0.24);
+  box-shadow: 0px 1px 4px 0px rgba(255, 150, 38, 0.24);
+}
+.cars-modal-content .data-details .carName{
+  margin: .2rem;
+  font-size: 15px;
+}
+.cars-modal-content .data-details .BranchName{
+  margin: .2rem;
+  font-size: 15px;
+}
+.cars-modal-content .data-details label{
+  margin: .2rem;
+  font-size: 15px;
+}
+.cars-modal-content .btn-standard{
+  padding: 6px 15px;
+}
+.Success-modal-content{
+  border: 2px solid rgba(57, 98, 156, 1);
+  box-shadow: 0px 2px 4px 0px rgba(57, 98, 156, 0.24);
+  color: rgba(102, 102, 102, 1);
+  font-size: 18px;
+}
+.Feed-modal-content .secondLineP ,.Feed-modal-content .FirstLineP {
+ margin-bottom: .2rem;
+}
+.Feed-modal-content .secondLineP  {
+  font-size: .625rem;
+}
+.Feed-modal-content .modalClose{
+  color: #000000;
+}
+.Feed-modal-content .data-details {
+  border: 2px solid rgba(255, 150, 38, 0.24);
+  box-shadow: 0px 1px 4px 0px rgba(255, 150, 38, 0.24);
+  font-size: 14px;
 }
