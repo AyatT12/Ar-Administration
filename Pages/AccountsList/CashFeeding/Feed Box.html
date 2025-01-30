@@ -104,13 +104,28 @@
                                     </li>
                                     <div id="company-items" class="collapse">
                                         <div class="bg-white gap-3 collapse-inner rounded">
-                                            <a class="collapse-item " href="../../../Pages/company/Branches/Branches.html"> الفروع <i
+                                            <a class="collapse-item "
+                                                href="../../../Pages/company/Branches/Branches.html"> الفروع <i
                                                     class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../../Pages/company/owners/owners.html"> الملاك <i
-                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                             
+                                            <a class="collapse-item" href="../../../Pages/company/owners/owners.html">
+                                                الملاك <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
 
                                         </div>
+                                    </div>
+                                    <li class="nav-link" >
+                                        <img src="../../../images/cars.svg"  data-bs-toggle="collapse" href="#Cars-items" aria-expanded="false" aria-controls="#Cars-items"  class="icon"/> 
+                                        <span class="text nav-text collapsed" data-bs-toggle="collapse" href="#Cars-items" aria-expanded="false" aria-controls="#Cars-items" > السيارات </span>
+                                   </li>
+                                    <div id="Cars-items" class="collapse" >
+                                    <div class="bg-white gap-3 collapse-inner rounded">
+                                        <a class="collapse-item" href="../../../Pages/Cars/CarsData/CarsData.html">  بيانات السيارات     <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                        <a class="collapse-item" href="../../../Pages/Cars/CarsPrices/Prices.html">  الأسعار  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                        <a class="collapse-item" href="../../../Pages/Cars/CarRepair/CarRepair.html"> تصليح السيارة  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                        <a class="collapse-item" href="../../../Pages/Cars/CarTransfer/CarTransfer.html">   نقل السيارة   <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                        <a class="collapse-item" href="../../../Pages/Cars/ChangeOwner/ChangeOwner.html">   تغيير المالك  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                        <a class="collapse-item" href="../../../Pages/Cars/SalesProcedures/SalesProcedures.html">  إجراءات البيع <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    </div>
                                     </div>
                                     
                                     <li class="nav-link">
@@ -149,7 +164,7 @@
                                         <div class="bg-white gap-3 collapse-inner rounded">
                                             <a class="collapse-item active" href="../../../Pages/AccountsList/CashFeeding/Feed Box.html">   تغذية الصندوق <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item" href="../../../Pages/AccountsList/Receipt Confirmation/Custody.html">  استلام عهدة  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../../Pages/AccountsList/closePendingContracts.html">   إغلاق العقود المعلقة  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../../Pages/AccountsList/closePendingContracts.html">   تسوية العقود المعلقة  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item" href="../../../Pages/AccountsList/Money to tenant/Money to tenant.html">  مبالغ إلى مستأجر<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item" href="../../../Pages/AccountsList/Money from  tenant/Money from tenant.html">   مبالغ من مستأجر<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item" href="../../../Pages/AccountsList/Tax return/Tax returns.html">   الإقرار الضريبي <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
@@ -332,7 +347,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
+                                            <tr data-bs-toggle="modal" data-bs-target="#FeedModal">
                                                 <td>ABC@gmail.com</td>
                                                 <td>966544015046</td>
                                                 <td>المدير العام</td>
@@ -363,7 +378,7 @@
                                                  </td>
 
                                             </tr>
-                                            <tr>
+                                            <tr data-bs-toggle="modal" data-bs-target="#FeedModal">
                                                 <td>ABC@gmail.com</td>
                                                 <td>966503195915</td>
                                                 <td> الشئون الإدارية </td>
@@ -395,7 +410,7 @@
 
                                             </tr>
                                          
-                                            <tr>
+                                            <tr data-bs-toggle="modal" data-bs-target="#FeedModal">
                                                 <td>ABC@gmail.com</td>
                                                 <td>966503195915</td>
                                                 <td> مدير الشئون المالية  </td>
@@ -426,7 +441,7 @@
                                                  </td>
 
                                             </tr>
-                                            <tr>
+                                            <tr data-bs-toggle="modal" data-bs-target="#FeedModal">
                                                 <td>ABC@gmail.com</td>
                                                 <td>201127237646 </td>
                                                 <td> محاسب</td>
@@ -772,7 +787,103 @@
                 </div>
             </div>
 
+ <!-- Modal -->
+ <div class="modal fade" id="FeedModal" data-bs-keyboard="false" tabindex="-1"
+ aria-labelledby="FeedModalLabel" aria-hidden="true">
+ <div class="modal-dialog modal-dialog-centered">
+     <div class="modal-content Feed-modal-content">
+         <form action="" class="needs-validation" novalidate>
+             <div class="modal-header justify-content-center border-0">
+                 <div class="row w-100">
+                     <div class="col-md-12 d-flex justify-content-end">
+                         <button type="button" class="modalClose" data-bs-dismiss="modal">&times;</button>
+                     </div>
+                     <div class="col-md-12 text-center">
+                         <h5 class="modal-title card-title m-auto"> تغذية الصندوق </h5>
+                     </div>
+                 </div>
+             </div>
+             <div class="modal-body p-0">
+                 <div class="data-details">
+                     <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-auto d-flex justify-content-end">
+                                <div class="employee">
+                                    <img src="../../../images/pic (3).svg"
+                                        alt="empolyee-photo" class="employee border-0 w-100 h-100">
+                                    <div class="active_statue bg-sucss"></div>
+    
+                                </div>
+                           </div>
+                          <div class="col-md-auto">
+                                    <p class="FirstLineP">  محسن عبدالمجيد ناصر الحارثي  </p>
+                                    <div class="d-flex  gap-4">
+                                        <p class="secondLineP time" > 11:30 </p>
+                                        <p class="secondLineP">22/09/2024</p>
+                                    </div>
+                          </div>
+                        </div>
+                       </div>
+                     
+                     <div class="col-md-12">
+                         <div class="row mt-4 ">
+                             <div class="col-md-auto ">
+                                 <p>التاريخ</p>
+                             </div>
+                             <div class="col-md-6">
+                                 <p class="Saved-data">28/01/2025</p>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="col-md-12">
+                         <div class="row  align-items-baseline">
+                             <div class="col-md-auto">
+                                <label for="FeedAmount"
+                                       class="form-label">  مبلغ التغذية </label>
+                             </div>
+                             <div class="col-md-6">
+                                <input type="number" id="FeedAmount"
+                                class="form-control inputs number-input"
+                                name="FeedAmount" maxlength="30"  required>
+                                <div class="invaild">
+                                    <div class="invalid-feedback">
+                                        الحقل مطلوب و أكبر من 0
+                                    </div>
+                                </div>
+                             </div>
+                         </div>
+                     </div>
 
+                     <div class="col-md-12 mb-3">
+                         <div class="row  align-items-baseline">
+                             <div class="col-md-auto">
+                                 <label for="notes" class="form-label">
+                                     الملاحظات
+                                 </label>
+                             </div>
+                             <div class="col">
+                                 <textarea class=" form-control textarea-inputs" rows="1" maxlength="100"
+                                     name="notes" type="text"></textarea>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="modal-footer border-0 justify-content-center mx-1">
+                 <div class="row w-100 g-2">
+                     <div class="col-md-6">
+                         <button type="submit" class="btn btn-standard w-100" id="Accept">موافق</button>
+                     </div>
+                     <div class="col-md-6">
+                         <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">إلغاء
+                             الأمر</button>
+                     </div>
+                 </div>
+             </div>
+         </form>
+     </div>
+ </div>
+</div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -785,28 +896,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../../../scripts/Scripts.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var table = document.getElementById("Branches-table");
-            var rows = table.getElementsByTagName("tr");
-
-            for (var i = 0; i < rows.length; i++) {
-                var cells = rows[i].getElementsByTagName("td");
-
-                for (var j = 1; j < cells.length; j++) {
-                    cells[j].addEventListener("click", function () {
-                        window.location.href = "Send Feed.html";
-                    });
-                }
-            }
-        });
-    </script>
-   
-
-
-
-
-
+    
 
 </body>
 

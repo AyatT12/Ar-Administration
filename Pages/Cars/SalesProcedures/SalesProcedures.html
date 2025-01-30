@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> نظام الادارة - بيانات العهد</title>
+    <title> نظام الادارة -  نقل السيارة  </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -14,13 +14,13 @@
 
     <link rel="stylesheet" href="../../../style/Layout.css">
     <link rel="stylesheet" href="../../../style/content.css">
-    <!-- <link rel="stylesheet" href="../../../style/english.css">  -->
+    <!-- <link rel="stylesheet" href="../../style/english.css">   -->  
 
 </head>
 
 <body>
     <div id="wrapper" class="Branches-wrapper d-flex flex-column ">
-        <!-- Top Navbar -->
+  <!-- Top Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light ">
             <div class="nav-container container-fluid">
                 <!-- Company Logo -->
@@ -48,7 +48,7 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                                     <li><a class="dropdown-item userDropdown-options"
-                                            href="../../Account/Account.html">حسابي <img
+                                            href="../../../Pages/Account/Account.html">حسابي <img
                                                 src="../../../images/Frame (2).svg" /></a></li>
                                     <li><a class="dropdown-item userDropdown-options"
                                             href="../../../Pages/Account/NewPassword.html">تغيير كلمة السر <img
@@ -81,6 +81,7 @@
             </div>
         </nav>
         
+        
         <div class="container-fluid h-100 main-container-fluid">
             <div class="row h-100 flex-nowrap">
                 <div class="col-auto sidebar1-col close close">
@@ -101,6 +102,7 @@
                                         <span class="text nav-text collapsed" data-bs-toggle="collapse"
                                             href="#company-items" aria-expanded="false"
                                             aria-controls="#company-items">الشركة </span>
+
                                     </li>
                                     <div id="company-items" class="collapse">
                                         <div class="bg-white gap-3 collapse-inner rounded">
@@ -130,9 +132,9 @@
                                     
                                     <li class="nav-link">
                                         <a>
-                                            <img src="../../../images/tenants.svg" class="icon"  data-bs-toggle="collapse"
-                                            href="#tenant-items" aria-expanded="false"
-                                            aria-controls="#tenant-items"/>
+                                            <img src="../../../images/tenants.svg" class="icon"
+                                                data-bs-toggle="collapse" href="#tenant-items" aria-expanded="false"
+                                                aria-controls="#tenant-items" />
                                             <span class="text nav-text collapsed" data-bs-toggle="collapse"
                                                 href="#tenant-items" aria-expanded="false"
                                                 aria-controls="#tenant-items"> المستأجرين </span>
@@ -140,38 +142,53 @@
                                     </li>
                                     <div id="tenant-items" class="collapse">
                                         <div class="bg-white gap-3 collapse-inner rounded">
-                                            
+
                                             <a class="collapse-item" href="../../../Pages/Tenants/TenantsData/TenantsData.html"> بيانات المستأجرين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                         <a class="collapse-item" href="../../../Pages/Tenants/TenantsContracts/TenantsContracts.html">   عقود المستأجرين   <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                         <a class="collapse-item" href="../../../Pages/Tenants/Tenants' debts/Tenantsdebts.html">  مديونيات المستأجرين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                         <a class="collapse-item" href="../../../Pages/Tenants/Messages/MessageTenants.html"> رسائل المستأجرين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
 
-    
+
                                         </div>
                                     </div>
-                                   
+                                    
+                                  
                                     <li class="nav-link">
                                         <a>
-                                            <img src="../../../images/accounts.svg" class="icon" data-bs-toggle="collapse"
-                                            href="#Accounts-items" aria-expanded="false"
-                                            aria-controls="#Accounts-items" />
+                                            <img src="../../../images/accounts.svg" class="icon"
+                                                data-bs-toggle="collapse" href="#Accounts-items" aria-expanded="false"
+                                                aria-controls="#Accounts-items" />
                                             <span class="text nav-text collapsed" data-bs-toggle="collapse"
-                                            href="#Accounts-items" aria-expanded="false"
-                                            aria-controls="#Accounts-items"> الحسابات </span>
+                                                href="#Accounts-items" aria-expanded="false"
+                                                aria-controls="#Accounts-items"> الحسابات </span>
                                         </a>
                                     </li>
-                                    <div id="Accounts-items" class="collapse" >
+                                    <div id="Accounts-items" class="collapse">
                                         <div class="bg-white gap-3 collapse-inner rounded">
-                                            <a class="collapse-item" href="../../../Pages/AccountsList/CashFeeding/Feed Box.html">   تغذية الصندوق <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item active" href="../../../Pages/AccountsList/Receipt Confirmation/Custody.html">  استلام عهدة  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../../Pages/AccountsList/closePendingContracts.html">   تسوية العقود المعلقة  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../../Pages/AccountsList/Money to tenant/Money to tenant.html">  مبالغ إلى مستأجر<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../../Pages/AccountsList/Money from  tenant/Money from tenant.html">   مبالغ من مستأجر<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../../Pages/AccountsList/Tax return/Tax returns.html">   الإقرار الضريبي <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-
-
+                                            <a class="collapse-item"
+                                                href="../../../Pages/AccountsList/CashFeeding/Feed Box.html"> تغذية
+                                                الصندوق <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../../Pages/AccountsList/Receipt Confirmation/Custody.html">
+                                                استلام عهدة <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                                    <a class="collapse-item"
+                                                    href="../../../Pages/AccountsList/closePendingContracts.html">
+                                                    تسوية العقود المعلقة <i
+                                                        class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>   
+                                            <a class="collapse-item"
+                                                href="../../../Pages/AccountsList/Money to tenant/Money to tenant.html">
+                                                مبالغ إلى مستأجر<i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../../Pages/AccountsList/Money from  tenant/Money from tenant.html">
+                                                مبالغ من مستأجر<i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item "
+                                                href="../../../Pages/AccountsList/Tax return/Tax returns.html"> الإقرار
+                                                الضريبي <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                         </div>
-                                       </div>
+                                    </div>
                                     <li class="nav-link">
                                         <a>
                                             <img src="../../../images/reports.svg" class="icon"
@@ -223,6 +240,7 @@
                                                 المالية للمستأجرين <i
                                                     class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
 
+
                                         </div>
                                     </div>
                                     <li class="nav-link">
@@ -238,15 +256,21 @@
                                     <div id="statics-items" class="collapse">
                                         <div class="bg-white gap-3 collapse-inner rounded">
 
-                                            <a class="collapse-item" href="../../statistics/Car statistics.html"> إحصائيات السيارات <i
+                                            <a class="collapse-item" href="../../statistics/Car statistics.html">
+                                                إحصائيات السيارات <i
                                                     class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../statistics/Tenants statistics.html"> إحصائيات المستأجرين <i
+                                            <a class="collapse-item" href="../../statistics/Tenants statistics.html">
+                                                إحصائيات المستأجرين <i
                                                     class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../../Pages/statistics/Contracts statistics.html"> إحصائيات العقود<i
+                                            <a class="collapse-item" href="../../statistics/Contracts statistics.html">
+                                                إحصائيات العقود<i
                                                     class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../statistics/Car Contracts statistics.html"> إحصائيات عقود السيارات <i
-                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../statistics/Tenants Contracts statistics.html"> إحصائيات عقود المستأجرين <i
+                                            <a class="collapse-item"
+                                                href="../../statistics/Car Contracts statistics.html"> إحصائيات عقود
+                                                السيارات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../statistics/Tenants Contracts statistics.html"> إحصائيات عقود
+                                                المستأجرين <i
                                                     class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
 
                                         </div>
@@ -284,26 +308,27 @@
                                             <span class="text nav-text collapsed" data-bs-toggle="collapse"
                                                 href="#services-items" aria-expanded="false"
                                                 aria-controls="#services-items">الخدمات</span>
-
                                         </a>
                                     </li>
                                     <div id="services-items" class="collapse">
                                         <div class="bg-white gap-3 collapse-inner rounded">
-                                            <a class="collapse-item" href="../../Services/banks/Banks.html"> البنوك <i
+                                            <a class="collapse-item" href="../../../Pages/Services/banks/Banks.html"> البنوك <i
                                                     class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item"
-                                                href="../../Services/sellingPoints/sellingPoints.html"> نقاط البيع <i
+                                                href="../../../Pages/Services/sellingPoints/sellingPoints.html"> نقاط البيع <i
                                                     class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item"
-                                                href="../../Services/techncal-connect/techncal-connect.html"> الربط
+                                                href="../../../Pages/Services/techncal-connect/techncal-connect.html"> الربط
                                                 التقني <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                                <a class="collapse-item" href="../../Services/Rental policy/Rental policy.html"> سياسة التأجير <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../Services/drivers/drivers.html">
+
+                                                <a class="collapse-item"
+                                                href="../../../Pages/Services/Rental policy/Rental policy.html"> سياسة التأجير <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../../Pages/Services/drivers/drivers.html">
                                                 السائقين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
 
-                                            <a class="collapse-item" href="../../Services/Alerts/Alerts.html"> التنبيهات
+                                            <a class="collapse-item" href="../../../Pages/Services/Alerts/Alerts.html"> التنبيهات
                                                 <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../Services/Membership/Membership.html">
+                                            <a class="collapse-item" href="../../../Pages/Services/Membership/Membership.html">
                                                 العضويات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
 
                                         </div>
@@ -317,9 +342,9 @@
                 <div class="col d-flex align-items-center justify-content-center">
                     <div class="container main-container">
                         <form action="">
-                            <div class="row g-3 mb-2">
+                            <div class="row g-3 mb-3">
                                 <div class="col">
-                                    <h3> بيانات العهد </h3>
+                                    <h3>  نقل السيارة </h3>
                                 </div>
                                 <div class="col-12 col-lg-6 d-flex justify-content-end">
 
@@ -333,130 +358,262 @@
 
                                 </div>
                             </div>
-                            <div class="row mb-3">
-                                <div class="col-12 filters-col">
-                                    <div class="filters-custom-order">
-
-                                        <label class="form-check-label" for="all">الكل</label>
-                                        <input class="form-check-input custom" type="radio" name="Options" id="all"
-                                            value="All" checked />
-                                    </div>
-                                    <div class="filters-custom-order">
-
-                                        <label class="form-check-label  filter1" for="Running">تحت الإجراء</label>
-                                        <input class="form-check-input custom" type="radio" name="Options" id="Running"
-                                            value="Running" />
-                                    </div>
-                                    <div class="filters-custom-order">
-
-                                        <label class="form-check-label filter2" for="Accepted">مقبول</label>
-                                        <input class="form-check-input custom" type="radio" name="Options" id="Accepted"
-                                            value="Accepted" />
-                                    </div>
-
-                                  
-                                    <div class="filters-custom-order">
-
-                                        <label class="form-check-label filter3" for="rejected">مرفوض</label>
-                                        <input class="form-check-input custom" type="radio" name="Options" id="rejected"
-                                            value="rejected" />
-                                    </div>
-
-                                </div>
-                            </div>
+                         
                             <div class="row table-row px-3">
                                 <div class="col  scroll-table-div  table-responsive-sm  w-100  ">
                                     <table class=" tables-style table table-borderless " id="table">
                                         <thead class="sticky-top">
                                             <tr>
-                                                <th scope="col" class="DifferAlign"> مستلم العهدة </th>
-                                                <th scope="col">تاريخ الاستلام</th>
-                                                <th scope="col"> مُسلِّم العهدة </th>
-                                                <th scope="col"> مدين</th>
-                                                <th scope="col"> دائن</th>
-                                                <th scope="col" class="DifferAlign"> رقم العهدة</th>
+                                                <th class="DifferAlign"> الناقل </th>
+                                                <th class="DifferAlign"> الوقود</th>
+                                                <th> التسجيل</th> 
+                                                <th> القراءة الحالية </th>
+                                                <th class="DifferAlign"> السيارة </th>
                                                 <th></th>
                                             </tr>
                                         </thead>
-                                     <tbody>
-                                       <tr>
-                                        <td class="DifferAlign">
-                                            <p class="FirstLineP" >  رامي عبدالحليم عثمان عماد </p>
-                                            <p class="secondLineP"> :  ملاحظات </p> 
-                                            <span class="secondLineP"> </span>
-                                        </td>
-                                        <td>20/07/2024</td>
-                                        <td>مصطفى عمر فوزي صادق</td>
-                                        <td>0.00</td>
-                                        <td>19,600.00</td>
-                                        <td class="DifferAlign">
-                                            <p class="FirstLineP"> 24-1304-4004100-000126</p>
-                                            <p class="secondLineP">20/07/2024</p>
-                                         </td>
-                                         <td>
-                                            <div class="filter-number-td">
+                                        <tbody>
+                                            <tr data-bs-toggle="modal" data-bs-target="#RepairModal">
+                                                <td class="DifferAlign">
+                                                    <p>يدوي</p>
+                                                </td>
+                                                <td class="DifferAlign">
+                                                    <p>بنزين أوكتان 98 مع كهرباء</p>
+                                                </td>
+                                                <td>
+                                                    <p>خصوصي</p>
+                                                </td>
+                                                <td><p>561,012</p></td>
+                                                <td class="DifferAlign car-name">
+                                                    <div class="d-flex gap-2 align-items-center">
+                                                        <div class="col">
+                                                            <div class="row justify-content-end">
+                                                                <div class="col-auto">
+                                                                    <div class="CarColorDiv" style="background-color: rgb(255, 255, 255);"></div>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <p class="FirstLineP">فورد - إسكورت - سيدان صغيرة - 2019  </p> 
+                                                                </div>
+                                                            </div>
+                                                            <div class="row justify-content-end">
+                                                                <div class="col-auto">
+                                                                    <p class="secondLineP">الحزام الذهبي</p>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <p class="secondLineP">1579634852</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto d-flex justify-content-end">
+                                                            <div class="CarBorder-CarData" >
+                                                                <img src="../../../images/2021000018.png"
+                                                                alt="Car-photo"
+                                                                class="CarPhoto">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="filter-number-td">
+                                                        <div>1</div>
 
-                                                <div class="filters filter2-div"></div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr data-bs-toggle="modal" data-bs-target="#RepairModal">
+                                                <td class="DifferAlign">
+                                                    <p>يدوي مع آلي</p>
+                                                </td>
+                                                <td class="DifferAlign">
+                                                    <p>بنزين أوكتان 95 مع كهرباء</p>
+                                                </td>
+                                                <td>
+                                                    <p>خصوصي</p>
+                                                </td>
+                                                <td><p>48,69</p></td>
+                                                <td class="DifferAlign car-name">
+                                                    <div class="d-flex gap-2 align-items-center">
+                                                        <div class="col">
+                                                            <div class="row justify-content-end">
+                                                            <div class="col-auto">
+                                                                <div class="CarColorDiv" style="background-color:  rgba(12, 69, 154, 1);"></div>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <p class="FirstLineP">فورد - إسكورت - سيدان صغيرة - 2019  </p> 
+                                                            </div>
+                                                          </div>
+                                                            <div class="row justify-content-end">
+                                                                <div class="col-auto">
+                                                                    <p class="secondLineP">الحزام الذهبي</p>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <p class="secondLineP">1579634852</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto d-flex justify-content-end">
+                                                            <div class="CarBorder-CarData" >
+                                                                <img src="../../../images/2021000001.png"
+                                                                alt="Car-photo"
+                                                                class="CarPhoto " >
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="filter-number-td">
+                                                        <div>2</div>
 
-                                                <div>1</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr data-bs-toggle="modal" data-bs-target="#RepairModal">
+                                                <td class="DifferAlign">
+                                                    <p>يدوي</p>
+                                                </td>
+                                                <td class="DifferAlign">
+                                                    <p>ديزل مع كهرباء</p>
+                                                </td>
+                                                <td>
+                                                    <p>خصوصي</p>
+                                                </td>
+                                                <td><p>500,000</p></td>
+                                                <td class="DifferAlign car-name">
+                                                    <div class="d-flex gap-2 align-items-center">
+                                                        <div class="col">
+                                                            <div class="row justify-content-end">
+                                                                <div class="col-auto">
+                                                                    <div class="CarColorDiv" style="background-color: rgba(249, 228, 167, 1);"></div>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <p class="FirstLineP">فورد - إسكورت - سيدان صغيرة - 2019  </p> 
+                                                                </div>
+                                                            </div>
+                                                            <div class="row justify-content-end">
+                                                                <div class="col-auto">
+                                                                    <p class="secondLineP">الحزام الذهبي</p>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <p class="secondLineP">1579634852</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto d-flex justify-content-end">
+                                                            <div class="CarBorder-CarData" >
+                                                                <img src="../../../images/2020000003.png"
+                                                                alt="Car-photo"
+                                                                class="CarPhoto">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="filter-number-td">
+                                                        <div>3</div>
 
-                                            </div>
-                                        </td>
-                                       </tr>
-                                       <tr>
-                                        <td class="DifferAlign">
-                                           
-                                        </td>
-                                        <td>20/07/2024</td>
-                                        <td>موفق رجب هاني موفق</td>
-                                        <td>0.00</td>
-                                        <td>5,950.00</td>
-                                        <td class="DifferAlign">
-                                            <p class="FirstLineP"> 24-1304-4004100-000069</p>
-                                            <p class="secondLineP">09/07/2024</p>
-                                         </td>
-                                         <td>
-                                            <div class="filter-number-td">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr data-bs-toggle="modal" data-bs-target="#RepairModal">
+                                                <td class="DifferAlign">
+                                                    <p>يدوي مع آلي</p>
+                                                </td>
+                                                <td class="DifferAlign">
+                                                    <p>بنزين أوكتان 95 مع كهرباء</p>
+                                                </td>
+                                                <td>
+                                                    <p>خصوصي</p>
+                                                </td>
+                                                <td><p>561,012</p></td>
+                                                <td class="DifferAlign car-name">
+                                                    <div class="d-flex gap-2 align-items-center">
+                                                        <div class="col">
+                                                            <div class="row justify-content-end">
+                                                                <div class="col-auto">
+                                                                    <div class="CarColorDiv" style="background-color: rgba(198, 15, 20, 1);"></div>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <p class="FirstLineP">فورد - إسكورت - سيدان صغيرة - 2019  </p> 
+                                                                </div>
+                                                            </div>                                                         
+                                                            <div class="row justify-content-end">
+                                                                <div class="col-auto">
+                                                                    <p class="secondLineP">الحزام الذهبي</p>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <p class="secondLineP">1579634852</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto d-flex justify-content-end">
+                                                            <div class="CarBorder-CarData" >
+                                                                <img src="../../../images/2021000006.png"
+                                                                alt="Car-photo"
+                                                                class="CarPhoto">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="filter-number-td">
+                                                        <div>4</div>
 
-                                                <div class="filters filter1-div"></div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr data-bs-toggle="modal" data-bs-target="#RepairModal">
+                                                <td class="DifferAlign">
+                                                    <p>يدوي مع آلي</p>
+                                                </td>
+                                                <td class="DifferAlign">
+                                                    <p>بنزين أوكتان 95 مع كهرباء</p>
+                                                </td>
+                                                <td>
+                                                    <p>خصوصي</p>
+                                                </td>
+                                                <td><p>48,69</p></td>
+                                                <td class="DifferAlign car-name">
+                                                    <div class="d-flex gap-2 align-items-center">
+                                                        <div class="col">
+                                                            <div class="row justify-content-end">
+                                                                <div class="col-auto">
+                                                                    <div class="CarColorDiv" style="background-color: rgb(0, 0, 0);"></div>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <p class="FirstLineP">فورد - إسكورت - سيدان صغيرة - 2019  </p> 
+                                                                </div>
+                                                            </div>
+                                                            <div class="row justify-content-end">
+                                                                <div class="col-auto">
+                                                                    <p class="secondLineP">الحزام الذهبي</p>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <p class="secondLineP">1579634852</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto d-flex justify-content-end">
+                                                            <div class="CarBorder-CarData" >
+                                                                <img src="../../../images/2021000022.png"
+                                                                alt="Car-photo"
+                                                                class="CarPhoto">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="filter-number-td">
+                                                        <div>5</div>
 
-                                                <div>2</div>
-
-                                            </div>
-                                        </td>
-                                       </tr>
-                                       <tr>
-                                        <td class="DifferAlign">
-                                            <p class="FirstLineP" >  رامي عبدالحليم عثمان عماد </p>
-                                            <p class="secondLineP"> :  ملاحظات </p> 
-                                            <span class="secondLineP"> </span>
-                                        </td>
-                                        <td>20/07/2024</td>
-                                        <td>عماد أيهم شعبان هيثم</td>
-                                        <td>0.00</td>
-                                        <td>19,600.00</td>
-                                        <td class="DifferAlign">
-                                            <p class="FirstLineP"> 24-1304-4004100-000126</p>
-                                            <p class="secondLineP">06/06/2024</p>
-                                         </td>
-                                         <td>
-                                            <div class="filter-number-td">
-
-                                                <div class="filters filter3-div"></div>
-
-                                                <div>3</div>
-
-                                            </div>
-                                        </td>
-                                       </tr>
-                                     </tbody>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
                                     </table>
-
                                 </div>
                             </div>
                         </form>
-                      
-                        <a href="../../../index.html" data-bs-toggle="tooltip" data-bs-placement="top"
+                         <a href="../../../index.html" data-bs-toggle="tooltip" data-bs-placement="top"
                             data-bs-custom-class="custom-tooltip" data-bs-title="العودة الي الرئيسية"
                             class="new-Page-icon"><img src="../../../images/back to main.svg" alt="man"></a>
                     </div>
@@ -471,7 +628,7 @@
                                 <main>
                                     <div class="accordion">
 
-                                 <div class="accordion-item">
+                                       <div class="accordion-item">
                                         <div class="accordion-item-header">
                                           <span class="accordion-item-header-title">  مستندات الشركة  </span>
                                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down accordion-item-header-icon">
@@ -682,7 +839,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="accordion-item">
+                                         <div class="accordion-item">
                                             <div class="accordion-item-header">
                                                 <span class="accordion-item-header-title"> الموظفين <div class="notify">
                                                     </div></span>
@@ -693,7 +850,7 @@
                                                     <path d="m6 9 6 6 6-6" />
                                                 </svg>
                                             </div>
-                                             <div class="accordion-item-description-wrapper">
+                                         <div class="accordion-item-description-wrapper">
                                                 <div class="accordion-item-description">
                                                     <div class="container-fluid">
                                                         <div class="row align-items-center ">
@@ -750,7 +907,6 @@
                                               </div>
                                             </div>
                                           </div>
-                                       
                                     </div>
                                 </main>
                             </div>
@@ -765,6 +921,114 @@
 
 
         </div>
+              <!-- Modal -->
+              <div class="modal fade" id="RepairModal"  data-bs-keyboard="false" tabindex="-1" aria-labelledby="RepairModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content cars-modal-content">
+                    <form action=""  class="needs-validation" novalidate>
+                        <div class="modal-header justify-content-center border-0">
+                            <div class="row w-100">
+                                <div class="col-md-12 d-flex justify-content-end">
+                                    <button type="button" class="modalClose" data-bs-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <h5 class="modal-title card-title m-auto">  نقل السيارة من فرع إلى فرع </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-body p-0">
+                            <div class="data-details">
+                              <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-sm-auto">
+                                        <div class="CarBorder-CarData">
+                                            <img src="../../../images/2021000001.png"
+                                                alt="Car-photo"
+                                                class="CarPhoto">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row align-items-baseline">
+                                            <div class="col">
+                                                <p class="carName">فورد - إسكورت - سيدان صغيرة - 2019  </p> 
+                                            </div>
+                                            <div class="col-sm-auto">
+                                                <div class="CarColorDiv" style="background-color: rgba(12, 69, 154, 1);"></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-auto">
+                                                <p class="m-0">1579634852</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="col-md-12">
+                                <div class="row mt-4 BranchName">
+                                    <div class="col-md-auto p-0">
+                                        <p>الفرع الحالي</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="Saved-data">الحزام الذهبي</p>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="col-md-12">
+                                <div class="row  align-items-baseline">
+                                    <div class="col-md-auto">
+                                        <label for="NewBranch" class="form-label">الفرع الجديد</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select class="form-select select-style " name="NewBranch"
+                                        id="NewBranch" required>
+                                        <option> </option>
+                                        <option value="main"> الرئيسي</option>
+                                        <option value="zahra"> الزهور </option>
+                                        <option value="jaerana"> جعرانة </option>
+                                        <option value="murjan">  المرجان </option>
+                                        <option value="alhadaba">  الهضبة </option>
+                                        <option value="alwashiha">   الوشحاء </option>
+                                    </select>
+                                    <div class="invaild">
+                                        <div class="invalid-feedback">
+                                            الحقل مطلوب
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                              </div>
+                                
+                              <div class="col-md-12 mb-3">
+                                <div class="row  align-items-baseline">
+                                    <div class="col-md-auto">
+                                        <label for="notes" class="form-label">
+                                            الملاحظات
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <textarea class=" form-control textarea-inputs"
+                                        rows="1" maxlength="100" name="notes"
+                                        type="text" ></textarea>            
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer border-0 justify-content-center mx-1">
+                          <div class="row w-100 g-2">
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-standard w-100">موافق</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">إلغاء الأمر</button>
+                            </div>
+                          </div>
+                          </div>
+                    </form>
+                  </div>
+              </div>
+          </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -776,44 +1040,6 @@
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../../../scripts/Scripts.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var table = document.getElementById("table");
-            var rows = table.getElementsByTagName("tr");
-    
-            for (var i = 0; i < rows.length; i++) {
-                var cells = rows[i].getElementsByTagName("td");
-                let accepted = false; 
-    
-                if (cells.length > 0) {
-                    var lastTd = cells[cells.length-7];
-    
-                    if (lastTd && lastTd.innerHTML.trim() !== "") {
-                        accepted = true;
-                        console.log(lastTd.innerHTML)
-                    }
-    
-                    for (var j = 0; j < cells.length; j++) {
-                        cells[j].addEventListener("click", function () {
-                            if (accepted) {
-                                window.location.href = "Custody Receipt.html";
-                            } else {
-                                window.location.href = "Custody NotReceived.html";
-                            }
-                        });
-                    }
-                }
-            }
-        });
-    </script>
-    
-    
-
-
-
-
-
-
 
 </body>
 

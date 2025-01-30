@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> نظام الادارة - اضافة فرع</title>
+    <title> نظام الادارة -  إضافة سيارة</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -20,9 +20,7 @@
 
 <body>
     <div id="wrapper" class="Branches-wrapper d-flex flex-column ">
-        <!-- <div class="min-loader-back">
-            <span class="Main-Loader"></span>
-        </div> -->
+      
         <!-- Top Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light ">
             <div class="nav-container container-fluid">
@@ -101,11 +99,13 @@
                                     </li>
                                     <div id="company-items" class="collapse">
                                         <div class="bg-white gap-3 collapse-inner rounded">
-                                            <a class="collapse-item active" href="../../../Pages/company/Branches/Branches.html"> الفروع <i
+                                            <a class="collapse-item "
+                                                href="../../../Pages/company/Branches/Branches.html"> الفروع <i
                                                     class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item"  href="../../../Pages/company/owners/owners.html"> الملاك <i
-                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                             
+                                            <a class="collapse-item" href="../../../Pages/company/owners/owners.html">
+                                                الملاك <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+
                                         </div>
                                     </div>
                                     <li class="nav-link" >
@@ -122,6 +122,7 @@
                                         <a class="collapse-item" href="../../../Pages/Cars/SalesProcedures/SalesProcedures.html">  إجراءات البيع <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                     </div>
                                     </div>
+                                   
                                     <li class="nav-link">
                                         <a>
                                             <img src="../../../images/tenants.svg" class="icon" data-bs-toggle="collapse"
@@ -259,39 +260,20 @@
                     </nav>
                 </div>
                 <div class="col  d-flex align-items-center justify-content-center flex-column">
-                     <!-- Alerts -->
-                     <!-- <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-12 d-flex flex-column gap-1 w-100">
-                                <nav class="warnings navbar-expand-lg navbar-light py-2" id="warnings">
-                                <div class="marquee">
-                                    <div class="marquee-content">
-                                    <p>الشركة موقوفة, تم تقليص بعض الخدمات </p>
-                                    <p>الخدمة مؤقتة حاليًا بسبب التحديثات</p>
-                                    <p>يرجى التواصل مع الدعم الفني في حالة الطوارئ</p>
-                                    <p>الشركة موقوفة, تم تقليص بعض الخدمات</p>
-                                    </div>
-                                </div>
-                                <i  class="fa-regular fa-circle-xmark marquee-xmark" id="marquee-xmark"></i>
-                                </nav>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- --- -->
                     <div class="container NewUpdate-container">
-                        <form action="" class="needs-validation" novalidate>
-                            <div class="row mt-3 g-3">
-                               
+                            <div class="row mt-3 g-3 CarPagesRow">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-9">
+                                        <form action="" class="needs-validation" novalidate id="carsForm">
+
                                        <div class="row g-3 my-2">
                                         <div class="col-md-6">
-                                            <h3>إضافة فرع</h3>
+                                            <h3>إضافة سيارة</h3>
                                         </div>
                                         <div class="col-md-6 save-col">
                                             <button type="submit" class="custom-img-btn"> <img
                                                     src="../../../images/save.svg" /></button>
-                                            <button type="button" class="custom-img-btn"><a class="d-flex align-items-center" href="Branches.html"><img class="Chevron" src="../../../images/Chevron_Left.svg" /></a></button>
+                                            <button type="button" class="custom-img-btn"><a class="d-flex align-items-center" href="CarsData.html"><img class="Chevron" src="../../../images/Chevron_Left.svg" /></a></button>
                                         </div>
                                        </div>
                                         <main class="mt-3 g-3">
@@ -313,15 +295,15 @@
                                                         <div class="accordion-item-description">
                                                             <hr class="accordion-items-hr">
                                                             <div class="container-fluid data-scroll-container">
-                                                                <div class="row">
-                                                                    <div class="col-md-7">
-                                                                        <label for="Branch-name-ar"
-                                                                            class="form-label">اسم الفرع  عربي
+                                                                <div class="row justify-content-between">
+                                                                    <div class="col-md-5">
+                                                                        <label for="Serial-number"
+                                                                            class="form-label">  الرقم التسلسي
                                                                             <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                         </label>
-                                                                        <input type="text" id="Branch-name-ar"
-                                                                            class="form-control inputs arabic-input"
-                                                                            name="Branch-name-ar " maxlength="100" required >
+                                                                        <input type="number" id="Serial-number"
+                                                                            class="form-control inputs number-input "
+                                                                            name="Serial-number" required >
                                                                         <div class="invaild">
                                                                             <div class="invalid-feedback">
                                                                                 الحقل مطلوب
@@ -329,13 +311,13 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-5">
-                                                                        <label for="Branch-name-ar-abstract"
-                                                                            class="form-label">اسم الفرع مختصر
-                                                                            <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                        </label>
-                                                                        <input type="text" id="Branch-name-ar-abstract"
-                                                                            class="form-control inputs  arabic-input"
-                                                                            name="Branch-name-ar-abstract " maxlength="20"  required>
+                                                                        <label for="register" class="form-label">
+                                                                            التسجيل <i class="fa-solid fa-star-of-life RequirdStar"></i></label>
+                                                                        <select class="form-select select-style " name="register"
+                                                                            id="register" required>
+                                                                            <option selected disabled> </option>
+                                                                            <option value="private">خصوصي</option>
+                                                                        </select>
                                                                         <div class="invaild">
                                                                             <div class="invalid-feedback">
                                                                                 الحقل مطلوب
@@ -345,78 +327,93 @@
 
                                                                 </div>
                                                                 <div class="row">
-                                                                    <div class="col-md-7">
-                                                                        <label for="Branch-name-en"
-                                                                            class="form-label">اسم الفرع
-                                                                             إنجليزي
+                                                                    <div class="col-md-12">
+                                                                        <label for="CarName"
+                                                                            class="form-label">السيارة
                                                                              <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                             </label>
-                                                                        <input type="text" id="Branch-name-en"
-                                                                            class="form-control inputs english-input"
-                                                                            name="Branch-name-en" maxlength="100"  required>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
+                                                                            <div class="col" style="position: relative;">
+                                                                                <input type="text" id="CarName" class="form-control inputs " name="CarName" required>
+                                                                                <div id="CarsNameList"
+                                                                                class="autocomplete-items CarsNameList">
+                                                                                </div>
+                                                                                <div class="invaild">
+                                                                                    <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                                </div>
                                                                             </div>
-                                                                        </div>
                                                                     </div>
-                                                                    <div class="col-md-5">
-                                                                        <label for="Branch-name-en-abstract"
-                                                                            class="form-label">اسم الفرع مختصر
-                                                                            <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                        </label>
-                                                                        <input type="text" id="Branch-name-en-abstract"
-                                                                            class="form-control inputs english-input"
-                                                                            name="Branch-name-en-abstract" maxlength="20"  required>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
                                                                 </div>
                                                                 <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <label for="manager-name-ar"
-                                                                            class="form-label">اسم المدير  عربي
-                                                                            <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                        </label>
-                                                                        <input type="text" id="manager-name-ar"
-                                                                            class="form-control inputs arabic-input"
-                                                                            name="manager-name-ar" maxlength="30"  required>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <label for="manager-name-en"
-                                                                            class="form-label">اسم المدير
-                                                                             إنجليزي
+                                                                    <div class="col-md-12">
+                                                                        <label for="Chassis-number"
+                                                                            class="form-label">رقم الهيكل
                                                                              <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                             </label>
-                                                                        <input type="text" id="manager-name-en"
-                                                                            class="form-control inputs english-input"
-                                                                            name="manager-name-en" maxlength="30"  required>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <label for="Tax-number" class="form-label">رقم الفرع بنظام التأجير 
-                                                                            <i class="fa-solid fa-star-of-life RequirdStar"></i>
-
-                                                                            </label>
-                                                                        <input type="text" id="Tax-number"
+                                                                        <input type="text" id="Chassis-number"
                                                                             class="form-control inputs"
-                                                                            name="Tax-number" maxlength="30"  required>
+                                                                            name="Chassis-number"  required>
+                                                                        <div class="invaild">
+                                                                            <div class="invalid-feedback">
+                                                                                الحقل مطلوب
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row justify-content-between">
+                                                                    <div class="col-md-5">
+                                                                        <label for="fuel" class="form-label">
+                                                                            الوقود <i class="fa-solid fa-star-of-life RequirdStar"></i></label>
+                                                                        <select class="form-select select-style " name="fuel"
+                                                                            id="fuel" required>
+                                                                            <option selected disabled> </option>
+                                                                            <option value="">بنزين أوكتان 95 مع كهرباء</option>
+                                                                        </select>
+                                                                        <div class="invaild">
+                                                                            <div class="invalid-feedback">
+                                                                                الحقل مطلوب
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-5">
+                                                                        <label for="fuelValue"
+                                                                            class="form-label"> قيمة الوقود ممتلئ
+                                                                            <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                        </label>
+                                                                        <input type="number" id="fuelValue"
+                                                                            class="form-control inputs number-input "
+                                                                            name="fuelValue" required >
+                                                                        <div class="invaild">
+                                                                            <div class="invalid-feedback">
+                                                                                الحقل مطلوب
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row justify-content-between">
+                                                                    <div class="col-md-5">
+                                                                        <label for="Oil" class="form-label">
+                                                                            الزيت <i class="fa-solid fa-star-of-life RequirdStar"></i></label>
+                                                                        <select class="form-select select-style " name="Oil"
+                                                                            id="Oil" required>
+                                                                            <option selected disabled> </option>
+                                                                            <option  value="سوبر شيل">سوبر شيل</option>
+                                                                        </select>
+                                                                        <div class="invaild">
+                                                                            <div class="invalid-feedback">
+                                                                                الحقل مطلوب
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-5">
+                                                                        <label for="transporter" class="form-label">
+                                                                            الناقل <i class="fa-solid fa-star-of-life RequirdStar"></i></label>
+                                                                        <select class="form-select select-style " name="transporter"
+                                                                            id="transporter" required>
+                                                                            <option selected disabled> </option>
+                                                                            <option value="manual">يدوي</option>
+                                                                            <option value="mixed">يدوي مع آلي</option>
+                                                                            <option value="automatic">آلي</option>
+                                                                        </select>
                                                                         <div class="invaild">
                                                                             <div class="invalid-feedback">
                                                                                 الحقل مطلوب
@@ -425,228 +422,156 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <label for="phone1" class="form-label">
-                                                                            الهاتف</label>
-                                                                        <div class="input-group has-validation">
-                                                                            <input type="tel"
-                                                                                class="form-control inputs tel-input"
-                                                                                id="phone1" name="phone1" maxlength="20"  >
-                                                                            <select
-                                                                                class="input-group-text select-style counterCode"
-                                                                                name="counterCode-phone1">
-                                                                                <option value="+966">+966</option>
-                                                                                <option value="+962">+962</option>
-                                                                                <option value="+20">+20</option>
-
-
-                                                                            </select>
-                                                                            <div class="invaild">
-                                                                                <div class="invalid-feedback">
-                                                                                </div>
+                                                                    <div class="col-md-7">
+                                                                        <div class="row g-1">
+                                                                            <label for="transporter" class="form-label">
+                                                                                رقم اللوحة <i class="fa-solid fa-star-of-life RequirdStar"></i></label>
+                                                                            <div class="col-auto">
+                                                                                <select class="plate-number select-style form-select" name="plate-number1" required>
+                                                                                    <option value=""></option>
+                                                                                    <option value="0">0</option>
+                                                                                    <option value="1">1</option>
+                                                                                    <option value="2">2</option>
+                                                                                    <option value="3">3</option>
+                                                                                    <option value="4">4</option>
+                                                                                    <option value="5">5</option>
+                                                                                    <option value="6">6</option>
+                                                                                    <option value="7">7</option>
+                                                                                    <option value="8">8</option>
+                                                                                    <option value="9">9</option>
+                                                                                </select>
                                                                             </div>
+                                                                            <div class="col-auto p-0">
+                                                                                <select class="plate-number select-style form-select " name="plate-number2" required>
+                                                                                    <option value=""></option>
+                                                                                    <option value="0">0</option>
+                                                                                    <option value="1">1</option>
+                                                                                    <option value="2">2</option>
+                                                                                    <option value="3">3</option>
+                                                                                    <option value="4">4</option>
+                                                                                    <option value="5">5</option>
+                                                                                    <option value="6">6</option>
+                                                                                    <option value="7">7</option>
+                                                                                    <option value="8">8</option>
+                                                                                    <option value="9">9</option>
+                                                                                </select>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <select class="plate-number select-style form-select " name="plate-number3" required>
+                                                                                    <option value=""></option>
+                                                                                    <option value="0">0</option>
+                                                                                    <option value="1">1</option>
+                                                                                    <option value="2">2</option>
+                                                                                    <option value="3">3</option>
+                                                                                    <option value="4">4</option>
+                                                                                    <option value="5">5</option>
+                                                                                    <option value="6">6</option>
+                                                                                    <option value="7">7</option>
+                                                                                    <option value="8">8</option>
+                                                                                    <option value="9">9</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        <div class="col-auto p-0">
+                                                                            <input type="text" class=" form-control plate-letters inputs" name="plate-letters"  dir="rtl" required>
                                                                         </div>
-                                                                       
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <label for="phone2" class="form-label"> الجوال
-                                                                        </label>
-                                                                        <div class="input-group ">
-                                                                            <input type="tel"
-                                                                                class="form-control inputs tel-input"
-                                                                                id="phone2" name="phone2" maxlength="20">
-                                                                            <select
-                                                                                class="input-group-text select-style counterCode"
-                                                                                name="counterCode-phone2">
-                                                                                <option value="+966">+966</option>
-                                                                                <option value="+962">+962</option>
-                                                                                <option value="+20">+20</option>
-                                                                            </select>
-                                                                            <div class="invaild">
-                                                                                <div class="invalid-feedback">
-                                                                                </div>
-                                                                            </div>
                                                                         </div>
                                                                         
                                                                        
                                                                     </div>
-
                                                                 </div>
-                                                                <div class="row align-items-center g-3 ">
-                                                                    <div class="col-md-8">
+                                                                <div class="row justify-content-between pt-4">
+                                                                    <div class="col-md-5">
+                                                                        <label for="MainColor" class="form-label">
+                                                                            اللون الأساسي  <i class="fa-solid fa-star-of-life RequirdStar"></i></label>
+                                                                        <select class="form-select select-style " name="MainColor"
+                                                                            id="MainColor" required>
+                                                                            <option selected disabled> </option>
+                                                                            <option value=""></option>
+                                                                        </select>
+                                                                        <div class="invaild">
+                                                                            <div class="invalid-feedback">
+                                                                                الحقل مطلوب
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-5">
+                                                                        <label for="SecondaryColor" class="form-label">
+                                                                            اللون الثانوي </label>
+                                                                        <select class="form-select select-style " name="SecondaryColor"
+                                                                            id="SecondaryColor" >
+                                                                            <option selected disabled> </option>
+                                                                            <option value=""></option>
+                                                                          
+                                                                        </select>
+                                                                        <div class="invaild">
+                                                                            <div class="invalid-feedback">
+                                                                                الحقل مطلوب
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row justify-content-between">
+                                                                    <div class="col-md-5">
+                                                                        <label for="SeatColor" class="form-label">
+                                                                            لون المقاعد </label>
+                                                                        <select class="form-select select-style " name="SeatColor"
+                                                                            id="SeatColor" >
+                                                                            <option selected disabled> </option>
+                                                                            <option value=""> </option>
+                                                                        </select>
+                                                                        <div class="invaild">
+                                                                            <div class="invalid-feedback">
+                                                                                الحقل مطلوب
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-5">
+                                                                        <label for="FloorColor" class="form-label">
+                                                                            لون الأرضية 
+                                                                        </label>
+                                                                        <select class="form-select select-style " name="FloorColor"
+                                                                            id="FloorColor" >
+                                                                            <option selected disabled> </option>
+                                                                            <option value=""></option>
+                                                                        </select>
+                                                                        <div class="invaild">
+                                                                            <div class="invalid-feedback">
+                                                                                الحقل مطلوب
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row justify-content-between">
+                                                                    <div class="col-md-5">
+                                                                        <label for="start-date"  class="form-label" > تاريخ الإنضمام</label>
+                                                                        <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                        <input type="date" class="form-control inputs custom-date-input" id="start-date" name="start-date" required>
+                                                                        <div class="invaild">
+                                                                            <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-5">
+                                                                        <label for="currentRead" 
+                                                                            class="form-label"> القراءة الحالية
+                                                                            <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                        </label>
+                                                                        <input type="number" id="currentRead"
+                                                                            class="form-control inputs number-input "
+                                                                            name="currentRead" required >
+                                                                        <div class="invaild">
+                                                                            <div class="invalid-feedback">
+                                                                                الحقل مطلوب
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row align-items-center g-3 pt-2">
+                                                                    <div class="col-md-12">
                                                                         <label>ملاحظات</label>
                                                                         <textarea class=" form-control textarea-inputs"
                                                                             rows="1" maxlength="100" name="notes"
                                                                             type="text"></textarea>
                                                                     </div>
-                                                                    <div class="col-md-4">
-                                                                        <div class="row align-items-center justify-content-end">
-                                                                            <div class="col-auto">
-                                                                                <button type="button" class="custom-img-btn"><img src="../../../images/icon.svg" data-bs-toggle="modal" href="#signature-modal"  /></button>
-                                                                            </div>
-                                                                            <div class="col-auto">
-                                                                                <img src="../../../images/signature.svg"
-                                                                                    id="previewSignature">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="inputs-accordion-item">
-                                                    <div class="inputs-accordion-item-header">
-                                                        <span class="accordion-item-header-title"> <i
-                                                                class="fa-solid fa-check data-check"></i> العنوان
-                                                        </span>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                                                            viewBox="0 0 24 24" fill="none" stroke="#666666"
-                                                            stroke-width="3" stroke-linecap="round"
-                                                            stroke-linejoin="round"
-                                                            class="lucide lucide-chevron-down accordion-item-header-icon">
-                                                            <path d="m6 9 6 6 6-6" />
-                                                        </svg>
-                                                    </div>
-                                                    <div class="accordion-item-description-wrapper">
-                                                        <div class="accordion-item-description">
-                                                            <hr class="accordion-items-hr">
-                                                            <div class="container-fluid data-scroll-container">
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <label for="City-Area"
-                                                                            class="form-label">المنطقة / المدينة
-                                                                            <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                        </label>
-                                                                        <input type="text" id="City-Area"
-                                                                            class="form-control inputs" name="City-Area" maxlength="50"required>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <label for="street-name-ar"
-                                                                            class="form-label">اسم الشارع  عربي</label>
-                                                                        <input type="text" id="street-name-ar"
-                                                                            class="form-control inputs arabic-input"
-                                                                            name="street-name-ar" maxlength="50" >
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <label for="street-name-en"
-                                                                            class="form-label">اسم الشارع
-                                                                             إنجليزي</label>
-                                                                        <input type="text" id="street-name-en"
-                                                                            class="form-control inputs english-input"
-                                                                            name="street-name-en" maxlength="50" >
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <label for="District-name-ar"
-                                                                            class="form-label">اسم الحي  عربي</label>
-                                                                        <input type="text" id="District-name-ar"
-                                                                            class="form-control inputs arabic-input"
-                                                                            name="District-name-ar" maxlength="50" >
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <label for="District-name-en"
-                                                                            class="form-label">اسم الحي
-                                                                             إنجليزي</label>
-                                                                        <input type="text" id="District-name-en"
-                                                                            class="form-control inputs english-input"
-                                                                            name="District-name-en"  maxlength="50" >
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-6 ">
-                                                                        <div class="row">
-                                                                            <div class="col-md-6">
-                                                                                <label for="Building-number"
-                                                                                    class="form-label"> رقم
-                                                                                    المبنى</label>
-                                                                                <input type="text"
-                                                                                    id="Building-number"
-                                                                                    class="form-control inputs text-center"
-                                                                                    name="Building-number" maxlength="7" >
-                                                                                <div class="invaild">
-                                                                                    <div class="invalid-feedback">
-                                                                                        الحقل مطلوب
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-md-6">
-                                                                                <label for="Unit-number"
-                                                                                    class="form-label"> رقم
-                                                                                    الوحدة</label>
-                                                                                <input type="text" id="Unit-number"
-                                                                                    class="form-control inputs text-center"
-                                                                                    name="Unit-number" maxlength="7" >
-                                                                                <div class="invaild">
-                                                                                    <div class="invalid-feedback">
-                                                                                        الحقل مطلوب
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-6 ">
-                                                                        <div class="row">
-                                                                            <div class="col-md-6">
-                                                                                <label for="zip-code"
-                                                                                    class="form-label"> الرمز البريدي
-                                                                                </label>
-                                                                                <input type="text" id="zip-code"
-                                                                                    class="form-control inputs text-center"
-                                                                                    name="zip-code" maxlength="7" >
-                                                                                <div class="invaild">
-                                                                                    <div class="invalid-feedback">
-                                                                                        الحقل مطلوب
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-md-6">
-                                                                                <label for="Additional-number"
-                                                                                    class="form-label"> رقم إضافي
-                                                                                </label>
-                                                                                <input type="text"
-                                                                                    id="Additional-number"
-                                                                                    class="form-control inputs text-center"
-                                                                                    name="Additional-number" maxlength="7" >
-                                                                                <div class="invaild">
-                                                                                    <div class="invalid-feedback">
-                                                                                        الحقل مطلوب
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -655,10 +580,211 @@
 
                                             </div>
                                         </main>
+                                    </form>  
+                                    <div class="accordion inputs-accordion my-3">
+                                        <div class="inputs-accordion-item">
+                                            <div class="inputs-accordion-item-header">
+                                                <span class="accordion-item-header-title"><i
+                                                    class="fa-solid fa-check data-check"></i> الوثائق
+                                                </span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                    viewBox="0 0 24 24" fill="none" stroke="#666666"
+                                                    stroke-width="3" stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    class="lucide lucide-chevron-down accordion-item-header-icon">
+                                                    <path d="m6 9 6 6 6-6" />
+                                                </svg>
+                                            </div>
+                                            <div class="accordion-item-description-wrapper">
+                                                <div class="accordion-item-description">
+                                                    <hr class="accordion-items-hr ">
+                                                    <div class="container-fluid Update-data-scroll-container">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <form  id="DocumentsForm" class="needs-validation" novalidate>
+                                                                    <div class="row align-items-end">
+                                                                        <div class="col-md-6 col-lg-4 d-flex flex-wrap flex-md-nowrap align-items-baseline gap-2" >
+                                                                            <label for="doc" class="form-label">الوثيقة</label>
+                                                                            <select class="form-select select-style" name="doc" id="documentSelect" required>
+                                                                                <option value="رخصة السير" selected>رخصة السير </option>
+                                                                                <option value="رخصة السيارة">رخصة السيارة</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-6 col-lg-8 doc-save-align d-flex justify-content-end" >
+                                                                            <button type="submit" class="custom-img-btn" id="saveBtn">
+                                                                                <img  src="../../../images/save (3).svg">
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="col-md-12" id="documentDetails" >
+                                                                            <div class="row mt-2">
+                                                                                
+                                                                                <div class="col-md-5">
+                                                                                    <label for="Doc-Date" class="form-label">
+                                                                                        تاريخها <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                    </label>
+                                                                                    <input type="date" id="Doc-Date" class="form-control inputs custom-date-input" name="Doc-Date" required>
+                                                                                    <div class="invaild">
+                                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            
+                                                                            <div class="row justify-content-between">
+                                                                                <div class="col-md-5">
+                                                                                    <label for="start-Date" class="form-label">
+                                                                                        بدايتها <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                    </label>
+                                                                                    <input type="date" id="start-Date" class="form-control inputs custom-date-input" name="start-Date" required>
+                                                                                    <div class="invaild">
+                                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-5">
+                                                                                    <label for="end-Date" class="form-label">
+                                                                                        نهايتها <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                    </label>
+                                                                                    <input type="date" id="end-Date" class="form-control inputs custom-date-input" name="end-Date" required>
+                                                                                    <div class="invaild">
+                                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            
+                                                                            <div class="row  g-3 justify-content-between">
+                                                                                <div class="col-md-5">
+                                                                                    <label>ملاحظات</label>
+                                                                                    <textarea class="form-control textarea-inputs" rows="1" maxlength="100" name="notes" type="text" id="DocumentsNotes"></textarea>
+                                                                                </div>
+                                                                                <div class="col-md-5 ">
+                                                                                    <label class="mb-1">صورة الوثيقة</label>
+                                                                                    <div class="drop-zone">
+                                                                                        <span class="drop-zone__prompt">
+                                                                                            <img src="../../../images/upload icon.svg">
+                                                                                            قم بسحب وإسقاط صورة أو اختر صورة
+                                                                                        </span>
+                                                                                        <input type="file" name="myFile" class="drop-zone__input" id="DocumentImage">
+                                                                                      </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>   
+                                    </div>  
+                                    <div class="accordion inputs-accordion">
+                                        <div class="inputs-accordion-item">
+                                            <div class="inputs-accordion-item-header">
+                                                <span class="accordion-item-header-title"><i
+                                                    class="fa-solid fa-check data-check"></i> الصيانة
+                                                </span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                    viewBox="0 0 24 24" fill="none" stroke="#666666"
+                                                    stroke-width="3" stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    class="lucide lucide-chevron-down accordion-item-header-icon">
+                                                    <path d="m6 9 6 6 6-6" />
+                                                </svg>
+                                            </div>
+                                            <div class="accordion-item-description-wrapper">
+                                                <div class="accordion-item-description">
+                                                    <hr class="accordion-items-hr ">
+                                                    <div class="container-fluid Update-data-scroll-container">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <form  id="MaintenanceForm" class="needs-validation" novalidate>
+                                                                    <div class="row align-items-end">
+                                                                        <div class="col-md-6 col-lg-4 d-flex flex-wrap flex-md-nowrap align-items-baseline gap-2" >
+                                                                            <label for="doc" class="form-label">الصيانة</label>
+                                                                            <select class="form-select select-style" name="doc" id="Maintenance-Select" required>
+                                                                                <option value="زيت مكينه" selected>زيت مكينه</option>
+                                                                                <option value="الإطارات">الإطارات</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-6 col-lg-8 doc-save-align d-flex justify-content-end" >
+                                                                            <button type="submit" class="custom-img-btn" id="Maintenance-saveBtn">
+                                                                                <img  src="../../../images/save (3).svg">
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="col-md-12" id="Maintenance-Details" >
+                                                                            <div class="row justify-content-between">
+                                                                                <div class="col-md-5">
+                                                                                    <label for="start-Date-Maintenance" class="form-label">
+                                                                                        بدايتها <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                    </label>
+                                                                                    <input type="date" id="start-Date-Maintenance" class="form-control inputs custom-date-input" value="" name="start-Date-Maintenance" required>
+                                                                                    <div class="invaild">
+                                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-5">
+                                                                                    <label for="end-Date-Maintenance" class="form-label">
+                                                                                        نهايتها <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                    </label>
+                                                                                    <input type="date" id="end-Date-Maintenance" class="form-control inputs custom-date-input" name="end-Date-Maintenance" required>
+                                                                                    <div class="invaild">
+                                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4">
+                                                                                    <label for="Current-read-Maintenance" class="form-label">
+                                                                                        القراءة الحالية
+                                                                                    </label>
+                                                                                    <input type="number" id="Current-read-Maintenance" class="form-control inputs number-input" name="Current-read-Maintenance" >
+                                                                                    <div class="invaild">
+                                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-4">
+                                                                                    <label for="Consumption" class="form-label">
+                                                                                        الاستهلاك (كم) <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                    </label>
+                                                                                    <input type="number" id="Consumption" class="form-control inputs  number-input" name="Consumption" required>
+                                                                                    <div class="invaild">
+                                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-4">
+                                                                                    <label for="Consumption-up-to" class="form-label">
+                                                                                        الاستهلاك حتى (كم) 
+                                                                                    </label>
+                                                                                    <input type="number" id="Consumption-up-to" class="form-control inputs  number-input" name="Consumption-up-to" >
+                                                                                    <div class="invaild">
+                                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            
+                                                                            <div class="row  g-3 justify-content-between">
+                                                                                <div class="col-md-12">
+                                                                                    <label>ملاحظات</label>
+                                                                                    <textarea class="form-control textarea-inputs" rows="1" maxlength="100" name="notes" type="text" id="Maintenance-Notes"></textarea>
+                                                                                </div>
+                                                                            </div>
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>   
+                                    </div>
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                               
                     </div>
                 </div>
                 <div class="col-auto sidebar2-col close2">
@@ -952,49 +1078,7 @@
             </div>
 
         </div>
-        <!-- signature modal -->
-        <div class="modal fade" id="signature-modal" tabindex="-1" aria-hidden="true" >
-            <div class="modal-dialog modal-dialog-centered d-flex justify-content-center">
-                <div class="modal-content signature-modal-content p-3">
-                    <div class="modal-body Signature-modal-body">
-                        <div class="SignatureCard">
-                            <div class="image-main-container" id="removeSignatureImg"></div>
-                            <div class="upload-container">
-   
-   
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-3">
-                                <div class="sinature-Btn-Card p-2">
-                                    <img src="../../../images/signature/save.svg" class="w-100" id="save">
-                                </div>
-                            </div>
-                            <div class="col-3">
-                               <div class="sinature-Btn-Card p-2">
-                                   <img src="../../../images/signature/Frame.svg" class="w-100" id="clear">
-                               </div>
-                           </div>
-                            <div class="col-3">
-                               <div class="sinature-Btn-Card p-2">
-                                   <img src="../../../images/signature/file-signature_9795523 1.svg"
-                                       class="w-100" id="WriteSignature">
-                               </div>
-                           </div>
-                            <div class="col-3">
-                               <div class="sinature-Btn-Card p-2">
-                                   <img src="../../../images/signature/Pic.svg" class="w-100"
-                                       id="UploadSigntaurePic">
-                                   <input type="file" id="imageUpload" accept="image/*"
-                                       style="display: none;">
-                               </div>
-                           </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -1006,8 +1090,235 @@
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../../../scripts/Scripts.js"></script>
-     <script src="../../../scripts/signature.js"></script>
+    <!-- سكربت لعمل قائمة اختيارات السيارة  -->
+<script>  
+const dataLists = {
+    Cars: [
+        { name: "هيونداي - أكسنت -  سيدان متوسطة - 2021 - س و ص 1870 - بيج" },
+        { name: "فورد - تورس -  سيدان متوسطة - 2021 - د ق هـ 4707 - رمادي" },
+        { name: "كيا - تيلورايد -  عائلية كبيرة - 2021 - ص هـ ن 0420 - بنفسجي" },
+        { name: "لكزس - اي اس -  فخمة متوسطة - 2020 - س و س 2877 - أبيض" },
+        { name: "فورد - تورس -  سيدان متوسطة - 2019 - و ك د 3848 - كحلي" },
+        { name: "بيجو - ترافيلر -  عائلية كبيرة - 2020 - ب أ ع 4244 - بني" }
+    ]
+};
 
+$(document).ready(function () {
+    function setupAutocomplete(inputId, list, dataList) {
+        const input = $("#" + inputId);
+        const autocompleteList = $("#" + list);
+
+        input.on("input", function () {
+            const value = this.value.trim().toLowerCase();
+            autocompleteList.empty().hide();
+
+            if (value) {
+                let matches = dataList.filter(car => car.name.toLowerCase().includes(value));
+
+                if (matches.length > 0) {
+                    matches.forEach(car => {
+                        autocompleteList.append(`<div class="autocomplete-item">${car.name}</div>`);
+                    });
+                    autocompleteList.show();
+                }
+            }
+        });
+
+        $(document).on("click", function (e) {
+            if (!$(e.target).closest("#" + list + ", #" + inputId).length) {
+                autocompleteList.empty().hide();
+            }
+        });
+
+        autocompleteList.on("click", ".autocomplete-item", function () {
+            input.val($(this).text());
+            autocompleteList.empty().hide();
+        });
+    }
+
+    setupAutocomplete("CarName", "CarsNameList", dataLists.Cars);
+});
+</script>
+<!-- سكربت التنقل بين مدخلات رقم اللوحة -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const plateNumbers = document.querySelectorAll(".plate-number");
+    const plateLetters = document.querySelector(".plate-letters");
+
+    plateNumbers.forEach((select, index) => {
+        select.addEventListener("change", function () {
+            if (index < plateNumbers.length - 1) {
+                plateNumbers[index + 1].focus();
+            } else {
+                plateLetters.focus();
+            }
+        });
+    });
+
+});
+</script>
+<!-- سكربت تغيير محتوي مدخلات الوثيقة عند اختيار وثيقة مختلفة -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const documentSelect = document.getElementById("documentSelect");
+    const documentDetails = document.getElementById("documentDetails");
+    const DocDate = document.getElementById("Doc-Date");
+    const startDate = document.getElementById("start-Date");
+    const endDate = document.getElementById("end-Date");
+    const DocumentsNotes = document.getElementById("DocumentsNotes");
+    const saveBtn = document.getElementById("saveBtn");
+
+    let isSaved = false;
+
+    documentSelect.addEventListener("input", function () {
+        if (this.value.trim()) {
+            if (!isSaved) {
+                clearFields();
+            }
+            documentDetails.style.display = "block";
+            isSaved = false;
+        } else {
+            documentDetails.style.display = "none";
+        }
+    });
+
+    function clearFields() {
+        startDate.value = "";
+        endDate.value = "";
+        DocDate.value="" ;
+        DocumentsNotes.value="";
+        // Clear dropzone input
+    document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
+        inputElement.value = ""; // Reset file input
+
+        // Remove the thumbnail preview if exists
+        const dropZoneElement = inputElement.closest(".drop-zone");
+        const thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
+        if (thumbnailElement) {
+            thumbnailElement.remove();
+        }
+
+        // Re-add the prompt message if needed
+        if (!dropZoneElement.querySelector(".drop-zone__prompt")) {
+            const prompt = document.createElement("span");
+            prompt.classList.add("drop-zone__prompt");
+            prompt.innerHTML = `<img src="../../../images/upload icon.svg">
+                                 قم بسحب وإسقاط صورة أو اختر صورة`;
+            dropZoneElement.appendChild(prompt);
+        }
+    });
+
+    }
+});
+
+</script>
+<!-- صورة الوثيقة -->
+<script>
+    document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
+  const dropZoneElement = inputElement.closest(".drop-zone");
+
+  dropZoneElement.addEventListener("click", (e) => {
+    inputElement.click();
+  });
+
+  inputElement.addEventListener("change", (e) => {
+    if (inputElement.files.length) {
+      updateThumbnail(dropZoneElement, inputElement.files[0]);
+    }
+  });
+
+  dropZoneElement.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    dropZoneElement.classList.add("drop-zone--over");
+  });
+
+  ["dragleave", "dragend"].forEach((type) => {
+    dropZoneElement.addEventListener(type, (e) => {
+      dropZoneElement.classList.remove("drop-zone--over");
+    });
+  });
+
+  dropZoneElement.addEventListener("drop", (e) => {
+    e.preventDefault();
+
+    if (e.dataTransfer.files.length) {
+      inputElement.files = e.dataTransfer.files;
+      updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
+    }
+
+    dropZoneElement.classList.remove("drop-zone--over");
+  });
+});
+
+function updateThumbnail(dropZoneElement, file) {
+  let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
+
+  // First time - remove the prompt
+  if (dropZoneElement.querySelector(".drop-zone__prompt")) {
+    dropZoneElement.querySelector(".drop-zone__prompt").remove();
+  }
+
+  // First time - there is no thumbnail element, so lets create it
+  if (!thumbnailElement) {
+    thumbnailElement = document.createElement("div");
+    thumbnailElement.classList.add("drop-zone__thumb");
+    dropZoneElement.appendChild(thumbnailElement);
+  }
+
+
+  // Show thumbnail for image files
+  if (file.type.startsWith("image/")) {
+    const reader = new FileReader();
+
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+    };
+  } else {
+    thumbnailElement.style.backgroundImage = null;
+  }
+}
+
+</script>
+<!-- سكربت تغيير محتوي مدخلات الصيانة عند اختيار وثيقة مختلفة -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const MaintenanceSelect = document.getElementById("Maintenance-Select");
+        const MaintenanceDetails = document.getElementById("Maintenance-Details");
+        const startMaintenance = document.getElementById("start-Date-Maintenance");
+        const endMaintenance = document.getElementById("end-Date-Maintenance");
+        const CurrentReadMaintenance = document.getElementById("Current-read-Maintenance");
+        const Consumption = document.getElementById("Consumption");
+        const ConsumptionUpto = document.getElementById("Consumption-up-to");
+        const MaintenanceNotes = document.getElementById("Maintenance-Notes");
+
+        const saveBtn = document.getElementById("Maintenance-saveBtn");
+    
+        let isSaved = false;
+    
+        MaintenanceSelect.addEventListener("input", function () {
+            if (this.value.trim()) {
+                if (!isSaved) {
+                    clearFields();
+                }
+                MaintenanceDetails.style.display = "block";
+                isSaved = false;
+            } else {
+                MaintenanceDetails.style.display = "none";
+            }
+        });
+    
+        function clearFields() {
+            endMaintenance.value = "";
+            CurrentReadMaintenance.value = "";
+            startMaintenance.value="" ;
+            Consumption.value="";
+            ConsumptionUpto.value="";
+            MaintenanceNotes.value="";
+        }
+    });
+    
+    </script>
 </body>
 
 </html>
