@@ -295,6 +295,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to validate accordion sections or regular form inputs
   const validateAccordionSections = (form) => {
+    // THIS CASE IF THERE IS MANY accordionS BUT NOT IN THE SAME FORM 
+      const GeneralAccordionItems = document.querySelectorAll('.inputs-accordion-item');
       const accordionItems = form.querySelectorAll('.inputs-accordion-item');
       let formIsValid = true;
       let firstInvalidInput = null;
@@ -314,7 +316,7 @@ document.addEventListener("DOMContentLoaded", function () {
                           firstInvalidInput = input; // Store the first invalid input
 
                           // Open the accordion section containing the first invalid input
-                          openAccordionItem(item, accordionItems);
+                          openAccordionItem(item, GeneralAccordionItems);
                       }
                   }
               });
