@@ -393,7 +393,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr data-bs-toggle="modal" data-bs-target="#TransferModal">
+                                            <tr data-bs-toggle="modal" data-bs-target="#ChangeOwner">
                                                 <td class="DifferAlign">
                                                     <p>يدوي</p>
                                                 </td>
@@ -444,7 +444,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr data-bs-toggle="modal" data-bs-target="#TransferModal">
+                                            <tr data-bs-toggle="modal" data-bs-target="#ChangeOwner">
                                                 <td class="DifferAlign">
                                                     <p>يدوي مع آلي</p>
                                                 </td>
@@ -495,7 +495,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr data-bs-toggle="modal" data-bs-target="#TransferModal">
+                                            <tr data-bs-toggle="modal" data-bs-target="#ChangeOwner">
                                                 <td class="DifferAlign">
                                                     <p>يدوي</p>
                                                 </td>
@@ -546,7 +546,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr data-bs-toggle="modal" data-bs-target="#TransferModal">
+                                            <tr data-bs-toggle="modal" data-bs-target="#ChangeOwner">
                                                 <td class="DifferAlign">
                                                     <p>يدوي مع آلي</p>
                                                 </td>
@@ -597,7 +597,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr data-bs-toggle="modal" data-bs-target="#TransferModal">
+                                            <tr data-bs-toggle="modal" data-bs-target="#ChangeOwner">
                                                 <td class="DifferAlign">
                                                     <p>يدوي مع آلي</p>
                                                 </td>
@@ -967,8 +967,8 @@
 
         </div>
         <!-- Modal -->
-        <div class="modal fade" id="TransferModal" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="TransferModalLabel" aria-hidden="true">
+        <div class="modal fade" id="ChangeOwner" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="ChangeOwnerLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content cars-modal-content">
                     <form action="" class="needs-validation" novalidate>
@@ -1109,7 +1109,7 @@
     <script>
         const AcceptBtn = document.getElementById("Accept");
         AcceptBtn.addEventListener("click", function () {
-            $('#TransferModal').modal('hide');
+            $('#ChangeOwner').modal('hide');
             setTimeout(() => {
                 $('#SuccessModal').modal('show');
             }, 500)
