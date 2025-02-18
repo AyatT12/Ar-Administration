@@ -223,5 +223,7 @@ direction: ltr;
     right: 10px;
     left: auto;
   }
-/*================Cars  =================================================== */
-
+/*================dropdown  =================================================== */
+.dropdown-content-row{
+    text-align: left !important;
+  }

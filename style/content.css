@@ -855,8 +855,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /*  */
 .upload-icon {
-  width: 50px;
-  height: 50px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
   transition: opacity 0.3s ease;
 }
 
@@ -2454,4 +2455,102 @@ border: none;
   border: 2px solid rgba(255, 150, 38, 0.24);
   box-shadow: 0px 1px 4px 0px rgba(255, 150, 38, 0.24);
   font-size: 14px;
+}
+.DisplayStoredDataInput{
+  border: none;
+  padding:0 !important;
+  border-radius: 0;
+}
+.DisplayStoredDataInput:focus{
+  border: none !important;
+}
+.DisplayStoredDataInput:disabled{
+  background-color: transparent;
+}
+
+/* ================================================================================ Car Sale Procedures  ======================================================================================= */
+/* ================================================================================================================================================================================== */
+
+.carSale-dropdownContent P{
+  margin-bottom: .2rem ;
+}
+.carSale-dropdownContent {
+  width: 230px;
+}
+.Documents{
+  cursor: pointer;
+}
+
+.CarImagesTable {
+  border-collapse: separate;
+  border-spacing: 0;  
+  border-radius: 10px; 
+  overflow: hidden; 
+  border: 1px solid #f1b16c; 
+  height: 100%;
+  white-space:nowrap;
+}
+.CarImagesTable td {
+  border: 1px solid #f1b16c;
+  vertical-align: middle;
+  padding: 5px 10px;
+  text-align: center;
+  width: 20%;
+}
+
+.upload__inputfile {
+  width: .1px;
+  height: .1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.upload_img-wrap_inner {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+
+}
+
+.upload__img-box {
+  width: 120px;
+  height: 120px;
+  background-color: rgba(255, 255, 255, 0);
+  display: inline-block;
+  position: relative;
+
+}
+
+.upload__img-close1,
+.upload__img-close2,
+.upload__img-close3 {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  text-align: center;
+  line-height: 24px;
+  z-index: 1;
+  cursor: pointer;
+}
+.upload__box , .upload__btn-box{
+  justify-content: center;
+}
+
+.img-bg {
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  padding-bottom: 100%;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+}
+/*  */
+.dropdown-content-row{
+  text-align: right;
 }
