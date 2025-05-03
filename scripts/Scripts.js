@@ -114,7 +114,6 @@ sidebar.addEventListener("mouseenter", function () {
         newPageIcon.style.bottom = "";
         newPageIcon.style.left = "";
       } else {
-        // newPageIcon.style.left = "-60px";
         newPageIcon.style.bottom = "60px";
         mainPageIcon.style.left = "-60px"; 
         mainPageIcon.style.bottom = "";
@@ -123,43 +122,55 @@ sidebar.addEventListener("mouseenter", function () {
     }
   }
 });
-
-let collapseTimeout;
-sidebar.addEventListener('mouseleave', function () {
-  if (collapseTimeout) clearTimeout(collapseTimeout);
-  
-  collapseTimeout = setTimeout(() => {
-    const collapsibleElements = sidebar.querySelectorAll('.collapse');
-    collapsibleElements.forEach(element => {
-      let collapseInstance = bootstrap.Collapse.getInstance(element);
-      if (!collapseInstance) {
-        collapseInstance = new bootstrap.Collapse(element, { toggle: false });
+// لضمان عمل اللمس عند الضغط على القوائم الفرعية 
+document.querySelectorAll('[data-bs-toggle="collapse"]').forEach(el => {
+  el.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.dataset.bsTarget);
+      if (target) {
+          new bootstrap.Collapse(target).toggle();
       }
-      collapseInstance.hide();
-    });
-
-    sidebar.classList.add("close");
-    sidebar1Col.classList.add("close");
-    sidebar.classList.remove("close2");
-
-    if (window.innerWidth > 1700 && mainPageIcon) {
-      if (sidebar.classList.contains("close")) {
-        mainPageIcon.style.left = ""; 
-        mainPageIcon.style.bottom = ""; 
-        newPageIcon.style.bottom = "";
-        newPageIcon.style.left = "";
-
-
-      } else {
-        mainPageIcon.style.left = "-60px";
-        mainPageIcon.style.bottom = "60px";
-        newPageIcon.style.bottom = "60px";
-        newPageIcon.style.left = "-60px";
-
-      }
-    }
-  }, 300); 
+  }, {passive: false});
 });
+
+// غلق القائمة الجانبية عند تحرك الماوس خارج القائمة 
+
+// let collapseTimeout;
+// sidebar.addEventListener('mouseleave', function () {
+//   if (collapseTimeout) clearTimeout(collapseTimeout);
+  
+//   collapseTimeout = setTimeout(() => {
+//     const collapsibleElements = sidebar.querySelectorAll('.collapse');
+//     collapsibleElements.forEach(element => {
+//       let collapseInstance = bootstrap.Collapse.getInstance(element);
+//       if (!collapseInstance) {
+//         collapseInstance = new bootstrap.Collapse(element, { toggle: false });
+//       }
+//       collapseInstance.hide();
+//     });
+
+//     sidebar.classList.add("close");
+//     sidebar1Col.classList.add("close");
+//     sidebar.classList.remove("close2");
+
+//     if (window.innerWidth > 1700 && mainPageIcon) {
+//       if (sidebar.classList.contains("close")) {
+//         mainPageIcon.style.left = ""; 
+//         mainPageIcon.style.bottom = ""; 
+//         newPageIcon.style.bottom = "";
+//         newPageIcon.style.left = "";
+
+
+//       } else {
+//         mainPageIcon.style.left = "-60px";
+//         mainPageIcon.style.bottom = "60px";
+//         newPageIcon.style.bottom = "60px";
+//         newPageIcon.style.left = "-60px";
+
+//       }
+//     }
+//   }, 300); 
+// });
 
 
 //***************************************************************************main sidebar collapse script****************************************************************************** */
@@ -261,7 +272,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Case for regular forms (not inside accordion)
   const regularFormElements = document.querySelectorAll("input, select, textarea");
   if (regularFormElements.length > 0) {
-    regularFormElements[0].focus();
+    regularFormElements[1].focus();
   }
   regularFormElements.forEach((element, index) => {
     element.addEventListener("keydown", function (e) {
