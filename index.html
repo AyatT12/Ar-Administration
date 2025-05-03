@@ -13,14 +13,20 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style/Layout.css">
     <!-- <link rel="stylesheet" href="style/english.css"> -->
-
+<!-- animate.css -->
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
 </head>
 
 <body>
     <div id="wrapper" class="home-wrapper d-flex flex-column ">
           <!-- Loader  -->
           <!-- <div class="min-loader-back">
-            <span class="Main-Loader"></span>
+            <span class="Main-Loader">
+             <img src="images/Gebal Alsarawat - Logo.png" class="animate__animated animate__flash animate__infinite">
+            </span>
         </div> -->
         <!-- Top Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light ">
@@ -30,7 +36,8 @@
                     <!-- <a href="#" class="Company-Logo"></a> -->
                     <a href="#" class="Company-Logo"><img src="images/kodi logo.png" alt="Company Logo"
                         class="Company-Logo-img" style="height: 60px;"></a>
-                    <p class="m-0 Company-name">شركة كدي لتأجير السيارات</p>
+                    <p class="m-0 Company-name">شركة كدي
+                         لتأجير السيارات</p>
                     <i class="fa-solid fa-bars toggle4 mobile-icon nav-icon"></i>
                 </div>
 
@@ -89,114 +96,81 @@
                         <div class="menu-bar">
                             <div class="menu">
                                 <ul class="menu-links">
-                                    <li class="nav-link" >
-                                        <a href="#">
-                                            <img src="images/comany .svg"  data-bs-toggle="collapse" href="#company-items" aria-expanded="false" aria-controls="#company-items"  class="icon"/> 
-                                            <span class="text nav-text collapsed" data-bs-toggle="collapse" href="#company-items" aria-expanded="false" aria-controls="#company-items" >الشركة </span>
-                                        </a>
+                                    <li class="nav-link">
+                                            <img src="images/comany .svg"  data-bs-toggle="collapse" data-bs-target="#company-items" aria-expanded="false" aria-controls="#company-items"  class="icon"/> 
+                                            <span class="text nav-text collapsed" data-bs-toggle="collapse" data-bs-target="#company-items" aria-expanded="false" aria-controls="#company-items" >الشركة </span>
                                     </li>
+
                                     <div id="company-items" class="collapse" >
                                     <div class="bg-white gap-3 collapse-inner rounded">
                                         <a class="collapse-item" href="Pages/company/Branches/Branches.html">  الفروع    <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                         <a class="collapse-item" href="Pages/company/owners/owners.html">  الملاك  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                       
-
                                     </div>
                                    </div>
+
                                    <li class="nav-link" >
-                                        <img src="images/cars.svg"  data-bs-toggle="collapse" href="#Cars-items" aria-expanded="false" aria-controls="#Cars-items"  class="icon"/> 
-                                        <span class="text nav-text collapsed" data-bs-toggle="collapse" href="#Cars-items" aria-expanded="false" aria-controls="#Cars-items" > السيارات </span>
+                                        <img src="images/cars.svg"  data-bs-toggle="collapse" data-bs-target="#Cars-items" aria-expanded="false" aria-controls="#Cars-items"  class="icon"/> 
+                                        <span class="text nav-text collapsed" data-bs-toggle="collapse" data-bs-target="#Cars-items" aria-expanded="false" aria-controls="#Cars-items" > السيارات </span>
                                    </li>
                                 <div id="Cars-items" class="collapse" >
                                 <div class="bg-white gap-3 collapse-inner rounded">
                                     <a class="collapse-item" href="Pages/Cars/CarsData/CarsData.html">  بيانات السيارات     <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                     <a class="collapse-item" href="Pages/Cars/CarsPrices/Prices.html">  الأسعار  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                    <a class="collapse-item" href="Pages/Cars/CarRepair/CarRepair.html"> تصليح السيارة  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                    <a class="collapse-item" href="Pages/Cars/CarTransfer/CarTransfer.html">   نقل السيارة   <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                    <a class="collapse-item" href="Pages/Cars/ChangeOwner/ChangeOwner.html">   تغيير المالك  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                    <a class="collapse-item" href="Pages/Cars/SalesProcedures/SalesProcedures.html">  إجراءات البيع <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                 </div>
                                </div>
                                    
                                    <li class="nav-link">
                                     <a >
-                                        <img src="images/tenants.svg" data-bs-toggle="collapse" href="#tenant-items" aria-expanded="false" aria-controls="#tenant-items" class="icon"/> 
-                                        <span class="text nav-text collapsed" data-bs-toggle="collapse" href="#tenant-items" aria-expanded="false" aria-controls="#tenant-items"> المستأجرين </span>
+                                        <img src="images/tenants.svg" data-bs-toggle="collapse" data-bs-target="#tenant-items" aria-expanded="false" aria-controls="#tenant-items" class="icon"/> 
+                                        <span class="text nav-text collapsed" data-bs-toggle="collapse" data-bs-target="#tenant-items" aria-expanded="false" aria-controls="#tenant-items"> المستأجرين </span>
                                     </a>
                                 </li>
                                 <div id="tenant-items" class="collapse" >
                                     <div class="bg-white gap-3 collapse-inner rounded">
                                         <a class="collapse-item" href="Pages/Tenants/TenantsData/TenantsData.html"> بيانات المستأجرين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                        <a class="collapse-item" href="Pages/Tenants/TenantsContracts/TenantsContracts.html">   عقود المستأجرين   <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                        <a class="collapse-item" href="Pages/Tenants/Tenants' debts/Tenantsdebts.html">  مديونيات المستأجرين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                        <a class="collapse-item" href="Pages/Tenants/Messages/MessageTenants.html"> رسائل المستأجرين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-
                                     </div>
                                    </div>
                                    <li class="nav-link">
                                     <a>
-                                        <img src="images/accounts.svg" data-bs-toggle="collapse" href="#Accounts-items" aria-expanded="false" aria-controls="#Accounts-items" class="icon"/> 
-                                        <span class="text nav-text collapsed" data-bs-toggle="collapse" href="#Accounts-items" aria-expanded="false" aria-controls="#Accounts-items"> الحسابات </span>
+                                        <img src="images/accounts.svg" data-bs-toggle="collapse" data-bs-target="#Accounts-items" aria-expanded="false" aria-controls="#Accounts-items" class="icon"/> 
+                                        <span class="text nav-text collapsed" data-bs-toggle="collapse" data-bs-target="#Accounts-items" aria-expanded="false" aria-controls="#Accounts-items"> الحسابات </span>
                                     </a>
                                 </li>
                                 <div id="Accounts-items" class="collapse" >
                                     <div class="bg-white gap-3 collapse-inner rounded">
                                         <a class="collapse-item" href="Pages/AccountsList/CashFeeding/Feed Box.html">   تغذية الصندوق <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                        <a class="collapse-item" href="Pages/AccountsList/Receipt Confirmation/Custody.html">  استلام عهدة  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                        <a class="collapse-item" href="Pages/AccountsList/closePendingContracts.html"> تسوية العقود المعلقة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                        <a class="collapse-item" href="Pages/AccountsList/Money to tenant/Money to tenant.html">  مبالغ إلى مستأجر<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                        <a class="collapse-item" href="Pages/AccountsList/Money from  tenant/Money from tenant.html">   مبالغ من مستأجر<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                        <a class="collapse-item" href="Pages/AccountsList/Tax return/Tax returns.html">   الإقرار الضريبي <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-
                                     </div>
                                    </div>
-   
                                    
                                     <li class="nav-link">
                                         <a>
-                                            <img src="images/reports.svg" data-bs-toggle="collapse" href="#reports-items" aria-expanded="false" aria-controls="#reports-items" class="icon"/> 
-                                            <span class="text nav-text collapsed" data-bs-toggle="collapse" href="#reports-items" aria-expanded="false" aria-controls="#reports-items">التقارير </span>
+                                            <img src="images/reports.svg" data-bs-toggle="collapse" data-bs-target="#reports-items" aria-expanded="false" aria-controls="#reports-items" class="icon"/> 
+                                            <span class="text nav-text collapsed" data-bs-toggle="collapse" data-bs-target="#reports-items" aria-expanded="false" aria-controls="#reports-items">التقارير </span>
                                         </a>
                                     </li>
                                     <div id="reports-items" class="collapse" >
                                         <div class="bg-white gap-3 collapse-inner rounded">
                                             <a class="collapse-item" href="Pages/reports/Administrative procedures.html">  الإجراءات الإدارية  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item" href="Pages/reports/DailyReports.html"> اليومية  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="Pages/reports/Existing contracts.html"> العقود القائمة    <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="Pages/reports/Saved contracts.html"> العقود المحفوظة و الملغاه <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="Pages/reports/Pending contracts.html"> العقود المعلقة  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="Pages/reports/Closed Contracts.html"> العقود المغلقة  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="Pages/reports/Cars contracts.html"> عقود السيارات  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="Pages/reports/Employee contracts.html"> عقود الموظفين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="Pages/reports/Drivers contracts.html"> عقود السائقين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="Pages/reports/Employee Financial movement.html"> الحركة المالية للموظفين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="Pages/reports/SalePoint Financial movement.html"> الحركة المالية لنقاط البيع  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="Pages/reports/Tenant Financial movement.html"> الحركة المالية للمستأجرين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-
                                         </div>
                                     </div>
                                     <li class="nav-link">
                                         <a>
-                                            <img src="images/statics.svg" data-bs-toggle="collapse" href="#statics-items" aria-expanded="false" aria-controls="#statics-items" class="icon"/> 
-                                            <span class="text nav-text collapsed" data-bs-toggle="collapse" href="#statics-items" aria-expanded="false" aria-controls="#statics-items">  الإحصائيات </span>
+                                            <img src="images/statics.svg" data-bs-toggle="collapse" data-bs-target="#statics-items" aria-expanded="false" aria-controls="#statics-items" class="icon"/> 
+                                            <span class="text nav-text collapsed" data-bs-toggle="collapse" data-bs-target="#statics-items" aria-expanded="false" aria-controls="#statics-items">  الإحصائيات </span>
                                         </a>
                                     </li>
                                        <div id="statics-items" class="collapse">
                                         <div class="bg-white gap-3 collapse-inner rounded">
-
                                             <a class="collapse-item" href="Pages/statistics/Car statistics.html"> إحصائيات السيارات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item" href="Pages/statistics/Tenants statistics.html"> إحصائيات المستأجرين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="Pages/statistics/Contracts statistics.html"> إحصائيات العقود<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="Pages/statistics/Car Contracts statistics.html"> إحصائيات عقود السيارات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="Pages/statistics/Tenants Contracts statistics.html"> إحصائيات عقود المستأجرين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-
                                         </div>
                                     </div>
 
                                     <li class="nav-link">
                                         <a >
-                                            <img src="images/employees.svg" data-bs-toggle="collapse" href="#employees-items" aria-expanded="false" aria-controls="#employees-items" class="icon"/> 
-                                            <span class="text nav-text collapsed" data-bs-toggle="collapse" href="#employees-items" aria-expanded="false" aria-controls="#employees-items">  الموظفين </span>
+                                            <img src="images/employees.svg" data-bs-toggle="collapse" data-bs-target="#employees-items" aria-expanded="false" aria-controls="#employees-items" class="icon"/> 
+                                            <span class="text nav-text collapsed" data-bs-toggle="collapse" data-bs-target="#employees-items" aria-expanded="false" aria-controls="#employees-items">  الموظفين </span>
                                         </a>
                                     </li>
                                     <div id="employees-items" class="collapse" >
@@ -210,20 +184,14 @@
                                        
                                     <li class="nav-link">
                                         <a>
-                                            <img src="images/services.svg" data-bs-toggle="collapse" href="#services-items" aria-expanded="false" aria-controls="#services-items" class="icon"/> 
-                                            <span class="text nav-text collapsed" data-bs-toggle="collapse" href="#services-items" aria-expanded="false" aria-controls="#services-items">الخدمات</span>
+                                            <img src="images/services.svg" data-bs-toggle="collapse" data-bs-target="#services-items" aria-expanded="false" aria-controls="#services-items" class="icon"/> 
+                                            <span class="text nav-text collapsed" data-bs-toggle="collapse" data-bs-target="#services-items" aria-expanded="false" aria-controls="#services-items">الخدمات</span>
                                         </a>
                                     </li>
                                     <div id="services-items" class="collapse" >
                                         <div class="bg-white gap-3 collapse-inner rounded">
                                             <a class="collapse-item" href="Pages/Services/banks/Banks.html">  البنوك  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="Pages/Services/sellingPoints/sellingPoints.html"> نقاط البيع     <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item"href ="Pages/Services/techncal-connect/techncal-connect.html">  الربط التقني  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href ="Pages/Services/Rental policy/Rental policy.html"> سياسة التأجير <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="Pages/Services/drivers/drivers.html">  السائقين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="Pages/Services/Alerts/Alerts.html">  التنبيهات  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item"href ="Pages/Services/Membership/Membership.html">  العضويات  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                           
+                                            <a class="collapse-item" href="Pages/Services/sellingPoints/sellingPoints.html"> نقاط البيع     <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>     
                                         </div>
                                        </div>
                                 
