@@ -1017,9 +1017,6 @@ div:has(.min-loader-back) {
         display: none;
     }
 
-    .userName {
-        font-size: 10px;
-    }
 }
 
 @media (max-width: 560px) {
