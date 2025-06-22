@@ -81,7 +81,7 @@ direction: ltr;
         transform: rotateY(180deg) !important;
     }
 }
-@media (max-width: 1000px) {
+@media (max-width: 1300px) {
     .sidebar2.close2 {
         left: -45px ;
         left: auto;
@@ -227,3 +227,53 @@ direction: ltr;
 .dropdown-content-row{
     text-align: left !important;
   }
+
+
+/*================  تسوية العقود المعلقة  =================================================== */
+
+
+#progressbar #payment:after {
+    width: 50% !important;
+    left: 0 !important;
+}
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: #FFE4C6;
+    position: absolute;
+    right: 0;
+    left: auto ;
+    top: 16px;
+}
+
+.pdf_img {
+    position: absolute;
+   left:auto;
+    right: 70px;
+
+}
+.pdf_img2 {
+    position: absolute;
+   left:auto;
+    right: 150px;
+}
+.pdf_img3 {
+    position: absolute;
+   left:auto;
+    right: 220px;
+}
+@media (min-width: 1200px) {
+    #dropdown-content-Settlement, #dropdown-content-Settlement3 {
+        right: auto;
+        left: 10px;
+    }
+}
+#SettlementForm img.action-button ,
+#SettlementForm img.action-button-previous{
+        transform: rotate(180deg);
+}
+.Expenses-compensation-Table{
+    direction: rtl;
+    text-align: left;
+}

@@ -1012,12 +1012,7 @@ div:has(.min-loader-back) {
     }
 }
 
-@media (max-width: 900px) {
-    .Company-name {
-        display: none;
-    }
 
-}
 
 @media (max-width: 560px) {
     .Company-Logo img {
