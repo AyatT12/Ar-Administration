@@ -25,26 +25,52 @@ UploadSigntaurePic.addEventListener("click", function () {
   imageUpload.click();
 });
 
-imageUpload.addEventListener("change", function () {
+imageUpload.addEventListener("change", async function () {
   const file = imageUpload.files[0];
-  if (file) {
+  if (!file) return;
+
+  const isHEIC = file.type === "image/heic" || file.type === "image/heif" || file.name.toLowerCase().endsWith(".heic") || file.name.toLowerCase().endsWith(".heif");
+
+  const handleSignaturePreview = (dataURL) => {
+    const previewImage = document.createElement("img");
+    previewImage.classList.add("preview-image");
+    previewImage.src = dataURL;
+    previewImage.id = "signatureImage";
+    imgeURL = dataURL;
+
+    mainContainer.innerHTML = '<i class="fa-regular fa-circle-xmark xmark-icon"></i>';
+    uploadContainer.innerHTML = "";
+    uploadContainer.appendChild(previewImage);
+    uploadContainer.classList.add("previewing");
+  };
+
+  if (isHEIC) {
+    try {
+      const convertedBlob = await heic2any({
+        blob: file,
+        toType: "image/jpeg",
+        quality: 0.9,
+      });
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        handleSignaturePreview(e.target.result);
+      };
+      reader.readAsDataURL(convertedBlob);
+
+    } catch (err) {
+      console.error("HEIC conversion failed", err);
+      alert("فشل تحويل صورة HEIC، يرجى اختيار صورة بصيغة أخرى.");
+    }
+  } else {
     const reader = new FileReader();
     reader.onload = function (e) {
-      const imageURL = e.target.result;
-      const previewImage = document.createElement("img");
-      previewImage.classList.add("preview-image");
-      previewImage.src = imageURL;
-      previewImage.id = "signatureImage";
-      imgeURL = imageURL;
-      mainContainer.innerHTML =
-        '<i class="fa-regular fa-circle-xmark xmark-icon"></i>';
-      uploadContainer.innerHTML = "";
-      uploadContainer.appendChild(previewImage);
-      uploadContainer.classList.add("previewing");
+      handleSignaturePreview(e.target.result);
     };
     reader.readAsDataURL(file);
   }
 });
+
 
 removeSignatureImg.addEventListener("click", function (event) {
   event.preventDefault();
