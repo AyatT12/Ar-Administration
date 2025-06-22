@@ -587,14 +587,17 @@
                                                                                 <div class="col-md-6 col-lg-4">
                                                                                     <label for="doc" class="form-label">المستند</label>
                                                                                     <select class="form-select select-style" name="doc" id="doc">
-                                                                                        <option value="السجل التجاري" selected>السجل التجاري</option>
-                                                                                        <option value="اشتراك الغرفة التجارية">اشتراك الغرفة التجارية</option>
-                                                                                        <option value="تصريح هيئة النقل">تصريح هيئة النقل</option>
-                                                                                        <option value="رخصة البلدية">رخصة البلدية</option>
-                                                                                        <option value="البريد الوطني">البريد الوطني</option>
+                                                                                        <option value="1" selected>السجل التجاري</option>
+                                                                                        <option value="2">اشتراك الغرفة التجارية</option>
+                                                                                        <option value="3">تصريح هيئة النقل</option>
+                                                                                        <option value="4">رخصة البلدية</option>
+                                                                                        <option value="5">البريد الوطني</option>
                                                                                     </select>
                                                                                 </div>
-                                                                                <div class="col-md-6 col-lg-8 doc-save-align d-flex justify-content-end" >
+                                                                                <div class="col-md-auto">
+                                                                                    <p class="mb-2 Saved-data">منتهي</p>
+                                                                                </div>
+                                                                                <div class="col doc-save-align d-flex justify-content-end" >
                                                                                     <button type="submit" class="custom-img-btn">
                                                                                         <img type="button" src="../../../images/save (3).svg">
                                                                                     </button>
@@ -602,8 +605,67 @@
                                                                                         <img type="button" src="../../../images/delete.svg">
                                                                                     </button>
                                                                                 </div>
-                                                                                <div class="col-md-12" id="docsForm">
-                                                                                  
+                                                                                <div class="col-md-12 mt-3">
+                                                                                    <div class="row mt-2">
+                                                                                        <div class="col-md-6">
+                                                                                            <label for="Doc-number" class="form-label">
+                                                                                                رقم المستند <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                            </label>
+                                                                                            <input type="number" maxlength="50" id="Doc-number" class="form-control inputs number-input" name="Doc-number"  required >
+                                                                                            <div class="invaild">
+                                                                                                <div class="invalid-feedback"> الحقل مطلوب </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <label for="Doc-Date" class="form-label">
+                                                                                                تاريخه <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                            </label>
+                                                                                            <input type="date" id="Doc-Date" class="form-control inputs  custom-date-input" name="Doc-Date" required>
+                                                                                            <div class="invaild">
+                                                                                                <div class="invalid-feedback"> الحقل مطلوب </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-6">
+                                                                                            <label for="start-Date" class="form-label">
+                                                                                                بدايته <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                            </label>
+                                                                                            <input type="date" id="start-Date" class="form-control inputs  custom-date-input" name="start-Date" required>
+                                                                                            <div class="invaild">
+                                                                                                <div class="invalid-feedback"> الحقل مطلوب </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <label for="end-Date" class="form-label">
+                                                                                                نهايته <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                            </label>
+                                                                                            <input type="date" id="end-Date" class="form-control inputs  custom-date-input" name="end-Date" required>
+                                                                                            <div class="invaild">
+                                                                                                <div class="invalid-feedback"> الحقل مطلوب </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    
+                                                                                    <div class="row align-items-end g-3">
+                                                                                        <div class="col">
+                                                                                            <label>ملاحظات</label>
+                                                                                            <textarea class="form-control textarea-inputs" rows="1" maxlength="100" name="notes" id="Documentnotes" type="text"></textarea>
+                                                                                        </div>
+                                                                                        <div class="col-md-auto text-start">
+                                                                                            <button type="button" class="btn modal-btn" data-bs-toggle="modal" href="#Doc-photo-modal">
+                                                                                                <div class="row align-items-center">
+                                                                                                    <div class="col">صورة المستند</div>
+                                                                                                    <div class="col-auto">
+                                                                                                        <div class="systems-check">
+                                                                                                            <i class="fa-solid fa-check text-white"></i>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </button>
+                                                                                        </div>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -1057,37 +1119,83 @@
         }
     } 
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-    updateSystemsCheckBackground(); // Update on page load
-    const selectElement = document.getElementById('doc');
-    const form = document.getElementById('docsForm');
-    const DocImg = document.getElementById('Doc-upload-container');
-
-    let selectedValue = selectElement.value; 
-    updateSystemsCheckBackground();
-
-    if (selectedValue === "السجل التجاري") {
-        DocImg.innerHTML = `<img class="preview-image" src="../../../images/Commercial Register.png">`;
-        form.innerHTML = `<div class="row mt-3"><div class="col-md-6"><div class="row"><div class="col-auto"><p> رقم المستند </p></div><div class="col"><p class="Saved-data"> 400410010010 </p></div></div></div><div class="col-md-6"><div class="row"><div class="col-auto"><p> تاريخه</p></div><div class="col"><p class="Saved-data"> 2023/02/01  </p></div></div></div></div><div class="row"><div class="col-md-6"><div class="row"><div class="col-auto"><p> بدايته </p></div><div class="col"><p class="Saved-data"> 2023/02/01 </p></div></div></div><div class="col-md-6"><div class="row"><div class="col-auto"><p> نهايته </p></div><div class="col"><p class="Saved-data"> 2023/02/01</p></div></div></div></div><div class="row align-items-end g-3"><div class="col"><label>ملاحظات</label><textarea class="form-control textarea-inputs" rows="1" maxlength="100" name="notes" type="text"></textarea></div><div class="col-md-auto text-start"><button type="button" class="btn modal-btn" data-bs-toggle="modal" href="#Doc-photo-modal"><div class="row align-items-center"><div class="col">صورة المستند</div><div class="col-auto"><div class="systems-check"><i class="fa-solid fa-check text-white"></i></div></div></div></button></div></div>`
-    }
-
-    selectElement.addEventListener('change', function () {
-        selectedValue = this.value;
-
-        if (selectedValue === "السجل التجاري") {
-            DocImg.innerHTML = `<img class="preview-image" src="../../../images/Commercial Register.png">`;
-            form.innerHTML = `<div class="row mt-3"><div class="col-md-6"><div class="row"><div class="col-auto"><p> رقم المستند </p></div><div class="col"><p class="Saved-data"> 400410010010 </p></div></div></div><div class="col-md-6"><div class="row"><div class="col-auto"><p> تاريخه</p></div><div class="col"><p class="Saved-data"> 2023/02/01  </p></div></div></div></div><div class="row"><div class="col-md-6"><div class="row"><div class="col-auto"><p> بدايته </p></div><div class="col"><p class="Saved-data"> 2023/02/01 </p></div></div></div><div class="col-md-6"><div class="row"><div class="col-auto"><p> نهايته </p></div><div class="col"><p class="Saved-data"> 2023/02/01</p></div></div></div></div><div class="row align-items-end g-3"><div class="col"><label>ملاحظات</label><textarea class="form-control textarea-inputs" rows="1" maxlength="100" name="notes" type="text"></textarea></div><div class="col-md-auto text-start"><button type="button" class="btn modal-btn" data-bs-toggle="modal" href="#Doc-photo-modal"><div class="row align-items-center"><div class="col">صورة المستند</div><div class="col-auto"><div class="systems-check"><i class="fa-solid fa-check text-white"></i></div></div></div></button></div></div>`
-        } else {
-            DocImg.innerHTML = ``;
-            form.innerHTML = `<div class="row mt-2"><div class="col-md-6"><label for="Doc-number" class="form-label"> رقم المستند <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                </label><input type="text" maxlength="50" id="Doc-number" class="form-control inputs" name="Doc-number" required><div class="invaild"><div class="invalid-feedback"> الحقل مطلوب </div></div></div><div class="col-md-6"><label for="Doc-Date" class="form-label"> تاريخه <i class="fa-solid fa-star-of-life RequirdStar"></i></label><input type="date" id="Doc-Date" class="form-control inputs custom-date-input" name="Doc-Date" required><div class="invaild"><div class="invalid-feedback"> الحقل مطلوب </div></div></div></div><div class="row"><div class="col-md-6"><label for="start-Date" class="form-label"> بدايته <i class="fa-solid fa-star-of-life RequirdStar"></i></label><input type="date" id="start-Date" class="form-control inputs custom-date-input" name="start-Date" required><div class="invaild"><div class="invalid-feedback"> الحقل مطلوب </div></div></div><div class="col-md-6"><label for="start-Date" class="form-label"> نهايته <i class="fa-solid fa-star-of-life RequirdStar"></i></label><input type="date" id="start-Date" class="form-control inputs custom-date-input" name="start-Date" required><div class="invaild"><div class="invalid-feedback"> الحقل مطلوب </div></div></div></div><div class="row align-items-end g-3"><div class="col"><label>ملاحظات</label><textarea class="form-control textarea-inputs" rows="1" maxlength="100" name="notes" type="text"></textarea></div><div class="col-md-auto text-start"><button type="button" class="btn modal-btn" data-bs-toggle="modal" href="#Doc-photo-modal" ><div class="row align-items-center"><div class="col">صورة المستند</div><div class="col-auto"><div class="systems-check"><i class="fa-solid fa-check text-white"></i></div></div></div></button></div></div>`        }
-
-        updateSystemsCheckBackground();
-    });
-});
-
     </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const docSelect = document.getElementById('doc');
+    //  بيانات المستندات المخزنة 
+        const storedValues = {
+            1: { docNumber: "1245456", docDate: "2023-01-01", startDate: "2023-01-01", endDate: "2023-12-31", notes: "ملاحظات على السجل التجاري" },
+            2: { docNumber: "", docDate: "", startDate: "", endDate: "", notes: "" },
+            3: { docNumber: "9876543", docDate: "2023-02-01", startDate: "2023-02-01", endDate: "2023-11-30", notes: "ملاحظات على تصريح هيئة النقل" },
+            4: { docNumber: "", docDate: "", startDate: "", endDate: "", notes: "" },
+            5: { docNumber: "", docDate: "", startDate: "", endDate: "", notes: "" }
+        };
+    
+        function updateInputs(values) {
+            const docNumberInput = document.getElementById('Doc-number');
+            const docDateInput = document.getElementById('Doc-Date');
+            const startDateInput = document.getElementById('start-Date');
+            const endDateInput = document.getElementById('end-Date');
+            const notesInput = document.getElementById('Documentnotes');
+            const starIcons = document.querySelectorAll('.RequirdStar');
+    
+            if (values.docNumber) {
+                // عرض القيم المخزنة دخل المدخلات 
+                docNumberInput.value = values.docNumber;
+                docDateInput.value = values.docDate;
+                startDateInput.value = values.startDate;
+                endDateInput.value = values.endDate;
+                notesInput.value = values.notes;
+    
+                // ايقاف امكانية التعديل على البيانات المعروضة
+                docNumberInput.disabled = true;
+                docNumberInput.classList.add('DisplayStoredDataInput');
+                docDateInput.classList.add('DisplayStoredDataInput');
+                startDateInput.classList.add('DisplayStoredDataInput');
+                endDateInput.classList.add('DisplayStoredDataInput');
+                docDateInput.type = 'text';
+                startDateInput.type = 'text';
+                endDateInput.type = 'text';
+    
+                
+    
+            // اخفاء علامة النجمة في حالة عرض البيانات المخزنة
+                starIcons.forEach(star => star.style.display = 'none');
+            } else {
+                // اعادة حقول الادخال الي شكلها الطبيعة في حالة عدم وجود بيانات مخزنة
+                docNumberInput.disabled = false;
+                docNumberInput.classList.remove('DisplayStoredDataInput');
+                docDateInput.classList.remove('DisplayStoredDataInput');
+                startDateInput.classList.remove('DisplayStoredDataInput');
+                endDateInput.classList.remove('DisplayStoredDataInput');
+                docDateInput.type = 'date';
+                startDateInput.type = 'date';
+                endDateInput.type = 'date';
+               
+                docNumberInput.value = '';
+                docDateInput.value = '';
+                startDateInput.value = '';
+                endDateInput.value = '';
+                notesInput.value = '';
+    
+            // اظهار علامة النجمة في حالة  عدم عرض البيانات المخزنة
+            starIcons.forEach(star => star.style.display = 'inline');
+            }
+        }
+    
+        //اظهار بيانات الملف الاول المختار تلقائيا 
+        updateInputs(storedValues[docSelect.value]);
+    
+        docSelect.addEventListener('change', function () {
+            const selectedValue = this.value;
+            const values = storedValues[selectedValue];
+            updateInputs(values);
+        });
+    });
+    </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/heic2any/dist/heic2any.min.js"></script>
   <script src="../../../scripts/uploadPic.js"></script>
 </body>
 

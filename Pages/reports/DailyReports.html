@@ -1030,33 +1030,46 @@
     <script src="../../scripts/Scripts.js"></script>
 
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const excelIcon = document.querySelector(".excel-icon");
-
-    excelIcon.addEventListener("click", function () {
-        excelIcon.classList.add("animate__animated", "animate__bounceIn");
-
-        setTimeout(() => {
-            excelIcon.classList.remove("animate__bounceIn");
-
-            excelIcon.classList.add("animate__flash", "animate__infinite");
-
-            setTimeout(() => {
-                excelIcon.classList.remove("animate__flash", "animate__infinite");
-                excelIcon.classList.add("animate__tada");
-
-                setTimeout(() => {
-                    excelIcon.classList.remove("animate__tada");
-                }, 1000);
-
-            }, 3000); 
-
-        }, 500); 
-    });
-});
-
-</script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const excelIcon = document.querySelector(".excel-icon");
+            let animationFinished = true; // متغير لتتبع حالة الانيميشن
+        
+            excelIcon.addEventListener("click", function () {
+                if (animationFinished) { // تنفيذ الكود فقط إذا كان الانيميشن متوقف
+                    animationFinished = false; // تعيين المتغير إلى false للإشارة إلى أن الانيميشن جاري
+                    excelIcon.classList.add("animate__animated", "animate__bounceIn");
+        
+                    setTimeout(() => {
+                        excelIcon.classList.remove("animate__bounceIn");
+                        excelIcon.classList.add("animate__flash", "animate__infinite");
+        
+                        // استدعاء فانكشن إنشاء ملف الإكسل
+                        createExcelFile().then(() => {
+                            // عند الانتهاء من إنشاء الملف، نقوم بإزالة الانيميشن الحالي
+                            excelIcon.classList.remove("animate__flash", "animate__infinite");
+                            excelIcon.classList.add("animate__tada");
+        
+                            setTimeout(() => {
+                                excelIcon.classList.remove("animate__tada");
+                                animationFinished = true; // تعيين المتغير إلى true عندما ينتهي الانيميشن
+                            }, 1000);
+                        });
+                    }, 500);
+                }
+            });
+        
+            // دالة وهمية لإنشاء ملف الإكسل
+            function createExcelFile() {
+                return new Promise((resolve) => {
+                    // محاكاة عملية إنشاء الملف باستخدام setTimeout
+                    setTimeout(() => {
+                        resolve(); // إشارة إلى أن العملية قد اكتملت
+                    }, 2000); 
+                });
+            }
+        });
+        </script>
 
 
 </body>

@@ -1,0 +1,21 @@
+<div class="row mt-2  justify-content-between align-items-center">
+                                                                                <div class="col-md-5">
+                                                                                    <label for="Doc-Date" class="form-label">
+                                                                                        تاريخها <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                    </label>
+                                                                                    <input type="date" id="Doc-Date" class="form-control inputs custom-date-input" name="Doc-Date"  value="2024-01-28" required>
+                                                                                    <div class="invaild">
+                                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-5">
+                                                                                    <div class="row">
+                                                                                        <div class="col-auto">
+                                                                                            <p class="DataTitle">الحالة</p>
+                                                                                        </div>
+                                                                                        <div class="col-auto ">
+                                                                                            <p class="Saved-data">منتهي</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>

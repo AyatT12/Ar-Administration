@@ -1,0 +1,432 @@
+/* //////////////////////////////////////////////////////progress bar/////////////////////////////////////////////////////////////// */
+#SettlementForm fieldset:not(:first-of-type) {
+    display: none;
+}
+
+#progressbar {
+    display: flex;
+}
+
+#progressbar {
+    margin-bottom: 20px;
+    overflow: hidden;
+    color: lightgrey;
+    padding-left: 0;
+    text-align: center;
+}
+
+#progressbar .active {
+    color: #000000;
+
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 12px;
+    width: 100%;
+    float: right;
+    position: relative;
+}
+
+/*Icons in the ProgressBar*/
+#progressbar #Rental_terms:before {
+    content: "";
+    box-shadow: 2px 2px 2px #00000052;
+}
+
+#progressbar #Expenses:before {
+    content: "";
+    box-shadow: 2px 2px 2px #00000052;
+
+}
+
+#progressbar #compensation:before {
+    content: "";
+    box-shadow: 2px 2px 2px #00000052;
+
+}
+
+#progressbar #check:before {
+    content: "";
+    box-shadow: 2px 2px 2px #00000052;
+
+}
+
+#progressbar #payment:before {
+    content: "";
+    box-shadow: 2px 2px 2px #00000052;
+
+}
+
+
+/*ProgressBar before*/
+#progressbar li:before {
+    width: 30px;
+    height: 30px;
+    line-height: 45px;
+    display: block;
+    font-size: 18px;
+    color: #ffffff;
+    background: #FFE4C6;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px;
+}
+
+/*ProgressBar connectors*/
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: #FFE4C6;
+    position: absolute;
+    left: 0;
+    top: 16px;
+}
+
+#progressbar #Rental_terms:after {
+    width: 50%;
+
+}
+
+#progressbar #payment:after {
+    width: 65%;
+    left: 50%;
+
+}
+
+/*Color number of the step and the connector before it*/
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: #FF9626;
+}
+
+/* //////////////////////////////////////////////////////Buttons/////////////////////////////////////////////////////////////// */
+
+/* action Buttons*/
+#SettlementForm .action-button {
+    width: fit-content;
+    background: transparent;
+    font-weight: bold;
+    color: #FF9626;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+
+
+/*Previous Buttons*/
+#SettlementForm .action-button-previous {
+    width: fit-content;
+    background: transparent;
+    font-weight: bold;
+    color: #FF9626;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+.button-row {
+    justify-content: space-between;
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 97%;
+}
+.button-card {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+}
+.check-btn {
+    color: #fff;
+    background-color: #FF9626;
+    border-color: #FF9626 !important;
+    padding: 0px 12px;
+    display: inline-block;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.28px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+.check-btn:hover {
+    background-color: white;
+    color: #FF9626 !important;
+    border-color: #FF9626 !important;
+}
+
+/* //////////////////////////////////////////////////////form card/////////////////////////////////////////////////////////////// */
+
+
+.form-card {
+    /* background: rgb(255, 255, 255); */
+    border: 1px solid #39629c9c;
+    border-radius: 7px;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 20px 10px 10px 10px;
+    box-sizing: border-box;
+    width: 94%;
+    position: relative;
+    margin: 5px;
+    margin-bottom: 25px;
+}
+
+.data-row-Settl {
+    align-items: flex-start;
+    /* padding-top: .3rem; */
+}
+
+.data-col-Settl {
+    display: flex;
+    flex-wrap: wrap;
+}
+fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+
+#SettlementForm fieldset {
+    background: rgba(255, 255, 255, 0);
+    border: 0 none;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    position: relative;
+    height: 100%;
+
+}
+
+.form-card {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    height: 100%;
+    justify-content: space-between;
+    gap: 1.7rem;
+}
+.form-card5-settl{
+    gap: 1.4rem;
+}
+/* تعديل صور ال pdf */
+
+.pdf_img {
+    position: absolute;
+    left: 70px;
+
+}
+
+.pdf-anchor {
+    width: fit-content;
+}
+
+.pdf_img2 {
+    position: absolute;
+    left: 150px;
+}
+
+.pdf-anchor2 {
+    width: fit-content;
+}
+
+.pdf_img3 {
+    position: absolute;
+    left: 220px;
+}
+
+.pdf-anchor3 {
+    width: fit-content;
+}
+
+@media (max-width:1024px) {
+
+    .pdf_img,
+    .pdf_img2,
+    .pdf_img3 {
+
+        position: static;
+    }
+}
+
+/*  */
+
+.Settlement-input-checkbox {
+    --bs-form-check-bg: var(--bs-body-bg);
+    width: 1.3em;
+    height: 1.3em;
+    vertical-align: middle;
+    background-color: white;
+    border: 1px solid #39629C;
+    border-radius: 0px !important;
+    position: static;
+    margin-left: 10px;
+}
+
+#hover-image-Settlement,
+#contract-value-Settlement2,
+#contract-value-Settlement3,
+#contract-value-Settlement4 {
+    cursor: pointer;
+}
+
+/* //////////////////////////////////////////////////////dropdown-content/////////////////////////////////////////////////////////////// */
+.dropdown-content {
+    display: none;
+    border: 1px solid #FF9626;
+    border-radius: 8px;
+    margin-top: 10px;
+    position: absolute;
+    z-index: 9999;
+    background-color: white;
+    padding: 10px;
+    font-size: 0.75rem;
+    box-shadow: 0px 2px 4px 0px #39629C3D;
+}
+
+.seacrh-icon-col{
+    position: relative;
+}
+.dropdown-content-row p{
+    margin: .3rem;
+}
+
+@media (min-width:767px) {
+    #dropdown-content-Settlement , #dropdown-content-Settlement3{
+        min-width: 300px;
+    }
+}
+@media(min-width:1000px) {
+
+    #dropdown-content-Settlement,
+    #dropdown-content-Settlement3 {
+        width: 100%;
+
+
+    }
+}
+
+@media(min-width:1200px) {
+
+    #dropdown-content-Settlement,
+    #dropdown-content-Settlement3 {
+        left: none;
+        right: 10px;
+
+    }
+}
+
+
+/* *******************************************************************************تعديل  المصروفات و التعويضات ****************************************************************************************************** */
+.TablesReference {
+    height: 43vh;
+    min-height: 391px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+.TablesReference::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+}
+
+.TablesReference::-webkit-scrollbar-track {
+    background: rgba(255, 150, 38, 0.16);
+    border-radius: 5px;
+}
+
+.TablesReference::-webkit-scrollbar-thumb {
+    background: rgba(255, 150, 38, 0.40);
+    border-radius: 5px;
+    height: 10px;
+}
+
+.Expenses-compensation-Table {
+    border-collapse: separate;
+    border-spacing: 0;  
+    border-radius: 10px; 
+    overflow: hidden; 
+    border: 1px solid #f1b16c; 
+    height: 100%;
+    white-space:nowrap;
+    direction: ltr;
+    text-align: right;
+}
+.Expenses-compensation-Table td {
+    border: 1px solid #f1b16c;
+    vertical-align: middle;
+    padding: 5px 10px;
+}
+.Expenses-compensation-Table thead th {
+    background-color: #fdc28214;
+    border: 1px solid #f1b16c; 
+}
+.upload__box2 {
+    align-items: center;
+    justify-content: center;
+}
+.attatchments-table{
+    table-layout: fixed;
+    direction: rtl;
+    margin-bottom: 0;
+}
+.attatchments-table td{
+    height: 120px;
+    text-align: center;
+}
+.expensesRow{
+    justify-content: space-evenly;
+}
+#Expenses-upload-box , #compensation-upload-box{
+    justify-content: center;
+}
+.upload__img-close1 i {
+    font-size: 20px;
+    background: white;
+    padding: 1px;
+    border-radius: 4px;
+}
+.Attatchments-img-box{
+    background-color: transparent;
+    width: 100px;
+    height: 100px;
+}
+.Expenses-compensation-Upload{
+    background-color: transparent;
+}
+.Table-inputs{
+    border: none;
+    text-align: end;
+    width: 100%;
+}
+.total p{
+    margin-bottom: .9rem;
+}
+.table th {
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: sticky;
+    top: 0;
+}
+.check-table-notes {
+    border: none;
+    height: 40px;
+    resize: none;
+    width: 100%;
+    padding: 0 0.75rem;
+
+}

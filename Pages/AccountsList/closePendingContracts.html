@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> نظام الادارة -  تسوية العقود المعلقة </title>
+    <title> نظام الادارة - تسوية العقود المعلقة </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -14,8 +14,10 @@
 
     <link rel="stylesheet" href="../../style/Layout.css">
     <link rel="stylesheet" href="../../style/content.css">
-    <!-- <link rel="stylesheet" href="../../style/english.css">   --> 
+    <link rel="stylesheet" href="./PendingContractStyle.css">
 
+    <!-- <link rel="stylesheet" href="../../style/english.css">   -->
+  
 </head>
 
 <body>
@@ -43,21 +45,25 @@
                                         <span style="font-weight: 700;"> عيسي هاني مبروك عزام </span>
                                         <p class="m-0">مشرف علي الفروع</p>
                                     </div>
-                                    <img src="../../images/pic (3).svg"
-                                        alt="User Avatar" class="rounded-circle User-Avatar">
+                                    <img src="../../images/pic (3).svg" alt="User Avatar"
+                                        class="rounded-circle User-Avatar">
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                                    <li><a class="dropdown-item userDropdown-options" href="../../Pages/Account/Account.html">حسابي <img
+                                    <li><a class="dropdown-item userDropdown-options"
+                                            href="../../Pages/Account/Account.html">حسابي <img
                                                 src="../../images/Frame (2).svg" /></a></li>
-                                    <li><a class="dropdown-item userDropdown-options"  href="../../Pages/Account/NewPassword.html">تغيير كلمة السر <img
+                                    <li><a class="dropdown-item userDropdown-options"
+                                            href="../../Pages/Account/NewPassword.html">تغيير كلمة السر <img
                                                 src="../../images/Frame (1).svg" /></a></li>
-                                    <li><a class="dropdown-item userDropdown-options" href="https://ayatt12.github.io/test-page/"> الأنظمه <img
+                                    <li><a class="dropdown-item userDropdown-options"
+                                            href="https://ayatt12.github.io/test-page/"> الأنظمه <img
                                                 src="../../images/Frame (3).svg" /></a></li>
 
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item userDropdown-options " href="https://ayatt12.github.io/test-page/login.html">تسجيل الخروج <img
+                                    <li><a class="dropdown-item userDropdown-options "
+                                            href="https://ayatt12.github.io/test-page/login.html">تسجيل الخروج <img
                                                 class="logout" src="../../images/Frame (4).svg" /></a></li>
                                 </ul>
                             </div>
@@ -78,7 +84,7 @@
 
             </div>
         </nav>
-        
+
         <div class="container-fluid h-100 main-container-fluid">
             <div class="row h-100 flex-nowrap">
                 <div class="col-auto sidebar1-col close close">
@@ -91,40 +97,58 @@
                         <div class="menu-bar">
                             <div class="menu">
                                 <ul class="menu-links">
-                                    <li class="nav-link" >
-                                       
-                                         <img src="../../images/comany .svg" class="icon"  data-bs-toggle="collapse" href="#company-items" aria-expanded="false" aria-controls="#company-items" />
-                                            <span class="text nav-text collapsed" data-bs-toggle="collapse" href="#company-items" aria-expanded="false" aria-controls="#company-items">الشركة </span>
+                                    <li class="nav-link">
+
+                                        <img src="../../images/comany .svg" class="icon" data-bs-toggle="collapse"
+                                            href="#company-items" aria-expanded="false"
+                                            aria-controls="#company-items" />
+                                        <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                            href="#company-items" aria-expanded="false"
+                                            aria-controls="#company-items">الشركة </span>
                                     </li>
                                     <div id="company-items" class="collapse">
                                         <div class="bg-white gap-3 collapse-inner rounded">
-                                            <a class="collapse-item " href="../../Pages/company/Branches/Branches.html"> الفروع <i
-                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../Pages/company/owners/owners.html"> الملاك <i
-                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                             
+                                            <a class="collapse-item " href="../../Pages/company/Branches/Branches.html">
+                                                الفروع <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../Pages/company/owners/owners.html">
+                                                الملاك <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
 
                                         </div>
                                     </div>
-                                    <li class="nav-link" >
-                                        <img src="../../images/cars.svg"  data-bs-toggle="collapse" href="#Cars-items" aria-expanded="false" aria-controls="#Cars-items"  class="icon"/> 
-                                        <span class="text nav-text collapsed" data-bs-toggle="collapse" href="#Cars-items" aria-expanded="false" aria-controls="#Cars-items" > السيارات </span>
-                                   </li>
-                                    <div id="Cars-items" class="collapse" >
-                                    <div class="bg-white gap-3 collapse-inner rounded">
-                                        <a class="collapse-item" href="../../Pages/Cars/CarsData/CarsData.html">  بيانات السيارات     <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                        <a class="collapse-item" href="../../Pages/Cars/CarsPrices/Prices.html">  الأسعار  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                        <a class="collapse-item" href="../../Pages/Cars/CarRepair/CarRepair.html"> تصليح السيارة  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                        <a class="collapse-item" href="../../Pages/Cars/CarTransfer/CarTransfer.html">   نقل السيارة   <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                        <a class="collapse-item" href="../../Pages/Cars/ChangeOwner/ChangeOwner.html">   تغيير المالك  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                        <a class="collapse-item" href="../../Pages/Cars/SalesProcedures/SalesProcedures.html">  إجراءات البيع <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                    </div>
+                                    <li class="nav-link">
+                                        <img src="../../images/cars.svg" data-bs-toggle="collapse" href="#Cars-items"
+                                            aria-expanded="false" aria-controls="#Cars-items" class="icon" />
+                                        <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                            href="#Cars-items" aria-expanded="false" aria-controls="#Cars-items">
+                                            السيارات </span>
+                                    </li>
+                                    <div id="Cars-items" class="collapse">
+                                        <div class="bg-white gap-3 collapse-inner rounded">
+                                            <a class="collapse-item" href="../../Pages/Cars/CarsData/CarsData.html">
+                                                بيانات السيارات <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../Pages/Cars/CarsPrices/Prices.html">
+                                                الأسعار <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../Pages/Cars/CarRepair/CarRepair.html">
+                                                تصليح السيارة <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../Pages/Cars/CarTransfer/CarTransfer.html"> نقل السيارة <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../Pages/Cars/ChangeOwner/ChangeOwner.html"> تغيير المالك <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../Pages/Cars/SalesProcedures/SalesProcedures.html"> إجراءات
+                                                البيع <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                        </div>
                                     </div>
                                     <li class="nav-link">
                                         <a>
                                             <img src="../../images/tenants.svg" class="icon" data-bs-toggle="collapse"
-                                            href="#tenant-items" aria-expanded="false"
-                                            aria-controls="#tenant-items" />
+                                                href="#tenant-items" aria-expanded="false"
+                                                aria-controls="#tenant-items" />
                                             <span class="text nav-text collapsed" data-bs-toggle="collapse"
                                                 href="#tenant-items" aria-expanded="false"
                                                 aria-controls="#tenant-items"> المستأجرين </span>
@@ -132,36 +156,69 @@
                                     </li>
                                     <div id="tenant-items" class="collapse">
                                         <div class="bg-white gap-3 collapse-inner rounded">
-                                            
-                                            <a class="collapse-item" href="../../../Pages/Tenants/TenantsData/TenantsData.html"> بيانات المستأجرين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                        <a class="collapse-item" href="../../../Pages/Tenants/TenantsContracts/TenantsContracts.html">   عقود المستأجرين   <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                        <a class="collapse-item" href="../../../Pages/Tenants/Tenants' debts/Tenantsdebts.html">  مديونيات المستأجرين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                        <a class="collapse-item" href="../../../Pages/Tenants/Messages/MessageTenants.html"> رسائل المستأجرين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
 
-    
+                                            <a class="collapse-item"
+                                                href="../../../Pages/Tenants/TenantsData/TenantsData.html"> بيانات
+                                                المستأجرين <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../../Pages/Tenants/TenantsContracts/TenantsContracts.html">
+                                                عقود المستأجرين <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../../Pages/Tenants/Tenants' debts/Tenantsdebts.html"> مديونيات
+                                                المستأجرين <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../../Pages/Tenants/Messages/MessageTenants.html"> رسائل
+                                                المستأجرين <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+
                                         </div>
                                     </div>
-                                   
-                                  <li class="nav-link">
-                                        <a>
-                                            <img src="../../images/accounts.svg" class="icon" data-bs-toggle="collapse" href="#Accounts-items" aria-expanded="false" aria-controls="#Accounts-items" />
-                                            <span class="text nav-text collapsed" data-bs-toggle="collapse" href="#Accounts-items" aria-expanded="false" aria-controls="#Accounts-items"> الحسابات </span>
-                                        </a>
-                                    </li>
-                                     <div id="Accounts-items" class="collapse" >
-                                        <div class="bg-white gap-3 collapse-inner rounded">
-                                            <a class="collapse-item" href="../../Pages/AccountsList/CashFeeding/Feed Box.html">   تغذية الصندوق <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../Pages/AccountsList/Receipt Confirmation/Custody.html">  استلام عهدة  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item active" href="../../Pages/AccountsList/closePendingContracts.html"> تسوية العقود المعلقة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../Pages/AccountsList/Money to tenant/Money to tenant.html">  مبالغ إلى مستأجر<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../Pages/AccountsList/Money from  tenant/Money from tenant.html">   مبالغ من مستأجر<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../Pages/AccountsList/Tax return/Tax returns.html">   الإقرار الضريبي <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
 
-                                        </div>
-                                       </div>
                                     <li class="nav-link">
                                         <a>
-                                           <img src="../../images/reports.svg" class="icon"  data-bs-toggle="collapse" href="#reports-items" aria-expanded="false" aria-controls="#reports-items"/>
+                                            <img src="../../images/accounts.svg" class="icon" data-bs-toggle="collapse"
+                                                href="#Accounts-items" aria-expanded="false"
+                                                aria-controls="#Accounts-items" />
+                                            <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                                href="#Accounts-items" aria-expanded="false"
+                                                aria-controls="#Accounts-items"> الحسابات </span>
+                                        </a>
+                                    </li>
+                                    <div id="Accounts-items" class="collapse">
+                                        <div class="bg-white gap-3 collapse-inner rounded">
+                                            <a class="collapse-item"
+                                                href="../../Pages/AccountsList/CashFeeding/Feed Box.html"> تغذية الصندوق
+                                                <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../Pages/AccountsList/Receipt Confirmation/Custody.html">
+                                                استلام عهدة <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item active"
+                                                href="../../Pages/AccountsList/closePendingContracts.html"> تسوية العقود
+                                                المعلقة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../Pages/AccountsList/Money to tenant/Money to tenant.html">
+                                                مبالغ إلى مستأجر<i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../Pages/AccountsList/Money from  tenant/Money from tenant.html">
+                                                مبالغ من مستأجر<i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../Pages/AccountsList/Tax return/Tax returns.html"> الإقرار
+                                                الضريبي <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+                                        </div>
+                                    </div>
+                                    <li class="nav-link">
+                                        <a>
+                                            <img src="../../images/reports.svg" class="icon" data-bs-toggle="collapse"
+                                                href="#reports-items" aria-expanded="false"
+                                                aria-controls="#reports-items" />
                                             <span class="text nav-text collapsed" data-bs-toggle="collapse"
                                                 href="#reports-items" aria-expanded="false"
                                                 aria-controls="#reports-items">التقارير </span>
@@ -169,40 +226,79 @@
                                     </li>
                                     <div id="reports-items" class="collapse">
                                         <div class="bg-white gap-3 collapse-inner rounded">
-                                            <a class="collapse-item" href="../../Pages/reports/Administrative procedures.html">  الإجراءات الإدارية  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item " href="../../Pages/reports/DailyReports.html"> اليومية  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../Pages/reports/Existing contracts.html"> العقود القائمة    <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../Pages/reports/Saved contracts.html"> العقود المحفوظة و الملغاه <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../Pages/reports/Pending contracts.html"> العقود المعلقة  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item " href="../../Pages/reports/Closed Contracts.html"> العقود المغلقة  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../Pages/reports/Cars contracts.html"> عقود السيارات  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../Pages/reports/Employee contracts.html"> عقود الموظفين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                              <a class="collapse-item" href="../../Pages/reports/Drivers contracts.html"> عقود السائقين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../Pages/reports/Employee Financial movement.html"> الحركة المالية للموظفين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../Pages/reports/SalePoint Financial movement.html"> الحركة المالية لنقاط البيع  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../Pages/reports/Tenant Financial movement.html"> الحركة المالية للمستأجرين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../Pages/reports/Administrative procedures.html"> الإجراءات
+                                                الإدارية <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item " href="../../Pages/reports/DailyReports.html">
+                                                اليومية <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../Pages/reports/Existing contracts.html">
+                                                العقود القائمة <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../Pages/reports/Saved contracts.html">
+                                                العقود المحفوظة و الملغاه <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../Pages/reports/Pending contracts.html">
+                                                العقود المعلقة <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item " href="../../Pages/reports/Closed Contracts.html">
+                                                العقود المغلقة <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../Pages/reports/Cars contracts.html">
+                                                عقود السيارات <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../Pages/reports/Employee contracts.html">
+                                                عقود الموظفين <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../Pages/reports/Drivers contracts.html">
+                                                عقود السائقين <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../Pages/reports/Employee Financial movement.html"> الحركة
+                                                المالية للموظفين <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../Pages/reports/SalePoint Financial movement.html"> الحركة
+                                                المالية لنقاط البيع <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../Pages/reports/Tenant Financial movement.html"> الحركة
+                                                المالية للمستأجرين <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
 
 
                                         </div>
                                     </div>
                                     <li class="nav-link">
                                         <a>
-                                             <img src="../../images/statics.svg" class="icon" data-bs-toggle="collapse"
-                                            href="#statics-items" aria-expanded="false"
-                                            aria-controls="#statics-items" />
+                                            <img src="../../images/statics.svg" class="icon" data-bs-toggle="collapse"
+                                                href="#statics-items" aria-expanded="false"
+                                                aria-controls="#statics-items" />
                                             <span class="text nav-text collapsed" data-bs-toggle="collapse"
                                                 href="#statics-items" aria-expanded="false"
                                                 aria-controls="#statics-items"> الإحصائيات </span>
                                         </a>
                                     </li>
-                                   <div id="statics-items" class="collapse">
+                                    <div id="statics-items" class="collapse">
                                         <div class="bg-white gap-3 collapse-inner rounded">
 
-                                              <a class="collapse-item" href="../../Pages/statistics/Car statistics.html"> إحصائيات السيارات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../..//Pages/statistics/Tenants statistics.html"> إحصائيات المستأجرين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../Pages/statistics/Contracts statistics.html"> إحصائيات العقود<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../Pages/statistics/Car Contracts statistics.html"> إحصائيات عقود السيارات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../Pages/statistics/Tenants Contracts statistics.html"> إحصائيات عقود المستأجرين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../Pages/statistics/Car statistics.html">
+                                                إحصائيات السيارات <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../..//Pages/statistics/Tenants statistics.html"> إحصائيات
+                                                المستأجرين <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../Pages/statistics/Contracts statistics.html"> إحصائيات
+                                                العقود<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../Pages/statistics/Car Contracts statistics.html"> إحصائيات
+                                                عقود السيارات <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../Pages/statistics/Tenants Contracts statistics.html">
+                                                إحصائيات عقود المستأجرين <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
 
 
                                         </div>
@@ -220,7 +316,8 @@
                                     <div id="employees-items" class="collapse">
                                         <div class="bg-white gap-3 collapse-inner rounded">
                                             <a class="collapse-item"
-                                                href="../../Pages/employees/employees list/employees.html"> بيانات الموظفين<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                                href="../../Pages/employees/employees list/employees.html"> بيانات
+                                                الموظفين<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item"
                                                 href="../../Pages/employees/System Permissions/employees.html"> صلاحيات
                                                 النظام <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
@@ -231,12 +328,12 @@
 
                                         </div>
                                     </div>
-                                    
+
                                     <li class="nav-link">
                                         <a>
                                             <img src="../../images/services.svg" class="icon" data-bs-toggle="collapse"
-                                            href="#services-items" aria-expanded="false"
-                                            aria-controls="#services-items" />
+                                                href="#services-items" aria-expanded="false"
+                                                aria-controls="#services-items" />
                                             <span class="text nav-text collapsed" data-bs-toggle="collapse"
                                                 href="#services-items" aria-expanded="false"
                                                 aria-controls="#services-items">الخدمات</span>
@@ -244,22 +341,26 @@
                                     </li>
                                     <div id="services-items" class="collapse">
                                         <div class="bg-white gap-3 collapse-inner rounded">
-                                            <a class="collapse-item" href="../../Pages/Services/banks/Banks.html"> البنوك <i
-                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../Pages/Services/banks/Banks.html">
+                                                البنوك <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item"
-                                                href="../../Pages/Services/sellingPoints/sellingPoints.html"> نقاط البيع <i
-                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                                href="../../Pages/Services/sellingPoints/sellingPoints.html"> نقاط البيع
+                                                <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item"
-                                                href="../../Pages/Services/techncal-connect/techncal-connect.html"> الربط
+                                                href="../../Pages/Services/techncal-connect/techncal-connect.html">
+                                                الربط
                                                 التقني <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                                <a class="collapse-item"
-                                                href="../../Pages/Services/Rental policy/Rental policy.html"> سياسة التأجير <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item"
+                                                href="../../Pages/Services/Rental policy/Rental policy.html"> سياسة
+                                                التأجير <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item" href="../../Pages/Services/drivers/drivers.html">
                                                 السائقين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
 
-                                            <a class="collapse-item" href="../../Pages/Services/Alerts/Alerts.html"> التنبيهات
+                                            <a class="collapse-item" href="../../Pages/Services/Alerts/Alerts.html">
+                                                التنبيهات
                                                 <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../Pages/Services/Membership/Membership.html">
+                                            <a class="collapse-item"
+                                                href="../../Pages/Services/Membership/Membership.html">
                                                 العضويات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
 
                                         </div>
@@ -272,423 +373,1417 @@
                 </div>
                 <div class="col d-flex align-items-center justify-content-center">
                     <div class="container main-container">
-                        <form action="">
-                            <div class="row g-3 ">
-                                <div class="col">
-                                    <h3> تسوية العقود المعلقة </h3>
-                                </div>
-                              <div class="row g-2">
+                        <h4 class="text-center my-3">تسوية العقود المعلقة</h4>
+                        <form id="SettlementForm">
+                            <div class=" ">
+                                <!-- progressbar -->
+                                <ul id="progressbar">
+                                    <li class="active" id="Rental_terms">بنود التأجير</li>
+                                    <li id="Expenses">المصروفات</li>
+                                    <li id="compensation">التعويضات</li>
+                                    <li id="payment"> الدفع</li>
+                                </ul>
+                            </div>
+                            <fieldset id="firstFieldset">
+                                <div class="form-card SettlementCard1  ">
+                                    <!-- //// -->
+                                    <div class="d-flex mb-3 gap-3 justify-content-end">
+                                        <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
+                                            target="_blank" class="pdf-anchor"><img src="../../images/contract.svg"
+                                                alt="pdf for contract details" class="pdf_img"></a>
+                                        <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
+                                            target="_blank" class="pdf-anchor2"><img src="../../images/Invoice.svg"
+                                                alt="pdf for contract details" class="pdf_img2"></a>
+                                        <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
+                                            target="_blank" class="pdf-anchor3"><img src="../../images/naql.svg"
+                                                alt="pdf for contract details" class="pdf_img3"></a>
 
-                                  
-                                    <div class="col-lg-8">
-                                        <div class="col-12 d-flex align-items-center Search-col  flex-wrap gap-2">
-                                            <div class="col-xl-4 d-flex  gap-3 align-items-center">
-                                                <label for="start-date">من</label>
-                                                <input type="date" class="form-control inputs custom-date-input" id="start-date" name="start-date" required>
-                                            </div>
-                                          <div class="col-xl-4 d-flex  gap-3 align-items-center">
-                                           <label for="end-date"> إلى </label>
-                                           <input type="date" class="form-control inputs custom-date-input" id="end-date" name="end-date" required>
-                                          </div>
-                                           
-                                            <button type="submit" class="btn btn-standard"> عرض </button>
-                                        </div>
                                     </div>
-                                    <div class="col-md-8 col-lg-4 search-input-col">
-                                        <div class="form-outline w-100" data-mdb-input-init>
-                                            <span class="fa fa-search"></span>
-                                            <input type="search" id="search" class="form-control inputs search-input"
-                                                name="search" aria-label="Search" autofocus autocomplete="off" />
+                                    <!-- //// -->
+                                    <div class="row data-row-Settl ">
+                                        <div class="col-auto ">
+                                            <P>رقم العقد</P>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-8 ">
-                                        <div class="row mt-3">
-                                            <div class="col-md-4">
-                                                <div class="row">
-                                                    <div class="col-auto">
-                                                        <p> قيمة العقود </p>
-                                                    </div>
-                                                    <div class=" col-auto Saved-data">
-                                                        <p>5,128.75</p>
-                                                    </div>
-                                                </div>
+                                        <div class="col-auto Saved-data">
+                                            <P>24-1401-4001105-000078</P>
+                                        </div>
+                                        <div class="col-md-auto  seacrh-icon-col">
+                                            <div class="col-sm-12  d-flex ">
+
+                                                <img src="../../images/Rectangle 129.svg" alt="seacrh-icon Image"
+                                                    id="hover-image-Settlement">
                                             </div>
-                                            <div class="col-md-4">
-                                                <div class="row">
-                                                    <div class="col-auto">
-                                                        <p> قيمة المصروفات</p>
+                                            <div class="dropdown-content"
+                                                id="dropdown-content-Settlement">
+                                                <div class="row dropdown-content-row">
+                                                    <div class="col-12 col-md-auto ">
+                                                        <p> المستأجر :</p>
                                                     </div>
-                                                    <div class=" col-auto Saved-data">
-                                                        <p>5,128.75</p>
+                                                    <div class="col Saved-data">
+                                                        <p>نايف هشام هشام المعمر</p>
                                                     </div>
+
                                                 </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="row">
-                                                    <div class="col-auto">
-                                                        <p> قيمة التعويضات</p>
+
+                                                <div class="row dropdown-content-row">
+                                                    <div class="col-12 col-md-auto ">
+                                                        <p> السيارة :</p>
                                                     </div>
-                                                    <div class=" col-auto Saved-data">
-                                                        <p>0.00
+                                                    <div class="col Saved-data">
+                                                        <p>فورد - تورس - سيدان متوسطة - 2019 - ص هـ هـ 8627 - أصفر
                                                         </p>
                                                     </div>
+
+                                                </div>
+                                                <div class="row dropdown-content-row">
+                                                    <div class="col-12 col-md-auto ">
+                                                        <p> بداية العقد :</p>
+                                                    </div>
+                                                    <div class="col Saved-data">
+                                                        <p>2024/12/29 18:12</p>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row dropdown-content-row">
+                                                    <div class="col-12 col-md-auto ">
+                                                        <p> نهاية العقد المتوقعة :</p>
+                                                    </div>
+                                                    <div class="col Saved-data">
+                                                        <p>2025/02/12 18:12</p>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row dropdown-content-row">
+                                                    <div class="col-12 col-md-auto ">
+                                                        <p> الأيام المتوقعه :</p>
+                                                    </div>
+                                                    <div class="col Saved-data">
+                                                        <p>3</p>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row dropdown-content-row">
+                                                    <div class="col-12 col-md-auto ">
+                                                        <p> الساعات المجانية :</p>
+                                                    </div>
+                                                    <div class="col Saved-data">
+                                                        <p>2</p>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="row dropdown-content-row">
+                                                    <div class="col-12 col-md-auto ">
+                                                        <p> الحد الأعلى للساعات :</p>
+                                                    </div>
+                                                    <div class="col Saved-data">
+                                                        <p>0</p>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row dropdown-content-row">
+                                                    <div class="col-12 col-md-auto ">
+                                                        <p> الكيلوات المجاني :</p>
+                                                    </div>
+                                                    <div class="col Saved-data">
+                                                        <p>200</p>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>
-                                     </div>
-                              </div>
-                            </div>
-                         
-                            <div class="row table-row px-3">
-                                <div class="col  scroll-table-div filter-search-reportTable table-responsive-sm  w-100  ">
-                                    <table class=" tables-style table table-borderless " id="table">
-                                        <thead class="sticky-top">
-                                            <tr>
-                                                <th scope="col"> العقد </th>
-                                                <th scope="col"> صافى العقد </th>
-                                                <th scope="col">التعويضات </th>
-                                                <th scope="col"> المصروفات   </th>
-                                                <th scope="col"> قيمة العقد </th>
-                                                <th scope="col" class="DifferAlign" >  الفرع </th>
-                                                <th scope="col" class="DifferAlign"> العقد </th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr  data-bs-toggle="modal" data-bs-target="#DataModal">
-                                            <td><a href="#"><img  class="pdf-Tableicons" src="../../images/contract.svg"></a></td>
-                                           <td>14.839.02</td>
-                                           <td>0.00</td>
-                                           <td>0.00</td>
-                                           <td>14.839.02</td>
-                                           <td class="DifferAlign">الحزام الذهبي</td>
-                                            <td class="DifferAlign">
-                                                <p class="FirstLineP"> 24-1401-4004104-000049</p>
-                                                <div class="d-flex justify-content-end gap-4">
-                                                    <p class="secondLineP">22/09/2024</p>
-                                                    <p class="secondLineP time" > 11:30 </p>
+
+                                    </div>
+                                    <div class="row data-row-Settl">
+                                        <div class="col-auto">
+                                            <P>قيمة العقد </P>
+                                        </div>
+                                        <div class="col-auto Saved-data">
+                                            <P> 454.25</P>
+                                        </div>
+                                        <div class="col-md-5 col-lg-5 col-xl-4  seacrh-icon-col">
+                                            <div class="col-sm-12  d-flex ">
+
+                                                <img src="../../images/Rectangle 129.svg" alt="seacrh-icon Image"
+                                                    id="contract-value-Settlement2">
+                                            </div>
+                                            <div class="dropdown-content  dropdown-content-extension"
+                                                id="dropdown-content-Settlement2">
+                                                <div class="row dropdown-content-row">
+                                                    <div class="col-md-auto">
+                                                        <p> إيجار :</p>
+                                                    </div>
+                                                    <div class="col Saved-data">
+                                                        <p>4.652.00</p>
+                                                    </div>
+
                                                 </div>
-                                            </td>
-                                            <td>
-                                              <div class="filter-number-td">
-    
-                                                1
-    
-                                               </div>
-                                                
-                                            </td>
-                                       
-                                        </tr>
-                                        <tr data-bs-toggle="modal" data-bs-target="#DataModal">
-                                            <td><a href="#"><img  class="pdf-Tableicons" src="../../images/contract.svg"></a></td>
-                                           <td>77.711.25</td>
-                                           <td>0.00</td>
-                                           <td>0.00</td>
-                                           <td>77.711.25</td>
-                                           <td class="DifferAlign">المحمدية</td>
-                                            <td class="DifferAlign">
-                                                <p class="FirstLineP"> 24-1401-4004104-000049</p>
-                                                <div class="d-flex justify-content-end gap-4">
-                                                    <p class="secondLineP">22/09/2024</p>
-                                                    <p class="secondLineP time" > 11:30 </p>
+                                                <div class="row dropdown-content-row">
+                                                    <div class="col-md-auto">
+                                                        <p> تفويض :</p>
+                                                    </div>
+                                                    <div class="col Saved-data">
+                                                        <p>5.00 </p>
+                                                    </div>
+
                                                 </div>
-                                            </td>
-                                            <td>
-                                              <div class="filter-number-td">
-    
-                                                2
-    
-                                               </div>
-                                                
-                                            </td>
-                                       
-                                        </tr>
-                                        
-                                   
-                                        </tbody>
-                                    </table>
+
+                                                <div class="row dropdown-content-row">
+                                                    <div class="col-md-auto">
+                                                        <p> سائق إضافي :</p>
+                                                    </div>
+                                                    <div class="col Saved-data">
+                                                        <p> 0.00 </p>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row dropdown-content-row">
+                                                    <div class="col-md-auto">
+                                                        <p> سائق خاص :</p>
+                                                    </div>
+                                                    <div class="col Saved-data">
+                                                        <p> 10.00 </p>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="row dropdown-content-row">
+                                                    <div class="col-md-auto">
+                                                        <p> خيارات :</p>
+                                                    </div>
+                                                    <div class="col Saved-data">
+                                                        <p>1.00</p>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row dropdown-content-row">
+                                                    <div class="col-md-auto">
+                                                        <p> إضافات :</p>
+                                                    </div>
+                                                    <div class="col Saved-data">
+                                                        <p>0.00</p>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row dropdown-content-row">
+                                                    <div class="col-md-auto">
+                                                        <p> خصم :</p>
+                                                    </div>
+                                                    <div class="col Saved-data">
+                                                        <p>0.00</p>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row dropdown-content-row">
+                                                    <div class="col-md-auto">
+                                                        <p> ضريبة </p>
+                                                    </div>
+                                                    <div class="col Saved-data">
+                                                        <p>694.00 </p>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row data-row-Settl g-3">
+                                        <div class="col-md-10 col-lg-6">
+                                            <div class="row g-2">
+                                                <div class="col-auto">
+                                                    <label for="Settlement-type" class="mt-2">
+                                                        نوع التسوية
+                                                    </label>
+                                                </div>
+                                                <div class="col-12 col-md-7 col-lg-5">
+                                                    <select class="form-select select-style" id="Settlement-type"
+                                                        name="Settlement type">
+                                                        <option selected disabled>
+                                                        </option>
+                                                        <option value="0"> مع تعويضات</option>
+                                                        <option value="1"> بدون تعويضات</option>
+                                                    </select>
+                                                    <div class="row requird-field-row-last">
+                                                        <div class="invalid-feedback" style="display: none;">
+                                                            هذا الحقل مطلوب
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-auto  seacrh-icon-col">
+                                                    <div class="col-sm-12 d-flex  ">
+
+                                                        <img src="../../images/Rectangle 129.svg"
+                                                            alt="seacrh-icon Image" id="Settlement-type-Data"
+                                                            style="cursor: pointer;">
+                                                    </div>
+                                                    <!-- edited -->
+                                                    <div class="dropdown-content" id="dropdown-content-Settlement5"
+                                                        style="min-width: 300px;">
+                                                        <div class="row dropdown-content-row">
+                                                            <div class="col-12 col-md-auto ">
+                                                                <p> نوع التسوية </p>
+                                                            </div>
+                                                            <div class="col Saved-data">
+                                                                <p>إغلاق بسبب استدعاء تجاري قبل انتهاء مدته </p>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5  ">
+                                            <div class="row">
+                                                <div class="col-auto  d-flex gap-2">
+                                                    <input class="form-check-input Settlement-input-checkbox m-0"
+                                                        type="checkbox" value="checked" id="expenses"
+                                                        name="checked-expenses">
+                                                    <label class="form-check-label" for="expenses">المصروفات</label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row data-row-Settl g-3">
+                                        <div class="col-lg-6 ">
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <p> نهاية العقد </p>
+                                                </div>
+                                                <div class="col-auto Saved-data">
+                                                    <P>00:56 2025/05/25 </P>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class=" col-lg-5  ">
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <p> الأيام الفعلية</p>
+                                                </div>
+                                                <div class="col-auto Saved-data">
+                                                    <P>20</P>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="row data-row-Settl">
+                                        <div class=" col-lg-6 ">
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <p>فرع الاستلام </p>
+                                                </div>
+                                                <div class="col-auto Saved-data">
+                                                    <P>القصيم</P>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <p> فرع التسليم</p>
+                                                </div>
+                                                <div class="col-auto Saved-data">
+                                                    <p>العزيزة</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row p-2 align-items-center">
+                                        <div class="col-auto">
+                                            <label id="notes">ملاحظات</label>
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <textarea class="form-control textarea-inputs" rows="1" maxlength="100"
+                                                name="notes"></textarea>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="row button-row">
+                                    <div class="button-card">
+
+                                    </div>
+                                    <div class="button-card">
+                                        <input type="button" name="next" class="next action-button" value="التالي" />
+                                        <img src="../../images/Group.png" alt="Button Image" class="next action-button"
+                                            style="vertical-align: middle; ">
+                                    </div>
 
                                 </div>
-                            </div>
-                        </form>
-                       
-                         <a href="../../index.html" data-bs-toggle="tooltip" data-bs-placement="top"
-                            data-bs-custom-class="custom-tooltip" data-bs-title="العودة الي الرئيسية"
-                            class="new-Page-icon"><img src="../../images/back to main.svg" alt="man"></a>
-                    </div>
-                </div>
-                <div class="col-auto sidebar2-col close2 close2">
-                    <nav class="sidebar2 close2">
-                        <div class="toggle-div toggle2">
-                            <span class="notification"> إشعارات </span>
-                        </div>
-                        <div class="menu-bar">
-                            <div class="menu">
-                                <main>
-                                    <div class="accordion">
 
-                     <div class="accordion-item">
-                                        <div class="accordion-item-header">
-                                          <span class="accordion-item-header-title">  مستندات الشركة  </span>
-                                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down accordion-item-header-icon">
-                                            <path d="m6 9 6 6 6-6" />
-                                          </svg>
+
+                            </fieldset>
+                            <fieldset id="SecondFieldset">
+                                <div class="form-card form-card1">
+
+                                    <div class="row expensesRow flex-lg-row-reverse flex-column-reverse g-5 ">
+                                        <div class="col-lg-5">
+                                            <div class="TablesReference">
+                                                <table class="table Expenses-compensation-Table attatchments-table "
+                                                    id="Expenses-Attatchments-Table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-center"> المرفقات </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="upload__box  upload__box2 d-flex ">
+                                                                    <div class="upload_img-wrap_inner">
+                                                                        <div class="upload__btn-box"
+                                                                            id="Expenses-upload-box">
+                                                                            <label class="upload__btn">
+                                                                                <div
+                                                                                    class="upload-container-checking Expenses-compensation-Upload">
+                                                                                    <img class="upload-icon"
+                                                                                        src="../../images/Add.svg"
+                                                                                        alt="Upload Icon" id="addImage">
+                                                                                    <input type="file" multiple
+                                                                                        accept="image/*"
+                                                                                        id="Expenses-images"
+                                                                                        class="upload__inputfile ">
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </td>
+
+                                                            <td>
+                                                            </td>
+
+
+
+                                                        </tr>
+                                                        <tr>
+
+                                                            <td>
+                                                            </td>
+                                                            <td>
+
+                                                            </td>
+
+                                                        </tr>
+
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
-                                        <div class="accordion-item-description-wrapper">
-                                          <div class="accordion-item-description">
-                                            <div class="container-fluid">
-                                                <div class="row collapse-row ">
-                                                    <div class="col-7">
-                                                        <p>السجل التجاري</p>
-                                                    </div>
-                                                   
-                                                    <div class="col working">
-                                                        <p> 2 </p>
-                                                   </div>
-                                                   <div class="col ended">
-                                                        <p> 3 </p>
-                                                   </div>
-                                                </div>
-                                                <hr class="collapse-hr">
+                                        <div class="col-lg-6">
+                                            <div class="TablesReference">
+                                                <div class="h-100">
+                                                    <table class="table Expenses-compensation-Table mb-0 "
+                                                        id="Expenses-Data-Table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th> البيان </th>
+                                                                <th> القيمة</th>
+                                                                <th> الخدمة </th>
 
-                                                <div class="row collapse-row ">
-                                                    <div class="col-7">
-                                                        <p> اشتراك الغرفة التجارية </p>
-                                                    </div>
-                                                   
-                                                    <div class="col working">
-                                                        <p> 5 </p>
-                                                   </div>
-                                                   <div class="col ended">
-                                                        <p> 6 </p>
-                                                   </div>
-                                                </div>
-                                                <hr class="collapse-hr">
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <textarea class="check-table-notes" id="Expenses1"
+                                                                        maxlength="100" name="Expenses1"></textarea>
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" class="Table-inputs"
+                                                                        name="ChangeOil" value="100.00">
+                                                                </td>
+                                                                <td>
+                                                                    تغيير الزيت
+                                                                </td>
 
-                                                <div class="row collapse-row ">
-                                                    <div class="col-7">
-                                                        <p> تصريح هيئة النقل </p>
-                                                    </div>
-                                                   
-                                                    <div class="col working">
-                                                        <p> 7 </p>
-                                                   </div>
-                                                   <div class="col ended">
-                                                        <p> 5 </p>
-                                                   </div>
-                                                </div>
-                                                <hr class="collapse-hr">
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <textarea class="check-table-notes" id="Expenses2"
+                                                                        maxlength="100" name="Expenses2"></textarea>
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" class="Table-inputs"
+                                                                        name="TiresExpenses" value="75.00">
 
-                                                <div class="row collapse-row ">
-                                                    <div class="col-7">
-                                                        <p>  رخصة البلدية   </p>
-                                                    </div>
-                                                   
-                                                    <div class="col working">
-                                                        <p> 6 </p>
-                                                   </div>
-                                                   <div class="col ended">
-                                                        <p> 3 </p>
-                                                   </div>
-                                                </div>
-                                                <hr class="collapse-hr">
+                                                                </td>
+                                                                <td>
+                                                                    الإطارات
+                                                                </td>
 
-                                                <div class="row collapse-row ">
-                                                    <div class="col-7">
-                                                        <p> البريد الوطني</p>
-                                                    </div>
-                                                   
-                                                    <div class="col working">
-                                                        <p> 4 </p>
-                                                   </div>
-                                                   <div class="col ended">
-                                                        <p> 5 </p>
-                                                   </div>
-                                                </div>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <textarea class="check-table-notes" id="Expenses3"
+                                                                        maxlength="100" name="Expenses3"></textarea>
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" class="Table-inputs"
+                                                                        name="Transportation" value=" 8.50">
 
+                                                                </td>
+                                                                <td>
+                                                                    النقل
+                                                                </td>
+
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <textarea class="check-table-notes" id="Expenses4"
+                                                                        maxlength="100" name="Expenses4"></textarea>
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" class="Table-inputs"
+                                                                        name="otherExpenses">
+                                                                </td>
+                                                                <td>
+                                                                    أخرى
+                                                                </td>
+
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <textarea class="check-table-notes" id="Expenses5"
+                                                                        maxlength="100" name="Expenses5"
+                                                                        disabled></textarea>
+                                                                </td>
+                                                                <td>
+                                                                </td>
+                                                                <td>
+
+                                                                </td>
+
+                                                            </tr>
+
+                                                            <tr class="total">
+                                                                <td colspan="2">
+                                                                    <p id="TotalExpenses">183.50</p>
+                                                                </td>
+                                                                <td scope="row">
+                                                                    <p>المجموع</p>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="row justify-content-end">
+                                        <div class="col-md-auto">
+                                            <p style="color:#D92626;margin: 0;" id="ExpensesError"> رسالة الخطأ</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="row button-row">
+                                    <div class="button-card">
+                                        <img src="../../images/Vector.png" alt="Button Image"
+                                            class="previous action-button-previous" style="vertical-align: middle; ">
+                                        <input type="button" name="previous" class="previous action-button-previous"
+                                            value="السابق" />
+
+                                    </div>
+                                    <div class="button-card">
+                                        <input type="button" name="next" class="next action-button" value="التالي" />
+                                        <img src="../../images/Group.png" alt="Button Image" class="next action-button"
+                                            style="vertical-align: middle; ">
+
+                                    </div>
+
+                                </div>
+
+
+                            </fieldset>
+                            <fieldset id="ThirdFieldset">
+                                <div class="form-card form-card1">
+
+                                    <div class="row expensesRow flex-lg-row-reverse flex-column-reverse g-5 ">
+                                        <div class="col-lg-5">
+                                            <div class="TablesReference">
+                                                <table class="table Expenses-compensation-Table attatchments-table "
+                                                    id="compensation-Attatchments-Table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-center"> المرفقات </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="upload__box  upload__box2 d-flex ">
+                                                                    <div class="upload_img-wrap_inner">
+
+                                                                        <div class="upload__btn-box"
+                                                                            id="compensation-upload-box">
+                                                                            <label class="upload__btn">
+                                                                                <div
+                                                                                    class="upload-container-checking Expenses-compensation-Upload">
+                                                                                    <img class="upload-icon"
+                                                                                        src="../../images/Add.svg"
+                                                                                        alt="Upload Icon" id="addImage">
+                                                                                    <input type="file" multiple
+                                                                                        accept="image/*"
+                                                                                        id="compensation-images"
+                                                                                        class="upload__inputfile ">
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </td>
+
+                                                            <td>
+                                                            </td>
+
+
+
+                                                        </tr>
+                                                        <tr>
+
+                                                            <td>
+                                                            </td>
+                                                            <td>
+
+                                                            </td>
+
+                                                        </tr>
+
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="TablesReference">
+                                                <div class="h-100">
+                                                    <table class="table Expenses-compensation-Table mb-0 "
+                                                        id="compensation-Data-Table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th> البيان </th>
+                                                                <th> القيمة</th>
+                                                                <th> الخدمة </th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <textarea class="check-table-notes"
+                                                                        id="compensation1" maxlength="100"
+                                                                        name="compensation1"></textarea>
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" class="Table-inputs"
+                                                                        name="SpareParts" value="100.00">
+                                                                </td>
+                                                                <td>
+                                                                    قطع الغيار
+                                                                </td>
+
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <textarea class="check-table-notes"
+                                                                        id="compensation2" maxlength="100"
+                                                                        name="compensation2"></textarea>
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" class="Table-inputs"
+                                                                        name="HandFare" value="75.00">
+                                                                </td>
+                                                                <td>
+                                                                    أجرة اليد
+                                                                </td>
+
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <textarea class="check-table-notes"
+                                                                        id="compensation3" maxlength="100"
+                                                                        name="compensation3"></textarea>
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" class="Table-inputs"
+                                                                        name="Transportation" value="75.00">
+                                                                </td>
+                                                                <td>
+                                                                    النقل
+                                                                </td>
+
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <textarea class="check-table-notes"
+                                                                        id="compensation4" maxlength="100"
+                                                                        name="compensation4"></textarea>
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" class="Table-inputs "
+                                                                        name="AdministrativeFees" value="">
+                                                                </td>
+                                                                <td>
+                                                                    رسوم إدارية
+                                                                </td>
+
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <textarea class="check-table-notes"
+                                                                        id="compensation5" maxlength="100"
+                                                                        name="compensation5"></textarea>
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" class="Table-inputs "
+                                                                        name="otherCompensation">
+                                                                </td>
+                                                                <td>
+                                                                    أخرى
+                                                                </td>
+
+                                                            </tr>
+                                                            <tr class="total">
+                                                                <td colspan="2">
+                                                                    <p id="TotalCompensation">183.50</p>
+                                                                </td>
+                                                                <td scope="row">
+                                                                    <p>المجموع</p>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+
+                                    </div>
+                                    <div class="row justify-content-between">
+                                        <div class="col-md-auto">
+                                            <p style="color:#D92626;margin: 0;" id="ExpensesError"> التأمين ضد الغير
+                                            </p>
+                                        </div>
+                                        <div class="col-md-auto">
+                                            <p style="color:#D92626;margin: 0;" id="ExpensesError"> رسالة الخطأ</p>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                                <div class="row button-row">
+                                    <div class="button-card">
+                                        <img src="../../images/Vector.png" alt="Button Image"
+                                            class="previous action-button-previous" style="vertical-align: middle; ">
+                                        <input type="button" name="previous" class="previous action-button-previous"
+                                            value="السابق" />
+
+                                    </div>
+                                    <div class="button-card">
+                                        <input type="button" name="next" class="next action-button" value="التالي" />
+                                        <img src="../../images/Group.png" alt="Button Image" class="next action-button"
+                                            style="vertical-align: middle; ">
+
+                                    </div>
+
+                                </div>
+
+
+                            </fieldset>
+                            
+                            <fieldset id="FourthFieldset">
+                                <div class="form-card form-card5-settl">
+                                    <div class="row  g-3">
+                                        <div class="col-xl-8 contract-Settl-row ">
+                                            <div class="row">
+                                                <div class="col-auto ">
+                                                    <P>رقم العقد </P>
+                                                </div>
+                                                <div class="col-auto Saved-data ">
+                                                    <P>24-1401-4001105-000078</P>
+                                                </div>
+                                                <div class="col-md-5 col-lg-5 col-xl-4 seacrh-icon-col">
+                                                    <div>
+    
+                                                        <img src="../../images/Rectangle 129.svg" alt="seacrh-icon Image"
+                                                            id="contract-value-Settlement3">
+                                                    </div>
+                                                    <div class="dropdown-content"
+                                                    id="dropdown-content-Settlement3">
+                                                    <div class="row dropdown-content-row">
+                                                        <div class="col-12 col-md-auto ">
+                                                            <p> المستأجر :</p>
+                                                        </div>
+                                                        <div class="col Saved-data">
+                                                            <p>نايف هشام هشام المعمر</p>
+                                                        </div>
+    
+                                                    </div>
+    
+                                                    <div class="row dropdown-content-row">
+                                                        <div class="col-12 col-md-auto ">
+                                                            <p> السيارة :</p>
+                                                        </div>
+                                                        <div class="col Saved-data">
+                                                            <p>فورد - تورس - سيدان متوسطة - 2019 - ص هـ هـ 8627 - أصفر
+                                                            </p>
+                                                        </div>
+    
+                                                    </div>
+                                                    <div class="row dropdown-content-row">
+                                                        <div class="col-12 col-md-auto ">
+                                                            <p> بداية العقد :</p>
+                                                        </div>
+                                                        <div class="col Saved-data">
+                                                            <p>2024/12/29 18:12</p>
+                                                        </div>
+    
+                                                    </div>
+                                                    <div class="row dropdown-content-row">
+                                                        <div class="col-12 col-md-auto ">
+                                                            <p> نهاية العقد المتوقعة :</p>
+                                                        </div>
+                                                        <div class="col Saved-data">
+                                                            <p>2025/02/12 18:12</p>
+                                                        </div>
+    
+                                                    </div>
+                                                    <div class="row dropdown-content-row">
+                                                        <div class="col-12 col-md-auto ">
+                                                            <p> الأيام المتوقعه :</p>
+                                                        </div>
+                                                        <div class="col Saved-data">
+                                                            <p>3</p>
+                                                        </div>
+    
+                                                    </div>
+                                                    <div class="row dropdown-content-row">
+                                                        <div class="col-12 col-md-auto ">
+                                                            <p> الساعات المجانية :</p>
+                                                        </div>
+                                                        <div class="col Saved-data">
+                                                            <p>2</p>
+                                                        </div>
+    
+                                                    </div>
+    
+                                                    <div class="row dropdown-content-row">
+                                                        <div class="col-12 col-md-auto ">
+                                                            <p> الحد الأعلى للساعات :</p>
+                                                        </div>
+                                                        <div class="col Saved-data">
+                                                            <p>0</p>
+                                                        </div>
+    
+                                                    </div>
+                                                    <div class="row dropdown-content-row">
+                                                        <div class="col-12 col-md-auto ">
+                                                            <p> الكيلوات المجاني :</p>
+                                                        </div>
+                                                        <div class="col Saved-data">
+                                                            <p>200</p>
+                                                        </div>
+    
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4">
+                                          <div class="row">
+                                            <div class="col-auto ">
+                                                <P> تاريخ التسوية</P>
+                                            </div>
+                                            <div class="col-auto Saved-data ">
+                                                <P>2024/07/19</P>
                                             </div>
                                           </div>
                                         </div>
+                                    </div>
+                                    <div class="row data-col-Settl g-3">
+                                        <div class=" col-xl-8">
+                                          <div class="row">
+                                            <div class="col-auto ">
+                                                <P>قيمة العقد</P>
+                                            </div>
+                                            <div class="col-auto Saved-data ">
+                                                <P>4,235.45</P>
+                                            </div>
+                                            <div class="col-md-5 col-lg-5 col-xl-4  seacrh-icon-col">
+                                                <div class="col-sm-12 d-flex">
+
+                                                    <img src="../../images/Rectangle 129.svg" alt="seacrh-icon Image"
+                                                        id="contract-value-Settlement4">
+                                                </div>
+                                                <div class="dropdown-content"
+                                                    id="dropdown-content-Settlement4">
+                                                    <div class="row dropdown-content-row">
+                                                        <div class="col-md-auto">
+                                                            <p> ايجار: </p>
+                                                        </div>
+                                                        <div class="col Saved-data">
+                                                            <p> 3,600.00 </p>
+                                                        </div>
+    
+                                                    </div>
+                                                    <div class="row dropdown-content-row">
+                                                        <div class="col-md-auto">
+                                                            <p>تفويض : </p>
+                                                        </div>
+                                                        <div class="col Saved-data">
+                                                            <p> 35:00</p>
+                                                        </div>
+    
+                                                    </div>
+    
+                                                    <div class="row dropdown-content-row">
+                                                        <div class="col-md-auto">
+                                                            <p>خصم : </p>
+                                                        </div>
+                                                        <div class="col Saved-data">
+                                                            <p> 00:00 </p>
+                                                        </div>
+    
+                                                    </div>
+    
+                                                    <div class="row dropdown-content-row">
+                                                        <div class="col-md-auto">
+                                                            <p> ضريبة : </p>
+                                                        </div>
+                                                        <div class="col Saved-data">
+                                                            <p> 00:00</p>
+                                                        </div>
+    
+                                                    </div>
+                                                  
+    
+                                                </div>
+                                            </div>
+                                          </div>
+                                    </div>
+                                   </div>
+                                <div class="row">
+                                    <div class="col-md-auto col-lg-4">
+                                        <div class="row">
+                                            <div class="col-auto ">
+                                                <p> قيمة العقد بعد الخصم </p>
+                                            </div>
+                                            <div class="col-auto Saved-data p-0">
+                                                <p>1505.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="row">
+                                            <div class="col-auto ">
+                                                <p>قيمة الضريبة </p>
+                                            </div>
+                                            <div class="col-auto Saved-data p-0">
+                                                <p>225.75</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row  g-3">
+                                    <div class="col-lg-4">
+                                        <div class="row">
+                                            <div class="col-auto ">
+                                                <p>إجمالي العقد </p>
+                                            </div>
+                                            <div class="col-auto Saved-data p-0">
+                                                <p>1505.00</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="row">
+                                            <div class="col-auto ">
+                                                <p> إجمالي المصروفات</p>
+                                            </div>
+                                            <div class="col-auto Saved-data p-0">
+                                                <p>1505.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="row">
+                                            <div class="col-auto ">
+                                                <p>إجمالي التعويضات </p>
+                                            </div>
+                                            <div class="col-auto Saved-data p-0">
+                                                <p>1505.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row  g-3">
+                                    <div class="col-lg-4">
+                                        <div class="row">
+                                            <div class="col-auto ">
+                                                <p>رصيد سابق </p>
+                                            </div>
+                                            <div class="col-auto Saved-data p-0">
+                                                <p>00.96 </p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="row">
+                                            <div class="col-auto ">
+                                                <p> المبلغ المطلوب </p>
+                                            </div>
+                                            <div class="col-auto Saved-data p-0">
+                                                <p>1750.90</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="row">
+                                            <div class="col-auto ">
+                                                <p> الباقي على المستأجر</p>
+                                            </div>
+                                            <div class="col-auto Saved-data p-0">
+                                                <p>1750.70</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row  g-3">
+                                    <div class=" col-lg-4  ">
+                                       <div class="row align-items-baseline">
+                                        <div class="col-auto">
+                                            <label id="amount-paid" for="amount-paid-input">
+                                                المبلغ المدفوع</label>
+                                        </div>
+                                        <div class="col">
+                                            <input type="tel" class="form-control inputs " id="amount-paid-input"
+                                                name="amount-paid" autocomplete="off">
+                                            <div class="row requird-field-row-last">
+                                                <div class="invalid-feedback" style="display: none;">
+                                                    هذا الحقل مطلوب
+                                                </div>
+                                            </div>
+                                        </div>
+                                       </div>
+
+                                    </div>
+
+                                    <div class=" col-lg-4 ">
+                                      <div class="row align-items-baseline">
+                                        <div class="col-auto  ">
+                                            <label id="payment-method" for="payment-method-select">طريقة الدفع</label>
+
+                                        </div>
+                                        <div class=" col">
+                                            <div class="offset">
+                                                <select class="form-select select-style" id="payment-method-select"
+                                                    name="payment-method">
+                                                    <option selected disabled>
+                                                    </option>
+                                                    <option value="نقدا"> نقدا</option>
+                                                    <option value="مدي"> مدي</option>
+                                                    <option value="فيزا"> فيزا</option>
+                                                    <option value="فيزا"> ماسترد كارد</option>
+
+                                                </select>
+
+                                                <div class="row requird-field-row-last">
+                                                    <div class="invalid-feedback" style="display: none;">
+                                                        هذا الحقل مطلوب
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
                                       </div>
-                                        <div class="accordion-item">
-                                            <div class="accordion-item-header">
-                                                <span class="accordion-item-header-title"> السيارات </span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                    class="lucide lucide-chevron-down accordion-item-header-icon">
-                                                    <path d="m6 9 6 6 6-6" />
-                                                </svg>
-                                            </div>
-                                            <div class="accordion-item-description-wrapper">
-                                                <div class="accordion-item-description">
-                                                    <div class="container-fluid">
-                                                        <div class="row collapse-row">
-                                                            <div class="col-5">
-                                                                <p>وثائق</p>
-                                                            </div>
-                                                            <div class="col working">
-                                                                <p> 3 </p>
-                                                            </div>
-                                                            <div class="col ended">
-                                                                <p> 5 </p>
-                                                            </div>
-                                                        </div>
-                                                        <hr class="collapse-hr">
-                                                        <div class="row collapse-row">
-                                                            <div class="col-5">
-                                                                <p>صيانة</p>
-                                                            </div>
-                                                            <div class="col working">
-                                                                <p> 100 </p>
-                                                            </div>
-                                                            <div class="col ended">
-                                                                <p> 200 </p>
-                                                            </div>
-                                                        </div>
-                                                        <hr class="collapse-hr">
-                                                        <div class="row collapse-row">
-                                                            <div class="col-5">
-                                                                <p>الأسعار</p>
-                                                            </div>
-                                                            <div class="col working">
-                                                                <p> 460 </p>
-                                                            </div>
-                                                            <div class="col ended">
-                                                                <p> 500 </p>
-                                                            </div>
-                                                        </div>
+                                    </div>
+                                    <div class=" col-lg-6 col-xl-4 data-col-Settl flex-md-nowrap">
+                                      <div class="row align-items-baseline">
+                                        <div class="col-auto   ">
+                                            <label id="selling-point" for="selling-point-dropdown"> نقطة البيع </label>
 
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="offset">
+                                                <select class="form-select select-style" id="selling-point-dropdown"
+                                                    name="selling-point">
+                                                    <option selected disabled> </option>
+                                                    <option value="">ايرادات المستأجرين بمصرف الراجحي </option>
+                                                    <option value=""> </option>
+                                                    <option value=""> </option>
+                                                </select>
+                                                <div class="row requird-field-row-last">
+                                                    <div class="invalid-feedback" style="display: none;">
+                                                        هذا الحقل مطلوب
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="accordion-item">
-                                            <div class="accordion-item-header">
-                                                <span class="accordion-item-header-title"> العقود </span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                    class="lucide lucide-chevron-down accordion-item-header-icon">
-                                                    <path d="m6 9 6 6 6-6" />
-                                                </svg>
-                                            </div>
-                                            <div class="accordion-item-description-wrapper">
-                                                <div class="accordion-item-description">
-                                                    <div class="container-fluid">
-                                                        <div class="row collapse-row">
-                                                            <div class="col ">
-                                                                <p> منتهية </p>
-                                                            </div>
-                                                            <div class="col contract-ended ">
-                                                                <p> 8 </p>
-                                                            </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="row p-2 align-items-center" >
+                                    <div class="col-auto">
+                                        <label id="notes">ملاحظات</label>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <textarea class="form-control textarea-inputs" rows="1" maxlength="100"
+                                            name="notes"></textarea>
+                                    </div>
 
-                                                        </div>
-                                                        <hr class="collapse-hr">
-                                                        <div class="row collapse-row">
-                                                            <div class="col">
-                                                                <p>تنتهي اليوم</p>
-                                                            </div>
+                                </div>
+                    </div>
 
-                                                            <div class="col ended">
-                                                                <p> 15 </p>
-                                                            </div>
-                                                        </div>
-                                                        <hr class="collapse-hr">
-                                                        <div class="row collapse-row">
-                                                            <div class="col">
-                                                                <p>تنتهي غدًا</p>
-                                                            </div>
-                                                            <div class="col working">
-                                                                <p> 7 </p>
-                                                            </div>
-                                                        </div>
-                                                        <hr class="collapse-hr">
-                                                        <div class="row collapse-row">
-                                                            <div class="col">
-                                                                <p> تنتهي لاحقًا </p>
-                                                            </div>
-                                                            <div class="col later">
-                                                                <p> 11 </p>
-                                                            </div>
+                    <div class="row button-row align-items-center" style="padding: 6px 7px 0px 20px;">
+                        
+                        <div class="button-card">
+                            <img src="../../images/Vector.png" alt="Button Image"
+                                class="previous action-button-previous" style="vertical-align: middle; ">
+                            <input type="button" name="previous" class="previous action-button-previous"
+                                value="السابق" />
+                            
+                        </div>
+                        <div class="payment-button-card button-card   gap-2">
 
-                                                        </div>
-                                                        <hr class="collapse-hr">
-                                                        <div class="row collapse-row">
-                                                            <div class="col-5">
-                                                                <p>محفوظة</p>
-                                                            </div>
-                                                            <div class="col working">
-                                                                <p> 5 </p>
-                                                            </div>
-
-                                                        </div>
-                                                        <hr class="collapse-hr">
-                                                        <div class="row collapse-row">
-                                                            <div class="col-5">
-                                                                <p>معلقة</p>
-                                                            </div>
-                                                            <div class="col working">
-                                                                <p> 100 </p>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                            
+                            <button type="button" class="btn check-btn payment-button" data-bs-toggle="modal"
+                                data-bs-target="#UnifiedContract">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        العقد الموحد
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="systems-check"> <i class="fa-solid fa-check text-white"></i>
                                         </div>
-                                         <div class="accordion-item">
-                                            <div class="accordion-item-header">
-                                                <span class="accordion-item-header-title"> الموظفين <div class="notify">
-                                                    </div></span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                    class="lucide lucide-chevron-down accordion-item-header-icon">
-                                                    <path d="m6 9 6 6 6-6" />
-                                                </svg>
-                                            </div>
-                                         <div class="accordion-item-description-wrapper">
-                                                <div class="accordion-item-description">
-                                                    <div class="container-fluid">
-                                                        <div class="row align-items-center ">
-                                                            <div class="col-auto p-1"> 
-                                                                <img src="../../images/arrow icon (2).svg" />
-                                                                <img src="../../images/arabic-man_21730-4132.avif"
-                                                                    class="employee-custody-img"> عمار عبدالغفور مسفر
-                                                            </div>
-                                                            <div class="col-auto">37.068.12</div>
-                                                        </div>
-                                                        <hr>
-                                                        <div class="row align-items-center mb-2">
-                                                            <div class="col-auto p-1"> 
-                                                                <img src="../../images/red arrow icon (2).svg" />
-                                                                <img src="../../images/arabic-man_21730-4132.avif"
-                                                                    class="employee-custody-img"> عمار عبدالغفور مسفر
-                                                            </div>
-                                                            <div class="col-auto">37.068.12</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    </div>
+                                    
+                                </div>
+                            </button>
+
+                            <button type="button" class="btn check-btn payment-button signature-button"
+                                data-bs-toggle="modal" href="#signature-modal">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        توقيع المستأجر
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="systems-check"> <i class="fa-solid fa-check text-white"></i>
                                         </div>
-                                        <div class="accordion-item">
-                                            <div class="accordion-item-header">
-                                              <span class="accordion-item-header-title"> مديونيات المستأجرين </span>
-                                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down accordion-item-header-icon">
+                                    </div>
+                                </div>
+                            </button>
+
+
+                            <button type="submit" class="btn check-btn payment-button">حفظ</button>
+
+
+                        </div>
+                    </div>
+
+                    </fieldset>
+                    </form>
+
+                    <a href="../../index.html" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-custom-class="custom-tooltip" data-bs-title="العودة الي الرئيسية"
+                        class="new-Page-icon"><img src="../../images/back to main.svg" alt="man"></a>
+                </div>
+            </div>
+            <div class="col-auto sidebar2-col close2 close2">
+                <nav class="sidebar2 close2">
+                    <div class="toggle-div toggle2">
+                        <span class="notification"> إشعارات </span>
+                    </div>
+                    <div class="menu-bar">
+                        <div class="menu">
+                            <main>
+                                <div class="accordion">
+
+                                    <div class="accordion-item">
+                                        <div class="accordion-item-header">
+                                            <span class="accordion-item-header-title"> مستندات الشركة </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-chevron-down accordion-item-header-icon">
                                                 <path d="m6 9 6 6 6-6" />
-                                              </svg>
+                                            </svg>
+                                        </div>
+                                        <div class="accordion-item-description-wrapper">
+                                            <div class="accordion-item-description">
+                                                <div class="container-fluid">
+                                                    <div class="row collapse-row ">
+                                                        <div class="col-7">
+                                                            <p>السجل التجاري</p>
+                                                        </div>
+
+                                                        <div class="col working">
+                                                            <p> 2 </p>
+                                                        </div>
+                                                        <div class="col ended">
+                                                            <p> 3 </p>
+                                                        </div>
+                                                    </div>
+                                                    <hr class="collapse-hr">
+
+                                                    <div class="row collapse-row ">
+                                                        <div class="col-7">
+                                                            <p> اشتراك الغرفة التجارية </p>
+                                                        </div>
+
+                                                        <div class="col working">
+                                                            <p> 5 </p>
+                                                        </div>
+                                                        <div class="col ended">
+                                                            <p> 6 </p>
+                                                        </div>
+                                                    </div>
+                                                    <hr class="collapse-hr">
+
+                                                    <div class="row collapse-row ">
+                                                        <div class="col-7">
+                                                            <p> تصريح هيئة النقل </p>
+                                                        </div>
+
+                                                        <div class="col working">
+                                                            <p> 7 </p>
+                                                        </div>
+                                                        <div class="col ended">
+                                                            <p> 5 </p>
+                                                        </div>
+                                                    </div>
+                                                    <hr class="collapse-hr">
+
+                                                    <div class="row collapse-row ">
+                                                        <div class="col-7">
+                                                            <p> رخصة البلدية </p>
+                                                        </div>
+
+                                                        <div class="col working">
+                                                            <p> 6 </p>
+                                                        </div>
+                                                        <div class="col ended">
+                                                            <p> 3 </p>
+                                                        </div>
+                                                    </div>
+                                                    <hr class="collapse-hr">
+
+                                                    <div class="row collapse-row ">
+                                                        <div class="col-7">
+                                                            <p> البريد الوطني</p>
+                                                        </div>
+
+                                                        <div class="col working">
+                                                            <p> 4 </p>
+                                                        </div>
+                                                        <div class="col ended">
+                                                            <p> 5 </p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
                                             </div>
-                                            <div class="accordion-item-description-wrapper">
-                                              <div class="accordion-item-description">
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div class="accordion-item-header">
+                                            <span class="accordion-item-header-title"> السيارات </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-chevron-down accordion-item-header-icon">
+                                                <path d="m6 9 6 6 6-6" />
+                                            </svg>
+                                        </div>
+                                        <div class="accordion-item-description-wrapper">
+                                            <div class="accordion-item-description">
+                                                <div class="container-fluid">
+                                                    <div class="row collapse-row">
+                                                        <div class="col-5">
+                                                            <p>وثائق</p>
+                                                        </div>
+                                                        <div class="col working">
+                                                            <p> 3 </p>
+                                                        </div>
+                                                        <div class="col ended">
+                                                            <p> 5 </p>
+                                                        </div>
+                                                    </div>
+                                                    <hr class="collapse-hr">
+                                                    <div class="row collapse-row">
+                                                        <div class="col-5">
+                                                            <p>صيانة</p>
+                                                        </div>
+                                                        <div class="col working">
+                                                            <p> 100 </p>
+                                                        </div>
+                                                        <div class="col ended">
+                                                            <p> 200 </p>
+                                                        </div>
+                                                    </div>
+                                                    <hr class="collapse-hr">
+                                                    <div class="row collapse-row">
+                                                        <div class="col-5">
+                                                            <p>الأسعار</p>
+                                                        </div>
+                                                        <div class="col working">
+                                                            <p> 460 </p>
+                                                        </div>
+                                                        <div class="col ended">
+                                                            <p> 500 </p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div class="accordion-item-header">
+                                            <span class="accordion-item-header-title"> العقود </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-chevron-down accordion-item-header-icon">
+                                                <path d="m6 9 6 6 6-6" />
+                                            </svg>
+                                        </div>
+                                        <div class="accordion-item-description-wrapper">
+                                            <div class="accordion-item-description">
+                                                <div class="container-fluid">
+                                                    <div class="row collapse-row">
+                                                        <div class="col ">
+                                                            <p> منتهية </p>
+                                                        </div>
+                                                        <div class="col contract-ended ">
+                                                            <p> 8 </p>
+                                                        </div>
+
+                                                    </div>
+                                                    <hr class="collapse-hr">
+                                                    <div class="row collapse-row">
+                                                        <div class="col">
+                                                            <p>تنتهي اليوم</p>
+                                                        </div>
+
+                                                        <div class="col ended">
+                                                            <p> 15 </p>
+                                                        </div>
+                                                    </div>
+                                                    <hr class="collapse-hr">
+                                                    <div class="row collapse-row">
+                                                        <div class="col">
+                                                            <p>تنتهي غدًا</p>
+                                                        </div>
+                                                        <div class="col working">
+                                                            <p> 7 </p>
+                                                        </div>
+                                                    </div>
+                                                    <hr class="collapse-hr">
+                                                    <div class="row collapse-row">
+                                                        <div class="col">
+                                                            <p> تنتهي لاحقًا </p>
+                                                        </div>
+                                                        <div class="col later">
+                                                            <p> 11 </p>
+                                                        </div>
+
+                                                    </div>
+                                                    <hr class="collapse-hr">
+                                                    <div class="row collapse-row">
+                                                        <div class="col-5">
+                                                            <p>محفوظة</p>
+                                                        </div>
+                                                        <div class="col working">
+                                                            <p> 5 </p>
+                                                        </div>
+
+                                                    </div>
+                                                    <hr class="collapse-hr">
+                                                    <div class="row collapse-row">
+                                                        <div class="col-5">
+                                                            <p>معلقة</p>
+                                                        </div>
+                                                        <div class="col working">
+                                                            <p> 100 </p>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div class="accordion-item-header">
+                                            <span class="accordion-item-header-title"> الموظفين <div class="notify">
+                                                </div></span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-chevron-down accordion-item-header-icon">
+                                                <path d="m6 9 6 6 6-6" />
+                                            </svg>
+                                        </div>
+                                        <div class="accordion-item-description-wrapper">
+                                            <div class="accordion-item-description">
+                                                <div class="container-fluid">
+                                                    <div class="row align-items-center ">
+                                                        <div class="col-auto p-1">
+                                                            <img src="../../images/arrow icon (2).svg" />
+                                                            <img src="../../images/arabic-man_21730-4132.avif"
+                                                                class="employee-custody-img"> عمار عبدالغفور مسفر
+                                                        </div>
+                                                        <div class="col-auto">37.068.12</div>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="row align-items-center mb-2">
+                                                        <div class="col-auto p-1">
+                                                            <img src="../../images/red arrow icon (2).svg" />
+                                                            <img src="../../images/arabic-man_21730-4132.avif"
+                                                                class="employee-custody-img"> عمار عبدالغفور مسفر
+                                                        </div>
+                                                        <div class="col-auto">37.068.12</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div class="accordion-item-header">
+                                            <span class="accordion-item-header-title"> مديونيات المستأجرين </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-chevron-down accordion-item-header-icon">
+                                                <path d="m6 9 6 6 6-6" />
+                                            </svg>
+                                        </div>
+                                        <div class="accordion-item-description-wrapper">
+                                            <div class="accordion-item-description">
                                                 <div class="container-fluid">
                                                     <div class="row collapse-row">
                                                         <div class="col">
                                                             <p>مدينون</p>
                                                         </div>
                                                         <div class="col-auto ">
-                                                             <p> 4,520.36 </p>
+                                                            <p> 4,520.36 </p>
                                                         </div>
                                                     </div>
                                                     <hr class="collapse-hr">
@@ -698,150 +1793,72 @@
                                                         </div>
                                                         <div class="col-auto ">
                                                             <p> 936.56 </p>
-                                                       </div>
+                                                        </div>
                                                     </div>
-                                                
-                                                    
+
+
                                                 </div>
-                                              </div>
                                             </div>
-                                          </div>
+                                        </div>
                                     </div>
-                                </main>
-                            </div>
+                                </div>
+                            </main>
+                        </div>
+
+
+                    </div>
+
+                </nav>
+
+            </div>
+        </div>
+
+
+    </div>
+    <!-- Modals -->
+    <div class="modal fade" id="signature-modal" tabindex="-1" aria-labelledby="PicignaturPopupModalLabel"
+        aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered d-flex justify-content-center">
+            <div class="modal-content signature-modal-content p-3">
+                <div class="modal-body Signature-modal-body">
+                    <div class="SignatureCard">
+                        <div class="main-container" id="removeSignatureImg"></div>
+                        <div class="upload-container">
 
 
                         </div>
-
-                    </nav>
-
-                </div>
-            </div>
-
-
-        </div>
-               <!-- Modal -->
-               <div class="modal fade" id="DataModal"  data-bs-keyboard="false" tabindex="-1" aria-labelledby="DataModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content reports-modal-content">
-                      <div class="modal-header flex-row-reverse border-0">
-                          <button type="button" class="modalClose" data-bs-dismiss="modal">&times;</button>
-  
-                          <h5 class="modal-title card-title m-auto">بيانات إضافية   </h5>
-                      </div>
-                      <div class="modal-body p-0">
-                          <div class="data-details">
-                              <div class="row">   
-                                  <div class="col-md-12">
-                                      <div class="row">
-                                          <div class="col-auto">
-                                              <p> رقم العقد  </p>
-                                          </div>
-                                          <div class=" col-auto Saved-data">
-                                              <p> 24-1401-4001104-000067  </p>
-                                          </div>
-                                      </div>
-                                  </div> 
-                              </div>
-                              <div class="row">
-                                  <div class="col-md-6">
-                                      <div class="row">
-                                          <div class="col-auto">
-                                              <p> المدفوع  </p>
-                                          </div>
-                                          <div class=" col-auto Saved-data">
-                                              <p> 15.839 </p>
-                                          </div>
-                                      </div>
-                                  </div>
-  
-                                  <div class="col-md-6">
-                                      <div class="row">
-                                          <div class="col-auto">
-                                              <p>  الباقي  </p>
-                                          </div>
-                                          <div class=" col-auto Saved-data">
-                                              <p> 1000.02  </p>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                               <div class="row">
-                                  <div class="col-md-12">
-                                      <div class="row">
-                                          <div class="col-auto">
-                                              <p> الكيلوات المقطوعة </p>
-                                          </div>
-                                          <div class=" col-auto Saved-data">
-                                              <p> 12,000  </p>
-                                          </div>
-                                      </div>
-                                  </div> 
-                               </div>
-                                <div class="row">
-                                  <div class="col-md-12">
-                                      <div class="row">
-                                          <div class="col-auto">
-                                              <p> الساعات الإضافية  </p>
-                                          </div>
-                                          <div class=" col-auto Saved-data">
-                                              <p> 3  </p>
-                                          </div>
-                                      </div>
-                                  </div> 
-                                </div>
-                              
-                               <div class="row">
-                                  <div class="col-md-12">
-                                      <div class="row">
-                                          <div class="col-auto">
-                                              <p> الملاحظات </p>
-                                          </div>
-                                          <div class=" col-auto Saved-data">
-                                              <p> ملاحظات  </p>
-                                          </div>
-                                      </div>
-                                  </div> 
-                               </div>
-                                  <div class="row">
-                                      <div class="col-auto">
-                                          <div class="row">
-                                            
-                                              <div class=" col-auto Saved-data">
-                                                 <a href="http://system.ghyum.sa/images/Company/4004/Branches/106/Arabic%20Receipt/24-1301-4004106-000485.pdf" target="_blank" > <img  class="pdf-icons" src="../../images/Invoice.svg"></a>
-                                              </div>
-                                          </div>
-                                      </div>
-                                 
-                                      <div class="col-auto">
-                                          <div class="row">
-                                              
-                                              <div class=" col-auto Saved-data">
-                                                <a href="" target="_blank"> <img class="pdf-icons" src="../../images/contract.svg"></a>
-      
-                                              </div>
-                                          </div>
-                                      </div>
-                                
-                                      <div class="col-auto">
-                                          <div class="row">
-                                              
-                                              <div class=" col-auto Saved-data">
-                                                <a href="" target="_blank"> <img class="pdf-icons" src="../../images/naql.svg"></a>
-      
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                                
-  
-                              </div>
-                      </div>
-                      
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="sinature-Btn-Card p-2">
+                                <img src="../../images/signature/Pic.svg" class="w-100" id="UploadSigntaurePic">
+                                <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="sinature-Btn-Card p-2">
+                                <img src="../../images/signature/file-signature_9795523 1.svg" class="w-100"
+                                    id="WriteSignature">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="sinature-Btn-Card p-2">
+                                <img src="../../images/signature/Frame.svg" class="w-100" id="clear">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="sinature-Btn-Card p-2">
+                                <img src="../../images/signature/save.svg" class="w-100" id="save">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/heic2any/dist/heic2any.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
@@ -849,11 +1866,52 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../../scripts/Scripts.js"></script>
-   
-    
+    <script src="./PendingContract.js"></script>
+
+ <!-- سكربت يعمل على جزئية حقول ادخال القيمة في المصروفات و التعويضات -->
+ <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".Table-inputs").forEach(input => {
+          input.addEventListener("input", function () {
+              let value = this.value;
+  
+              // السماح فقط بالأرقام والنقطة العشرية
+              value = value.replace(/[^0-9.]/g, '');
+  
+              // منع وجود أكثر من نقطة عشرية
+              let parts = value.split('.');
+              if (parts.length > 2) {
+                  value = parts[0] + '.' + parts.slice(1).join('');
+              }
+  
+              this.value = value; 
+          });
+  
+          // التحقق من القيمة و تنسيقها  عند تغيير القيمة
+          function validateAndFormat() {
+              let num = parseFloat(this.value.replace(/,/g, '')); // تحويل النص إلى رقم
+  
+              // التأكد من أن الرقم  (بين 0 و 1,000,000.00)
+              if (isNaN(num) || num < 0) {
+                  num = 0;
+              } else if (num > 1000000) {
+                  num = 1000000;
+              }
+  
+              // تنسيق الرقم بحيث يحتوي على منزلتين عشريتين
+              this.value = num.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+          }
+  
+          input.addEventListener("blur", validateAndFormat);
+  
+          input.addEventListener("change", validateAndFormat);
+      });
+  });
+     </script>
+
 
 
 

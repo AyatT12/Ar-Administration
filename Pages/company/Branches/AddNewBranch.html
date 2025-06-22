@@ -382,7 +382,7 @@
                                                                             class="form-label">اسم المدير  عربي
                                                                             <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                         </label>
-                                                                        <input type="text" id="manager-name-ar" lang="ar" inputmode="arabic"  dir="rtl"
+                                                                        <input type="text" id="manager-name-ar" lang="ar"
                                                                             class="form-control inputs arabic-input"
                                                                             name="manager-name-ar" maxlength="30"  required>
                                                                         <div class="invaild">
@@ -397,7 +397,8 @@
                                                                              إنجليزي
                                                                              <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                             </label>
-                                                                        <input type="text" id="manager-name-en" lang="en" inputmode="latin" dir="ltr" 
+                                                                        <input type="text" id="manager-name-en" 
+                                                                               lang="en"
                                                                             class="form-control inputs english-input"
                                                                             name="manager-name-en" maxlength="30"  required>
                                                                         <div class="invaild">
@@ -513,13 +514,16 @@
                                                             <hr class="accordion-items-hr">
                                                             <div class="container-fluid data-scroll-container">
                                                                 <div class="row">
-                                                                    <div class="col-md-6">
+                                                                    <div class="col-md-6" style="position: relative;">
                                                                         <label for="City-Area"
                                                                             class="form-label">المنطقة / المدينة
                                                                             <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                         </label>
                                                                         <input type="text" id="City-Area"
                                                                             class="form-control inputs" name="City-Area" maxlength="50"required>
+                                                                        <div id="autocomplete-Cities"
+                                                                            class="autocomplete-items autocomplete-Cities">
+                                                                        </div>
                                                                         <div class="invaild">
                                                                             <div class="invalid-feedback">
                                                                                 الحقل مطلوب
@@ -1011,3 +1015,51 @@
 </body>
 
 </html>
+<script>
+    const dataLists = {
+        Cities: ["مكة- الشرائع ", "مكة - اجياد ", "مكة - العدل ", "مكة - العزيزية ", "مكة - التيسير ", "مكة - الخنساء", "مكة - الخالدية"],
+    };
+
+    $(document).ready(function () {
+        function setupAutocomplete(inputId, list, dataList) {
+            $("#" + inputId).on("input", function () {
+                const value = this.value.toLowerCase();
+                const autocompleteList = $("#" + list);
+                autocompleteList.empty();
+                if (value) {
+                    let matchesFound = false;
+                    dataList.forEach(word => {
+                        if (word.toLowerCase().indexOf(value) > -1) {
+                            autocompleteList.append("<div>" + word + "</div>");
+                            matchesFound = true;
+                        }
+                    });
+
+                    if (matchesFound) {
+                        autocompleteList.show();
+                    } else {
+                        autocompleteList.hide();
+                    }
+                } else {
+                    autocompleteList.hide();
+                }
+            });
+
+            $(document).on("click", "#" + list + " div", function () {
+                $("#" + inputId).val($(this).text());
+                console.log(inputId)
+                $("#" + list).empty();
+                $("#" + list).hide();
+            });
+
+            $(document).click(function (e) {
+                if (!$(e.target).closest("#" + list + "#" + inputId).length) {
+                    $("#" + list).empty();
+                    $("#" + list).hide();
+                }
+            });
+        }
+
+        setupAutocomplete("City-Area", "autocomplete-Cities", dataLists.Cities);
+    });
+</script>
