@@ -1521,7 +1521,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 
-
 /* ================================================================================  acoount lists  ======================================================================================= */
 /* ================================================================================================================================================================================== */
 .scroll-custody-div {
@@ -1874,7 +1873,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .messageWay {
-  box-shadow: 0px 1px 4px 0px rgba(255, 150, 38, 0.24);
   display: flex;
   gap: 10px;
   align-items: center;
@@ -1889,8 +1887,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .messageinput,
 .TitleInput {
-  border: 2px solid rgba(153, 153, 153, 1);
+  border: 2px solid #D9D9D9;
   min-height: 50px;
+  resize: none;
 }
 
 .messageinput:focus {
@@ -1911,14 +1910,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   color: rgba(217, 217, 217, 1);
 }
 
-.input-container {
-  position: relative;
-  width: 100%;
-}
 
 .messageinput {
   width: 100%;
-  padding-left: 30px;
+}
+.input-container {
+  position: relative;
+  width: 100%;
 }
 
 .input-container #clip {
@@ -2556,7 +2554,6 @@ border: none;
 .CarDataTitle{
   margin-bottom: .8rem;
 }
-
 
 
 
