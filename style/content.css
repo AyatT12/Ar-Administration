@@ -1205,14 +1205,36 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /* ================================================================================  services => Membership    ======================================================================================= */
 /* ================================================================================================================================================================================== */
-.techncal-connect-rows {
-  direction: ltr;
+.techncal-connect-content-container{
+        height: 95%;
+        overflow-y: scroll;
+        overflow-x: hidden;
 }
+.techncal-connect-content-container::-webkit-scrollbar {
+    width: 7px !important;
+    height: 5px;
 
-.techncal-connect-error {
-  direction: rtl;
-}
+  }
 
+  .techncal-connect-content-container::-webkit-scrollbar-track {
+    background: rgba(224, 222, 220, 0.021);
+    border-radius: 5px;
+
+
+  }
+
+  .techncal-connect-content-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 150, 38, 0.40);
+    border-radius: 5px;
+
+
+  }
+
+  .techncal-connect-content-container::-webkit-scrollbar-thumb:hover {
+    border-radius: 8px;
+    background: rgba(250, 136, 13, 0.4);
+
+  }
 /* ================================================================================  Employees => Employees list  ======================================================================================= */
 /* ================================================================================================================================================================================== */
 #Creditlimit::-webkit-inner-spin-button,
@@ -2554,6 +2576,7 @@ border: none;
 .CarDataTitle{
   margin-bottom: .8rem;
 }
+
 
 
 
