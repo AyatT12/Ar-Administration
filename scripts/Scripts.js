@@ -224,7 +224,7 @@ const inputsAccordion = document.querySelectorAll(".inputs-accordion-item");
 
 inputsAccordion.forEach((item) => {
   item
-    .querySelector(".accordion-item-header-icon")
+    .querySelector(".inputs-accordion-item-header")
     .addEventListener("click", () => {
       item.classList.toggle("open");
       inputsAccordion.forEach((otherElement) => {
@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Case for forms with accordion items
     console.log("ki")
     accordionItems.forEach((item) => {
-      const header = item.querySelector(".accordion-item-header-icon");
+      const header = item.querySelector(".inputs-accordion-item-header");
       const focusableElements = item.querySelectorAll("input, select, textarea, button");
 
       // Set focus on the first input when the accordion item is clicked
@@ -420,12 +420,12 @@ document.querySelectorAll('input, select, textarea').forEach(el => {
 });
 
 // //********************************************************************** warning message script ********************************************************************************** */
-MarqueeXmark = document.getElementById("marquee-xmark");
-warnings = document.getElementById("warnings");
+// MarqueeXmark = document.getElementById("marquee-xmark");
+// warnings = document.getElementById("warnings");
 
-MarqueeXmark.addEventListener('click',function(){
-  warnings.style.display="none"
-})
+// MarqueeXmark.addEventListener('click',function(){
+//   warnings.style.display="none"
+// })
 // //********************************************************************** number inputs script prevent entering negitive values ********************************************************************************** */
 document.querySelectorAll('input[type="number"]').forEach(function(input) {
   input.addEventListener('keydown', function(event) {

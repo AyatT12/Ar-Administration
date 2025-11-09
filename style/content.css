@@ -74,6 +74,13 @@ html {
 .filter5 {
   color: #6C1313;
 }
+.filter6 {
+  color: rgba(112, 204, 51, 1);
+}
+
+.filter6-div {
+  background-color:rgba(112, 204, 51, 1);
+}
 
 .filter1-div {
   background-color: var(--main-color);
@@ -524,13 +531,13 @@ input[type="date"] {
   padding: 5px 10px;
   position: relative;
   text-align: end;
+  direction: rtl;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
   display: block;
   left: 10px;
   position: absolute;
-
 }
 
 /* ================================================================================ Pages inputs accordion style   ======================================================================================= */
@@ -1205,6 +1212,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /* ================================================================================  services => Membership    ======================================================================================= */
 /* ================================================================================================================================================================================== */
+
 .techncal-connect-content-container{
         height: 95%;
         overflow-y: scroll;
@@ -1235,6 +1243,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background: rgba(250, 136, 13, 0.4);
 
   }
+
 /* ================================================================================  Employees => Employees list  ======================================================================================= */
 /* ================================================================================================================================================================================== */
 #Creditlimit::-webkit-inner-spin-button,
@@ -1890,6 +1899,52 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 /*================Tenants Messages =================================================== */
+/* إضافة هذا CSS إلى الكود الموجود */
+
+.pdf-icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: rgb(66 113 179);
+  color: white;
+  font-size: 24px;
+  position: relative;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.img-bg{
+  cursor: pointer;
+}
+.pdf-bg {
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+}
+
+.file-name {
+  font-size: 8px;
+  font-weight: bold;
+  margin-top: 5px;
+  text-align: center;
+  word-break: break-word;
+  line-height: 1.2;
+  max-width: 100%;
+}
+
+.pdf-bg .upload__img-close1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 24px;
+
+}
+
 #MessagesModalLabel {
   color: var(--main-color);
 }
@@ -1941,16 +1996,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   width: 100%;
 }
 
-.input-container #clip {
-  position: absolute;
-  top: 26%;
-  left: 10px;
-  transform: translateY(-50%);
-  font-size: 16px;
-  color: rgba(217, 217, 217, 1);
-  cursor: pointer;
-  transform: rotate(317deg);
-}
 
 .filename-container {
   text-align: end;
@@ -2576,7 +2621,6 @@ border: none;
 .CarDataTitle{
   margin-bottom: .8rem;
 }
-
 
 
 
