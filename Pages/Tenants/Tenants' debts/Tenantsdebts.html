@@ -315,45 +315,43 @@
                     </nav>
                 </div>
                 <div class="col d-flex align-items-center justify-content-center flex-column">
-                      <!-- Alerts -->
-                      <!-- <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-12 d-flex flex-column gap-1 w-100">
-                                <nav class="warnings navbar-expand-lg navbar-light py-2" id="warnings">
-                                <div class="marquee">
-                                    <div class="marquee-content">
-                                    <p>الشركة موقوفة, تم تقليص بعض الخدمات </p>
-                                    <p>الخدمة مؤقتة حاليًا بسبب التحديثات</p>
-                                    <p>يرجى التواصل مع الدعم الفني في حالة الطوارئ</p>
-                                    <p>الشركة موقوفة, تم تقليص بعض الخدمات</p>
-                                    </div>
-                                </div>
-                                <i  class="fa-regular fa-circle-xmark marquee-xmark" id="marquee-xmark"></i>
-                                </nav>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- --- -->
                     <div class="container main-container">
                         
                         <form action="">
-                            <div class="row g-3 mb-5">
+                            <div class="row">
                                 <div class="col">
                                     <h3> مديونيات المستأجرين  </h3>
                                 </div>
-                                <div class="col-12 col-lg-6 d-flex justify-content-end">
-
-                                    <div class="col-12 col-md-8 search-input-col">
+                            </div>
+                            <div class="row my-2 align-items-center">
+                                <div class="col-12 col-lg-4 search-input-col">
                                         <div class="form-outline w-100" data-mdb-input-init>
                                             <span class="fa fa-search"></span>
                                             <input type="search" id="search" class="form-control inputs search-input"
                                                 name="search" aria-label="Search" autofocus autocomplete="off" />
                                         </div>
+                                </div>
+                                <div class="col filters-col">
+                                    <div class="filters-custom-order">
+
+                                        <label class="form-check-label" for="all">الكل</label>
+                                        <input class="form-check-input custom" type="radio" name="Options" id="all"
+                                            value="All" checked />
                                     </div>
+                                     <div class="filters-custom-order">
+                                        <label class="form-check-label filter3" for="Creditor">دائن</label>
+                                        <input class="form-check-input custom" type="radio" name="Options" id="Creditor"
+                                            value="Creditor" />
+                                    </div>
+                                    <div class="filters-custom-order">
+                                        <label class="form-check-label  filter6" for="debit">مدين</label>
+                                        <input class="form-check-input custom" type="radio" name="Options" id="debit"
+                                            value="debit" />
+                                    </div>
+                                    
 
                                 </div>
                             </div>
-                            
                             <div class="row table-row px-3">
                                 <div class="col  scroll-table-div  table-responsive-sm  w-100  ">
                                     <table class=" tables-style table table-borderless " id="Branches-table">
@@ -377,7 +375,7 @@
                                                    <p>1,365.80</p>
                                                 </td>
                                                 <td>
-                                                    <p>17/08/2024</p>
+                                                    <p>2025/09/20</p>
                                                 </td>
                                                 <td>
                                                     <p class="FirstLineP">متقاعد</p>
@@ -394,10 +392,14 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>
-                                                
+                                                 <td>
+                                                    <div class="filter-number-td">
+
+                                                        <div class="filters filter6-div"></div>
+
                                                         <div>1</div>
 
+                                                    </div>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -408,7 +410,7 @@
                                                    <p>1,365.80</p>
                                                 </td>
                                                 <td>
-                                                    <p>17/08/2024</p>
+                                                    <p>2025/09/20</p>
                                                 </td>
                                                 <td>
                                                     <p class="FirstLineP">متقاعد</p>
@@ -425,10 +427,14 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>
-                                                
-                                                        <div>1</div>
+                                                 <td>
+                                                    <div class="filter-number-td">
 
+                                                        <div class="filters filter3-div"></div>
+
+                                                        <div>2</div>
+
+                                                    </div>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -439,7 +445,7 @@
                                                    <p>1,365.80</p>
                                                 </td>
                                                 <td>
-                                                    <p>17/08/2024</p>
+                                                    <p>2025/09/20</p>
                                                 </td>
                                                 <td>
                                                     <p class="FirstLineP">متقاعد</p>
@@ -456,10 +462,14 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>
-                                                
-                                                        <div>1</div>
+                                                 <td>
+                                                    <div class="filter-number-td">
 
+                                                        <div class="filters filter6-div"></div>
+
+                                                        <div>3</div>
+
+                                                    </div>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -470,7 +480,7 @@
                                                    <p>1,365.80</p>
                                                 </td>
                                                 <td>
-                                                    <p>17/08/2024</p>
+                                                    <p>2025/09/20</p>
                                                 </td>
                                                 <td>
                                                     <p class="FirstLineP">متقاعد</p>
@@ -487,10 +497,14 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>
-                                                
-                                                        <div>1</div>
+                                                 <td>
+                                                    <div class="filter-number-td">
 
+                                                        <div class="filters filter3-div"></div>
+
+                                                        <div>4</div>
+
+                                                    </div>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -501,7 +515,7 @@
                                                    <p>1,365.80</p>
                                                 </td>
                                                 <td>
-                                                    <p>17/08/2024</p>
+                                                    <p>2025/09/20</p>
                                                 </td>
                                                 <td>
                                                     <p class="FirstLineP">متقاعد</p>
@@ -518,10 +532,14 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>
-                                                
-                                                        <div>1</div>
+                                                 <td>
+                                                    <div class="filter-number-td">
 
+                                                        <div class="filters filter6-div"></div>
+
+                                                        <div>5</div>
+
+                                                    </div>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -532,7 +550,7 @@
                                                    <p>1,365.80</p>
                                                 </td>
                                                 <td>
-                                                    <p>17/08/2024</p>
+                                                    <p>2025/09/20</p>
                                                 </td>
                                                 <td>
                                                     <p class="FirstLineP">متقاعد</p>
@@ -549,10 +567,14 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>
-                                                
-                                                        <div>1</div>
+                                                 <td>
+                                                    <div class="filter-number-td">
 
+                                                        <div class="filters filter6-div"></div>
+
+                                                        <div>6</div>
+
+                                                    </div>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -563,7 +585,7 @@
                                                    <p>1,365.80</p>
                                                 </td>
                                                 <td>
-                                                    <p>17/08/2024</p>
+                                                    <p>2025/09/20</p>
                                                 </td>
                                                 <td>
                                                     <p class="FirstLineP">متقاعد</p>
@@ -580,10 +602,14 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>
-                                                
-                                                        <div>1</div>
+                                                 <td>
+                                                    <div class="filter-number-td">
 
+                                                        <div class="filters filter6-div"></div>
+
+                                                        <div>7</div>
+
+                                                    </div>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -594,7 +620,7 @@
                                                    <p>1,365.80</p>
                                                 </td>
                                                 <td>
-                                                    <p>17/08/2024</p>
+                                                    <p>2025/09/20</p>
                                                 </td>
                                                 <td>
                                                     <p class="FirstLineP">متقاعد</p>
@@ -611,10 +637,14 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>
-                                                
-                                                        <div>1</div>
+                                                 <td>
+                                                    <div class="filter-number-td">
 
+                                                        <div class="filters filter3-div"></div>
+
+                                                        <div>8</div>
+
+                                                    </div>
                                                 </td>
                                             </tr>
                                         </tbody>

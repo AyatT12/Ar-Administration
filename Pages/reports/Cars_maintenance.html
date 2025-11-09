@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> نظام الادارة - الحركة المالية للمستأجرين  </title>
+    <title> نظام الادارة - صيانة السيارات </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -30,7 +30,6 @@
                     <p class="m-0 Company-name">شركة كدي لتأجير السيارات</p>
                     <i class="fa-solid fa-bars toggle4 mobile-icon nav-icon"></i>
                 </div>
-
 
                 <!-- User Information -->
                 <div class="icons-content">
@@ -64,9 +63,6 @@
                         </div>
                     </div>
                     <div class="d-flex align-items-center" style="gap:15px">
-                        <!-- <img src="../../images/Frame 2608795.svg" class=" sms nav-icon"
-                            style="width: 28;height: 28px;" />
-                        <img src="../../images/whatsup.svg" class=" whatsup nav-icon" /> -->
                         <div class="col lang-button-col">
                             <input type="checkbox" id="myCheckbox" class="d-none">
                             <h5 for="myCheckbox" class="lang-button m-2" id="checkboxLabel"> En </h5>
@@ -162,26 +158,27 @@
                                             <a class="collapse-item " href="../../Pages/reports/Saved contracts.html"> العقود المحفوظة و الملغاه <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item" href="../../Pages/reports/Pending contracts.html"> العقود المعلقة  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item" href="../../Pages/reports/Closed Contracts.html"> العقود المغلقة  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item " href="../../Pages/reports/Cars contracts.html"> عقود السيارات  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item active" href="../../Pages/reports/Cars contracts.html"> عقود السيارات  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item" href="../../Pages/reports/Employee contracts.html"> عقود الموظفين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item" href="../../Pages/reports/Drivers contracts.html"> عقود السائقين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item " href="../../Pages/reports/Employee Financial movement.html"> الحركة المالية للموظفين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                             <a class="collapse-item" href="../../Pages/reports/Drivers contracts.html"> عقود السائقين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../Pages/reports/Employee Financial movement.html"> الحركة المالية للموظفين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                             <a class="collapse-item" href="../../Pages/reports/SalePoint Financial movement.html"> الحركة المالية لنقاط البيع  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                            <a class="collapse-item active" href="../../Pages/reports/Tenant Financial movement.html"> الحركة المالية للمستأجرين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../Pages/reports/Tenant Financial movement.html"> الحركة المالية للمستأجرين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
 
                                         </div>
                                     </div>
                                     <li class="nav-link">
                                         <a>
-                                             <img src="../../images/statics.svg" class="icon" data-bs-toggle="collapse"
+                                            <img src="../../images/statics.svg" class="icon" data-bs-toggle="collapse"
                                             href="#statics-items" aria-expanded="false"
-                                            aria-controls="#statics-items" />
+                                            aria-controls="#statics-items"/>
                                             <span class="text nav-text collapsed" data-bs-toggle="collapse"
                                                 href="#statics-items" aria-expanded="false"
                                                 aria-controls="#statics-items"> الإحصائيات </span>
                                         </a>
                                     </li>
-                                   <div id="statics-items" class="collapse">
+                                    <div id="statics-items" class="collapse">
                                         <div class="bg-white gap-3 collapse-inner rounded">
 
                                               <a class="collapse-item" href="../../Pages/statistics/Car statistics.html"> إحصائيات السيارات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
@@ -259,10 +256,10 @@
                         <form action="">
                             <div class="row">
                                 <div class="col">
-                                    <h3> الحركة المالية للمستأجرين   </h3>
+                                    <h3> صيانة السيارات  </h3>
                                 </div>
                             </div>
-                           <div class="row my-2 align-items-center">
+                         <div class="row my-2 align-items-center">
                                 <div class="col-12 col-lg-4 search-input-col">
                                         <div class="form-outline w-100" data-mdb-input-init>
                                             <span class="fa fa-search"></span>
@@ -272,21 +269,27 @@
                                 </div>
                                 <div class="col filters-col">
                                     <div class="filters-custom-order">
+
                                         <label class="form-check-label" for="all">الكل</label>
                                         <input class="form-check-input custom" type="radio" name="Options" id="all"
                                             value="All" checked />
                                     </div>
                                      <div class="filters-custom-order">
-                                        <label class="form-check-label filter2" for="renter">مستأجر</label>
-                                        <input class="form-check-input custom" type="radio" name="Options" id="renter"
-                                            value="renter" />
-                                    </div>
-                                    <div class="filters-custom-order">
-                                        <label class="form-check-label  filter6" for="Active">نشط</label>
+                                        <label class="form-check-label filter2" for="Active">نشط</label>
                                         <input class="form-check-input custom" type="radio" name="Options" id="Active"
                                             value="Active" />
                                     </div>
-                                    
+                                    <div class="filters-custom-order">
+                                        <label class="form-check-label  filter1" for="AboutToEnd">على وشك </label>
+                                        <input class="form-check-input custom" type="radio" name="Options" id="AboutToEnd"
+                                            value="AboutToEnd" />
+                                    </div>
+                                    <div class="filters-custom-order">
+                                        <label class="form-check-label  filter3" for="Ended"> منتهي </label>
+                                        <input class="form-check-input custom" type="radio" name="Options" id="Ended"
+                                            value="Ended" />
+                                    </div>
+
                                 </div>
                             </div>
                             <div class="row table-row px-3">
@@ -294,141 +297,47 @@
                                     <table class=" tables-style table table-borderless " id="table">
                                         <thead class="sticky-top">
                                             <tr>
-                                              
-                                                <th> المبالغ المتداولة  </th>
-                                                <th> الرصيد المحجوز  </th>
-                                                <th> الرصيد المتاح </th>
-                                                <th> الرصيد </th>
-                                                <th class="DifferAlign"> المستأجر</th>
+                                                <th scope="col"> القراءة الحالية </th>
+                                                <th scope="col"> الكيلوات المتبقية  </th>
+                                                <th scope="col"> الأيام المتبقية  </th>
+                                                <th scope="col"> البند </th>
+                                                <th scope="col"> آخر صيانة </th>
+                                                <th scope="col" class="DifferAlign"> السيارة</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                               
                                                 <td>
-                                                    <p>250,000.00</p>
+                                                    <p>15,000</p>
+                                                </td>
+                                                 <td>
+                                                    <p>9.6565</p>
+                                                </td>
+                                                 <td>
+                                                    <p>16</p>
+                                                </td>
+                                                 <td>
+                                                   <p>زيت المكينة</p> 
                                                 </td>
                                                 <td>
-                                                    <p>2,258.48</p>
-                                                </td>
-                                                <td>
-                                                    <p>45.50</p>
-                                                </td>
-                                                <td>
-                                                    <p>1,000.00</p>
+                                                    <p>2025/09/20</p>
                                                 </td>
                                                 <td class="DifferAlign">
-                                                    <p class="FirstLineP"> مرسي ياسر وائل عبدالرحمن   </p>
-                                                    <p class="secondLineP">  900878751171271</p>
+                                                    <div class="car-name-color" >
+                                                        <p class="FirstLineP">هيونداي - أزيرا - سيدان صغيرة - 2021 - ع س ب 8023 </p> 
+                                                        <div class="CarColor" style="background: #636C14;"></div>
+                                                    </div>
+                                                    <p class="secondLineP"> 1017503400 </p>
                                                 </td>
                                                 <td>
                                                     <div class="filter-number-td">
-                                                        <div class="filters filter2-div"></div>
+                                                        <div class="filters filter1-div"></div>
                                                         <div>1</div>
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                              
-                                                <td>
-                                                    <p>250,000.00</p>
-                                                </td>
-                                                <td>
-                                                    <p>0.00</p>
-                                                </td>
-                                                <td>
-                                                    <p>-0.01</p>
-                                                </td>
-                                                <td>
-                                                    <p>750.00</p>
-                                                </td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP"> سمير ماهر مرسي عثمان </p>
-                                                    <p class="secondLineP">  902300967260589</p>
-                                                </td>
-                                                <td>
-                                                    <div class="filter-number-td">
-                                                        <div class="filters filter6-div"></div>
-                                                        <div>2</div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                              
-                                                <td>
-                                                    <p>450,000.00</p>
-                                                </td>
-                                                <td>
-                                                    <p>0.00</p>
-                                                </td>
-                                                <td>
-                                                    <p>0.00</p>
-                                                </td>
-                                                <td>
-                                                    <p>-0.01</p>
-                                                </td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">فراس فتحي صلاح وائل  </p>
-                                                    <p class="secondLineP">  902300967260589</p>
-                                                </td>
-                                                <td>
-                                                    <div class="filter-number-td">
-                                                        <div class="filters filter6-div"></div>
-                                                        <div>3</div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                              
-                                                <td>
-                                                    <p>350,000.00</p>
-                                                </td>
-                                                <td>
-                                                    <p>0.00</p>
-                                                </td>
-                                                <td>
-                                                    <p>65.05</p>
-                                                </td>
-                                                <td>
-                                                    <p>0.00</p>
-                                                </td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP"> عبدالحليم أنس ثامر الأحمري  </p>
-                                                    <p class="secondLineP">  900878751171271</p>
-                                                </td>
-                                               <td>
-                                                    <div class="filter-number-td">
-                                                        <div class="filters filter2-div"></div>
-                                                        <div>4</div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                               
-                                                <td>
-                                                    <p>250,000.00</p>
-                                                </td>
-                                                <td>
-                                                    <p>0.00</p>
-                                                </td>
-                                                <td>
-                                                    <p>9.99</p>
-                                                </td>
-                                                <td>
-                                                    <p>9.99</p>
-                                                </td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">عواد بدر سليمان الجميعة   </p>
-                                                    <p class="secondLineP">  902300967260589</p>
-                                                </td>
-                                                <td>
-                                                    <div class="filter-number-td">
-                                                        <div class="filters filter6-div"></div>
-                                                        <div>5</div>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                        
                                         </tbody>
                                     </table>
 
@@ -451,7 +360,7 @@
                                 <main>
                                     <div class="accordion">
 
-                                     <div class="accordion-item">
+  <div class="accordion-item">
                                         <div class="accordion-item-header">
                                           <span class="accordion-item-header-title">  مستندات الشركة  </span>
                                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down accordion-item-header-icon">
@@ -755,21 +664,5 @@
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../../scripts/Scripts.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var table = document.getElementById("table");
-            var rows = table.getElementsByTagName("tr");
-
-            for (var i = 0; i < rows.length; i++) {
-                var cells = rows[i].getElementsByTagName("td");
-
-                for (var j = 0; j < cells.length; j++) {
-                    cells[j].addEventListener("click", function () {
-                        window.location.href = "Detailed Tenant Financial movement.html";
-                    });
-                }
-            }
-        });
-    </script>
 </body>
 </html>

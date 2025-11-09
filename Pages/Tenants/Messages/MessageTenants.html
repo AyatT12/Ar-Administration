@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../../../style/content.css">
     <!-- <link rel="stylesheet" href="../../../style/english.css">  -->
 
-    
+
 
 </head>
 
@@ -867,7 +867,7 @@
                                             <div class="col-auto">
                                                 <div class="messageWay">
                                                     <input class="form-check-input" type="radio" name="sendway"
-                                                        value="sms" id="sms" >
+                                                        value="sms" id="sms">
                                                     <label class="form-check-label" for="sms">
                                                         <img src="../../../images/messages_icons/sms.svg">
                                                     </label>
@@ -897,13 +897,13 @@
                                                         <div class="input-container">
                                                             <textarea type="text" id="messageContent"
                                                                 class="form-control messageinput" name="messageContent"
-                                                                placeholder="مراسلة" 
-                                                                rows="5"></textarea>
-                                                          
+                                                                placeholder="مراسلة" rows="5"></textarea>
+
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <label class="my-3 text-muted attatchments-label"> مرفقات </label>
+                                                        <label class="my-3 text-muted attatchments-label"> مرفقات
+                                                        </label>
                                                         <table class="table CarImagesTable attatchments-table"
                                                             id="CarImagesTable" style="height: 150px;">
                                                             <tbody>
@@ -921,9 +921,9 @@
                                                                                                 alt="Upload Icon"
                                                                                                 id="addImage">
                                                                                             <input type="file" multiple
-                                                                                                accept="image/*"
+                                                                                                accept="image/*,.pdf"
                                                                                                 id="Car-images"
-                                                                                                class="upload__inputfile ">
+                                                                                                class="upload__inputfile">
                                                                                         </div>
                                                                                     </label>
                                                                                 </div>
@@ -967,7 +967,7 @@
             </div>
         </div>
     </div>
-        <script src="https://cdn.jsdelivr.net/npm/heic2any/dist/heic2any.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/heic2any/dist/heic2any.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -1038,12 +1038,12 @@
                 if (selectedOption === 'whatsapp') {
 
                     $('.attatchments-table').show();
-                    $('.attatchments-label').show(); 
+                    $('.attatchments-label').show();
 
                 } else if (selectedOption === 'email') {
 
                     $('.attatchments-table').show();
-                    $('.attatchments-label').show(); 
+                    $('.attatchments-label').show();
 
                     var TitleSubjectInput = $('<input>', {
                         type: 'text',
@@ -1055,7 +1055,7 @@
                     });
                     $('#TitleSubjectContainer').append(TitleSubjectInput);
 
-                } 
+                }
 
                 updateCharCount();
             }
@@ -1124,28 +1124,33 @@
         });
     </script>
 
-    <!-- script for  images display and upload   -->
+    <!-- script for images and PDF display and upload -->
     <script>
         var CarImagesArray = [];
         var CarImagesTdIndex = 0;
-
 
         function CarImgUpload() {
             var maxLength = 4;
             var uploadBtnBox = document.getElementById('CarImages-upload-box');
 
             $('#Car-images').on('change', function (e) {
-                handleImageUpload(e, '#CarImagesTable', CarImagesArray, maxLength, uploadBtnBox, 'CarImages');
+                handleFileUpload(e, '#CarImagesTable', CarImagesArray, maxLength, uploadBtnBox, 'CarImages');
             });
         }
 
-        function handleImageUpload(event, tableSelector, array, maxLength, uploadBtnBox, type) {
+        function handleFileUpload(event, tableSelector, array, maxLength, uploadBtnBox, type) {
             var uploadBox = $(event.target).closest('.upload__box');
             var files = event.target.files;
             var filesArr = Array.prototype.slice.call(files);
 
             for (var i = 0; i < Math.min(filesArr.length, maxLength - array.length); i++) {
                 (function (f) {
+                    // التحقق من نوع الملف
+                    if (!isValidFileType(f)) {
+                        alert('نوع الملف غير مدعوم. يرجى اختيار صورة أو ملف PDF فقط.');
+                        return;
+                    }
+
                     if (f.type === 'image/heic' || f.type === 'image/heif' || f.name.endsWith('.heic') || f.name.endsWith('.heif')) {
                         heic2any({ blob: f, toType: "image/jpeg" })
                             .then(function (convertedBlob) {
@@ -1180,37 +1185,105 @@
 
                 if (array.length === 0) {
                     CarImagesTdIndex = 0;
-
                     uploadBtnBox.style.display = 'flex';
                     $(`${tableSelector} td`).eq(CarImagesTdIndex).append(uploadBtnBox);
                 }
             });
         }
 
+        // فانكشن للتحقق من نوع الملف
+        function isValidFileType(file) {
+            // قبول جميع أنواع الصور
+            if (file.type.startsWith('image/')) {
+                return true;
+            }
+
+            if (file.name.toLowerCase().endsWith('.heic') || file.name.toLowerCase().endsWith('.heif')) {
+                return true;
+            }
+
+            // قبول ملفات PDF
+            if (file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf')) {
+                return true;
+            }
+
+            return false;
+        }
+
+        // فانكشن للتحقق من كون الملف صورة
+        function isImageFile(file) {
+            if (file.type.startsWith('image/')) {
+                return true;
+            }
+
+            //   امتداد الملف للصور 
+            var imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp', '.svg', '.heic', '.heif'];
+            var fileName = file.name.toLowerCase();
+
+            for (var i = 0; i < imageExtensions.length; i++) {
+                if (fileName.endsWith(imageExtensions[i])) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         function processFile(file, fileName, tableSelector, array, maxLength, uploadBtnBox, type) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
+            var isImage = isImageFile(file);
+
+            if (isImage) {
+                //  عرض الصور
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var html = `
+                    <div class='upload__img-box Attatchments-img-box'>
+                        <div style='background-image: url(${e.target.result})' data-file='${fileName}' class='img-bg'>
+                            <div class='upload__img-close1'><i class='fa-regular fa-trash-can'></i></div>
+                        </div>
+                    </div>
+                `;
+
+                    var currentTdIndex = CarImagesTdIndex;
+                    var targetTd = $(`${tableSelector} td`).eq(currentTdIndex);
+                    targetTd.append(html);
+
+                    array.push({ f: file, url: e.target.result, type: 'image', name: fileName });
+                    console.log(array);
+                    updateCurrentTdIndex(tableSelector, type, uploadBtnBox);
+
+                    if (array.length >= maxLength) {
+                        uploadBtnBox.style.display = 'none';
+                    }
+                };
+                reader.readAsDataURL(file);
+            } else if (file.type === 'application/pdf') {
+                // عرض الملف في الجدول
+                var shortName = fileName.length > 15 ? fileName.substring(0, 12) + '...' : fileName;
                 var html = `
-      <div class='upload__img-box Attatchments-img-box'>
-        <div style='background-image: url(${e.target.result})' data-file='${fileName}' class='img-bg'>
-          <div class='upload__img-close1'><i class='fa-regular fa-trash-can'></i></div>
-        </div>
-      </div>
-    `;
+                <div class='upload__img-box Attatchments-img-box'>
+                    <div data-file='${fileName}' class='pdf-bg' style='position: relative;'>
+                        <div class='pdf-icon'>
+                            <i class='fa-regular fa-file-pdf' style='font-size: 30px;'></i>
+                            <div class='file-name'>${shortName}</div>
+                        </div>
+                        <div class='upload__img-close1'><i class='fa-regular fa-trash-can'></i></div>
+                    </div>
+                </div>
+            `;
 
                 var currentTdIndex = CarImagesTdIndex;
                 var targetTd = $(`${tableSelector} td`).eq(currentTdIndex);
                 targetTd.append(html);
 
-                array.push({ f: file, url: e.target.result });
-                console.log(array)
+                array.push({ f: file, url: null, type: 'pdf', name: fileName });
+                console.log(array);
                 updateCurrentTdIndex(tableSelector, type, uploadBtnBox);
 
                 if (array.length >= maxLength) {
                     uploadBtnBox.style.display = 'none';
                 }
-            };
-            reader.readAsDataURL(file);
+            }
         }
 
         function updateCurrentTdIndex(tableSelector, type, uploadBtnBox) {
@@ -1223,10 +1296,12 @@
 
                     uploadBtnBox.style.display = 'flex';
                     $(this).append(uploadBtnBox);
-                    return false; // Break the loop
+                    return false;
                 }
             });
         }
+
+        // فتح الصورة في صفحة مستقلة 
         $('body').on('click', '.img-bg', function (e) {
             var imageUrl = $(this).css('background-image');
             imageUrl = imageUrl.replace(/^url\(['"](.+)['"]\)/, '$1');
@@ -1240,12 +1315,30 @@
                 'justify-content': 'center',
             });
         });
-        jQuery(document).ready(function () {
+        // فتح الملف في صفحة مستقلة 
+        $('body').on('click', '.pdf-bg', function (e) {
+            var fileName = $(this).data('file');
+            var pdfFile = null;
+            //تحديد  الملف 
+            for (var i = 0; i < CarImagesArray.length; i++) {
+                if (CarImagesArray[i].name === fileName && CarImagesArray[i].type === 'pdf') {
+                    pdfFile = CarImagesArray[i].f;
+                    break;
+                }
+            }
 
+            if (pdfFile) {
+                var fileURL = URL.createObjectURL(pdfFile);
+                window.open(fileURL, '_blank');
+            } else {
+                alert('الملف غير موجود.');
+            }
+        });
+
+        jQuery(document).ready(function () {
             CarImgUpload();
         });
     </script>
-
 </body>
 
 </html>
