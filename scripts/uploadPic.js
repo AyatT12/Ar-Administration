@@ -44,8 +44,8 @@ function openImageInNewTab(imageDataUrl) {
         justify-content: center;
       }
       .image-container {
-        width: 90vw;
-        height: 90vh;
+        width: 70vw;
+        height: 70vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -153,7 +153,6 @@ function handleImagePreview(dataURL) {
     saveIDBtn = "UploadPic";
     
     addImageClickHandler(IDpreviewImage, dataURL);
-    
     IDmainContainer.innerHTML = '<i class="fa-regular fa-circle-xmark xmark-icon"></i>';
     IDuploadContainer.innerHTML = "";
     IDuploadContainer.appendChild(IDpreviewImage);
