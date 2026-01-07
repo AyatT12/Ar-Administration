@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> نظام الادارة - إضافة سعر</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Cairo:500,400,700" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../../../style/Layout.css">
+    <link rel="stylesheet" href="../../../style/content.css">
+    <!-- <link rel="stylesheet" href="../../../style/english.css">  -->
+
+</head>
+
+<sc>
+    <div id="wrapper" class="Branches-wrapper d-flex flex-column ">
+        <!-- Top Navbar -->
+       <nav class="navbar navbar-expand-md navbar-light ">
+            <div class="nav-container container-fluid">
+                <!-- Company Logo -->
+                <div class="navbar-brand d-flex align-items-center gap-4" >
+                    <a href="#" class="Company-Logo"><img src="../../../images/Demo/DefualtCompany Logo.png" alt="Company Logo"
+                        class="Company-Logo-img"></a>
+                    <h1 class="m-0 Company-name">شركة كدي
+                         لتأجير السيارات</h1>
+                    <i class="fa-solid fa-bars toggle4 mobile-icon nav-icon"></i>
+                </div>
+
+                <!-- User Information -->
+                <div class="icons-content">
+                    <div class="d-flex">
+                        <div class="navbar-nav">
+                            <div class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle d-flex align-items-center py-0 gap-2" href="#" id="userDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="userName text-start d-flex flex-column text-dark">
+                                        <span style="font-weight: 700;"> عيسى هاني مبروك عزام </span>
+                                        <span style="font-weight: 400;">مشرف على الفروع</span>
+                                    </div>
+                                    <img src="../../../images/Demo/Employee_Picture.svg" alt="User Avatar"
+                                        class="rounded-circle User-Avatar">
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                    <li><a class="dropdown-item userDropdown-options" href="https://ayatt12.github.io/Ar-Administration/Pages/Account/Account.html">حسابي <img src="../../../images/Static/Topbar/AccountNavIcon.svg"/></a></li>
+                                    <li><a class="dropdown-item userDropdown-options" href="https://ayatt12.github.io/Ar-Administration/Pages/Account/NewPassword.html">تغيير كلمة السر <img src="../../../images/Static/Topbar/PasswordNavIcon.svg"/></a></li>
+                                    <li><a class="dropdown-item userDropdown-options" href="https://ayatt12.github.io/login_v2/Systems.html"> الأنظمه <img src="../../../images/Static/Topbar/SystemsNavIcon.svg"/></a></li>
+
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item userDropdown-options " href="https://ayatt12.github.io/login_v2/index.html">تسجيل الخروج <img class="logout" src="../../../images/Static/Topbar/LogoutNavIcon.svg"/></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="col lang-button-col">
+                            <input type="checkbox" id="myCheckbox" class="d-none">
+                            <h5 for="myCheckbox" class="lang-button mx-2" id="checkboxLabel"> En</h5>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </nav>
+        
+        <div class="container-fluid h-100 main-container-fluid">
+            <div class="row h-100 flex-nowrap ">
+                <div class="col-auto sidebar1-col close">
+                    <!-- Sidebar -->
+                    <nav class="sidebar close">
+                        <header>
+                            <i class='bx bx-chevron-right toggle'></i>
+                        </header>
+
+                        <div class="menu-bar">
+                            <div class="menu">
+                                <ul class="menu-links">
+                                    <li class="nav-link">
+                                        <a>
+                                            <img src="../../../images/Static/SideNavIcons/comany.svg" class="icon"  data-bs-toggle="collapse" href="#company-items" aria-expanded="false" aria-controls="#company-items" />
+                                            <span class="text nav-text collapsed" data-bs-toggle="collapse" href="#company-items" aria-expanded="false" aria-controls="#company-items">الشركة </span>
+                                        </a>
+                                    </li>
+                                    <div id="company-items" class="collapse">
+                                        <div class="bg-white gap-3 collapse-inner rounded">
+                                            <a class="collapse-item" href="../../../Pages/company/Branches/Branches.html"> الفروع <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../../Pages/company/owners/owners.html"> الملاك <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                        </div>
+                                    </div>
+                                   
+                                    <li class="nav-link">
+                                        <a>
+                                            <img src="../../../images/Static/SideNavIcons/tenants.svg" class="icon"  data-bs-toggle="collapse"
+                                            href="#tenant-items" aria-expanded="false"
+                                            aria-controls="#tenant-items"/>
+                                            <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                                href="#tenant-items" aria-expanded="false"
+                                                aria-controls="#tenant-items"> المستأجرين </span>
+                                        </a>
+                                    </li>
+                                    <div id="tenant-items" class="collapse">
+                                        <div class="bg-white gap-3 collapse-inner rounded">
+                                            <a class="collapse-item" href="../../../Pages/Tenants/TenantsData/TenantsData.html"> بيانات المستأجرين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                        <a class="collapse-item" href="../../../Pages/Tenants/TenantsContracts/TenantsContracts.html">   عقود المستأجرين   <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                        <a class="collapse-item" href="../../../Pages/Tenants/Tenants' debts/Tenantsdebts.html">  مديونيات المستأجرين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                        <a class="collapse-item" href="../../../Pages/Tenants/Messages/MessageTenants.html"> رسائل المستأجرين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+                                            </div>
+                                    </div>
+                                    
+                                    <li class="nav-link">
+                                        <a>
+                                            <img src="../../../images/Static/SideNavIcons/accounts.svg" class="icon" data-bs-toggle="collapse"
+                                            href="#Accounts-items" aria-expanded="false"
+                                            aria-controls="#Accounts-items" />
+                                            <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                            href="#Accounts-items" aria-expanded="false"
+                                            aria-controls="#Accounts-items"> الحسابات </span>
+                                        </a>
+                                    </li>
+                                     <div id="Accounts-items" class="collapse" >
+                                        <div class="bg-white gap-3 collapse-inner rounded">
+                                          <a class="collapse-item" href="../../../Pages/AccountsList/CashFeeding/Feed Box.html">   تغذية الصندوق <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../../Pages/AccountsList/Receipt Confirmation/Custody.html">  استلام عهدة  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../../Pages/AccountsList/ClosePendingContracts/ClosePendingContracts.html"> تسوية العقود المعلقة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../../Pages/AccountsList/Money to tenant/Money to tenant.html">  مبالغ إلى مستأجر<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../../Pages/AccountsList/Money from  tenant/Money from tenant.html">   مبالغ من مستأجر<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item " href="../../../Pages/AccountsList/Tax return/Tax return_edited.html">   الإقرار الضريبي <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+                                        </div>
+                                       </div>
+                                    <li class="nav-link">
+                                        <a>
+                                            <img src="../../../images/Static/SideNavIcons/reports.svg" class="icon"  data-bs-toggle="collapse" href="#reports-items" aria-expanded="false" aria-controls="#reports-items"/>
+                                            <span class="text nav-text collapsed" data-bs-toggle="collapse" href="#reports-items" aria-expanded="false" aria-controls="#reports-items">التقارير </span>
+                                        </a>
+                                    </li>
+                                    <div id="reports-items" class="collapse">
+                                        <div class="bg-white gap-3 collapse-inner rounded">
+                                            <a class="collapse-item" href="../../../Pages/reports/Administrative procedures.html">  الإجراءات الإدارية  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../../Pages/reports/DailyReports.html"> اليومية  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../../Pages/reports/Existing contracts.html"> العقود القائمة    <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item " href="../../../Pages/reports/Saved contracts.html"> العقود المحفوظة و الملغاه <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../../Pages/reports/Pending contracts.html"> العقود المعلقة  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                          <a class="collapse-item" href="../../../Pages/reports/Closed Contracts.html"> العقود المغلقة  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../../Pages/reports/Cars contracts.html"> عقود السيارات  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../../Pages/reports/Employee contracts.html"> عقود الموظفين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../../Pages/reports/Drivers contracts.html"> عقود السائقين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../../Pages/reports/Employee Financial movement.html"> الحركة المالية للموظفين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../../Pages/reports/SalePoint Financial movement.html"> الحركة المالية لنقاط البيع  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../../Pages/reports/Tenant Financial movement.html"> الحركة المالية للمستأجرين  <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+
+                                        </div>
+                                    </div>
+                                    <li class="nav-link">
+                                        <a>
+                                            <img src="../../../images/Static/SideNavIcons/statics.svg" class="icon" data-bs-toggle="collapse" href="#statics-items" aria-expanded="false" aria-controls="#statics-items"/> 
+                                            <span class="text nav-text collapsed" data-bs-toggle="collapse" href="#statics-items" aria-expanded="false" aria-controls="#statics-items">  الإحصائيات </span>
+                                        </a>
+                                    </li>
+                                       <div id="statics-items" class="collapse">
+                                        <div class="bg-white gap-3 collapse-inner rounded">
+
+                                            <a class="collapse-item" href="../../statistics/Car statistics.html"> إحصائيات السيارات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../statistics/Tenants statistics.html"> إحصائيات المستأجرين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../statistics/Contracts statistics.html"> إحصائيات العقود<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../statistics/Car Contracts statistics.html"> إحصائيات عقود السيارات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item" href="../../statistics/Tenants Contracts statistics.html"> إحصائيات عقود المستأجرين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+                                        </div>
+                                    </div>
+                                    <li class="nav-link">
+                                        <a>
+                                              <img src="../../../images/Static/SideNavIcons/employees.svg" class="icon"  data-bs-toggle="collapse" href="#employees-items" aria-expanded="false" aria-controls="#employees-items"/>
+                                            <span class="text nav-text collapsed" data-bs-toggle="collapse" href="#employees-items" aria-expanded="false" aria-controls="#employees-items"> الموظفين </span>
+                                        </a>
+                                    </li>
+                                    <div id="employees-items" class="collapse">
+                                        <div class="bg-white gap-3 collapse-inner rounded">
+                                            <a class="collapse-item" href="../../../Pages/employees/employees list/employees.html"> بيانات الموظفين<i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                             <a class="collapse-item" href="../../../Pages/employees/System Permissions/employees.html"> صلاحيات النظام <i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                              <a class="collapse-item" href="../../../Pages/employees/Contract Permissions/employees.html">صلاحيات العقود<i
+                                                    class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+
+                                        </div>
+                                    </div>
+                                    
+                                    <li class="nav-link">
+                                        <a>
+                                            <img src="../../../images/Static/SideNavIcons/services.svg" class="icon" data-bs-toggle="collapse"
+                                            href="#services-items" aria-expanded="false"
+                                            aria-controls="#services-items" />
+                                            <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                                href="#services-items" aria-expanded="false"
+                                                aria-controls="#services-items">الخدمات</span>
+                                        </a>
+                                    </li>
+                                    <div id="services-items" class="collapse">
+                                        <div class="bg-white gap-3 collapse-inner rounded">
+                                            <a class="collapse-item" href="../../Services/banks/Banks.html"> البنوك <i
+                                                class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                        <a class="collapse-item"
+                                            href="../../Services/sellingPoints/sellingPoints.html"> نقاط البيع <i
+                                                class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                        <a class="collapse-item"
+                                            href="../../Services/techncal-connect/techncal-connect.html"> الربط
+                                            التقني <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                            <a class="collapse-item " href="../../Services/Rental policy/Rental policy.html">
+                                                سياسة التأجير <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                        <a class="collapse-item" href="../../Services/drivers/drivers.html">
+                                            السائقين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+                                        <a class="collapse-item" href="../../Services/Alerts/Alerts.html"> التنبيهات
+                                            <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                        <a class="collapse-item" href="../../Services/Membership/Membership.html">
+                                            العضويات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+                                        </div>
+                                    </div>
+                                 
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col  d-flex align-items-center justify-content-center flex-column">
+                    <div class="container NewUpdate-container">
+                       <form action="" class="needs-validation" novalidate>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-11">
+                              <div class="row g-2 my-2">  
+                               <div class="col-md-12">
+                               <div class="row">
+                                <div class="col-md-6">
+                                    <h3> إضافة سعر </h3>
+                                   </div>
+                                   <div class="col-md-6 save-col">
+                                    <button type="submit" class="custom-img-btn"> <img
+                                        src="../../../images/Static/States/save.svg" /></button>
+                                    <button type="button" class="custom-img-btn"><a class="d-flex align-items-center" href="Prices.html"><img class="Chevron" src="../../../images/Static/States/Chevron_Left.svg" /></a></button>
+                                  </div>
+                               </div>
+                               </div>
+                              <div class="col-md-12">
+                                <div class="row align-items-center">
+                                    <div class="col-md-7">
+                                        <div class="row align-items-baseline ">
+                                            <div class="col-md-auto">
+                                                <label for="CarName" class="form-label "> السيارة </label>
+                                            </div>
+                                            <div class="col" style="position: relative;">
+                                                <input type="text" id="CarName" class="form-control inputs " name="CarName" required>
+                                                <div id="CarsNameList"
+                                                class="autocomplete-items CarsNameList">
+                                                </div>
+                                                <div class="invaild">
+                                                    <div class="invalid-feedback">الحقل مطلوب</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row my-2">
+                                            <div class="col-md-6">
+                                                <div class="row align-items-baseline">
+                                                    <div class="col-md-auto">
+                                                        <label for="start-date"  class="form-label m-0" >بدايته</label>
+                                                    </div>
+                                                    <div class="col">
+                                                        <input type="date" class="form-control inputs custom-date-input" id="start-date" name="start-date" required>
+                                                        <div class="invaild">
+                                                            <div class="invalid-feedback">الحقل مطلوب</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                            <div class="col-md-6">
+                                                <div class="row align-items-baseline">
+                                                    <div class="col-md-auto">
+                                                        <label for="End-date"  class="form-label m-0" >نهايته</label>
+                                                    </div>
+                                                    <div class="col">
+                                                        <input type="date" class="form-control inputs custom-date-input" id="End-date" name="End-date" required>
+                                                        <div class="invaild">
+                                                            <div class="invalid-feedback">الحقل مطلوب</div>
+                                                        </div>
+                                                    </div>
+                                                </div>                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="col-md-12 d-flex align-items-center justify-content-end">
+                                           <div class="carImagePreview">
+
+                                           </div>
+                                        </div>
+                                        <div class="col-md-12 d-flex gap-3 mt-3 justify-content-end">
+                                            <p class="CarsCountTitle">عدد السيارات </p> <p class="CarsCount">20</p>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                            <di class="col-md-12">
+                                <div class="row g-1">
+                                    <div class="col-6 col-md-3">
+                                        <button class="btn PriceTabsBtn" type="button" onclick="showContent(0)"><img src="../../../images/Static/CarPrices/PriceIcon.svg" style="height: 24px;">السعر</button>
+                                    </div>
+                                    <div class="col-6 col-md-3">
+                                        <button class="btn PriceTabsBtn"  type="button" onclick="showContent(1)"><img src="../../../images/Static/CarPrices/RentTerms.svg"> بنود التأجير </button>
+                                    </div>
+                                    <div class="col-6 col-md-3">
+                                        <button class="btn PriceTabsBtn"  type="button" onclick="showContent(2)"><img src="../../../images/Static/CarPrices/PriceOption.svg"> الخيارات </button>
+                                    </div>
+                                    <div class="col-6 col-md-3">
+                                        <button class="btn PriceTabsBtn" type="button" onclick="showContent(3)" ><img src="../../../images/Static/CarPrices/PriceAddtions.svg"> الإضافات </button>
+                                    </div>
+                                </div>
+                            
+                                <!-- Content Sections -->
+                                <div id="Price-content-display">
+                                 <!-- Hidden Content Data -->
+                                    <div id="content-container" >
+                                        <main> 
+                                           <div class="row  CarPriceContent ">
+                                           <div class="row">
+                                            <div class="col-lg-3">
+                                                <label for="DailyRent" class="form-label">الإيجار اليومي 
+                                                    <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                </label>
+                                                <input type="number" id="DailyRent" class="form-control inputs number-input" name="DailyRent" data-section="0" required>
+                                                <div class="invaild">
+                                                    <div class="invalid-feedback">الحقل مطلوب</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <label for="WeekRent" class="form-label">الإيجار الأسبوعي   
+                                                    <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                </label>
+                                                <input type="number" id="WeekRent" class="form-control inputs number-input" name="WeekRent" data-section="0" required>
+                                                <div class="invaild">
+                                                    <div class="invalid-feedback">الحقل مطلوب</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <label for="monthRent" class="form-label">الإيجار الشهري
+                                                    <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                </label>
+                                                <input type="number" id="monthRent" class="form-control inputs number-input" name="monthRent" data-section="0" required>
+                                                <div class="invaild">
+                                                    <div class="invalid-feedback">الحقل مطلوب</div>
+                                                </div>
+                                            </div>
+                                           </div>
+                                            <div class="col-lg-3">
+                                                <label for="extraKilometer" class="form-label">الكيلو الإضافي</label>
+                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                <input type="number" id="extraKilometer" class="form-control inputs number-input" name="extraKilometer"  data-section="0" required>
+                                                <div class="invaild">
+                                                    <div class="invalid-feedback">الحقل مطلوب</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <label for="extraHour" class="form-label">الساعة الإضافية</label>
+                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                <input type="number" id="extraHour" class="form-control inputs number-input" name="extraHour"  data-section="0" required>
+                                                <div class="invaild">
+                                                    <div class="invalid-feedback">الحقل مطلوب</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <label for="extraDriver" class="form-label">السائق الإضافي</label>
+                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                <input type="number" id="extraDriver" class="form-control inputs number-input" name="extraDriver"  data-section="0" required>
+                                                <div class="invaild">
+                                                    <div class="invalid-feedback">الحقل مطلوب</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <label for="PrivateDriver" class="form-label">السائق الخاص</label>
+                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                <input type="number" id="PrivateDriver" class="form-control inputs number-input" name="PrivateDriver" data-section="0" required>
+                                                <div class="invaild">
+                                                    <div class="invalid-feedback">الحقل مطلوب</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <label for="internalAuthorizationFee" class="form-label"> التفويض الداخلي</label>
+                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                <input type="number" id="internalAuthorizationFee" class="form-control inputs number-input" name="internalAuthorizationFee"  data-section="0" required>
+                                                <div class="invaild">
+                                                    <div class="invalid-feedback">الحقل مطلوب</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <label for="externalAuthorizationFee" class="form-label"> التفويض الخارجي</label>
+                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                <input type="number" id="externalAuthorizationFee" class="form-control inputs number-input" name="externalAuthorizationFee"  data-section="0" required>
+                                                <div class="invaild">
+                                                    <div class="invalid-feedback">الحقل مطلوب</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <label for="AnotherFee" class="form-label"> رسوم أخرى </label>
+                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                <input type="number" id="AnotherFee" class="form-control inputs number-input" name="AnotherFee"  data-section="0" required>
+                                                <div class="invaild">
+                                                    <div class="invalid-feedback">الحقل مطلوب</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <label for="taxRate" class="form-label">نسبة الضريبة</label>
+                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                <input type="number" id="taxRate" class="form-control inputs number-input" name="taxRate"  data-section="0" required>
+                                                <div class="invaild">
+                                                    <div class="invalid-feedback">الحقل مطلوب</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label for="notes" class="form-label">ملاحظات</label>
+                                                <input type="text" id="notes" class="form-control inputs number-input" name="notes">
+                                            </div>
+                                           </div>
+                                                       
+                                        </main>
+                                        <main style="display: none;"> 
+                                            <div class="row CarPriceContent">
+                                                <div class="col-lg-3">
+                                                    <label for="freeDailyKilometers" class="form-label">الكيلو المجاني اليومي 
+                                                        <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                    </label>
+                                                    <input type="number" id="freeDailyKilometers" class="form-control inputs number-input" name="freeDailyKilometers" data-section="1" required>
+                                                    <div class="invaild">
+                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <label for="freeHours" class="form-label">الساعة المجانية 
+                                                        <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                    </label>
+                                                    <input type="number" id="freeHours" class="form-control inputs number-input" name="freeHours" data-section="1" required>
+                                                    <div class="invaild">
+                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <label for="maxHours" class="form-label">الحد الأعلى للساعات 
+                                                        <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                    </label>
+                                                    <input type="number" id="maxHours" class="form-control inputs number-input" name="maxHours" data-section="1" required>
+                                                    <div class="invaild">
+                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <label for="contractCancellationHours" class="form-label">ساعات إلغاء العقد 
+                                                        <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                    </label>
+                                                    <input type="number" id="contractCancellationHours" class="form-control inputs number-input" name="contractCancellationHours" data-section="1" required>
+                                                    <div class="invaild">
+                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                    </div>
+                                                </div>
+                                               
+                                               <div class="row align-items-center">
+                                                <div class="col-lg-3">
+                                                    <label for="minDriverAge" class="form-label">أقل عمر للسائق 
+                                                        <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                    </label>
+                                                    <input type="number" id="minDriverAge" class="form-control inputs number-input" name="minDriverAge" data-section="1" required>
+                                                    <div class="invaild">
+                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <label for="maxDriverAge" class="form-label">أكبر عمر للسائق 
+                                                        <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                    </label>
+                                                    <input type="number" id="maxDriverAge" class="form-control inputs number-input" name="maxDriverAge" data-section="1" required>
+                                                    <div class="invaild">
+                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="d-flex gap-3 align-items-center">
+                                                        <input class="form-check-input checkbox" type="checkbox"
+                                                            value="checked" id="Sdad-Account"
+                                                            name="Sdad-Account">
+                                                        <label class="form-check-label" for="Sdad-Account">
+                                                            السماح بسائق إضافي 
+                                                        </label>
+
+                                                    </div>
+                                                </div>
+                                               </div>
+                                                <div class="col-lg-3">
+                                                    <label for="accidentDeductible" class="form-label">تحمل الحادث 
+                                                        <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                    </label>
+                                                    <input type="number" id="accidentDeductible" class="form-control inputs number-input" name="accidentDeductible" data-section="1" required>
+                                                    <div class="invaild">
+                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <label for="theftDeductible" class="form-label">تحمل السرقة 
+                                                        <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                    </label>
+                                                    <input type="number" id="theftDeductible" class="form-control inputs number-input" name="theftDeductible" data-section="1" required>
+                                                    <div class="invaild">
+                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <label for="drowningDeductible" class="form-label">تحمل الغرق 
+                                                        <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                    </label>
+                                                    <input type="number" id="drowningDeductible" class="form-control inputs number-input" name="drowningDeductible" data-section="1" required>
+                                                    <div class="invaild">
+                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <label for="fireDeductible" class="form-label">تحمل الحريق 
+                                                        <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                    </label>
+                                                    <input type="number" id="fireDeductible" class="form-control inputs number-input" name="fireDeductible" data-section="1" required>
+                                                    <div class="invaild">
+                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                        
+                                         </main>
+                                        <main style="display: none;">
+                                            <div class="row justify-content-center">
+                                                <div class="col-md-7 col-lg-6">
+                                                    <div class="PriceTableContainer">
+                                                        <div>
+                                                            <table class="table  CarPriceTable">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th style="width: 75%;"> الخيارات </th>
+                                                                        <th> القيمة </th>
+    
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                          <div class="TableChecks">
+                                                                            <input class="form-check-input checkbox" type="checkbox" value="checked" id="openMeter" name="openMeter">
+                                                                            <label class="form-check-label" for="openMeter">
+                                                                               فتح العداد
+                                                                            </label>
+                                                                          </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <input class="Table-inputs number-input" type="number">
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="TableChecks">
+                                                                                <input class="form-check-input checkbox" type="checkbox" value="checked" id="thirdPartyInsurance" name="thirdPartyInsurance">
+                                                                                <label class="form-check-label" for="thirdPartyInsurance">
+                                                                                    تأمين إضافي 
+                                                                                </label>
+                                                                            </div>
+                                                                            
+                                                                        </td>
+                                                                        <td>
+                                                                            <input class="Table-inputs number-input" type="number">
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                           <div class="TableChecks">
+                                                                            <input class="form-check-input checkbox" type="checkbox" value="checked" id="comprehensiveInsurance" name="comprehensiveInsurance">
+                                                                            <label class="form-check-label" for="comprehensiveInsurance">
+                                                                               تأمين شامل
+                                                                            </label>
+                                                                           </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <input class="Table-inputs number-input" type="number">
+                                                                        </td>
+                                                                    </tr>
+    
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </main>
+                                        <main style="display: none;">
+                                            <div class="row justify-content-center">
+                                                <div class="col-md-7 col-lg-6">
+                                                    <div class="PriceTableContainer">
+                                                        <div>
+                                                            <table class="table  CarPriceTable">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th style="width: 75%;"> الإضافات </th>
+                                                                        <th> القيمة </th>
+    
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                          <div class="TableChecks">
+                                                                            <input class="form-check-input checkbox" type="checkbox" value="checked" id="deliverCarToRenter" name="deliverCarToRenter">
+                                                                            <label class="form-check-label" for="deliverCarToRenter">
+                                                                              تسليم السيارة للمستأجر
+                                                                            </label>
+                                                                          </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <input class="Table-inputs number-input" type="number">
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="TableChecks">
+                                                                                <input class="form-check-input checkbox" type="checkbox" value="checked" id="receiveCarFromRenter" name="receiveCarFromRenter">
+                                                                                <label class="form-check-label" for="receiveCarFromRenter">
+                                                                                    استلام السيارة من المستأجر
+                                                                                </label>
+                                                                            </div>
+                                                                            
+                                                                        </td>
+                                                                        <td>
+                                                                            <input class="Table-inputs number-input" type="number">
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="TableChecks">
+                                                                                <input class="form-check-input checkbox" type="checkbox" value="checked" id="deliverCarToAnotherBranch" name="deliverCarToAnotherBranch">
+                                                                                <label class="form-check-label" for="deliverCarToAnotherBranch">
+                                                                                    تسليم السيارة بفرع آخر
+                                                                                </label>
+                                                                            </div>
+                                                                            
+                                                                        </td>
+                                                                        <td>
+                                                                            <input class="Table-inputs number-input" type="number">
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </main>
+                                    </div>
+                                </div>
+                            
+                                <!-- Navigation Buttons -->
+                                <div class="mt-3 d-flex justify-content-between">
+                                    <button id="prev-btn" type="button" class="btn NextPrevBtn" onclick="prevContent()" disabled> <i class="fa-solid fa-chevron-right Chevron"></i>السابق </button>
+                                    <button id="next-btn" type="button" class="btn NextPrevBtn" onclick="nextContent()">التالي <i class="fa-solid fa-chevron-left Chevron"></i></button>
+                                </div>
+
+
+                            </di>
+                          </div>
+                           </div>
+                        </div>
+                        <div class="col-auto sidebar2-col close2">
+                            <nav class="sidebar2 close2">
+                                <div class="toggle-div toggle2">
+                                <span class="notification"> إشعارات </span>                         
+                                </div>
+                                <div class="menu-bar">
+                                    <div class="menu">
+                                        <main>
+                                            <div class="accordion">
+                                            
+                                            <div class="accordion-item">
+                                                <div class="accordion-item-header">
+                                                <span class="accordion-item-header-title">  مستندات الشركة  </span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down accordion-item-header-icon">
+                                                    <path d="m6 9 6 6 6-6" />
+                                                </svg>
+                                                </div>
+                                                <div class="accordion-item-description-wrapper">
+                                                <div class="accordion-item-description">
+                                                    <div class="container-fluid">
+                                                        <div class="row collapse-row ">
+                                                            <div class="col-7">
+                                                                <p>السجل التجاري</p>
+                                                            </div>
+                                                        
+                                                            <div class="col working">
+                                                                <p> 2 </p>
+                                                        </div>
+                                                        <div class="col ended">
+                                                                <p> 3 </p>
+                                                        </div>
+                                                        </div>
+                                                        <hr class="collapse-hr">
+
+                                                        <div class="row collapse-row ">
+                                                            <div class="col-7">
+                                                                <p> اشتراك الغرفة التجارية </p>
+                                                            </div>
+                                                        
+                                                            <div class="col working">
+                                                                <p> 5 </p>
+                                                        </div>
+                                                        <div class="col ended">
+                                                                <p> 6 </p>
+                                                        </div>
+                                                        </div>
+                                                        <hr class="collapse-hr">
+
+                                                        <div class="row collapse-row ">
+                                                            <div class="col-7">
+                                                                <p> تصريح هيئة النقل </p>
+                                                            </div>
+                                                        
+                                                            <div class="col working">
+                                                                <p> 7 </p>
+                                                        </div>
+                                                        <div class="col ended">
+                                                                <p> 5 </p>
+                                                        </div>
+                                                        </div>
+                                                        <hr class="collapse-hr">
+
+                                                        <div class="row collapse-row ">
+                                                            <div class="col-7">
+                                                                <p>  رخصة البلدية   </p>
+                                                            </div>
+                                                        
+                                                            <div class="col working">
+                                                                <p> 6 </p>
+                                                        </div>
+                                                        <div class="col ended">
+                                                                <p> 3 </p>
+                                                        </div>
+                                                        </div>
+                                                        <hr class="collapse-hr">
+
+                                                        <div class="row collapse-row ">
+                                                            <div class="col-7">
+                                                                <p> البريد الوطني</p>
+                                                            </div>
+                                                        
+                                                            <div class="col working">
+                                                                <p> 4 </p>
+                                                        </div>
+                                                        <div class="col ended">
+                                                                <p> 5 </p>
+                                                        </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <div class="accordion-item-header">
+                                                <span class="accordion-item-header-title"> السيارات </span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down accordion-item-header-icon">
+                                                    <path d="m6 9 6 6 6-6" />
+                                                </svg>
+                                                </div>
+                                                <div class="accordion-item-description-wrapper">
+                                                <div class="accordion-item-description">
+                                                    <div class="container-fluid">
+                                                        <div class="row collapse-row">
+                                                            <div class="col-5">
+                                                                <p>وثائق</p>
+                                                            </div>
+                                                            <div class="col working">
+                                                                <p> 3 </p>
+                                                            </div>
+                                                            <div class="col ended">
+                                                                <p> 5 </p>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="collapse-hr">
+                                                        <div class="row collapse-row">
+                                                            <div class="col-5">
+                                                                <p>صيانة</p>
+                                                            </div>
+                                                            <div class="col working">
+                                                                <p> 100 </p>
+                                                            </div>
+                                                            <div class="col ended">
+                                                                <p> 200 </p>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="collapse-hr">
+                                                        <div class="row collapse-row">
+                                                            <div class="col-5">
+                                                                <p>الأسعار</p>
+                                                            </div>
+                                                            <div class="col working">
+                                                                <p> 460 </p>
+                                                            </div>
+                                                            <div class="col ended">
+                                                                <p> 500 </p>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <div class="accordion-item-header">
+                                                <span class="accordion-item-header-title">  العقود </span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down accordion-item-header-icon">
+                                                    <path d="m6 9 6 6 6-6" />
+                                                </svg>
+                                                </div>
+                                                <div class="accordion-item-description-wrapper">
+                                                <div class="accordion-item-description">
+                                                    <div class="container-fluid">
+                                                        <div class="row collapse-row">
+                                                            <div class="col ">
+                                                                <p>  منتهية </p>
+                                                            </div>
+                                                            <div class="col contract-ended ">
+                                                                <p> 8 </p>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                        <hr class="collapse-hr">
+                                                        <div class="row collapse-row">
+                                                            <div class="col">
+                                                                <p>تنتهي اليوم</p>
+                                                            </div>
+                                                            
+                                                            <div class="col ended">
+                                                                <p> 15 </p>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="collapse-hr">
+                                                        <div class="row collapse-row">
+                                                            <div class="col">
+                                                                <p>تنتهي غدًا</p>
+                                                            </div>
+                                                            <div class="col working">
+                                                                <p> 7 </p>
+                                                            </div>   
+                                                        </div>
+                                                        <hr class="collapse-hr">
+                                                        <div class="row collapse-row">
+                                                            <div class="col">
+                                                                <p> تنتهي لاحقًا </p>
+                                                            </div>
+                                                            <div class="col later">
+                                                                <p> 11 </p>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                        <hr class="collapse-hr">
+                                                        <div class="row collapse-row">
+                                                            <div class="col-5">
+                                                                <p>محفوظة</p>
+                                                            </div>
+                                                            <div class="col working">
+                                                                <p> 5 </p>
+                                                            </div>
+                                                        
+                                                        </div>  <hr class="collapse-hr">
+                                                        <div class="row collapse-row">
+                                                            <div class="col-5">
+                                                                <p>معلقة</p>
+                                                            </div>
+                                                            <div class="col working">
+                                                                <p> 100 </p>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <div class="accordion-item-header">
+                                                <span class="accordion-item-header-title">  الموظفين  <div class="notify"></div></span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down accordion-item-header-icon">
+                                                    <path d="m6 9 6 6 6-6" />
+                                                </svg>
+                                                </div>
+                                                <div class="accordion-item-description-wrapper">
+                                                        <div class="accordion-item-description">
+                                                            <div class="container-fluid">
+                                                                <div class="row align-items-center ">
+                                                                    <div class="col-auto p-1"> 
+                                                                        <img src="../../../images/Static/Green_Arrow_icon.svg" />
+                                                                        <img src="../../../images/Demo/Employee_Picture.svg"
+                                                                            class="employee-custody-img"> عمار عبدالغفور مسفر
+                                                                    </div>
+                                                                    <div class="col-auto">37.068.12</div>
+                                                                </div>
+                                                                <hr>
+                                                                <div class="row align-items-center mb-2">
+                                                                    <div class="col-auto p-1"> 
+                                                                        <img src="../../../images/Static/Red_Arrow_icon.svg" />
+                                                                        <img src="../../../images/Demo/Employee_Picture.svg"
+                                                                            class="employee-custody-img"> عمار عبدالغفور مسفر
+                                                                    </div>
+                                                                    <div class="col-auto">37.068.12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            
+                                            <div class="accordion-item">
+                                                <div class="accordion-item-header">
+                                                <span class="accordion-item-header-title"> مديونيات المستأجرين </span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down accordion-item-header-icon">
+                                                    <path d="m6 9 6 6 6-6" />
+                                                </svg>
+                                                </div>
+                                                <div class="accordion-item-description-wrapper">
+                                                <div class="accordion-item-description">
+                                                    <div class="container-fluid">
+                                                        <div class="row collapse-row">
+                                                            <div class="col">
+                                                                <p>مدينون</p>
+                                                            </div>
+                                                            <div class="col-auto ">
+                                                                <p> 4,520.36 </p>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="collapse-hr">
+                                                        <div class="row collapse-row">
+                                                            <div class="col">
+                                                                <p>دائنون</p>
+                                                            </div>
+                                                            <div class="col-auto ">
+                                                                <p> 936.56 </p>
+                                                        </div>
+                                                        </div>
+                                                    
+                                                        
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </main>
+                                    </div>
+
+
+                                </div>
+
+                            </nav>
+
+                        </div>
+                       </form>
+                     </div>
+
+                 </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="../../../scripts/Scripts.js"></script>
+    <!-- local script for autocomplete list  -->
+    <script>
+   const dataLists = {
+    Cars: [
+        { name: "هيونداي - أكسنت -  سيدان متوسطة - 2021 - س و ص 1870 - بيج", image: "Demo/DefaultCar.png", count: 15 },
+        { name: "فورد - تورس -  سيدان متوسطة - 2021 - د ق هـ 4707 - رمادي", image: "Demo/DefaultCar.png", count: 10 },
+        { name: "كيا - تيلورايد -  عائلية كبيرة - 2021 - ص هـ ن 0420 - بنفسجي", image: "Demo/DefaultCar.png", count: 5 },
+        { name: "لكزس - اي اس -  فخمة متوسطة - 2020 - س و س 2877 - أبيض", image: "Demo/DefaultCar.png", count: 8 },
+        { name: "فورد - تورس -  سيدان متوسطة - 2019 - و ك د 3848 - كحلي", image: "Demo/DefaultCar.png", count: 12 },
+        { name: "بيجو - ترافيلر -  عائلية كبيرة - 2020 - ب أ ع 4244 - بني", image: "Demo/DefaultCar.png", count: 7 }
+    ]
+};
+
+$(document).ready(function () {
+    function setupAutocomplete(inputId, list, dataList) {
+        $("#" + inputId).on("input", function () {
+            const value = this.value.toLowerCase();
+            const autocompleteList = $("#" + list);
+            autocompleteList.empty();
+            if (value) {
+                let matchesFound = false;
+                dataList.forEach(car => {
+                    if (car.name.toLowerCase().indexOf(value) > -1) {
+                        autocompleteList.append(`<div data-name="${car.name}" data-image="${car.image}" data-count="${car.count}">${car.name}</div>`);
+                        matchesFound = true;
+                    }
+                });
+
+                if (matchesFound) {
+                    autocompleteList.show();
+                } else {
+                    autocompleteList.hide();
+                }
+            } else {
+                autocompleteList.hide();
+            }
+        });
+
+        $(document).on("click", "#" + list + " div", function () {
+            const selectedCar = $(this).data("name");
+            const carImage = $(this).data("image");
+            const carCount = $(this).data("count");
+
+            $("#" + inputId).val(selectedCar);
+            $("#" + list).empty().hide();
+
+            // عرض صورة السيارة 
+            if ($('.carImagePreview img').length) {
+                // في حالة و جود صورة مسبقة
+                $('.carImagePreview img').attr('src', `../../../images/${carImage}`);
+            } else {
+                //في حالة عدم وجود صورة مسبقة
+                const img = $('<img>').attr('src', `../../../images/${carImage}`);
+                $('.carImagePreview').append(img);
+            }
+            //عرض العدد 
+            $(".CarsCount").text(carCount);
+        });
+
+        $(document).click(function (e) {
+            if (!$(e.target).closest("#" + list + ", #" + inputId).length) {
+                $("#" + list).empty().hide();
+            }
+        });
+    }
+
+    setupAutocomplete("CarName", "CarsNameList", dataLists.Cars);
+});
+
+    </script>
+    <!-- local script for moving between fields -->
+    <script>
+        let currentIndex = 0; 
+        const contents = Array.from(document.querySelectorAll("#content-container main"));
+        const tabButtons = document.querySelectorAll(".PriceTabsBtn");
+        
+        function showContent(index) {
+            if (index < 0 || index >= contents.length) return;
+            currentIndex = index;
+    
+            // عرض المحتوى المقابل
+            contents.forEach((content, i) => {
+                content.style.display = i === index ? 'block' : 'none';
+            });
+    
+            updateButtons();
+            updateActiveTab(index);
+            focusFirstInput(index); // التركيز على أول مدخل في المحتوى المفتوح
+        }
+    
+        function focusFirstInput(index) {
+            const firstInput = contents[index].querySelector('input, textarea');
+            if (firstInput) firstInput.focus(); // التركيز على أول مدخل أو منطقة نص
+        }
+    
+        function prevContent() {
+            if (currentIndex > 0) {
+                showContent(currentIndex - 1);
+            }
+        }
+    
+        function nextContent() {
+            if (currentIndex < contents.length - 1) {
+                showContent(currentIndex + 1);
+            }
+        }
+    
+        function updateButtons() {
+            // تعطيل جميع الأزرار باستثناء الزر الأول
+            tabButtons.forEach((btn, i) => {
+                btn.disabled = (i !== 0 && i > currentIndex);
+            });
+    
+            document.getElementById("prev-btn").disabled = currentIndex === 0;
+            document.getElementById("next-btn").disabled = currentIndex === contents.length - 1;
+        }
+    
+        function updateActiveTab(index) {
+            tabButtons.forEach((btn, i) => {
+                btn.classList.toggle("active", i === index);
+            });
+        }
+    
+        function handleSubmit(event) {
+            event.preventDefault(); // منع الإرسال الافتراضي للنموذج
+            const inputs = document.querySelectorAll('input, textarea');
+            let firstErrorInput = null; // متغير لتخزين المدخل الأول الذي يحتوي على خطأ
+    
+            // التحقق من وجود أخطاء في التحقق
+            inputs.forEach(input => {
+                if (!input.checkValidity()) {
+                    input.classList.add('error'); // إضافة الخطأ للمدخل
+                    if (!firstErrorInput) {
+                        firstErrorInput = input; // حفظ المدخل الأول الذي يحتوي على خطأ
+                    }
+                } else {
+                    input.classList.remove('error'); // إزالة الخطأ إذا كان صالحًا
+                }
+            });
+    
+            // إذا كان هناك خطأ، عرض القسم الذي يحتوي على خطأ
+            if (firstErrorInput) {
+                const mainIndex = firstErrorInput.dataset.section; 
+                if(mainIndex){
+                    console.log(mainIndex)
+                showContent(parseInt(mainIndex)); 
+                firstErrorInput.focus(); // التركيز على المدخل الذي يحتوي على الخطأ
+                }
+               
+            } else {
+                // متابعة إرسال النموذج إذا لم تكن هناك أخطاء
+                event.target.submit();
+            }
+        }
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            updateButtons();
+            showContent(0); 
+    
+            const form = document.querySelector('form'); 
+            form.addEventListener('submit', handleSubmit);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> نظام الادارة -   حسابي</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Cairo:500,400,700" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="../../style/Layout.css">
+    <link rel="stylesheet" href="../../style/content.css">
+    <!-- <link rel="stylesheet" href="../../style/english.css">   -->  
+
+</head>
+
+<body>
+    <div id="wrapper" class="Branches-wrapper d-flex flex-column ">
+        <!-- Top Navbar -->
+         <nav class="navbar navbar-expand-md navbar-light ">
+            <div class="nav-container container-fluid">
+                <!-- Company Logo -->
+                <div class="navbar-brand d-flex align-items-center gap-4" >
+                    <a href="#" class="Company-Logo"><img src="../../images/Demo/DefualtCompany Logo.png" alt="Company Logo"
+                        class="Company-Logo-img"></a>
+                    <h1 class="m-0 Company-name">شركة كدي
+                         لتأجير السيارات</h1>
+                    <i class="fa-solid fa-bars toggle4 mobile-icon nav-icon"></i>
+                </div>
+
+                <!-- User Information -->
+                <div class="icons-content">
+                    <div class="d-flex">
+                        <div class="navbar-nav">
+                            <div class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle d-flex align-items-center py-0 gap-2" href="#" id="userDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="userName text-start d-flex flex-column text-dark">
+                                        <span style="font-weight: 700;"> عيسى هاني مبروك عزام </span>
+                                        <span style="font-weight: 400;">مشرف على الفروع</span>
+                                    </div>
+                                    <img src="../../images/Demo/Employee_Picture.svg" alt="User Avatar"
+                                        class="rounded-circle User-Avatar">
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                    <li><a class="dropdown-item userDropdown-options" href="https://ayatt12.github.io/Ar-Administration/Pages/Account/Account.html">حسابي <img src="../../images/Static/Topbar/AccountNavIcon.svg"/></a></li>
+                                    <li><a class="dropdown-item userDropdown-options" href="https://ayatt12.github.io/Ar-Administration/Pages/Account/NewPassword.html">تغيير  السر <img src="../../images/Static/Topbar/PasswordNavIcon.svg"/></a></li>
+                                    <li><a class="dropdown-item userDropdown-options" href="https://ayatt12.github.io/login_v2/Systems.html"> الأنظمه <img src="../../images/Static/Topbar/SystemsNavIcon.svg"/></a></li>
+
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item userDropdown-options " href="https://ayatt12.github.io/login_v2/index.html">تسجيل الخروج <img class="logout" src="../../images/Static/Topbar/LogoutNavIcon.svg"/></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="col lang-button-col">
+                            <input type="checkbox" id="myCheckbox" class="d-none">
+                            <h5 for="myCheckbox" class="lang-button mx-2" id="checkboxLabel"> En</h5>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </nav>
+
+        
+        <div class="container-fluid h-100 main-container-fluid">
+            <div class="row h-100 flex-nowrap">
+
+                <div class="col my-3 d-flex align-items-center justify-content-center ">
+                    <div class="container changePasword-container">
+                        <form action="" class="needs-validation" novalidate>
+                            <div class="row mt-3 g-3 justify-content-center">
+
+                               
+                                    <div class="col-lg-12">
+                                        <div class="container-fluid">
+
+                                        <div class="row g-3 my-2 px-md-4">
+                                            <div class="col-md-6">
+                                                <h3> حسابي   </h3>
+                                            </div>
+                                            <div class="col-md-6 save-col">
+                                                <button type="submit" class="custom-img-btn"> <img
+                                                        src="../../images/Static/States/save.svg" /></button>
+                                            </div>
+                                        </div>
+
+
+                                            <div class="row g-3 mt-3 justify-content-around acoount-cards-row">
+                                            
+                                                     <div class="col-lg-8">
+                                                        <div class="info-card mb-3">
+                                                            <div class="header-card text-center py-2">
+                                                                بيانات
+                                                            </div>
+                                                            <div class="data-card">
+                                                               <div class="container-fluid">
+                                                                <div class="row g-3 py-3">
+                                                                    <div class="col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-auto">
+                                                                                <p>رقم الموظف</p>
+                                                                            </div>
+                                                                            <div class=" col-md-auto Saved-data">
+                                                                                <p> 401  </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-auto">
+                                                                                <p> الهوية </p>
+                                                                            </div>
+                                                                            <div class=" col-md-auto Saved-data">
+                                                                                <p> 6548816823054  </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-auto">
+                                                                                <p> الحد الإئتماني  </p>
+                                                                            </div>
+                                                                            <div class=" col-md-auto Saved-data">
+                                                                                <p> 1.000.000.00  </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="row align-items-baseline">
+                                                                            <div class="col-md-auto">
+                                                                                <label for="phone" class="form-label"> الجوال </label>
+                                                                            </div>
+                                                                            <div class="col-md-4">
+                                                                                <div class="input-group">
+                                                                                    <input type="tel"
+                                                                                        class="form-control inputs tel-input"
+                                                                                        id="phone" name="phone" required>
+                                                                                    <select
+                                                                                        class="input-group-text select-style counterCode"
+                                                                                        name="counterCode-phone">
+                                                                                        <option value="+966">+966</option>
+                                                                                        <option value="+962">+962</option>
+                                                                                        <option value="+20">+20</option>
+                                                                                    </select>
+                                                                                   
+                                                                                </div>
+                                                                              
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="row align-items-baseline">
+                                                                         <div class="col-md-auto">
+                                                                            <label for="email" class="form-label"> البريد الإلكتروني </label>
+                                                                         </div>
+                                                                            <div class="col-md-6">
+                                                                                <input type="email" id="email"
+                                                                                class="form-control inputs english-input"
+                                                                                name="email" >
+                                                                           
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                               </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="info-card">
+                                                            <div class="header-card text-center py-2">
+                                                                إعدادات
+                                                            </div>
+                                                            <div class="data-card ">
+                                                               <div class="container-fluid">
+                                                                <div class="row py-3 g-3">
+                                                                    <div class="col-md-10">
+                                                                        <div class="row align-items-baseline">
+                                                                         <div class="col-md-auto">
+                                                                            <label for="Password-hint" class="form-label"> تلميح كلمة السر  </label>
+                                                                         </div>
+                                                                            <div class="col-md-5">
+                                                                                <input type="text" id="Password-hint"
+                                                                                class="form-control inputs text-center"
+                                                                                name="Password-hint" maxlength="50" required>
+                                                                         
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-10">
+                                                                        <div class="row align-items-baseline">
+                                                                         <div class="col-md-auto">
+                                                                            <label for="automatic-logout" class="form-label"> وقت الخروج الآلي  </label>
+                                                                         </div>
+                                                                            <div class="col-md-2">
+                                                                                <div class="number-input-container  ">
+                                                                                    <div class="col">
+                                                                                        <input type="number" value="5"
+                                                                                            min="5" max="15"
+                                                                                            class="alert-input"
+                                                                                            name="automatic-logout"
+                                                                                            id="automatic-logout"
+                                                                                             />
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="col d-flex flex-column-reverse">
+                                                                                        <button type="button" class="deincrement">
+                                                                                           
+                                                                                        </button>
+                                                                                        <button type="button" class="increment"></button>
+                                                                                    </div>
+                                                                                </div>
+                                                                          
+                                                                            </div>
+                                                                        </div>
+                                                                        
+                                                                    </div>
+                                                                   
+                                                                    <div class="col-xl-7">
+                                                                        <div class="row align-items-baseline">
+                                                                            <div class="col-md-auto">
+                                                                                <label for="lang">اللغة الافتراضية</label>
+                                                                            </div>
+                                                                            <div class="col-md-6  ">
+                                                                                <select class="form-select select-style text-center"name="language" id="lang">
+                                                                                    <option value="Arabic">
+                                                                                        العربية
+                                                                                    </option>
+                                                                                    <option value="English">
+                                                                                        الإنجليزية
+                                                                                    </option>
+                                                                                </select>
+    
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                               </div>
+                                                            </div>
+                                                        </div>
+                                                     </div>
+                                                     <div class="col-lg-3 profile-section" >
+                                                        <div class="row gap-3">
+                                                            <div class="col-md-12 d-flex justify-content-center">
+                                                                <div class="profile-photo">
+                                                                    <img src="../../images/Demo/Employee_Picture.svg" class="w-100" id="Profile-photo">
+                                                                    <img src="../../images/Static/Account/change pic.svg" class="change-profile-btn" id="change-profile-btn">
+                                                                    <input type="file" id="Profile-photo-input" class="hide"    name="Profile-photo"  onchange="loadFile(event)"/>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12 d-flex justify-content-center">
+                                                                <div class="row align-items-center ">
+                                                                    <div class="col-auto">
+                                                                        <button type="button" class="custom-img-btn"><img src="../../images/Static/signature/PenIcon.svg" data-bs-toggle="modal" href="#signature-modal"  /></button>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <img src="../../images/Demo/signature.svg"
+                                                                            id="previewSignature">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12 d-flex justify-content-center  align-items-center flex-column">
+                                                                <p class="user-name">عبدالله محمد المعشني</p>
+                                                                <p>المدير التنفيذي</p>
+                                                            </div>
+                                                        </div>
+                                                     </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                               
+                            </div>
+                        </form>
+                        <a href="../../index.html" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-custom-class="custom-tooltip" data-bs-title="العودة الي الرئيسية"
+                        class="new-Page-icon"><img src="../../images/Static/back to main.svg" alt="man"></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+  <!-- signature modal -->
+  <div class="modal fade" id="signature-modal" tabindex="-1" aria-hidden="true" >
+    <div class="modal-dialog modal-dialog-centered d-flex justify-content-center">
+        <div class="modal-content signature-modal-content p-3">
+            <div class="modal-body Signature-modal-body">
+                <div class="SignatureCard">
+                    <div class="image-main-container" id="removeSignatureImg"></div>
+                    <div class="upload-container">
+
+
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-3">
+                        <div class="sinature-Btn-Card p-2">
+                            <img src="../../images/Static/signature/save.svg" class="w-100" id="save">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                       <div class="sinature-Btn-Card p-2">
+                           <img src="../../images/Static/signature/Frame.svg" class="w-100" id="clear">
+                       </div>
+                   </div>
+                    <div class="col-3">
+                       <div class="sinature-Btn-Card p-2">
+                           <img src="../../images/Static/signature/file-signature_9795523 1.svg"
+                               class="w-100" id="WriteSignature">
+                       </div>
+                   </div>
+                    <div class="col-3">
+                       <div class="sinature-Btn-Card p-2">
+                           <img src="../../images/Static/signature/Pic.svg" class="w-100"
+                               id="UploadSigntaurePic">
+                           <input type="file" id="imageUpload" accept="image/*"
+                               style="display: none;">
+                       </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../../scripts/signature.js"> </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- local scripts -->
+  <script>
+    const changeProfileBtn = document.getElementById('change-profile-btn');
+    const ProfilePhotoInput = document.getElementById('Profile-photo-input');
+    const ProfilePhoto = document.getElementById('Profile-photo');
+
+    changeProfileBtn.addEventListener('click' , function(){
+        ProfilePhotoInput.click();
+       
+    })
+    var loadFile = function(event) {
+    var reader = new FileReader();
+    reader.onload = function(){
+      var output = document.getElementById('Profile-photo');
+      output.src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  };
+  </script>
+       <!-- local scripts -->
+
+   <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const data = {
+            
+            "email": "abdallah 359@gmail.com",
+            "phone" : "01127237646",
+            "hint" : "401"
+        };
+      
+        document.getElementById("email").value = data.email;
+        document.getElementById("phone").value = data.phone;
+        document.getElementById("Password-hint").value = data.hint;
+
+
+    });
+   
+</script>
+    <!-- local scripts -->
+
+<script>
+    let deincrement = document.querySelector(".deincrement");
+    let increment = document.querySelector(".increment");
+    let number = document.querySelector(".alert-input");
+
+    let step = 5;
+    let max = 15;
+    let min = 5;
+    
+    number.addEventListener('blur', () => {
+        let currentValue = parseInt(number.value);
+        if (isNaN(currentValue)) {
+            number.value = min;
+        } else if (currentValue > max) {
+            number.value = max;
+        } else if (currentValue < min) {
+            number.value = min;
+        }
+    });
+
+    increment.addEventListener("click", () => {
+        if (parseInt(number.value) + step >= max) {
+            number.value = max;
+            increment.style.backgroundImage = "url('../../images/Static/Increment_Decremet_Input/up1.svg')";
+            deincrement.style.backgroundImage = "url('../../images/Static/Increment_Decremet_Input/down.svg')";
+            return;
+        }
+        increment.style.backgroundImage = "url('../../images/Static/Increment_Decremet_Input/up.svg')";
+        deincrement.style.backgroundImage = "url('../../images/Static/Increment_Decremet_Input/down.svg')";
+        number.value = parseInt(number.value) + step;
+    });
+
+    deincrement.addEventListener("click", () => {
+        if (parseInt(number.value) - step <= min) {
+            number.value = min;
+            deincrement.style.backgroundImage = "url('../../images/Static/Increment_Decremet_Input/down1.svg')";
+            increment.style.backgroundImage = "url('../../images/Static/Increment_Decremet_Input/up.svg')";
+            return;
+        }
+        deincrement.style.backgroundImage = "url('../../images/Static/Increment_Decremet_Input/down.svg')";
+        increment.style.backgroundImage = "url('../../images/Static/Increment_Decremet_Input/up.svg')";
+        number.value = parseInt(number.value) - step;
+    });
+</script>
+
+
+</body>
+
+</html>
