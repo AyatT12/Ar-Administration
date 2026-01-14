@@ -113,16 +113,16 @@ body {
 
 }
 
-.menu-bar::-webkit-scrollbar {
+.menu::-webkit-scrollbar {
   width: 5px;
 }
 
-.menu-bar::-webkit-scrollbar-track {
+.menu::-webkit-scrollbar-track {
   background: rgba(255, 150, 38, 0);
   border-radius: 5px;
 }
 
-.menu-bar::-webkit-scrollbar-thumb {
+.menu::-webkit-scrollbar-thumb {
   background: #e4e5e7;
   border-radius: 5px;
   height: 10px;
@@ -338,7 +338,7 @@ body.dark .sidebar-right li a:hover .text {
 
 .toggle2 span {
   font-size: 12px;
-  color:#22c3a7;
+  color: var(--notify-color);
   font-weight: 800;
 }
 
@@ -628,7 +628,7 @@ body.dark .sidebar-right li a:hover .text {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    min-height: 100vh;
+    min-height: 100dvh;
     height: 100%;
   }
 
@@ -913,7 +913,7 @@ div:has(.min-loader-back) {
   min-height: 0;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
   z-index: 1;
 }
@@ -983,16 +983,14 @@ div:has(.min-loader-back) {
 }
 
 .menu-bar {
-  /* flex: 1;
-  min-height: 0; */
+  flex: 1;
+  min-height: 0;
+}
+
+.menu {
   height: 98%;
   overflow: auto;
 }
-
-/* .menu {
-  height: 98%;
-  overflow: auto;
-} */
 
 /* Right Sidebar  */
 .sidebar-right {
@@ -1202,7 +1200,7 @@ div:has(.min-loader-back) {
   .sidebar-right,
   .sidebar-left {
     position: fixed;
-    height: calc(100vh - 100px);
+    height: calc(100dvh - 100px);
     top: 100px;
     z-index: 200;
   }
@@ -1220,7 +1218,4 @@ div:has(.min-loader-back) {
   .sidebar-left {
     left: 0;
   }
-
 }
-
-
