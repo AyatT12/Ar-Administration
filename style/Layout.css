@@ -113,16 +113,16 @@ body {
 
 }
 
-.menu::-webkit-scrollbar {
+.menu-bar::-webkit-scrollbar {
   width: 5px;
 }
 
-.menu::-webkit-scrollbar-track {
+.menu-bar::-webkit-scrollbar-track {
   background: rgba(255, 150, 38, 0);
   border-radius: 5px;
 }
 
-.menu::-webkit-scrollbar-thumb {
+.menu-bar::-webkit-scrollbar-thumb {
   background: #e4e5e7;
   border-radius: 5px;
   height: 10px;
@@ -983,14 +983,16 @@ div:has(.min-loader-back) {
 }
 
 .menu-bar {
-  flex: 1;
-  min-height: 0;
-}
-
-.menu {
+  /* flex: 1;
+  min-height: 0; */
   height: 98%;
   overflow: auto;
 }
+
+/* .menu {
+  height: 98%;
+  overflow: auto;
+} */
 
 /* Right Sidebar  */
 .sidebar-right {
@@ -1216,4 +1218,5 @@ div:has(.min-loader-back) {
   .sidebar-left {
     left: 0;
   }
+
 }
