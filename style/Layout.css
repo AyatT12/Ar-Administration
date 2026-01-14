@@ -1206,7 +1206,9 @@ div:has(.min-loader-back) {
     top: 100px;
     z-index: 200;
   }
-
+  .sidebar-left {
+    width: 320px;
+  }
   .sidebar-right {
     right: 0;
   }
@@ -1220,3 +1222,4 @@ div:has(.min-loader-back) {
   }
 
 }
+
