@@ -338,7 +338,7 @@ body.dark .sidebar-right li a:hover .text {
 
 .toggle2 span {
   font-size: 12px;
-  color: var(--notify-color);
+  color:#22c3a7;
   font-weight: 800;
 }
 
@@ -1222,4 +1222,5 @@ div:has(.min-loader-back) {
   }
 
 }
+
 
