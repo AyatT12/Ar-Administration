@@ -1,189 +1,167 @@
 // ******************************************************************sidebar toggle script*************************************************************************************//
 // Variables
-const body = document.querySelector("body"),
- sidebar = body.querySelector(".sidebar"),
- mainPageIcon = document.querySelector(".main-page-icon"),
- newPageIcon = document.querySelector(".new-Page-icon"),
+ const body = document.querySelector("body"),
+  sidebar = body.querySelector(".sidebar-left");
 
- sidebar2 = body.querySelector(".sidebar2");
- const sidebar1Col = document.querySelector(".sidebar1-col");
- const sidebar2Col = document.querySelector(".sidebar2-col");
+document.addEventListener("DOMContentLoaded", () => {
+  const sidebarRight = document.getElementById("rightSidebar");
+  const sidebarLeft = document.getElementById("leftSidebar");
 
-toggles1 = [
-  {
-    toggle: body.querySelector(".toggle"),
-    sidebarToToggle: sidebar,
-    sidebarToClose: sidebar2,
-  },
-  {
-    toggle: body.querySelector(".toggle4"),
-    sidebarToToggle: sidebar,
-    sidebarToClose: sidebar2,
-  },
-];
-toggles2 = [
-  {
-    toggle: body.querySelector(".toggle2"),
-    sidebarToToggle: sidebar2,
-    sidebarToClose: sidebar,
-  },
-];
-// Event Listeners
-toggles1.forEach(({ toggle, sidebarToToggle, sidebarToClose}) => {
-  toggle.addEventListener("click", () => {
-    
-    const collapsibleElements = sidebar.querySelectorAll(".collapse");
-    collapsibleElements.forEach((element) => {
-      const collapseInstance = bootstrap.Collapse.getInstance(element);
-      if (collapseInstance) {
-        collapseInstance.hide();
-      }
+  const mainPageIcon = document.querySelector(".main-page-icon");
+  const newPageIcon = document.querySelector(".new-Page-icon");
+
+  const DESKTOP_WIDTH = 1700;
+
+  /* ================= helper function ================= */
+
+  function closeAllCollapses(sidebar) {
+    if (!sidebar) return;
+
+    sidebar.querySelectorAll(".collapse.show").forEach((el) => {
+      const instance = bootstrap.Collapse.getInstance(el);
+      if (instance) instance.hide();
     });
+  }
 
-    setTimeout(() => {
-      sidebarToToggle.classList.toggle("close");
-      sidebar1Col.classList.toggle("close");
-      sidebarToClose.classList.add("close2");
-      sidebar2Col.classList.add("close2");
-      if (window.innerWidth > 1700) {
-        
-      if (mainPageIcon) {
-        if (sidebarToToggle.classList.contains("close")) {
-          mainPageIcon.style.left = ""; 
-          mainPageIcon.style.bottom = "";
-          newPageIcon.style.bottom = ""; 
-          newPageIcon.style.left = ""; 
- 
-        } else {
-          newPageIcon.style.left = "-60px";
-          newPageIcon.style.bottom = "60px";
-        }
-      }
-      }
-    }, 300);
-  });
-});
+  function updateIcons() {
+    if (!mainPageIcon && !newPageIcon) return;
+    if (window.innerWidth <= DESKTOP_WIDTH) return;
 
-toggles2.forEach(({ toggle, sidebarToToggle, sidebarToClose }) => {
-  toggle.addEventListener("click", () => {
-    sidebarToToggle.classList.toggle("close2");
-    sidebarToToggle.classList.add("open");
-    sidebar2Col.classList.toggle("close2");
-    sidebar2Col.classList.add("open");
-    const collapsibleElements = sidebar.querySelectorAll(".collapse");
-    collapsibleElements.forEach((element) => {
-      const collapseInstance = bootstrap.Collapse.getInstance(element);
-      if (collapseInstance) {
-        collapseInstance.hide();
-      }
-    });
-    setTimeout(() => {
-      sidebarToClose.classList.add("close");
-      sidebar1Col.classList.add("close");
+    const Open =
+      !sidebarRight.classList.contains("closed") ||
+      !sidebarLeft.classList.contains("closed");
 
-      if (window.innerWidth > 1700) {
-        
-        if (mainPageIcon) {
-          if (sidebarToToggle.classList.contains("close2")) {
-            mainPageIcon.style.left = ""; 
-            mainPageIcon.style.bottom = ""; 
-          } else {
-            mainPageIcon.style.left = "-60px";
-            mainPageIcon.style.bottom = "60px";
-          }
-        }
-        }
-    },300);
-  });
-});
 
-// *******************************************************************************************************************************************************//
-
-sidebar.addEventListener("mouseenter", function () {
-  sidebar.classList.remove("close");
-  sidebar1Col.classList.remove("close");
-
-  sidebar2.classList.add("close2");
-  sidebar2Col.classList.add("close2");
-
-  if (window.innerWidth > 1700) {
-    if (mainPageIcon) {
-      if (sidebar.classList.contains("close")) {
-        mainPageIcon.style.left = ""; 
-        mainPageIcon.style.bottom = ""; 
-        newPageIcon.style.bottom = "";
-        newPageIcon.style.left = "";
-      } else {
-        newPageIcon.style.bottom = "60px";
-        mainPageIcon.style.left = "-60px"; 
-        mainPageIcon.style.bottom = "";
-
-      }
+      if (Open) {
+      mainPageIcon?.style.setProperty("left", "-60px");
+      newPageIcon?.style.setProperty("left", "-60px");
+      newPageIcon?.style.setProperty("bottom", "90px");
+    } else {
+      mainPageIcon?.style.removeProperty("left");
+      mainPageIcon?.style.removeProperty("bottom");
+      newPageIcon?.style.removeProperty("left");
+      newPageIcon?.style.removeProperty("bottom");
     }
   }
-});
-// لضمان عمل اللمس عند الضغط على القوائم الفرعية 
-document.querySelectorAll('[data-bs-toggle="collapse"]').forEach(el => {
-  el.addEventListener('touchstart', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.dataset.bsTarget);
-      if (target) {
-          new bootstrap.Collapse(target).toggle();
+
+  function openSidebar(side) {
+    setTimeout(() => {
+      if (side === "right") {
+        sidebarRight.classList.remove("closed");
+        sidebarLeft.classList.add("closed");
+        closeAllCollapses(sidebarLeft);
       }
-  }, {passive: false});
+
+      if (side === "left") {
+        sidebarLeft.classList.remove("closed");
+        sidebarRight.classList.add("closed");
+        closeAllCollapses(sidebarRight);
+      }
+
+      updateIcons();
+    }, 0);
+  }
+
+  function toggleSidebar(side) {
+    setTimeout(() => {
+      if (side === "right") {
+        const willBeClosed = !sidebarRight.classList.contains("closed");
+        sidebarRight.classList.toggle("closed");
+
+        if (willBeClosed) {
+          closeAllCollapses(sidebarRight);
+        }
+
+        if (!sidebarRight.classList.contains("closed")) {
+          sidebarLeft.classList.add("closed");
+          closeAllCollapses(sidebarLeft);
+        }
+      }
+
+      if (side === "left") {
+        sidebarLeft.classList.toggle("closed");
+
+        if (!sidebarLeft.classList.contains("closed")) {
+          sidebarRight.classList.add("closed");
+          closeAllCollapses(sidebarRight);
+        }
+      }
+
+      updateIcons();
+    }, 0);
+  }
+
+  /* ================= hover ================= */
+
+  sidebarRight.addEventListener("mouseenter", () => {
+    openSidebar("right");
+  });
+  /* ================= toggle btn  ================= */
+  const ToggleRighSidetBtn = document.getElementById("toggle-RightSide-Btn");
+  ToggleRighSidetBtn.addEventListener("click", function () {
+    if (sidebarRight.classList.contains("closed")) {
+      openSidebar("right");
+    } else {
+      toggleSidebar("right");
+    }
+  });
+  /* ================================== */
+
+  document.querySelectorAll('[data-bs-toggle="collapse"]').forEach((el) => {
+    el.addEventListener("click", function (e) {
+      if (sidebarRight.classList.contains("closed")) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    });
+
+    el.addEventListener(
+      "touchstart",
+      function (e) {
+        if (sidebarRight.classList.contains("closed")) {
+          e.preventDefault();
+          e.stopPropagation();
+          return;
+        }
+
+        const target = this.getAttribute("href") || this.dataset.bsTarget;
+        if (target) {
+          const targetEl = document.querySelector(target);
+          if (targetEl) {
+            new bootstrap.Collapse(targetEl).toggle();
+          }
+        }
+      },
+      { passive: false }
+    );
+  });
+
+  /* ================= Prevent collapse from showing when sidebar is closed ================= */
+
+  document.querySelectorAll(".collapse").forEach((collapseEl) => {
+    collapseEl.addEventListener("show.bs.collapse", function (e) {
+      if (sidebarRight.classList.contains("closed")) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    });
+  });
+
+  /* ================= export the function  ================= */
+  window.toggleSidebar = toggleSidebar;
 });
-
-// غلق القائمة الجانبية عند تحرك الماوس خارج القائمة 
-
-// let collapseTimeout;
-// sidebar.addEventListener('mouseleave', function () {
-//   if (collapseTimeout) clearTimeout(collapseTimeout);
-  
-//   collapseTimeout = setTimeout(() => {
-//     const collapsibleElements = sidebar.querySelectorAll('.collapse');
-//     collapsibleElements.forEach(element => {
-//       let collapseInstance = bootstrap.Collapse.getInstance(element);
-//       if (!collapseInstance) {
-//         collapseInstance = new bootstrap.Collapse(element, { toggle: false });
-//       }
-//       collapseInstance.hide();
-//     });
-
-//     sidebar.classList.add("close");
-//     sidebar1Col.classList.add("close");
-//     sidebar.classList.remove("close2");
-
-//     if (window.innerWidth > 1700 && mainPageIcon) {
-//       if (sidebar.classList.contains("close")) {
-//         mainPageIcon.style.left = ""; 
-//         mainPageIcon.style.bottom = ""; 
-//         newPageIcon.style.bottom = "";
-//         newPageIcon.style.left = "";
-
-
-//       } else {
-//         mainPageIcon.style.left = "-60px";
-//         mainPageIcon.style.bottom = "60px";
-//         newPageIcon.style.bottom = "60px";
-//         newPageIcon.style.left = "-60px";
-
-//       }
-//     }
-//   }, 300); 
-// });
-
-
 //***************************************************************************main sidebar collapse script****************************************************************************** */
+const  sidebarRight = body.querySelector(".sidebar-right");
 
-const collapsibleElements = sidebar.querySelectorAll(".collapse");
+const collapsibleElements = sidebarRight.querySelectorAll(".collapse");
 
 collapsibleElements.forEach((element) => {
   element.addEventListener("show.bs.collapse", function (event) {
-    if (sidebar.classList.contains("close")) {
-      event.preventDefault(); // Prevent the collapsible from opening if sidebar is closed
+    if (sidebarRight.classList.contains("close")) {
+      event.preventDefault(); 
       return;
     }
-    
+
     collapsibleElements.forEach((otherElement) => {
       if (otherElement !== element) {
         const collapseInstance = bootstrap.Collapse.getInstance(otherElement);
@@ -240,10 +218,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (accordionItems.length > 0) {
     // Case for forms with accordion items
-    console.log("ki")
+    console.log("ki");
     accordionItems.forEach((item) => {
       const header = item.querySelector(".inputs-accordion-item-header");
-      const focusableElements = item.querySelectorAll("input, select, textarea, button");
+      const focusableElements = item.querySelectorAll(
+        "input, select, textarea, button"
+      );
 
       // Set focus on the first input when the accordion item is clicked
       header.addEventListener("click", function () {
@@ -270,7 +250,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Case for regular forms (not inside accordion)
-  const regularFormElements = document.querySelectorAll("input, select, textarea");
+  const regularFormElements = document.querySelectorAll(
+    "input, select, textarea"
+  );
   if (regularFormElements.length > 0) {
     regularFormElements[1].focus();
   }
@@ -287,174 +269,167 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
 // //********************************************************************** validation form submit ********************************************************************************** */
 (() => {
-  'use strict';
+  "use strict";
 
-  const forms = document.querySelectorAll('.needs-validation');
+  const forms = document.querySelectorAll(".needs-validation");
 
   // Function to open an accordion item
   const openAccordionItem = (item, inputsAccordion) => {
-      item.classList.add("open");
-      inputsAccordion.forEach(otherElement => {
-          if (otherElement !== item) {
-              otherElement.classList.remove("open");
-          }
-      });
+    item.classList.add("open");
+    inputsAccordion.forEach((otherElement) => {
+      if (otherElement !== item) {
+        otherElement.classList.remove("open");
+      }
+    });
   };
 
   // Function to validate accordion sections or regular form inputs
   const validateAccordionSections = (form) => {
-    // THIS CASE IF THERE IS MANY accordionS BUT NOT IN THE SAME FORM 
-      const GeneralAccordionItems = document.querySelectorAll('.inputs-accordion-item');
-      const accordionItems = form.querySelectorAll('.inputs-accordion-item');
-      let formIsValid = true;
-      let firstInvalidInput = null;
+    // THIS CASE IF THERE IS MANY accordionS BUT NOT IN THE SAME FORM
+    const GeneralAccordionItems = document.querySelectorAll(
+      ".inputs-accordion-item"
+    );
+    const accordionItems = form.querySelectorAll(".inputs-accordion-item");
+    let formIsValid = true;
+    let firstInvalidInput = null;
 
-      if (accordionItems.length > 0) {
-          // Validation for forms with accordion sections
-          Array.from(accordionItems).forEach(item => {
-              const inputs = item.querySelectorAll('input, select, textarea'); // Scope to the current accordion item
-              const checkIcon = item.querySelector('.data-check');
-              let sectionIsValid = true;
+    if (accordionItems.length > 0) {
+      // Validation for forms with accordion sections
+      Array.from(accordionItems).forEach((item) => {
+        const inputs = item.querySelectorAll("input, select, textarea"); // Scope to the current accordion item
+        const checkIcon = item.querySelector(".data-check");
+        let sectionIsValid = true;
 
-              // Validate inputs within the accordion section
-              Array.from(inputs).forEach(input => {
-                  if (!input.checkValidity()) {
-                      sectionIsValid = false;
-                      if (!firstInvalidInput) {
-                          firstInvalidInput = input; // Store the first invalid input
+        // Validate inputs within the accordion section
+        Array.from(inputs).forEach((input) => {
+          if (!input.checkValidity()) {
+            sectionIsValid = false;
+            if (!firstInvalidInput) {
+              firstInvalidInput = input; // Store the first invalid input
 
-                          // Open the accordion section containing the first invalid input
-                          openAccordionItem(item, GeneralAccordionItems);
-                      }
-                  }
-              });
+              // Open the accordion section containing the first invalid input
+              openAccordionItem(item, GeneralAccordionItems);
+            }
+          }
+        });
 
-              // Set checkIcon background color based on validity
-              if (checkIcon) {
-                  checkIcon.style.backgroundColor = sectionIsValid ? 'green' : '';
-              }
+        // Set checkIcon background color based on validity
+        if (checkIcon) {
+          checkIcon.style.backgroundColor = sectionIsValid ? "green" : "";
+        }
 
-              // Update overall form validity
-              formIsValid = formIsValid && sectionIsValid;
-          });
+        // Update overall form validity
+        formIsValid = formIsValid && sectionIsValid;
+      });
+    } else {
+      // Validation for regular forms (without accordion sections)
+      const inputs = form.querySelectorAll("input, select, textarea");
+      Array.from(inputs).forEach((input) => {
+        if (!input.checkValidity()) {
+          if (!firstInvalidInput) {
+            firstInvalidInput = input; // Store the first invalid input
+          }
+          formIsValid = false;
+        }
+      });
+    }
 
-      } else {
-          // Validation for regular forms (without accordion sections)
-          const inputs = form.querySelectorAll('input, select, textarea');
-          Array.from(inputs).forEach(input => {
-              if (!input.checkValidity()) {
-                  if (!firstInvalidInput) {
-                      firstInvalidInput = input; // Store the first invalid input
-                  }
-                  formIsValid = false;
-              }
-          });
-      }
+    // Focus the first invalid input, if any
+    if (firstInvalidInput) {
+      firstInvalidInput.focus();
+    }
 
-      // Focus the first invalid input, if any
-      if (firstInvalidInput) {
-          firstInvalidInput.focus();
-      }
+    // Add 'was-validated' class to the form if invalid
+    if (!formIsValid) {
+      form.classList.add("was-validated");
+    }
 
-      // Add 'was-validated' class to the form if invalid
-      if (!formIsValid) {
-          form.classList.add('was-validated');
-      }
-
-      return formIsValid;
+    return formIsValid;
   };
 
   // Function to validate and update check icons for each input field
   const validateInputFields = () => {
-      const accordionItems = document.querySelectorAll('.inputs-accordion-item');
+    const accordionItems = document.querySelectorAll(".inputs-accordion-item");
 
-      accordionItems.forEach(item => {
-          const inputs = item.querySelectorAll('input, select, textarea');
-          const checkIcon = item.querySelector('.data-check');
+    accordionItems.forEach((item) => {
+      const inputs = item.querySelectorAll("input, select, textarea");
+      const checkIcon = item.querySelector(".data-check");
 
-          const validateInputs = () => {
-              let allValid = true;
-              inputs.forEach(input => {
-                  if (!input.checkValidity()) {
-                      allValid = false;
-                  }
-              });
+      const validateInputs = () => {
+        let allValid = true;
+        inputs.forEach((input) => {
+          if (!input.checkValidity()) {
+            allValid = false;
+          }
+        });
 
-              if (checkIcon) {
-                  checkIcon.style.backgroundColor = allValid ? 'green' : '';
-              }
-          };
+        if (checkIcon) {
+          checkIcon.style.backgroundColor = allValid ? "green" : "";
+        }
+      };
 
-          inputs.forEach(input => {
-              input.addEventListener("input", validateInputs);
-              input.addEventListener("blur", validateInputs);
-          });
+      inputs.forEach((input) => {
+        input.addEventListener("input", validateInputs);
+        input.addEventListener("blur", validateInputs);
       });
+    });
   };
 
   // Apply validation to all forms on submit
-  Array.from(forms).forEach(form => {
-      form.addEventListener('submit', event => {
-          const isFormValid = validateAccordionSections(form);
+  Array.from(forms).forEach((form) => {
+    form.addEventListener(
+      "submit",
+      (event) => {
+        const isFormValid = validateAccordionSections(form);
 
-          if (!isFormValid) {
-              event.preventDefault();  
-              event.stopPropagation();
-          }
-      }, false);
+        if (!isFormValid) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+      },
+      false
+    );
   });
 
   // Initialize input field validation on page load
   document.addEventListener("DOMContentLoaded", validateInputFields);
-
 })();
-
 
 // //********************************************************************** stop autocompelete ********************************************************************************** */
 
-document.querySelectorAll('input, select, textarea').forEach(el => {
-  el.setAttribute('autocomplete', 'off');
+document.querySelectorAll("input, select, textarea").forEach((el) => {
+  el.setAttribute("autocomplete", "off");
 });
 
-// //********************************************************************** warning message script ********************************************************************************** */
-// MarqueeXmark = document.getElementById("marquee-xmark");
-// warnings = document.getElementById("warnings");
 
-// MarqueeXmark.addEventListener('click',function(){
-//   warnings.style.display="none"
-// })
 // //********************************************************************** number inputs script prevent entering negitive values ********************************************************************************** */
-document.querySelectorAll('input[type="number"]').forEach(function(input) {
-  input.addEventListener('keydown', function(event) {
-    if (event.key === '-' || event.keyCode === 189) {
+document.querySelectorAll('input[type="number"]').forEach(function (input) {
+  input.addEventListener("keydown", function (event) {
+    if (event.key === "-" || event.keyCode === 189) {
       event.preventDefault();
     }
   });
 });
 // //********************************************************************** email inputs script prevent entering arabic values ********************************************************************************** */
-document.querySelectorAll('input[type="email"]').forEach(function(input) {
-  input.addEventListener('input', function() {
-    this.value = this.value.replace(/[\u0600-\u06FF]/g, '');
+document.querySelectorAll('input[type="email"]').forEach(function (input) {
+  input.addEventListener("input", function () {
+    this.value = this.value.replace(/[\u0600-\u06FF]/g, "");
   });
 });
 
 // //********************************************************************** تحديد طول اسم الموظف ********************************************************************************** */
 
-  function getFirstTwoWords(name) {
-    const words = name.split(' ');
-    return words.slice(0, 2).join(' ');
-    }
+function getFirstTwoWords(name) {
+  const words = name.split(" ");
+  return words.slice(0, 2).join(" ");
+}
 
-  const employeeNames = document.querySelectorAll('.employee-name');
+const employeeNames = document.querySelectorAll(".employee-name");
 
-  employeeNames.forEach(element => {
-      const originalName = element.textContent.trim(); 
-      const limitedName = getFirstTwoWords(originalName);
-      element.textContent = limitedName;
-  });
-
-
-
+employeeNames.forEach((element) => {
+  const originalName = element.textContent.trim();
+  const limitedName = getFirstTwoWords(originalName);
+  element.textContent = limitedName;
+});

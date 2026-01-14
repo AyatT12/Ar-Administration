@@ -28,27 +28,44 @@ body {
   background-color: var(--body-color);
   direction: rtl;
   font-size: .875rem;
-  /* letter-spacing: 0.28px; */
 }
 
 html {
   scroll-behavior: smooth;
 }
-
+.main-container-fluid{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+.fullContentRow{
+  flex: 1;
+  min-height: 0;
+}
 .main-container {
-  background-color: white;
+  /* background-color: white; */
   box-shadow: 2px 3px 4px 0px #afb7c27d;
   border-radius: 8px;
-  padding: 25px;
-  min-height: 83vh;
-  margin: 10px auto;
-
+  /* padding: 25px; */
+  /* margin: 10px auto; */
+  height: 95%;
+  display: flex;
 }
-
+.ContentForm{
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.table-row{
+  flex: 1;
+  min-height: 0;
+}
 .NewUpdate-container {
   position: relative;
   min-height: 83vh;
-  /* min-height: 600px; */
   background-color: white;
   box-shadow: 2px 3px 4px 0px #afb7c27d;
   border-radius: 8px;
@@ -149,7 +166,12 @@ html {
   background: var(--main-color);
   color: white;
 }
-
+/* general style media */
+@media (max-width: 1399.98px) {
+    .main-container{
+        height: 93%;
+    }
+}
 /* ================================================================================ signature style   ======================================================================================= */
 .signature-modal-content {
   width: 300px;
@@ -202,10 +224,11 @@ html {
 }
 
 .xmark-icon {
-  cursor: pointer;
-  color: #ffffff;
-  background: var(--primary-color);
-  border-radius: 50%;
+position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 20px;
+    color: #39629C;
 }
 
 .subtitle {
@@ -222,34 +245,28 @@ html {
   justify-content: flex-start;
 }
 
-.scroll-table-div {
-  height: 65vh;
-  min-height: 400px;
-  overflow: auto;
-  padding: 5px;
-}
 
-.scroll-table-div::-webkit-scrollbar {
+.table-container::-webkit-scrollbar {
   width: 7px !important;
   height: 5px;
 
 }
 
-.scroll-table-div::-webkit-scrollbar-track {
+.table-container::-webkit-scrollbar-track {
   background: rgba(255, 150, 38, 0.089);
   border-radius: 5px;
 
 
 }
 
-.scroll-table-div::-webkit-scrollbar-thumb {
+.table-container::-webkit-scrollbar-thumb {
   background: rgba(255, 150, 38, 0.40);
   border-radius: 5px;
 
 
 }
 
-.scroll-table-div::-webkit-scrollbar-thumb:hover {
+.table-container::-webkit-scrollbar-thumb:hover {
   border-radius: 8px;
   background: rgba(250, 136, 13, 0.4);
 
@@ -270,7 +287,7 @@ html {
   font-size: .875rem;
   width: 100%;
   box-shadow: 0px -20px 0px 0px #fefdfb;
-  z-index: 2;
+  z-index: 6;
 }
 
 .DifferAlign {
@@ -467,7 +484,7 @@ html {
 }
 
 .invaild {
-  height: 30px;
+  height: 25px;
   width: 100%;
 }
 
@@ -630,43 +647,28 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   height: 37px;
 }
 
-.data-scroll-container {
-  height: 40vh;
-  min-height: 300px;
-  overflow-y: scroll;
-  padding-bottom: 10px;
-}
 
-.Update-data-scroll-container {
-  height: 36vh;
-  min-height: 200px;
-  overflow-y: scroll;
-  padding-bottom: 10px;
-}
 
-.data-scroll-container::-webkit-scrollbar,
-.Update-data-scroll-container::-webkit-scrollbar {
+.inputs-accordion-container::-webkit-scrollbar
+ {
   width: 7px;
   height: 5px;
 
 }
 
-.data-scroll-container::-webkit-scrollbar-track,
-.Update-data-scroll-container::-webkit-scrollbar-track {
+.inputs-accordion-container::-webkit-scrollbar-track{
   background: rgba(255, 150, 38, 0.014);
   border-radius: 5px;
 
 }
 
-.data-scroll-container::-webkit-scrollbar-thumb,
-.Update-data-scroll-container::-webkit-scrollbar-thumb {
+.inputs-accordion-container::-webkit-scrollbar-thumb{
   background: rgba(255, 150, 38, 0.40);
   border-radius: 5px;
   height: 5px;
 }
 
-.data-scroll-container::-webkit-scrollbar-thumb:hover,
-.Update-data-scroll-container::-webkit-scrollbar-thumb:hover {
+.inputs-accordion-container::-webkit-scrollbar-thumb:hover {
   border-radius: 8px;
   background: rgba(250, 136, 13, 0.4);
 }
@@ -677,7 +679,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 .Branches-wrapper {
-  min-height: 100vh;
   height: 100%;
   background-image: url(../images/Static/Background/bg.png);
   background-size: cover;
@@ -727,10 +728,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .new-Page-icon {
-  transition: left 0.3s ease, bottom 0.3s ease;
-  position: absolute;
-  bottom: -8px;
-  left: -60px;
+    transition: left 0.3s ease, bottom 0.3s ease;
+    position: absolute;
+    bottom: 3%;
+    left: -60px;
+    z-index: 7;
 }
 
 .new-Page-icon img {
@@ -741,9 +743,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .main-page-icon {
   position: absolute;
   left: -120px;
-  bottom: -8px;
+  bottom: 3%;
   transition: left 0.3s ease, bottom 0.3s ease;
-
+  z-index: 7;
 }
 
 .filter-number-td {
@@ -778,6 +780,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 /* document photo modal  */
+
 .Doc-btn-card {
   cursor: pointer;
   box-shadow: 1px 0.5px 8px 0px #FF962633;
@@ -881,7 +884,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 #removeLicenseImg {
   position: absolute;
   top: 5px;
-  left: 10px;
+  left: 5px;
   font-size: 20px;
 }
 
@@ -923,12 +926,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-radius: 8px;
   box-shadow: 0px 2px 4px 0px #39629C3D;
   width: 180px;
-  margin-top: 13px;
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   font-size: 0.75rem;
   padding: 2px;
+
+  /* default: open down */
+  /* top: 100%; */
+  /* margin-top: 13px; */
 }
+
+.dropdown-content.open-top {
+  bottom: 80%;
+  top: auto;
+  margin-top: 0;
+}
+
 
 .ExistFileData {
   display: none;
@@ -949,14 +962,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 /*  */
 @media (max-width : 1700px) {
   .new-Page-icon {
-    left: 0px;
-    bottom: 60px;
-
+   left: 0px;
+   bottom: 75px;
   }
-
   .main-page-icon {
-    left: 0px;
-    bottom: 0px;
+    bottom: 3%;
+    left: 0;
   }
 
 }
@@ -1685,7 +1696,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 
 }
-
+/* 
 @media (max-width : 1024px) {
   .new-Page-icon {
     position: sticky;
@@ -1710,7 +1721,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     position: relative;
     height: 100%;
   }
-}
+} */
 
 @media (min-width: 576px) and (max-width :766px) {
 
@@ -2090,12 +2101,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .CarBorder {
-  border: 1px solid #D9D9D9;
-  border-radius: 50%;
-  width: 70px;
-  height: 70px;
-  padding: 6px;
-  position: relative;
+  width: 100px;
 }
 .Carstatue{
   width: 10px;
@@ -2622,7 +2628,27 @@ border: none;
   margin-bottom: .8rem;
 }
 
-
-
-
-
+.inputs-accordion-container{
+    min-height: 0;
+    overflow-y: auto;
+    flex: 1;
+    padding-bottom: 10px;
+}
+/* New Upadte pages   */
+.InputsPageContainer{
+  flex: 1;
+  min-height: 0;
+}
+/* global modal style */
+.modal-header .btn-close {
+    background: url(../images/Static/cancel-2.svg) !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    opacity: 1;
+    width: .5em;
+    border-radius: 0;
+}
+.modal-content {
+    border: 3px solid #FF9626;
+    border-radius: 10px;
+}
