@@ -77,7 +77,7 @@ body {
   position: absolute;
   font-size: 14px;
   text-align: start;
-  z-index: 99999;
+  z-index: 9;
   width: auto;
 }
 
@@ -1202,7 +1202,7 @@ div:has(.min-loader-back) {
     position: fixed;
     height: calc(100dvh - 100px);
     top: 100px;
-    z-index: 200;
+    z-index: 5;
   }
   .sidebar-left {
     width: 320px;
@@ -1219,4 +1219,3 @@ div:has(.min-loader-back) {
     left: 0;
   }
 }
-
