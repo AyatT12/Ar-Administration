@@ -447,7 +447,7 @@ body.dark .sidebar-right li a:hover .text {
 .accordion .accordion-item .accordion-item-description-wrapper {
   display: grid;
   grid-template-rows: 0fr;
-  overflow: hidden;
+  /* overflow: hidden; */
   transition: var(--transition);
 }
 
@@ -643,6 +643,24 @@ body.dark .sidebar-right li a:hover .text {
 }
 
 /* ///// */
+.employees-alerts{
+      max-height: 40vh;
+      overflow-y: scroll;
+}
+.employees-alerts::-webkit-scrollbar {
+  width: 5px;
+}
+
+.employees-alerts::-webkit-scrollbar-track {
+  background: rgba(255, 150, 38, 0);
+  border-radius: 5px;
+}
+
+.employees-alerts::-webkit-scrollbar-thumb {
+  background: #e4e5e7;
+  border-radius: 5px;
+  height: 10px;
+}
 .employees-alerts hr {
   margin: .3rem 0rem;
 }
@@ -674,61 +692,102 @@ body.dark .sidebar-right li a:hover .text {
   right: 1px;
   border: 1px solid white;
 }
-
-/* /////////////////////////// marquee ///////////////////////////// */
 .NewUpdate-container {
   margin: 10px auto;
 }
+/* /////////////////////////// marquee ///////////////////////////// */
+
+/*=======================topbar  warnings line ======================*/
 
 .warnings {
+  background-color: rgb(253 253 253 / 56%);
+  text-align: center;
+  box-shadow: 0px 1px 3px 1px #dbd4d496;
+  backdrop-filter: blur(10px);
+  padding: 0.75rem;
+  border-radius: 8px;
   position: relative;
-  border-radius: 4px;
-  padding: .5rem 1.5rem;
+  overflow: hidden;
+  flex: 1;
+  max-width: 80%;
+  margin: 0 1rem;
 }
 
 .marquee {
+  white-space: nowrap;
   overflow: hidden;
-  width: 100%;
-  box-sizing: border-box;
   position: relative;
-  height: 20px;
+  width: 100%;
 }
 
 .marquee-content {
-  display: flex;
-  flex-wrap: nowrap;
-  animation: marquee 15s linear infinite;
-  white-space: nowrap;
+  display: inline-flex;
   gap: 5rem;
-  position: absolute;
-  min-width: 100%;
+  animation: marquee 30s linear infinite;
+  color: #C32222;
+  font-weight: 500;
+  padding-left: 100%;
 }
 
 .marquee-content:hover {
   animation-play-state: paused;
 }
 
+.marquee-content p {
+  margin-bottom: 0;
+  display: inline-block;
+}
+
+@keyframes marquee {
+  100% {
+    transform: translateX(100%);
+  }
+
+  0% {
+    transform: translateX(-100%);
+  }
+}
+
 .marquee-xmark {
   position: absolute;
   top: 5px;
   right: 5px;
-  background: var(--notify-color);
+  background: #C32222;
   border-radius: 50%;
   cursor: pointer;
   color: white;
   font-size: 16px;
+  border: white 1px solid;
+  z-index: 10;
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(-100%);
+@media (max-width: 991px) {
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;
+    gap: 1rem;
   }
 
-  100% {
-    transform: translateX(100%);
+  .warnings {
+    order: 3;
+    flex-basis: 100%;
+    max-width: 100%;
+    margin: 5px 0px 0px;
+  }
+  
+  .marquee-content {
+    gap: 3rem;
+    animation: marquee 25s linear infinite;
   }
 }
 
+@media (max-width: 576px) {
+  .marquee-content {
+    gap: 2rem;
+    animation: marquee 30s linear infinite;
+    font-size: 14px;
+  }
+}
 /* ////////////////////////////////////////////////////////////////////////////Main Loader for Pages  //////////////////////////////////////////////////////////*/
 div:has(.min-loader-back) {
   position: relative;
@@ -893,7 +952,7 @@ div:has(.min-loader-back) {
   flex-shrink: 0;
   transition: all 0.3s ease;
   position: relative;
-  z-index: 10;
+  z-index: 5;
 }
 
 .sidebar-right.closed {
@@ -965,10 +1024,10 @@ div:has(.min-loader-back) {
   flex-shrink: 0;
   transition: all 0.3s ease;
   position: relative;
-  z-index: 10;
+  z-index: 5;
   display: flex;
   flex-direction: column;
-  padding: 10px 14px;
+  padding: 10px 4px;
 }
 
 .sidebar-left.closed {
@@ -986,7 +1045,9 @@ div:has(.min-loader-back) {
   flex: 1;
   min-height: 0;
 }
-
+.sidebar-left .menu{
+padding: 10px;
+}
 .menu {
   height: 98%;
   overflow: auto;
@@ -1200,8 +1261,8 @@ div:has(.min-loader-back) {
   .sidebar-right,
   .sidebar-left {
     position: fixed;
-    height: calc(100dvh - 100px);
-    top: 100px;
+    height: calc(100dvh - 100px);   
+    /* top: 100px; */
     z-index: 5;
   }
   .sidebar-left {
