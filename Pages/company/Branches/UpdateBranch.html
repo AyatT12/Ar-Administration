@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> نظام الادارة - تحديث فرع</title>
+    <link rel="icon" href="../../../images/Demo/DefualtCompany Logo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -382,9 +383,9 @@
                                         <button type="button" class="custom-img-btn"><a class="d-flex align-items-center" href="Branches.html"><img class="Chevron" src="../../../images/Static/States/Chevron_Left.svg" /></a></button>
                                     </div>
                                   </div>
-                                        <main class="mt-4 g-3 inputs-accordion-container">
-                                            <h5 class="subtitle">الإدارة العامة ( الرئيسي) </h5>
-                                            <h6>الشرقية - الدمام</h6>
+                                <main class="mt-4 g-3 inputs-accordion-container">
+                                            <h5 class="subtitle">الإدارة العامة (تبوك تبوك تبوك تبوك) </h5>
+                                            <h6>المدينة المنورة - المدينة المنورة</h6>
                                             <div class="accordion inputs-accordion">
                                                 <div class=" inputs-accordion-item">
                                                     <div class=" inputs-accordion-item-header">
@@ -401,10 +402,10 @@
                                                     <div class="accordion-item-description-wrapper">
                                                         <div class="accordion-item-description">
                                                             <hr class="accordion-items-hr">
-                                                            <div class="container-fluid">
+                                                            <div class="container-fluid data-scroll-container">
                                                                 
                                                                 <div class="row">
-                                                                    <div class="col-md-6">
+                                                                    <div class="col-md-4">
                                                                         <label for="phone1" class="form-label">
                                                                             الهاتف</label>
                                                                         <div class="input-group">
@@ -428,7 +429,7 @@
                                                                         </div>
                                                                        
                                                                     </div>
-                                                                    <div class="col-md-6">
+                                                                    <div class="col-md-4">
                                                                         <label for="phone2" class="form-label"> الجوال
                                                                         </label>
                                                                         <div class="input-group">
@@ -450,7 +451,20 @@
                                                                         </div>
                                                                       
                                                                     </div>
-
+                                                                    <div class="col-md-auto">
+                                                                        <label for="Branch-number-rental-system"
+                                                                            class="form-label">  رقم الفرع بنظام التأجير 
+                                                                            <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                        </label>
+                                                                        <input type="text" id="Branch-number-rental-system"
+                                                                            class="form-control inputs english-input"
+                                                                            name="Branch-number-rental-system" required>
+                                                                        <div class="invaild">
+                                                                            <div class="invalid-feedback">
+                                                                                الحقل مطلوب
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="col-md-6">
@@ -485,31 +499,15 @@
 
                                                                 </div>
                                                                 <div class="row align-items-center ">
-                                                                    <div class="col-md-6">
-                                                                        <label>ملاحظات</label>
-                                                                        <textarea class=" form-control textarea-inputs"
-                                                                            rows="1" maxlength="100" name="notes"
-                                                                            type="text"></textarea>
-                                                                        <div class="invaild">
-                                                                           
-                                                                        </div>
+                                                                    <div class="col-lg-12">
+                                                                        <label>الملاحظات</label>
                                                                     </div>
-                                                                    <div class="col-md-6">
-                                                                        <label for="Branch-number-rental-system"
-                                                                            class="form-label">  رقم الفرع بنظام التأجير 
-                                                                            <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                        </label>
-                                                                        <input type="text" id="Branch-number-rental-system"
-                                                                            class="form-control inputs "
-                                                                            name="Branch-number-rental-system" required>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
+                                                                    <div class="col d-flex justify-content-start">
+                                                                        <textarea class=" form-control textarea-inputs" rows="1" maxlength="100" id="Reasons" type="text"
+                                                                            name="Contract.RenterInfo.CrMasRenterInformationReasons"></textarea>
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                                </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -528,7 +526,7 @@
                                                     <div class="accordion-item-description-wrapper">
                                                         <div class="accordion-item-description">
                                                             <hr class="accordion-items-hr">
-                                                            <div class="container-fluid">
+                                                            <div class="container-fluid data-scroll-container">
                                                                 <div class="row">
                                                                         <div class="col-md-12">
                                                                             <label for="street-name-ar" class="form-label">العنوان (عربي)
@@ -564,7 +562,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- <div class="inputs-accordion-item">
+                                            <div class="inputs-accordion-item">
                                                     <div class="inputs-accordion-item-header">
                                                         <span class="accordion-item-header-title"> مستندات
                                                         </span>
@@ -584,7 +582,7 @@
                                                                     <div class="col-md-12">
                                                                         <div class="form">
                                                                             <div class="row align-items-end">
-                                                                                <div class="col-md-6 col-lg-4">
+                                                                                <div class="col-md-7 col-lg-5 d-flex flex-wrap flex-md-nowrap align-items-baseline gap-2">
                                                                                     <label for="doc" class="form-label">المستند</label>
                                                                                     <select class="form-select select-style" name="doc" id="doc">
                                                                                         <option value="1" selected>السجل التجاري</option>
@@ -595,7 +593,7 @@
                                                                                     </select>
                                                                                 </div>
                                                                                 <div class="col-md-auto">
-                                                                                    <p class="mb-2 Saved-data">منتهي</p>
+                                                                                    <!-- <p class="mb-2 Saved-data">منتهي</p> -->
                                                                                 </div>
                                                                                 <div class="col doc-save-align d-flex justify-content-end" >
                                                                                     <button type="submit" class="custom-img-btn">
@@ -649,9 +647,16 @@
                                                                                     </div>
                                                                                     
                                                                                     <div class="row align-items-end g-3">
-                                                                                        <div class="col">
-                                                                                            <label>ملاحظات</label>
-                                                                                            <textarea class="form-control textarea-inputs" rows="1" maxlength="100" name="notes" id="Documentnotes" type="text"></textarea>
+                                                                                        <div class="col-md-12 ">
+                                                                                            <div class="row">
+                                                                                                <div class="col-lg-12">
+                                                                                                    <label>الملاحظات</label>
+                                                                                                </div>
+                                                                                                <div class="col d-flex justify-content-start">
+                                                                                                    <textarea class=" form-control textarea-inputs" rows="1" maxlength="100" id="Documentnotes" type="text"
+                                                                                                        name="Contract.RenterInfo.CrMasRenterInformationReasons"></textarea>
+                                                                                                </div>
+                                                                                            </div>
                                                                                         </div>
                                                                                         <div class="col-md-auto text-start">
                                                                                             <button type="button" class="btn modal-btn" data-bs-toggle="modal" href="#Doc-photo-modal">
@@ -675,7 +680,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div> -->
+                                                </div>
 
                                             </div>
                                         </main>
@@ -1449,20 +1454,14 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const data = {
-                "phone1": "0123456789",
-                "phone2": "0987654321",
+                "phone1": "1234567890123456 ",
+                "phone2": "1234567890123456 ",
                 "managerNameAr": "فهد ناصر الدوسري",
                 "managerNameEn": "Fahd Nasser Eldosary",
-                "streetNameAr": "شارع الملك",
-                "streetNameEn": "King Street",
-                "districtNameAr": "الحي الشرقي",
-                "districtNameEn": "Eastern District",
-                "buildingNumber": "123",
-                "unitNumber": "45",
-                "zipCode": "54321",
-                "additionalNumber": "6789",
-                "BranchNumberRentalSystem" :"80040041004100",
-                "notes": 'ملاحظات الفرع',
+                "streetNameAr": "المدينة المنورة - ينبع - الصريف القديم - بلال بن رباح",
+                "streetNameEn": "Al-Madinah Al-Monawarah - Yanbu - AlSarif OLd - Bilal Bin Rabah",
+                "BranchNumberRentalSystem" :"123456789",
+                "Reasons": 'ملاحظات الفرع',
                 "Signature": '../../../images/Demo/signature.svg'
             };
 
@@ -1473,9 +1472,7 @@
             document.getElementById("manager-name-en").value = data.managerNameEn;
             document.getElementById("street-name-ar").value = data.streetNameAr;
             document.getElementById("street-name-en").value = data.streetNameEn;
-            document.getElementById("zip-code").value = data.zipCode;
-            document.getElementById("Additional-number").value = data.additionalNumber;
-            document.querySelector('textarea[name="notes"]').value = data.notes;
+            document.getElementById("Reasons").value = data.Reasons;
         });
     </script>
 <script>
@@ -1492,16 +1489,16 @@
     } 
 }
     </script>
-<!-- <script>
+<script>
     document.addEventListener('DOMContentLoaded', function () {
         const docSelect = document.getElementById('doc');
     //  بيانات المستندات المخزنة 
         const storedValues = {
-            1: { docNumber: "1245456", docDate: "2023-01-01", startDate: "2023-01-01", endDate: "2023-12-31", notes: "ملاحظات على السجل التجاري" },
-            2: { docNumber: "", docDate: "", startDate: "", endDate: "", notes: "" },
-            3: { docNumber: "9876543", docDate: "2023-02-01", startDate: "2023-02-01", endDate: "2023-11-30", notes: "ملاحظات على تصريح هيئة النقل" },
-            4: { docNumber: "", docDate: "", startDate: "", endDate: "", notes: "" },
-            5: { docNumber: "", docDate: "", startDate: "", endDate: "", notes: "" }
+            1: { docNumber: "1245456", docDate: "2023-01-01", startDate: "2023-01-01", endDate: "2023-12-31", Reasons: "الملاحظات على السجل التجاري" },
+            2: { docNumber: "", docDate: "", startDate: "", endDate: "", Reasons: "" },
+            3: { docNumber: "9876543", docDate: "2023-02-01", startDate: "2023-02-01", endDate: "2023-11-30", Reasons: "الملاحظات على تصريح هيئة النقل" },
+            4: { docNumber: "", docDate: "", startDate: "", endDate: "", Reasons: "" },
+            5: { docNumber: "", docDate: "", startDate: "", endDate: "", Reasons: "" }
         };
     
         function updateInputs(values) {
@@ -1518,7 +1515,7 @@
                 docDateInput.value = values.docDate;
                 startDateInput.value = values.startDate;
                 endDateInput.value = values.endDate;
-                notesInput.value = values.notes;
+                notesInput.value = values.Reasons;
     
                 // ايقاف امكانية التعديل على البيانات المعروضة
                 docNumberInput.disabled = true;
@@ -1563,10 +1560,10 @@
             updateInputs(values);
         });
     });
-    </script> -->
+    </script> 
 
   <script src="https://cdn.jsdelivr.net/npm/heic2any/dist/heic2any.min.js"></script>
-  <!-- <script src="../../../scripts/uploadPic.js"></script> -->
+  <script src="../../../scripts/uploadPic.js"></script>
 </body>
 
 </html>
