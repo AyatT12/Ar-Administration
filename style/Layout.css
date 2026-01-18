@@ -400,13 +400,6 @@ body.dark .sidebar-right li a:hover .text {
   display: none;
 }
 
-.accordion {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 500px;
-}
-
 .accordion .accordion-item {
   background-color: #FAFAFA;
   border: 1px solid #FAFAFA;
@@ -556,7 +549,7 @@ body.dark .sidebar-right li a:hover .text {
 
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
   .navbar {
     position: sticky;
     top: 0;
@@ -644,7 +637,7 @@ body.dark .sidebar-right li a:hover .text {
 
 /* ///// */
 .employees-alerts{
-      max-height: 40vh;
+      max-height: 263px;
       overflow-y: scroll;
 }
 .employees-alerts::-webkit-scrollbar {
@@ -1247,6 +1240,13 @@ padding: 10px;
 
 .accordion-item-description-wrapper {
   transition: grid-template-rows 0.3s ease;
+}
+.accordion-item-description{
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.sidebar-left .accordion-item-description{
+  overflow: visible;
 }
 /* custom class  */
 .flex-1 {

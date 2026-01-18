@@ -287,59 +287,27 @@ body {
 }
 
 
-/*================  تسوية العقود المعلقة  =================================================== */
-
-
-#progressbar #payment:after {
-    width: 50% !important;
-    left: 0 !important;
+/* حسابي */
+.Profile-Data-section {
+    direction: ltr;
 }
 
-#progressbar li:after {
-    content: '';
-    width: 100%;
-    height: 1px;
-    background: #FFE4C6;
-    position: absolute;
-    right: 0;
-    left: auto;
-    top: 16px;
+.counterCode {
+    border-radius: 0px 8px 8px 0px !important;
+    border-left: none;
+   border-right:2px solid #faa64d ;
+   padding: 0px !important;
 }
-
-.pdf_img {
-    position: absolute;
-    left: auto;
-    right: 70px;
-
+.tel-input {
+    border-radius: 8px 0px 0px 8px !important;
 }
-
-.pdf_img2 {
-    position: absolute;
-    left: auto;
-    right: 150px;
+.number-input-container button{
+    margin: 0px 7px 0px 0px;
 }
-
-.pdf_img3 {
-    position: absolute;
-    left: auto;
-    right: 220px;
+.profile-section {
+    border-left: 2px solid #D9D9D9;
+    border-right:none ;
 }
-
-@media (min-width: 1200px) {
-
-    #dropdown-content-Settlement,
-    #dropdown-content-Settlement3 {
-        right: auto;
-        left: 10px;
-    }
-}
-
-#SettlementForm img.action-button,
-#SettlementForm img.action-button-previous {
-    transform: rotate(180deg);
-}
-
-.Expenses-compensation-Table {
-    direction: rtl;
-    text-align: left;
+.select-style{
+    background-position:right .75rem center;
 }
