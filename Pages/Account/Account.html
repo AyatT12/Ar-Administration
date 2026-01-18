@@ -49,7 +49,7 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                                     <li><a class="dropdown-item userDropdown-options"
-                                            href="../../Account/Account.html">حسابي <img
+                                            href="https://ayatt12.github.io/Ar-Administration/Pages/Account/Account.html">حسابي <img
                                                 src="../../images/Static/Topbar/AccountNavIcon.svg" /></a></li>
                                     <li><a class="dropdown-item userDropdown-options"
                                             href="https://ayatt12.github.io/Ar-Administration/Pages/Account/NewPassword.html">تغيير
@@ -373,17 +373,57 @@
                                                 <div class="row justify-content-center h-100 content-row">
                                                     <div class="col-md-12 h-100">
                                                         <fieldset class="h-100 d-flex flex-column">
-                                                            <form
-                                                                class="needs-validation d-flex flex-column justify-content-between"
+                                                            <form class="needs-validation d-flex flex-column justify-content-between"
                                                                 novalidate id="AccountForm">
                                                                 <div class="row justify-content-end"
                                                                     style="flex: 1; min-height: 0;">
                                                                     <div class="col-lg-12 h-100 d-flex">
                                                                         <div class="container-fluid AccountContant">
-                                                                            <div
-                                                                                class="row py-3 justify-content-around account-cards-row h-100">
-                                                                                <div
-                                                                                    class="col-lg-9 Profile-Data-section">
+                                                                            <div class="row py-3 justify-content-around account-cards-row h-100">
+                                                                                <div class="col-lg-3 profile-section">
+                                                                                    <div class="row gap-1 gap-lg-3">
+                                                                                        <div
+                                                                                            class="col-md-12 d-flex justify-content-center">
+                                                                                            <div class="profile-photo"
+                                                                                                style="background-image:url(../../images/Demo/Employee_Picture.svg);">
+                                                                                                <img src="../../images/Static/Account/change pic.svg"
+                                                                                                    class="change-profile-btn"
+                                                                                                    id="change-profile-btn">
+                                                                                                <input type="file"
+                                                                                                    id="Profile-photo-input"
+                                                                                                    class="d-none"
+                                                                                                    name="Profile-photo"
+                                                                                                    onchange="loadFile(event)" />
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="col-md-12 d-flex justify-content-center">
+                                                                                            <div
+                                                                                                class="row align-items-center ">
+                                                                                                <div class="col-auto">
+                                                                                                    <button
+                                                                                                        type="button"
+                                                                                                        class="custom-img-btn"><img
+                                                                                                            src="../../images/Static/signature/PenIcon.svg"
+                                                                                                            data-bs-toggle="modal"
+                                                                                                            href="#signature-modal" /></button>
+                                                                                                </div>
+                                                                                                <div class="col-auto">
+                                                                                                    <img src="../../images/Demo/signature.svg"
+                                                                                                        id="previewSignature">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="col-md-12 d-flex justify-content-center  align-items-center flex-column">
+                                                                                            <p class="user-name">عبدالله
+                                                                                                محمد المعشني</p>
+                                                                                            <p>المدير التنفيذي</p>
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div  class="col-lg-9 Profile-Data-section">
                                                                                     <div class="info-card mb-3">
                                                                                         <div
                                                                                             class="header-card text-center py-2">
@@ -596,49 +636,7 @@
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="col-lg-3 profile-section">
-                                                                                    <div class="row gap-1 gap-lg-3">
-                                                                                        <div
-                                                                                            class="col-md-12 d-flex justify-content-center">
-                                                                                            <div class="profile-photo"
-                                                                                                style="background-image:url(../../images/Demo/Employee_Picture.svg);">
-                                                                                                <img src="../../images/Static/Account/change pic.svg"
-                                                                                                    class="change-profile-btn"
-                                                                                                    id="change-profile-btn">
-                                                                                                <input type="file"
-                                                                                                    id="Profile-photo-input"
-                                                                                                    class="d-none"
-                                                                                                    name="Profile-photo"
-                                                                                                    onchange="loadFile(event)" />
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div
-                                                                                            class="col-md-12 d-flex justify-content-center">
-                                                                                            <div
-                                                                                                class="row align-items-center ">
-                                                                                                <div class="col-auto">
-                                                                                                    <button
-                                                                                                        type="button"
-                                                                                                        class="custom-img-btn"><img
-                                                                                                            src="../../images/Static/signature/PenIcon.svg"
-                                                                                                            data-bs-toggle="modal"
-                                                                                                            href="#signature-modal" /></button>
-                                                                                                </div>
-                                                                                                <div class="col-auto">
-                                                                                                    <img src="../../images/Demo/signature.svg"
-                                                                                                        id="previewSignature">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div
-                                                                                            class="col-md-12 d-flex justify-content-center  align-items-center flex-column">
-                                                                                            <p class="user-name">عبدالله
-                                                                                                محمد المعشني</p>
-                                                                                            <p>المدير التنفيذي</p>
-                                                                                        </div>
-
-                                                                                    </div>
-                                                                                </div>
+                                                                             
                                                                             </div>
                                                                         </div>
                                                                     </div>
