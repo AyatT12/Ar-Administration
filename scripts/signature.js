@@ -42,7 +42,7 @@ removeSignatureImg.addEventListener("click", function (event) {
     mainContainer.innerHTML = "";
     uploadContainer.classList.remove("previewing");
     uploadContainer.innerHTML =
-      ' <img class="upload-icon" src="images/Static/signature/UplodSignature.png" alt="Upload Icon"><p>ارفق صورة التوقيع</p>';
+      ' <img class="upload-icon" src="../../images/Static/signature/UplodSignature.png" alt="Upload Icon"><p>ارفق صورة التوقيع</p>';
   }
 });
 // //////////////////////////////////////////////// كتابة التوقيع ////////////////////////////////////////////////////////////////////////
@@ -130,26 +130,37 @@ WriteSignature.addEventListener("click", function () {
 });
 
 function SaveWrittenSignature() {
-  document.body.classList.remove("no-scroll");
-  var canvas = document.getElementById("canvas");
-  var dataURL = canvas.toDataURL();
-  Previewing_Signature(dataURL);
-  document.getElementById("previewSignature").src = dataURL;
-  $("#signature-modal").modal("hide");
+    document.body.classList.remove("no-scroll");
+    var canvas = document.getElementById("canvas");
+    var dataURL = canvas.toDataURL();
+    var link = document.createElement("a");
+    link.href = dataURL;
+    console.log(link.href);
+    document.getElementById('previewSignature').src = link.href;
+    $("#signature-modal").modal("hide");
+    return dataURL;
 }
 
 // Save the uploded signature image
+// Save the uploded signature image
 function SaveUplodedSignature() {
-  const img = document.getElementById("signatureImage");
-  const canvas = document.createElement("canvas");
-  canvas.width = img.width;
-  canvas.height = img.height;
-  const context = canvas.getContext("2d");
-  context.drawImage(img, 0, 0, canvas.width, canvas.height);
-  const base64 = canvas.toDataURL("image/jpeg");
-  console.log(base64);
-  document.getElementById("previewSignature").src = base64;
-  $("#signature-modal").modal("hide");
+    const img = document.getElementById("signatureImage");
+    const canvas = document.createElement("canvas");
+    if (img) {
+        canvas.width = img.width;
+        canvas.height = img.height;
+    } else {
+        return
+    }
+    const context = canvas.getContext("2d");
+    context.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+    // Use PNG format to preserve transparency
+    const base64 = canvas.toDataURL("image/png");
+    console.log(base64);
+    document.getElementById('previewSignature').src = base64;
+    $("#signature-modal").modal("hide");
+    return base64;
 }
 // // // //////////////////////////////////////////////// عرض صورة التوقيع ////////////////////////////////////////////////////////////////////////
 function Previewing_Signature(imageURL) {
