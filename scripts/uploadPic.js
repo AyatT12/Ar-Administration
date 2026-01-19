@@ -15,7 +15,7 @@ let currentStream = null;
 function updateSystemsCheckBackground() {
   if (!systemsCheck) return;
   systemsCheck.style.backgroundColor =
-    IDuploadContainer.querySelector("img") ? "green" : "";
+    IDuploadContainer.querySelector("img") ? "#049b04" : "";
 }
 
 function stopCameraStream() {
