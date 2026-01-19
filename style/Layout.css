@@ -127,7 +127,10 @@ body {
   border-radius: 5px;
   height: 10px;
 }
-
+.menu::-webkit-scrollbar-thumb:hover {
+  border-radius: 8px;
+  background:#dbdfe9;
+}
 .lang-button-col {
   position: relative;
   cursor: pointer;
@@ -654,6 +657,10 @@ body.dark .sidebar-right li a:hover .text {
   border-radius: 5px;
   height: 10px;
 }
+.employees-alerts::-webkit-scrollbar-thumb:hover {
+  border-radius: 8px;
+  background:#dbdfe9;
+}
 .employees-alerts hr {
   margin: .3rem 0rem;
 }
@@ -995,7 +1002,12 @@ div:has(.min-loader-back) {
   flex-direction: column;
   height: 95%;
 }
-
+@media (max-width: 1024px) {
+  .Data-container {
+    padding: 15px;
+  }
+  
+}
 .status-badge {
   display: inline-block;
   padding: 4px 12px;

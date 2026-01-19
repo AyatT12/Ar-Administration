@@ -47,11 +47,8 @@ html {
 }
 
 .main-container {
-  /* background-color: white; */
   box-shadow: 2px 3px 4px 0px #afb7c27d;
   border-radius: 8px;
-  /* padding: 25px; */
-  /* margin: 10px auto; */
   height: 95%;
   display: flex;
 }
@@ -181,6 +178,12 @@ html {
   }
 }
 
+@media (max-width: 768px) {
+  .InputsPageContainer {
+    max-width: 780px;
+  }
+}
+
 /* ================================================================================ signature style   ======================================================================================= */
 .signature-modal-content {
   width: 300px;
@@ -242,6 +245,12 @@ html {
 
 .subtitle {
   color: var(--primary-color);
+}
+
+@media (min-width: 1400px) and (max-width: 1900px) {
+  .col-xxl-9.Data-container {
+    width: 90%;
+  }
 }
 
 /* ================================================================================ table style   ======================================================================================= */
@@ -572,11 +581,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /* ================================================================================ Pages inputs accordion style   ======================================================================================= */
 
-@media (min-width:1024px) {
+/* @media (min-width:1024px) {
   .data-scroll-container {
     min-width: 600px;
   }
-}
+} */
 
 ::-webkit-scrollbar {
   width: 7px !important;
@@ -683,14 +692,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-size: 10px;
 }
 
-#phone,
-#phone2 {
+#phone1,
+#phone2,
+#phone {
   height: 37px;
+  min-width: 140px;
+  max-width: 142px;
+  padding: 5px;
+}
+
+input[type="email"] {
+  max-width: 335px;
+  min-width: 333px;
 }
 
 .counterCode {
   height: 37px;
-padding: 0px !important;
+  padding: 0px !important;
 }
 
 
@@ -822,13 +840,14 @@ padding: 0px !important;
 
 .systems-check,
 .systems-check-license {
-  height: 25px;
-  width: 25px;
-  background-color: red;
-  border-radius: 50%;
+  height: 35px;
+  width: 50px;
+  background-color: #a0a6a9;
+  border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 22px;
 }
 
 /* document photo modal  */
@@ -1350,9 +1369,12 @@ padding: 0px !important;
   font-size: 16px;
   position: relative;
 }
-.password-input.is-invalid, .was-validated .password-input:invalid{
+
+.password-input.is-invalid,
+.was-validated .password-input:invalid {
   background-image: none;
 }
+
 .lock-icon {
   position: absolute;
   right: 15px;
@@ -1389,10 +1411,11 @@ padding: 0px !important;
 //           ========================== account style ==============================================================================================
 //          =====================================================================*/
 @media (min-width:992px) {
-  .account-cards-row{
+  .account-cards-row {
     flex-direction: row-reverse;
   }
 }
+
 .account-dropdown {
   text-align: center;
 }
@@ -1675,8 +1698,7 @@ padding: 0px !important;
 /* حسابي */
 .AccountContant {
   flex: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: auto;
 }
 
 .AccountContant::-webkit-scrollbar {
@@ -1835,7 +1857,14 @@ padding: 0px !important;
 .data-card {
   text-align: start;
 }
-
+#Password-hint{
+  min-width: 400px;
+}
+@media (max-width: 1199px) {
+  .profile-section {
+    border-right: none;
+}
+}
 @media screen and (min-width: 768px) and (orientation: portrait) {
   .header-card {
     display: block;
