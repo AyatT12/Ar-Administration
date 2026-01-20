@@ -995,12 +995,14 @@ input[type="email"] {
 }
 
 #removeIDImg,
-#removeLicenseImg {
+#removeLicenseImg,
+#removeDocImg {
   position: absolute;
   top: 5px;
   left: 5px;
   font-size: 20px;
   cursor: pointer;
+  color: #39629c;
 }
 
 #videoElement,
@@ -3250,4 +3252,5 @@ input[type="email"] {
 .modal-content {
   border: 3px solid #FF9626;
   border-radius: 10px;
+
 }
