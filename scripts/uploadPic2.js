@@ -1,332 +1,317 @@
-const systemsCheckLicense = document.querySelector(".systems-check-license");
-const LicenseUploadContainer = document.querySelector(
-  ".License-upload-container"
-);
-const LicenseMainContainer = document.querySelector(".License-main-container");
-const UploadLicensePic = document.getElementById("UploadLicensePic");
-const LicenseImageUpload = document.getElementById("LicenseimageUpload");
-const openLicenseCameraButton = document.getElementById("openCameraLicense");
+// // //////////////////////////////////////////////// رفع صورة الهوية ////////////////////////////////////////////////////////////////////////
+let saveDocBtn = null;
+let hasValidImage = false; 
 
-let saveLicenseBtn = null;
-let currentLicenseStream = null; // Track active camera stream
+document.getElementById("UploadPic").addEventListener("click", function () {
+  saveDocBtn = "UploadPic";
+  console.log(saveDocBtn);
+});
 
-// ===== UTILITY FUNCTIONS =====
+const DocUploadContainer = document.querySelector(".Doc-upload-container");
+const DocMainContainer = document.querySelector(".Doc-main-container");
+const DocUploadPic = document.getElementById("UploadPic");
+const DocimageUpload = document.getElementById("DocimageUpload");
+var imgeURL;
+const DocuploadedImg = null;
+//
 
-function updateLicenseSystemsCheckBackground() {
-  if (LicenseUploadContainer && systemsCheckLicense) {
-    systemsCheckLicense.style.backgroundColor =
-      LicenseUploadContainer.querySelector("img") ? "green" : "";
+DocUploadPic.addEventListener("click", function () {
+  DocimageUpload.click();
+  removeDocImg.style.display = "Block";
+});
+
+DocimageUpload.addEventListener("change", function () {
+  const file = DocimageUpload.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const DocimageURL = e.target.result;
+      const DocpreviewImage = document.createElement("img");
+      DocpreviewImage.classList.add("preview-image");
+      DocpreviewImage.src = DocimageURL;
+      DocpreviewImage.id = "DocImage";
+
+      DocpreviewImage.style.cursor = "pointer";
+      DocpreviewImage.title = "Inappropriate file type";
+      DocpreviewImage.addEventListener("click", function () {
+        openImageInNewTab(DocimageURL);
+      });
+
+      imgeURL = DocimageURL;
+      DocMainContainer.innerHTML =
+        '<i class="fa-regular fa-circle-xmark"  style="cursor: pointer;"></i>';
+      DocUploadContainer.innerHTML = "";
+      DocUploadContainer.appendChild(DocpreviewImage);
+      DocUploadContainer.classList.add("previewing");
+
+      hasValidImage = true; 
+    };
+    reader.readAsDataURL(file);
   }
-}
+});
 
+removeDocImg.addEventListener("click", function (event) {
+  event.preventDefault();
+  if (DocUploadContainer.firstChild) {
+    DocUploadContainer.innerHTML = "";
+    DocMainContainer.innerHTML = "";
+    DocUploadContainer.classList.remove("previewing");
+    DocUploadContainer.innerHTML =
+      ' <img class="upload-icon" src="../../images/common/static/UploadPicture/add_image.png" alt="Upload Icon"><p>ارفق صورة الهوية </p>';
+
+    hasValidImage = false; 
+    resetButtonImage();
+  }
+});
+
+// Global variable to track which button was clicked
+let currentUploadButton = null;
+
+// // ////////////////////////////////////////////////  التقاط صورة الهوية او الرخصة////////////////////////////////////////////////////////////////////////
+const openCameraButton = document.getElementById("openCamera");
+document.getElementById("openCamera").addEventListener("click", function () {
+  saveDocBtn = "CameraDoc";
+  console.log(saveDocBtn);
+});
+
+openCameraButton.addEventListener("click", async () => {
+  let videoElement = document.getElementById("videoElement");
+  let photo = document.getElementById("photo");
+  removeDocImg.style.display = "none";
+  if (!videoElement) {
+    DocUploadContainer.innerHTML = `
+            <video id="videoElement" autoplay></video>
+            <img id="photo" alt="The screen capture will appear in this box." style="display:none;">
+        `;
+    videoElement = document.getElementById("videoElement");
+    photo = document.getElementById("photo");
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: {
+          facingMode: { exact: "environment" },
+        },
+      });
+      videoElement.srcObject = stream;
+    } catch (error) {
+      console.log("Back camera not available, using default camera");
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: {
+            facingMode: "environment",
+          },
+        });
+        videoElement.srcObject = stream;
+      } catch (fallbackError) {
+        console.error("Error accessing any camera:", fallbackError);
+      }
+    }
+  } else {
+    const canvasElement = document.createElement("canvas");
+    canvasElement.width = videoElement.videoWidth;
+    canvasElement.height = videoElement.videoHeight;
+    const context = canvasElement.getContext("2d");
+    context.drawImage(
+      videoElement,
+      0,
+      0,
+      canvasElement.width,
+      canvasElement.height
+    );
+
+    const stream = videoElement.srcObject;
+    const tracks = stream.getTracks();
+    tracks.forEach((track) => track.stop());
+
+    const dataUrl = canvasElement.toDataURL("image/png");
+    photo.src = dataUrl;
+    photo.style.display = "block";
+
+    // عند الضغط يتم فتح الصورة في تاب مستقلة
+    photo.style.cursor = "pointer";
+    photo.title = "Inappropriate file type";
+    photo.addEventListener("click", function () {
+      openImageInNewTab(dataUrl);
+    });
+
+    hasValidImage = true;
+    videoElement.remove();
+  }
+});
+
+//الفانكشن المسؤلة عن فتح الصورة للهوية و رخصة القيادة و صور الفحص الظاهري
 function openImageInNewTab(imageDataUrl) {
-  const newTab = window.open();
-  if (!newTab) {
-    return;
-  }
+ var newTab = window.open();
 
   $(newTab.document.head).html(`
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>عرض الصورة</title>
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-            html, body {
-                width: 100%;
-                height: 100%;
-                overflow: hidden;
-            }
-            body {
-                background-color: black;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .image-container {
-                width: 70vw;
-                height: 70vh;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            img {
-                max-width: 100%;
-                max-height: 100%;
-                width: auto;
-                height: auto;
-                object-fit: contain;
-            }
-        </style>
-    `);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Image</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      body {
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .image-container {
+        width: 70vw;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+    </style>
+  `);
 
   newTab.document.body.innerHTML = `
-        <div class="image-container">
-            <img src="${imageDataUrl}" alt="عرض الصورة">
-        </div>
-    `;
+    <div class="image-container">
+      <img src="${imageDataUrl}" alt="View Image">
+    </div>
+  `;
 }
 
-function addImageClickHandler(imgElement, imageUrl) {
-  imgElement.style.cursor = "pointer";
-  imgElement.title = "اضغط لفتح الصورة في نافذة جديدة";
-  imgElement.addEventListener("click", () => openImageInNewTab(imageUrl));
-}
-
-function saveImageToBase64(imgElement) {
-  return new Promise((resolve, reject) => {
-    try {
-      // Check if image is loaded
-      if (!imgElement.complete || !imgElement.naturalWidth) {
-        imgElement.onload = () =>
-          saveImageToBase64(imgElement).then(resolve).catch(reject);
-        imgElement.onerror = () => reject(new Error("فشل تحميل الصورة"));
-        return;
-      }
-
-      const canvas = document.createElement("canvas");
-      canvas.width = imgElement.naturalWidth;
-      canvas.height = imgElement.naturalHeight;
-
-      const ctx = canvas.getContext("2d");
-      ctx.fillStyle = "#ffffff";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.drawImage(imgElement, 0, 0);
-
-      const base64 = canvas.toDataURL("image/jpeg", 0.9);
-      console.log("Base64 generated successfully");
-      resolve(base64);
-    } catch (error) {
-      console.error("Error converting image to base64:", error);
-      reject(error);
-    }
-  });
-}
-
-function stopLicenseCameraStream() {
-  if (currentLicenseStream) {
-    currentLicenseStream.getTracks().forEach((track) => track.stop());
-    currentLicenseStream = null;
-  }
-}
-
-function clearLicenseUploadContainer() {
-  stopLicenseCameraStream();
-  saveLicenseBtn = null;
-  LicenseUploadContainer.innerHTML = "";
-  LicenseMainContainer.innerHTML = "";
-  LicenseUploadContainer.classList.remove("previewing");
-  updateLicenseSystemsCheckBackground();
-}
-
-// ===== IMAGE UPLOAD HANDLERS =====
-
-async function convertHEICImage(file) {
-  try {
-    const convertedBlob = await heic2any({
-      blob: file,
-      toType: "image/jpeg",
-      quality: 0.9,
-    });
-    return convertedBlob;
-  } catch (err) {
-    console.error("HEIC conversion failed:", err);
-    throw new Error("فشل تحويل صورة HEIC، يرجى اختيار صورة بصيغة أخرى.");
-  }
-}
-
-function isHEICFile(file) {
-  return (
-    file.type === "image/heic" ||
-    file.type === "image/heif" ||
-    file.name.toLowerCase().endsWith(".heic") ||
-    file.name.toLowerCase().endsWith(".heif")
-  );
-}
-
-function handleLicenseImagePreview(dataURL) {
-  const licensePreviewImage = new Image();
-  licensePreviewImage.crossOrigin = "Anonymous";
-
-  licensePreviewImage.onload = function () {
-    licensePreviewImage.classList.add("preview-image");
-    licensePreviewImage.id = "LicenseImage";
-    saveLicenseBtn = "UploadLicensePic";
-
-    addImageClickHandler(licensePreviewImage, dataURL);
-
-    LicenseMainContainer.innerHTML =
-      '<i class="fa-regular fa-circle-xmark xmark-icon"></i>';
-    LicenseUploadContainer.innerHTML = "";
-    LicenseUploadContainer.appendChild(licensePreviewImage);
-    LicenseUploadContainer.classList.add("previewing");
-    updateLicenseSystemsCheckBackground();
-  };
-
-  licensePreviewImage.onerror = function () {
-    console.error("Failed to load image");
-  };
-
-  licensePreviewImage.src = dataURL;
-}
-
-// ===== EVENT LISTENERS =====
-
-document.addEventListener(
-  "DOMContentLoaded",
-  updateLicenseSystemsCheckBackground
-);
-
-UploadLicensePic.addEventListener("click", () => {
-  LicenseImageUpload.click();
-  saveLicenseBtn = "UploadLicensePic";
-});
-
-LicenseImageUpload.addEventListener("change", async function () {
-  const file = this.files[0];
-  if (!file) return;
-
-  try {
-    let fileToProcess = file;
-
-    // Convert HEIC if needed
-    if (isHEICFile(file)) {
-      fileToProcess = await convertHEICImage(file);
-    }
-
-    // Read and preview image
-    const reader = new FileReader();
-    reader.onload = (e) => handleLicenseImagePreview(e.target.result);
-    reader.onerror = () => {
-      console.error("Failed to read file");
-    };
-    reader.readAsDataURL(fileToProcess);
-  } catch (error) {}
-});
-
-document
-  .getElementById("removeLicenseImg")
-  .addEventListener("click", function (e) {
-    e.preventDefault();
-    clearLicenseUploadContainer();
-  });
-
-// ===== CAMERA HANDLERS =====
-
-async function initializeLicenseCamera() {
-  const cameraStrategies = [
-    { video: { facingMode: { exact: "environment" } } },
-    { video: { facingMode: "environment" } },
-    { video: true },
-  ];
-
-  for (const constraints of cameraStrategies) {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia(constraints);
-      return stream;
-    } catch (error) {
-      console.log("Camera strategy failed, trying next...", error);
-    }
-  }
-
-  throw new Error("لا يمكن الوصول إلى الكاميرا");
-}
-
-async function startLicenseCamera() {
-  try {
-    LicenseUploadContainer.innerHTML = `
-            <video id="videoLicenseElement" autoplay playsinline></video>
-            <img id="licensePhoto" alt="الصورة الملتقطة ستظهر هنا" style="display:none;">
-        `;
-
-    const videoElement = document.getElementById("videoLicenseElement");
-    currentLicenseStream = await initializeLicenseCamera();
-    videoElement.srcObject = currentLicenseStream;
-
-    await new Promise((resolve) => {
-      videoElement.onloadedmetadata = () => resolve();
-    });
-  } catch (error) {
-    console.error("Camera error:", error);
-    clearLicenseUploadContainer();
-  }
-}
-
-function captureLicensePhoto() {
-  const videoElement = document.getElementById("videoLicenseElement");
-  const photo = document.getElementById("licensePhoto");
-
-  if (!videoElement || !currentLicenseStream) {
-    console.error("Video element or stream not available");
-    return;
+// Save the uploaded Docphoto image
+function SaveUplodedDocphoto() {
+  const img = document.getElementById("DocImage");
+  if (!img) {
+    console.log("No image found for uploaded Doc photo");
+    $("#Doc-photo-modal").modal("hide");
+    return false;
   }
 
   const canvas = document.createElement("canvas");
-  canvas.width = videoElement.videoWidth;
-  canvas.height = videoElement.videoHeight;
-  canvas.getContext("2d").drawImage(videoElement, 0, 0);
+  canvas.width = img.width;
+  canvas.height = img.height;
 
-  stopLicenseCameraStream();
+  // Check if canvas width is 0
+  if (canvas.width === 0) {
+    $("#Doc-photo-modal").modal("hide");
+    return false;
+  }
 
-  const photoDataURL = canvas.toDataURL("image/png");
-  photo.src = photoDataURL;
-  photo.style.display = "block";
-  photo.id = "licensePhoto";
-
-  videoElement.remove();
-
-  LicenseUploadContainer.innerHTML = "";
-  LicenseUploadContainer.appendChild(photo);
-  LicenseUploadContainer.classList.add("previewing");
-
-  addImageClickHandler(photo, photoDataURL);
-  updateLicenseSystemsCheckBackground();
+  const context = canvas.getContext("2d");
+  context.drawImage(img, 0, 0, canvas.width, canvas.height);
+  const base64 = canvas.toDataURL("image/jpeg");
+  console.log(base64);
+  $("#Doc-photo-modal").modal("hide");
+  return true;
 }
 
-openLicenseCameraButton.addEventListener("click", async () => {
-  saveLicenseBtn = "CameraLicense";
-  const videoElement = document.getElementById("videoLicenseElement");
+// Save the camera Docphoto image
+function SaveCameraDocphoto() {
+  const img = document.getElementById("photo");
+  if (!img) {
+    console.log("No image found for camera Doc photo");
+    $("#Doc-photo-modal").modal("hide");
+    return false;
+  }
 
-  if (!videoElement) {
-    await startLicenseCamera();
+  const canvas = document.createElement("canvas");
+  canvas.width = img.width;
+  canvas.height = img.height;
+
+  // Check if canvas width is 0
+  if (canvas.width === 0) {
+    $("#Doc-photo-modal").modal("hide");
+    return false;
+  }
+
+  const context = canvas.getContext("2d");
+  context.drawImage(img, 0, 0, canvas.width, canvas.height);
+  const base64 = canvas.toDataURL("image/jpeg");
+  console.log(base64);
+  $("#Doc-photo-modal").modal("hide");
+  return true;
+}
+
+// تحديث زر فتح مودال الهوية في حالة تم رفع صورة
+function updateButtonImage() {
+  if (currentUploadButton) {
+    const img = currentUploadButton.querySelector("img");
+    const activeIcon = currentUploadButton.getAttribute("data-active-icon");
+
+    if (img && activeIcon) {
+      img.src = activeIcon;
+    }
+  }
+  currentUploadButton = null;
+}
+
+function resetButtonImage() {
+  if (currentUploadButton) {
+    const img = currentUploadButton.querySelector("img");
+    const initialIcon = currentUploadButton.getAttribute("data-initial-icon");
+
+    if (img && initialIcon) {
+      img.src = initialIcon;
+    } else if (img) {
+      img.style.filter = "none";
+      img.style.opacity = "1";
+    }
+  }
+  currentUploadButton = null;
+}
+
+document.querySelectorAll(".Upload-Photo-Button").forEach((button) => {
+  button.addEventListener("click", function () {
+    currentUploadButton = this;
+
+    this.style.opacity = "0.8";
+    setTimeout(() => {
+      this.style.opacity = "1";
+    }, 200);
+  });
+});
+
+document.getElementById("Doc-photo-save").addEventListener("click", function () {
+  let saveSuccessful = false;
+
+  if (saveDocBtn === "UploadPic") {
+    saveSuccessful = SaveUplodedDocphoto();
+  } else if (saveDocBtn === "CameraDoc") {
+    saveSuccessful = SaveCameraDocphoto();
+  }
+
+  if (saveSuccessful && hasValidImage) {
+    updateButtonImage();
   } else {
-    captureLicensePhoto();
+    resetButtonImage();
   }
 });
 
-// ===== SAVE HANDLER =====
+document
+  .getElementById("Doc-photo-modal")
+  .addEventListener("hidden.bs.modal", function () {
+    if (!hasValidImage) {
+      resetButtonImage();
+    }
+    currentUploadButton = null;
+  });
 
 document
-  .getElementById("License-photo-save")
-  .addEventListener("click", async function () {
-    if (!saveLicenseBtn) {
-      console.warn("No image source selected");
-      return;
-    }
-
-    try {
-      let imgElement;
-
-      if (saveLicenseBtn === "UploadLicensePic") {
-        imgElement = document.getElementById("LicenseImage");
-      } else if (saveLicenseBtn === "CameraLicense") {
-        imgElement = document.getElementById("licensePhoto");
-      }
-
-      if (!imgElement) {
-        console.error("Image element not found");
-        return;
-      }
-
-      const base64 = await saveImageToBase64(imgElement);
-      console.log("Image saved successfully");
-
-      $("#License-photo-modal").modal("hide");
-      updateLicenseSystemsCheckBackground();
-    } catch (error) {
-      console.error("Save error:", error);
-    }
+  .getElementById("Doc-photo-modal")
+  .addEventListener("show.bs.modal", function () {
+    const hasImage =
+      DocUploadContainer.querySelector("img.preview-image") ||
+      DocUploadContainer.querySelector("img#photo") ||
+      DocUploadContainer.querySelector("img#DocImage");
+    hasValidImage = !!hasImage;
   });
+
