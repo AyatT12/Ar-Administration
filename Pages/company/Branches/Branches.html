@@ -378,6 +378,35 @@
                                         </div>
 
                                     </div>
+                                    <div class="col-12 filters-col">
+                                        <div class="filters-custom-order">
+
+                                            <label class="form-check-label" for="all">الكل</label>
+                                            <input class="form-check-input custom" type="radio" name="Options" id="all"
+                                                value="All" checked />
+                                        </div>
+
+                                        <div class="filters-custom-order">
+
+                                            <label class="form-check-label filter2" for="Active">نشط</label>
+                                            <input class="form-check-input custom" type="radio" name="Options"
+                                                id="Active" value="Active" />
+                                        </div>
+
+                                        <div class="filters-custom-order">
+
+                                            <label class="form-check-label  filter1" for="Stoped">موقوف</label>
+                                            <input class="form-check-input custom" type="radio" name="Options"
+                                                id="Stoped" value="Stoped" />
+                                        </div>
+                                        <div class="filters-custom-order">
+
+                                            <label class="form-check-label filter3" for="deleted">محذوف</label>
+                                            <input class="form-check-input custom" type="radio" name="Options"
+                                                id="deleted" value="deleted" />
+                                        </div>
+
+                                    </div>
                                 </div>
                                 <!-- Table -->
                                 <div class="table-wrapper">
@@ -385,13 +414,13 @@
                                         <table class="tables-style table table-borderless " id="Branches-table">
                                             <thead class="sticky-top">
                                                 <tr>
-                                                    <th scope="col">المستندات</th>
-                                                    <th scope="col">المتاحة</th>
-                                                    <th scope="col">الغير متاحة</th>
-                                                    <th scope="col"> المؤجرة</th>
-                                                    <th scope="col"> السيارات</th>
-                                                    <th scope="col"> نظام التأجير</th>
-                                                    <th scope="col" class="DifferAlign"> الفرع</th>
+                                                    <th >المستندات</th>
+                                                    <th >متاحة</th>
+                                                    <th >غير متاحة</th>
+                                                    <th > مؤجرة / محفوظة</th>
+                                                    <th > السيارات</th>
+                                                    <th > نظام التأجير</th>
+                                                    <th  class="DifferAlign"> الفرع</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
@@ -399,7 +428,7 @@
                                                 <tr>
                                                     <td class="Branch-doc-td">
                                                         <img class="Documents"
-                                                            src="../../../images/Static/PdfIcons/docs.svg" />
+                                                            src="../../../images/Static/PdfIcons/RedDocsIcon.svg" />
                                                         <div class="dropdown-content ">
                                                             <div class="container-fluid py-2">
                                                                 <div class="row dropdown-content-row pt-2 ">
@@ -411,7 +440,7 @@
                                                                     </div>
                                                                     <div class="col">
                                                                         <a class="Documents-anchor">
-                                                                            <p class="Saved-data"> السجل التجاري </p>
+                                                                            <p class="Saved-data text-danger"> السجل التجاري </p>
                                                                         </a>
                                                                         <div class="documentDate">
                                                                             <p> : نهايتها </p> <span>11/08/2025</span>
@@ -431,7 +460,7 @@
                                                                             </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -448,7 +477,7 @@
                                                                             <p class="Saved-data"> تصريح هيئة النقل </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -465,7 +494,7 @@
                                                                             <p class="Saved-data"> رخصة البلدية </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -482,7 +511,7 @@
                                                                             <p class="Saved-data">البريد الوطني</p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -543,7 +572,7 @@
                                                         <p>999,999</p>
                                                     </td>
                                                     <td>
-                                                        <p>999,999</p>
+                                                        <p>999,999 / 999,999</p>
                                                     </td>
                                                     <td>
                                                         <p>999,999</p>
@@ -581,7 +610,7 @@
                                                                             <p class="Saved-data"> السجل التجاري </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
 
@@ -598,7 +627,7 @@
                                                                             </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -615,7 +644,7 @@
                                                                             <p class="Saved-data"> تصريح هيئة النقل </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -632,7 +661,7 @@
                                                                             <p class="Saved-data"> رخصة البلدية </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -649,7 +678,7 @@
                                                                             <p class="Saved-data">البريد الوطني</p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -710,7 +739,7 @@
                                                         <p>999,999</p>
                                                     </td>
                                                     <td>
-                                                        <p>999,999</p>
+                                                        <p>999,999 / 999,999</p>
                                                     </td>
                                                     <td>
                                                         <p>999,999</p>
@@ -749,7 +778,7 @@
                                                                             <p class="Saved-data"> السجل التجاري </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
 
@@ -766,7 +795,7 @@
                                                                             </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -783,7 +812,7 @@
                                                                             <p class="Saved-data"> تصريح هيئة النقل </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -800,7 +829,7 @@
                                                                             <p class="Saved-data"> رخصة البلدية </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -817,7 +846,7 @@
                                                                             <p class="Saved-data">البريد الوطني</p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -878,7 +907,7 @@
                                                         <p>999,999</p>
                                                     </td>
                                                     <td>
-                                                        <p>999,999</p>
+                                                        <p>999,999 / 999,999</p>
                                                     </td>
                                                     <td>
                                                         <p>999,999</p>
@@ -917,7 +946,7 @@
                                                                             <p class="Saved-data"> السجل التجاري </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
 
@@ -934,7 +963,7 @@
                                                                             </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -951,7 +980,7 @@
                                                                             <p class="Saved-data"> تصريح هيئة النقل </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -968,7 +997,7 @@
                                                                             <p class="Saved-data"> رخصة البلدية </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -985,7 +1014,7 @@
                                                                             <p class="Saved-data">البريد الوطني</p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1046,7 +1075,7 @@
                                                         <p>999,999</p>
                                                     </td>
                                                     <td>
-                                                        <p>999,999</p>
+                                                        <p>999,999 / 999,999</p>
                                                     </td>
                                                     <td>
                                                         <p>999,999</p>
@@ -1087,7 +1116,7 @@
                                                                             <p class="Saved-data"> السجل التجاري </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
 
@@ -1104,7 +1133,7 @@
                                                                             </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1120,7 +1149,7 @@
                                                                             <p class="Saved-data"> تصريح هيئة النقل </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1137,7 +1166,7 @@
                                                                             <p class="Saved-data"> رخصة البلدية </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1154,7 +1183,7 @@
                                                                             <p class="Saved-data">البريد الوطني</p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1215,7 +1244,7 @@
                                                         <p>999,999</p>
                                                     </td>
                                                     <td>
-                                                        <p>999,999</p>
+                                                        <p>999,999 / 999,999</p>
                                                     </td>
                                                     <td>
                                                         <p>999,999</p>
@@ -1253,7 +1282,7 @@
                                                                             <p class="Saved-data"> السجل التجاري </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
 
@@ -1270,7 +1299,7 @@
                                                                             </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1287,7 +1316,7 @@
                                                                             <p class="Saved-data"> تصريح هيئة النقل </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1304,7 +1333,7 @@
                                                                             <p class="Saved-data"> رخصة البلدية </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1321,7 +1350,7 @@
                                                                             <p class="Saved-data">البريد الوطني</p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1382,7 +1411,7 @@
                                                         <p>999,999</p>
                                                     </td>
                                                     <td>
-                                                        <p>999,999</p>
+                                                        <p>999,999 / 999,999</p>
                                                     </td>
                                                     <td>
                                                         <p>999,999</p>
@@ -1421,7 +1450,7 @@
                                                                             <p class="Saved-data"> السجل التجاري </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
 
@@ -1438,7 +1467,7 @@
                                                                             </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1455,7 +1484,7 @@
                                                                             <p class="Saved-data"> تصريح هيئة النقل </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1472,7 +1501,7 @@
                                                                             <p class="Saved-data"> رخصة البلدية </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1489,7 +1518,7 @@
                                                                             <p class="Saved-data">البريد الوطني</p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1550,7 +1579,7 @@
                                                         <p>999,999</p>
                                                     </td>
                                                     <td>
-                                                        <p>999,999</p>
+                                                        <p>999,999 / 999,999</p>
                                                     </td>
                                                     <td>
                                                         <p>999,999</p>
@@ -1589,7 +1618,7 @@
                                                                             <p class="Saved-data"> السجل التجاري </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
 
@@ -1606,7 +1635,7 @@
                                                                             </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1623,7 +1652,7 @@
                                                                             <p class="Saved-data"> تصريح هيئة النقل </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1640,7 +1669,7 @@
                                                                             <p class="Saved-data"> رخصة البلدية </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1657,7 +1686,7 @@
                                                                             <p class="Saved-data">البريد الوطني</p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1718,7 +1747,7 @@
                                                         <p>999,999</p>
                                                     </td>
                                                     <td>
-                                                        <p>999,999</p>
+                                                        <p>999,999 / 999,999</p>
                                                     </td>
                                                     <td>
                                                         <p>999,999</p>
@@ -1757,7 +1786,7 @@
                                                                             <p class="Saved-data"> السجل التجاري </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
 
@@ -1774,7 +1803,7 @@
                                                                             </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1791,7 +1820,7 @@
                                                                             <p class="Saved-data"> تصريح هيئة النقل </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1808,7 +1837,7 @@
                                                                             <p class="Saved-data"> رخصة البلدية </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1825,7 +1854,7 @@
                                                                             <p class="Saved-data">البريد الوطني</p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1886,7 +1915,7 @@
                                                         <p>999,999</p>
                                                     </td>
                                                     <td>
-                                                        <p>999,999</p>
+                                                        <p>999,999 / 999,999</p>
                                                     </td>
                                                     <td>
                                                         <p>999,999</p>
@@ -1925,7 +1954,7 @@
                                                                             <p class="Saved-data"> السجل التجاري </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
 
@@ -1942,7 +1971,7 @@
                                                                             </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1959,7 +1988,7 @@
                                                                             <p class="Saved-data"> تصريح هيئة النقل </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1976,7 +2005,7 @@
                                                                             <p class="Saved-data"> رخصة البلدية </p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1993,7 +2022,7 @@
                                                                             <p class="Saved-data">البريد الوطني</p>
                                                                         </a>
                                                                         <div class="documentDate">
-                                                                            <p> : نهايتها </p> <span>11/08/2025</span>
+                                                                            <p> : نهايتها </p> <span>11/08/2026</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -2054,7 +2083,7 @@
                                                         <p>999,999</p>
                                                     </td>
                                                     <td>
-                                                        <p>999,999</p>
+                                                        <p>999,999 / 999,999</p>
                                                     </td>
                                                     <td>
                                                         <p>999,999</p>
@@ -2113,7 +2142,7 @@
                                             <path d="m6 9 6 6 6-6" />
                                         </svg>
                                     </div>
-                                    <div class="accordion-item-description-wrapper">
+                                    <div class="accordion-item-description-wrapper alerts-items-scroll">
                                         <div class="accordion-item-description">
                                             <div class="container-fluid">
                                                 <div class="row collapse-row ">
