@@ -56,8 +56,7 @@ removeDocImg.addEventListener("click", function (event) {
     DocUploadContainer.innerHTML = "";
     DocMainContainer.innerHTML = "";
     DocUploadContainer.classList.remove("previewing");
-    DocUploadContainer.innerHTML =
-      ' <img class="upload-icon" src="../../images/common/static/UploadPicture/add_image.png" alt="Upload Icon"><p>ارفق صورة الهوية </p>';
+    DocUploadContainer.innerHTML ='';
 
     hasValidImage = false; 
     resetButtonImage();
@@ -77,7 +76,11 @@ document.getElementById("openCamera").addEventListener("click", function () {
 openCameraButton.addEventListener("click", async () => {
   let videoElement = document.getElementById("videoElement");
   let photo = document.getElementById("photo");
-  removeDocImg.style.display = "none";
+
+ DocMainContainer.innerHTML =
+        '<i class="fa-regular fa-circle-xmark"  style="cursor: pointer;"></i>';
+  removeDocImg.style.display = "Block";
+
   if (!videoElement) {
     DocUploadContainer.innerHTML = `
             <video id="videoElement" autoplay></video>
