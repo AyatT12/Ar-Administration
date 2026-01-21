@@ -104,7 +104,7 @@
 
                             <div id="company-items" class="collapse">
                                 <div class="bg-white gap-3 collapse-inner rounded">
-                                    <a class="collapse-item active"
+                                    <a class="collapse-item"
                                         href="../../../Pages/company/Branches/Branches.html">
                                         الفروع <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                     <a class="collapse-item" href="../../../Pages/company/owners/owners.html"> الملاك <i
@@ -337,7 +337,7 @@
                                     <a class="collapse-item "
                                         href="../../../Pages/Services/Rental policy/Rental policy.html">
                                         سياسة التأجير <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                    <a class="collapse-item" href="../../../Pages/Services/drivers/drivers.html">
+                                    <a class="collapse-item active" href="../../../Pages/Services/drivers/drivers.html">
                                         السائقين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
 
                                     <a class="collapse-item" href="../../../Pages/Services/Alerts/Alerts.html">
@@ -499,7 +499,7 @@
 
 
                                                                 </div>
-                                                                <div class="row align-items-center ">
+                                                                <div class="row align-items-center g-2">
                                                                     <div class="col ">
                                                                         <div class="row align-items-center ">
                                                                             <div class="col-lg-12">
@@ -508,10 +508,10 @@
                                                                             <div
                                                                                 class="col d-flex justify-content-start">
                                                                                 <textarea
-                                                                                    class=" form-control textarea-inputs"
+                                                                                    class="form-control textarea-inputs"
                                                                                     rows="1" maxlength="100"
                                                                                     id="Reasons" type="text"
-                                                                                    name="Contract.RenterInfo.CrMasRenterInformationReasons"></textarea>
+                                                                                    name="Reasons"></textarea>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -556,8 +556,7 @@
                                                                             <div class="col-12">
                                                                                 <label class="form-label">رقم
                                                                                     الرخصة</label>
-                                                                                <i
-                                                                                    class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                             </div>
                                                                             <div class="col-12">
                                                                                 <input type="text" id="LicenceNumber"
@@ -577,8 +576,7 @@
                                                                             <div class="col-12">
                                                                                 <label class="form-label">نوع
                                                                                     الرخصة</label>
-                                                                                <i
-                                                                                    class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                             </div>
                                                                             <div class="col-md-12">
                                                                                 <input type="text" id="LicenceType"
@@ -1362,7 +1360,6 @@
                             <div class="Doc-main-container" id="removeDocImg"></div>
                             <div class="Doc-upload-container" id="Doc-upload-container">
 
-
                             </div>
                         </div>
                         <br>
@@ -1488,16 +1485,252 @@
                 "date": '2025-01-09',
                 "phone2": "0987654321",
                 "email": "ABC@gmail.com",
-                "notes": 'الملاحظات الفرع',
+                "Reasons": 'الملاحظات الفرع',
                 "Signature": '../../../images/Demo/signature.svg'
             };
             document.getElementById("EndDate").value = data.date;
             document.getElementById("phone2").value = data.phone2;
             document.getElementById("email").value = data.email;
-            document.querySelector('textarea[name="notes"]').value = data.notes;
+            document.querySelector('textarea[name="Reasons"]').value = data.Reasons;
             document.getElementById('previewSignature').src = data.Signature;
 
         });
+    </script>
+     <script>
+        function StopPermissions(Permitted) {
+
+            if (Permitted) {
+                $('#Stop-Modal').modal('show');
+            } else {
+                console.log("No permissions")
+                return
+            }
+        }
+        function ActivatePermissions(Permitted) {
+
+            if (Permitted) {
+                $('#Stop-Modal').modal('show');
+            } else {
+                console.log("No permissions")
+                return
+            }
+        }
+
+        function DeletePermissions(Permitted) {
+
+            if (Permitted) {
+                $('#Delete-Modal').modal('show');
+            } else {
+                console.log("No permissions")
+                return
+            }
+        }
+        function RestartPermissions(Permitted) {
+
+            if (Permitted) {
+                $('#Delete-Modal').modal('show');
+            } else {
+                console.log("No permissions")
+                return
+            }
+        }
+    </script>
+     <script>
+        let isDeleted = false;
+        let isStoped = false
+        const deleteModalBtn = document.getElementById("DeleteModal-Btn");
+        const StopModalBtn = document.getElementById("StopModal-Btn");
+        const newButton = document.createElement("button");
+        const newButton2 = document.createElement("button");
+
+        newButton.type = "button";
+        newButton.className = "custom-img-btn";
+
+        newButton2.type = "button";
+        newButton2.className = "custom-img-btn";
+
+        window.onload = () => {
+            DeleteState(isDeleted);
+            StopState(isStoped);
+
+        };
+
+        function DeleteState(deleted) {
+            isDeleted = deleted;
+
+            document.getElementById("modalContent").style.display = "block";
+            if (isDeleted) {
+                newButton.id = "RestartModal-Btn";
+                newButton.onclick = () => RestartPermissions(true);
+                newButton.innerHTML = `<img src="../../../images/Static/States/Property 1=recycle.svg" id="modalIcon" />`;
+            } else {
+                newButton.id = "DeleteModal-Btn";
+                newButton.onclick = () => DeletePermissions(true);
+                newButton.innerHTML = `<img src="../../../images/Static/States/delete (2).svg" id="modalIcon" />`;
+            }
+            deleteModalBtn.replaceWith(newButton);
+
+
+            document.getElementById("modalContent").innerHTML = isDeleted
+                ? `
+            <div class="modal-header border-0">
+              <h1 class="modal-title fs-4 m-auto d-flex align-items-start gap-2" id="Delete-ModalLabel">
+                <img src="../../../images/Static/States/Green-recycle.svg" /> تأكيد الارجاع
+              </h1>
+            </div>
+            <div class="modal-body">
+              <p>سيترتب على إرجاع بيانات السائق ادراجه بقائمة السائقين</p>
+            </div>
+            <div class="modal-footer border-0">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6 text-center">
+                    <button type="button" class="btn btn-modal-Save" onclick="DeleteLoad()">موافق</button>
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <button type="button" class="btn btn-Cancel" data-bs-dismiss="modal">إلغاء الأمر</button>
+                  </div>
+                </div>
+              </div>
+            </div>`
+                : `
+            <div class="modal-header border-0">
+              <h1 class="modal-title fs-4 m-auto d-flex align-items-start gap-2" id="Delete-ModalLabel">
+                <img src="../../../images/Static/States/delete (2).svg" /> تأكيد الحذف
+              </h1>
+            </div>
+            <div class="modal-body">
+              <p>لا يمكن حذفه</p>
+            </div>
+            <div class="modal-footer border-0">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6 text-center">
+                    <button type="button" class="btn btn-modal-Save" data-bs-dismiss="modal">موافق</button>
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <button type="button" class="btn btn-Cancel" data-bs-dismiss="modal">إلغاء الأمر</button>
+                  </div>
+                </div>
+              </div>
+            </div>`;
+        }
+        function DeleteLoad() {
+            document.getElementById("modalContent").style.display = "none";
+            document.getElementById("spinner").style.display = "flex";
+
+            setTimeout(() => {
+                
+                const modal = bootstrap.Modal.getInstance(document.getElementById("Delete-Modal"));
+                modal.hide();
+                
+                document.getElementById("spinner").style.display = "none";
+
+                isDeleted = !isDeleted;
+                if (isDeleted) {
+                    newButton.id = "RestartModal-Btn";
+                    newButton.onclick = () => RestartPermissions(true);
+                    newButton.innerHTML = `<img src="../../../images/Static/States/Property 1=recycle.svg" id="modalIcon" />`;
+                } else {
+                    newButton.id = "DeleteModal-Btn";
+                    newButton.onclick = () => DeletePermissions(true);
+                    newButton.innerHTML = `<img src="../../../images/Static/States/delete (2).svg" id="modalIcon" />`;
+                }
+                deleteModalBtn.replaceWith(newButton);
+
+                DeleteState(isDeleted);
+
+            }, 2000);
+        }
+        //  
+        function StopState(Stoped) {
+            isStoped = Stoped;
+
+            document.getElementById("Stop-modal-Content").style.display = "block";
+            if (isStoped) {
+                newButton2.id = "ActivateModal-Btn";
+                newButton2.onclick = () => ActivatePermissions(true);
+                newButton2.innerHTML = `<img src="../../../images/Static/States/Property 1=active.svg" id="modalIcon" />`;
+            } else {
+                newButton2.id = "DeleteModal-Btn";
+                newButton2.onclick = () => StopPermissions(true);
+                newButton2.innerHTML = `<img src="../../../images/Static/States/stop.svg" id="modalIcon" />`;
+            }
+            StopModalBtn.replaceWith(newButton2);
+
+            document.getElementById("Stop-modal-Content").innerHTML = isStoped
+                ? `
+            <div class="modal-header border-0">
+              <h1 class="modal-title fs-4 m-auto d-flex align-items-start gap-2" id="Delete-ModalLabel">
+                <img src="../../../images/Static/States/GreenStop.svg" /> تأكيد التفعيل
+              </h1>
+            </div>
+            <div class="modal-body">
+                <p>سيترتب على تفعيل بيانات السائق ادراجه بقائمة السائقين</p>
+            </div>
+            <div class="modal-footer border-0">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6 text-center">
+                    <button type="button" class="btn btn-modal-Save" onclick="StopLoad()">موافق</button>
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <button type="button" class="btn btn-Cancel" data-bs-dismiss="modal">إلغاء الأمر</button>
+                  </div>
+                </div>
+              </div>
+            </div>`
+                : `
+            <div class="modal-header border-0">
+              <h1 class="modal-title fs-4 m-auto d-flex align-items-start gap-2" id="Delete-ModalLabel">
+                <img src="../../../images/Static/States/RedStop.svg" /> تأكيد الإيقاف
+              </h1>
+            </div>
+            <div class="modal-body">
+              <p> لا يمكن إيقافه </p>
+            </div>
+            <div class="modal-footer border-0">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6 text-center">
+                    <button type="button" class="btn btn-modal-Save" data-bs-dismiss="modal">موافق</button>
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <button type="button" class="btn btn-Cancel" data-bs-dismiss="modal">إلغاء الأمر</button>
+                  </div>
+                </div>
+              </div>
+            </div>`;
+        }
+
+        function StopLoad() {
+            document.getElementById("Stop-modal-Content").style.display = "none";
+            document.getElementById("spinner2").style.display = "flex";
+
+            setTimeout(() => {
+                document.getElementById("spinner2").style.display = "none";
+
+                const modal = bootstrap.Modal.getInstance(document.getElementById("Stop-Modal"));
+                modal.hide();
+
+                isStoped = !isStoped;
+
+                if (isStoped) {
+                    newButton2.id = "ActivateModal-Btn";
+                    newButton2.onclick = () => ActivatePermissions(true);
+                    newButton2.innerHTML = `<img src="../../../images/Static/States/Property 1=active.svg" id="modalIcon" />`;
+                } else {
+                    newButton2.id = "DeleteModal-Btn";
+                    newButton2.onclick = () => StopPermissions(true);
+                    newButton2.innerHTML = `<img src="../../../images/Static/States/stop.svg" id="modalIcon" />`;
+                }
+                StopModalBtn.replaceWith(newButton2);
+
+                StopState(isStoped);
+
+            }, 2000);
+        }
+
     </script>
 </body>
 

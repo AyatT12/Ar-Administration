@@ -370,10 +370,10 @@
                                             <div class="col-md-6 save-col">
                                                 <button type="submit" class="custom-img-btn"> <img
                                                         src="../../../images/Static/States/save.svg" /></button>
+                                                 <button type="button" class="custom-img-btn"> <img
+                                                        src="../../../images/Static/States/stop.svg"  onclick="StopPermissions(true)"  id="StopModal-Btn"/></button>
                                                 <button type="button" class="custom-img-btn"> <img
-                                                        src="../../../images/Static/States/stop.svg" /></button>
-                                                <button type="button" class="custom-img-btn"> <img
-                                                        src="../../../images/Static/States/delete (2).svg" /></button>
+                                                        src="../../../images/Static/States/delete (2).svg" onclick="RestartPermissions(true)" id="DeleteModal-Btn"/></button>
                                                 <button type="button" class="custom-img-btn"><a href="owners.html"><img
                                                             class="Chevron"
                                                             src="../../../images/Static/States/Chevron_Left.svg" /></a></button>
@@ -1207,6 +1207,36 @@
                 </div>
             </aside>
         </div>
+         <!-- delete modal -->
+        <div class="modal fade" id="Delete-Modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="Delete-ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" style="border: 1px solid var(--main-color);" ">
+                   <div class=" content" id="modalContent">
+
+                </div>
+                <!-- Hidden spinner  -->
+                <div class="modal-body text-center" id="spinner" style="display: none;">
+                    <span class="State-Modal-loader"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Stop  modal -->
+    <div class="modal fade" id="Stop-Modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="Stop-ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border: 1px solid var(--main-color);" ">
+            <div class=" content" id="Stop-modal-Content">
+
+            </div>
+            <!-- Hidden spinner  -->
+            <div class="modal-body text-center" id="spinner2" style="display: none;">
+                <span class="State-Modal-loader"></span>
+            </div>
+        </div>
+    </div>
+    </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -1238,6 +1268,242 @@
                 });
             }
         });
+    </script>
+     <script>
+        function StopPermissions(Permitted) {
+
+            if (Permitted) {
+                $('#Stop-Modal').modal('show');
+            } else {
+                console.log("No permissions")
+                return
+            }
+        }
+        function ActivatePermissions(Permitted) {
+
+            if (Permitted) {
+                $('#Stop-Modal').modal('show');
+            } else {
+                console.log("No permissions")
+                return
+            }
+        }
+
+        function DeletePermissions(Permitted) {
+
+            if (Permitted) {
+                $('#Delete-Modal').modal('show');
+            } else {
+                console.log("No permissions")
+                return
+            }
+        }
+        function RestartPermissions(Permitted) {
+
+            if (Permitted) {
+                $('#Delete-Modal').modal('show');
+            } else {
+                console.log("No permissions")
+                return
+            }
+        }
+    </script>
+    <script>
+        let isDeleted = false;
+        let isStoped = false
+        const deleteModalBtn = document.getElementById("DeleteModal-Btn");
+        const StopModalBtn = document.getElementById("StopModal-Btn");
+        const newButton = document.createElement("button");
+        const newButton2 = document.createElement("button");
+
+        newButton.type = "button";
+        newButton.className = "custom-img-btn";
+
+        newButton2.type = "button";
+        newButton2.className = "custom-img-btn";
+
+        window.onload = () => {
+            DeleteState(isDeleted);
+            StopState(isStoped);
+
+        };
+
+        function DeleteState(deleted) {
+            isDeleted = deleted;
+
+            document.getElementById("modalContent").style.display = "block";
+            if (isDeleted) {
+                newButton.id = "RestartModal-Btn";
+                newButton.onclick = () => RestartPermissions(true);
+                newButton.innerHTML = `<img src="../../../images/Static/States/Property 1=recycle.svg" id="modalIcon" />`;
+            } else {
+                newButton.id = "DeleteModal-Btn";
+                newButton.onclick = () => DeletePermissions(true);
+                newButton.innerHTML = `<img src="../../../images/Static/States/delete (2).svg" id="modalIcon" />`;
+            }
+            deleteModalBtn.replaceWith(newButton);
+
+
+            document.getElementById("modalContent").innerHTML = isDeleted
+                ? `
+            <div class="modal-header border-0">
+              <h1 class="modal-title fs-4 m-auto d-flex align-items-start gap-2" id="Delete-ModalLabel">
+                <img src="../../../images/Static/States/Green-recycle.svg" /> تأكيد الارجاع
+              </h1>
+            </div>
+            <div class="modal-body">
+              <p>سيترتب على إرجاع بيانات المالك إدراجه بقائمة الملاك وإرجاع جميع الاجراءات المالية والإدراية والعقود</p>
+            </div>
+            <div class="modal-footer border-0">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6 text-center">
+                    <button type="button" class="btn btn-modal-Save" onclick="DeleteLoad()">موافق</button>
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <button type="button" class="btn btn-Cancel" data-bs-dismiss="modal">إلغاء الأمر</button>
+                  </div>
+                </div>
+              </div>
+            </div>`
+                : `
+            <div class="modal-header border-0">
+              <h1 class="modal-title fs-4 m-auto d-flex align-items-start gap-2" id="Delete-ModalLabel">
+                <img src="../../../images/Static/States/delete (2).svg" /> تأكيد الحذف
+              </h1>
+            </div>
+            <div class="modal-body">
+              <p>سيترتب على حذف بيانات المالك حذفه من قائمة الملاك مع الاحتفاظ بجميع الاجراءات المالية والإدراية والعقود</p>
+            </div>
+            <div class="modal-footer border-0">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6 text-center">
+                    <button type="button" class="btn btn-modal-Save" onclick="DeleteLoad()">موافق</button>
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <button type="button" class="btn btn-Cancel" data-bs-dismiss="modal">إلغاء الأمر</button>
+                  </div>
+                </div>
+              </div>
+            </div>`;
+        }
+        function DeleteLoad() {
+            document.getElementById("modalContent").style.display = "none";
+            document.getElementById("spinner").style.display = "flex";
+
+            setTimeout(() => {
+                
+                const modal = bootstrap.Modal.getInstance(document.getElementById("Delete-Modal"));
+                modal.hide();
+                
+                document.getElementById("spinner").style.display = "none";
+
+                isDeleted = !isDeleted;
+                if (isDeleted) {
+                    newButton.id = "RestartModal-Btn";
+                    newButton.onclick = () => RestartPermissions(true);
+                    newButton.innerHTML = `<img src="../../../images/Static/States/Property 1=recycle.svg" id="modalIcon" />`;
+                } else {
+                    newButton.id = "DeleteModal-Btn";
+                    newButton.onclick = () => DeletePermissions(true);
+                    newButton.innerHTML = `<img src="../../../images/Static/States/delete (2).svg" id="modalIcon" />`;
+                }
+                deleteModalBtn.replaceWith(newButton);
+
+                DeleteState(isDeleted);
+
+            }, 2000);
+        }
+        //  
+        function StopState(Stoped) {
+            isStoped = Stoped;
+
+            document.getElementById("Stop-modal-Content").style.display = "block";
+            if (isStoped) {
+                newButton2.id = "ActivateModal-Btn";
+                newButton2.onclick = () => ActivatePermissions(true);
+                newButton2.innerHTML = `<img src="../../../images/Static/States/Property 1=active.svg" id="modalIcon" />`;
+            } else {
+                newButton2.id = "DeleteModal-Btn";
+                newButton2.onclick = () => StopPermissions(true);
+                newButton2.innerHTML = `<img src="../../../images/Static/States/stop.svg" id="modalIcon" />`;
+            }
+            StopModalBtn.replaceWith(newButton2);
+
+            document.getElementById("Stop-modal-Content").innerHTML = isStoped
+                ? `
+            <div class="modal-header border-0">
+              <h1 class="modal-title fs-4 m-auto d-flex align-items-start gap-2" id="Delete-ModalLabel">
+                <img src="../../../images/Static/States/GreenStop.svg" /> تأكيد التفعيل
+              </h1>
+            </div>
+            <div class="modal-body">
+              <p> سيترتب على تفعيل بيانات المالك تفعيل جميع السيارات المرتبطة بالمالك </p>
+            </div>
+            <div class="modal-footer border-0">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6 text-center">
+                    <button type="button" class="btn btn-modal-Save" onclick="StopLoad()">موافق</button>
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <button type="button" class="btn btn-Cancel" data-bs-dismiss="modal">إلغاء الأمر</button>
+                  </div>
+                </div>
+              </div>
+            </div>`
+                : `
+            <div class="modal-header border-0">
+              <h1 class="modal-title fs-4 m-auto d-flex align-items-start gap-2" id="Delete-ModalLabel">
+                <img src="../../../images/Static/States/RedStop.svg" /> تأكيد الإيقاف
+              </h1>
+            </div>
+            <div class="modal-body">
+              <p> سيترتب على إيقاف بيانات المالك ايقاف تأجير جميع السيارات المرتبطة بالمالك </p>
+            </div>
+            <div class="modal-footer border-0">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6 text-center">
+                    <button type="button" class="btn btn-modal-Save" onclick="StopLoad()">موافق</button>
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <button type="button" class="btn btn-Cancel" data-bs-dismiss="modal">إلغاء الأمر</button>
+                  </div>
+                </div>
+              </div>
+            </div>`;
+        }
+
+        function StopLoad() {
+            document.getElementById("Stop-modal-Content").style.display = "none";
+            document.getElementById("spinner2").style.display = "flex";
+
+            setTimeout(() => {
+                document.getElementById("spinner2").style.display = "none";
+
+                const modal = bootstrap.Modal.getInstance(document.getElementById("Stop-Modal"));
+                modal.hide();
+
+                isStoped = !isStoped;
+
+                if (isStoped) {
+                    newButton2.id = "ActivateModal-Btn";
+                    newButton2.onclick = () => ActivatePermissions(true);
+                    newButton2.innerHTML = `<img src="../../../images/Static/States/Property 1=active.svg" id="modalIcon" />`;
+                } else {
+                    newButton2.id = "DeleteModal-Btn";
+                    newButton2.onclick = () => StopPermissions(true);
+                    newButton2.innerHTML = `<img src="../../../images/Static/States/stop.svg" id="modalIcon" />`;
+                }
+                StopModalBtn.replaceWith(newButton2);
+
+                StopState(isStoped);
+
+            }, 2000);
+        }
+
     </script>
 </body>
 
