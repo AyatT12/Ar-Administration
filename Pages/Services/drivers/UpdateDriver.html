@@ -104,8 +104,7 @@
 
                             <div id="company-items" class="collapse">
                                 <div class="bg-white gap-3 collapse-inner rounded">
-                                    <a class="collapse-item"
-                                        href="../../../Pages/company/Branches/Branches.html">
+                                    <a class="collapse-item" href="../../../Pages/company/Branches/Branches.html">
                                         الفروع <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                     <a class="collapse-item" href="../../../Pages/company/owners/owners.html"> الملاك <i
                                             class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
@@ -389,7 +388,7 @@
                                             <div class="accordion inputs-accordion">
                                                 <div class=" inputs-accordion-item">
                                                     <div class=" inputs-accordion-item-header">
-                                                        <span class="accordion-item-header-title"> بيانات شخصية
+                                                        <span class="accordion-item-header-title"> البيانات
                                                         </span>
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                                             viewBox="0 0 24 24" fill="none" stroke="#666666"
@@ -457,20 +456,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-auto">
-                                                                        <label for="email" class="form-label"> البريد
-                                                                            الإلكتروني <i
-                                                                                class="fa-solid fa-star-of-life RequirdStar"></i></label>
-                                                                        <input type="email" id="email"
-                                                                            class="form-control inputs english-input"
-                                                                            name="email" required>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
+                                                                <div class="row justify-content-between">
                                                                     <div class="col-md-auto input-group-col">
                                                                         <label for="phone2" class="form-label"> الجوال
                                                                             <i
@@ -493,11 +479,20 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-
-
                                                                     </div>
-
-
+                                                                    <div class="col-md-6">
+                                                                        <label for="email" class="form-label"> البريد
+                                                                            الإلكتروني <i
+                                                                                class="fa-solid fa-star-of-life RequirdStar"></i></label>
+                                                                        <input type="email" id="email"
+                                                                            class="form-control inputs english-input"
+                                                                            name="email" required>
+                                                                        <div class="invaild">
+                                                                            <div class="invalid-feedback">
+                                                                                الحقل مطلوب
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                                 <div class="row align-items-center g-2">
                                                                     <div class="col ">
@@ -515,21 +510,7 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-md-auto">
-                                                                        <div class="row align-items-center">
-                                                                            <div class="col-auto">
-                                                                                <button type="button"
-                                                                                    class="custom-img-btn"><img
-                                                                                        src="../../../images/Static/signature/PenIcon.svg"
-                                                                                        data-bs-toggle="modal"
-                                                                                        href="#signature-modal" /></button>
-                                                                            </div>
-                                                                            <div class="col">
-                                                                                <img src="../../../images/Demo/signature.svg"
-                                                                                    id="previewSignature">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -550,81 +531,96 @@
                                                         <div class="accordion-item-description">
                                                             <hr class="accordion-items-hr">
                                                             <div class="container-fluid data-scroll-container">
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <div class="row">
-                                                                            <div class="col-12">
-                                                                                <label class="form-label">رقم
-                                                                                    الرخصة</label>
-                                                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                            </div>
-                                                                            <div class="col-12">
-                                                                                <input type="text" id="LicenceNumber"
-                                                                                    class="form-control inputs "
-                                                                                    name="LicenceNumber"
-                                                                                    value="1012899136" required>
-                                                                                <div class="invaild">
-                                                                                    <div class="invalid-feedback">
-                                                                                        الحقل مطلوب
-                                                                                    </div>
-                                                                                </div>
+                                                                <div class="row justify-content-between">
+                                                                    <div class="col-md-5">
+                                                                        <label for="LicenceNumber" class="form-label">
+                                                                            رقم الرخصة <i
+                                                                                class="fa-solid fa-star-of-life RequirdStar"></i></label>
+                                                                        <input type="text" id="LicenceNumber"
+                                                                            class="form-control inputs arabic-input"
+                                                                            name="LicenceNumber" value="1012899136"
+                                                                            required>
+                                                                        <div class="invaild">
+                                                                            <div class="invalid-feedback">
+                                                                                الحقل مطلوب
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-6">
-                                                                        <div class="row">
-                                                                            <div class="col-12">
-                                                                                <label class="form-label">نوع
-                                                                                    الرخصة</label>
-                                                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                            </div>
-                                                                            <div class="col-md-12">
-                                                                                <input type="text" id="LicenceType"
-                                                                                    class="form-control inputs "
-                                                                                    name="LicenceType" value="خاصة"
+                                                                        <div class="row g-2">
+                                                                            <div class="col">
+                                                                                <label for="LicenceType"
+                                                                                    class="form-label">
+                                                                                    نوع الرخصة <i
+                                                                                        class="fa-solid fa-star-of-life RequirdStar"></i></label>
+                                                                                <select
+                                                                                    class="form-select select-style "
+                                                                                    name="LicenceType" id="LicenceType"
                                                                                     required>
+                                                                                    <option> </option>
+                                                                                    <option value="" selected> خاصة
+                                                                                    </option>
+                                                                                    <option value=""> عامة </option>
+                                                                                </select>
                                                                                 <div class="invaild">
                                                                                     <div class="invalid-feedback">
                                                                                         الحقل مطلوب
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
+                                                                            <div class="col-auto d-none d-md-block "
+                                                                                style="width: 58px;">
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <div class="row justify-content-between">
+                                                                    <div class="col-md-5">
+                                                                        <label for="Date"
+                                                                            class="form-label">تاريخها</label>
+                                                                        <input type="date" id="Date"
+                                                                            class="form-control inputs custom-date-input"
+                                                                            name="Date" required>
+                                                                        <div class="invaild">
+                                                                            <div class="invalid-feedback">
+                                                                                الحقل مطلوب
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="row align-items-center g-2">
+                                                                            <div class="col">
+                                                                                <label for="EndDate"
+                                                                                    class="form-label">نهايتها <i
+                                                                                        class="fa-solid fa-star-of-life RequirdStar"></i></label>
+                                                                                <input type="date" id="EndDate"
+                                                                                    class="form-control inputs custom-date-input"
+                                                                                    name="EndDate" required>
+                                                                                <div class="invaild">
+                                                                                    <div class="invalid-feedback">
+                                                                                        الحقل مطلوب
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="col-auto centered-icon">
+                                                                                <button type="button"
+                                                                                    class="border-0 bg-transparent Upload-Photo-Button"
+                                                                                    data-bs-toggle="modal"
+                                                                                    href="#Doc-photo-modal"
+                                                                                    data-active-icon="../../../images/Static/Driver/Licence Photo Icon.svg"
+                                                                                    data-initial-icon="../../../images/Static/Driver/nonActive Licence photo icon.svg">
+                                                                                    <img src="../../../images/Static/Driver/nonActive Licence photo icon.svg"
+                                                                                        style="width: 50px;">
+                                                                                </button>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <label for="LicenceDate"
-                                                                            class="form-label">تاريخها <i
-                                                                                class="fa-solid fa-star-of-life RequirdStar"></i></label>
-                                                                        <input type="date" id="LicenceDate"
-                                                                            class="form-control inputs custom-date-input"
-                                                                            name="LicenceDate" required>
-                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <label for="LicenceEndDate"
-                                                                            class="form-label">نهايتها <i
-                                                                                class="fa-solid fa-star-of-life RequirdStar"></i></label>
-                                                                        <input type="date" id="LicenceEndDate"
-                                                                            class="form-control inputs custom-date-input"
-                                                                            name="LicenceEndDate" required>
-                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row align-items-center mt-3">
-                                                                    <div class="col-md-6">
-                                                                        <button type="button"
-                                                                            class="border-0 bg-transparent Upload-Photo-Button"
-                                                                            data-bs-toggle="modal"
-                                                                            href="#Doc-photo-modal"
-                                                                            data-active-icon="../../../images/Static/Driver/Licence Photo Icon.svg"
-                                                                            data-initial-icon="../../../images/Static/Driver/nonActive Licence photo icon.svg">
-                                                                            <img src="../../../images/Static/Driver/nonActive Licence photo icon.svg"
-                                                                                style="width: 50px;">
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1394,79 +1390,32 @@
         <div class="modal fade" id="Delete-Modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="Delete-ModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" style="border: 1px solid var(--main-color);">
+                    <div class=" content" id="modalContent">
+
+                    </div>
+                    <!-- Hidden spinner  -->
+                    <div class="modal-body text-center" id="spinner" style="display: none;">
+                        <span class="State-Modal-loader"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Stop  modal -->
+        <div class="modal fade" id="Stop-Modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="Stop-ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content" style="border: 1px solid var(--main-color);" ">
-                   <div class=" content" id="modalContent">
+            <div class=" content" id="Stop-modal-Content">
 
                 </div>
                 <!-- Hidden spinner  -->
-                <div class="modal-body text-center" id="spinner" style="display: none;">
+                <div class="modal-body text-center" id="spinner2" style="display: none;">
                     <span class="State-Modal-loader"></span>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Stop  modal -->
-    <div class="modal fade" id="Stop-Modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="Stop-ModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content" style="border: 1px solid var(--main-color);" ">
-            <div class=" content" id="Stop-modal-Content">
-
-            </div>
-            <!-- Hidden spinner  -->
-            <div class="modal-body text-center" id="spinner2" style="display: none;">
-                <span class="State-Modal-loader"></span>
-            </div>
-        </div>
-    </div>
-    </div>
-    <!-- signature modal -->
-    <div class="modal fade" id="signature-modal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered d-flex justify-content-center">
-            <div class="modal-content signature-modal-content p-3">
-                <div class="modal-header p-1 border-0 justify-content-end">
-                        <button type="button" class="btn-close m-0 p-1" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    </div>
-                <div class="modal-body Signature-modal-body">
-                    <div class="SignatureCard">
-                        <div class="image-main-container" id="removeSignatureImg"></div>
-                        <div class="upload-container">
-
-
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-3">
-                            <div class="sinature-Btn-Card p-2">
-                                <img src="../../../images/Static/signature/save.svg" class="w-100" id="save">
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="sinature-Btn-Card p-2">
-                                <img src="../../../images/Static/signature/Frame.svg" class="w-100" id="clear">
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="sinature-Btn-Card p-2">
-                                <img src="../../../images/Static/signature/file-signature_9795523 1.svg" class="w-100"
-                                    id="WriteSignature">
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="sinature-Btn-Card p-2">
-                                <img src="../../../images/Static/signature/Pic.svg" class="w-100"
-                                    id="UploadSigntaurePic">
-                                <input type="file" id="imageUpload" accept="image/*" style="display: none;">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -1501,7 +1450,7 @@
 
         });
     </script>
-     <script>
+    <script>
         function StopPermissions(Permitted) {
 
             if (Permitted) {
@@ -1540,7 +1489,7 @@
             }
         }
     </script>
-     <script>
+    <script>
         let isDeleted = false;
         let isStoped = false
         const deleteModalBtn = document.getElementById("DeleteModal-Btn");
@@ -1625,10 +1574,10 @@
             document.getElementById("spinner").style.display = "flex";
 
             setTimeout(() => {
-                
+
                 const modal = bootstrap.Modal.getInstance(document.getElementById("Delete-Modal"));
                 modal.hide();
-                
+
                 document.getElementById("spinner").style.display = "none";
 
                 isDeleted = !isDeleted;

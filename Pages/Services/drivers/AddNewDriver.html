@@ -365,7 +365,7 @@
                                     <div class="col-lg-12 d-flex flex-column h-100">
                                         <div class="row my-2">
                                             <div class="col-md-6">
-                                                <h3>اضافة سائق جديد </h3>
+                                                <h3>اضافة سائق  </h3>
                                             </div>
                                             <div class="col-md-6 save-col">
                                                 <button type="submit" class="custom-img-btn"> <img
@@ -381,7 +381,7 @@
                                                 <div class=" inputs-accordion-item">
                                                     <div class=" inputs-accordion-item-header">
                                                         <span class="accordion-item-header-title"> <i
-                                                                class="fa-solid fa-check data-check"></i> بيانات شخصية
+                                                                class="fa-solid fa-check data-check"></i> البيانات 
                                                         </span>
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                                             viewBox="0 0 24 24" fill="none" stroke="#666666"
@@ -425,16 +425,26 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-6 col-lg-4">
-                                                                        <label for="BirthDate"
-                                                                            class="form-label"> تاريخ الميلاد   <i class="fa-solid fa-star-of-life RequirdStar"></i></label>
-                                                                        <input type="date" id="BirthDate"
-                                                                            class="form-control inputs custom-date-input"
-                                                                            name="BirthDate" required>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
+                                                                        <div class="row align-items-center flex-nowrap g-2">
+                                                                            <div class="col">
+                                                                                <label for="BirthDate" class="form-label"> تاريخ الميلاد <i
+                                                                                        class="fa-solid fa-star-of-life RequirdStar"></i></label>
+                                                                                <input type="date" id="BirthDate" class="form-control inputs custom-date-input" name="BirthDate" required>
+                                                                                <div class="invaild">
+                                                                                    <div class="invalid-feedback">
+                                                                                        الحقل مطلوب
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-auto centered-icon">
+                                                                                <button type="button" class="border-0 bg-transparent Upload-Photo-Button" data-bs-toggle="modal"
+                                                                                    href="#Doc-photo-modal" data-active-icon="../../../images/Static/Driver/ID photo icon.svg"
+                                                                                    data-initial-icon="../../../images/Static/Driver/nonActive ID photo icon.svg">
+                                                                                    <img src="../../../images/Static/Driver/nonActive ID photo icon.svg" style="width: 50px;">
+                                                                                </button>
                                                                             </div>
                                                                         </div>
+                                                                    
                                                                     </div>
                                                                 </div>
                                                             
@@ -466,8 +476,8 @@
                                                                     </div>
 
                                                                 </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
+                                                                <div class="row justify-content-between">
+                                                                    <div class="col-md-auto input-group-col">
                                                                         <label for="phone2" class="form-label"> الجوال
                                                                             <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                         </label>
@@ -508,11 +518,15 @@
                                                                 
                                                                 <div class="row align-items-center ">
                                                                     <div class="col-md-6">
-                                                                        <label for="Nationlity"
-                                                                            class="form-label">الجنسية  <i class="fa-solid fa-star-of-life RequirdStar"></i></label>
-                                                                        <input type="text" id="Nationlity"
-                                                                            class="form-control inputs "
-                                                                            name="Nationlity" required>
+                                                                        <label for="Nationlity" class="form-label" >الجنسية  <i class="fa-solid fa-star-of-life RequirdStar"></i></label>
+                                                                        <input type="text" id="Nationlity" class="form-control inputs "name="Nationlity"  list="datalistOptions" required>
+                                                                        <datalist id="datalistOptions">
+                                                                            <option value="سعودي">
+                                                                            <option value="مصري">
+                                                                            <option value="سوري">
+                                                                            <option value="هندي">
+                                                                            <option value="باكستاني">
+                                                                        </datalist>
                                                                         <div class="invaild">
                                                                             <div class="invalid-feedback">
                                                                                 الحقل مطلوب
@@ -537,30 +551,6 @@
                                                                         </div>
                                                                         
                                                                         </div>
-                                                                        <div class="row my-3 g-3">
-                                                                    <div class="col-md-6">
-                                                                         <button type="button"
-                                                                            class="border-0 bg-transparent Upload-Photo-Button"
-                                                                            data-bs-toggle="modal"
-                                                                            href="#Doc-photo-modal"
-                                                                            data-active-icon="../../../images/Static/Driver/ID photo icon.svg"
-                                                                            data-initial-icon="../../../images/Static/Driver/nonActive ID photo icon.svg">
-                                                                            <img src="../../../images/Static/Driver/nonActive ID photo icon.svg"
-                                                                                style="width: 50px;">
-                                                                        </button>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <div class="row align-items-center">
-                                                                            <div class="col-auto">
-                                                                                <button type="button" class="custom-img-btn"><img src="../../../images/Static/signature/PenIcon.svg" data-bs-toggle="modal" href="#signature-modal"  /></button>
-                                                                            </div>
-                                                                            <div class="col">
-                                                                                <img src="../../../images/Demo/signature.svg"
-                                                                                    id="previewSignature">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
                                                                 <div class="row ">
                                                                     <div class="col ">
                                                                         <div class="row align-items-center ">
@@ -599,8 +589,8 @@
                                                         <div class="accordion-item-description">
                                                             <hr class="accordion-items-hr">
                                                             <div class="container-fluid data-scroll-container">
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
+                                                                <div class="row justify-content-between">
+                                                                    <div class="col-md-5">
                                                                         <label for="LicenceNumber"
                                                                             class="form-label"> رقم الرخصة   <i class="fa-solid fa-star-of-life RequirdStar"></i></label>
                                                                         <input type="text" id="LicenceNumber"
@@ -612,8 +602,10 @@
                                                                             </div>
                                                                         </div>
                                                                     </div> 
-                                                                    <div class="col-md-6 ">
-                                                                        <label for="LicenceType" class="form-label">
+                                                                    <div class="col-md-6">
+                                                                       <div class="row g-2">
+                                                                        <div class="col">
+                                                                             <label for="LicenceType" class="form-label">
                                                                             نوع الرخصة   <i class="fa-solid fa-star-of-life RequirdStar"></i></label>
                                                                         <select
                                                                             class="form-select select-style "
@@ -627,12 +619,17 @@
                                                                                 الحقل مطلوب
                                                                             </div>
                                                                         </div>
+                                                                        </div>
+                                                                        <div class="col-auto d-none d-md-block " style="width: 58px;">
+                                                                            
+                                                                        </div>
+                                                                       </div>
                                                                     </div>
                                                                    
                                                                 </div>
                                                             
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
+                                                                <div class="row justify-content-between">
+                                                                    <div class="col-md-5">
                                                                         <label for="Date"
                                                                             class="form-label">تاريخها</label>
                                                                         <input type="date" id="Date"
@@ -645,7 +642,9 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-6">
-                                                                        <label for="EndDate"
+                                                                       <div class="row align-items-center g-2">
+                                                                        <div class="col">
+                                                                             <label for="EndDate"
                                                                             class="form-label">نهايتها  <i class="fa-solid fa-star-of-life RequirdStar"></i></label>
                                                                         <input type="date" id="EndDate"
                                                                             class="form-control inputs custom-date-input"
@@ -655,12 +654,10 @@
                                                                                 الحقل مطلوب
                                                                             </div>
                                                                         </div>
-                                                                    </div>
-                                                                </div>
-                                                                
-                                                                <div class="row ">
-                                                                    <div class="col-md-6">
-                                                                        <button type="button"
+                                                                        
+                                                                        </div>
+                                                                        <div class="col-auto centered-icon">
+                                                                             <button type="button"
                                                                             class="border-0 bg-transparent Upload-Photo-Button"
                                                                             data-bs-toggle="modal"
                                                                             href="#Doc-photo-modal"
@@ -668,9 +665,12 @@
                                                                             data-initial-icon="../../../images/Static/Driver/nonActive Licence photo icon.svg">
                                                                             <img src="../../../images/Static/Driver/nonActive Licence photo icon.svg"
                                                                                 style="width: 50px;">
-                                                                        </button>                                              
-                                                                  </div>
+                                                                        </button>   
+                                                                        </div>
+                                                                       </div>
+                                                                    </div>
                                                                 </div>
+                                                               
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1435,48 +1435,7 @@
                 </div>
             </div>
         </div>
-    <!-- signature modal -->
-    <div class="modal fade" id="signature-modal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered d-flex justify-content-center">
-            <div class="modal-content signature-modal-content p-3">
-                <div class="modal-body Signature-modal-body">
-                    <div class="SignatureCard">
-                        <div class="image-main-container" id="removeSignatureImg"></div>
-                        <div class="upload-container">
-
-
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-3">
-                            <div class="sinature-Btn-Card p-2">
-                                <img src="../../../images/Static/signature/save.svg" class="w-100" id="save">
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="sinature-Btn-Card p-2">
-                                <img src="../../../images/Static/signature/Frame.svg" class="w-100" id="clear">
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="sinature-Btn-Card p-2">
-                                <img src="../../../images/Static/signature/file-signature_9795523 1.svg" class="w-100"
-                                    id="WriteSignature">
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="sinature-Btn-Card p-2">
-                                <img src="../../../images/Static/signature/Pic.svg" class="w-100"
-                                    id="UploadSigntaurePic">
-                                <input type="file" id="imageUpload" accept="image/*" style="display: none;">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+   
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -1490,7 +1449,6 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/heic2any/dist/heic2any.min.js"></script>
     <script src="../../../scripts/Scripts.js"></script>
-    <script src="../../../scripts/signature.js"></script>
     <script src="../../../scripts/uploadPic2.js"></script>
 
 </body>
