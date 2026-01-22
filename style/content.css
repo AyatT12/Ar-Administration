@@ -170,54 +170,70 @@ html {
   background: var(--main-color);
   color: white;
 }
+
 /* stop re-active modals  */
 .btn-modal-Save {
-    width: 100%;
-    background-color: var(--main-color);
-    border: 2px solid var(--main-color);
-    color: white;
+  width: 100%;
+  background-color: var(--main-color);
+  border: 2px solid var(--main-color);
+  color: white;
 }
-.btn-Cancel {
-    width: 100%;
-    border: 2px solid var(--main-color);
-    background-color: white;
-    color: var(--main-color);
-}
-.btn-Cancel:hover {
-    background-color: #FFB666;
-    color: white;
-}
-.btn-modal-Save:hover {
-    background-color: var(--main-color);
-    border: 2px solid var(--main-color);
-    color: white;
-}
-.State-Modal-loader {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: inline-block;
-    position: relative;
-    border: 10px solid;
-    border-color: rgba(255, 150, 38, 0.15) rgba(255, 150, 38, 0.25) rgba(255, 150, 38, 0.35) rgba(255, 150, 38, 1);
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-}
-@keyframes rotation {
-    0% {
-        transform: rotate(0deg);
-    }
 
-    100% {
-        transform: rotate(360deg);
-    }
+.btn-Cancel {
+  width: 100%;
+  border: 2px solid var(--main-color);
+  background-color: white;
+  color: var(--main-color);
 }
-#spinner ,#spinner2 {
-    height: 246px;
+
+.btn-Cancel:hover {
+  background-color: #FFB666;
+  color: white;
+}
+
+.btn-modal-Save:hover {
+  background-color: var(--main-color);
+  border: 2px solid var(--main-color);
+  color: white;
+}
+
+.State-Modal-loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 10px solid;
+  border-color: rgba(255, 150, 38, 0.15) rgba(255, 150, 38, 0.25) rgba(255, 150, 38, 0.35) rgba(255, 150, 38, 1);
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+/* Upload image icon */
+.centered-icon{
+    height: 23px;
+    align-items: flex-start;
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#spinner,
+#spinner2 {
+  height: 246px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* general style media */
 @media (max-width: 1399.98px) {
   .main-container {
@@ -228,6 +244,11 @@ html {
 @media (max-width: 768px) {
   .InputsPageContainer {
     max-width: 780px;
+  }
+}
+@media (max-width: 992px) {
+  .InputsPageContainer {
+    max-width: 820px;
   }
 }
 
@@ -731,12 +752,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   text-align: center;
   font-size: 10px;
 }
-.input-group{
-    min-width: 220px;
+
+.input-group {
+  min-width: 220px;
 }
-.input-group-col{
+
+.input-group-col {
   min-width: 33%;
 }
+
 #phone1,
 #phone2,
 #phone {
@@ -745,7 +769,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 input[type="email"] {
-  max-width: 335px;
+  /* max-width: 335px; */
   min-width: 333px;
 }
 
@@ -1747,6 +1771,9 @@ input[type="email"] {
   overflow: auto;
 }
 
+.AccountEmail{
+  max-width: 335px;
+}
 .AccountContant::-webkit-scrollbar {
   width: 7px !important;
   height: 5px;
@@ -1903,14 +1930,17 @@ input[type="email"] {
 .data-card {
   text-align: start;
 }
-#Password-hint{
+
+#Password-hint {
   min-width: 400px;
 }
+
 @media (max-width: 1199px) {
   .profile-section {
     border-right: none;
+  }
 }
-}
+
 @media screen and (min-width: 768px) and (orientation: portrait) {
   .header-card {
     display: block;
@@ -1922,14 +1952,17 @@ input[type="email"] {
     display: block;
   }
 }
+
 @media (max-width: 1200px) {
-   .AccountEmail{
+  .AccountEmail {
     min-width: auto !important;
-   }
-   #Password-hint{
+  }
+
+  #Password-hint {
     min-width: auto;
-   }
+  }
 }
+
 /* ================================================================================  reports  ======================================================================================= */
 /* ================================================================================================================================================================================== */
 .DailyReport-icon {
@@ -2330,6 +2363,11 @@ input[type="email"] {
   margin-top: 7px;
   resize: none;
   width: 690px;
+}
+
+.was-validated textarea.form-control:valid,
+textarea.form-control.is-valid {
+  padding-right: 12px;
 }
 
 /* system permission */
@@ -3252,5 +3290,4 @@ input[type="email"] {
 .modal-content {
   border: 3px solid #FF9626;
   border-radius: 10px;
-
 }
