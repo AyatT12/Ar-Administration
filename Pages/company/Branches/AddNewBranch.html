@@ -607,7 +607,7 @@
                                                             <hr class="accordion-items-hr">
                                                             <div class="container-fluid data-scroll-container">
                                                                 <div class="row">
-                                                                    <div class="col-md-6" style="position: relative;">
+                                                                    <div class="col-md-6">
                                                                         <label for="City-Area"
                                                                             class="form-label">المنطقة / المدينة
                                                                             <i
@@ -617,8 +617,8 @@
                                                                             class="form-control inputs" name="City-Area"
                                                                             maxlength="50" required>
                                                                         <div id="autocomplete-Cities"
-                                                                            class="autocomplete-items autocomplete-Cities">
-                                                                        </div>
+                                                                            class="autocomplete-items"></div>
+
                                                                         <div class="invaild">
                                                                             <div class="invalid-feedback">
                                                                                 الحقل مطلوب
@@ -1402,47 +1402,170 @@
         };
 
         $(document).ready(function () {
-            function setupAutocomplete(inputId, list, dataList) {
-                $("#" + inputId).on("input", function () {
-                    const value = this.value.toLowerCase();
-                    const autocompleteList = $("#" + list);
-                    autocompleteList.empty();
-                    if (value) {
-                        let matchesFound = false;
-                        dataList.forEach(word => {
-                            if (word.toLowerCase().indexOf(value) > -1) {
-                                autocompleteList.append("<div>" + word + "</div>");
-                                matchesFound = true;
-                            }
+        function setupAutocomplete(inputId, list, dataList) {
+            const $input = $("#" + inputId);
+            const $list = $("#" + list);
+            
+            const $arrow = $('<div class="autocomplete-arrow"></div>');
+            $('body').append($arrow);
+            
+            function detectDirection() {
+                const bodyStyle = window.getComputedStyle(document.body);
+                if (bodyStyle.direction === 'rtl') return 'rtl';
+                
+                const htmlStyle = window.getComputedStyle(document.documentElement);
+                if (htmlStyle.direction === 'rtl') return 'rtl';
+                
+                if ($('body').hasClass('rtl') || $('html').hasClass('rtl')) return 'rtl';
+                
+                if (bodyStyle.textAlign === 'right' || htmlStyle.textAlign === 'right') return 'rtl';
+                
+
+                return 'ltr';
+            }
+            
+            const pageDirection = detectDirection();
+            const isRTL = pageDirection === 'rtl';
+            
+            console.log('Detected page direction:', pageDirection); 
+            
+            function updateArrowPosition() {
+                if ($list.is(":visible")) {
+                    const inputOffset = $input.offset();
+                    const inputHeight = $input.outerHeight();
+                    const listOffset = $list.offset();
+                    const listWidth = $list.outerWidth();
+                    
+
+                    let arrowTop = inputOffset.top + (inputHeight / 2);
+                    let arrowLeft;
+                    
+                    if (isRTL) {
+                        arrowLeft = listOffset.left + listWidth;
+
+                        $arrow.css({
+                            'border-left': '10px solid #d3d3d3',
+                            'border-right': 'none',
+                            'border-top': '10px solid transparent',
+                            'border-bottom': '10px solid transparent',
+                            'right': 'auto',
+                            'left': arrowLeft + 'px'
                         });
-
-                        if (matchesFound) {
-                            autocompleteList.show();
-                        } else {
-                            autocompleteList.hide();
-                        }
                     } else {
-                        autocompleteList.hide();
-                    }
-                });
 
-                $(document).on("click", "#" + list + " div", function () {
-                    $("#" + inputId).val($(this).text());
-                    console.log(inputId)
-                    $("#" + list).empty();
-                    $("#" + list).hide();
-                });
+                        arrowLeft = listOffset.left  - 10;
 
-                $(document).click(function (e) {
-                    if (!$(e.target).closest("#" + list + "#" + inputId).length) {
-                        $("#" + list).empty();
-                        $("#" + list).hide();
+                        $arrow.css({
+                            'border-right': '10px solid #d3d3d3',
+                            'border-left': 'none',
+                            'border-top': '10px solid transparent',
+                            'border-bottom': '10px solid transparent',
+                            'left': arrowLeft + 'px',
+                            'right': 'auto'
+                        });
                     }
-                });
+                    
+
+                    $arrow.css({
+                        'top': (arrowTop - 10) + 'px', 
+                        'display': 'block',
+                        'position': 'absolute',
+                        'width': '0',
+                        'height': '0',
+                        'z-index': '1000',
+                        'pointer-events': 'none'
+                    });
+                } else {
+                    $arrow.hide();
+                }
             }
 
-            setupAutocomplete("City-Area", "autocomplete-Cities", dataLists.Cities);
-        });
+
+            $input.on("focus click", function () {
+                const value = this.value.toLowerCase();
+                $list.empty();
+
+                dataList.forEach(word => {
+                    $list.append("<div>" + word + "</div>");
+                });
+
+                if (dataList.length > 0) {
+                    $list.show();
+                    setTimeout(updateArrowPosition, 10);
+                }
+            });
+
+
+            $input.on("input", function () {
+                const value = this.value.toLowerCase();
+                $list.empty();
+
+                if (value) {
+                    let matchesFound = false;
+                    dataList.forEach(word => {
+                        if (word.toLowerCase().indexOf(value) > -1) {
+                            $list.append("<div>" + word + "</div>");
+                            matchesFound = true;
+                        }
+                    });
+
+                    if (matchesFound) {
+                        $list.show();
+                        setTimeout(updateArrowPosition, 10);
+                    } else {
+                        $list.hide();
+                        $arrow.hide();
+                    }
+                } else {
+
+                    dataList.forEach(word => {
+                        $list.append("<div>" + word + "</div>");
+                    });
+                    if (dataList.length > 0) {
+                        $list.show();
+                        setTimeout(updateArrowPosition, 10);
+                    }
+                }
+            });
+
+
+            $list.on("click", "div", function () {
+                $input.val($(this).text());
+                $list.empty();
+                $list.hide();
+                $arrow.hide();
+            });
+
+
+            $(document).on("click", function (e) {
+                if (!$(e.target).closest("#" + inputId).length &&
+                    !$(e.target).closest("#" + list).length) {
+                    $list.empty();
+                    $list.hide();
+                    $arrow.hide();
+                }
+            });
+
+
+            $(window).on('resize', function() {
+                if ($list.is(":visible")) {
+                    updateArrowPosition();
+                }
+            });
+
+
+            $(window).on('scroll', function() {
+                if ($list.is(":visible")) {
+                    updateArrowPosition();
+                }
+            });
+            
+
+            $input.on('positionchange', updateArrowPosition);
+        }
+
+        setupAutocomplete("City-Area", "autocomplete-Cities", dataLists.Cities);
+    });
     </script>
 </body>
 
