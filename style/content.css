@@ -2908,12 +2908,12 @@ textarea.form-control.is-valid {
   position: absolute;
   background-color: #fff;
   width: 90%;
-  height: 160px;
+  height: 80px;
   overflow-y: scroll;
   box-shadow: 0px 9px 10px 0px #97969687;
   display: none;
   left: 50%;
-  transform: translate(-49.2%);
+  transform: translate(-50%);
 }
 
 .autocomplete-items::-webkit-scrollbar {
