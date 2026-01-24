@@ -14,7 +14,7 @@
 
     <link rel="stylesheet" href="../../../style/Layout.css">
     <link rel="stylesheet" href="../../../style/content.css">
-    <!-- <link rel="stylesheet" href="../../../style/english.css">  -->
+    <!-- <link rel="stylesheet" href="../../../style/english.css"> -->
 
 </head>
 
@@ -529,7 +529,7 @@
                                                                 </div>
 
                                                                 <div class="row">
-                                                                    <div class="col-md-6 position-relative">
+                                                                    <div class="col-md-6 ">
                                                                         <label for="Nationlity"
                                                                             class="form-label">الجنسية <i
                                                                                 class="fa-solid fa-star-of-life RequirdStar"></i></label>
@@ -538,7 +538,7 @@
                                                                             name="Nationlity" list="datalistOptions"
                                                                             required>
                                                                         <div id="autocomplete-Nationalities"
-                                                                            class="autocomplete-items "></div>
+                                                                            class="autocomplete-items"></div>
                                                                         <div class="invaild">
                                                                             <div class="invalid-feedback">
                                                                                 الحقل مطلوب
@@ -1475,267 +1475,172 @@
     <script src="https://cdn.jsdelivr.net/npm/heic2any/dist/heic2any.min.js"></script>
     <script src="../../../scripts/Scripts.js"></script>
     <script src="../../../scripts/uploadPic2.js"></script>
-<script>
+ <script>
     const dataLists = {
-        Nationalities: {
-            ar: [
-                
-                "سعودي",
-                "بحريني",
-                "كويتي",
-                "عماني",
-                "قطري",
-                "إماراتي",
-                "جزائري",
-                "جزر القمري",
-                "جيبوتي",
-                "مصري",
-                "عراقي",
-                "أردني",
-                "لبناني",
-                "ليبي",
-                "موريتاني",
-                "مغربي",
-                "فلسطيني",
-                "صومالي",
-                "سوداني",
-                "سوري",
-                "تونسي",
-                "يمني",
-                "أفغاني",
-                "ألباني",
-                "أذربيجاني",
-                "بنجلاديش",
-                "بنيني",
-                "بروناى",
-                "بوركينا فاسو",
-                "كاميروني",
-                "تشادي",
-                "ساحل عاجي",
-                "جابوني",
-                "غامبي",
-                "غيني",
-                "أندونيسي",
-                "إيراني",
-                "كازاخستاني",
-                "قرغيزستاني",
-                "ماليزي",
-                "مالديفي",
-                "مالي",
-                "موزمبيقي",
-                "نيجري",
-                "باكستاني",
-                "سنغالي",
-                "سيراليوني",
-                "طاجيكستاني",
-                "توغوي",
-                "تركي",
-                "تركمانستاني",
-                "أوغندي",
-                "أوزبكستاني",
-                "أرميني",
-                "بوتاني",
-                "كمبودي",
-                "صينى",
-                "جورجي",
-                "هونغ كونغي",
-                "هندي",
-                "ياباني",
-                "كوري شمالي",
-                "كوريا جنوبي",
-                "اللاوسي",
-                "ماكاوي",
-                "منغولي",
-                "بورمي",
-                "نيبالي",
-                "فلبيني",
-                "سنغافوري",
-                "سري لانكي",
-                "تايواني",
-                "تايلاندي",
-                "تيموري",
-                "فيتنامي",
-                "أنغولي",
-                "بوتسواني",
-                "بوروندي",
-                "وسط افريقي",
-                "كونغولي",
-                "إريتري",
-                "أثيوبي",
-                "غاني",
-                "كيني",
-                "ليبيري",
-                "مدغشقري",
-                "مالاوى",
-                "مايوتي",
-                "ناميبي",
-                "رواندي",
-                "جنوب افريقيا",
-                "جنوب السودان",
-                "سوازي",
-                "تنزانية",
-                "صحراوي",
-                "زامبي",
-                "زيمبابوي",
-                "نمساوي",
-                "بدون",
-                "غير متوفرة",
-            ],
-            en: [
-                "Saudi",
-                "Bahraini",
-                "Kuwaiti",
-                "Omani",
-                "Qatari",
-                "Emirati",
-                "Algerian",
-                "Comorian",
-                "Djiboutian",
-                "Egyptian",
-                "Iraqi",
-                "Jordanian",
-                "Lebanese",
-                "Libyan",
-                "Mauritanian",
-                "Moroccan",
-                "Palestinian",
-                "Somali",
-                "Sudanese",
-                "Syrian",
-                "Tunisian",
-                "Yemeni",
-                "Afghan",
-                "Albanian",
-                "Azerbaijani",
-                "Bangladeshi",
-                "Beninese",
-                "Bruneian",
-                "Burkinabé",
-                "Cameroonian",
-                "Chadian",
-                "Ivorian",
-                "Gabonese",
-                "Gambian",
-                "Guinean",
-                "Indonesian",
-                "Iranian",
-                "Kazakhstani",
-                "Kyrgyzstani",
-                "Malaysian",
-                "Maldivian",
-                "Malian",
-                "Mozambican",
-                "Nigerien",
-                "Pakistani",
-                "Senegalese",
-                "Sierra Leonean",
-                "Tajikistani",
-                "Togolese",
-                "Turkish",
-                "Turkmen",
-                "Ugandan",
-                "Uzbekistani",
-                "Armenian",
-                "Bhutanese",
-                "Cambodian",
-                "Chinese",
-                "Georgian",
-                "Hong Kong",
-                "Indian",
-                "Japanese",
-                "North Korean",
-                "South Korean",
-                "Laotian",
-                "Macanese",
-                "Mongolian",
-                "Burmese",
-                "Nepali",
-                "Philippine",
-                "Singaporean",
-                "Sri Lankan",
-                "Taiwanese",
-                "Thai",
-                "Timorese",
-                "Vietnamese",
-                "Angolan",
-                "Botswanan",
-                "Burundian",
-                "Central African",
-                "Congolese",
-                "Eritrean",
-                "Ethiopian",
-                "Ghanaian",
-                "Kenyan",
-                "Liberian",
-                "Malagasy",
-                "Malawian",
-                "Mahoran",
-                "Namibian",
-                "Rwandan",
-                "South African",
-                "South Sudanese",
-                "Swazi",
-                "Tanzanian",
-                "Sahrawi",
-                "Zambian",
-                "Zimbabwean",
-                "Austrian",
-                "None",
-                "Not Available",
-                
-            ]
-        }
+        Nationalities: ["سعودي", "بحريني", "كويتي", "عماني", "قطري", "إماراتي", "جزائري", "جزر القمري", "جيبوتي", "مصري", "عراقي", "أردني", "لبناني", "ليبي", "موريتاني", "مغربي", "فلسطيني", "صومالي", "سوداني", "سوري", "تونسي", "يمني", "أفغاني", "ألباني", "أذربيجاني", "بنجلاديش", "بنيني", "بروناى", "بوركينا فاسو", "كاميروني", "تشادي", "ساحل عاجي", "جابوني", "غامبي", "غيني", "أندونيسي", "إيراني", "كازاخستاني", "قرغيزستاني", "ماليزي", "مالديفي", "مالي", "موزمبيقي", "نيجري", "باكستاني", "سنغالي", "سيراليوني", "طاجيكستاني", "توغوي", "تركي", "تركمانستاني", "أوغندي", "أوزبكستاني", "أرميني", "بوتاني", "كمبودي", "صينى", "جورجي", "هونغ كونغي", "هندي", "ياباني", "كوري شمالي", "كوريا جنوبي", "اللاوسي", "ماكاوي", "منغولي", "بورمي", "نيبالي", "فلبيني", "سنغافوري", "سري لانكي", "تايواني", "تايلاندي", "تيموري", "فيتنامي", "أنغولي", "بوتسواني", "بوروندي", "وسط افريقي", "كونغولي", "إريتري", "أثيوبي", "غاني", "كيني", "ليبيري", "مدغشقري", "مالاوى", "مايوتي", "ناميبي", "رواندي", "جنوب افريقيا", "جنوب السودان", "سوازي", "تنزانية", "صحراوي", "زامبي", "زيمبابوي", "نمساوي", "بدون", "غير متوفرة"],
     };
 
     $(document).ready(function () {
-        function detectLanguage(text) {
-
-            const arabicPattern = /[\u0600-\u06FF]/;
-            return arabicPattern.test(text) ? 'ar' : 'en';
-        }
-
-        function setupAutocomplete(inputId, list, dataListObj) {
-            $("#" + inputId).on("input", function () {
-                const value = this.value;
-                const autocompleteList = $("#" + list);
-                autocompleteList.empty();
+        function setupAutocomplete(inputId, list, dataList) {
+            const $input = $("#" + inputId);
+            const $list = $("#" + list);
+            
+            const $arrow = $('<div class="autocomplete-arrow"></div>');
+            $('body').append($arrow);
+            
+            function detectDirection() {
+                const bodyStyle = window.getComputedStyle(document.body);
+                if (bodyStyle.direction === 'rtl') return 'rtl';
                 
-                if (value) {
+                const htmlStyle = window.getComputedStyle(document.documentElement);
+                if (htmlStyle.direction === 'rtl') return 'rtl';
+                
+                if ($('body').hasClass('rtl') || $('html').hasClass('rtl')) return 'rtl';
+                
+                if (bodyStyle.textAlign === 'right' || htmlStyle.textAlign === 'right') return 'rtl';
+                
 
-                    const lang = detectLanguage(value);
-                    const dataList = dataListObj[lang];
-                    const valueLower = value.toLowerCase();
+                return 'ltr';
+            }
+            
+            const pageDirection = detectDirection();
+            const isRTL = pageDirection === 'rtl';
+            
+            console.log('Detected page direction:', pageDirection); 
+            
+            function updateArrowPosition() {
+                if ($list.is(":visible")) {
+                    const inputOffset = $input.offset();
+                    const inputHeight = $input.outerHeight();
+                    const listOffset = $list.offset();
+                    const listWidth = $list.outerWidth();
                     
+
+                    let arrowTop = inputOffset.top + (inputHeight / 2);
+                    let arrowLeft;
+                    
+                    if (isRTL) {
+                        arrowLeft = listOffset.left + listWidth;
+
+                        $arrow.css({
+                            'border-left': '10px solid #d3d3d3',
+                            'border-right': 'none',
+                            'border-top': '10px solid transparent',
+                            'border-bottom': '10px solid transparent',
+                            'right': 'auto',
+                            'left': arrowLeft + 'px'
+                        });
+                    } else {
+
+                        arrowLeft = listOffset.left  - 10;
+
+                        $arrow.css({
+                            'border-right': '10px solid #d3d3d3',
+                            'border-left': 'none',
+                            'border-top': '10px solid transparent',
+                            'border-bottom': '10px solid transparent',
+                            'left': arrowLeft + 'px',
+                            'right': 'auto'
+                        });
+                    }
+                    
+
+                    $arrow.css({
+                        'top': (arrowTop - 10) + 'px', 
+                        'display': 'block',
+                        'position': 'absolute',
+                        'width': '0',
+                        'height': '0',
+                        'z-index': '1000',
+                        'pointer-events': 'none'
+                    });
+                } else {
+                    $arrow.hide();
+                }
+            }
+
+
+            $input.on("focus click", function () {
+                const value = this.value.toLowerCase();
+                $list.empty();
+
+                dataList.forEach(word => {
+                    $list.append("<div>" + word + "</div>");
+                });
+
+                if (dataList.length > 0) {
+                    $list.show();
+                    setTimeout(updateArrowPosition, 10);
+                }
+            });
+
+
+            $input.on("input", function () {
+                const value = this.value.toLowerCase();
+                $list.empty();
+
+                if (value) {
                     let matchesFound = false;
                     dataList.forEach(word => {
-                        if (word.toLowerCase().indexOf(valueLower) > -1) {
-                            autocompleteList.append("<div>" + word + "</div>");
+                        if (word.toLowerCase().indexOf(value) > -1) {
+                            $list.append("<div>" + word + "</div>");
                             matchesFound = true;
                         }
                     });
 
                     if (matchesFound) {
-                        autocompleteList.show();
+                        $list.show();
+                        setTimeout(updateArrowPosition, 10);
                     } else {
-                        autocompleteList.hide();
+                        $list.hide();
+                        $arrow.hide();
                     }
                 } else {
-                    autocompleteList.hide();
+
+                    dataList.forEach(word => {
+                        $list.append("<div>" + word + "</div>");
+                    });
+                    if (dataList.length > 0) {
+                        $list.show();
+                        setTimeout(updateArrowPosition, 10);
+                    }
                 }
             });
 
-            $(document).on("click", "#" + list + " div", function () {
-                $("#" + inputId).val($(this).text());
-                $("#" + list).empty();
-                $("#" + list).hide();
+
+            $list.on("click", "div", function () {
+                $input.val($(this).text());
+                $list.empty();
+                $list.hide();
+                $arrow.hide();
             });
 
-            $(document).click(function (e) {
-                if (!$(e.target).closest("#" + list + ", #" + inputId).length) {
-                    $("#" + list).empty();
-                    $("#" + list).hide();
+
+            $(document).on("click", function (e) {
+                if (!$(e.target).closest("#" + inputId).length &&
+                    !$(e.target).closest("#" + list).length) {
+                    $list.empty();
+                    $list.hide();
+                    $arrow.hide();
                 }
             });
+
+
+            $(window).on('resize', function() {
+                if ($list.is(":visible")) {
+                    updateArrowPosition();
+                }
+            });
+
+
+            $(window).on('scroll', function() {
+                if ($list.is(":visible")) {
+                    updateArrowPosition();
+                }
+            });
+            
+
+            $input.on('positionchange', updateArrowPosition);
         }
 
         setupAutocomplete("Nationlity", "autocomplete-Nationalities", dataLists.Nationalities);
