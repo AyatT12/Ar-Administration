@@ -769,7 +769,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 input[type="email"] {
-  /* max-width: 335px; */
   min-width: 333px;
 }
 
@@ -1953,8 +1952,9 @@ input[type="email"] {
   }
 }
 
-@media (max-width: 1200px) {
-  .AccountEmail {
+@media (max-width: 1250px) {
+
+  input[type="email"] , .AccountEmail  {
     min-width: auto !important;
   }
 
@@ -2903,39 +2903,35 @@ textarea.form-control.is-valid {
 /*  */
 .autocomplete-items {
     display: none;
-    position: absolute;
+    position: fixed;
     border: 1px solid #ced4da;
-    z-index: 99;
-    left: 60%;
-    top: 0;
-    min-width: 200px;
-    height: 100%;
-    overflow-y: auto;
+    z-index: 9999;
     background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    border-radius: 2px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    width: auto; 
+    max-width: fit-content; 
 }
 
-.autocomplete-items.show {
-    transform: translateX(0);
-}
-
-/* Arrow element */
 .autocomplete-arrow {
-    position: absolute;
-    z-index: 100;
+    position: fixed;
+    z-index: 10000;
     pointer-events: none;
+    display: none;
+    width: 0;
+    height: 0;
 }
+
 .autocomplete-items div {
-    padding: 0.75rem 1rem;
+    padding: 8px 12px;
     cursor: pointer;
     background-color: #fff;
     border-bottom: 1px solid #f0f0f0;
     font-size: 1rem;
     color: #212529;
     transition: background-color 0.2s;
+    white-space: nowrap; 
 }
 
 .autocomplete-items div:last-child {
@@ -2948,13 +2944,13 @@ textarea.form-control.is-valid {
 
 .autocomplete-items div:active,
 .autocomplete-items div.active {
-    background-color: #adacac;
-    color: white;
+    background-color: #e9ecef;
+    color: #212529;
 }
 
 /* Custom scrollbar */
 .autocomplete-items::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
 }
 
 .autocomplete-items::-webkit-scrollbar-track {
@@ -2962,12 +2958,12 @@ textarea.form-control.is-valid {
 }
 
 .autocomplete-items::-webkit-scrollbar-thumb {
-    background: #747474;
-    border-radius: 4px;
+    background: #c1c1c1;
+    border-radius: 3px;
 }
 
 .autocomplete-items::-webkit-scrollbar-thumb:hover {
-    background: #4d4d4d;
+    background: #a8a8a8;
 }
 
 /*  */
