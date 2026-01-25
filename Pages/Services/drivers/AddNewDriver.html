@@ -424,7 +424,7 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-md-6 col-lg-4">
+                                                                    <div class="col-md-auto col-xl-4">
                                                                         <div
                                                                             class="row align-items-center flex-nowrap g-2">
                                                                             <div class="col">
@@ -529,7 +529,7 @@
                                                                 </div>
 
                                                                 <div class="row">
-                                                                    <div class="col-md-6 ">
+                                                                    <div class="col-md-6 position-relative ">
                                                                         <label for="Nationlity"
                                                                             class="form-label">الجنسية <i
                                                                                 class="fa-solid fa-star-of-life RequirdStar"></i></label>
@@ -1480,171 +1480,270 @@
         Nationalities: ["سعودي", "بحريني", "كويتي", "عماني", "قطري", "إماراتي", "جزائري", "جزر القمري", "جيبوتي", "مصري", "عراقي", "أردني", "لبناني", "ليبي", "موريتاني", "مغربي", "فلسطيني", "صومالي", "سوداني", "سوري", "تونسي", "يمني", "أفغاني", "ألباني", "أذربيجاني", "بنجلاديش", "بنيني", "بروناى", "بوركينا فاسو", "كاميروني", "تشادي", "ساحل عاجي", "جابوني", "غامبي", "غيني", "أندونيسي", "إيراني", "كازاخستاني", "قرغيزستاني", "ماليزي", "مالديفي", "مالي", "موزمبيقي", "نيجري", "باكستاني", "سنغالي", "سيراليوني", "طاجيكستاني", "توغوي", "تركي", "تركمانستاني", "أوغندي", "أوزبكستاني", "أرميني", "بوتاني", "كمبودي", "صينى", "جورجي", "هونغ كونغي", "هندي", "ياباني", "كوري شمالي", "كوريا جنوبي", "اللاوسي", "ماكاوي", "منغولي", "بورمي", "نيبالي", "فلبيني", "سنغافوري", "سري لانكي", "تايواني", "تايلاندي", "تيموري", "فيتنامي", "أنغولي", "بوتسواني", "بوروندي", "وسط افريقي", "كونغولي", "إريتري", "أثيوبي", "غاني", "كيني", "ليبيري", "مدغشقري", "مالاوى", "مايوتي", "ناميبي", "رواندي", "جنوب افريقيا", "جنوب السودان", "سوازي", "تنزانية", "صحراوي", "زامبي", "زيمبابوي", "نمساوي", "بدون", "غير متوفرة"],
     };
 
-    $(document).ready(function () {
-        function setupAutocomplete(inputId, list, dataList) {
-            const $input = $("#" + inputId);
-            const $list = $("#" + list);
+    
+ $(document).ready(function () {
+    function setupAutocomplete(inputId, list, dataList) {
+        const $input = $("#" + inputId);
+        const $list = $("#" + list);
+        
+        const $arrow = $('<div class="autocomplete-arrow"></div>');
+        $('body').append($arrow);
+        
+        function detectDirection() {
+            const bodyStyle = window.getComputedStyle(document.body);
+            if (bodyStyle.direction === 'rtl') return 'rtl';
             
-            const $arrow = $('<div class="autocomplete-arrow"></div>');
-            $('body').append($arrow);
+            const htmlStyle = window.getComputedStyle(document.documentElement);
+            if (htmlStyle.direction === 'rtl') return 'rtl';
             
-            function detectDirection() {
-                const bodyStyle = window.getComputedStyle(document.body);
-                if (bodyStyle.direction === 'rtl') return 'rtl';
+            if ($('body').hasClass('rtl') || $('html').hasClass('rtl')) return 'rtl';
+            
+            if (bodyStyle.textAlign === 'right' || htmlStyle.textAlign === 'right') return 'rtl';
+            
+            return 'ltr';
+        }
+        
+        const pageDirection = detectDirection();
+        const isRTL = pageDirection === 'rtl';
+        
+        function getTextWidth(text, fontSize = '1rem', fontFamily = 'inherit') {
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            context.font = fontSize + ' ' + fontFamily;
+            return context.measureText(text).width;
+        }
+        
+        function getMaxItemWidth(items) {
+            let maxWidth = 200;
+            const tempDiv = $('<div>').css({
+                'position': 'absolute',
+                'visibility': 'hidden',
+                'white-space': 'nowrap',
+                'font-size': '1rem',
+                'font-family': 'inherit',
+                'padding': '8px 12px'
+            }).appendTo('body');
+            
+            items.forEach(item => {
+                tempDiv.text(item);
+                const width = tempDiv.outerWidth();
+                if (width > maxWidth) {
+                    maxWidth = width;
+                }
+            });
+            
+            tempDiv.remove();
+            return Math.min(maxWidth + 30, 400); 
+        }
+        
+        function updateAutocompletePosition() {
+            if ($list.is(":visible")) {
+                const inputRect = $input[0].getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+                const viewportWidth = window.innerWidth;
                 
-                const htmlStyle = window.getComputedStyle(document.documentElement);
-                if (htmlStyle.direction === 'rtl') return 'rtl';
-                
-                if ($('body').hasClass('rtl') || $('html').hasClass('rtl')) return 'rtl';
-                
-                if (bodyStyle.textAlign === 'right' || htmlStyle.textAlign === 'right') return 'rtl';
+                const visibleItems = $list.find('div').toArray().map(div => div.textContent);
+                const calculatedWidth = getMaxItemWidth(visibleItems);
+                $list.css('width', calculatedWidth + 'px');
                 
 
-                return 'ltr';
-            }
-            
-            const pageDirection = detectDirection();
-            const isRTL = pageDirection === 'rtl';
-            
-            console.log('Detected page direction:', pageDirection); 
-            
-            function updateArrowPosition() {
-                if ($list.is(":visible")) {
-                    const inputOffset = $input.offset();
-                    const inputHeight = $input.outerHeight();
-                    const listOffset = $list.offset();
-                    const listWidth = $list.outerWidth();
+                let leftPosition;
+                if (isRTL) {
+
+                    leftPosition = inputRect.left - (calculatedWidth - 230);
                     
-
-                    let arrowTop = inputOffset.top + (inputHeight / 2);
-                    let arrowLeft;
-                    
-                    if (isRTL) {
-                        arrowLeft = listOffset.left + listWidth;
-
-                        $arrow.css({
-                            'border-left': '10px solid #d3d3d3',
-                            'border-right': 'none',
-                            'border-top': '10px solid transparent',
-                            'border-bottom': '10px solid transparent',
-                            'right': 'auto',
-                            'left': arrowLeft + 'px'
-                        });
-                    } else {
-
-                        arrowLeft = listOffset.left  - 10;
-
-                        $arrow.css({
-                            'border-right': '10px solid #d3d3d3',
-                            'border-left': 'none',
-                            'border-top': '10px solid transparent',
-                            'border-bottom': '10px solid transparent',
-                            'left': arrowLeft + 'px',
-                            'right': 'auto'
-                        });
+                    if (leftPosition < 10) {
+                        leftPosition = 10;
                     }
-                    
-
-                    $arrow.css({
-                        'top': (arrowTop - 10) + 'px', 
-                        'display': 'block',
-                        'position': 'absolute',
-                        'width': '0',
-                        'height': '0',
-                        'z-index': '1000',
-                        'pointer-events': 'none'
-                    });
                 } else {
+                    leftPosition = inputRect.right - (calculatedWidth); 
+                    
+                    if (leftPosition + calculatedWidth > viewportWidth - 10) {
+                        leftPosition = viewportWidth - calculatedWidth - 10;
+                    }
+                }
+                
+                const spaceBelow = viewportHeight - inputRect.bottom;
+                const spaceAbove = inputRect.top;
+                
+                const maxHeight = Math.min(spaceBelow); 
+                
+                $list.css({
+                    'top': (inputRect.top + 3) + 'px', 
+                    'left': leftPosition + 'px',
+                    'max-height': maxHeight + 'px',
+                    'height': 'auto'
+                });
+                
+                updateArrowPosition();
+            }
+        }
+        
+        function updateArrowPosition() {
+            if ($list.is(":visible")) {
+                const inputRect = $input[0].getBoundingClientRect();
+                const listRect = $list[0].getBoundingClientRect();
+                
+                let arrowLeft;
+                if (isRTL) {
+                    arrowLeft = listRect.right + 2;
+                    borderBottom = '8px solid transparent';
+                    borderTop = '8px solid transparent';
+                    borderLeft = '8px solid #d3d3d3';
+                    borderRight = 'none';
+                } else {
+                    arrowLeft = listRect.left - 10;
+                    borderBottom = '8px solid transparent';
+                    borderTop = '8px solid transparent';
+                    borderLeft = 'none';
+                    borderRight = '8px solid #d3d3d3';
+                }
+                                
+                $arrow.css({
+                    'border-bottom': borderBottom,
+                    'border-top': borderTop,
+                    'border-left': borderLeft,
+                    'border-right': borderRight,
+                    'top': (listRect.top + 10) + 'px', 
+                    'left': (arrowLeft) + 'px',
+                    'display': 'block',
+                    'position': 'fixed',
+                    'z-index': '10000',
+                    'pointer-events': 'none',
+                });
+                } else {
+                        $arrow.hide();
+                }
+        }
+        
+        $input.on("focus click", function () {
+            const value = this.value.toLowerCase();
+            $list.empty();
+            
+            dataList.forEach(word => {
+                $list.append("<div>" + word + "</div>");
+            });
+            
+            if (dataList.length > 0) {
+                $list.show();
+                setTimeout(() => {
+                    updateAutocompletePosition();
+
+                    $list.find('div').first().addClass('active');
+                }, 10);
+            }
+        });
+        
+        $input.on("input", function () {
+            const value = this.value.toLowerCase();
+            $list.empty();
+            
+            if (value) {
+                let matchesFound = false;
+                dataList.forEach(word => {
+                    if (word.toLowerCase().includes(value)) {
+                        $list.append("<div>" + word + "</div>");
+                        matchesFound = true;
+                    }
+                });
+                
+                if (matchesFound) {
+                    $list.show();
+                    setTimeout(() => {
+                        updateAutocompletePosition();
+                        $list.find('div').first().addClass('active');
+                    }, 10);
+                } else {
+                    $list.hide();
                     $arrow.hide();
                 }
-            }
-
-
-            $input.on("focus click", function () {
-                const value = this.value.toLowerCase();
-                $list.empty();
+            } else {
 
                 dataList.forEach(word => {
                     $list.append("<div>" + word + "</div>");
                 });
-
                 if (dataList.length > 0) {
                     $list.show();
-                    setTimeout(updateArrowPosition, 10);
+                    setTimeout(() => {
+                        updateAutocompletePosition();
+                        $list.find('div').first().addClass('active');
+                    }, 10);
                 }
-            });
-
-
-            $input.on("input", function () {
-                const value = this.value.toLowerCase();
-                $list.empty();
-
-                if (value) {
-                    let matchesFound = false;
-                    dataList.forEach(word => {
-                        if (word.toLowerCase().indexOf(value) > -1) {
-                            $list.append("<div>" + word + "</div>");
-                            matchesFound = true;
-                        }
-                    });
-
-                    if (matchesFound) {
-                        $list.show();
-                        setTimeout(updateArrowPosition, 10);
-                    } else {
+            }
+        });
+        
+        $list.on("click", "div", function () {
+            $input.val($(this).text());
+            $list.hide();
+            $arrow.hide();
+            $input.focus();
+        });
+        
+        $(document).on("click", function (e) {
+            if (!$(e.target).closest("#" + inputId).length &&
+                !$(e.target).closest("#" + list).length) {
+                $list.hide();
+                $arrow.hide();
+            }
+        });
+        
+        $input.on('keydown', function(e) {
+            if (!$list.is(":visible")) return;
+            
+            const $items = $list.find('div');
+            const $active = $list.find('.active');
+            let index = $active.index();
+            
+            switch(e.key) {
+                case 'ArrowDown':
+                    e.preventDefault();
+                    index = (index + 1) % $items.length;
+                    $items.removeClass('active');
+                    $items.eq(index).addClass('active');
+                    
+                    const activeItem = $items.eq(index)[0];
+                    if (activeItem) {
+                        activeItem.scrollIntoView({ block: 'nearest' });
+                    }
+                    break;
+                    
+                case 'ArrowUp':
+                    e.preventDefault();
+                    index = index > 0 ? index - 1 : $items.length - 1;
+                    $items.removeClass('active');
+                    $items.eq(index).addClass('active');
+                    
+                    const activeItemUp = $items.eq(index)[0];
+                    if (activeItemUp) {
+                        activeItemUp.scrollIntoView({ block: 'nearest' });
+                    }
+                    break;
+                    
+                case 'Enter':
+                    if ($active.length) {
+                        e.preventDefault();
+                        $input.val($active.text());
                         $list.hide();
                         $arrow.hide();
                     }
-                } else {
-
-                    dataList.forEach(word => {
-                        $list.append("<div>" + word + "</div>");
-                    });
-                    if (dataList.length > 0) {
-                        $list.show();
-                        setTimeout(updateArrowPosition, 10);
-                    }
-                }
-            });
-
-
-            $list.on("click", "div", function () {
-                $input.val($(this).text());
-                $list.empty();
-                $list.hide();
-                $arrow.hide();
-            });
-
-
-            $(document).on("click", function (e) {
-                if (!$(e.target).closest("#" + inputId).length &&
-                    !$(e.target).closest("#" + list).length) {
-                    $list.empty();
+                    break;
+                    
+                case 'Escape':
                     $list.hide();
                     $arrow.hide();
-                }
-            });
-
-
-            $(window).on('resize', function() {
-                if ($list.is(":visible")) {
-                    updateArrowPosition();
-                }
-            });
-
-
-            $(window).on('scroll', function() {
-                if ($list.is(":visible")) {
-                    updateArrowPosition();
-                }
-            });
-            
-
-            $input.on('positionchange', updateArrowPosition);
-        }
-
-        setupAutocomplete("Nationlity", "autocomplete-Nationalities", dataLists.Nationalities);
-    });
+                    break;
+            }
+        });
+        
+        $(window).on('resize scroll', function() {
+            if ($list.is(":visible")) {
+                updateAutocompletePosition();
+            }
+        });
+    }
+    
+    setupAutocomplete("Nationlity", "autocomplete-Nationalities", dataLists.Nationalities);
+});
 </script>
 </body>
 
