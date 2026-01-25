@@ -2912,6 +2912,7 @@ textarea.form-control.is-valid {
     overflow-y: auto;
     width: auto; 
     max-width: fit-content; 
+    left: -1000px;
 }
 
 .autocomplete-arrow {
@@ -3311,4 +3312,5 @@ textarea.form-control.is-valid {
 .modal-content {
   border: 3px solid #FF9626;
   border-radius: 10px;
+
 }
