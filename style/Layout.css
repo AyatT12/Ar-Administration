@@ -904,43 +904,12 @@ div:has(.min-loader-back) {
   position: relative !important;
   width: 100% !important;
   height: 100% !important;
-  min-height: 400px !important;
 }
 
 .chart-container canvas {
   width: 100% !important;
   height: 100% !important;
 }
-
-@media (max-width: 768px) {
-  .chart-container {
-    height: 500px !important;
-    min-height: 500px !important;
-  }
-
-  .chart-area {
-    flex-direction: column !important;
-  }
-
-  .chart-area .col-md-auto {
-    margin-bottom: 15px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1399px) {
-  .chart-container {
-    height: 400px !important;
-    min-height: 400px !important;
-  }
-}
-
-@media (min-width: 1400px) {
-  .chart-container {
-    height: 450px !important;
-    min-height: 450px !important;
-  }
-}
-
 
 /* Last edited style  */
 
