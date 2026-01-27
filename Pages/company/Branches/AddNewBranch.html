@@ -1746,25 +1746,7 @@
                         $arrow.hide();
                 }
         }
-        
-        $input.on("focus click", function () {
-            const value = this.value.toLowerCase();
-            $list.empty();
-            
-            dataList.forEach(word => {
-                $list.append("<div>" + word + "</div>");
-            });
-            
-            if (dataList.length > 0) {
-                $list.show();
-                setTimeout(() => {
-                    updateAutocompletePosition();
-
-                    $list.find('div').first().addClass('active');
-                }, 10);
-            }
-        });
-        
+    
         $input.on("input", function () {
             const value = this.value.toLowerCase();
             $list.empty();
