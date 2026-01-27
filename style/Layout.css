@@ -909,6 +909,7 @@ div:has(.min-loader-back) {
 .chart-container canvas {
   width: 100% !important;
   height: 100% !important;
+  direction: ltr;
 }
 
 /* Last edited style  */

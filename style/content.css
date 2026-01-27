@@ -2151,13 +2151,11 @@ input[type="email"] {
   font-size: 16px;
   font-weight: 600;
 }
-
+.stat-btn{
+  text-align: start;
+}
 .active-stat-btn {
   color: var(--primary-color) !important;
-}
-
-.stat-btn {
-  padding-right: 0;
 }
 
 .stat-btn:hover {
