@@ -390,9 +390,9 @@
                                     </div>
                                     <div class="col-md-12" style="flex: 1; min-height: 0; display: flex; flex-direction: column;">
                                         <div class="row mt-4 justify-content-between" style="flex: 1; min-height: 0; overflow-y: scroll;">
-                                            <div class="col-lg-4 d-flex flex-column mb-1" style="max-height: 100%; overflow-y: auto; overflow-x: hidden;">
+                                            <div class="col-lg-auto d-flex flex-column mb-1" style="max-height: 100%; overflow-y: auto; overflow-x: hidden;">
                                                 <p class="headLines">بند المؤشر الإحصائي</p>
-                                                 <div class="row">
+                                                 <div class="row flex-lg-column">
                                                     <div class="col-4 col-lg-12">
                                                         <button class="btn stat-btn active-stat-btn" type="button"
                                                             onclick="handleButtonClick(this, NationalityChart)">الجنسيات</button>
@@ -421,7 +421,7 @@
 
                                                 </div>
                                             </div>
-                                            <div class="col-lg-8 text-center  d-flex flex-column" style="max-height: 100%; overflow-y: auto; height: 100%;">
+                                            <div class="col text-center  d-flex flex-column" style="max-height: 100%; overflow-y: auto; height: 100%;">
                                               <div class="chart-container charts-border" style="position: relative; width: 100%; height: 100%;">
                                                 <canvas id="myChart"></canvas>
                                                 </div>
@@ -1224,7 +1224,7 @@
                 scales: {
                     r: {
                         pointLabels: {
-                            display: true,
+                            display: false,
                             centerPointLabels: true,
                             font: {
                                 family: "'Cairo', sans-serif",
@@ -1288,7 +1288,7 @@
                 scales: {
                     r: {
                         pointLabels: {
-                            display: true,
+                            display: false,
                             centerPointLabels: true,
                             font: {
                                 family: "'Cairo', sans-serif",
