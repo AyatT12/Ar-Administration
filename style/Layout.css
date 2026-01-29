@@ -953,7 +953,6 @@ div:has(.min-loader-back) {
   flex-direction: column;
   overflow: auto;
   position: relative;
-  /* z-index: 1; */
 }
 
 /* Table Container */
@@ -1253,8 +1252,7 @@ padding: 10px;
   .sidebar-left {
     position: fixed;
     height: calc(100dvh - 100px);   
-    /* top: 100px; */
-    z-index: 5;
+    z-index: 7;
   }
   .sidebar-left {
     width: 320px;

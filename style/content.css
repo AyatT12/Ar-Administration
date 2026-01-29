@@ -1991,7 +1991,20 @@ input[type="email"] {
   box-shadow: 1px 1px 9px 0px #107c4236;
   border-radius: 8px;
 }
-
+.report-data{
+  min-width: 177px;
+}
+.report-date-input{
+  min-width: 150px;
+}
+@media (min-width:1200px) {
+.report-data{
+  min-width: 227px;
+}
+.report-date-input{
+  min-width: 200px;
+}
+}
 .secondLineP {
   font-size: .8rem;
 }
@@ -2092,10 +2105,19 @@ input[type="email"] {
   font-size: 14px;
 }
 
-.custom-margin {
-  margin-left: 40px;
+@media (max-width:1200px) {
+  /* .custom-margin {
+    margin-left: 40px;
+} */
+ .ContentForm{
+  position: relative;
+ }
+ .excel-icon{
+  position: absolute;
+  top: 0;
+  left: 0;
+ }
 }
-
 
 .reports-modal-content {
   border: 3px solid #FF9626
