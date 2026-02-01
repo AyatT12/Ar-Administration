@@ -163,7 +163,7 @@ html {
   background: var(--main-color) !important;
   color: white !important;
   font-weight: 600;
-  padding: 4px 15px;
+  padding: 4px 10px;
 }
 
 .btn-standard:hover {
@@ -438,6 +438,7 @@ html {
 .form-outline {
   position: relative;
   color: rgba(0, 0, 0, 0.32);
+  max-width: 400px;
 }
 
 .form-outline {
@@ -487,7 +488,11 @@ html {
     justify-content: flex-start;
   }
 }
-
+@media (max-width:1024px) {
+  .search-input{
+    min-width: 200px;
+  }
+}
 /* ================================================================================  inputs style   ======================================================================================= */
 .inputs,
 .select-style,
@@ -945,7 +950,7 @@ input[type="email"] {
   justify-content: center;
   align-items: center;
   background-color: rgba(255, 150, 38, 0.08);
-  cursor: url(img/pen.jpg)
+  margin-bottom: 10px;
 }
 
 .upload-container,
@@ -1987,24 +1992,58 @@ input[type="email"] {
 
 /* ================================================================================  reports  ======================================================================================= */
 /* ================================================================================================================================================================================== */
+.employee-td{
+  direction: rtl;
+  text-align: start !important;
+}
 .DailyReport-icon {
   box-shadow: 1px 1px 9px 0px #107c4236;
   border-radius: 8px;
 }
-.report-data{
+.Data-min-width{
   min-width: 177px;
 }
 .report-date-input{
   min-width: 150px;
 }
 @media (min-width:1200px) {
-.report-data{
-  min-width: 227px;
+.Data-min-width{
+  min-width: 230px;
 }
 .report-date-input{
   min-width: 200px;
 }
 }
+/* date input */
+input[type="date"]::-webkit-datetime-edit, input[type="date"]::-webkit-inner-spin-button, input[type="date"]::-webkit-clear-button {
+  color: #fff;
+  position: relative;
+}
+
+input[type="date"]::-webkit-datetime-edit-year-field{
+  position: absolute !important;
+  color:var(--primary-color);
+  right: 57px;
+  padding: 0px 5px;
+}
+
+input[type="date"]::-webkit-datetime-edit-month-field{
+  position: absolute !important;
+
+  color:var(--primary-color);
+  right: 26px;
+  padding: 0px 2px;
+
+}
+
+
+input[type="date"]::-webkit-datetime-edit-day-field{
+  position: absolute !important;
+  color:var(--primary-color);
+  right: 4px;
+  padding: 0px 2px;
+}
+
 .secondLineP {
   font-size: .8rem;
 }
@@ -2032,13 +2071,13 @@ input[type="email"] {
   min-height: 350px;
 }
 
-.report-tables-style th {
+/* .report-tables-style th {
   text-align: end;
 }
 
 .report-tables-style td {
   text-align: end;
-}
+} */
 
 .textarea-table-inputs {
   resize: none;

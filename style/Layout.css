@@ -151,7 +151,7 @@ body {
   padding: 0px;
   width: 250px;
   background: var(--sidebar-color);
-  border-left: 2px solid #39629C;
+  border-left: 2px solid var(--primary-color);
   transition: var(--tran-05);
   flex-shrink: 0;
   position: relative;
@@ -188,7 +188,7 @@ body {
 
 
 .sidebar-right .text {
-  color: #39629C;
+  color: var(--primary-color);
   transition: .5s;
 }
 
@@ -927,7 +927,7 @@ div:has(.min-loader-back) {
 .sidebar-right {
   width: 250px;
   background: #ffffff;
-  border-left: 2px solid #39629C;
+  border-left: 2px solid var(--primary-color);
   flex-shrink: 0;
   transition: all 0.3s ease;
   position: relative;
@@ -1041,7 +1041,7 @@ padding: 10px;
   padding: 0px;
   width: 250px;
   background: var(--sidebar-color);
-  border-left: 2px solid #39629C;
+  border-left: 2px solid var(--primary-color);
   transition: width 0.3s ease;
   flex-shrink: 0;
   position: relative;
@@ -1062,7 +1062,7 @@ padding: 10px;
 
 
 .sidebar-right .text {
-  color: #39629C;
+  color: var(--primary-color);
   font-size: 16px;
   font-weight: 500;
   white-space: nowrap;
@@ -1160,7 +1160,7 @@ padding: 10px;
   top: 40px;
   width: 25px;
   height: 25px;
-  background: #39629C;
+  background: var(--primary-color);
   color: white;
   border-radius: 50%;
   display: flex;
