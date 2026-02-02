@@ -138,7 +138,14 @@ body {
 .search-input {
     direction: rtl;
 }
-
+.form-check-inline {
+    padding-left: 21px;
+    gap: 5px;
+}
+.filters-col {
+    display: flex;
+    gap: 20px;
+}
 /* ================================================================================ table style   ======================================================================================= */
 .tables-style thead {
     direction: rtl;

@@ -462,32 +462,13 @@ html {
 .filters-col {
   text-align: end;
 }
-
-.filters-col {
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
+.form-check-inline {
+    display: inline-flex;
+    margin-right: 0rem;
+    gap: 30px;
+    flex-direction: row-reverse;
 }
 
-.filters-custom-order {
-  display: flex;
-  flex-direction: row-reverse;
-  margin-right: 1rem;
-  gap: 10px
-}
-
-@media (max-width:500px) {
-  .filters-col .filters-custom-order {
-    margin-right: .5rem;
-  }
-
-}
-
-@media (max-width:767px) {
-  .filters-col {
-    justify-content: flex-start;
-  }
-}
 @media (max-width:1024px) {
   .search-input{
     min-width: 200px;
