@@ -104,7 +104,7 @@
 
                             <div id="company-items" class="collapse">
                                 <div class="bg-white gap-3 collapse-inner rounded">
-                                    <a class="collapse-item active"
+                                    <a class="collapse-item"
                                         href="../../../Pages/company/Branches/Branches.html"> الفروع <i
                                             class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                     <a class="collapse-item" href="../../../Pages/company/owners/owners.html"> الملاك <i
@@ -274,7 +274,7 @@
                             </li>
                             <div id="employees-items" class="collapse">
                                 <div class="bg-white gap-3 collapse-inner rounded">
-                                    <a class="collapse-item"
+                                    <a class="collapse-item active"
                                         href="../../../Pages/employees/employees list/employees.html"> بيانات الموظفين
                                         <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                     <a class="collapse-item"
@@ -337,12 +337,11 @@
                             <form class="ContentForm">
                                 <!-- Content Header -->
                                 <div class="row  mb-2">
-                                    <div class="col">
+                                    <div class="col-auto">
                                         <h3> الموظفين </h3>
                                     </div>
-                                    <div class="col-12 col-lg-6 d-flex justify-content-end">
-
-                                        <div class="col-12 col-md-8 search-input-col">
+                                    <div class="col d-flex justify-content-end">
+                                        <div class="col-lg-10 col-xxl-8 search-input-col">
                                             <div class="form-outline w-100" data-mdb-input-init>
                                                 <span class="fa fa-search"></span>
                                                 <input type="search" id="search"
@@ -350,36 +349,30 @@
                                                     aria-label="Search" autofocus autocomplete="off" />
                                             </div>
                                         </div>
-
                                     </div>
                                     <div class="col-12 filters-col">
-                                        <div class="filters-custom-order">
-
+                                        <div class="form-check form-check-inline">
                                             <label class="form-check-label" for="all">الكل</label>
                                             <input class="form-check-input custom" type="radio" name="Options" id="all"
                                                 value="All" checked />
                                         </div>
 
-                                        <div class="filters-custom-order">
-
+                                        <div class="form-check form-check-inline">
                                             <label class="form-check-label filter2" for="Active">نشط</label>
                                             <input class="form-check-input custom" type="radio" name="Options"
                                                 id="Active" value="Active" />
                                         </div>
 
-                                        <div class="filters-custom-order">
-
+                                        <div class="form-check form-check-inline">
                                             <label class="form-check-label  filter1" for="Stoped">موقوف</label>
                                             <input class="form-check-input custom" type="radio" name="Options"
                                                 id="Stoped" value="Stoped" />
                                         </div>
-                                        <div class="filters-custom-order">
-
+                                        <div class="form-check form-check-inline">
                                             <label class="form-check-label filter3" for="deleted">محذوف</label>
                                             <input class="form-check-input custom" type="radio" name="Options"
                                                 id="deleted" value="deleted" />
                                         </div>
-
                                     </div>
                                 </div>
                                 <!-- Table -->
