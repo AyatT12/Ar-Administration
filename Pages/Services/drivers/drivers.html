@@ -336,39 +336,40 @@
                             <form class="ContentForm">
                                 <!-- Content Header -->
                                 <div class="row mb-2">
-                                    <div class="col">
+                                    <div class="col-auto">
                                         <h3> بيانات السائقين </h3>
                                     </div>
-                                    <div class="col-12 col-lg-6 d-flex justify-content-end">
-
-                                        <div class="col-12 col-md-8 search-input-col">
-                                            <div class="form-outline w-100" data-mdb-input-init>
-                                                <span class="fa fa-search"></span>
-                                                <input type="search" id="search"
-                                                    class="form-control inputs search-input" name="search"
-                                                    aria-label="Search" autofocus autocomplete="off" />
+                                    <div class="col search-input-col">
+                                        <div class="row  justify-content-end">
+                                            <div class="col-lg-10 col-xxl-8">
+                                                <div class="form-outline w-100" data-mdb-input-init>
+                                                    <span class="fa fa-search"></span>
+                                                    <input type="search" id="search"
+                                                        class="form-control inputs search-input" name="search"
+                                                        aria-label="Search" autofocus autocomplete="off" />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-12 filters-col">
-                                        <div class="filters-custom-order">
+                                        <div class="form-check form-check-inline">
                                             <label class="form-check-label" for="all">الكل</label>
                                             <input class="form-check-input custom" type="radio" name="Options" id="all"
                                                 value="All" checked />
                                         </div>
 
-                                        <div class="filters-custom-order">
+                                        <div class="form-check form-check-inline">
                                             <label class="form-check-label filter2" for="Active">نشط</label>
                                             <input class="form-check-input custom" type="radio" name="Options"
                                                 id="Active" value="Active" />
                                         </div>
 
-                                        <div class="filters-custom-order">
+                                        <div class="form-check form-check-inline">
                                             <label class="form-check-label  filter1" for="Stoped">موقوف</label>
                                             <input class="form-check-input custom" type="radio" name="Options"
                                                 id="Stoped" value="Stoped" />
                                         </div>
-                                        <div class="filters-custom-order">
+                                        <div class="form-check form-check-inline">
                                             <label class="form-check-label filter3" for="deleted">محذوف</label>
                                             <input class="form-check-input custom" type="radio" name="Options"
                                                 id="deleted" value="deleted" />
