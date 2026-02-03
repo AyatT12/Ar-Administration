@@ -461,14 +461,20 @@ html {
 .search-input-col,
 .filters-col {
   text-align: end;
+  justify-content: end;
 }
 .form-check-inline {
     display: inline-flex;
     margin-right: 0rem;
-    gap: 30px;
+    gap: 25px;
     flex-direction: row-reverse;
 }
-
+.form-check{
+    padding-left: 1em;
+}
+.form-check-inline:last-child{
+  padding: 0;
+}
 @media (max-width:1024px) {
   .search-input{
     min-width: 200px;
@@ -1996,31 +2002,42 @@ input[type="email"] {
 }
 }
 /* date input */
-input[type="date"]::-webkit-datetime-edit, input[type="date"]::-webkit-inner-spin-button, input[type="date"]::-webkit-clear-button {
+input[type="date"]::-webkit-datetime-edit, 
+input[type="date"]::-webkit-inner-spin-button, 
+input[type="date"]::-webkit-clear-button {
   color: #fff;
   position: relative;
 }
 
-input[type="date"]::-webkit-datetime-edit-year-field{
+input[type="date"]::-webkit-datetime-edit-year-field {
   position: absolute !important;
-  color:var(--primary-color);
-  right: 57px;
-  padding: 0px 5px;
+  color: var(--primary-color);
+  right: 54px;
+  padding: 0px 2px;
 }
 
-input[type="date"]::-webkit-datetime-edit-month-field{
+input[type="date"]::-webkit-datetime-edit-month-field {
   position: absolute !important;
-
-  color:var(--primary-color);
+  color: var(--primary-color);
   right: 26px;
   padding: 0px 2px;
-
 }
 
+input[type="date"]::-webkit-datetime-edit-month-field::before {
+  content: " • ";
+  color: #000000;
+  opacity: 0.5;
+}
 
-input[type="date"]::-webkit-datetime-edit-day-field{
+input[type="date"]::-webkit-datetime-edit-month-field::after {
+  content: " • ";
+  color: #000000;
+  opacity: 0.5;
+}
+
+input[type="date"]::-webkit-datetime-edit-day-field {
   position: absolute !important;
-  color:var(--primary-color);
+  color: var(--primary-color);
   right: 4px;
   padding: 0px 2px;
 }
@@ -3028,6 +3045,19 @@ textarea.form-control.is-valid {
 
 .autocomplete-items::-webkit-scrollbar-thumb:hover {
     background: #a8a8a8;
+}
+@media (max-width:1024px) {
+ .autocomplete-items{
+  max-width: 350px;
+ }
+ .autocomplete-items div{
+  white-space:unset;
+ }
+}
+@media (max-width:425px) {
+ .autocomplete-items{
+  max-width: 250px;
+ }
 }
 
 /*  */

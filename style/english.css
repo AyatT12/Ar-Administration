@@ -139,7 +139,7 @@ body {
     direction: rtl;
 }
 .form-check-inline {
-    padding-left: 21px;
+    padding-left: 21px !important;
     gap: 5px;
 }
 .filters-col {
