@@ -131,6 +131,3 @@ I'm a Frontend Developer from Egypt 🇪🇬
 
 ###
 
-<div align="center">
-  <img src="https://streak-stats.demolab.com?user=AyatT12&theme=dark" height="220" />
-</div>
