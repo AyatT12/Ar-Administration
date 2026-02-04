@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> نظام الادارة - إضافة سيارة</title>
+    <title> نظام الادارة - تغيير المالك  </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -14,12 +14,12 @@
 
     <link rel="stylesheet" href="../../../style/Layout.css">
     <link rel="stylesheet" href="../../../style/content.css">
-    <!-- <link rel="stylesheet" href="../../../style/english.css">  -->
+    <!-- <link rel="stylesheet" href="../../style/english.css">   -->
 
 </head>
 
 <body>
-    <div id="wrapper" class="Branches-wrapper d-flex flex-column ">
+   <div id="wrapper" class="Branches-wrapper d-flex flex-column ">
         <!-- Top Navbar -->
         <nav class="navbar navbar-expand-md navbar-light ">
             <div class="nav-container container-fluid">
@@ -121,21 +121,18 @@
                             </li>
                             <div id="Cars-items" class="collapse">
                                 <div class="bg-white gap-3 collapse-inner rounded">
-                                    <a class="collapse-item active" href="../../../Pages/Cars/CarsData/CarsData.html">
-                                        بيانات
+                                    <a class="collapse-item" href="../../../Pages/Cars/CarsData/CarsData.html"> بيانات
                                         السيارات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-
                                     <a class="collapse-item" href="../../../Pages/Cars/CarRepair/CarRepair.html"> تصليح
                                         السيارة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                    <a class="collapse-item" href="../../../Pages/Cars/CarTransfer/CarTransfer.html">
-                                        نقل
-                                        السيارة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                    <a class="collapse-item" href="../../../Pages/Cars/ChangeOwner/ChangeOwner.html">
+                                    <a class="collapse-item"
+                                        href="../../../Pages/Cars/CarTransfer/CarTransfer.html">
+                                        نقل السيارة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item active" href="../../../Pages/Cars/ChangeOwner/ChangeOwner.html">
                                         تغيير المالك <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                     <a class="collapse-item"
                                         href="../../../Pages/Cars/SalesProcedures/SalesProcedures.html"> إجراءات البيع
                                         <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-
                                     <a class="collapse-item" href="../../../Pages/Cars/CarsPrices/Prices.html"> الأسعار
                                         <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                 </div>
@@ -204,6 +201,7 @@
                                         <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                 </div>
                             </div>
+
 
                             <li class="nav-link">
                                 <a>
@@ -351,362 +349,566 @@
 
             <!-- Main Content Area -->
             <main class="content-area px-3">
-                <div class="container d-flex flex-column InputsPageContainer">
-                    <div class="row flex-column min-h-0 flex-1 position-relative">
-                        <div class="col-xxl-9 Data-container ">
-                            <form class="ContentForm needs-validation" novalidate>
-                                <div class="row justify-content-center flex-1 min-h-0">
-                                    <div class="col-lg-12 d-flex flex-column h-100">
-                                        <div class="row my-2">
-                                            <div class="col-md-6">
-                                                <h3>إضافة سيارة</h3>
-                                            </div>
-                                            <div class="col-md-6 save-col">
-                                                <button type="submit" class="custom-img-btn"> <img
-                                                        src="../../../images/Static/States/save.svg" /></button>
-                                                <button type="button" class="custom-img-btn"><a
-                                                        class="d-flex align-items-center" href="CarsData.html"><img
-                                                            class="Chevron"
-                                                            src="../../../images/Static/States/Chevron_Left.svg" /></a></button>
+                <div class="container d-flex flex-column" style="flex:1;min-height: 0;">
+                    <div class="row flex-column" style="flex: 1;min-height: 0; position: relative;">
+                        <div class="col-lg-12 Data-container ">
+                            <form class="ContentForm">
+                                <!-- Content Header -->
+                                <div class="row  mb-2">
+                                    <div class="col-auto">
+                                    <h3>تغيير المالك</h3>
+                                    </div>
+                                    <div class="col search-input-col">
+                                        <div class="row  justify-content-end">
+                                            <div class="col-lg-10 col-xxl-8">
+                                                <div class="form-outline w-100" data-mdb-input-init>
+                                                    <span class="fa fa-search"></span>
+                                                    <input type="search" id="search"
+                                                        class="form-control inputs search-input" name="search"
+                                                        aria-label="Search" autofocus autocomplete="off" />
+                                                </div>
                                             </div>
                                         </div>
-                                        <main class="mt-3 g-3 inputs-accordion-container">
-                                            <div class="accordion inputs-accordion">
-                                                <div class=" inputs-accordion-item open">
-                                                    <div class=" inputs-accordion-item-header">
+                                    </div>
 
+                                </div>
+                                <!-- Table -->
+                                <div class="table-wrapper">
+                                    <div class="table-container">
+                                        <table class=" tables-style table table-borderless " id="table">
+                                            <thead class="sticky-top">
+                                                 <tr>
+                                                <th class="DifferAlign"> الناقل </th>
+                                                <th class="DifferAlign"> الوقود</th>
+                                                <th> التسجيل</th>
+                                                <th class="DifferAlign"> المالك </th>
+                                                <th class="DifferAlign"> السيارة </th>
+                                                <th></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr data-bs-toggle="modal" href="#ChangeOwner">
 
-                                                    </div>
-                                                    <div class="accordion-item-description-wrapper">
-                                                        <div class="accordion-item-description">
-                                                            <hr class="accordion-items-hr">
-                                                            <div class="container-fluid data-scroll-container">
-                                                                <div class="row justify-content-between">
-                                                                    <div class="col-md-5">
-                                                                        <label for="Serial-number" class="form-label">
-                                                                            الرقم التسلسي
-                                                                        </label>
-                                                                        <input type="number" id="Serial-number"
-                                                                            class="form-control inputs number-input "
-                                                                            name="Serial-number" required>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
+                                                    <td class="DifferAlign">
+                                                        <p>ثنائي</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>بنزين اوكتان 98 مع كهرباء</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>خصوصي</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>شركة كدي لتأجير السيارات</p>
+                                                    </td>
+                                                    <td class="DifferAlign car-name">
+                                                        <div class="d-flex gap-2 align-items-center">
+                                                            <div class="col">
+                                                                <div class="row justify-content-end">
+                                                                    <div class="col-auto">
                                                                     </div>
-                                                                    <div class="col-md-5">
-                                                                        <label for="register" class="form-label">
-                                                                            التسجيل <i
-                                                                                class="fa-solid fa-star-of-life RequirdStar"></i></label>
-                                                                        <select class="form-select select-style "
-                                                                            name="register" id="register" required>
-                                                                            <option selected disabled> </option>
-                                                                            <option value="private">خصوصي</option>
-                                                                        </select>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-12">
-                                                                        <label for="CarName" class="form-label">السيارة
-                                                                            <i
-                                                                                class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                        </label>
-                                                                        <div class="col" style="position: relative;">
-                                                                            <input type="text" id="CarName"
-                                                                                class="form-control inputs "
-                                                                                name="CarName" required>
-                                                                            <div id="autocomplete-Cars"
-                                                                                class="autocomplete-items"></div>
-                                                                            <div class="invaild">
-                                                                                <div class="invalid-feedback">الحقل
-                                                                                    مطلوب</div>
-                                                                            </div>
-                                                                        </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="FirstLineP">
+                                                                            فورد - إسكورت - &nbsp;سيدان صغيرة - 2019 - ص
+                                                                            ى أ 7619 - بني
+                                                                        </p>
                                                                     </div>
                                                                 </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-12">
-                                                                        <label for="Chassis-number"
-                                                                            class="form-label">رقم الهيكل
-                                                                        </label>
-                                                                        <input type="text" id="Chassis-number"
-                                                                            class="form-control inputs"
-                                                                            name="Chassis-number" required>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
+                                                                <div class="row justify-content-end">
+                                                                    <div class="col-auto">
+                                                                        <p class="secondLineP">المرجان</p>
                                                                     </div>
-                                                                </div>
-                                                                <div class="row justify-content-between">
-                                                                    <div class="col-md-5">
-                                                                        <label for="fuel" class="form-label">
-                                                                            الوقود <i
-                                                                                class="fa-solid fa-star-of-life RequirdStar"></i></label>
-                                                                        <select class="form-select select-style "
-                                                                            name="fuel" id="fuel" required>
-                                                                            <option selected disabled> </option>
-                                                                            <option value="">بنزين أوكتان 95 مع كهرباء
-                                                                            </option>
-                                                                        </select>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-5">
-                                                                        <label for="fuelValue" class="form-label"> قيمة
-                                                                            الوقود ممتلئ
-                                                                            <i
-                                                                                class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                        </label>
-                                                                        <input type="number" id="fuelValue"
-                                                                            class="form-control inputs number-input "
-                                                                            name="fuelValue" required>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row justify-content-between">
-                                                                    <div class="col-md-5">
-                                                                        <label for="Oil" class="form-label">
-                                                                            الزيت <i
-                                                                                class="fa-solid fa-star-of-life RequirdStar"></i></label>
-                                                                        <select class="form-select select-style "
-                                                                            name="Oil" id="Oil" required>
-                                                                            <option selected disabled> </option>
-                                                                            <option value="سوبر شيل">سوبر شيل</option>
-                                                                        </select>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-5">
-                                                                        <label for="transporter" class="form-label">
-                                                                            الناقل <i
-                                                                                class="fa-solid fa-star-of-life RequirdStar"></i></label>
-                                                                        <select class="form-select select-style "
-                                                                            name="transporter" id="transporter"
-                                                                            required>
-                                                                            <option selected disabled> </option>
-                                                                            <option value="mannual">يدوي</option>
-                                                                            <option value="mixed">يدوي مع آلي</option>
-                                                                            <option value="automatic">آلي</option>
-                                                                        </select>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-auto">
-                                                                        <div class="row g-1">
-                                                                            <label for="transporter" class="form-label">
-                                                                                رقم اللوحة <i
-                                                                                    class="fa-solid fa-star-of-life RequirdStar"></i></label>
-                                                                            <div class="col-auto">
-                                                                                <select
-                                                                                    class="plate-number select-style form-select"
-                                                                                    name="plate-number1" required>
-                                                                                    <option selected></option>
-                                                                                    <option value="0">0</option>
-                                                                                    <option value="1">1</option>
-                                                                                    <option value="2">2</option>
-                                                                                    <option value="3">3</option>
-                                                                                    <option value="4">4</option>
-                                                                                    <option value="5">5</option>
-                                                                                    <option value="6">6</option>
-                                                                                    <option value="7">7</option>
-                                                                                    <option value="8">8</option>
-                                                                                    <option value="9">9</option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <div class="col-auto p-0">
-                                                                                <select
-                                                                                    class="plate-number select-style form-select "
-                                                                                    name="plate-number2" required>
-                                                                                    <option selected></option>
-                                                                                    <option value="0">0</option>
-                                                                                    <option value="1">1</option>
-                                                                                    <option value="2">2</option>
-                                                                                    <option value="3">3</option>
-                                                                                    <option value="4">4</option>
-                                                                                    <option value="5">5</option>
-                                                                                    <option value="6">6</option>
-                                                                                    <option value="7">7</option>
-                                                                                    <option value="8">8</option>
-                                                                                    <option value="9">9</option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <div class="col-auto">
-                                                                                <select
-                                                                                    class="plate-number select-style form-select "
-                                                                                    name="plate-number3" required>
-                                                                                    <option selected></option>
-                                                                                    <option value="0">0</option>
-                                                                                    <option value="1">1</option>
-                                                                                    <option value="2">2</option>
-                                                                                    <option value="3">3</option>
-                                                                                    <option value="4">4</option>
-                                                                                    <option value="5">5</option>
-                                                                                    <option value="6">6</option>
-                                                                                    <option value="7">7</option>
-                                                                                    <option value="8">8</option>
-                                                                                    <option value="9">9</option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <div class="col-auto p-0">
-                                                                                <input type="text"
-                                                                                    class=" form-control plate-letters inputs"
-                                                                                    name="plate-letters" dir="rtl"
-                                                                                    required>
-                                                                            </div>
-                                                                            <div class="invaild">
-                                                                                <div class="invalid-feedback">
-                                                                                    الحقل مطلوب
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-
-
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row justify-content-between ">
-                                                                    <div class="col-md-5">
-                                                                        <label for="MainColor" class="form-label">
-                                                                            اللون الأساسي <i
-                                                                                class="fa-solid fa-star-of-life RequirdStar"></i></label>
-                                                                        <select class="form-select select-style "
-                                                                            name="MainColor" id="MainColor" required>
-                                                                            <option selected disabled> </option>
-                                                                            <option value="">ابيض</option>
-                                                                            <option value="">اسود</option>
-                                                                            <option value="">رمادي</option>
-                                                                        </select>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-5">
-                                                                        <label for="SecondaryColor" class="form-label">
-                                                                            اللون الثانوي </label>
-                                                                        <select class="form-select select-style "
-                                                                            name="SecondaryColor" id="SecondaryColor">
-                                                                            <option selected disabled> </option>
-                                                                            <option value="">ابيض</option>
-                                                                            <option value="">اسود</option>
-                                                                            <option value="">رمادي</option>
-
-                                                                        </select>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row justify-content-between">
-                                                                    <div class="col-md-5">
-                                                                        <label for="SeatColor" class="form-label">
-                                                                            لون المرتبة </label>
-                                                                        <select class="form-select select-style "
-                                                                            name="SeatColor" id="SeatColor">
-                                                                            <option selected disabled> </option>
-                                                                            <option value="">ابيض</option>
-                                                                            <option value="">اسود</option>
-                                                                            <option value="">رمادي</option>
-
-                                                                        </select>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-5">
-                                                                        <label for="FloorColor" class="form-label">
-                                                                            لون الأرضية
-                                                                        </label>
-                                                                        <select class="form-select select-style "
-                                                                            name="FloorColor" id="FloorColor">
-                                                                            <option selected disabled> </option>
-                                                                            <option value="">ابيض</option>
-                                                                            <option value="">اسود</option>
-                                                                            <option value="">رمادي</option>
-                                                                        </select>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row justify-content-between">
-                                                                    <div class="col-md-5">
-                                                                        <label for="start-date" class="form-label">
-                                                                            تاريخ الإنضمام</label>
-                                                                        <i
-                                                                            class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                        <input type="date"
-                                                                            class="form-control inputs custom-date-input"
-                                                                            id="start-date" name="start-date" required>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-5">
-                                                                        <label for="currentRead" class="form-label">
-                                                                            القراءة الحالية
-                                                                            <i
-                                                                                class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                        </label>
-                                                                        <input type="number" id="currentRead"
-                                                                            class="form-control inputs number-input "
-                                                                            name="currentRead" required>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row align-items-center ">
-                                                                    <div class="col-lg-12">
-                                                                        <label>الملاحظات</label>
-                                                                    </div>
-                                                                    <div class="col d-flex justify-content-start">
-                                                                        <textarea class=" form-control textarea-inputs"
-                                                                            rows="1" maxlength="100" id="Reasons"
-                                                                            type="text"
-                                                                            name="Contract.RenterInfo.CrMasRenterInformationReasons"></textarea>
+                                                                    <div class="col-auto">
+                                                                        <p class="secondLineP">4898570239</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            <div class="col-auto d-flex justify-content-end">
+                                                                <div class="CarBorder-CarData">
+                                                                    <img src="../../../images/Demo/DefaultCar.png"
+                                                                        style="  max-width:100px;" class="CarPhoto"
+                                                                        loading="lazy">
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="filter-number-td">
+                                                            <div>1</div>
 
-                                            </div>
-                                        </main>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr data-bs-toggle="modal" href="#ChangeOwner">
+
+                                                    <td class="DifferAlign">
+                                                        <p>آلي</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>سيارة كهربائية هجينة</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>خصوصي</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>الشركة المتقدمة للسيارات</p>
+                                                    </td>
+                                                    <td class="DifferAlign car-name">
+                                                        <div class="d-flex gap-2 align-items-center">
+                                                            <div class="col">
+                                                                <div class="row justify-content-end">
+                                                                    <div class="col-auto">
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="FirstLineP">
+                                                                            لكزس - اي اس - &nbsp;فخمة متوسطة - 2019 - ق
+                                                                            ن ع 4759 - فسفوري
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row justify-content-end">
+                                                                    <div class="col-auto">
+                                                                        <p class="secondLineP">الرئيسي الرئيسي</p>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="secondLineP">5521872234</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-auto d-flex justify-content-end">
+                                                                <div class="CarBorder-CarData">
+                                                                    <img src="../../../images/Demo/DefaultCar.png"
+                                                                        style="  max-width:100px;" class="CarPhoto"
+                                                                        loading="lazy">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="filter-number-td">
+                                                            <div>2</div>
+
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr data-bs-toggle="modal" href="#ChangeOwner">
+
+                                                    <td class="DifferAlign">
+                                                        <p>ثنائي</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>كهرباء</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>خصوصي</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>شركة كدي لتأجير السيارات</p>
+                                                    </td>
+                                                    <td class="DifferAlign car-name">
+                                                        <div class="d-flex gap-2 align-items-center">
+                                                            <div class="col">
+                                                                <div class="row justify-content-end">
+                                                                    <div class="col-auto">
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="FirstLineP">
+                                                                            نيسان - سنترا - &nbsp;سيدان صغيرة - 2021 - ع
+                                                                            ص ص 0643 - رمادي
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row justify-content-end">
+                                                                    <div class="col-auto">
+                                                                        <p class="secondLineP">جعرانة</p>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="secondLineP">6077766271</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-auto d-flex justify-content-end">
+                                                                <div class="CarBorder-CarData">
+                                                                    <img src="../../../images/Demo/DefaultCar.png"
+                                                                        style="  max-width:100px;" class="CarPhoto"
+                                                                        loading="lazy">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="filter-number-td">
+                                                            <div>3</div>
+
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr data-bs-toggle="modal" href="#ChangeOwner">
+
+                                                    <td class="DifferAlign">
+                                                        <p>آلي</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>بنزين اوكتان 95</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>خصوصي</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>شركة كدي لتأجير السيارات</p>
+                                                    </td>
+                                                    <td class="DifferAlign car-name">
+                                                        <div class="d-flex gap-2 align-items-center">
+                                                            <div class="col">
+                                                                <div class="row justify-content-end">
+                                                                    <div class="col-auto">
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="FirstLineP">
+                                                                            فورد - تورس - &nbsp;سيدان متوسطة - 2021 - هـ
+                                                                            ر ر 3483 - برتقالي
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row justify-content-end">
+                                                                    <div class="col-auto">
+                                                                        <p class="secondLineP">الوشحاء</p>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="secondLineP">4997198501</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-auto d-flex justify-content-end">
+                                                                <div class="CarBorder-CarData">
+                                                                    <img src="../../../images/Demo/DefaultCar.png"
+                                                                        style="  max-width:100px;" class="CarPhoto"
+                                                                        loading="lazy">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="filter-number-td">
+                                                            <div>4</div>
+
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr data-bs-toggle="modal" href="#ChangeOwner">
+
+                                                    <td class="DifferAlign">
+                                                        <p>يدوي</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>بنزين اوكتان 87 مع كهرباء</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>خصوصي</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>شركة كدي لتأجير السيارات</p>
+                                                    </td>
+                                                    <td class="DifferAlign car-name">
+                                                        <div class="d-flex gap-2 align-items-center">
+                                                            <div class="col">
+                                                                <div class="row justify-content-end">
+                                                                    <div class="col-auto">
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="FirstLineP">
+                                                                            كيا - نيرو - &nbsp;اقتصادية - 2020 - م م ى
+                                                                            7167 - ذهبي
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row justify-content-end">
+                                                                    <div class="col-auto">
+                                                                        <p class="secondLineP">الرئيسي الرئيسي</p>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="secondLineP">4928122761</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-auto d-flex justify-content-end">
+                                                                <div class="CarBorder-CarData">
+                                                                    <img src="../../../images/Demo/DefaultCar.png"
+                                                                        style="  max-width:100px;" class="CarPhoto"
+                                                                        loading="lazy">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="filter-number-td">
+                                                            <div>5</div>
+
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr data-bs-toggle="modal" href="#ChangeOwner">
+
+                                                    <td class="DifferAlign">
+                                                        <p>ثنائي</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>ديزل مع كهرباء</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>خصوصي</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>شركة كدي لتأجير السيارات</p>
+                                                    </td>
+                                                    <td class="DifferAlign car-name">
+                                                        <div class="d-flex gap-2 align-items-center">
+                                                            <div class="col">
+                                                                <div class="row justify-content-end">
+                                                                    <div class="col-auto">
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="FirstLineP">
+                                                                            فورد - إسكورت - &nbsp;سيدان صغيرة - 2019 - ب
+                                                                            ح د 0905 - أصفر
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row justify-content-end">
+                                                                    <div class="col-auto">
+                                                                        <p class="secondLineP">المرجان</p>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="secondLineP">4413298565</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-auto d-flex justify-content-end">
+                                                                <div class="CarBorder-CarData">
+                                                                    <img src="../../../images/Demo/DefaultCar.png"
+                                                                        style="  max-width:100px;" class="CarPhoto"
+                                                                        loading="lazy">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="filter-number-td">
+                                                            <div>6</div>
+
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr data-bs-toggle="modal" href="#ChangeOwner">
+
+                                                    <td class="DifferAlign">
+                                                        <p>يدوي</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>كهرباء</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>خصوصي</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>شركة كدي لتأجير السيارات</p>
+                                                    </td>
+                                                    <td class="DifferAlign car-name">
+                                                        <div class="d-flex gap-2 align-items-center">
+                                                            <div class="col">
+                                                                <div class="row justify-content-end">
+                                                                    <div class="col-auto">
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="FirstLineP">
+                                                                            كيا - سيراتو - &nbsp;سيدان صغيرة - 2020 - س
+                                                                            ط ط 8652 - رمادي
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row justify-content-end">
+                                                                    <div class="col-auto">
+                                                                        <p class="secondLineP">المرجان</p>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="secondLineP">6053877356</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-auto d-flex justify-content-end">
+                                                                <div class="CarBorder-CarData">
+                                                                    <img src="../../../images/Demo/DefaultCar.png"
+                                                                        style="  max-width:100px;" class="CarPhoto"
+                                                                        loading="lazy">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="filter-number-td">
+                                                            <div>7</div>
+
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr data-bs-toggle="modal" href="#ChangeOwner">
+
+                                                    <td class="DifferAlign">
+                                                        <p>آلي</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>بنزين اوكتان 95 مع كهرباء</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>خصوصي</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>شركة كدي لتأجير السيارات</p>
+                                                    </td>
+                                                    <td class="DifferAlign car-name">
+                                                        <div class="d-flex gap-2 align-items-center">
+                                                            <div class="col">
+                                                                <div class="row justify-content-end">
+                                                                    <div class="col-auto">
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="FirstLineP">
+                                                                            شيفروليه - سبارك ال اس - &nbsp;اقتصادية -
+                                                                            2021 - ك ل أ 4883 - برتقالي
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row justify-content-end">
+                                                                    <div class="col-auto">
+                                                                        <p class="secondLineP">الصريف</p>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="secondLineP">4590216890</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-auto d-flex justify-content-end">
+                                                                <div class="CarBorder-CarData">
+                                                                    <img src="../../../images/Demo/DefaultCar.png"
+                                                                        style="  max-width:100px;" class="CarPhoto"
+                                                                        loading="lazy">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="filter-number-td">
+                                                            <div>8</div>
+
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr data-bs-toggle="modal" href="#ChangeOwner">
+
+                                                    <td class="DifferAlign">
+                                                        <p>آلي</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>ديزل</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>خصوصي</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>شركة كدي لتأجير السيارات</p>
+                                                    </td>
+                                                    <td class="DifferAlign car-name">
+                                                        <div class="d-flex gap-2 align-items-center">
+                                                            <div class="col">
+                                                                <div class="row justify-content-end">
+                                                                    <div class="col-auto">
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="FirstLineP">
+                                                                            هيونداي - أزيرا - &nbsp;سيدان متوسطة - 2019
+                                                                            - د د ى 0698 - سماوي
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row justify-content-end">
+                                                                    <div class="col-auto">
+                                                                        <p class="secondLineP">الرئيسي الرئيسي</p>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="secondLineP">4690633492</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-auto d-flex justify-content-end">
+                                                                <div class="CarBorder-CarData">
+                                                                    <img src="../../../images/Demo/DefaultCar.png"
+                                                                        style="  max-width:100px;" class="CarPhoto"
+                                                                        loading="lazy">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="filter-number-td">
+                                                            <div>9</div>
+
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr data-bs-toggle="modal" href="#ChangeOwner">
+
+                                                    <td class="DifferAlign">
+                                                        <p>يدوي</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>سيارة كهربائية هجينة</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>خصوصي</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>شركة كدي لتأجير السيارات</p>
+                                                    </td>
+                                                    <td class="DifferAlign car-name">
+                                                        <div class="d-flex gap-2 align-items-center">
+                                                            <div class="col">
+                                                                <div class="row justify-content-end">
+                                                                    <div class="col-auto">
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="FirstLineP">
+                                                                            لكزس - اي اس - &nbsp;فخمة متوسطة - 2020 - س
+                                                                            و س 2877 - أبيض
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row justify-content-end">
+                                                                    <div class="col-auto">
+                                                                        <p class="secondLineP">الرئيسي الرئيسي</p>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="secondLineP">5612379332</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-auto d-flex justify-content-end">
+                                                                <div class="CarBorder-CarData">
+                                                                    <img src="../../../images/Demo/DefaultCar.png"
+                                                                        style="  max-width:100px;" class="CarPhoto"
+                                                                        loading="lazy">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="filter-number-td">
+                                                            <div>10</div>
+
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </form>
@@ -1422,6 +1624,110 @@
                 </div>
             </aside>
         </div>
+        <!-- change Owner modal -->
+        <div class="modal fade" id="ChangeOwner" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="ChangeOwnerLabel" aria-hidden="true"  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content cars-modal-content">
+                    <form action="" class="needs-validation" novalidate>
+                        <div class="modal-header border-0 justify-content-end">
+                            <div class="row w-100">
+                                <div class="col-md-12 d-flex justify-content-end">
+                                 <button type="button" class="btn-close m-0 p-1" data-bs-dismiss="modal" aria-label="Close"></button>                                
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <h5 class="modal-title card-title m-auto" id="model_title">تغيير المالك </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-body p-0">
+                            <div class="data-details">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-auto">
+                                            <div class="CarBorder-CarData">
+                                                <img src="../../../images/Demo/DefaultCar.png" alt="Car-photo"
+                                                    class="CarPhoto">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="row align-items-baseline">
+                                                <div class="col">
+                                                    <p class="carName">كيا - نيرو -  اقتصادية - 2019 - ب ط ح 8835 - أحمر </p>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <p class="m-0">1579634852</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row mt-4 BranchName">
+                                        <div class="col-md-auto p-0">
+                                            <p>المالك الحالي</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="Saved-data">شركة الوعلان لتأجير السيارات</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row  align-items-baseline g-2">
+                                        <div class="col-md-auto">
+                                            <label for="NewOwner" class="form-label"> المالك الجديد</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <select class="form-select select-style " name="NewOwner" id="NewOwner"
+                                                required>
+                                                <option> </option>
+                                                <option value="kodi"> شركة كدي لتأجير السيارات </option>
+                                                <option value="alyoum"> شركة اليوم لتأجير السيارات  </option>
+                                                <option value="jebal">  شركة جبال السروات لتأجير السيارات  </option>
+                                                <option value="alqaseem">  شركة نفود القصيم لتأجير السيارات  </option>
+                                                <option value="typa">  شركة طيبة لتأجير السيارات  </option>
+                                            </select>
+                                            <div class="invaild">
+                                                <div class="invalid-feedback">
+                                                    الحقل مطلوب
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 mb-3">
+                                    <div class="row  align-items-baseline flex-column">
+                                        <div class="col-lg-12">
+                                            <label>الملاحظات</label>
+                                        </div>
+                                        <div class="col d-flex justify-content-start">
+                                            <textarea class=" form-control textarea-inputs" rows="1" maxlength="100"
+                                                id="notes" type="text"
+                                                name="Reasons"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer border-0 justify-content-center mx-1">
+                            <div class="row w-100 g-2">
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-standard w-100" id="Accept">موافق</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">إلغاء
+                                        الأمر</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -1433,234 +1739,15 @@
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../../../scripts/Scripts.js"></script>
-    <!-- سكربت لعمل قائمة اختيارات السيارة  -->
+
     <script>
-        const cars = [
-            { "text":  "هيونداي - أكسنت -  سيدان متوسطة - 2021 - س و ص 1870 - بني", "value": "1700000003" },
-            { "text": "فورد - تورس -  سيدان متوسطة - 2021 - د ق هـ 4707 - رمادي ", "value": "1700000004" },
-            { "text": "كيا - تيلورايد -  عائلية كبيرة - 2021 - ص هـ ن 0420 - بنفسجي", "value": "1700000005" },
-            { "text": "لكزس - اي اس -  فخمة متوسطة - 2020 - س و س 2877 - أبيض", "value": "1700000005" },
-            { "text": "فورد - تورس -  سيدان متوسطة - 2019 - و ك د 3848 - كحلي", "value": "1700000005" },
-            { "text": "بيجو - ترافيلر -  عائلية كبيرة - 2020 - ب أ ع 4244 - بني", "value": "1700000005" },
-        ];
-        const dataLists = { Cars: cars };
-        $(document).ready(function () {
-            function setupAutocomplete(inputId, listId, dataList, errorElementId, statusFlagName, validate) {
-                const $input = $("#" + inputId);
-                const $list = $("#" + listId);
-                const $hiddenCode = $("#" + inputId + "-code");
-                const $error = $("#" + errorElementId);
-
-                // Arrow Initialization
-                const $arrow = $('<div class="autocomplete-arrow"></div>');
-                $('body').append($arrow);
-
-                function detectDirection() {
-                    const bodyStyle = window.getComputedStyle(document.body);
-                    const htmlStyle = window.getComputedStyle(document.documentElement);
-                    if (bodyStyle.direction === 'rtl' || htmlStyle.direction === 'rtl' ||
-                        $('body').hasClass('rtl') || $('html').hasClass('rtl')) return 'rtl';
-                    return 'ltr';
-                }
-
-                const isRTL = detectDirection() === 'rtl';
-
-                function getMaxItemWidth(items) {
-                    let maxWidth = 200;
-                    const tempDiv = $('<div>').css({
-                        'position': 'absolute',
-                        'visibility': 'hidden',
-                        'white-space': 'nowrap',
-                        'font-size': '1rem',
-                        'font-family': 'inherit',
-                        'padding': '8px 12px'
-                    }).appendTo('body');
-
-                    items.forEach(item => {
-                        tempDiv.text(item);
-                        const width = tempDiv.outerWidth();
-                        if (width > maxWidth) {
-                            maxWidth = width;
-                        }
-                    });
-
-                    tempDiv.remove();
-
-                    const isMobile = window.innerWidth < 768;
-                    let finalWidth = maxWidth + 30;
-
-                    if (isMobile) {
-                        finalWidth = Math.min(Math.max(finalWidth, 150), 250);
-                    } else {
-                        finalWidth = Math.max(finalWidth);
-                    }
-
-                    return finalWidth;
-                }
-                function updateAutocompletePosition() {
-                    if ($list.is(":visible")) {
-                        const inputRect = $input[0].getBoundingClientRect();
-                        const viewportHeight = window.innerHeight;
-                        const viewportWidth = window.innerWidth;
-
-                        const visibleItems = $list.find('div').toArray().map(div => div.textContent);
-                        const calculatedWidth = getMaxItemWidth(visibleItems);
-                        $list.css('width', calculatedWidth + 'px');
-
-
-                        let leftPosition;
-                        if (isRTL) {
-
-                            leftPosition = inputRect.left - (calculatedWidth - 230);
-
-                            if (leftPosition < 10) {
-                                leftPosition = 10;
-                            }
-                        } else {
-                            leftPosition = inputRect.right - (calculatedWidth - 230);
-
-                            if (leftPosition + calculatedWidth > viewportWidth - 10) {
-                                leftPosition = viewportWidth - calculatedWidth - 10;
-                            }
-                        }
-
-                        const spaceBelow = viewportHeight - inputRect.bottom;
-                        const spaceAbove = inputRect.top;
-
-                        const maxHeight = Math.min(spaceBelow);
-
-                        $list.css({
-                            'top': (inputRect.top + 3) + 'px',
-                            'left': leftPosition + 'px',
-                            'max-height': maxHeight + 'px',
-                            'height': 'auto'
-                        });
-
-                        updateArrowPosition();
-                    }
-                }
-                function updateArrowPosition() {
-                    const listRect = $list[0].getBoundingClientRect();
-                    let arrowStyle = {
-                        'position': 'fixed', 'z-index': '10001', 'display': 'block',
-                        'pointer-events': 'none', 'top': (listRect.top + 10) + 'px'
-                    };
-
-                    if (isRTL) {
-                        arrowStyle['left'] = (listRect.right + 2) + 'px';
-                        arrowStyle['border-left'] = '8px solid #d3d3d3';
-                        arrowStyle['border-right'] = 'none';
-                    } else {
-                        arrowStyle['left'] = (listRect.left - 10) + 'px';
-                        arrowStyle['border-left'] = 'none';
-                        arrowStyle['border-right'] = '8px solid #d3d3d3';
-                    }
-                    arrowStyle['border-bottom'] = '8px solid transparent';
-                    arrowStyle['border-top'] = '8px solid transparent';
-
-                    $arrow.css(arrowStyle);
-                }
-
-                // Input Logic with matchesFound check
-                $input.on("input", function () {
-
-                    const value = this.value.trim().toLowerCase();
-                    $list.empty();
-
-                    if (validate) {
-                        $hiddenCode.val('');
-                        $error.text('');
-                    }
-
-                    if (value === "") {
-
-                        dataList.forEach(item => {
-                            $list.append(`<div data-value="${item.value}">${item.text}</div>`);
-                        });
-
-                        $list.show();
-                        setTimeout(() => {
-                            updateAutocompletePosition();
-                            $list.find('div').first().addClass('active');
-                        }, 10);
-
-                        return;
-                    }
-
-                    let matchesFound = false;
-
-                    dataList.forEach(item => {
-                        if (item.text.trim().toLowerCase().includes(value)) {
-                            $list.append(`<div data-value="${item.value}">${item.text}</div>`);
-                            matchesFound = true;
-                        }
-                    });
-
-                    if (matchesFound) {
-                        $list.show();
-                        setTimeout(() => {
-                            updateAutocompletePosition();
-                            $list.find('div').first().addClass('active');
-                        }, 10);
-                    } else {
-                        $list.hide();
-                        $arrow.hide();
-                    }
-                });
-                // Selection Logic
-                $list.on("click", "div", function () {
-                    const text = $(this).text();
-                    const val = $(this).data("value");
-                    $input.val(text);
-                    $hiddenCode.val(val);
-                    if (validate) { $error.text(''); window[statusFlagName] = true; }
-                    $list.hide(); $arrow.hide();
-                    $input.focus();
-                });
-
-                // Blur Validation
-                if (validate) {
-                    $input.on("blur", function () {
-                        setTimeout(() => {
-                            const currentVal = $(this).val();
-                            const match = dataList.find(i => i.text === currentVal);
-                            if (!match && currentVal !== "") {
-                                $error.text("This Field Is Required");
-                                window[statusFlagName] = false;
-                                $hiddenCode.val('');
-                            }
-                        }, 200);
-                    });
-                }
-
-                $(document).on("click", function (e) {
-                    if (!$(e.target).closest($input).length && !$(e.target).closest($list).length) {
-                        $list.hide(); $arrow.hide();
-                    }
-                });
-            }
-
-            setupAutocomplete("CarName", "autocomplete-Cars", dataLists.Cars);
-        });
-
-    </script>
-    <!-- سكربت التنقل بين مدخلات رقم اللوحة -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const plateNumbers = document.querySelectorAll(".plate-number");
-            const plateLetters = document.querySelector(".plate-letters");
-
-            plateNumbers.forEach((select, index) => {
-                select.addEventListener("change", function () {
-                    if (index < plateNumbers.length - 1) {
-                        plateNumbers[index + 1].focus();
-                    } else {
-                        plateLetters.focus();
-                    }
-                });
-            });
-
-        });
+        const AcceptBtn = document.getElementById("Accept");
+        AcceptBtn.addEventListener("click", function () {
+            $('#ChangeOwner').modal('hide');
+            setTimeout(() => {
+                $('#SuccessModal').modal('show');
+            }, 500)
+        }) 
     </script>
 
 </body>

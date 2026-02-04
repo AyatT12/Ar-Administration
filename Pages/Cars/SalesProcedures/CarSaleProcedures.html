@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> نظام الادارة - إضافة سيارة</title>
+    <title> نظام الادارة - إجراءات بيع السيارة</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -121,8 +121,7 @@
                             </li>
                             <div id="Cars-items" class="collapse">
                                 <div class="bg-white gap-3 collapse-inner rounded">
-                                    <a class="collapse-item active" href="../../../Pages/Cars/CarsData/CarsData.html">
-                                        بيانات
+                                    <a class="collapse-item" href="../../../Pages/Cars/CarsData/CarsData.html"> بيانات
                                         السيارات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
 
                                     <a class="collapse-item" href="../../../Pages/Cars/CarRepair/CarRepair.html"> تصليح
@@ -132,7 +131,7 @@
                                         السيارة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                     <a class="collapse-item" href="../../../Pages/Cars/ChangeOwner/ChangeOwner.html">
                                         تغيير المالك <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                    <a class="collapse-item"
+                                    <a class="collapse-item active"
                                         href="../../../Pages/Cars/SalesProcedures/SalesProcedures.html"> إجراءات البيع
                                         <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
 
@@ -359,354 +358,198 @@
                                     <div class="col-lg-12 d-flex flex-column h-100">
                                         <div class="row my-2">
                                             <div class="col-md-6">
-                                                <h3>إضافة سيارة</h3>
+                                                <h3> إجراءات بيع السيارة </h3>
                                             </div>
                                             <div class="col-md-6 save-col">
                                                 <button type="submit" class="custom-img-btn"> <img
                                                         src="../../../images/Static/States/save.svg" /></button>
                                                 <button type="button" class="custom-img-btn"><a
-                                                        class="d-flex align-items-center" href="CarsData.html"><img
-                                                            class="Chevron"
+                                                        class="d-flex align-items-center"
+                                                        href="SalesProcedures.html"><img class="Chevron"
                                                             src="../../../images/Static/States/Chevron_Left.svg" /></a></button>
                                             </div>
-                                        </div>
-                                        <main class="mt-3 g-3 inputs-accordion-container">
-                                            <div class="accordion inputs-accordion">
-                                                <div class=" inputs-accordion-item open">
-                                                    <div class=" inputs-accordion-item-header">
-
-
+                                            <div class="col-md-12 my-3">
+                                                <div class="row align-items-center">
+                                                    <div class="col-md-auto">
+                                                        <div class="CarBorder-CarData">
+                                                            <img src="../../../images/Demo/DefaultCar.png"
+                                                                alt="Car-photo" class="CarPhoto">
+                                                        </div>
                                                     </div>
-                                                    <div class="accordion-item-description-wrapper">
-                                                        <div class="accordion-item-description">
-                                                            <hr class="accordion-items-hr">
-                                                            <div class="container-fluid data-scroll-container">
-                                                                <div class="row justify-content-between">
-                                                                    <div class="col-md-5">
-                                                                        <label for="Serial-number" class="form-label">
-                                                                            الرقم التسلسي
-                                                                        </label>
-                                                                        <input type="number" id="Serial-number"
-                                                                            class="form-control inputs number-input "
-                                                                            name="Serial-number" required>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-5">
-                                                                        <label for="register" class="form-label">
-                                                                            التسجيل <i
-                                                                                class="fa-solid fa-star-of-life RequirdStar"></i></label>
-                                                                        <select class="form-select select-style "
-                                                                            name="register" id="register" required>
-                                                                            <option selected disabled> </option>
-                                                                            <option value="private">خصوصي</option>
-                                                                        </select>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-12">
-                                                                        <label for="CarName" class="form-label">السيارة
-                                                                            <i
-                                                                                class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                        </label>
-                                                                        <div class="col" style="position: relative;">
-                                                                            <input type="text" id="CarName"
-                                                                                class="form-control inputs "
-                                                                                name="CarName" required>
-                                                                            <div id="autocomplete-Cars"
-                                                                                class="autocomplete-items"></div>
-                                                                            <div class="invaild">
-                                                                                <div class="invalid-feedback">الحقل
-                                                                                    مطلوب</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-12">
-                                                                        <label for="Chassis-number"
-                                                                            class="form-label">رقم الهيكل
-                                                                        </label>
-                                                                        <input type="text" id="Chassis-number"
-                                                                            class="form-control inputs"
-                                                                            name="Chassis-number" required>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row justify-content-between">
-                                                                    <div class="col-md-5">
-                                                                        <label for="fuel" class="form-label">
-                                                                            الوقود <i
-                                                                                class="fa-solid fa-star-of-life RequirdStar"></i></label>
-                                                                        <select class="form-select select-style "
-                                                                            name="fuel" id="fuel" required>
-                                                                            <option selected disabled> </option>
-                                                                            <option value="">بنزين أوكتان 95 مع كهرباء
-                                                                            </option>
-                                                                        </select>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-5">
-                                                                        <label for="fuelValue" class="form-label"> قيمة
-                                                                            الوقود ممتلئ
-                                                                            <i
-                                                                                class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                        </label>
-                                                                        <input type="number" id="fuelValue"
-                                                                            class="form-control inputs number-input "
-                                                                            name="fuelValue" required>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row justify-content-between">
-                                                                    <div class="col-md-5">
-                                                                        <label for="Oil" class="form-label">
-                                                                            الزيت <i
-                                                                                class="fa-solid fa-star-of-life RequirdStar"></i></label>
-                                                                        <select class="form-select select-style "
-                                                                            name="Oil" id="Oil" required>
-                                                                            <option selected disabled> </option>
-                                                                            <option value="سوبر شيل">سوبر شيل</option>
-                                                                        </select>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-5">
-                                                                        <label for="transporter" class="form-label">
-                                                                            الناقل <i
-                                                                                class="fa-solid fa-star-of-life RequirdStar"></i></label>
-                                                                        <select class="form-select select-style "
-                                                                            name="transporter" id="transporter"
-                                                                            required>
-                                                                            <option selected disabled> </option>
-                                                                            <option value="mannual">يدوي</option>
-                                                                            <option value="mixed">يدوي مع آلي</option>
-                                                                            <option value="automatic">آلي</option>
-                                                                        </select>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-auto">
-                                                                        <div class="row g-1">
-                                                                            <label for="transporter" class="form-label">
-                                                                                رقم اللوحة <i
-                                                                                    class="fa-solid fa-star-of-life RequirdStar"></i></label>
-                                                                            <div class="col-auto">
-                                                                                <select
-                                                                                    class="plate-number select-style form-select"
-                                                                                    name="plate-number1" required>
-                                                                                    <option selected></option>
-                                                                                    <option value="0">0</option>
-                                                                                    <option value="1">1</option>
-                                                                                    <option value="2">2</option>
-                                                                                    <option value="3">3</option>
-                                                                                    <option value="4">4</option>
-                                                                                    <option value="5">5</option>
-                                                                                    <option value="6">6</option>
-                                                                                    <option value="7">7</option>
-                                                                                    <option value="8">8</option>
-                                                                                    <option value="9">9</option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <div class="col-auto p-0">
-                                                                                <select
-                                                                                    class="plate-number select-style form-select "
-                                                                                    name="plate-number2" required>
-                                                                                    <option selected></option>
-                                                                                    <option value="0">0</option>
-                                                                                    <option value="1">1</option>
-                                                                                    <option value="2">2</option>
-                                                                                    <option value="3">3</option>
-                                                                                    <option value="4">4</option>
-                                                                                    <option value="5">5</option>
-                                                                                    <option value="6">6</option>
-                                                                                    <option value="7">7</option>
-                                                                                    <option value="8">8</option>
-                                                                                    <option value="9">9</option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <div class="col-auto">
-                                                                                <select
-                                                                                    class="plate-number select-style form-select "
-                                                                                    name="plate-number3" required>
-                                                                                    <option selected></option>
-                                                                                    <option value="0">0</option>
-                                                                                    <option value="1">1</option>
-                                                                                    <option value="2">2</option>
-                                                                                    <option value="3">3</option>
-                                                                                    <option value="4">4</option>
-                                                                                    <option value="5">5</option>
-                                                                                    <option value="6">6</option>
-                                                                                    <option value="7">7</option>
-                                                                                    <option value="8">8</option>
-                                                                                    <option value="9">9</option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <div class="col-auto p-0">
-                                                                                <input type="text"
-                                                                                    class=" form-control plate-letters inputs"
-                                                                                    name="plate-letters" dir="rtl"
-                                                                                    required>
-                                                                            </div>
-                                                                            <div class="invaild">
-                                                                                <div class="invalid-feedback">
-                                                                                    الحقل مطلوب
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-
-
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row justify-content-between ">
-                                                                    <div class="col-md-5">
-                                                                        <label for="MainColor" class="form-label">
-                                                                            اللون الأساسي <i
-                                                                                class="fa-solid fa-star-of-life RequirdStar"></i></label>
-                                                                        <select class="form-select select-style "
-                                                                            name="MainColor" id="MainColor" required>
-                                                                            <option selected disabled> </option>
-                                                                            <option value="">ابيض</option>
-                                                                            <option value="">اسود</option>
-                                                                            <option value="">رمادي</option>
-                                                                        </select>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-5">
-                                                                        <label for="SecondaryColor" class="form-label">
-                                                                            اللون الثانوي </label>
-                                                                        <select class="form-select select-style "
-                                                                            name="SecondaryColor" id="SecondaryColor">
-                                                                            <option selected disabled> </option>
-                                                                            <option value="">ابيض</option>
-                                                                            <option value="">اسود</option>
-                                                                            <option value="">رمادي</option>
-
-                                                                        </select>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row justify-content-between">
-                                                                    <div class="col-md-5">
-                                                                        <label for="SeatColor" class="form-label">
-                                                                            لون المرتبة </label>
-                                                                        <select class="form-select select-style "
-                                                                            name="SeatColor" id="SeatColor">
-                                                                            <option selected disabled> </option>
-                                                                            <option value="">ابيض</option>
-                                                                            <option value="">اسود</option>
-                                                                            <option value="">رمادي</option>
-
-                                                                        </select>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-5">
-                                                                        <label for="FloorColor" class="form-label">
-                                                                            لون الأرضية
-                                                                        </label>
-                                                                        <select class="form-select select-style "
-                                                                            name="FloorColor" id="FloorColor">
-                                                                            <option selected disabled> </option>
-                                                                            <option value="">ابيض</option>
-                                                                            <option value="">اسود</option>
-                                                                            <option value="">رمادي</option>
-                                                                        </select>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row justify-content-between">
-                                                                    <div class="col-md-5">
-                                                                        <label for="start-date" class="form-label">
-                                                                            تاريخ الإنضمام</label>
-                                                                        <i
-                                                                            class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                        <input type="date"
-                                                                            class="form-control inputs custom-date-input"
-                                                                            id="start-date" name="start-date" required>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-5">
-                                                                        <label for="currentRead" class="form-label">
-                                                                            القراءة الحالية
-                                                                            <i
-                                                                                class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                        </label>
-                                                                        <input type="number" id="currentRead"
-                                                                            class="form-control inputs number-input "
-                                                                            name="currentRead" required>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">
-                                                                                الحقل مطلوب
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row align-items-center ">
-                                                                    <div class="col-lg-12">
-                                                                        <label>الملاحظات</label>
-                                                                    </div>
-                                                                    <div class="col d-flex justify-content-start">
-                                                                        <textarea class=" form-control textarea-inputs"
-                                                                            rows="1" maxlength="100" id="Reasons"
-                                                                            type="text"
-                                                                            name="Contract.RenterInfo.CrMasRenterInformationReasons"></textarea>
-                                                                    </div>
-                                                                </div>
+                                                    <div class="col">
+                                                        <div class="row align-items-baseline">
+                                                            <div class="col-auto">
+                                                                <h5 class="subtitle">كيا - سيراتو - سيدان صغيرة - 2020 -
+                                                                    س ط ط 8652 - رمادي</h5>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-auto">
+                                                                <p class="m-0">1579634852</p>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <p class="m-0">الحزام الذهبي</p>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
 
+                                                </div>
                                             </div>
-                                        </main>
+
+                                        </div>
+                                        <div class="row flex-1 min-h-0 mx-1 flex-column gy-2 flex-nowrap "
+                                            style="overflow: auto;">
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-auto" style="min-width: 33.33333333%">
+                                                        <div class="row g-3">
+                                                            <div class="col-auto">
+                                                                <p class="DataTitle">تاريخ الانضمام</p>
+                                                            </div>
+                                                            <div class="col-auto ">
+                                                                <p class="Saved-data">2020/03/01</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-auto" style="min-width: 33.33333333%">
+                                                        <div class="row g-3">
+                                                            <div class="col-auto">
+                                                                <p class="DataTitle">عدد العقود</p>
+                                                            </div>
+                                                            <div class="col-auto ">
+                                                                <p class="Saved-data">500</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-auto" style="min-width: 33.33333333%">
+                                                        <div class="row justify-content-between">
+                                                            <div class="col-md-auto">
+                                                                <div class="row g-3">
+                                                                    <div class="col-auto">
+                                                                        <p class="DataTitle">عدد الأيام</p>
+                                                                    </div>
+                                                                    <div class="col-auto ">
+                                                                        <p class="Saved-data">360</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-auto">
+                                                        <div class="row g-3">
+                                                            <div class="col-auto">
+                                                                <p class="DataTitle">القراءة الحالية</p>
+                                                            </div>
+                                                            <div class="col-auto ">
+                                                                <p class="Saved-data">999,999</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="row  align-items-center">
+                                                    <div class="col-md-auto" style="min-width: 33.33333333%">
+                                                        <label for="date" class="form-label"> تاريخ العرض
+                                                            <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                        </label>
+                                                        <input type="date" id="date" class="form-control inputs"
+                                                            name="date" required>
+                                                        <div class="invaild">
+                                                            <div class="invalid-feedback">
+                                                                الحقل مطلوب
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-auto" style="min-width: 33.33333333%">
+                                                        <label for="Price" class="form-label">السعر
+                                                            <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                        </label>
+                                                        <input type="number" id="Price"
+                                                            class="form-control inputs number-input" name="Price"
+                                                            required>
+                                                        <div class="invaild">
+                                                            <div class="invalid-feedback">
+                                                                الحقل مطلوب
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-auto" style="min-width: 33.33333333%">
+                                                        <div class="d-flex gap-2 align-items-end">
+                                                            <input class="form-check-input checkbox" type="checkbox"
+                                                                value="checked" id="Rent&Sale" name="Rent&Sale">
+                                                            <label class="form-check-label" for="Rent&Sale">
+                                                                للبيع والإيجار
+                                                            </label>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <label>الملاحظات</label>
+                                                    </div>
+                                                    <div class="col d-flex justify-content-start">
+                                                        <textarea class=" form-control textarea-inputs" rows="1"
+                                                            maxlength="100" id="Reasons" type="text"
+                                                            name="Contract.RenterInfo.CrMasRenterInformationReasons"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label class="my-3">صور السيارة</label>
+                                                <table class="table CarImagesTable attatchments-table"
+                                                    id="CarImagesTable">
+                                                    <tbody>
+                                                        <tr style="height: 140px;">
+                                                            <td>
+                                                                <div class="upload__box  upload__box2 d-flex ">
+                                                                    <div class="upload_img-wrap_inner">
+                                                                        <div class="upload__btn-box"
+                                                                            id="CarImages-upload-box">
+                                                                            <label class="upload__btn">
+                                                                                <div
+                                                                                    class="upload-container-checking CarImages-Upload">
+                                                                                    <img class="upload-icon"
+                                                                                        src="../../../images/Static/States/Add.svg"
+                                                                                        alt="Upload Icon" id="addImage">
+                                                                                    <input type="file" multiple
+                                                                                        accept="image/*" id="Car-images"
+                                                                                        class="upload__inputfile ">
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </td>
+
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                            </td>
+
+
+                                                        </tr>
+
+
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
@@ -1423,6 +1266,8 @@
             </aside>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/heic2any/dist/heic2any.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
@@ -1433,233 +1278,161 @@
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../../../scripts/Scripts.js"></script>
-    <!-- سكربت لعمل قائمة اختيارات السيارة  -->
+
+    <!-- script for car images display and upload   -->
     <script>
-        const cars = [
-            { "text":  "هيونداي - أكسنت -  سيدان متوسطة - 2021 - س و ص 1870 - بني", "value": "1700000003" },
-            { "text": "فورد - تورس -  سيدان متوسطة - 2021 - د ق هـ 4707 - رمادي ", "value": "1700000004" },
-            { "text": "كيا - تيلورايد -  عائلية كبيرة - 2021 - ص هـ ن 0420 - بنفسجي", "value": "1700000005" },
-            { "text": "لكزس - اي اس -  فخمة متوسطة - 2020 - س و س 2877 - أبيض", "value": "1700000005" },
-            { "text": "فورد - تورس -  سيدان متوسطة - 2019 - و ك د 3848 - كحلي", "value": "1700000005" },
-            { "text": "بيجو - ترافيلر -  عائلية كبيرة - 2020 - ب أ ع 4244 - بني", "value": "1700000005" },
-        ];
-        const dataLists = { Cars: cars };
-        $(document).ready(function () {
-            function setupAutocomplete(inputId, listId, dataList, errorElementId, statusFlagName, validate) {
-                const $input = $("#" + inputId);
-                const $list = $("#" + listId);
-                const $hiddenCode = $("#" + inputId + "-code");
-                const $error = $("#" + errorElementId);
+        var CarImagesArray = [];
+        var CarImagesTdIndex = 0;
 
-                // Arrow Initialization
-                const $arrow = $('<div class="autocomplete-arrow"></div>');
-                $('body').append($arrow);
 
-                function detectDirection() {
-                    const bodyStyle = window.getComputedStyle(document.body);
-                    const htmlStyle = window.getComputedStyle(document.documentElement);
-                    if (bodyStyle.direction === 'rtl' || htmlStyle.direction === 'rtl' ||
-                        $('body').hasClass('rtl') || $('html').hasClass('rtl')) return 'rtl';
-                    return 'ltr';
-                }
+        function CarImgUpload() {
+            var maxLength = 4;
+            var uploadBtnBox = document.getElementById('CarImages-upload-box');
 
-                const isRTL = detectDirection() === 'rtl';
+            $('#Car-images').on('change', function (e) {
+                handleImageUpload(e, '#CarImagesTable', CarImagesArray, maxLength, uploadBtnBox, 'CarImages');
+            });
+        }
 
-                function getMaxItemWidth(items) {
-                    let maxWidth = 200;
-                    const tempDiv = $('<div>').css({
-                        'position': 'absolute',
-                        'visibility': 'hidden',
-                        'white-space': 'nowrap',
-                        'font-size': '1rem',
-                        'font-family': 'inherit',
-                        'padding': '8px 12px'
-                    }).appendTo('body');
+        function handleImageUpload(event, tableSelector, array, maxLength, uploadBtnBox, type) {
+            var uploadBox = $(event.target).closest('.upload__box');
+            var files = event.target.files;
+            var filesArr = Array.prototype.slice.call(files);
 
-                    items.forEach(item => {
-                        tempDiv.text(item);
-                        const width = tempDiv.outerWidth();
-                        if (width > maxWidth) {
-                            maxWidth = width;
-                        }
-                    });
-
-                    tempDiv.remove();
-
-                    const isMobile = window.innerWidth < 768;
-                    let finalWidth = maxWidth + 30;
-
-                    if (isMobile) {
-                        finalWidth = Math.min(Math.max(finalWidth, 150), 250);
+            for (var i = 0; i < Math.min(filesArr.length, maxLength - array.length); i++) {
+                (function (f) {
+                    if (f.type === 'image/heic' || f.type === 'image/heif' || f.name.endsWith('.heic') || f.name.endsWith('.heif')) {
+                        heic2any({ blob: f, toType: "image/jpeg" })
+                            .then(function (convertedBlob) {
+                                processFile(convertedBlob, f.name, tableSelector, array, maxLength, uploadBtnBox, type);
+                            })
+                            .catch(function (err) {
+                                console.error("Error converting HEIC/HEIF image:", err);
+                            });
                     } else {
-                        finalWidth = Math.max(finalWidth);
+                        processFile(f, f.name, tableSelector, array, maxLength, uploadBtnBox, type);
                     }
-
-                    return finalWidth;
-                }
-                function updateAutocompletePosition() {
-                    if ($list.is(":visible")) {
-                        const inputRect = $input[0].getBoundingClientRect();
-                        const viewportHeight = window.innerHeight;
-                        const viewportWidth = window.innerWidth;
-
-                        const visibleItems = $list.find('div').toArray().map(div => div.textContent);
-                        const calculatedWidth = getMaxItemWidth(visibleItems);
-                        $list.css('width', calculatedWidth + 'px');
-
-
-                        let leftPosition;
-                        if (isRTL) {
-
-                            leftPosition = inputRect.left - (calculatedWidth - 230);
-
-                            if (leftPosition < 10) {
-                                leftPosition = 10;
-                            }
-                        } else {
-                            leftPosition = inputRect.right - (calculatedWidth - 230);
-
-                            if (leftPosition + calculatedWidth > viewportWidth - 10) {
-                                leftPosition = viewportWidth - calculatedWidth - 10;
-                            }
-                        }
-
-                        const spaceBelow = viewportHeight - inputRect.bottom;
-                        const spaceAbove = inputRect.top;
-
-                        const maxHeight = Math.min(spaceBelow);
-
-                        $list.css({
-                            'top': (inputRect.top + 3) + 'px',
-                            'left': leftPosition + 'px',
-                            'max-height': maxHeight + 'px',
-                            'height': 'auto'
-                        });
-
-                        updateArrowPosition();
-                    }
-                }
-                function updateArrowPosition() {
-                    const listRect = $list[0].getBoundingClientRect();
-                    let arrowStyle = {
-                        'position': 'fixed', 'z-index': '10001', 'display': 'block',
-                        'pointer-events': 'none', 'top': (listRect.top + 10) + 'px'
-                    };
-
-                    if (isRTL) {
-                        arrowStyle['left'] = (listRect.right + 2) + 'px';
-                        arrowStyle['border-left'] = '8px solid #d3d3d3';
-                        arrowStyle['border-right'] = 'none';
-                    } else {
-                        arrowStyle['left'] = (listRect.left - 10) + 'px';
-                        arrowStyle['border-left'] = 'none';
-                        arrowStyle['border-right'] = '8px solid #d3d3d3';
-                    }
-                    arrowStyle['border-bottom'] = '8px solid transparent';
-                    arrowStyle['border-top'] = '8px solid transparent';
-
-                    $arrow.css(arrowStyle);
-                }
-
-                // Input Logic with matchesFound check
-                $input.on("input", function () {
-
-                    const value = this.value.trim().toLowerCase();
-                    $list.empty();
-
-                    if (validate) {
-                        $hiddenCode.val('');
-                        $error.text('');
-                    }
-
-                    if (value === "") {
-
-                        dataList.forEach(item => {
-                            $list.append(`<div data-value="${item.value}">${item.text}</div>`);
-                        });
-
-                        $list.show();
-                        setTimeout(() => {
-                            updateAutocompletePosition();
-                            $list.find('div').first().addClass('active');
-                        }, 10);
-
-                        return;
-                    }
-
-                    let matchesFound = false;
-
-                    dataList.forEach(item => {
-                        if (item.text.trim().toLowerCase().includes(value)) {
-                            $list.append(`<div data-value="${item.value}">${item.text}</div>`);
-                            matchesFound = true;
-                        }
-                    });
-
-                    if (matchesFound) {
-                        $list.show();
-                        setTimeout(() => {
-                            updateAutocompletePosition();
-                            $list.find('div').first().addClass('active');
-                        }, 10);
-                    } else {
-                        $list.hide();
-                        $arrow.hide();
-                    }
-                });
-                // Selection Logic
-                $list.on("click", "div", function () {
-                    const text = $(this).text();
-                    const val = $(this).data("value");
-                    $input.val(text);
-                    $hiddenCode.val(val);
-                    if (validate) { $error.text(''); window[statusFlagName] = true; }
-                    $list.hide(); $arrow.hide();
-                    $input.focus();
-                });
-
-                // Blur Validation
-                if (validate) {
-                    $input.on("blur", function () {
-                        setTimeout(() => {
-                            const currentVal = $(this).val();
-                            const match = dataList.find(i => i.text === currentVal);
-                            if (!match && currentVal !== "") {
-                                $error.text("This Field Is Required");
-                                window[statusFlagName] = false;
-                                $hiddenCode.val('');
-                            }
-                        }, 200);
-                    });
-                }
-
-                $(document).on("click", function (e) {
-                    if (!$(e.target).closest($input).length && !$(e.target).closest($list).length) {
-                        $list.hide(); $arrow.hide();
-                    }
-                });
+                })(filesArr[i]);
             }
 
-            setupAutocomplete("CarName", "autocomplete-Cars", dataLists.Cars);
-        });
+            $('body').on('click', '.upload__img-close1', function (e) {
+                e.stopPropagation();
+                var file = $(this).parent().data('file');
 
-    </script>
-    <!-- سكربت التنقل بين مدخلات رقم اللوحة -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const plateNumbers = document.querySelectorAll(".plate-number");
-            const plateLetters = document.querySelector(".plate-letters");
-
-            plateNumbers.forEach((select, index) => {
-                select.addEventListener("change", function () {
-                    if (index < plateNumbers.length - 1) {
-                        plateNumbers[index + 1].focus();
-                    } else {
-                        plateLetters.focus();
+                for (var i = 0; i < array.length; i++) {
+                    if (array[i].f.name === file) {
+                        array.splice(i, 1);
+                        break;
                     }
-                });
-            });
+                }
 
+                $(this).closest('.upload__img-box').remove();
+
+                if (array.length < maxLength) {
+                    uploadBtnBox.style.display = 'flex';
+                    updateCurrentTdIndex(tableSelector, type, uploadBtnBox);
+                }
+
+                if (array.length === 0) {
+                    CarImagesTdIndex = 0;
+
+                    uploadBtnBox.style.display = 'flex';
+                    $(`${tableSelector} td`).eq(CarImagesTdIndex).append(uploadBtnBox);
+                }
+            });
+        }
+
+        function processFile(file, fileName, tableSelector, array, maxLength, uploadBtnBox, type) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var html = `
+      <div class='upload__img-box Attatchments-img-box'>
+        <div style='background-image: url(${e.target.result})' data-file='${fileName}' class='img-bg'>
+          <div class='upload__img-close1'><i class='fa-regular fa-trash-can'></i></div>
+        </div>
+      </div>
+    `;
+
+                var currentTdIndex = CarImagesTdIndex;
+                var targetTd = $(`${tableSelector} td`).eq(currentTdIndex);
+                targetTd.append(html);
+
+                array.push({ f: file, url: e.target.result });
+                console.log(array)
+                updateCurrentTdIndex(tableSelector, type, uploadBtnBox);
+
+                if (array.length >= maxLength) {
+                    uploadBtnBox.style.display = 'none';
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function updateCurrentTdIndex(tableSelector, type, uploadBtnBox) {
+            var currentTdIndex = CarImagesTdIndex;
+
+            $(`${tableSelector} td`).each(function (index) {
+                if ($(this).find('.upload__img-box').length === 0) {
+                    if (type === 'compensation') compensationTdIndex = index;
+                    else CarImagesTdIndex = index;
+
+                    uploadBtnBox.style.display = 'flex';
+                    $(this).append(uploadBtnBox);
+                    return false; // Break the loop
+                }
+            });
+        }
+        $('body').on('click', '.img-bg', function (e) {
+            var imageUrl = $(this).css('background-image');
+            imageUrl = imageUrl.replace(/^url\(['"](.+)['"]\)/, '$1');
+            var newTab = window.open();
+            $(newTab.document.head).html(`
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>View Image</title>
+          <style>
+            * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+            }
+            html, body {
+              width: 100%;
+              height: 100%;
+              overflow: hidden;
+            }
+            body {
+              background-color: black;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            .image-container {
+              width: 70vw;
+              height: 70vh;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            img {
+              max-width: 100%;
+              max-height: 100%;
+              width: auto;
+              height: auto;
+              object-fit: contain;
+              background-color:white;
+            }
+          </style>
+          `);
+            newTab.document.body.innerHTML = `
+          <div class="image-container">
+            <img src="${imageUrl}" alt="View Image">
+          </div>
+        `;
+        });
+        jQuery(document).ready(function () {
+
+            CarImgUpload();
         });
     </script>
 
