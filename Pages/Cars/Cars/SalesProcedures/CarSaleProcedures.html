@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> نظام الادارة - إجراءات بيع السيارة</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Cairo:500,400,700" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="../../../style/Layout.css">
+    <link rel="stylesheet" href="../../../style/content.css">
+    <!-- <link rel="stylesheet" href="../../../style/english.css">  -->
+
+</head>
+
+<body>
+    <div id="wrapper" class="Branches-wrapper d-flex flex-column ">
+        <!-- Top Navbar -->
+        <nav class="navbar navbar-expand-md navbar-light ">
+            <div class="nav-container container-fluid">
+                <!-- Company Logo -->
+                <div class="navbar-brand d-flex align-items-center gap-4">
+                    <a href="https://ayatt12.github.io/Ar-Administration/" class="Company-Logo"><img
+                            src="../../../images/Demo/DefualtCompany Logo.png" alt="Company Logo"
+                            class="Company-Logo-img"></a>
+                    <h1 class="m-0 Company-name">شركة كدي
+                        لتأجير السيارات</h1>
+                    <i class="fa-solid fa-bars toggle4 mobile-icon nav-icon" onclick="toggleSidebar('right')"></i>
+                </div>
+
+                <!-- User Information -->
+                <div class="icons-content">
+                    <div class="d-flex">
+                        <div class="navbar-nav">
+                            <div class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle d-flex align-items-center py-0 gap-2" href="#"
+                                    id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="userName text-start d-flex flex-column text-dark">
+                                        <span style="font-weight: 700;"> عيسى هاني مبروك عزام </span>
+                                        <span style="font-weight: 400;">مشرف على الفروع</span>
+                                    </div>
+                                    <img src="../../../images/Demo/Employee_Picture.svg" alt="User Avatar"
+                                        class="rounded-circle User-Avatar">
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                    <li><a class="dropdown-item userDropdown-options"
+                                            href="https://ayatt12.github.io/Ar-Administration/Pages/Account/Account.html">حسابي
+                                            <img src="../../../images/Static/Topbar/AccountNavIcon.svg" /></a></li>
+                                    <li><a class="dropdown-item userDropdown-options"
+                                            href="https://ayatt12.github.io/Ar-Administration/Pages/Account/NewPassword.html">تغيير
+                                            كلمة السر <img
+                                                src="../../../images/Static/Topbar/PasswordNavIcon.svg" /></a>
+                                    </li>
+                                    <li><a class="dropdown-item userDropdown-options"
+                                            href="https://ayatt12.github.io/login_v2/Systems.html"> الأنظمه <img
+                                                src="../../../images/Static/Topbar/SystemsNavIcon.svg" /></a></li>
+
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item userDropdown-options "
+                                            href="https://ayatt12.github.io/login_v2/index.html">تسجيل الخروج <img
+                                                class="logout"
+                                                src="../../../images/Static/Topbar/LogoutNavIcon.svg" /></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="col lang-button-col">
+                            <input type="checkbox" id="myCheckbox" class="d-none">
+                            <h5 for="myCheckbox" class="lang-button mx-2" id="checkboxLabel"> En</h5>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </nav>
+        <!-- Main Container -->
+        <div class="main-container">
+            <!-- Right Sidebar (Navigation) -->
+            <aside class="sidebar-right closed" id="rightSidebar">
+                <div class="toggle-btn" id="toggle-RightSide-Btn">
+                    <i class="bx bx-chevron-right toggle"></i>
+                </div>
+                <div class="menu-bar">
+                    <div class="menu">
+                        <ul class="menu-links">
+                            <li class="nav-link">
+                                <img src="../../../images/Static/SideNavIcons/comany.svg" data-bs-toggle="collapse"
+                                    data-bs-target="#company-items" aria-expanded="false" aria-controls="#company-items"
+                                    class="icon" />
+                                <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#company-items" aria-expanded="false"
+                                    aria-controls="#company-items">الشركة </span>
+                            </li>
+
+                            <div id="company-items" class="collapse">
+                                <div class="bg-white gap-3 collapse-inner rounded">
+                                    <a class="collapse-item" href="../../../Pages/company/Branches/Branches.html">
+                                        الفروع <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/company/owners/owners.html"> الملاك <i
+                                            class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                </div>
+                            </div>
+
+                            <li class="nav-link">
+                                <img src="../../../images/Static/SideNavIcons/cars.svg" data-bs-toggle="collapse"
+                                    data-bs-target="#Cars-items" aria-expanded="false" aria-controls="#Cars-items"
+                                    class="icon" />
+                                <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#Cars-items" aria-expanded="false" aria-controls="#Cars-items">
+                                    السيارات </span>
+                            </li>
+                            <div id="Cars-items" class="collapse">
+                                <div class="bg-white gap-3 collapse-inner rounded">
+                                    <a class="collapse-item" href="../../../Pages/Cars/CarsData/CarsData.html"> بيانات
+                                        السيارات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+                                    <a class="collapse-item" href="../../../Pages/Cars/CarRepair/CarRepair.html"> تصليح
+                                        السيارة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/Cars/CarTransfer/CarTransfer.html">
+                                        نقل
+                                        السيارة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/Cars/ChangeOwner/ChangeOwner.html">
+                                        تغيير المالك <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item active"
+                                        href="../../../Pages/Cars/SalesProcedures/SalesProcedures.html"> إجراءات البيع
+                                        <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+                                    <a class="collapse-item" href="../../../Pages/Cars/CarsPrices/Prices.html"> الأسعار
+                                        <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                </div>
+                            </div>
+
+                            <li class="nav-link">
+                                <a>
+                                    <img src="../../../images/Static/SideNavIcons/tenants.svg" data-bs-toggle="collapse"
+                                        data-bs-target="#tenant-items" aria-expanded="false"
+                                        aria-controls="#tenant-items" class="icon" />
+                                    <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#tenant-items" aria-expanded="false"
+                                        aria-controls="#tenant-items"> المستأجرين </span>
+                                </a>
+                            </li>
+                            <div id="tenant-items" class="collapse">
+                                <div class="bg-white gap-3 collapse-inner rounded">
+                                    <a class="collapse-item" href="../../../Pages/Tenants/TenantsData/TenantsData.html">
+                                        بيانات المستأجرين <i
+                                            class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/Tenants/TenantsContracts/TenantsContracts.html"> عقود
+                                        المستأجرين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/Tenants/Tenants' debts/Tenantsdebts.html"> مديونيات
+                                        المستأجرين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/Tenants/Messages/MessageTenants.html">
+                                        رسائل المستأجرين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+                                </div>
+                            </div>
+                            <li class="nav-link">
+                                <a>
+                                    <img src="../../../images/Static/SideNavIcons/accounts.svg"
+                                        data-bs-toggle="collapse" data-bs-target="#Accounts-items" aria-expanded="false"
+                                        aria-controls="#Accounts-items" class="icon" />
+                                    <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#Accounts-items" aria-expanded="false"
+                                        aria-controls="#Accounts-items"> الحسابات </span>
+                                </a>
+                            </li>
+                            <div id="Accounts-items" class="collapse">
+                                <div class="bg-white gap-3 collapse-inner rounded">
+                                    <a class="collapse-item"
+                                        href="../../../Pages/AccountsList/CashFeeding/Feed Box.html"> تغذية الصندوق <i
+                                            class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/AccountsList/Receipt Confirmation/Custody.html"> استلام
+                                        عهدة
+                                        <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+                                    <a class="collapse-item"
+                                        href="../../../Pages/AccountsList/Money from  tenant/Money from tenant.html">
+                                        مبالغ من مستأجر<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/AccountsList/Money to tenant/Money to tenant.html"> مبالغ
+                                        إلى مستأجر<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+                                    <a class="collapse-item"
+                                        href="../../../Pages/AccountsList/ClosePendingContracts/ClosePendingContracts.html">
+                                        تسوية العقود
+                                        المعلقة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/AccountsList/Tax return/Tax return_edited.html"> الإقرار
+                                        الضريبي
+                                        <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                </div>
+                            </div>
+
+                            <li class="nav-link">
+                                <a>
+                                    <img src="../../../images/Static/SideNavIcons/reports.svg" data-bs-toggle="collapse"
+                                        data-bs-target="#reports-items" aria-expanded="false"
+                                        aria-controls="#reports-items" class="icon" />
+                                    <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#reports-items" aria-expanded="false"
+                                        aria-controls="#reports-items">التقارير </span>
+                                </a>
+                            </li>
+                            <div id="reports-items" class="collapse">
+                                <div class="bg-white gap-3 collapse-inner rounded">
+                                    <a class="collapse-item"
+                                        href="../../../Pages/reports/Administrative procedures.html"> الإجراءات الإدارية
+                                        <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/reports/DailyReports.html"> اليومية <i
+                                            class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/reports/Existing contracts.html">
+                                        العقود القائمة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/reports/Closed Contracts.html"> العقود
+                                        المغلقة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item " href="../../../Pages/reports/Saved contracts.html"> العقود
+                                        المحفوظة و الملغاه<i
+                                            class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/reports/Cars contracts.html"> عقود
+                                        السيارات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/reports/Employee contracts.html"> عقود
+                                        الموظفين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/reports/Drivers contracts.html"> عقود
+                                        السائقين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/reports/Employee Financial movement.html"> الحركة المالية
+                                        للموظفين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/reports/Tenant Financial movement.html"> الحركة المالية
+                                        للمستأجرين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/reports/SalePoint Financial movement.html"> الحركة المالية
+                                        لنقاط البيع <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/reports/Covenant Movement.html"> حركة
+                                        تسليم العهد <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/reports/Cars_documents.html"> وثائق
+                                        السيارات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/reports/Cars_maintenance.html"> صيانة
+                                        السيارات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                </div>
+                            </div>
+                            <li class="nav-link">
+                                <a>
+                                    <img src="../../../images/Static/SideNavIcons/statics.svg" data-bs-toggle="collapse"
+                                        data-bs-target="#statics-items" aria-expanded="false"
+                                        aria-controls="#statics-items" class="icon" />
+                                    <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#statics-items" aria-expanded="false"
+                                        aria-controls="#statics-items"> الإحصائيات </span>
+                                </a>
+                            </li>
+                            <div id="statics-items" class="collapse">
+                                <div class="bg-white gap-3 collapse-inner rounded">
+                                    <a class="collapse-item" href="../../../Pages/statistics/Car statistics.html">
+                                        إحصائيات السيارات <i
+                                            class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/statistics/Tenants statistics.html">
+                                        إحصائيات المستأجرين <i
+                                            class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/statistics/Contracts statistics.html">
+                                        إحصائيات العقود<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/statistics/Car Contracts statistics.html"> إحصائيات عقود
+                                        السيارات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/statistics/Tenants Contracts statistics.html"> إحصائيات
+                                        عقود
+                                        المستأجرين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                </div>
+                            </div>
+
+                            <li class="nav-link">
+                                <a>
+                                    <img src="../../../images/Static/SideNavIcons/employees.svg"
+                                        data-bs-toggle="collapse" data-bs-target="#employees-items"
+                                        aria-expanded="false" aria-controls="#employees-items" class="icon" />
+                                    <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#employees-items" aria-expanded="false"
+                                        aria-controls="#employees-items"> الموظفين </span>
+                                </a>
+                            </li>
+                            <div id="employees-items" class="collapse">
+                                <div class="bg-white gap-3 collapse-inner rounded">
+                                    <a class="collapse-item"
+                                        href="../../../Pages/employees/employees list/employees.html"> بيانات الموظفين
+                                        <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/employees/System Permissions/employees.html"> صلاحيات
+                                        النظام
+                                        <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/employees/Contract Permissions/employees.html">صلاحيات
+                                        العقود <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+                                </div>
+                            </div>
+
+                            <li class="nav-link">
+                                <a>
+                                    <img src="../../../images/Static/SideNavIcons/services.svg"
+                                        data-bs-toggle="collapse" data-bs-target="#services-items" aria-expanded="false"
+                                        aria-controls="#services-items" class="icon" />
+                                    <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#services-items" aria-expanded="false"
+                                        aria-controls="#services-items">الخدمات</span>
+                                </a>
+                            </li>
+                            <div id="services-items" class="collapse">
+                                <div class="bg-white gap-3 collapse-inner rounded">
+                                    <a class="collapse-item" href="../../../Pages/Services/banks/Banks.html"> الحسابات
+                                        البنكية <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/Services/sellingPoints/sellingPoints.html"> نقاط البيع <i
+                                            class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/Services/techncal-connect/techncal-connect.html"> الربط
+                                        التقني <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item "
+                                        href="../../../Pages/Services/Rental policy/Rental policy.html">
+                                        سياسة التأجير <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/Services/drivers/drivers.html">
+                                        السائقين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+                                    <a class="collapse-item" href="../../../Pages/Services/Alerts/Alerts.html">
+                                        الإعدادات
+                                        <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/Services/Membership/Membership.html">
+                                        العضويات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+
+
+                </div>
+
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="content-area px-3">
+                <div class="container d-flex flex-column InputsPageContainer">
+                    <div class="row flex-column min-h-0 flex-1 position-relative">
+                        <div class="col-xxl-9 Data-container ">
+                            <form class="ContentForm needs-validation" novalidate>
+                                <div class="row justify-content-center flex-1 min-h-0">
+                                    <div class="col-lg-12 d-flex flex-column h-100">
+                                        <div class="row my-2">
+                                            <div class="col-md-6">
+                                                <h3> إجراءات بيع السيارة </h3>
+                                            </div>
+                                            <div class="col-md-6 save-col">
+                                                <button type="submit" class="custom-img-btn"> <img
+                                                        src="../../../images/Static/States/save.svg" /></button>
+                                                <button type="button" class="custom-img-btn"><a
+                                                        class="d-flex align-items-center"
+                                                        href="SalesProcedures.html"><img class="Chevron"
+                                                            src="../../../images/Static/States/Chevron_Left.svg" /></a></button>
+                                            </div>
+                                            <div class="col-md-12 my-3">
+                                                <div class="row align-items-center">
+                                                    <div class="col-md-auto">
+                                                        <div class="CarBorder-CarData">
+                                                            <img src="../../../images/Demo/DefaultCar.png"
+                                                                alt="Car-photo" class="CarPhoto">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="row align-items-baseline">
+                                                            <div class="col-auto">
+                                                                <h5 class="subtitle">كيا - سيراتو - سيدان صغيرة - 2020 -
+                                                                    س ط ط 8652 - رمادي</h5>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-auto">
+                                                                <p class="m-0">1579634852</p>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <p class="m-0">الحزام الذهبي</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row flex-1 min-h-0 mx-1 flex-column gy-2 flex-nowrap "
+                                            style="overflow: auto;">
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-auto" style="min-width: 33.33333333%">
+                                                        <div class="row g-3">
+                                                            <div class="col-auto">
+                                                                <p class="DataTitle">تاريخ الانضمام</p>
+                                                            </div>
+                                                            <div class="col-auto ">
+                                                                <p class="Saved-data">2020/03/01</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-auto" style="min-width: 33.33333333%">
+                                                        <div class="row g-3">
+                                                            <div class="col-auto">
+                                                                <p class="DataTitle">عدد العقود</p>
+                                                            </div>
+                                                            <div class="col-auto ">
+                                                                <p class="Saved-data">500</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-auto" style="min-width: 33.33333333%">
+                                                        <div class="row justify-content-between">
+                                                            <div class="col-md-auto">
+                                                                <div class="row g-3">
+                                                                    <div class="col-auto">
+                                                                        <p class="DataTitle">عدد الأيام</p>
+                                                                    </div>
+                                                                    <div class="col-auto ">
+                                                                        <p class="Saved-data">360</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-auto">
+                                                        <div class="row g-3">
+                                                            <div class="col-auto">
+                                                                <p class="DataTitle">القراءة الحالية</p>
+                                                            </div>
+                                                            <div class="col-auto ">
+                                                                <p class="Saved-data">999,999</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="row  align-items-center">
+                                                    <div class="col-md-auto" style="min-width: 33.33333333%">
+                                                        <label for="date" class="form-label"> تاريخ العرض
+                                                            <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                        </label>
+                                                        <input type="date" id="date" class="form-control inputs"
+                                                            name="date" required>
+                                                        <div class="invaild">
+                                                            <div class="invalid-feedback">
+                                                                الحقل مطلوب
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-auto" style="min-width: 33.33333333%">
+                                                        <label for="Price" class="form-label">السعر
+                                                            <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                        </label>
+                                                        <input type="number" id="Price"
+                                                            class="form-control inputs number-input" name="Price"
+                                                            required>
+                                                        <div class="invaild">
+                                                            <div class="invalid-feedback">
+                                                                الحقل مطلوب
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-auto" style="min-width: 33.33333333%">
+                                                        <div class="d-flex gap-2 align-items-end">
+                                                            <input class="form-check-input checkbox" type="checkbox"
+                                                                value="checked" id="Rent&Sale" name="Rent&Sale">
+                                                            <label class="form-check-label" for="Rent&Sale">
+                                                                للبيع والإيجار
+                                                            </label>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <label>الملاحظات</label>
+                                                    </div>
+                                                    <div class="col d-flex justify-content-start">
+                                                        <textarea class=" form-control textarea-inputs" rows="1"
+                                                            maxlength="100" id="Reasons" type="text"
+                                                            name="Contract.RenterInfo.CrMasRenterInformationReasons"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label class="my-3">صور السيارة</label>
+                                                <table class="table CarImagesTable attatchments-table"
+                                                    id="CarImagesTable">
+                                                    <tbody>
+                                                        <tr style="height: 140px;">
+                                                            <td>
+                                                                <div class="upload__box  upload__box2 d-flex ">
+                                                                    <div class="upload_img-wrap_inner">
+                                                                        <div class="upload__btn-box"
+                                                                            id="CarImages-upload-box">
+                                                                            <label class="upload__btn">
+                                                                                <div
+                                                                                    class="upload-container-checking CarImages-Upload">
+                                                                                    <img class="upload-icon"
+                                                                                        src="../../../images/Static/States/Add.svg"
+                                                                                        alt="Upload Icon" id="addImage">
+                                                                                    <input type="file" multiple
+                                                                                        accept="image/*" id="Car-images"
+                                                                                        class="upload__inputfile ">
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </td>
+
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                            </td>
+
+
+                                                        </tr>
+
+
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </main>
+
+            <!-- Left Sidebar (Alerts) -->
+            <aside class="sidebar-left closed" id="leftSidebar">
+                <div class="toggle-div toggle2" onclick="toggleSidebar('left')">
+                    <span class="notification"> إشعارات </span>
+                </div>
+                <div class="menu-bar">
+                    <div class="menu">
+                        <main>
+                            <div class="accordion">
+
+                                <div class="accordion-item">
+                                    <div class="accordion-item-header">
+                                        <span class="accordion-item-header-title"> مستندات الشركة </span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chevron-down accordion-item-header-icon">
+                                            <path d="m6 9 6 6 6-6" />
+                                        </svg>
+                                    </div>
+                                    <div class="accordion-item-description-wrapper alerts-items-scroll">
+                                        <div class="accordion-item-description">
+                                            <div class="container-fluid">
+                                                <div class="row collapse-row ">
+                                                    <div class="col-7">
+                                                        <p>السجل التجاري</p>
+                                                    </div>
+
+                                                    <div class="col working">
+                                                        <p> 2 </p>
+                                                    </div>
+                                                    <div class="col ended">
+                                                        <p> 3 </p>
+                                                    </div>
+                                                </div>
+                                                <hr class="collapse-hr">
+
+                                                <div class="row collapse-row ">
+                                                    <div class="col-7">
+                                                        <p> اشتراك الغرفة التجارية </p>
+                                                    </div>
+
+                                                    <div class="col working">
+                                                        <p> 5 </p>
+                                                    </div>
+                                                    <div class="col ended">
+                                                        <p> 6 </p>
+                                                    </div>
+                                                </div>
+                                                <hr class="collapse-hr">
+
+                                                <div class="row collapse-row ">
+                                                    <div class="col-7">
+                                                        <p> تصريح هيئة النقل </p>
+                                                    </div>
+
+                                                    <div class="col working">
+                                                        <p> 7 </p>
+                                                    </div>
+                                                    <div class="col ended">
+                                                        <p> 5 </p>
+                                                    </div>
+                                                </div>
+                                                <hr class="collapse-hr">
+
+                                                <div class="row collapse-row ">
+                                                    <div class="col-7">
+                                                        <p> رخصة البلدية </p>
+                                                    </div>
+
+                                                    <div class="col working">
+                                                        <p> 6 </p>
+                                                    </div>
+                                                    <div class="col ended">
+                                                        <p> 3 </p>
+                                                    </div>
+                                                </div>
+                                                <hr class="collapse-hr">
+
+                                                <div class="row collapse-row ">
+                                                    <div class="col-7">
+                                                        <p> البريد الوطني</p>
+                                                    </div>
+
+                                                    <div class="col working">
+                                                        <p> 4 </p>
+                                                    </div>
+                                                    <div class="col ended">
+                                                        <p> 5 </p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-item-header">
+                                        <span class="accordion-item-header-title"> السيارات </span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chevron-down accordion-item-header-icon">
+                                            <path d="m6 9 6 6 6-6" />
+                                        </svg>
+                                    </div>
+                                    <div class="accordion-item-description-wrapper">
+                                        <div class="accordion-item-description">
+                                            <div class="container-fluid">
+                                                <div class="row collapse-row">
+                                                    <div class="col-5">
+                                                        <p>وثائق</p>
+                                                    </div>
+                                                    <div class="col working">
+                                                        <p> 3 </p>
+                                                    </div>
+                                                    <div class="col ended">
+                                                        <p> 5 </p>
+                                                    </div>
+                                                </div>
+                                                <hr class="collapse-hr">
+                                                <div class="row collapse-row">
+                                                    <div class="col-5">
+                                                        <p>صيانة</p>
+                                                    </div>
+                                                    <div class="col working">
+                                                        <p> 100 </p>
+                                                    </div>
+                                                    <div class="col ended">
+                                                        <p> 200 </p>
+                                                    </div>
+                                                </div>
+                                                <hr class="collapse-hr">
+                                                <div class="row collapse-row">
+                                                    <div class="col-5">
+                                                        <p>الأسعار</p>
+                                                    </div>
+                                                    <div class="col working">
+                                                        <p> 460 </p>
+                                                    </div>
+                                                    <div class="col ended">
+                                                        <p> 500 </p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-item-header">
+                                        <span class="accordion-item-header-title"> العقود </span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chevron-down accordion-item-header-icon">
+                                            <path d="m6 9 6 6 6-6" />
+                                        </svg>
+                                    </div>
+                                    <div class="accordion-item-description-wrapper alerts-items-scroll contracts">
+                                        <div class="accordion-item-description">
+                                            <div class="container-fluid">
+                                                <div class="row collapse-row">
+                                                    <div class="col ">
+                                                        <p> منتهية </p>
+                                                    </div>
+                                                    <div class="col contract-ended ">
+                                                        <p> 8 </p>
+                                                    </div>
+
+                                                </div>
+                                                <hr class="collapse-hr">
+                                                <div class="row collapse-row">
+                                                    <div class="col">
+                                                        <p>تنتهي اليوم</p>
+                                                    </div>
+
+                                                    <div class="col ended">
+                                                        <p> 15 </p>
+                                                    </div>
+                                                </div>
+                                                <hr class="collapse-hr">
+                                                <div class="row collapse-row">
+                                                    <div class="col">
+                                                        <p>تنتهي غدًا</p>
+                                                    </div>
+                                                    <div class="col working">
+                                                        <p> 7 </p>
+                                                    </div>
+                                                </div>
+                                                <hr class="collapse-hr">
+                                                <div class="row collapse-row">
+                                                    <div class="col">
+                                                        <p> تنتهي لاحقًا </p>
+                                                    </div>
+                                                    <div class="col later">
+                                                        <p> 11 </p>
+                                                    </div>
+
+                                                </div>
+                                                <hr class="collapse-hr">
+                                                <div class="row collapse-row">
+                                                    <div class="col-5">
+                                                        <p>محفوظة</p>
+                                                    </div>
+                                                    <div class="col working">
+                                                        <p> 5 </p>
+                                                    </div>
+
+                                                </div>
+                                                <hr class="collapse-hr">
+                                                <div class="row collapse-row">
+                                                    <div class="col-5">
+                                                        <p>معلقة</p>
+                                                    </div>
+                                                    <div class="col working">
+                                                        <p> 100 </p>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-item-header">
+                                        <span class="accordion-item-header-title"> الموظفين <div class="notify"></div>
+                                        </span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chevron-down accordion-item-header-icon">
+                                            <path d="m6 9 6 6 6-6" />
+                                        </svg>
+                                    </div>
+                                    <div class="accordion-item-description-wrapper alerts-items-scroll">
+                                        <div class="accordion-item-description">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col-auto p-1">
+                                                                <img
+                                                                    src="../../../images/Static/Green_Arrow_icon.svg" />
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div class="row">
+                                                                    <div class="col-auto p-0">
+                                                                        <div class="employeePhoto">
+                                                                            <img src="../../../images/Demo/Employee_Picture.svg"
+                                                                                alt="employee-photo"
+                                                                                class="employeePhoto border-0 w-100 h-100">
+                                                                            <div class="active_statue bg-success">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="employee-name mb-1 p-0"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
+                                                                            data-bs-custom-class="custom-tooltip"
+                                                                            data-bs-title="صالح سلطان إبراهيم المحيسني">
+                                                                            صالح سلطان إبراهيم المحيسني </p>
+                                                                        <div class="row EmployeeLastActive">
+                                                                            <div class="col-auto px-1">
+                                                                                <p> 11:30 </p>
+                                                                            </div>
+                                                                            <div class="col-auto px-1">
+                                                                                <p>22/09/2024</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">999,999
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col-auto p-1">
+                                                                <img
+                                                                    src="../../../images/Static/Green_Arrow_icon.svg" />
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div class="row">
+                                                                    <div class="col-auto p-0">
+                                                                        <div class="employeePhoto">
+                                                                            <img src="../../../images/Demo/Employee_Picture.svg"
+                                                                                alt="employee-photo"
+                                                                                class="employeePhoto border-0 w-100 h-100">
+                                                                            <div class="active_statue bg-success">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="employee-name mb-1 p-0"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
+                                                                            data-bs-custom-class="custom-tooltip"
+                                                                            data-bs-title="صالح سلطان إبراهيم المحيسني">
+                                                                            صالح سلطان إبراهيم المحيسني </p>
+                                                                        <div class="row EmployeeLastActive">
+                                                                            <div class="col-auto px-1">
+                                                                                <p> 11:30 </p>
+                                                                            </div>
+                                                                            <div class="col-auto px-1">
+                                                                                <p>22/09/2024</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">999,999
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col-auto p-1">
+                                                                <img
+                                                                    src="../../../images/Static/Green_Arrow_icon.svg" />
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div class="row">
+                                                                    <div class="col-auto p-0">
+                                                                        <div class="employeePhoto">
+                                                                            <img src="../../../images/Demo/Employee_Picture.svg"
+                                                                                alt="employee-photo"
+                                                                                class="employeePhoto border-0 w-100 h-100">
+                                                                            <div class="active_statue bg-success">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="employee-name mb-1 p-0"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
+                                                                            data-bs-custom-class="custom-tooltip"
+                                                                            data-bs-title="صالح سلطان إبراهيم المحيسني">
+                                                                            صالح سلطان إبراهيم المحيسني </p>
+                                                                        <div class="row EmployeeLastActive">
+                                                                            <div class="col-auto px-1">
+                                                                                <p> 11:30 </p>
+                                                                            </div>
+                                                                            <div class="col-auto px-1">
+                                                                                <p>22/09/2024</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">999,999
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col-auto p-1">
+                                                                <img
+                                                                    src="../../../images/Static/Green_Arrow_icon.svg" />
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div class="row">
+                                                                    <div class="col-auto p-0">
+                                                                        <div class="employeePhoto">
+                                                                            <img src="../../../images/Demo/Employee_Picture.svg"
+                                                                                alt="employee-photo"
+                                                                                class="employeePhoto border-0 w-100 h-100">
+                                                                            <div class="active_statue bg-success">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="employee-name mb-1 p-0"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
+                                                                            data-bs-custom-class="custom-tooltip"
+                                                                            data-bs-title="صالح سلطان إبراهيم المحيسني">
+                                                                            صالح سلطان إبراهيم المحيسني </p>
+                                                                        <div class="row EmployeeLastActive">
+                                                                            <div class="col-auto px-1">
+                                                                                <p> 11:30 </p>
+                                                                            </div>
+                                                                            <div class="col-auto px-1">
+                                                                                <p>22/09/2024</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">999,999
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col-auto p-1">
+                                                                <img
+                                                                    src="../../../images/Static/Green_Arrow_icon.svg" />
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div class="row">
+                                                                    <div class="col-auto p-0">
+                                                                        <div class="employeePhoto">
+                                                                            <img src="../../../images/Demo/Employee_Picture.svg"
+                                                                                alt="employee-photo"
+                                                                                class="employeePhoto border-0 w-100 h-100">
+                                                                            <div class="active_statue bg-success">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="employee-name mb-1 p-0"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
+                                                                            data-bs-custom-class="custom-tooltip"
+                                                                            data-bs-title="صالح سلطان إبراهيم المحيسني">
+                                                                            صالح سلطان إبراهيم المحيسني </p>
+                                                                        <div class="row EmployeeLastActive">
+                                                                            <div class="col-auto px-1">
+                                                                                <p> 11:30 </p>
+                                                                            </div>
+                                                                            <div class="col-auto px-1">
+                                                                                <p>22/09/2024</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">999,999
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col-auto p-1">
+                                                                <img
+                                                                    src="../../../images/Static/Green_Arrow_icon.svg" />
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div class="row">
+                                                                    <div class="col-auto p-0">
+                                                                        <div class="employeePhoto">
+                                                                            <img src="../../../images/Demo/Employee_Picture.svg"
+                                                                                alt="employee-photo"
+                                                                                class="employeePhoto border-0 w-100 h-100">
+                                                                            <div class="active_statue bg-success">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="employee-name mb-1 p-0"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
+                                                                            data-bs-custom-class="custom-tooltip"
+                                                                            data-bs-title="صالح سلطان إبراهيم المحيسني">
+                                                                            صالح سلطان إبراهيم المحيسني </p>
+                                                                        <div class="row EmployeeLastActive">
+                                                                            <div class="col-auto px-1">
+                                                                                <p> 11:30 </p>
+                                                                            </div>
+                                                                            <div class="col-auto px-1">
+                                                                                <p>22/09/2024</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">999,999
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col-auto p-1">
+                                                                <img
+                                                                    src="../../../images/Static/Green_Arrow_icon.svg" />
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div class="row">
+                                                                    <div class="col-auto p-0">
+                                                                        <div class="employeePhoto">
+                                                                            <img src="../../../images/Demo/Employee_Picture.svg"
+                                                                                alt="employee-photo"
+                                                                                class="employeePhoto border-0 w-100 h-100">
+                                                                            <div class="active_statue bg-success">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="employee-name mb-1 p-0"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
+                                                                            data-bs-custom-class="custom-tooltip"
+                                                                            data-bs-title="صالح سلطان إبراهيم المحيسني">
+                                                                            صالح سلطان إبراهيم المحيسني </p>
+                                                                        <div class="row EmployeeLastActive">
+                                                                            <div class="col-auto px-1">
+                                                                                <p> 11:30 </p>
+                                                                            </div>
+                                                                            <div class="col-auto px-1">
+                                                                                <p>22/09/2024</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">999,999
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col-auto p-1">
+                                                                <img
+                                                                    src="../../../images/Static/Green_Arrow_icon.svg" />
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div class="row">
+                                                                    <div class="col-auto p-0">
+                                                                        <div class="employeePhoto">
+                                                                            <img src="../../../images/Demo/Employee_Picture.svg"
+                                                                                alt="employee-photo"
+                                                                                class="employeePhoto border-0 w-100 h-100">
+                                                                            <div class="active_statue bg-success">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="employee-name mb-1 p-0"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
+                                                                            data-bs-custom-class="custom-tooltip"
+                                                                            data-bs-title="صالح سلطان إبراهيم المحيسني">
+                                                                            صالح سلطان إبراهيم المحيسني </p>
+                                                                        <div class="row EmployeeLastActive">
+                                                                            <div class="col-auto px-1">
+                                                                                <p> 11:30 </p>
+                                                                            </div>
+                                                                            <div class="col-auto px-1">
+                                                                                <p>22/09/2024</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">999,999
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col-auto p-1">
+                                                                <img
+                                                                    src="../../../images/Static/Green_Arrow_icon.svg" />
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div class="row">
+                                                                    <div class="col-auto p-0">
+                                                                        <div class="employeePhoto">
+                                                                            <img src="../../../images/Demo/Employee_Picture.svg"
+                                                                                alt="employee-photo"
+                                                                                class="employeePhoto border-0 w-100 h-100">
+                                                                            <div class="active_statue bg-success">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="employee-name mb-1 p-0"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
+                                                                            data-bs-custom-class="custom-tooltip"
+                                                                            data-bs-title="صالح سلطان إبراهيم المحيسني">
+                                                                            صالح سلطان إبراهيم المحيسني </p>
+                                                                        <div class="row EmployeeLastActive">
+                                                                            <div class="col-auto px-1">
+                                                                                <p> 11:30 </p>
+                                                                            </div>
+                                                                            <div class="col-auto px-1">
+                                                                                <p>22/09/2024</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">999,999
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col-auto p-1">
+                                                                <img
+                                                                    src="../../../images/Static/Green_Arrow_icon.svg" />
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div class="row">
+                                                                    <div class="col-auto p-0">
+                                                                        <div class="employeePhoto">
+                                                                            <img src="../../../images/Demo/Employee_Picture.svg"
+                                                                                alt="employee-photo"
+                                                                                class="employeePhoto border-0 w-100 h-100">
+                                                                            <div class="active_statue bg-success">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="employee-name mb-1 p-0"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
+                                                                            data-bs-custom-class="custom-tooltip"
+                                                                            data-bs-title="صالح سلطان إبراهيم المحيسني">
+                                                                            صالح سلطان إبراهيم المحيسني </p>
+                                                                        <div class="row EmployeeLastActive">
+                                                                            <div class="col-auto px-1">
+                                                                                <p> 11:30 </p>
+                                                                            </div>
+                                                                            <div class="col-auto px-1">
+                                                                                <p>22/09/2024</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">999,999
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-item-header">
+                                        <span class="accordion-item-header-title"> مديونيات المستأجرين </span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chevron-down accordion-item-header-icon">
+                                            <path d="m6 9 6 6 6-6" />
+                                        </svg>
+                                    </div>
+                                    <div class="accordion-item-description-wrapper">
+                                        <div class="accordion-item-description">
+                                            <div class="container-fluid">
+                                                <div class="row collapse-row">
+                                                    <div class="col">
+                                                        <p>مدينون</p>
+                                                    </div>
+                                                    <div class="col-auto ">
+                                                        <p> 4,520.36 </p>
+                                                    </div>
+                                                </div>
+                                                <hr class="collapse-hr">
+                                                <div class="row collapse-row">
+                                                    <div class="col">
+                                                        <p>دائنون</p>
+                                                    </div>
+                                                    <div class="col-auto ">
+                                                        <p> 936.56 </p>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+
+
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/heic2any/dist/heic2any.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="../../../scripts/Scripts.js"></script>
+
+    <!-- script for car images display and upload   -->
+    <script>
+        var CarImagesArray = [];
+        var CarImagesTdIndex = 0;
+
+
+        function CarImgUpload() {
+            var maxLength = 4;
+            var uploadBtnBox = document.getElementById('CarImages-upload-box');
+
+            $('#Car-images').on('change', function (e) {
+                handleImageUpload(e, '#CarImagesTable', CarImagesArray, maxLength, uploadBtnBox, 'CarImages');
+            });
+        }
+
+        function handleImageUpload(event, tableSelector, array, maxLength, uploadBtnBox, type) {
+            var uploadBox = $(event.target).closest('.upload__box');
+            var files = event.target.files;
+            var filesArr = Array.prototype.slice.call(files);
+
+            for (var i = 0; i < Math.min(filesArr.length, maxLength - array.length); i++) {
+                (function (f) {
+                    if (f.type === 'image/heic' || f.type === 'image/heif' || f.name.endsWith('.heic') || f.name.endsWith('.heif')) {
+                        heic2any({ blob: f, toType: "image/jpeg" })
+                            .then(function (convertedBlob) {
+                                processFile(convertedBlob, f.name, tableSelector, array, maxLength, uploadBtnBox, type);
+                            })
+                            .catch(function (err) {
+                                console.error("Error converting HEIC/HEIF image:", err);
+                            });
+                    } else {
+                        processFile(f, f.name, tableSelector, array, maxLength, uploadBtnBox, type);
+                    }
+                })(filesArr[i]);
+            }
+
+            $('body').on('click', '.upload__img-close1', function (e) {
+                e.stopPropagation();
+                var file = $(this).parent().data('file');
+
+                for (var i = 0; i < array.length; i++) {
+                    if (array[i].f.name === file) {
+                        array.splice(i, 1);
+                        break;
+                    }
+                }
+
+                $(this).closest('.upload__img-box').remove();
+
+                if (array.length < maxLength) {
+                    uploadBtnBox.style.display = 'flex';
+                    updateCurrentTdIndex(tableSelector, type, uploadBtnBox);
+                }
+
+                if (array.length === 0) {
+                    CarImagesTdIndex = 0;
+
+                    uploadBtnBox.style.display = 'flex';
+                    $(`${tableSelector} td`).eq(CarImagesTdIndex).append(uploadBtnBox);
+                }
+            });
+        }
+
+        function processFile(file, fileName, tableSelector, array, maxLength, uploadBtnBox, type) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var html = `
+      <div class='upload__img-box Attatchments-img-box'>
+        <div style='background-image: url(${e.target.result})' data-file='${fileName}' class='img-bg'>
+          <div class='upload__img-close1'><i class='fa-regular fa-trash-can'></i></div>
+        </div>
+      </div>
+    `;
+
+                var currentTdIndex = CarImagesTdIndex;
+                var targetTd = $(`${tableSelector} td`).eq(currentTdIndex);
+                targetTd.append(html);
+
+                array.push({ f: file, url: e.target.result });
+                console.log(array)
+                updateCurrentTdIndex(tableSelector, type, uploadBtnBox);
+
+                if (array.length >= maxLength) {
+                    uploadBtnBox.style.display = 'none';
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function updateCurrentTdIndex(tableSelector, type, uploadBtnBox) {
+            var currentTdIndex = CarImagesTdIndex;
+
+            $(`${tableSelector} td`).each(function (index) {
+                if ($(this).find('.upload__img-box').length === 0) {
+                    if (type === 'compensation') compensationTdIndex = index;
+                    else CarImagesTdIndex = index;
+
+                    uploadBtnBox.style.display = 'flex';
+                    $(this).append(uploadBtnBox);
+                    return false; // Break the loop
+                }
+            });
+        }
+        $('body').on('click', '.img-bg', function (e) {
+            var imageUrl = $(this).css('background-image');
+            imageUrl = imageUrl.replace(/^url\(['"](.+)['"]\)/, '$1');
+            var newTab = window.open();
+            $(newTab.document.head).html(`
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>View Image</title>
+          <style>
+            * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+            }
+            html, body {
+              width: 100%;
+              height: 100%;
+              overflow: hidden;
+            }
+            body {
+              background-color: black;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            .image-container {
+              width: 70vw;
+              height: 70vh;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            img {
+              max-width: 100%;
+              max-height: 100%;
+              width: auto;
+              height: auto;
+              object-fit: contain;
+              background-color:white;
+            }
+          </style>
+          `);
+            newTab.document.body.innerHTML = `
+          <div class="image-container">
+            <img src="${imageUrl}" alt="View Image">
+          </div>
+        `;
+        });
+        jQuery(document).ready(function () {
+
+            CarImgUpload();
+        });
+    </script>
+
+</body>
+
+</html>
