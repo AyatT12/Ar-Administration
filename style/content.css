@@ -210,10 +210,10 @@ html {
 }
 
 /* Upload image icon */
-.centered-icon{
-    height: 23px;
-    align-items: flex-start;
-    display: flex;
+.centered-icon {
+  height: 23px;
+  align-items: flex-start;
+  display: flex;
 }
 
 @keyframes rotation {
@@ -246,6 +246,7 @@ html {
     max-width: 780px;
   }
 }
+
 @media (max-width: 992px) {
   .InputsPageContainer {
     max-width: 820px;
@@ -414,6 +415,7 @@ html {
   box-shadow: 0px 1px 0px -4px rgb(255 255 255), 20px -4px 0px -4px rgb(255 255 255), 20px 4px 0px -4px rgb(255 255 255);
   cursor: pointer;
   vertical-align: middle;
+  position: relative;
 }
 
 .number {
@@ -463,23 +465,34 @@ html {
   text-align: end;
   justify-content: end;
 }
+
+.filters-col {
+  margin-top: 8px;
+}
+
 .form-check-inline {
-    display: inline-flex;
-    margin-right: 0rem;
-    gap: 25px;
-    flex-direction: row-reverse;
+  display: inline-flex;
+  margin-right: 0rem;
+  gap: 25px;
+  flex-direction: row-reverse;
 }
-.form-check{
-    padding-left: 1em;
+
+.form-check {
+  padding-left: 1em;
 }
-.form-check-inline:last-child{
-  padding: 0;
-}
+
 @media (max-width:1024px) {
-  .search-input{
+  .search-input {
     min-width: 200px;
   }
 }
+
+@media (min-width:576px) {
+  .form-check-inline:last-child {
+    padding: 0;
+  }
+}
+
 /* ================================================================================  inputs style   ======================================================================================= */
 .inputs,
 .select-style,
@@ -1260,12 +1273,12 @@ input[type="email"] {
 /* ================================================================================  services => Membership    ======================================================================================= */
 /* ================================================================================================================================================================================== */
 .Membership-card {
-    box-shadow: 0px 2px 4px 0px #ff96265c;
-    border-radius: 12px;
-    min-height: 190px;
-    padding: 15px 0px 5px 0px;
-    display: flex;
-    align-items: center;
+  box-shadow: 0px 2px 4px 0px #ff96265c;
+  border-radius: 12px;
+  min-height: 190px;
+  padding: 15px 0px 5px 0px;
+  display: flex;
+  align-items: center;
 }
 
 .memberships-scroll {
@@ -1312,18 +1325,22 @@ input[type="email"] {
   background-position: center;
   position: relative;
 }
-.Data-Membership-card{
+
+.Data-Membership-card {
   flex-direction: column;
   gap: 10px;
 }
+
 @media (min-width: 1900px) {
-  .Membership-col{
-  min-width: 40%;
+  .Membership-col {
+    min-width: 40%;
+  }
 }
-}
-.Membership-col{
+
+.Membership-col {
   min-width: 34%;
 }
+
 .Membership-input {
   border-radius: 8px;
 }
@@ -1334,19 +1351,21 @@ input[type="email"] {
 }
 
 .img-Membership-card {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    padding: 0px 20px 0px 8px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 0px 20px 0px 8px;
 }
+
 .card-radio {
-  left: 5px;
+  left: 12px;
   position: absolute;
   top: 2px;
 }
-.ReplaceCoverBtn{
+
+.ReplaceCoverBtn {
   cursor: pointer;
 }
 
@@ -1784,9 +1803,10 @@ input[type="email"] {
   overflow: auto;
 }
 
-.AccountEmail{
+.AccountEmail {
   max-width: 335px;
 }
+
 .AccountContant::-webkit-scrollbar {
   width: 7px !important;
   height: 5px;
@@ -1968,7 +1988,8 @@ input[type="email"] {
 
 @media (max-width: 1250px) {
 
-  input[type="email"] , .AccountEmail  {
+  input[type="email"],
+  .AccountEmail {
     min-width: auto !important;
   }
 
@@ -1979,31 +2000,37 @@ input[type="email"] {
 
 /* ================================================================================  reports  ======================================================================================= */
 /* ================================================================================================================================================================================== */
-.employee-td{
+.employee-td {
   direction: rtl;
   text-align: start !important;
 }
+
 .DailyReport-icon {
   box-shadow: 1px 1px 9px 0px #107c4236;
   border-radius: 8px;
 }
-.Data-min-width{
+
+.Data-min-width {
   min-width: 177px;
 }
-.report-date-input{
+
+.report-date-input {
   min-width: 150px;
 }
+
 @media (min-width:1200px) {
-.Data-min-width{
-  min-width: 230px;
+  .Data-min-width {
+    min-width: 230px;
+  }
+
+  .report-date-input {
+    min-width: 200px;
+  }
 }
-.report-date-input{
-  min-width: 200px;
-}
-}
+
 /* date input */
-input[type="date"]::-webkit-datetime-edit, 
-input[type="date"]::-webkit-inner-spin-button, 
+input[type="date"]::-webkit-datetime-edit,
+input[type="date"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-clear-button {
   color: #fff;
   position: relative;
@@ -2143,17 +2170,19 @@ input[type="date"]::-webkit-datetime-edit-day-field {
 }
 
 @media (max-width:1200px) {
+
   /* .custom-margin {
     margin-left: 40px;
 } */
- .ContentForm{
-  position: relative;
- }
- .excel-icon{
-  position: absolute;
-  top: 0;
-  left: 0;
- }
+  .ContentForm {
+    position: relative;
+  }
+
+  .excel-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 
 .reports-modal-content {
@@ -2210,9 +2239,11 @@ input[type="date"]::-webkit-datetime-edit-day-field {
   font-size: 16px;
   font-weight: 600;
 }
-.stat-btn{
+
+.stat-btn {
   text-align: start;
 }
+
 .active-stat-btn {
   color: var(--primary-color) !important;
 }
@@ -2776,7 +2807,7 @@ textarea.form-control.is-valid {
 
 .CarPhoto {
   width: 100px;
-  border-radius: 50%;
+  border-radius: 8px;
 }
 
 .CarBorder {
@@ -2808,27 +2839,44 @@ textarea.form-control.is-valid {
 }
 
 .CarPriceContent {
-  height: 33vh;
-  min-height: 220px;
-  overflow: auto;
-  overflow-x: hidden;
+  height: 100%;
+  align-content: space-between;
 }
 
 #Price-content-display {
+  flex: 1;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
   border: 1px solid #ccc;
   padding: 20px;
   margin-top: 10px;
   border-radius: 12px;
-
 }
 
 .hidden {
   display: none;
 }
 
+#content-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+#content-container main {
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
 .PriceTabsBtn {
   display: flex;
-  gap: 10px;
+  gap: 2px;
+  white-space: nowrap;
 }
 
 .PriceTabsBtn {
@@ -2882,8 +2930,6 @@ textarea.form-control.is-valid {
 }
 
 .PriceTableContainer {
-  height: 33vh;
-  min-height: 190px;
   overflow: auto;
 }
 
@@ -2895,6 +2941,7 @@ textarea.form-control.is-valid {
   border: 1px solid #f1b16c;
   height: 100%;
   white-space: nowrap;
+  margin: 0;
 }
 
 .CarPriceTable td {
@@ -2980,84 +3027,88 @@ textarea.form-control.is-valid {
   height: 100%;
   border-radius: 8px;
 }
+
 /*  */
 .autocomplete-items {
-    display: none;
-    position: fixed;
-    border: 1px solid #ced4da;
-    z-index: 9999;
-    background-color: #fff;
-    border-radius: 2px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-    overflow-y: auto;
-    width: auto; 
-    max-width: fit-content; 
-    left: -1000px;
+  display: none;
+  position: fixed;
+  border: 1px solid #ced4da;
+  z-index: 9999;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+  width: auto;
+  max-width: fit-content;
+  left: -1000px;
 }
 
 .autocomplete-arrow {
-    position: fixed;
-    z-index: 10000;
-    pointer-events: none;
-    display: none;
-    width: 0;
-    height: 0;
+  position: fixed;
+  z-index: 10000;
+  pointer-events: none;
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 .autocomplete-items div {
-    padding: 8px 12px;
-    cursor: pointer;
-    background-color: #fff;
-    border-bottom: 1px solid #f0f0f0;
-    font-size: 1rem;
-    color: #212529;
-    transition: background-color 0.2s;
-    white-space: nowrap; 
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 1rem;
+  color: #212529;
+  transition: background-color 0.2s;
+  white-space: nowrap;
 }
 
 .autocomplete-items div:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .autocomplete-items div:hover {
-    background-color: #f8f9fa;
+  background-color: #f8f9fa;
 }
 
 .autocomplete-items div:active,
 .autocomplete-items div.active {
-    background-color: #e9ecef;
-    color: #212529;
+  background-color: #e9ecef;
+  color: #212529;
 }
 
 /* Custom scrollbar */
 .autocomplete-items::-webkit-scrollbar {
-    width: 6px;
+  width: 6px;
 }
 
 .autocomplete-items::-webkit-scrollbar-track {
-    background: #f1f1f1;
+  background: #f1f1f1;
 }
 
 .autocomplete-items::-webkit-scrollbar-thumb {
-    background: #c1c1c1;
-    border-radius: 3px;
+  background: #c1c1c1;
+  border-radius: 3px;
 }
 
 .autocomplete-items::-webkit-scrollbar-thumb:hover {
-    background: #a8a8a8;
+  background: #a8a8a8;
 }
+
 @media (max-width:1024px) {
- .autocomplete-items{
-  max-width: 350px;
- }
- .autocomplete-items div{
-  white-space:unset;
- }
+  .autocomplete-items {
+    max-width: 350px;
+  }
+
+  .autocomplete-items div {
+    white-space: unset;
+  }
 }
+
 @media (max-width:425px) {
- .autocomplete-items{
-  max-width: 250px;
- }
+  .autocomplete-items {
+    max-width: 250px;
+  }
 }
 
 /*  */
@@ -3213,6 +3264,12 @@ textarea.form-control.is-valid {
   margin-bottom: 0px !important;
 }
 
+@media (min-width: 768px) {
+  .car-modal-dialog {
+    min-width: 700px;
+  }
+}
+
 .cars-modal-content {
   border: none;
 }
@@ -3232,8 +3289,7 @@ textarea.form-control.is-valid {
 }
 
 .cars-modal-content .data-details .BranchName {
-  margin: .2rem;
-  font-size: 15px;
+  font-size: .875rem;
 }
 
 .cars-modal-content .data-details label {
@@ -3383,7 +3439,7 @@ textarea.form-control.is-valid {
   min-height: 0;
   overflow-y: auto;
   flex: 1;
-  padding:0px 2px  10px 2px;
+  padding: 0px 2px 10px 2px;
 }
 
 /* New Upadte pages   */
