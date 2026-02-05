@@ -4,17 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> نظام الادارة - نقل السيارة </title>
+    <title> نظام الادارة - تحديث السعر</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css?family=Cairo:500,400,700" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-
     <link rel="stylesheet" href="../../../style/Layout.css">
     <link rel="stylesheet" href="../../../style/content.css">
-    <!-- <link rel="stylesheet" href="../../style/english.css">   -->
+    <!-- <link rel="stylesheet" href="../../../style/english.css">  -->
 
 </head>
 
@@ -125,15 +124,16 @@
                                         السيارات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                     <a class="collapse-item" href="../../../Pages/Cars/CarRepair/CarRepair.html"> تصليح
                                         السيارة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                    <a class="collapse-item active"
-                                        href="../../../Pages/Cars/CarTransfer/CarTransfer.html">
-                                        نقل السيارة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/Cars/CarTransfer/CarTransfer.html">
+                                        نقل
+                                        السيارة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                     <a class="collapse-item" href="../../../Pages/Cars/ChangeOwner/ChangeOwner.html">
                                         تغيير المالك <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                     <a class="collapse-item"
                                         href="../../../Pages/Cars/SalesProcedures/SalesProcedures.html"> إجراءات البيع
                                         <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                    <a class="collapse-item" href="../../../Pages/Cars/CarsPrices/Prices.html"> الأسعار
+                                    <a class="collapse-item active" href="../../../Pages/Cars/CarsPrices/Prices.html">
+                                        الأسعار
                                         <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                 </div>
                             </div>
@@ -354,563 +354,551 @@
                         <div class="col-lg-12 Data-container ">
                             <form class="ContentForm">
                                 <!-- Content Header -->
-                                <div class="row  mb-2">
-                                    <div class="col-auto">
-                                        <h3> نقل السيارة </h3>
+                                <div class="container-fluid">
+                                    <div class="row mb-2">
+                                        <div class="col-auto">
+                                            <h3>بيانات سعر السيارة</h3>
+                                        </div>
+                                        <div class="col  save-col">
+                                            <button type="button" class="custom-img-btn"><a class="d-flex align-items-center" href="Prices.html"><img  class="Chevron" src="../../../images/Static/States/Chevron_Left.svg" /></a></button>
+                                        </div>
                                     </div>
-                                    <div class="col search-input-col">
-                                        <div class="row  justify-content-end">
-                                            <div class="col-lg-10 col-xxl-8">
-                                                <div class="form-outline w-100" data-mdb-input-init>
-                                                    <span class="fa fa-search"></span>
-                                                    <input type="search" id="search"
-                                                        class="form-control inputs search-input" name="search"
-                                                        aria-label="Search" autofocus autocomplete="off" />
+                                </div>
+                                <main class="inputs-accordion-container">
+                                    <div class="container-fluid h-100">
+                                        <div class="row g-1 h-100 flex-column flex-nowrap">
+                                            <div class="col-md-12 mt-2">
+                                                <div class="row align-items-center">
+                                                    <div class="col-md-auto">
+                                                        <div class="CarBorder">
+                                                            <img src="../../../images/Demo/DefaultCar.png"
+                                                                alt="Car-photo" class="CarPhoto border-0 w-100 h-100">
+                                                            <div class="filters filter2-div"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <h5 class="subtitle">شيفروليه - سبارك ال اس - اقتصادية - 2020
+                                                        </h5>
+                                                        <div class="row">
+                                                            <div class="col-auto">
+                                                                <p class="m-0">2024/02/01</p>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <p class="m-0">2024/02/01</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 d-flex gap-3  mt-3">
+                                                        <p class="CarsCountTitle">عدد السيارات </p>
+                                                        <p class="CarsCount">7</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 d-flex flex-column flex-1 min-h-0 ">
+                                                <div class="row g-1">
+                                                    <div class="col-6 col-md-3">
+                                                        <button class="btn PriceTabsBtn" type="button"
+                                                            onclick="showContent(0)"><img
+                                                                src="../../../images/Static/CarPrices/PriceIcon.svg"
+                                                                style="height: 24px;">السعر</button>
+                                                    </div>
+                                                    <div class="col-6 col-md-3">
+                                                        <button class="btn PriceTabsBtn" type="button"
+                                                            onclick="showContent(1)"><img
+                                                                src="../../../images/Static/CarPrices/RentTerms.svg">
+                                                            بنود التأجير </button>
+                                                    </div>
+                                                    <div class="col-6 col-md-3">
+                                                        <button class="btn PriceTabsBtn" type="button"
+                                                            onclick="showContent(2)"><img
+                                                                src="../../../images/Static/CarPrices/PriceOption.svg">
+                                                            الخيارات </button>
+                                                    </div>
+                                                    <div class="col-6 col-md-3">
+                                                        <button class="btn PriceTabsBtn" type="button"
+                                                            onclick="showContent(3)"><img
+                                                                src="../../../images/Static/CarPrices/PriceAddtions.svg">
+                                                            الإضافات </button>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Content Sections -->
+                                                <div id="Price-content-display">
+                                                    <!-- Hidden Content Data -->
+                                                    <div id="content-container">
+                                                        <main>
+                                                            <div class="row CarPriceContent ">
+                                                                <div class="col-lg-auto" style="min-width: 25%;">
+                                                                    <div class="row g-3">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle">الإيجار اليومي</p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data">180.00</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-auto" style="min-width: 25%;">
+                                                                    <div class="row g-3">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle">الإيجار الأسبوعي
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data">120.00</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-auto"  style="min-width: 25%;">
+                                                                    <div class="row g-3">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle">الإيجار الشهري</p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data">100.00</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                 <div class="col-lg-auto"  style="min-width: 25%;">
+                                                                    <div class="row g-3">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle">الإيجار السنوي</p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data">100.00</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-auto" style="min-width: 25%;">
+                                                                    <div class="row g-3">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle">الكيلو الإضافي</p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data">0.55</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-auto" style="min-width: 25%;">
+                                                                    <div class="row g-3">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle">الساعة الإضافية</p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data">25.00</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-auto" style="min-width: 25%;">
+                                                                    <div class="row g-3">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle">السائق الإضافي</p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data">35.00</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-auto" style="min-width: 25%;">
+                                                                    <div class="row g-3">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle">السائق الخاص</p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data">0.00</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-auto" style="min-width: 25%;">
+                                                                    <div class="row g-3">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle"> التفويض الداخلي
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data">3.50</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-auto" style="min-width: 25%;">
+                                                                    <div class="row g-3">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle"> التفويض الخارجي
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data">40.00</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-auto" style="min-width: 25%;">
+                                                                    <div class="row g-3">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle"> رسوم أخرى </p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data">0.00</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-auto" style="min-width: 25%;">
+                                                                    <div class="row g-3">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle">نسبة الضريبة</p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data">15.00</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <div class="row">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle"> الملاحظات </p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data"></p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </main>
+                                                        <main style="display: none;">
+                                                            <div class="row  CarPriceContent">
+                                                                <div class="col-lg-auto" style="min-width: 25%;">
+                                                                    <div class="row g-3">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle">الكيلوات المجاني
+                                                                                اليومي</p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data">200</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-auto" style="min-width: 25%;">
+                                                                    <div class="row g-3">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle">الساعة المجانية</p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data">2</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-auto" style="min-width: 25%;">
+                                                                    <div class="row g-3">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle">الحد الأعلى للساعات
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data">0</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-auto" style="min-width: 25%;">
+                                                                    <div class="row g-3">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle">ساعات إلغاء العقد
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data">0</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                               <div class="col-md-12">
+                                                                <div class="row">
+                                                                 <div class="col-lg-auto" style="min-width: 25%;">
+                                                                    <div class="row g-3">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle">أقل عمر للسائق</p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data">20</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-auto" style="min-width: 25%;">
+                                                                    <div class="row g-3">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle">أكبر عمر للسائق</p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data">68</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-auto" style="min-width: 25%;" >
+                                                                    <div class="row g-3">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle">السماح بسائق إضافي
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data">نعم</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                </div>
+                                                               </div>
+                                                                <div class="col-lg-auto" style="min-width: 25%;">
+                                                                    <div class="row g-3">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle">تحمل الحادث</p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data">2500.00</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-auto" style="min-width: 25%;">
+                                                                    <div class="row g-3">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle">تحمل السرقة</p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data">3500.00</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-auto" style="min-width: 25%;">
+                                                                    <div class="row g-3">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle"> تحمل الغرق </p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data">4500.00</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-auto" style="min-width: 25%;">
+                                                                    <div class="row g-3">
+                                                                        <div class="col-auto">
+                                                                            <p class="DataTitle"> تحمل الحريق </p>
+                                                                        </div>
+                                                                        <div class="col-auto ">
+                                                                            <p class="Saved-data">800.00</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </main>
+                                                        <main style="display: none;">
+                                                            <div class="row justify-content-center h-100 flex-column align-content-center">
+                                                                <div class="col-md-7 col-lg-6 flex-1 min-h-0 d-flex flex-column">
+                                                                    <div class="PriceTableContainer">
+                                                                        <table class="table  CarPriceTable">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th> م </th>
+                                                                                        <th> الخيارات </th>
+                                                                                        <th> القيمة </th>
+
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <p>1</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p>فتح العداد</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p>10.00</p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <p>2</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p> تأمين شامل </p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p>10.00</p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                   <tr>
+                                                                                        <td>
+                                                                                            <p>3</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p> تأمين إضافي </p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p>10.00</p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <p>4</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p> كرسي رضيع </p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p>10.00</p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <p>5</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p> كرسي اطفال</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p>10.00</p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                     <tr>
+                                                                                        <td>
+                                                                                            <p>6</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p> جهاز ملاحي</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p>10.00</p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <p>7</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p> انترنت</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p>10.00</p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                     <tr>
+                                                                                        <td>
+                                                                                            <p>8</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p>احتياجات ذوي الاعاقة </p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p>10.00</p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </main>
+                                                        <main style="display: none;">
+                                                            <div class="row justify-content-center h-100 flex-column align-content-center">
+                                                                <div class="col-md-7 col-lg-6 flex-1 min-h-0 d-flex flex-column">
+                                                                    <div class="PriceTableContainer">
+                                                                       <table class="table  CarPriceTable">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th> م </th>
+                                                                                        <th> الإضافات </th>
+                                                                                        <th> القيمة </th>
+
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <p>1</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p>توصيل السيارة للمستأجر</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p>53.00</p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <p>2</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p>استلام السيارة من المستأجر</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p>60.00</p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                     <tr>
+                                                                                        <td>
+                                                                                            <p>3</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p>استلام السيارة بفرع اخر</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p>60.00</p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <p>4</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p>استلام السيارة بمدينة اخرى</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p>60.00</p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <p>5</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p>انترنت</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p>60.00</p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <p>6</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p>احتياجات ذوي الاعاقة</p>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <p>60.00</p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </main>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Navigation Buttons -->
+                                                <div class="mt-2 d-flex justify-content-between">
+                                                    <button id="prev-btn" class="btn NextPrevBtn" type="button"
+                                                        onclick="prevContent()" disabled> <i
+                                                            class="fa-solid fa-chevron-right Chevron"></i>السابق
+                                                    </button>
+                                                    <button id="next-btn" class="btn NextPrevBtn" type="button"
+                                                        onclick="nextContent()">التالي <i
+                                                            class="fa-solid fa-chevron-left Chevron"></i></button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                </div>
-                                <!-- Table -->
-                                <div class="table-wrapper">
-                                    <div class="table-container">
-                                        <table class=" tables-style table table-borderless " id="table">
-                                            <thead class="sticky-top">
-                                                <tr>
-                                                    <th class="DifferAlign"> الناقل </th>
-                                                    <th class="DifferAlign"> الوقود</th>
-                                                    <th> التسجيل</th>
-                                                    <th> القراءة الحالية </th>
-                                                    <th class="DifferAlign"> السيارة </th>
-                                                    <th></th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr data-bs-toggle="modal" href="#TransferModal">
-
-                                                    <td class="DifferAlign">
-                                                        <p>ثنائي</p>
-                                                    </td>
-                                                    <td class="DifferAlign">
-                                                        <p>بنزين اوكتان 98 مع كهرباء</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>خصوصي</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>999,999</p>
-                                                    </td>
-                                                    <td class="DifferAlign car-name">
-                                                        <div class="d-flex gap-2 align-items-center">
-                                                            <div class="col">
-                                                                <div class="row justify-content-end">
-                                                                    <div class="col-auto">
-                                                                    </div>
-                                                                    <div class="col-auto">
-                                                                        <p class="FirstLineP">
-                                                                            فورد - إسكورت - &nbsp;سيدان صغيرة - 2019 - ص
-                                                                            ى أ 7619 - بني
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row justify-content-end">
-                                                                    <div class="col-auto">
-                                                                        <p class="secondLineP">المرجان</p>
-                                                                    </div>
-                                                                    <div class="col-auto">
-                                                                        <p class="secondLineP">4898570239</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-auto d-flex justify-content-end">
-                                                                <div class="CarBorder-CarData">
-                                                                    <img src="../../../images/Demo/DefaultCar.png"
-                                                                        style="  max-width:100px;" class="CarPhoto"
-                                                                        loading="lazy">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="filter-number-td">
-                                                            <div>1</div>
-
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-bs-toggle="modal" href="#TransferModal">
-
-                                                    <td class="DifferAlign">
-                                                        <p>آلي</p>
-                                                    </td>
-                                                    <td class="DifferAlign">
-                                                        <p>سيارة كهربائية هجينة</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>خصوصي</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>999,999</p>
-                                                    </td>
-                                                    <td class="DifferAlign car-name">
-                                                        <div class="d-flex gap-2 align-items-center">
-                                                            <div class="col">
-                                                                <div class="row justify-content-end">
-                                                                    <div class="col-auto">
-                                                                    </div>
-                                                                    <div class="col-auto">
-                                                                        <p class="FirstLineP">
-                                                                            لكزس - اي اس - &nbsp;فخمة متوسطة - 2019 - ق
-                                                                            ن ع 4759 - فسفوري
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row justify-content-end">
-                                                                    <div class="col-auto">
-                                                                        <p class="secondLineP">الرئيسي الرئيسي</p>
-                                                                    </div>
-                                                                    <div class="col-auto">
-                                                                        <p class="secondLineP">5521872234</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-auto d-flex justify-content-end">
-                                                                <div class="CarBorder-CarData">
-                                                                    <img src="../../../images/Demo/DefaultCar.png"
-                                                                        style="  max-width:100px;" class="CarPhoto"
-                                                                        loading="lazy">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="filter-number-td">
-                                                            <div>2</div>
-
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-bs-toggle="modal" href="#TransferModal">
-
-                                                    <td class="DifferAlign">
-                                                        <p>ثنائي</p>
-                                                    </td>
-                                                    <td class="DifferAlign">
-                                                        <p>كهرباء</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>خصوصي</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>999,999</p>
-                                                    </td>
-                                                    <td class="DifferAlign car-name">
-                                                        <div class="d-flex gap-2 align-items-center">
-                                                            <div class="col">
-                                                                <div class="row justify-content-end">
-                                                                    <div class="col-auto">
-                                                                    </div>
-                                                                    <div class="col-auto">
-                                                                        <p class="FirstLineP">
-                                                                            نيسان - سنترا - &nbsp;سيدان صغيرة - 2021 - ع
-                                                                            ص ص 0643 - رمادي
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row justify-content-end">
-                                                                    <div class="col-auto">
-                                                                        <p class="secondLineP">جعرانة</p>
-                                                                    </div>
-                                                                    <div class="col-auto">
-                                                                        <p class="secondLineP">6077766271</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-auto d-flex justify-content-end">
-                                                                <div class="CarBorder-CarData">
-                                                                    <img src="../../../images/Demo/DefaultCar.png"
-                                                                        style="  max-width:100px;" class="CarPhoto"
-                                                                        loading="lazy">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="filter-number-td">
-                                                            <div>3</div>
-
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-bs-toggle="modal" href="#TransferModal">
-
-                                                    <td class="DifferAlign">
-                                                        <p>آلي</p>
-                                                    </td>
-                                                    <td class="DifferAlign">
-                                                        <p>بنزين اوكتان 95</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>خصوصي</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>999,999</p>
-                                                    </td>
-                                                    <td class="DifferAlign car-name">
-                                                        <div class="d-flex gap-2 align-items-center">
-                                                            <div class="col">
-                                                                <div class="row justify-content-end">
-                                                                    <div class="col-auto">
-                                                                    </div>
-                                                                    <div class="col-auto">
-                                                                        <p class="FirstLineP">
-                                                                            فورد - تورس - &nbsp;سيدان متوسطة - 2021 - هـ
-                                                                            ر ر 3483 - برتقالي
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row justify-content-end">
-                                                                    <div class="col-auto">
-                                                                        <p class="secondLineP">الوشحاء</p>
-                                                                    </div>
-                                                                    <div class="col-auto">
-                                                                        <p class="secondLineP">4997198501</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-auto d-flex justify-content-end">
-                                                                <div class="CarBorder-CarData">
-                                                                    <img src="../../../images/Demo/DefaultCar.png"
-                                                                        style="  max-width:100px;" class="CarPhoto"
-                                                                        loading="lazy">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="filter-number-td">
-                                                            <div>4</div>
-
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-bs-toggle="modal" href="#TransferModal">
-
-                                                    <td class="DifferAlign">
-                                                        <p>يدوي</p>
-                                                    </td>
-                                                    <td class="DifferAlign">
-                                                        <p>بنزين اوكتان 87 مع كهرباء</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>خصوصي</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>999,999</p>
-                                                    </td>
-                                                    <td class="DifferAlign car-name">
-                                                        <div class="d-flex gap-2 align-items-center">
-                                                            <div class="col">
-                                                                <div class="row justify-content-end">
-                                                                    <div class="col-auto">
-                                                                    </div>
-                                                                    <div class="col-auto">
-                                                                        <p class="FirstLineP">
-                                                                            كيا - نيرو - &nbsp;اقتصادية - 2020 - م م ى
-                                                                            7167 - ذهبي
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row justify-content-end">
-                                                                    <div class="col-auto">
-                                                                        <p class="secondLineP">الرئيسي الرئيسي</p>
-                                                                    </div>
-                                                                    <div class="col-auto">
-                                                                        <p class="secondLineP">4928122761</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-auto d-flex justify-content-end">
-                                                                <div class="CarBorder-CarData">
-                                                                    <img src="../../../images/Demo/DefaultCar.png"
-                                                                        style="  max-width:100px;" class="CarPhoto"
-                                                                        loading="lazy">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="filter-number-td">
-                                                            <div>5</div>
-
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-bs-toggle="modal" href="#TransferModal">
-
-                                                    <td class="DifferAlign">
-                                                        <p>ثنائي</p>
-                                                    </td>
-                                                    <td class="DifferAlign">
-                                                        <p>ديزل مع كهرباء</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>خصوصي</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>999,999</p>
-                                                    </td>
-                                                    <td class="DifferAlign car-name">
-                                                        <div class="d-flex gap-2 align-items-center">
-                                                            <div class="col">
-                                                                <div class="row justify-content-end">
-                                                                    <div class="col-auto">
-                                                                    </div>
-                                                                    <div class="col-auto">
-                                                                        <p class="FirstLineP">
-                                                                            فورد - إسكورت - &nbsp;سيدان صغيرة - 2019 - ب
-                                                                            ح د 0905 - أصفر
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row justify-content-end">
-                                                                    <div class="col-auto">
-                                                                        <p class="secondLineP">المرجان</p>
-                                                                    </div>
-                                                                    <div class="col-auto">
-                                                                        <p class="secondLineP">4413298565</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-auto d-flex justify-content-end">
-                                                                <div class="CarBorder-CarData">
-                                                                    <img src="../../../images/Demo/DefaultCar.png"
-                                                                        style="  max-width:100px;" class="CarPhoto"
-                                                                        loading="lazy">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="filter-number-td">
-                                                            <div>6</div>
-
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-bs-toggle="modal" href="#TransferModal">
-
-                                                    <td class="DifferAlign">
-                                                        <p>يدوي</p>
-                                                    </td>
-                                                    <td class="DifferAlign">
-                                                        <p>كهرباء</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>خصوصي</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>999,999</p>
-                                                    </td>
-                                                    <td class="DifferAlign car-name">
-                                                        <div class="d-flex gap-2 align-items-center">
-                                                            <div class="col">
-                                                                <div class="row justify-content-end">
-                                                                    <div class="col-auto">
-                                                                    </div>
-                                                                    <div class="col-auto">
-                                                                        <p class="FirstLineP">
-                                                                            كيا - سيراتو - &nbsp;سيدان صغيرة - 2020 - س
-                                                                            ط ط 8652 - رمادي
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row justify-content-end">
-                                                                    <div class="col-auto">
-                                                                        <p class="secondLineP">المرجان</p>
-                                                                    </div>
-                                                                    <div class="col-auto">
-                                                                        <p class="secondLineP">6053877356</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-auto d-flex justify-content-end">
-                                                                <div class="CarBorder-CarData">
-                                                                    <img src="../../../images/Demo/DefaultCar.png"
-                                                                        style="  max-width:100px;" class="CarPhoto"
-                                                                        loading="lazy">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="filter-number-td">
-                                                            <div>7</div>
-
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-bs-toggle="modal" href="#TransferModal">
-
-                                                    <td class="DifferAlign">
-                                                        <p>آلي</p>
-                                                    </td>
-                                                    <td class="DifferAlign">
-                                                        <p>بنزين اوكتان 95 مع كهرباء</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>خصوصي</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>999,999</p>
-                                                    </td>
-                                                    <td class="DifferAlign car-name">
-                                                        <div class="d-flex gap-2 align-items-center">
-                                                            <div class="col">
-                                                                <div class="row justify-content-end">
-                                                                    <div class="col-auto">
-                                                                    </div>
-                                                                    <div class="col-auto">
-                                                                        <p class="FirstLineP">
-                                                                            شيفروليه - سبارك ال اس - &nbsp;اقتصادية -
-                                                                            2021 - ك ل أ 4883 - برتقالي
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row justify-content-end">
-                                                                    <div class="col-auto">
-                                                                        <p class="secondLineP">الصريف</p>
-                                                                    </div>
-                                                                    <div class="col-auto">
-                                                                        <p class="secondLineP">4590216890</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-auto d-flex justify-content-end">
-                                                                <div class="CarBorder-CarData">
-                                                                    <img src="../../../images/Demo/DefaultCar.png"
-                                                                        style="  max-width:100px;" class="CarPhoto"
-                                                                        loading="lazy">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="filter-number-td">
-                                                            <div>8</div>
-
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-bs-toggle="modal" href="#TransferModal">
-
-                                                    <td class="DifferAlign">
-                                                        <p>آلي</p>
-                                                    </td>
-                                                    <td class="DifferAlign">
-                                                        <p>ديزل</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>خصوصي</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>999,999</p>
-                                                    </td>
-                                                    <td class="DifferAlign car-name">
-                                                        <div class="d-flex gap-2 align-items-center">
-                                                            <div class="col">
-                                                                <div class="row justify-content-end">
-                                                                    <div class="col-auto">
-                                                                    </div>
-                                                                    <div class="col-auto">
-                                                                        <p class="FirstLineP">
-                                                                            هيونداي - أزيرا - &nbsp;سيدان متوسطة - 2019
-                                                                            - د د ى 0698 - سماوي
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row justify-content-end">
-                                                                    <div class="col-auto">
-                                                                        <p class="secondLineP">الرئيسي الرئيسي</p>
-                                                                    </div>
-                                                                    <div class="col-auto">
-                                                                        <p class="secondLineP">4690633492</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-auto d-flex justify-content-end">
-                                                                <div class="CarBorder-CarData">
-                                                                    <img src="../../../images/Demo/DefaultCar.png"
-                                                                        style="  max-width:100px;" class="CarPhoto"
-                                                                        loading="lazy">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="filter-number-td">
-                                                            <div>9</div>
-
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-bs-toggle="modal" href="#TransferModal">
-
-                                                    <td class="DifferAlign">
-                                                        <p>يدوي</p>
-                                                    </td>
-                                                    <td class="DifferAlign">
-                                                        <p>سيارة كهربائية هجينة</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>خصوصي</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>999,999</p>
-                                                    </td>
-                                                    <td class="DifferAlign car-name">
-                                                        <div class="d-flex gap-2 align-items-center">
-                                                            <div class="col">
-                                                                <div class="row justify-content-end">
-                                                                    <div class="col-auto">
-                                                                    </div>
-                                                                    <div class="col-auto">
-                                                                        <p class="FirstLineP">
-                                                                            لكزس - اي اس - &nbsp;فخمة متوسطة - 2020 - س
-                                                                            و س 2877 - أبيض
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row justify-content-end">
-                                                                    <div class="col-auto">
-                                                                        <p class="secondLineP">الرئيسي الرئيسي</p>
-                                                                    </div>
-                                                                    <div class="col-auto">
-                                                                        <p class="secondLineP">5612379332</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-auto d-flex justify-content-end">
-                                                                <div class="CarBorder-CarData">
-                                                                    <img src="../../../images/Demo/DefaultCar.png"
-                                                                        style="  max-width:100px;" class="CarPhoto"
-                                                                        loading="lazy">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="filter-number-td">
-                                                            <div>10</div>
-
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                                </main>
                             </form>
                         </div>
 
@@ -1625,134 +1613,65 @@
             </aside>
         </div>
 
-        <!-- Transfer modal  -->
-        <div class="modal fade" id="TransferModal" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="TransferModalLabel"  aria-hidden="true"  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered car-modal-dialog">
-                <div class="modal-content cars-modal-content">
-                    <form action="" class="needs-validation" novalidate>
-                        <div class="modal-header border-0 justify-content-end">
-                            <div class="row w-100">
-                                <div class="col-md-12 d-flex justify-content-end">
-                                 <button type="button" class="btn-close m-0 p-1" data-bs-dismiss="modal" aria-label="Close"></button>                                
-                                </div>
-                                <div class="col-md-12 text-center">
-                                    <h5 class="modal-title card-title m-auto" id="model_title">نقل السيارة من فرع إلى فرع </h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-body p-0">
-                            <div class="data-details">
-                                <div class="col-md-12">
-                                    <div class="row align-items-center g-2">
-                                        <div class="col-sm-auto">
-                                            <div class="CarBorder-CarData">
-                                                <img src="../../../images/Demo/DefaultCar.png" alt="Car-photo"
-                                                    class="CarPhoto">
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="row align-items-baseline">
-                                                <div class="col">
-                                                    <p class="carName">كيا - نيرو - اقتصادية - 2019 - ب ط ح 8835 - أحمر
-                                                    </p>
-                                                </div>
 
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-auto">
-                                                    <p class="m-0">1579634852</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                 <div class="col-md-12">
-                                    <div class="row mt-3 BranchName g-2">
-                                        <div class="col-auto">
-                                            <p class="mb-0">الفرع الحالي</p>
-                                        </div>
-                                        <div class="col-auto">
-                                            <p class="Saved-data">الحزام الذهبي</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="row  align-items-baseline g-2">
-                                        <div class="col-md-auto">
-                                            <label for="NewBranch" class="form-label">الفرع الجديد</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <select class="form-select select-style " name="NewBranch" id="NewBranch"
-                                                required>
-                                                <option> </option>
-                                                <option value="main"> الرئيسي</option>
-                                                <option value="zahra"> الزهور </option>
-                                                <option value="jaerana"> جعرانة </option>
-                                                <option value="murjan"> المرجان </option>
-                                                <option value="alhadaba"> الهضبة </option>
-                                                <option value="alwashiha"> الوشحاء </option>
-                                            </select>
-                                            <div class="invaild">
-                                                <div class="invalid-feedback">
-                                                    الحقل مطلوب
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12 mb-3">
-                                    <div class="row  align-items-baseline flex-column">
-                                        <div class="col-lg-12">
-                                            <label>الملاحظات</label>
-                                        </div>
-                                        <div class="col d-flex justify-content-start">
-                                            <textarea class=" form-control textarea-inputs" rows="1" maxlength="100"
-                                                id="notes" type="text"
-                                                name="Reasons"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer border-0 justify-content-center mx-1">
-                            <div class="row w-100 g-2">
-                                <div class="col-md-6">
-                                    <button type="button" class="btn btn-standard w-100" id="Accept">موافق</button>
-                                </div>
-                                <div class="col-md-6">
-                                    <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">إلغاء
-                                        الأمر</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div> 
     </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-        <script src="../../../scripts/Scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="../../../scripts/Scripts.js"></script>
+    <script>
+        let currentIndex = 0;
+        const contents = Array.from(document.querySelectorAll("#content-container main"));
+        const tabButtons = document.querySelectorAll(".PriceTabsBtn");
 
-        <!-- <script>
-            const AcceptBtn = document.getElementById("Accept");
-            AcceptBtn.addEventListener("click", function () {
-                $('#TransferModal').modal('hide');
-                setTimeout(() => {
-                    $('#SuccessModal').modal('show');
-                }, 500)
-            }) 
-        </script> -->
+        function showContent(index) {
+            if (index < 0 || index >= contents.length) return;
+            currentIndex = index;
 
+            contents.forEach((content, i) => {
+                content.style.display = i === index ? 'flex' : 'none';
+            });
+            updateButtons();
+            updateActiveTab(index);
+
+        }
+
+        function prevContent() {
+            if (currentIndex > 0) {
+                showContent(currentIndex - 1);
+            }
+        }
+
+        function nextContent() {
+            if (currentIndex < contents.length - 1) {
+                showContent(currentIndex + 1);
+            }
+        }
+
+        function updateButtons() {
+            document.getElementById("prev-btn").disabled = currentIndex === 0;
+            document.getElementById("next-btn").disabled = currentIndex === contents.length - 1;
+        }
+        function updateActiveTab(index) {
+            tabButtons.forEach((btn, i) => {
+                if (i === index) {
+                    btn.classList.add("active");
+                } else {
+                    btn.classList.remove("active");
+                }
+            });
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            showContent(0);
+        });
+
+    </script>
 </body>
 
 </html>
