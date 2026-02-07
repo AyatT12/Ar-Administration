@@ -375,24 +375,37 @@
                                             <div class="col-md-12 mt-2">
                                                 <div class="row">
                                                     <div class="col">
-                                                        <div class="row ">
-                                                            <div class="col-xl-8">
-                                                                <div class="row align-items-baseline g-2">
-                                                                    <div class="col-md-auto">
-                                                                        <label for="CarName" class="form-label"> السيارة
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="col" style="position: relative;">
-                                                                        <input type="text" id="CarName"
-                                                                            class="form-control inputs " name="CarName"
-                                                                            required>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">الحقل مطلوب
+                                                        <div class="row">
+                                                            <div class="col-xl-9">
+                                                                <div class="row g-2 align-items-baseline">
+                                                                    <div class="col">
+                                                                        <div class="row align-items-baseline g-2">
+                                                                            <div class="col-md-auto">
+                                                                                <label for="CarName" class="form-label">
+                                                                                    السيارة
+                                                                                </label>
                                                                             </div>
+                                                                            <div class="col"
+                                                                                style="position: relative;">
+                                                                                <input type="text" id="CarName"
+                                                                                    class="form-control inputs "
+                                                                                    name="CarName" required>
+                                                                                <div class="invaild">
+                                                                                    <div class="invalid-feedback">الحقل
+                                                                                        مطلوب
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div id="autocomplete-Cars"
+                                                                                class="autocomplete-items p-0"></div>
                                                                         </div>
                                                                     </div>
-                                                                    <div id="autocomplete-Cars"
-                                                                        class="autocomplete-items p-0"></div>
+                                                                    <div class="col-auto">
+                                                                        <div class="col-md-12 CarsCountP2">
+                                                                            <p class="CarsCountTitle">عدد السيارات </p>
+                                                                            <p class="CarsCount"></p>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                                 <div class="row my-2 gy-2">
                                                                     <div class="col-md-auto col-xl-6">
@@ -436,7 +449,7 @@
 
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-12 d-flex gap-3 mt-3 justify-content-end">
+                                                        <div class="col-md-12 CarsCountP">
                                                             <p class="CarsCountTitle">عدد السيارات </p>
                                                             <p class="CarsCount"></p>
                                                         </div>
@@ -479,259 +492,307 @@
                                                         <main>
                                                             <div class="row CarPriceContent ">
                                                                 <div class="col-lg-6 col-xl-3">
-
-                                                                    <label for="DailyRent" class="form-label">الإيجار
-                                                                        اليومي
-                                                                        <i
-                                                                            class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                    </label>
-
-                                                                    <input type="number" id="DailyRent"
-                                                                        class="form-control inputs number-input"
-                                                                        name="DailyRent" data-section="0" required>
-                                                                    <div class="invaild">
-                                                                        <div class="invalid-feedback">الحقل
-                                                                            مطلوب
+                                                                    <div class="row  align-items-baseline">
+                                                                        <div class="col-lg-auto col-xxl-12">
+                                                                            <label for="DailyRent"
+                                                                                class="form-label">الإيجار اليومي
+                                                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <input type="number" id="DailyRent" class="form-control inputs number-input" name="DailyRent" data-section="0"  required>
+                                                                            <div class="invaild">
+                                                                                <div class="invalid-feedback">الحقل
+                                                                                    مطلوب
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-6 col-xl-3">
-                                                                    <label for="WeekRent" class="form-label">الإيجار
-                                                                        الأسبوعي
-                                                                        <i
-                                                                            class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                    </label>
-                                                                    <input type="number" id="WeekRent"
-                                                                        class="form-control inputs number-input"
-                                                                        name="WeekRent" data-section="0" required>
-                                                                    <div class="invaild">
-                                                                        <div class="invalid-feedback">الحقل
-                                                                            مطلوب</div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-xl-3">
-                                                                    <label for="monthRent" class="form-label">الإيجار
-                                                                        الشهري
-                                                                        <i
-                                                                            class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                    </label>
-                                                                    <input type="number" id="monthRent"
-                                                                        class="form-control inputs number-input"
-                                                                        name="monthRent" data-section="0" required>
-                                                                    <div class="invaild">
-                                                                        <div class="invalid-feedback">الحقل
-                                                                            مطلوب</div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-xl-3">
-                                                                    <label for="YearRent" class="form-label">الإيجار
-                                                                        السنوي
-                                                                        <i
-                                                                            class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                    </label>
-
-                                                                    <input type="number" id="YearRent"
-                                                                        class="form-control inputs number-input"
-                                                                        name="YearRent" data-section="0" required>
-                                                                    <div class="invaild">
-                                                                        <div class="invalid-feedback">الحقل
-                                                                            مطلوب</div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-xl-3">
-                                                                    <label for="extraKilometer"
-                                                                        class="form-label">الكيلو الإضافي</label>
-                                                                    <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                    <input type="number" id="extraKilometer"
-                                                                        class="form-control inputs number-input"
-                                                                        name="extraKilometer" data-section="0" required>
-                                                                    <div class="invaild">
-                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-xl-3">
-                                                                    <label for="extraHour" class="form-label">الساعة
-                                                                        الإضافية</label>
-                                                                    <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                    <input type="number" id="extraHour"
-                                                                        class="form-control inputs number-input"
-                                                                        name="extraHour" data-section="0" required>
-                                                                    <div class="invaild">
-                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-xl-3">
-                                                                    <label for="extraDriver" class="form-label">السائق
-                                                                        الإضافي</label>
-                                                                    <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                    <input type="number" id="extraDriver"
-                                                                        class="form-control inputs number-input"
-                                                                        name="extraDriver" data-section="0" required>
-                                                                    <div class="invaild">
-                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-xl-3">
-                                                                    <label for="PrivateDriver" class="form-label">السائق
-                                                                        الخاص</label>
-                                                                    <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                    <input type="number" id="PrivateDriver"
-                                                                        class="form-control inputs number-input"
-                                                                        name="PrivateDriver" data-section="0" required>
-                                                                    <div class="invaild">
-                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-xl-3">
-                                                                    <label for="taxRate" class="form-label">نسبة
-                                                                        الضريبة</label>
-                                                                    <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                    <input type="number" id="taxRate"
-                                                                        class="form-control inputs number-input"
-                                                                        name="taxRate" data-section="0" required>
-                                                                    <div class="invaild">
-                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-xl-3">
-                                                                    <label for="AnotherFee" class="form-label"> رسوم
-                                                                        ادارية </label>
-                                                                    <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                    <input type="number" id="AnotherFee"
-                                                                        class="form-control inputs number-input"
-                                                                        name="AnotherFee" data-section="0" required>
-                                                                    <div class="invaild">
-                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="col-lg-6 col-xl-3">
-                                                                    <label for="internalAuthorizationFee"
-                                                                        class="form-label"> التفويض الداخلي /
-                                                                        الخارجي</label>
-                                                                    <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                    <div class="row g-1">
-                                                                        <div class="col-6">
-                                                                            <input type="number"
-                                                                                id="internalAuthorizationFee"
-                                                                                class="form-control inputs number-input"
-                                                                                name="internalAuthorizationFee"
-                                                                                data-section="0" required>
+                                                                     <div class="row  align-items-baseline">
+                                                                        <div class="col-lg-auto col-xxl-12">
+                                                                          <label for="WeekRent" class="form-label">الإيجار الأسبوعي
+                                                                            <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                          </label>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <input type="number" id="WeekRent" class="form-control inputs number-input" name="WeekRent" data-section="0"
+                                                                                required>
                                                                             <div class="invaild">
                                                                                 <div class="invalid-feedback">الحقل
                                                                                     مطلوب</div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-6">
-                                                                            <input type="number"
-                                                                                id="externalAuthorizationFee"
-                                                                                class="form-control inputs number-input"
-                                                                                name="externalAuthorizationFee"
-                                                                                data-section="0" required>
+                                                                        </div> 
+                                                                </div>
+                                                                <div class="col-lg-6 col-xl-3">
+                                                                     <div class="row  align-items-baseline">
+                                                                        <div class="col-lg-auto col-xxl-12">
+                                                                        <label for="monthRent" class="form-label">الإيجار الشهري<i class="fa-solid fa-star-of-life RequirdStar"></i> </label>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <input type="number" id="monthRent" class="form-control inputs number-input" name="monthRent" data-section="0"
+                                                                                required>
+                                                                            <div class="invaild">
+                                                                                <div class="invalid-feedback">الحقل
+                                                                                    مطلوب</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="col-lg-6 col-xl-3">
+                                                                    <div class="row  align-items-baseline">
+                                                                        <div class="col-lg-auto col-xxl-12">
+                                                                            <label for="YearRent" class="form-label">الإيجار السنوي <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <input type="number" id="YearRent" class="form-control inputs number-input" name="YearRent" data-section="0"
+                                                                                required>
                                                                             <div class="invaild">
                                                                                 <div class="invalid-feedback">الحقل
                                                                                     مطلوب</div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
+                                                                    </div>
+                                                                    <div class="col-lg-6 col-xl-3">
+                                                                        <div class="row  align-items-baseline">
+                                                                            <div class="col-lg-auto col-xxl-12">
+                                                                                <label for="extraKilometer" class="form-label">الكيلو الإضافي</label>
+                                                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <input type="number" id="extraKilometer" class="form-control inputs number-input" name="extraKilometer"
+                                                                                    data-section="0" required>
+                                                                                <div class="invaild">
+                                                                                    <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div> 
+                                                                    </div>
+                                                                    <div class="col-lg-6 col-xl-3">
+                                                                        <div class="row  align-items-baseline">
+                                                                            <div class="col-lg-auto col-xxl-12">
+                                                                                <label for="extraHour" class="form-label">الساعة الإضافية</label>
+                                                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <input type="number" id="extraHour" class="form-control inputs number-input" name="extraHour"
+                                                                                    data-section="0" required>
+                                                                                <div class="invaild">
+                                                                                    <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="col-lg-6 col-xl-3">
+                                                                    <div class="row  align-items-baseline">
+                                                                        <div class="col-lg-auto col-xxl-12">
+                                                                            <label for="extraDriver" class="form-label">السائق الإضافي</label>
+                                                                            <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <input type="number" id="extraDriver" class="form-control inputs number-input" name="extraDriver"
+                                                                                data-section="0" required>
+                                                                            <div class="invaild">
+                                                                                <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-6 col-xl-3">
+                                                                    <div class="row  align-items-baseline">
+                                                                        <div class="col-lg-auto col-xxl-12">
+                                                                            <label for="PrivateDriver" class="form-label">السائق
+                                                                                الخاص</label>
+                                                                            <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <input type="number" id="PrivateDriver" class="form-control inputs number-input" name="PrivateDriver"
+                                                                                data-section="0" required>
+                                                                            <div class="invaild">
+                                                                                <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-6 col-xl-3">
+                                                                    <div class="row  align-items-baseline">
+                                                                        <div class="col-lg-auto col-xxl-12">
+                                                                            <label for="taxRate" class="form-label">نسبة
+                                                                                الضريبة</label>
+                                                                            <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <input type="number" id="taxRate" class="form-control inputs number-input" name="taxRate" data-section="0"
+                                                                                required>
+                                                                            <div class="invaild">
+                                                                                <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-6 col-xl-3">
+                                                                    <div class="row  align-items-baseline">
+                                                                        <div class="col-lg-auto col-xxl-12">
+                                                                            <label for="AnotherFee" class="form-label"> رسوم
+                                                                                ادارية </label>
+                                                                            <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <input type="number" id="AnotherFee" class="form-control inputs number-input" name="AnotherFee"
+                                                                                data-section="0" required>
+                                                                            <div class="invaild">
+                                                                                <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
 
+                                                                <div class="col-lg-6 col-xl-5 col-xxl-3">
+                                                                    <div class="row  align-items-baseline">
+                                                                        <div class="col-lg-auto col-xxl-12">
+                                                                            <label for="internalAuthorizationFee" class="form-label"> التفويض الداخلي /
+                                                                                الخارجي</label>
+                                                                            <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <div class="row g-1">
+                                                                                <div class="col-6">
+                                                                                    <input type="number" id="internalAuthorizationFee" class="form-control inputs number-input"
+                                                                                        name="internalAuthorizationFee" data-section="0" required>
+                                                                                    <div class="invaild">
+                                                                                        <div class="invalid-feedback">الحقل
+                                                                                            مطلوب</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-6">
+                                                                                    <input type="number" id="externalAuthorizationFee" class="form-control inputs number-input"
+                                                                                        name="externalAuthorizationFee" data-section="0" required>
+                                                                                    <div class="invaild">
+                                                                                        <div class="invalid-feedback">الحقل
+                                                                                            مطلوب</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                
+                                                                
+                                                                </div>
 
                                                                 <div class="col-md-12">
-                                                                    <label for="notes"
-                                                                        class="form-label">الملاحظات</label>
-                                                                    <input type="text" id="notes"
-                                                                        class="form-control inputs number-input"
-                                                                        name="notes">
+                                                                    <div class="row  align-items-baseline">
+                                                                        <div class="col-lg-auto col-xxl-12">
+                                                                            <label for="notes" class="form-label">الملاحظات</label>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <input type="text" id="notes" class="form-control inputs number-input" name="notes">
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-
+                                                                </div>
                                                         </main>
                                                         <main style="display: none;">
                                                             <div class="row  CarPriceContent">
                                                                 <div class="col-lg-6 col-xl-3">
-                                                                    <label for="freeDailyKilometers"
-                                                                        class="form-label">الكيلو المجاني اليومي
-                                                                        <i
-                                                                            class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                    </label>
-                                                                    <input type="number" id="freeDailyKilometers"
-                                                                        class="form-control inputs number-input"
-                                                                        name="freeDailyKilometers" data-section="1"
-                                                                        required>
-                                                                    <div class="invaild">
-                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                    <div class="row  align-items-baseline">
+                                                                        <div class="col-lg-auto col-xxl-12">
+                                                                            <label for="freeDailyKilometers" class="form-label">الكيلو المجاني اليومي
+                                                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <input type="number" id="freeDailyKilometers" class="form-control inputs number-input"
+                                                                                name="freeDailyKilometers" data-section="1" required>
+                                                                            <div class="invaild">
+                                                                                <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-6 col-xl-3">
-                                                                    <label for="freeHours" class="form-label">الساعة
-                                                                        المجانية
-                                                                        <i
-                                                                            class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                    </label>
-                                                                    <input type="number" id="freeHours"
-                                                                        class="form-control inputs number-input"
-                                                                        name="freeHours" data-section="1" required>
-                                                                    <div class="invaild">
-                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                    <div class="row  align-items-baseline">
+                                                                        <div class="col-lg-auto col-xxl-12">
+                                                                            <label for="freeHours" class="form-label">الساعة المجانية
+                                                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <input type="number" id="freeHours" class="form-control inputs number-input" name="freeHours"
+                                                                                data-section="1" required>
+                                                                            <div class="invaild">
+                                                                                <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-6 col-xl-3">
-                                                                    <label for="maxHours" class="form-label">الحد الأعلى
-                                                                        للساعات
-                                                                        <i
-                                                                            class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                    </label>
-                                                                    <input type="number" id="maxHours"
-                                                                        class="form-control inputs number-input"
-                                                                        name="maxHours" data-section="1" required>
-                                                                    <div class="invaild">
-                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                    <div class="row  align-items-baseline">
+                                                                        <div class="col-lg-auto col-xxl-12">
+                                                                            <label for="maxHours" class="form-label">الحد الأعلى للساعات
+                                                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <input type="number" id="maxHours" class="form-control inputs number-input" name="maxHours" data-section="1"
+                                                                                required>
+                                                                            <div class="invaild">
+                                                                                <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-6 col-xl-3">
-                                                                    <label for="contractCancellationHours"
-                                                                        class="form-label">ساعات إلغاء الحجز
-                                                                        <i
-                                                                            class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                    </label>
-                                                                    <input type="number" id="contractCancellationHours"
-                                                                        class="form-control inputs number-input"
-                                                                        name="contractCancellationHours"
-                                                                        data-section="1" required>
-                                                                    <div class="invaild">
-                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                    <div class="row  align-items-baseline">
+                                                                        <div class="col-lg-auto col-xxl-12">
+                                                                            <label for="contractCancellationHours" class="form-label">ساعات إلغاء الحجز
+                                                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <input type="number" id="contractCancellationHours" class="form-control inputs number-input"
+                                                                                name="contractCancellationHours" data-section="1" required>
+                                                                            <div class="invaild">
+                                                                                <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-
                                                                 <div class="row align-items-center">
                                                                     <div class="col-lg-6 col-xl-3">
-                                                                        <label for="minDriverAge" class="form-label">أقل
-                                                                            عمر للسائق
-                                                                            <i
-                                                                                class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                        </label>
-                                                                        <input type="number" id="minDriverAge"
-                                                                            class="form-control inputs number-input"
-                                                                            name="minDriverAge" data-section="1"
-                                                                            required>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">الحقل مطلوب
+                                                                        <div class="row  align-items-baseline">
+                                                                            <div class="col-lg-auto col-xxl-12">
+                                                                                <label for="minDriverAge" class="form-label">أقل عمر للسائق
+                                                                                    <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                </label>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <input type="number" id="minDriverAge" class="form-control inputs number-input" name="minDriverAge"
+                                                                                    data-section="1" required>
+                                                                                <div class="invaild">
+                                                                                    <div class="invalid-feedback">الحقل مطلوب
+                                                                                    </div>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-6 col-xl-3">
-                                                                        <label for="maxDriverAge"
-                                                                            class="form-label">أكبر عمر للسائق
-                                                                            <i
-                                                                                class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                        </label>
-                                                                        <input type="number" id="maxDriverAge"
-                                                                            class="form-control inputs number-input"
-                                                                            name="maxDriverAge" data-section="1"
-                                                                            required>
-                                                                        <div class="invaild">
-                                                                            <div class="invalid-feedback">الحقل مطلوب
+                                                                        <div class="row  align-items-baseline">
+                                                                            <div class="col-lg-auto col-xxl-12">
+                                                                                <label for="maxDriverAge" class="form-label">أكبر عمر للسائق
+                                                                                    <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                </label>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <input type="number" id="maxDriverAge" class="form-control inputs number-input" name="maxDriverAge"
+                                                                                    data-section="1" required>
+                                                                                <div class="invaild">
+                                                                                    <div class="invalid-feedback">الحقل مطلوب
+                                                                                    </div>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -749,62 +810,72 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-6 col-xl-3">
-                                                                    <label for="accidentDeductible"
-                                                                        class="form-label">تحمل الحادث
-                                                                        <i
-                                                                            class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                    </label>
-                                                                    <input type="number" id="accidentDeductible"
-                                                                        class="form-control inputs number-input"
-                                                                        name="accidentDeductible" data-section="1"
-                                                                        required>
-                                                                    <div class="invaild">
-                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                    <div class="row  align-items-baseline">
+                                                                        <div class="col-lg-auto col-xxl-12">
+                                                                            <label for="accidentDeductible" class="form-label">تحمل الحادث
+                                                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <input type="number" id="accidentDeductible" class="form-control inputs number-input"
+                                                                                name="accidentDeductible" data-section="1" required>
+                                                                            <div class="invaild">
+                                                                                <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-6 col-xl-3">
-                                                                    <label for="theftDeductible" class="form-label">تحمل
-                                                                        السرقة
-                                                                        <i
-                                                                            class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                    </label>
-                                                                    <input type="number" id="theftDeductible"
-                                                                        class="form-control inputs number-input"
-                                                                        name="theftDeductible" data-section="1"
-                                                                        required>
-                                                                    <div class="invaild">
-                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                    <div class="row  align-items-baseline">
+                                                                        <div class="col-lg-auto col-xxl-12">
+                                                                            <label for="theftDeductible" class="form-label">تحمل
+                                                                                السرقة
+                                                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <input type="number" id="theftDeductible" class="form-control inputs number-input" name="theftDeductible"
+                                                                                data-section="1" required>
+                                                                            <div class="invaild">
+                                                                                <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-6 col-xl-3">
-                                                                    <label for="drowningDeductible"
-                                                                        class="form-label">تحمل الغرق
-                                                                        <i
-                                                                            class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                    </label>
-                                                                    <input type="number" id="drowningDeductible"
-                                                                        class="form-control inputs number-input"
-                                                                        name="drowningDeductible" data-section="1"
-                                                                        required>
-                                                                    <div class="invaild">
-                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                    <div class="row  align-items-baseline">
+                                                                        <div class="col-lg-auto col-xxl-12">
+                                                                            <label for="drowningDeductible" class="form-label">تحمل الغرق
+                                                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <input type="number" id="drowningDeductible" class="form-control inputs number-input"
+                                                                                name="drowningDeductible" data-section="1" required>
+                                                                            <div class="invaild">
+                                                                                <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-6 col-xl-3">
-                                                                    <label for="fireDeductible" class="form-label">تحمل
-                                                                        الحريق
-                                                                        <i
-                                                                            class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                    </label>
-                                                                    <input type="number" id="fireDeductible"
-                                                                        class="form-control inputs number-input"
-                                                                        name="fireDeductible" data-section="1" required>
-                                                                    <div class="invaild">
-                                                                        <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                    <div class="row  align-items-baseline">
+                                                                        <div class="col-lg-auto col-xxl-12">
+                                                                            <label for="fireDeductible" class="form-label">تحمل
+                                                                                الحريق
+                                                                                <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <input type="number" id="fireDeductible" class="form-control inputs number-input" name="fireDeductible"
+                                                                                data-section="1" required>
+                                                                            <div class="invaild">
+                                                                                <div class="invalid-feedback">الحقل مطلوب</div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-
                                                         </main>
                                                         <main style="display: none;">
                                                             <div
@@ -889,7 +960,111 @@
                                                                                             type="number">
                                                                                     </td>
                                                                                 </tr>
-
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <div class="TableChecks">
+                                                                                            <input
+                                                                                                class="form-check-input checkbox"
+                                                                                                type="checkbox"
+                                                                                                value="checked" id="1"
+                                                                                                name="1">
+                                                                                            <label
+                                                                                                class="form-check-label"
+                                                                                                for="1">
+                                                                                                كرسي رضيع
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <input
+                                                                                            class="Table-inputs number-input"
+                                                                                            type="number">
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <div class="TableChecks">
+                                                                                            <input
+                                                                                                class="form-check-input checkbox"
+                                                                                                type="checkbox"
+                                                                                                value="checked" id="2"
+                                                                                                name="2">
+                                                                                            <label
+                                                                                                class="form-check-label"
+                                                                                                for="2">
+                                                                                                كرسي اطفال
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <input
+                                                                                            class="Table-inputs number-input"
+                                                                                            type="number">
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <div class="TableChecks">
+                                                                                            <input
+                                                                                                class="form-check-input checkbox"
+                                                                                                type="checkbox"
+                                                                                                value="checked" id="3"
+                                                                                                name="3">
+                                                                                            <label
+                                                                                                class="form-check-label"
+                                                                                                for="3">
+                                                                                                جهاز ملاحي
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <input
+                                                                                            class="Table-inputs number-input"
+                                                                                            type="number">
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <div class="TableChecks">
+                                                                                            <input
+                                                                                                class="form-check-input checkbox"
+                                                                                                type="checkbox"
+                                                                                                value="checked" id="4"
+                                                                                                name="4">
+                                                                                            <label
+                                                                                                class="form-check-label"
+                                                                                                for="4">
+                                                                                                انترنت
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <input
+                                                                                            class="Table-inputs number-input"
+                                                                                            type="number">
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <div class="TableChecks">
+                                                                                            <input
+                                                                                                class="form-check-input checkbox"
+                                                                                                type="checkbox"
+                                                                                                value="checked" id="5"
+                                                                                                name="5">
+                                                                                            <label
+                                                                                                class="form-check-label"
+                                                                                                for="5">
+                                                                                                احتياجات ذوي الاعاقة
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <input
+                                                                                            class="Table-inputs number-input"
+                                                                                            type="number">
+                                                                                    </td>
+                                                                                </tr>
                                                                             </tbody>
                                                                         </table>
                                                                     </div>
@@ -924,7 +1099,7 @@
                                                                                             <label
                                                                                                 class="form-check-label"
                                                                                                 for="deliverCarToRenter">
-                                                                                                تسليم السيارة للمستأجر
+                                                                                                توصيل السيارة للمستأجر
                                                                                             </label>
                                                                                         </div>
                                                                                     </td>
@@ -974,6 +1149,69 @@
                                                                                             </label>
                                                                                         </div>
 
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <input
+                                                                                            class="Table-inputs number-input"
+                                                                                            type="number">
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <div class="TableChecks">
+                                                                                            <input
+                                                                                                class="form-check-input checkbox"
+                                                                                                type="checkbox"
+                                                                                                value="checked" id="1"
+                                                                                                name="1">
+                                                                                            <label
+                                                                                                class="form-check-label"
+                                                                                                for="1">
+                                                                                                استلام السيارة بفرع اخر
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <input
+                                                                                            class="Table-inputs number-input"
+                                                                                            type="number">
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <div class="TableChecks">
+                                                                                            <input
+                                                                                                class="form-check-input checkbox"
+                                                                                                type="checkbox"
+                                                                                                value="checked" id="2"
+                                                                                                name="2">
+                                                                                            <label
+                                                                                                class="form-check-label"
+                                                                                                for="2">
+                                                                                                انترنت
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <input
+                                                                                            class="Table-inputs number-input"
+                                                                                            type="number">
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <div class="TableChecks">
+                                                                                            <input
+                                                                                                class="form-check-input checkbox"
+                                                                                                type="checkbox"
+                                                                                                value="checked" id="3"
+                                                                                                name="3">
+                                                                                            <label
+                                                                                                class="form-check-label"
+                                                                                                for="3">
+                                                                                                احتياجات ذوي الاعاقة
+                                                                                            </label>
+                                                                                        </div>
                                                                                     </td>
                                                                                     <td>
                                                                                         <input
