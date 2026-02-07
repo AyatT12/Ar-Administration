@@ -3027,7 +3027,30 @@ textarea.form-control.is-valid {
   height: 100%;
   border-radius: 8px;
 }
+.CarsCountP{
+  display: flex;
+  margin-top: .5rem;
+  justify-content: end;
+  gap: 8px;
+}
+.CarsCountP p{
+  margin-bottom: 0;
+}
+.CarsCountP2{
+display: none;
 
+}
+@media (min-width:1024px) and (max-width:1400px) {
+  .CarsCountP{
+    display: none;
+  }
+  .CarsCountP2{
+    display: flex;
+  margin-top: .5rem;
+  justify-content: end;
+  gap: 8px;
+  }
+}
 /*  */
 .autocomplete-items {
   display: none;
