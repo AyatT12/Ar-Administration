@@ -555,11 +555,14 @@ html {
   justify-content: flex-end;
   height: 30px;
 }
-
+.centered-input-label{
+  padding-top: calc((37px - 1.5em) / 2);
+}
+.form-label{
+white-space: nowrap;
+}
 .tel-input {
-
   border-radius: 0px 8px 8px 0px !important;
-
 }
 
 .counterCode {
@@ -1076,9 +1079,6 @@ input[type="email"] {
   font-size: 0.75rem;
   padding: 2px;
 
-  /* default: open down */
-  /* top: 100%; */
-  /* margin-top: 13px; */
 }
 
 .dropdown-content.open-top {
@@ -2844,16 +2844,15 @@ textarea.form-control.is-valid {
 }
 
 #Price-content-display {
-  flex: 1;
-  min-height: 150px;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin-top: 10px;
-  border-radius: 12px;
-}
-
+    flex: 1;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-top: 5px;
+    border-radius: 12px;
+  }
 .hidden {
   display: none;
 }
@@ -3484,4 +3483,9 @@ display: none;
 .modal-content {
   border: 3px solid #FF9626;
   border-radius: 10px;
+}
+/* ================================================================================ Car Price  ======================================================================================= */
+/* ================================================================================================================================================================================== */
+.PriceInputs{
+    min-width: 100px;
 }
