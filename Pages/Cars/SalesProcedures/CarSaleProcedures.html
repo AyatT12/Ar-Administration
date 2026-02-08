@@ -1378,18 +1378,18 @@
 
                     uploadBtnBox.style.display = 'flex';
                     $(this).append(uploadBtnBox);
-                    return false; // Break the loop
+                    return false;
                 }
             });
         }
-$('body').on('click', '.img-bg', function (e) {
+        $('body').on('click', '.img-bg', function (e) {
 
-    var imageUrl = $(this).css('background-image');
-    imageUrl = imageUrl.replace(/^url\(['"](.+)['"]\)/, '$1');
+            var imageUrl = $(this).css('background-image');
+            imageUrl = imageUrl.replace(/^url\(['"](.+)['"]\)/, '$1');
 
-    var newTab = window.open();
+            var newTab = window.open();
 
-    $(newTab.document.head).html(`
+            $(newTab.document.head).html(`
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
         <title>View Image</title>
@@ -1430,47 +1430,37 @@ $('body').on('click', '.img-bg', function (e) {
         </style>
     `);
 
-    newTab.document.body.innerHTML = `
+            newTab.document.body.innerHTML = `
         <div class="image-container">
             <img src="${imageUrl}" alt="View Image">
         </div>
     `;
 
-    var script = newTab.document.createElement('script');
-    script.textContent = `
+            var script = newTab.document.createElement('script');
+            script.textContent = `
         function forceReflow() {
             document.body.style.display = 'none';
             document.body.offsetHeight; // Force reflow
             document.body.style.display = 'flex';
             
-            // Trigger resize events
             window.dispatchEvent(new Event('resize'));
             window.dispatchEvent(new Event('orientationchange'));
         }
         
-        // Force reflow immediately
         setTimeout(forceReflow, 10);
         setTimeout(forceReflow, 100);
         setTimeout(forceReflow, 300);
         
-        // Handle orientation changes
         window.addEventListener('orientationchange', () => {
             setTimeout(forceReflow, 100);
         });
     `;
-    newTab.document.body.appendChild(script);
-});
-jQuery(document).ready(function () { CarImgUpload(); });
+            newTab.document.body.appendChild(script);
+        });
+        jQuery(document).ready(function () { CarImgUpload(); });
 
     </script>
 
 </body>
 
-
 </html>
-
-
-
-
-
-
