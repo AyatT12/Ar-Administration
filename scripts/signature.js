@@ -142,7 +142,6 @@ function SaveWrittenSignature() {
 }
 
 // Save the uploded signature image
-// Save the uploded signature image
 function SaveUplodedSignature() {
     const img = document.getElementById("signatureImage");
     const canvas = document.createElement("canvas");
@@ -175,11 +174,11 @@ function Previewing_Signature(imageURL) {
   uploadContainer.classList.add("previewing");
   previewImage.addEventListener("click", function () {
     var newTab = window.open();
-    $(newTab.document.head).html(`
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>View Image</title>
-          <style>
+        $(newTab.document.head).html(`
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+        <title>View Image</title>
+        <style>
             * {
               margin: 0;
               padding: 0;
@@ -189,6 +188,7 @@ function Previewing_Signature(imageURL) {
               width: 100%;
               height: 100%;
               overflow: hidden;
+              position: fixed;
             }
             body {
               background-color: black;
@@ -202,6 +202,7 @@ function Previewing_Signature(imageURL) {
               display: flex;
               align-items: center;
               justify-content: center;
+              padding: 10px;
             }
             img {
               max-width: 100%;
@@ -209,15 +210,37 @@ function Previewing_Signature(imageURL) {
               width: auto;
               height: auto;
               object-fit: contain;
-              background-color:white;
+              background-color: white;
             }
-          </style>
-          `);
+        </style>
+    `);
+
     newTab.document.body.innerHTML = `
-          <div class="image-container">
+        <div class="image-container">
             <img src="${imgeURL}" alt="View Image">
-          </div>
-        `;
+        </div>
+    `;
+
+    var script = newTab.document.createElement("script");
+    script.textContent = `
+        function forceReflow() {
+            document.body.style.display = 'none';
+            document.body.offsetHeight; 
+            document.body.style.display = 'flex';
+            
+            window.dispatchEvent(new Event('resize'));
+            window.dispatchEvent(new Event('orientationchange'));
+        }
+        
+        setTimeout(forceReflow, 10);
+        setTimeout(forceReflow, 100);
+        setTimeout(forceReflow, 300);
+        
+        window.addEventListener('orientationchange', () => {
+            setTimeout(forceReflow, 100);
+        });
+    `;
+    newTab.document.body.appendChild(script);
   });
 }
 

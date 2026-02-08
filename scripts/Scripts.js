@@ -433,3 +433,4 @@ employeeNames.forEach((element) => {
   const limitedName = getFirstTwoWords(originalName);
   element.textContent = limitedName;
 });
+
