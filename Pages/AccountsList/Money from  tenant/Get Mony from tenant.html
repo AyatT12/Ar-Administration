@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> نظام الادارة - قبول أو رفض العهدة </title>
+    <title> نظام الادارة - مبلغ من مستأجر </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -123,6 +123,7 @@
                                 <div class="bg-white gap-3 collapse-inner rounded">
                                     <a class="collapse-item" href="../../../Pages/Cars/CarsData/CarsData.html"> بيانات
                                         السيارات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
                                     <a class="collapse-item" href="../../../Pages/Cars/CarRepair/CarRepair.html"> تصليح
                                         السيارة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                     <a class="collapse-item" href="../../../Pages/Cars/CarTransfer/CarTransfer.html">
@@ -133,6 +134,7 @@
                                     <a class="collapse-item"
                                         href="../../../Pages/Cars/SalesProcedures/SalesProcedures.html"> إجراءات البيع
                                         <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
                                     <a class="collapse-item" href="../../../Pages/Cars/CarsPrices/Prices.html"> الأسعار
                                         <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                 </div>
@@ -179,12 +181,12 @@
                                     <a class="collapse-item"
                                         href="../../../Pages/AccountsList/CashFeeding/Feed Box.html"> تغذية الصندوق <i
                                             class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                    <a class="collapse-item active"
+                                    <a class="collapse-item"
                                         href="../../../Pages/AccountsList/Receipt Confirmation/Custody.html"> استلام
                                         عهدة
                                         <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
 
-                                    <a class="collapse-item"
+                                    <a class="collapse-item active"
                                         href="../../../Pages/AccountsList/Money from  tenant/Money from tenant.html">
                                         مبالغ من مستأجر<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                     <a class="collapse-item"
@@ -201,7 +203,6 @@
                                         <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                 </div>
                             </div>
-
 
                             <li class="nav-link">
                                 <a>
@@ -349,356 +350,191 @@
 
             <!-- Main Content Area -->
             <main class="content-area px-3">
-                <div class="container d-flex flex-column" style="flex:1;min-height: 0;">
-                    <div class="row flex-column" style="flex: 1;min-height: 0; position: relative;">
-                        <div class="col-lg-12 Data-container ">
-                            <form class="ContentForm">
-                                <!-- Content Header -->
-                                <div class="row  mb-2">
-                                    <div class="col-auto">
-                                        <h3> قبول أو رفض العهدة </h3>
-                                    </div>
-                                    <div class="col save-col">
-                                        <button type="submit" class="custom-img-btn"> <img
-                                                src="../../../images/Static/States/agree.svg" /></button>
-                                        <button type="button" class="custom-img-btn"> <img
-                                                src="../../../images/Static/States/stop.svg" /></button>
-                                        <button type="button" class="custom-img-btn"> <a href="Custody.html"><img
-                                                    class="Chevron"
-                                                    src="../../../images/Static/States/Chevron_Left.svg" /></a></button>
-
-                                    </div>
-                                </div>
-                                <main class="inputs-accordion-container d-flex flex-column" style="overflow-x: hidden;">
-                                 <div class="row g-2">
-                                    <div class="container-fluid ">
-                                        <div class="row gy-xl-2 mt-3">
-                                            <div class="col-md-12">
-                                                <div class="row">
-                                                    <div class="col-md-auto" style="min-width: 33.33333333%">
-                                                        <div class="row gx-3">
-                                                            <div class="col-auto">
-                                                                <p>رقم العهدة</p>
-                                                            </div>
-                                                            <div class=" col-auto Saved-data">
-                                                                <p> 24-1304-4004100-000126 </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-auto" style="min-width: 33.33333333%">
-                                                        <div class="row gx-3">
-                                                            <div class="col-auto">
-                                                                <p>تاريخه التسليم </p>
-                                                            </div>
-                                                            <div class=" col-auto Saved-data">
-                                                                <p> 2026/02/08 </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-auto" style="min-width: 33.33333333%">
-                                                        <div class="row gx-3">
-                                                            <div class="col-auto">
-                                                                <p> نقطة البيع </p>
-                                                            </div>
-                                                            <div class="col-auto Saved-data">
-                                                                <p>صندوق فرع الحزام الذهبي</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                <div class="container d-flex flex-column InputsPageContainer">
+                    <div class="row flex-column min-h-0 flex-1 position-relative">
+                        <div class="col-xxl-9 Data-container ">
+                            <form class="ContentForm needs-validation" novalidate>
+                                <div class="row justify-content-center flex-1 min-h-0">
+                                    <div class="col-lg-12 d-flex flex-column h-100">
+                                        <div class="row my-2">
+                                            <div class="col-md-6">
+                                                <h3> مبلغ من مستأجر </h3>
                                             </div>
-                                            <div class="col-md-12">
-                                                <div class="row">
-                                                    <div class="col-md-auto" style="min-width: 33.33333333%">
-                                                        <div class="row gx-3">
-                                                            <div class="col-auto">
-                                                                <p>إجمالي العهدة </p>
-                                                            </div>
-                                                            <div class=" col-auto Saved-data">
-                                                                <p> 999,999.00 </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-auto" style="min-width: 33.33333333%">
-                                                        <div class="row gx-3">
-                                                            <div class="col-auto">
-                                                                <p> إجمالي الدائن </p>
-                                                            </div>
-                                                            <div class=" col-auto Saved-data">
-                                                                <p> 999,999.00 </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-auto" style="min-width: 33.33333333%">
-                                                        <div class="row gx-3">
-                                                            <div class="col-auto">
-                                                                <p> إجمالي المدين</p>
-                                                            </div>
-                                                            <div class=" col-auto Saved-data">
-                                                                <p> 999,999.00 </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <div class="col-md-6 save-col">
+                                                <button type="submit" class="custom-img-btn"> <img
+                                                        src="../../../images/Static/States/save.svg" /></button>
+                                                <button type="button" class="custom-img-btn"> <a
+                                                        href="Money from tenant.html"><img class="Chevron"
+                                                            src="../../../images/Static/States/Chevron_Left.svg" /></a></button>
                                             </div>
-                                            <div class="col-md-12">
-                                                <div class="row">
-                                                    <div class="col-md-auto" style="min-width: 33.33333333%">
-                                                        <div class="row gx-3">
-                                                            <div class="col-auto">
-                                                                <p> من تاريخ </p>
-                                                            </div>
-                                                            <div class=" col-auto Saved-data">
-                                                                <p> 2025/02/08 </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-auto" style="min-width: 33.33333333%">
-                                                        <div class="row gx-3">
-                                                            <div class="col-auto">
-                                                                <p> إلى تاريخ </p>
-                                                            </div>
-                                                            <div class=" col-auto Saved-data">
-                                                                <p> 2026/02/08 </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="row align-items-baseline">
-                                                    <div class="col-auto">
-                                                        <label>الملاحظات</label>
-                                                    </div>
-                                                    <div class="col d-flex justify-content-start">
-                                                        <textarea class=" form-control textarea-inputs" rows="1"
-                                                            maxlength="100" id="Documentnotes" type="text"
-                                                            name="Reasons"></textarea>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
                                         </div>
+                                        <main class="mt-4 inputs-accordion-container">
+                                            <div class="container-fluid">
+                                                <div class="row gy-2 gy-xxl-3 align-items-center">
+                                                    <div class="col-md-6">
+                                                        <div class="row ">
+                                                            <div class="col-12 mb-2">
+                                                                <span>رقم التحويل </span>
+                                                            </div>
+                                                            <div class="col-md-auto Saved-data d-flex align-items-center"
+                                                                style="min-height: 37px;">
+                                                                <span> 24-1304-4004100-000126 </span>
+                                                            </div>
+                                                            <div class="invaild d-none d-md-block"></div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-md-6 ">
+                                                        <label for="Date" class="form-label"> تاريخه <i
+                                                                class="fa-solid fa-star-of-life RequirdStar"></i></label>
+                                                        <input type="date" id="Date"
+                                                            class="form-control inputs custom-date-input" name="Date"
+                                                            required>
+                                                        <div class="invaild">
+                                                            <div class="invalid-feedback">
+                                                                الحقل مطلوب
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">
+                                                                <div class="row g-2">
+                                                                    <div class="col-12">
+                                                                        <span> المستأجر </span>
+                                                                    </div>
+                                                                    <div class=" col-md-auto Saved-data">
+                                                                        <p> أحمد هشام طارق الثنيان </p>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-md-4">
+                                                                <div class="row g-2">
+                                                                    <div class="col-12">
+                                                                        <span> الرصيد </span>
+                                                                    </div>
+                                                                    <div class=" col-md-auto Saved-data">
+                                                                        <p> 999,999.00 </p>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="row g-2">
+                                                                    <div class="col-12">
+                                                                        <span> الرصيد المتاح </span>
+                                                                    </div>
+                                                                    <div class=" col-md-auto Saved-data">
+                                                                        <p>999,999.00</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="row g-2">
+                                                                    <div class="col-12">
+                                                                        <span> الرصيد المحجوز </span>
+                                                                    </div>
+                                                                    <div class=" col-md-auto Saved-data">
+                                                                        <p>999,999.00</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="row">
+                                                            <div class="col-md-4 ">
+                                                                <label for="amount" class="form-label"> المبلغ <i
+                                                                        class="fa-solid fa-star-of-life RequirdStar"></i></label>
+                                                                <input type="number" id="amount"
+                                                                    class="form-control inputs number-input"
+                                                                    name="amount" required>
+                                                                <div class="invaild">
+                                                                    <div class="invalid-feedback zero-feedback">
+                                                                        الحقل مطلوب ويجب أن يكون أكبر من 0
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="row">
+                                                                    <div class="col-md-12 ">
+                                                                        <label for="payment-method" class="form-label">  طريقة الدفع <i class="fa-solid fa-star-of-life RequirdStar"></i></label>
+                                                                        <select class="form-select select-style "
+                                                                            name="payment-method" id="payment-method"
+                                                                            required>
+                                                                            <option> </option>
+                                                                            <option value="cash"> نقدا</option>
+                                                                            <option value="mada"> مدى</option>
+                                                                            <option value="visa"> فيزا</option>
+                                                                            <option value="master-card"> ماستر كارد
+                                                                            </option>
+                                                                            <option value="amircan"> امريكن اكسبرس
+                                                                            </option>
+                                                                            <option value="transfer"> تحويل</option>
+
+                                                                        </select>
+                                                                        <div class="invaild">
+                                                                            <div class="invalid-feedback">
+                                                                                الحقل مطلوب
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="row">
+                                                                    <div class="col-md-12 ">
+                                                                        <label for="salePoint" class="form-label"> نقطة
+                                                                            البيع <i
+                                                                                class="fa-solid fa-star-of-life RequirdStar"></i></label>
+                                                                        <select class="form-select select-style "
+                                                                            name="salePoint" id="salePoint" required>
+                                                                            <option> </option>
+                                                                            <option value="point1"> ايرادات المستأجرين
+                                                                                بمصرف
+                                                                                الانماء</option>
+                                                                            <option value="point2"> صندوق فرع البوادي
+                                                                            </option>
+
+
+                                                                        </select>
+                                                                        <div class="invaild">
+                                                                            <div class="invalid-feedback">
+                                                                                الحقل مطلوب
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <label>الملاحظات</label>
+                                                            </div>
+                                                            <div class="col d-flex justify-content-start">
+                                                                <textarea class=" form-control textarea-inputs" rows="1"
+                                                                    maxlength="100" id="Reasons-tenant" type="text"
+                                                                    name="Reasons"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </main>
                                     </div>
                                 </div>
-                                <!-- Table -->
-                                <div class="table-wrapper" style="min-height: 250px;">
-                                    <div class="table-container">
-                                        <table class=" tables-style table table-borderless " id="table">
-                                            <thead class="sticky-top">
-                                                <tr>
-                                                    <th>السند</th>
-                                                    <th>مدين</th>
-                                                    <th>دائن</th>
-                                                    <th>طريقة الدفع </th>
-                                                    <th class="DifferAlign"> المرجع</th>
-                                                    <th class="DifferAlign"> القيد </th>
-                                                    <th></th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <a href="#" target="_blank"><img
-                                                                src="../../../images/Static/PdfIcons/PdfIcon.svg"></a>
-                                                    </td>
-                                                    <td>999,999.00</td>
-                                                    <td>999,999.00</td>
-                                                    <td>اميركن اكسبريس</td>
-                                                    <td class="DifferAlign">
-                                                        <p class="FirstLineP">24-1401-4004106-000079</p>
-                                                        <p class="secondLineP">إنشاء عقد</p>
-                                                    </td>
-                                                    <td class="DifferAlign">
-                                                        <p class="FirstLineP">24-1304-4004100-000012</p>
-                                                        <p class="secondLineP">2025/02/08</p>
-                                                    </td>
-                                                    <td>1</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td>
-                                                        <a href="#" target="_blank"><img
-                                                                src="../../../images/Static/PdfIcons/PdfIcon.svg"></a>
-                                                    </td>
-                                                    <td>850,000.00</td>
-                                                    <td>850,000.00</td>
-                                                    <td>فيزا</td>
-                                                    <td class="DifferAlign">
-                                                        <p class="FirstLineP">24-1401-4004106-000080</p>
-                                                        <p class="secondLineP">إنشاء عقد</p>
-                                                    </td>
-                                                    <td class="DifferAlign">
-                                                        <p class="FirstLineP">24-1304-4004100-000013</p>
-                                                        <p class="secondLineP">2025/02/07</p>
-                                                    </td>
-                                                    <td>2</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td>
-                                                        <a href="#" target="_blank"><img
-                                                                src="../../../images/Static/PdfIcons/PdfIcon.svg"></a>
-                                                    </td>
-                                                    <td>760,000.00</td>
-                                                    <td>760,000.00</td>
-                                                    <td>مدى</td>
-                                                    <td class="DifferAlign">
-                                                        <p class="FirstLineP">24-1401-4004106-000081</p>
-                                                        <p class="secondLineP">إنشاء عقد</p>
-                                                    </td>
-                                                    <td class="DifferAlign">
-                                                        <p class="FirstLineP">24-1304-4004100-000014</p>
-                                                        <p class="secondLineP">2025/02/06</p>
-                                                    </td>
-                                                    <td>3</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td>
-                                                        <a href="#" target="_blank"><img
-                                                                src="../../../images/Static/PdfIcons/PdfIcon.svg"></a>
-                                                    </td>
-                                                    <td>920,000.00</td>
-                                                    <td>920,000.00</td>
-                                                    <td>تحويل</td>
-                                                    <td class="DifferAlign">
-                                                        <p class="FirstLineP">24-1401-4004106-000082</p>
-                                                        <p class="secondLineP">إنشاء عقد</p>
-                                                    </td>
-                                                    <td class="DifferAlign">
-                                                        <p class="FirstLineP">24-1304-4004100-000015</p>
-                                                        <p class="secondLineP">2025/02/05</p>
-                                                    </td>
-                                                    <td>4</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td>
-                                                        <a href="#" target="_blank"><img
-                                                                src="../../../images/Static/PdfIcons/PdfIcon.svg"></a>
-                                                    </td>
-                                                    <td>640,000.00</td>
-                                                    <td>640,000.00</td>
-                                                    <td>نقدي</td>
-                                                    <td class="DifferAlign">
-                                                        <p class="FirstLineP">24-1401-4004106-000083</p>
-                                                        <p class="secondLineP">إنشاء عقد</p>
-                                                    </td>
-                                                    <td class="DifferAlign">
-                                                        <p class="FirstLineP">24-1304-4004100-000016</p>
-                                                        <p class="secondLineP">2025/02/04</p>
-                                                    </td>
-                                                    <td>5</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td>
-                                                        <a href="#" target="_blank"><img
-                                                                src="../../../images/Static/PdfIcons/PdfIcon.svg"></a>
-                                                    </td>
-                                                    <td>780,000.00</td>
-                                                    <td>780,000.00</td>
-                                                    <td>اميركن اكسبريس</td>
-                                                    <td class="DifferAlign">
-                                                        <p class="FirstLineP">24-1401-4004106-000084</p>
-                                                        <p class="secondLineP">إنشاء عقد</p>
-                                                    </td>
-                                                    <td class="DifferAlign">
-                                                        <p class="FirstLineP">24-1304-4004100-000017</p>
-                                                        <p class="secondLineP">2025/02/03</p>
-                                                    </td>
-                                                    <td>6</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td>
-                                                        <a href="#" target="_blank"><img
-                                                                src="../../../images/Static/PdfIcons/PdfIcon.svg"></a>
-                                                    </td>
-                                                    <td>910,000.00</td>
-                                                    <td>910,000.00</td>
-                                                    <td>فيزا</td>
-                                                    <td class="DifferAlign">
-                                                        <p class="FirstLineP">24-1401-4004106-000085</p>
-                                                        <p class="secondLineP">إنشاء عقد</p>
-                                                    </td>
-                                                    <td class="DifferAlign">
-                                                        <p class="FirstLineP">24-1304-4004100-000018</p>
-                                                        <p class="secondLineP">2025/02/02</p>
-                                                    </td>
-                                                    <td>7</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td>
-                                                        <a href="#" target="_blank"><img
-                                                                src="../../../images/Static/PdfIcons/PdfIcon.svg"></a>
-                                                    </td>
-                                                    <td>705,000.00</td>
-                                                    <td>705,000.00</td>
-                                                    <td>مدى</td>
-                                                    <td class="DifferAlign">
-                                                        <p class="FirstLineP">24-1401-4004106-000086</p>
-                                                        <p class="secondLineP">إنشاء عقد</p>
-                                                    </td>
-                                                    <td class="DifferAlign">
-                                                        <p class="FirstLineP">24-1304-4004100-000019</p>
-                                                        <p class="secondLineP">2025/02/01</p>
-                                                    </td>
-                                                    <td>8</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td>
-                                                        <a href="#" target="_blank"><img
-                                                                src="../../../images/Static/PdfIcons/PdfIcon.svg"></a>
-                                                    </td>
-                                                    <td>830,000.00</td>
-                                                    <td>830,000.00</td>
-                                                    <td>تحويل</td>
-                                                    <td class="DifferAlign">
-                                                        <p class="FirstLineP">24-1401-4004106-000087</p>
-                                                        <p class="secondLineP">إنشاء عقد</p>
-                                                    </td>
-                                                    <td class="DifferAlign">
-                                                        <p class="FirstLineP">24-1304-4004100-000020</p>
-                                                        <p class="secondLineP">2025/01/31</p>
-                                                    </td>
-                                                    <td>9</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td>
-                                                        <a href="#" target="_blank"><img
-                                                                src="../../../images/Static/PdfIcons/PdfIcon.svg"></a>
-                                                    </td>
-                                                    <td>600,000.00</td>
-                                                    <td>600,000.00</td>
-                                                    <td>نقدي</td>
-                                                    <td class="DifferAlign">
-                                                        <p class="FirstLineP">24-1401-4004106-000088</p>
-                                                        <p class="secondLineP">إنشاء عقد</p>
-                                                    </td>
-                                                    <td class="DifferAlign">
-                                                        <p class="FirstLineP">24-1304-4004100-000021</p>
-                                                        <p class="secondLineP">2025/01/30</p>
-                                                    </td>
-                                                    <td>10</td>
-                                                </tr>
-                                            </tbody>
-
-                                        </table>
-                                    </div>
-                                </div>
-                                </main>
                             </form>
-                            <a href="../../../index.html" data-bs-toggle="tooltip" data-bs-placement="top"
-                                data-bs-custom-class="custom-tooltip" data-bs-title="العودة إلى الرئيسية"
-                                class="main-page-icon"><img src="../../../images/Static/back to main.svg"
-                                    alt="main page icon"></a>
                         </div>
 
                     </div>
@@ -1412,7 +1248,6 @@
             </aside>
         </div>
 
-
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -1424,8 +1259,68 @@
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../../../scripts/Scripts.js"></script>
+   <script>
+        const feedAmountInput = document.getElementById("amount");
+        const zeroFeedback = document.querySelector('.zero-feedback');
+        const form = document.getElementById("myForm");
 
+        const paymentMethod = document.getElementById("payment-method");
+        const salePoint = document.getElementById("salePoint");
 
+        paymentMethod.disabled = true;
+        salePoint.disabled = true;
+
+        function isInvalidAmount(value) {
+            const trimmedValue = value.trim();
+
+            if (trimmedValue === '' || isNaN(trimmedValue) || parseFloat(trimmedValue) === 0 || /^0\d+$/.test(trimmedValue) || trimmedValue < 0) {
+                return true;
+            }
+            return false;
+        }
+
+        feedAmountInput.addEventListener("input", function () {
+            const feedAmountValue = feedAmountInput.value;
+
+            if (isInvalidAmount(feedAmountValue)) {
+
+                zeroFeedback.style.display = "block";
+                feedAmountInput.classList.add('is-invalid');
+
+                paymentMethod.disabled = true;
+                paymentMethod.value = "";
+
+                salePoint.disabled = true;
+                salePoint.value = "";
+
+            } else {
+
+                zeroFeedback.style.display = "none";
+                feedAmountInput.classList.remove('is-invalid');
+
+                paymentMethod.disabled = false;
+            }
+        });
+
+        paymentMethod.addEventListener("change", function () {
+
+            if (paymentMethod.value.trim() !== "") {
+                salePoint.disabled = false;
+            } else {
+                salePoint.disabled = true;
+                salePoint.value = "";
+            }
+        });
+
+        form.addEventListener("submit", function (event) {
+            const feedAmountValue = feedAmountInput.value;
+
+            if (isInvalidAmount(feedAmountValue)) {
+                event.preventDefault();
+            }
+        });
+
+    </script>
 </body>
 
 </html>
