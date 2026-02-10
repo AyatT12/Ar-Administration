@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> نظام الادارة - مبالغ من مستأجر </title>
+    <title> نظام الادارة - تسوية العقود المعلقة </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -184,14 +184,14 @@
                                         عهدة
                                         <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
 
-                                    <a class="collapse-item active"
+                                    <a class="collapse-item"
                                         href="../../../Pages/AccountsList/Money from  tenant/Money from tenant.html">
                                         مبالغ من مستأجر<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                     <a class="collapse-item"
                                         href="../../../Pages/AccountsList/Money to tenant/Money to tenant.html"> مبالغ
                                         إلى مستأجر<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
 
-                                    <a class="collapse-item"
+                                    <a class="collapse-item active"
                                         href="../../../Pages/AccountsList/ClosePendingContracts/ClosePendingContracts.html">
                                         تسوية العقود
                                         المعلقة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
@@ -356,7 +356,7 @@
                                 <!-- Content Header -->
                                 <div class="row mb-2">
                                     <div class="col-auto">
-                                        <h3> مبالغ من مستأجر  </h3>
+                                        <h3> تسوية العقود المعلقة </h3>
                                     </div>
                                     <div class="col search-input-col">
                                         <div class="row  justify-content-end">
@@ -376,156 +376,420 @@
                                 <!-- Table -->
                                 <div class="table-wrapper">
                                     <div class="table-container">
-                                       <table class=" tables-style table table-borderless " id="table">
-                                        <thead class="sticky-top">
-                                            <tr>
-                                                <th> التقييم</th>
-                                                <th> المبالغ المتداولة </th>
-                                                <th> الرصيد المحجوز </th>
-                                                <th> الرصيد المتاح </th>
-                                                <th> الرصيد</th>
-                                                <th> اخر عقد</th>
-                                                <th class="DifferAlign">المستأجر</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>متوسط</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>2026/01/12</td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">منيرة عبدالقادر عبدالودود المطلق</p>
-                                                    <p class="secondLineP">802782093063439</p>
-                                                </td>
-                                                    <td> 1</td>
-                                            </tr>
+                                        <table class=" tables-style table table-borderless " id="Branches-table">
+                                            <thead class="sticky-top">
                                                 <tr>
-                                                <td>متوسط</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>2024/10/12</td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">عبدالجبار عبدالجبار ظافر القحطاني</p>
-                                                    <p class="secondLineP">802251835735371</p>
-                                                </td>
-                                                    <td> 2</td>
-                                            </tr>
+                                                    <th>العقد</th>
+                                                    <th>الفاتورة</th>
+                                                    <th>تأجير</th>
+                                                    <th class="DifferAlign">معلق العقد</th>
+                                                    <th class="DifferAlign">سبب التعليق</th>
+                                                    <th class="DifferAlign">تاريخ التعليق</th>
+                                                    <th class="DifferAlign"> الفرع </th>
+                                                    <th class="DifferAlign">العقد</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
                                                 <tr>
-                                                <td>جيد جدا</td>
-                                               <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>2025/11/19</td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">احمد هاني</p>
-                                                    <p class="secondLineP">802251835735371</p>
-                                                </td>
-                                                    <td> 3</td>
-                                            </tr>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/contract.svg"></a>
+                                                    </td>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/Invoice.svg"></a>
+                                                    </td>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/naql.svg"></a></td>
+                                                    <td class="DifferAlign">
+                                                        <p> عيسى هاني مبروك عزام </p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>تعليق ناتج عن حادث غير مروري</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p> 2025/12/09 </p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p> الرئيسي </p>
+                                                        <p class="secondLineP"> </p>
+                                                    </td>
+
+                                                    <td class="DifferAlign">
+                                                        <p class="FirstLineP"> 25-1401-4001100-000077</p>
+                                                        <div class="d-flex justify-content-end gap-2">
+                                                            <p class="secondLineP"> <span class="time"> 09:05 </span>
+                                                                2025/12/11 </p>
+                                                            <p class="secondLineP"> <span class="time"> 09:05 </span>
+                                                                2025/12/02 </p>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="filter-number-td">
+                                                            <div class="filters "></div>
+                                                            <div>1</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
                                                 <tr>
-                                                <td>جيد جدا</td>
-                                               <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>2025/11/22</td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">فايز أحمد بدر المحيسني</p>
-                                                    <p class="secondLineP">802251835735371</p>
-                                                </td>
-                                                    <td> 4</td>
-                                            </tr>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/contract.svg"></a>
+                                                    </td>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/Invoice.svg"></a>
+                                                    </td>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/naql.svg"></a></td>
+                                                    <td class="DifferAlign">
+                                                        <p>مرسي مصطفى نبيل </p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p> تعليق ناتج عن مطالبة مالية </p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p> 2025/12/14 </p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>الرئيسي</p>
+                                                        <p class="secondLineP"> </p>
+                                                    </td>
+
+                                                    <td class="DifferAlign">
+                                                        <p class="FirstLineP">
+                                                            25-1401-4001100-000083
+                                                        </p>
+                                                        <div class="d-flex justify-content-end gap-1">
+                                                            <p class="secondLineP"> <span class="time"> 07:26 </span>
+                                                                2025/12/17 </p>
+                                                            <p class="secondLineP"> <span class="time"> 07:26 </span>
+                                                                2025/12/11 </p>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="filter-number-td">
+                                                            <div class="filters "></div>
+                                                            <div>2</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
                                                 <tr>
-                                                <td>جيد جدا</td>
-                                               <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>2025/04/09</td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">عبدالله</p>
-                                                    <p class="secondLineP">802251835735371</p>
-                                                </td>
-                                                    <td> 5</td>
-                                            </tr>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/contract.svg"></a>
+                                                    </td>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/Invoice.svg"></a>
+                                                    </td>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/naql.svg"></a></td>
+                                                    <td class="DifferAlign">
+                                                        <p> صالح سلطان ابراهيم المحيسني</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                      <p>تعليق ناتج عن حادث غير مروري</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>2025/12/18</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>الرئيسي</p>
+                                                        <p class="secondLineP"></p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p class="FirstLineP">25-1401-4001100-000084</p>
+                                                        <div class="d-flex justify-content-end gap-2">
+                                                            <p class="secondLineP"><span class="time">10:15</span>
+                                                                2025/12/20</p>
+                                                            <p class="secondLineP"><span class="time">10:15</span>
+                                                                2025/12/18</p>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="filter-number-td">
+                                                            <div class="filters "></div>
+                                                            <div>3</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
                                                 <tr>
-                                                <td>جيد جدا</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>2024/11/04</td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">اديب عبدالتواب جاسم العتيبي</p>
-                                                    <p class="secondLineP">802251835735371</p>
-                                                </td>
-                                                    <td> 6</td>
-                                            </tr>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/contract.svg"></a>
+                                                    </td>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/Invoice.svg"></a>
+                                                    </td>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/naql.svg"></a></td>
+                                                    <td class="DifferAlign">
+                                                        <p> سعد فهد القحطاني </p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                       <p> تعليق ناتج عن مطالبة مالية </p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>2025/12/19</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>الرئيسي</p>
+                                                        <p class="secondLineP"></p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p class="FirstLineP">25-1401-4001100-000085</p>
+                                                        <div class="d-flex justify-content-end gap-2">
+                                                            <p class="secondLineP"><span class="time">08:40</span>
+                                                                2025/12/21</p>
+                                                            <p class="secondLineP"><span class="time">08:40</span>
+                                                                2025/12/19</p>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="filter-number-td">
+                                                            <div class="filters "></div>
+                                                            <div>4</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
                                                 <tr>
-                                                <td>متوسط</td>
-                                               <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>2025/11/05</td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">ماجد بدر تركي القويفل</p>
-                                                    <p class="secondLineP">802251835735371</p>
-                                                </td>
-                                                    <td> 7</td>
-                                            </tr>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/contract.svg"></a>
+                                                    </td>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/Invoice.svg"></a>
+                                                    </td>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/naql.svg"></a></td>
+                                                    <td class="DifferAlign">
+                                                        <p> محمد ناصر الدوسري </p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                       <p>تعليق ناتج عن حادث غير مروري</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>2025/12/20</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>الرئيسي</p>
+                                                        <p class="secondLineP"></p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p class="FirstLineP">25-1401-4001100-000086</p>
+                                                        <div class="d-flex justify-content-end gap-2">
+                                                            <p class="secondLineP"><span class="time">11:00</span>
+                                                                2025/12/22</p>
+                                                            <p class="secondLineP"><span class="time">11:00</span>
+                                                                2025/12/20</p>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="filter-number-td">
+                                                            <div class="filters "></div>
+                                                            <div>5</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
                                                 <tr>
-                                                <td>ممتاز</td>
-                                               <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>2024/09/16</td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">مشاري رشود عمار الجراح</p>
-                                                    <p class="secondLineP">802251835735371</p>
-                                                </td>
-                                                    <td> 8</td>
-                                            </tr>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/contract.svg"></a>
+                                                    </td>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/Invoice.svg"></a>
+                                                    </td>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/naql.svg"></a></td>
+                                                    <td class="DifferAlign">
+                                                        <p> يوسف علي الشهري </p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                       <p> تعليق ناتج عن مطالبة مالية </p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>2025/12/21</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>الرئيسي</p>
+                                                        <p class="secondLineP"></p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p class="FirstLineP">25-1401-4001100-000087</p>
+                                                        <div class="d-flex justify-content-end gap-2">
+                                                            <p class="secondLineP"><span class="time">09:50</span>
+                                                                2025/12/23</p>
+                                                            <p class="secondLineP"><span class="time">09:50</span>
+                                                                2025/12/21</p>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="filter-number-td">
+                                                            <div class="filters "></div>
+                                                            <div>6</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
                                                 <tr>
-                                                <td>جيد جدا</td>
-                                               <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>2024/10/16</td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">بدر جاسم محسن الجميعة</p>
-                                                    <p class="secondLineP">802251835735371</p>
-                                                </td>
-                                                    <td> 9</td>
-                                            </tr>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/contract.svg"></a>
+                                                    </td>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/Invoice.svg"></a>
+                                                    </td>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/naql.svg"></a></td>
+                                                    <td class="DifferAlign">
+                                                        <p> ماجد حسن المطيري </p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                      <p>تعليق ناتج عن حادث غير مروري</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>2025/12/22</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>الرئيسي</p>
+                                                        <p class="secondLineP"></p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p class="FirstLineP">25-1401-4001100-000088</p>
+                                                        <div class="d-flex justify-content-end gap-2">
+                                                            <p class="secondLineP"><span class="time">12:10</span>
+                                                                2025/12/24</p>
+                                                            <p class="secondLineP"><span class="time">12:10</span>
+                                                                2025/12/22</p>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="filter-number-td">
+                                                            <div class="filters "></div>
+                                                            <div>7</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
                                                 <tr>
-                                                <td>جيد جدا</td>
-                                               <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>2025/12/24</td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">نادية طارق مشعل الجميعة</p>
-                                                    <p class="secondLineP">800212202526790</p>
-                                                </td>
-                                                    <td> 10</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/contract.svg"></a>
+                                                    </td>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/Invoice.svg"></a>
+                                                    </td>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/naql.svg"></a></td>
+                                                    <td class="DifferAlign">
+                                                        <p> عبد الله سالم الزهراني </p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                         <p> تعليق ناتج عن مطالبة مالية </p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>2025/12/23</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>الرئيسي</p>
+                                                        <p class="secondLineP"></p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p class="FirstLineP">25-1401-4001100-000089</p>
+                                                        <div class="d-flex justify-content-end gap-2">
+                                                            <p class="secondLineP"><span class="time">07:55</span>
+                                                                2025/12/25</p>
+                                                            <p class="secondLineP"><span class="time">07:55</span>
+                                                                2025/12/23</p>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="filter-number-td">
+                                                            <div class="filters "></div>
+                                                            <div>8</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/contract.svg"></a>
+                                                    </td>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/Invoice.svg"></a>
+                                                    </td>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/naql.svg"></a></td>
+                                                    <td class="DifferAlign">
+                                                        <p> فهد محمد الحربي </p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                         <p> تعليق ناتج عن مطالبة مالية </p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>2025/12/24</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>الرئيسي</p>
+                                                        <p class="secondLineP"></p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p class="FirstLineP">25-1401-4001100-000090</p>
+                                                        <div class="d-flex justify-content-end gap-2">
+                                                            <p class="secondLineP"><span class="time">10:30</span>
+                                                                2025/12/26</p>
+                                                            <p class="secondLineP"><span class="time">10:30</span>
+                                                                2025/12/24</p>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="filter-number-td">
+                                                            <div class="filters "></div>
+                                                            <div>9</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/contract.svg"></a>
+                                                    </td>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/Invoice.svg"></a>
+                                                    </td>
+                                                    <td><a><img class="pdf-Tableicons"
+                                                                src="../../../images/Static/PdfIcons/naql.svg"></a></td>
+                                                    <td class="DifferAlign">
+                                                        <p> تركي ناصر القحطاني </p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                      <p>تعليق ناتج عن حادث غير مروري</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>2025/12/25</p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p>الرئيسي</p>
+                                                        <p class="secondLineP"></p>
+                                                    </td>
+                                                    <td class="DifferAlign">
+                                                        <p class="FirstLineP">25-1401-4001100-000091</p>
+                                                        <div class="d-flex justify-content-end gap-2">
+                                                            <p class="secondLineP"><span class="time">08:20</span>
+                                                                2025/12/27</p>
+                                                            <p class="secondLineP"><span class="time">08:20</span>
+                                                                2025/12/25</p>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="filter-number-td">
+                                                            <div class="filters "></div>
+                                                            <div>10</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </form>
-                             <a href="../../../index.html" data-bs-toggle="tooltip" data-bs-placement="top"
+                            <a href="../../../index.html" data-bs-toggle="tooltip" data-bs-placement="top"
                                 data-bs-custom-class="custom-tooltip" data-bs-title="العودة إلى الرئيسية"
                                 class="main-page-icon"><img src="../../../images/Static/back to main.svg"
                                     alt="main page icon"></a>
@@ -1252,27 +1516,8 @@
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../../../scripts/Scripts.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var table = document.getElementById("table");
-            var rows = table.getElementsByTagName("tr");
-    
-            for (var i = 0; i < rows.length; i++) {
-                var cells = rows[i].getElementsByTagName("td");
-    
-                if (cells.length > 0) {
-                    var lastTd = cells[cells.length-7];
 
-                    for (var j = 0; j < cells.length; j++) {
-                        cells[j].addEventListener("click", function () {
-                             window.location.href = "Get Mony from tenant.html";
-                        });
-                    }
-                }
-            }
-        });
-    </script>
-    
+
 </body>
 
 </html>

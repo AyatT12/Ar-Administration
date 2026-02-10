@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> نظام الادارة - مبالغ من مستأجر </title>
+    <title> نظام الادارة - تفاصيل تسديد الاقرار الضريبي </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -184,7 +184,7 @@
                                         عهدة
                                         <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
 
-                                    <a class="collapse-item active"
+                                    <a class="collapse-item"
                                         href="../../../Pages/AccountsList/Money from  tenant/Money from tenant.html">
                                         مبالغ من مستأجر<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
                                     <a class="collapse-item"
@@ -195,7 +195,7 @@
                                         href="../../../Pages/AccountsList/ClosePendingContracts/ClosePendingContracts.html">
                                         تسوية العقود
                                         المعلقة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
-                                    <a class="collapse-item"
+                                    <a class="collapse-item active"
                                         href="../../../Pages/AccountsList/Tax return/Tax return_edited.html"> الإقرار
                                         الضريبي
                                         <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
@@ -354,178 +354,123 @@
                         <div class="col-lg-12 Data-container ">
                             <form class="ContentForm">
                                 <!-- Content Header -->
-                                <div class="row mb-2">
+                                <div class="row  mb-2">
                                     <div class="col-auto">
-                                        <h3> مبالغ من مستأجر  </h3>
+                                        <h3> الإقرار الضريبي </h3>
                                     </div>
-                                    <div class="col search-input-col">
-                                        <div class="row  justify-content-end">
-                                            <div class="col-lg-10 col-xxl-8">
-                                                <div class="form-outline w-100" data-mdb-input-init>
-                                                    <span class="fa fa-search"></span>
-                                                    <input type="search" id="search"
-                                                        class="form-control inputs search-input" name="search"
-                                                        aria-label="Search" autofocus autocomplete="off" />
+                                </div>
+                                <main class="inputs-accordion-container d-flex flex-column" style="overflow-x: hidden;">
+                                    <div class="container-fluid">
+                                        <div class="row g-4 mt-2">
+                                            <div class="col-md-12">
+                                                <div class="row g-3">
+                                                    <div class="col-sm-6">
+                                                        <div class="row">
+                                                            <div class="col-auto">
+                                                                <div class="row g-2">
+                                                                    <div class="col-auto centered-input-label">
+                                                                        <label for="year-select">السنة المالية</label>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <div class="offset">
+                                                                            <select class="form-select select-style"
+                                                                                id="year-select"
+                                                                                style="min-width: 150px;">
+                                                                                <option selected disabled>اختر السنة
+                                                                                </option>
+                                                                                <option value="2024">2024</option>
+                                                                                <option value="2025">2025</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="row">
+                                                            <div class="col-auto">
+                                                                <div class="row g-2">
+                                                                    <div class="col-auto centered-input-label">
+                                                                        <label for="quarter-select">الربع السنوي</label>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <div class="offset">
+                                                                            <select class="form-select select-style"
+                                                                                id="quarter-select"
+                                                                                style="min-width: 150px;">
+                                                                                <option selected disabled>اختر الربع
+                                                                                </option>
+                                                                                <option value="الأول">الأول</option>
+                                                                                <option value="الثاني">الثاني</option>
+                                                                                <option value="الثالث">الثالث</option>
+                                                                                <option value="الرابع">الرابع</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-auto" style="min-width: 50%;">
+                                                        <div class="row gx-3 gy-2">
+                                                            <div class="col-auto">
+                                                                <span>المبيعات الخاضعة للنسبة الأساسية</span>
+                                                            </div>
+                                                            <div class="col-auto Saved-data">
+                                                                <p id="total-sales">0.00</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="row gx-3 gy-2">
+                                                            <div class="col-auto">
+                                                                <span>إجمالي القيمة المضافة</span>
+                                                            </div>
+                                                            <div class="col-auto Saved-data">
+                                                                <p id="total-vat">0.00</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 filters-col">
+
+                                    <!-- Table -->
+                                    <div class="table-wrapper" style="min-height: 250px;">
+                                        <div class="table-container">
+                                            <table class="tables-style table table-borderless" id="table">
+                                                <thead class="sticky-top">
+                                                    <tr>
+                                                        <th>الفاتورة</th>
+                                                        <th class="DifferAlign">الموظف</th>
+                                                        <th>القيمة المضافة</th>
+                                                        <th>نسبة القيمة المضافة</th>
+                                                        <th>قيمة الفاتورة</th>
+                                                        <th class="DifferAlign">المرجع</th>
+                                                        <th class="DifferAlign">رقم الفاتورة</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td colspan="8" style="text-align: center; padding: 50px;">
+                                                            <p style="color: #999;">الرجاء اختيار السنة المالية والربع
+                                                                السنوي لعرض البيانات</p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
-                                </div>
-                                <!-- Table -->
-                                <div class="table-wrapper">
-                                    <div class="table-container">
-                                       <table class=" tables-style table table-borderless " id="table">
-                                        <thead class="sticky-top">
-                                            <tr>
-                                                <th> التقييم</th>
-                                                <th> المبالغ المتداولة </th>
-                                                <th> الرصيد المحجوز </th>
-                                                <th> الرصيد المتاح </th>
-                                                <th> الرصيد</th>
-                                                <th> اخر عقد</th>
-                                                <th class="DifferAlign">المستأجر</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>متوسط</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>2026/01/12</td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">منيرة عبدالقادر عبدالودود المطلق</p>
-                                                    <p class="secondLineP">802782093063439</p>
-                                                </td>
-                                                    <td> 1</td>
-                                            </tr>
-                                                <tr>
-                                                <td>متوسط</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>2024/10/12</td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">عبدالجبار عبدالجبار ظافر القحطاني</p>
-                                                    <p class="secondLineP">802251835735371</p>
-                                                </td>
-                                                    <td> 2</td>
-                                            </tr>
-                                                <tr>
-                                                <td>جيد جدا</td>
-                                               <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>2025/11/19</td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">احمد هاني</p>
-                                                    <p class="secondLineP">802251835735371</p>
-                                                </td>
-                                                    <td> 3</td>
-                                            </tr>
-                                                <tr>
-                                                <td>جيد جدا</td>
-                                               <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>2025/11/22</td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">فايز أحمد بدر المحيسني</p>
-                                                    <p class="secondLineP">802251835735371</p>
-                                                </td>
-                                                    <td> 4</td>
-                                            </tr>
-                                                <tr>
-                                                <td>جيد جدا</td>
-                                               <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>2025/04/09</td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">عبدالله</p>
-                                                    <p class="secondLineP">802251835735371</p>
-                                                </td>
-                                                    <td> 5</td>
-                                            </tr>
-                                                <tr>
-                                                <td>جيد جدا</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>2024/11/04</td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">اديب عبدالتواب جاسم العتيبي</p>
-                                                    <p class="secondLineP">802251835735371</p>
-                                                </td>
-                                                    <td> 6</td>
-                                            </tr>
-                                                <tr>
-                                                <td>متوسط</td>
-                                               <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>2025/11/05</td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">ماجد بدر تركي القويفل</p>
-                                                    <p class="secondLineP">802251835735371</p>
-                                                </td>
-                                                    <td> 7</td>
-                                            </tr>
-                                                <tr>
-                                                <td>ممتاز</td>
-                                               <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>2024/09/16</td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">مشاري رشود عمار الجراح</p>
-                                                    <p class="secondLineP">802251835735371</p>
-                                                </td>
-                                                    <td> 8</td>
-                                            </tr>
-                                                <tr>
-                                                <td>جيد جدا</td>
-                                               <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>2024/10/16</td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">بدر جاسم محسن الجميعة</p>
-                                                    <p class="secondLineP">802251835735371</p>
-                                                </td>
-                                                    <td> 9</td>
-                                            </tr>
-                                                <tr>
-                                                <td>جيد جدا</td>
-                                               <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>999,999.00</td>
-                                                <td>2025/12/24</td>
-                                                <td class="DifferAlign">
-                                                    <p class="FirstLineP">نادية طارق مشعل الجميعة</p>
-                                                    <p class="secondLineP">800212202526790</p>
-                                                </td>
-                                                    <td> 10</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    </div>
-                                </div>
+                                </main>
                             </form>
-                             <a href="../../../index.html" data-bs-toggle="tooltip" data-bs-placement="top"
+                            <a href="../../../index.html" data-bs-toggle="tooltip" data-bs-placement="top"
                                 data-bs-custom-class="custom-tooltip" data-bs-title="العودة إلى الرئيسية"
                                 class="main-page-icon"><img src="../../../images/Static/back to main.svg"
                                     alt="main page icon"></a>
@@ -803,7 +748,7 @@
                                                                                 <p> 11:30 </p>
                                                                             </div>
                                                                             <div class="col-auto px-1">
-                                                                                <p>2025/10/08</p>
+                                                                                <p>22/09/2024</p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -845,7 +790,7 @@
                                                                                 <p> 11:30 </p>
                                                                             </div>
                                                                             <div class="col-auto px-1">
-                                                                                <p>2025/10/08</p>
+                                                                                <p>22/09/2024</p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -887,7 +832,7 @@
                                                                                 <p> 11:30 </p>
                                                                             </div>
                                                                             <div class="col-auto px-1">
-                                                                                <p>2025/10/08</p>
+                                                                                <p>22/09/2024</p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -929,7 +874,7 @@
                                                                                 <p> 11:30 </p>
                                                                             </div>
                                                                             <div class="col-auto px-1">
-                                                                                <p>2025/10/08</p>
+                                                                                <p>22/09/2024</p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -971,7 +916,7 @@
                                                                                 <p> 11:30 </p>
                                                                             </div>
                                                                             <div class="col-auto px-1">
-                                                                                <p>2025/10/08</p>
+                                                                                <p>22/09/2024</p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -1013,7 +958,7 @@
                                                                                 <p> 11:30 </p>
                                                                             </div>
                                                                             <div class="col-auto px-1">
-                                                                                <p>2025/10/08</p>
+                                                                                <p>22/09/2024</p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -1055,7 +1000,7 @@
                                                                                 <p> 11:30 </p>
                                                                             </div>
                                                                             <div class="col-auto px-1">
-                                                                                <p>2025/10/08</p>
+                                                                                <p>22/09/2024</p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -1097,7 +1042,7 @@
                                                                                 <p> 11:30 </p>
                                                                             </div>
                                                                             <div class="col-auto px-1">
-                                                                                <p>2025/10/08</p>
+                                                                                <p>22/09/2024</p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -1139,7 +1084,7 @@
                                                                                 <p> 11:30 </p>
                                                                             </div>
                                                                             <div class="col-auto px-1">
-                                                                                <p>2025/10/08</p>
+                                                                                <p>22/09/2024</p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -1181,7 +1126,7 @@
                                                                                 <p> 11:30 </p>
                                                                             </div>
                                                                             <div class="col-auto px-1">
-                                                                                <p>2025/10/08</p>
+                                                                                <p>22/09/2024</p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -1241,6 +1186,8 @@
                 </div>
             </aside>
         </div>
+
+
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -1252,27 +1199,439 @@
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../../../scripts/Scripts.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var table = document.getElementById("table");
-            var rows = table.getElementsByTagName("tr");
-    
-            for (var i = 0; i < rows.length; i++) {
-                var cells = rows[i].getElementsByTagName("td");
-    
-                if (cells.length > 0) {
-                    var lastTd = cells[cells.length-7];
 
-                    for (var j = 0; j < cells.length; j++) {
-                        cells[j].addEventListener("click", function () {
-                             window.location.href = "Get Mony from tenant.html";
-                        });
+    <script>
+        // بيانات الفواتير  لكل سنة وربع
+        const invoicesData = {
+            "2024": {
+                "الأول": [
+                    {
+                        employee: "عيسى هاني مبروك عزام",
+                        vat: 149999.85,
+                        vatRate: "15%",
+                        amount: 999999.00,
+                        reference: "24-1401-4004106-000079",
+                        invoiceNumber: "24-0104-4004100-000025",
+                        date: "2024/01/05",
+                        pdfLink: "#"
+                    },
+                    {
+                        employee: "بدر ريان مشاري",
+                        vat: 131250.00,
+                        vatRate: "15%",
+                        amount: 875000.00,
+                        reference: "24-1401-4004106-000080",
+                        invoiceNumber: "24-0204-4004100-000026",
+                        date: "2024/01/12",
+                        pdfLink: "#"
+                    },
+                    {
+                        employee: "صالح سلطان ابراهيم المحيسني",
+                        vat: 97500.00,
+                        vatRate: "15%",
+                        amount: 650000.00,
+                        reference: "24-1401-4004106-000081",
+                        invoiceNumber: "24-0304-4004100-000027",
+                        date: "2024/02/08",
+                        pdfLink: "#"
+                    },
+                    {
+                        employee: "عبدالله فهد محمد",
+                        vat: 108000.00,
+                        vatRate: "15%",
+                        amount: 720000.00,
+                        reference: "24-1401-4004106-000082",
+                        invoiceNumber: "24-0304-4004100-000028",
+                        date: "2024/02/15",
+                        pdfLink: "#"
+                    },
+                    {
+                        employee: "يوسف خالد إبراهيم",
+                        vat: 81000.00,
+                        vatRate: "15%",
+                        amount: 540000.00,
+                        reference: "24-1401-4004106-000083",
+                        invoiceNumber: "24-0304-4004100-000029",
+                        date: "2024/03/10",
+                        pdfLink: "#"
                     }
-                }
+                ],
+                "الثاني": [
+                    {
+                        employee: "حسن علي عبدالرحمن",
+                        vat: 64500.00,
+                        vatRate: "15%",
+                        amount: 430000.00,
+                        reference: "24-1401-4004106-000084",
+                        invoiceNumber: "24-0404-4004100-000030",
+                        date: "2024/04/05",
+                        pdfLink: "#"
+                    },
+                    {
+                        employee: "طارق سمير عبدالعزيز",
+                        vat: 57000.00,
+                        vatRate: "15%",
+                        amount: 380000.00,
+                        reference: "24-1401-4004106-000085",
+                        invoiceNumber: "24-0504-4004100-000031",
+                        date: "2024/05/12",
+                        pdfLink: "#"
+                    },
+                    {
+                        employee: "رامي نبيل يوسف",
+                        vat: 44250.00,
+                        vatRate: "15%",
+                        amount: 295000.00,
+                        reference: "24-1401-4004106-000086",
+                        invoiceNumber: "24-0504-4004100-000032",
+                        date: "2024/05/20",
+                        pdfLink: "#"
+                    },
+                    {
+                        employee: "وليد جمال منصور",
+                        vat: 31500.00,
+                        vatRate: "15%",
+                        amount: 210000.00,
+                        reference: "24-1401-4004106-000087",
+                        invoiceNumber: "24-0604-4004100-000033",
+                        date: "2024/06/08",
+                        pdfLink: "#"
+                    }
+                ],
+                "الثالث": [
+                    {
+                        employee: "خالد سامي محمود",
+                        vat: 22500.00,
+                        vatRate: "15%",
+                        amount: 150000.00,
+                        reference: "24-1401-4004106-000088",
+                        invoiceNumber: "24-0704-4004100-000034",
+                        date: "2024/07/15",
+                        pdfLink: "#"
+                    },
+                    {
+                        employee: "عيسى هاني مبروك عزام",
+                        vat: 118500.00,
+                        vatRate: "15%",
+                        amount: 790000.00,
+                        reference: "24-1401-4004106-000089",
+                        invoiceNumber: "24-0804-4004100-000035",
+                        date: "2024/08/10",
+                        pdfLink: "#"
+                    },
+                    {
+                        employee: "بدر ريان مشاري",
+                        vat: 95250.00,
+                        vatRate: "15%",
+                        amount: 635000.00,
+                        reference: "24-1401-4004106-000090",
+                        invoiceNumber: "24-0904-4004100-000036",
+                        date: "2024/09/05",
+                        pdfLink: "#"
+                    }
+                ],
+                "الرابع": [
+                    {
+                        employee: "صالح سلطان ابراهيم المحيسني",
+                        vat: 73500.00,
+                        vatRate: "15%",
+                        amount: 490000.00,
+                        reference: "24-1401-4004106-000091",
+                        invoiceNumber: "24-1004-4004100-000037",
+                        date: "2024/10/12",
+                        pdfLink: "#"
+                    },
+                    {
+                        employee: "عبدالله فهد محمد",
+                        vat: 86250.00,
+                        vatRate: "15%",
+                        amount: 575000.00,
+                        reference: "24-1401-4004106-000092",
+                        invoiceNumber: "24-1104-4004100-000038",
+                        date: "2024/11/08",
+                        pdfLink: "#"
+                    },
+                    {
+                        employee: "يوسف خالد إبراهيم",
+                        vat: 61500.00,
+                        vatRate: "15%",
+                        amount: 410000.00,
+                        reference: "24-1401-4004106-000093",
+                        invoiceNumber: "24-1204-4004100-000039",
+                        date: "2024/12/15",
+                        pdfLink: "#"
+                    },
+                    {
+                        employee: "حسن علي عبدالرحمن",
+                        vat: 52500.00,
+                        vatRate: "15%",
+                        amount: 350000.00,
+                        reference: "24-1401-4004106-000094",
+                        invoiceNumber: "24-1204-4004100-000040",
+                        date: "2024/12/28",
+                        pdfLink: "#"
+                    }
+                ]
+            },
+            "2025": {
+                "الأول": [
+                    {
+                        employee: "عيسى هاني مبروك عزام",
+                        vat: 149999.85,
+                        vatRate: "15%",
+                        amount: 999999.00,
+                        reference: "25-1401-4004106-000079",
+                        invoiceNumber: "25-1304-4004100-000025",
+                        date: "2025/01/02",
+                        pdfLink: "#"
+                    },
+                    {
+                        employee: "بدر ريان مشاري",
+                        vat: 131250.00,
+                        vatRate: "15%",
+                        amount: 875000.00,
+                        reference: "25-1401-4004106-000080",
+                        invoiceNumber: "25-0104-4004100-000026",
+                        date: "2025/01/05",
+                        pdfLink: "#"
+                    },
+                    {
+                        employee: "صالح سلطان ابراهيم المحيسني",
+                        vat: 97500.00,
+                        vatRate: "15%",
+                        amount: 650000.00,
+                        reference: "25-1401-4004106-000081",
+                        invoiceNumber: "25-0104-4004100-000027",
+                        date: "2025/01/07",
+                        pdfLink: "#"
+                    },
+                    {
+                        employee: "عبدالله فهد محمد",
+                        vat: 108000.00,
+                        vatRate: "15%",
+                        amount: 720000.00,
+                        reference: "25-1401-4004106-000082",
+                        invoiceNumber: "25-0204-4004100-000028",
+                        date: "2025/02/09",
+                        pdfLink: "#"
+                    },
+                    {
+                        employee: "يوسف خالد إبراهيم",
+                        vat: 81000.00,
+                        vatRate: "15%",
+                        amount: 540000.00,
+                        reference: "25-1401-4004106-000083",
+                        invoiceNumber: "25-0304-4004100-000029",
+                        date: "2025/03/11",
+                        pdfLink: "#"
+                    },
+                    {
+                        employee: "حسن علي عبدالرحمن",
+                        vat: 64500.00,
+                        vatRate: "15%",
+                        amount: 430000.00,
+                        reference: "25-1401-4004106-000084",
+                        invoiceNumber: "25-0304-4004100-000030",
+                        date: "2025/03/13",
+                        pdfLink: "#"
+                    }
+                ],
+                "الثاني": [
+                    {
+                        employee: "طارق سمير عبدالعزيز",
+                        vat: 57000.00,
+                        vatRate: "15%",
+                        amount: 380000.00,
+                        reference: "25-1401-4004106-000085",
+                        invoiceNumber: "25-0404-4004100-000031",
+                        date: "2025/04/15",
+                        pdfLink: "#"
+                    },
+                    {
+                        employee: "رامي نبيل يوسف",
+                        vat: 44250.00,
+                        vatRate: "15%",
+                        amount: 295000.00,
+                        reference: "25-1401-4004106-000086",
+                        invoiceNumber: "25-0504-4004100-000032",
+                        date: "2025/05/18",
+                        pdfLink: "#"
+                    },
+                    {
+                        employee: "وليد جمال منصور",
+                        vat: 31500.00,
+                        vatRate: "15%",
+                        amount: 210000.00,
+                        reference: "25-1401-4004106-000087",
+                        invoiceNumber: "25-0604-4004100-000033",
+                        date: "2025/06/20",
+                        pdfLink: "#"
+                    }
+                ],
+                "الثالث": [
+                    {
+                        employee: "خالد سامي محمود",
+                        vat: 22500.00,
+                        vatRate: "15%",
+                        amount: 150000.00,
+                        reference: "25-1401-4004106-000088",
+                        invoiceNumber: "25-0704-4004100-000034",
+                        date: "2025/07/22",
+                        pdfLink: "#"
+                    },
+                    {
+                        employee: "عيسى هاني مبروك عزام",
+                        vat: 118500.00,
+                        vatRate: "15%",
+                        amount: 790000.00,
+                        reference: "25-1401-4004106-000089",
+                        invoiceNumber: "25-0804-4004100-000035",
+                        date: "2025/08/10",
+                        pdfLink: "#"
+                    }
+                ],
+                "الرابع": [
+                    {
+                        employee: "بدر ريان مشاري",
+                        vat: 95250.00,
+                        vatRate: "15%",
+                        amount: 635000.00,
+                        reference: "25-1401-4004106-000090",
+                        invoiceNumber: "25-1004-4004100-000036",
+                        date: "2025/10/05",
+                        pdfLink: "#"
+                    },
+                    {
+                        employee: "صالح سلطان ابراهيم المحيسني",
+                        vat: 73500.00,
+                        vatRate: "15%",
+                        amount: 490000.00,
+                        reference: "25-1401-4004106-000091",
+                        invoiceNumber: "25-1104-4004100-000037",
+                        date: "2025/11/12",
+                        pdfLink: "#"
+                    }
+                ]
             }
+        };
+
+        // فانكشن لحساب المبيعات الخاضعة للنسبة الأساسية و إجمالي القيمة المضافة
+        function calculateTotals(invoices) {
+            let totalSales = 0;
+            let totalVAT = 0;
+
+            invoices.forEach(invoice => {
+                totalSales += parseFloat(invoice.amount);
+                totalVAT += parseFloat(invoice.vat);
+            });
+
+            return {
+                totalSales: totalSales.toFixed(2),
+                totalVAT: totalVAT.toFixed(2)
+            };
+        }
+
+        // فانكشن لتحديث الجدول
+        function updateTable(year, quarter) {
+            const tbody = document.querySelector('#table tbody');
+            const invoices = invoicesData[year][quarter];
+
+            // مسح الجدول الحالي
+            tbody.innerHTML = '';
+
+            // إضافة الصفوف الجديدة
+            invoices.forEach((invoice, index) => {
+                const row = `
+                    <tr>
+                        <td>
+                            <a href="${invoice.pdfLink}" target="_blank">
+                                <img src="../../../images/Static/PdfIcons/PdfIcon.svg" alt="PDF">
+                            </a>
+                        </td>
+                        <td class="DifferAlign">${invoice.employee}</td>
+                        <td>${formatNumber(invoice.vat)}</td>
+                        <td>${invoice.vatRate}</td>
+                        <td>
+                            <p>${formatNumber(invoice.amount)}</p>
+                        </td>
+                        <td class="DifferAlign">
+                            <p class="FirstLineP">${invoice.reference}</p>
+                        </td>
+                        <td class="DifferAlign">
+                            <p class="FirstLineP">${invoice.invoiceNumber}</p>
+                            <p class="secondLineP">${invoice.date}</p>
+                        </td>
+                        <td>${index + 1}</td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            });
+
+            // تحديث الإجماليات
+            const totals = calculateTotals(invoices);
+            updateTotals(totals.totalSales, totals.totalVAT);
+        }
+
+        // فانكشن لتنسيق الأرقام
+        function formatNumber(number) {
+            return parseFloat(number).toLocaleString('en-US', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+        }
+
+        // فانكشن لتحديث الإجماليات
+        function updateTotals(totalSales, totalVAT) {
+            document.getElementById('total-sales').textContent = formatNumber(totalSales);
+            document.getElementById('total-vat').textContent = formatNumber(totalVAT);
+        }
+
+        // فانكشن لإعادة تعيين القيم
+        function resetValues() {
+            document.getElementById('total-sales').textContent = '0.00';
+            document.getElementById('total-vat').textContent = '0.00';
+
+            const tbody = document.querySelector('#table tbody');
+            tbody.innerHTML = `
+                <tr>
+                    <td colspan="8" style="text-align: center; padding: 50px;">
+                        <p style="color: #999;">الرجاء اختيار السنة المالية والربع السنوي لعرض البيانات</p>
+                    </td>
+                </tr>
+            `;
+        }
+
+        // إعداد الأحداث عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearSelect = document.getElementById('year-select');
+            const quarterSelect = document.getElementById('quarter-select');
+
+            let selectedYear = null;
+            let selectedQuarter = null;
+
+            // حدث تغيير السنة
+            yearSelect.addEventListener('change', function () {
+                selectedYear = this.value;
+
+                if (selectedYear && selectedQuarter) {
+                    updateTable(selectedYear, selectedQuarter);
+                } else {
+                    resetValues();
+                }
+            });
+
+            // حدث تغيير الربع
+            quarterSelect.addEventListener('change', function () {
+                selectedQuarter = this.value;
+
+                if (selectedYear && selectedQuarter) {
+                    updateTable(selectedYear, selectedQuarter);
+                } else {
+                    resetValues();
+                }
+            });
         });
     </script>
-    
 </body>
 
 </html>
