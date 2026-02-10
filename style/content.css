@@ -1177,7 +1177,7 @@ table p {
 
 .checkbox-alert-col {
   display: flex;
-  gap: 1rem;
+  gap: .5rem;
   align-items: center;
   margin-bottom: .5rem;
 }
