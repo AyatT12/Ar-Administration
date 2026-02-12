@@ -640,28 +640,13 @@
                                                             <form action="" style="overflow: hidden;">
                                                                 <div class="container-fluid">
                                                                     <div class="row flex-column-reverse">
-                                                                        <div class="row gy-3 mt-0">
-                                                                            <div class="col-md-12 mt-0">
-                                                                                <div class="d-flex gap-2 align-items-center">
-                                                                                    <input
-                                                                                        class="form-check-input checkbox m-0"
-                                                                                        type="checkbox" value="checked"
-                                                                                        id="SMS_Connect_Active"
-                                                                                        name="SMS_Connect_Active">
-                                                                                    <label class="form-check-label"
-                                                                                        for="SMS_Connect_Active">
-                                                                                        تفعيل 
-                                                                                    </label>
-
-                                                                                </div>
-                                                                            </div>
-                                                                            
+                                                                        <div class="row gy-3 mt-0"> 
                                                                             <div class="col-md-6">
                                                                                 <label for="SMS_Connect_Api"
                                                                                     class="form-label">
                                                                                     أسم المستخدم </label>
                                                                                 <input type="text" id="SMS_Connect_Api"
-                                                                                    class="form-control inputs  english-input"
+                                                                                    class="form-control inputs  arabic-input"
                                                                                     name="SMS_Connect_Api"
                                                                                     maxlength="100">
                                                                             </div>
@@ -670,8 +655,19 @@
                                                                                     class="form-label">
                                                                                     أسم المرسل </label>
                                                                                 <input type="text" id="UserName"
-                                                                                    class="form-control inputs english-input"
+                                                                                    class="form-control inputs arabic-input"
                                                                                     name="UserName" maxlength="10">
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <label for="URL"  class="form-label"> URL </label>
+                                                                                <input type="text" id="URL"
+                                                                                    class="form-control inputs  english-input"
+                                                                                    name="URL"
+                                                                                    maxlength="100">
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <label for="UserName" class="form-label"> SENDER  NAME </label>
+                                                                                <input type="text" id="UserName" class="form-control inputs english-input" name="UserName" maxlength="10">
                                                                             </div>
                                                                             <div class="col-md-6">
                                                                                 <label for="API-code" class="form-label"> رمز API  </label>
@@ -727,63 +723,26 @@
                                                             <hr class="accordion-items-hr">
                                                             <form action="" style="overflow: hidden;">
                                                                 <div class="container-fluid">
-                                                                    <div class="row flex-column-reverse">
-                                                                        <div class="row ">
-                                                                            <div class="col-md-7">
-                                                                                <!-- <div class="row mb-3">
-                                                                                    <div class="col-md-10">
-                                                                                        <div
-                                                                                            class="d-flex gap-2 align-items-center">
-                                                                                            <input
-                                                                                                class="form-check-input checkbox m-0"
-                                                                                                type="checkbox"
-                                                                                                value="checked"
-                                                                                                id="whatsapp_Connect_Active"
-                                                                                                name="whatsapp_Connect_Active">
-                                                                                            <label
-                                                                                                class="form-check-label"
-                                                                                                for="whatsapp_Connect_Active">
-                                                                                                تفعيل الاشتراك
-                                                                                            </label>
-
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div> -->
+                                                                   <div class="row ">
+                                                                            <div class="col-md-4">
                                                                                 <div class="row">
-                                                                                    <div class="col-md-10">
+                                                                                    <div class="col-md-12">
                                                                                         <p> التاريخ :
                                                                                             <span>2026/01/01</span></p>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="row">
-                                                                                    <div class="col-md-10">
+                                                                                    <div class="col-md-12">
                                                                                         <p> الوقت : <span>21:10</span> </p>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="col-lg-5 d-flex flex-column text-center"
-                                                                                style="min-height: 190px;">
-                                                                                <div class="d-flex align-items-center justify-content-center h-100"
-                                                                                    id="QRArea">
-                                                                                    <button type="button"
-                                                                                        class="border-0 bg-transparent"
-                                                                                        id="RegenerateQR"><img
-                                                                                            src="../../../images/qrcode 1.svg"></button>
-
+                                                                            <div class="col-lg-7 d-flex flex-column text-center" style="min-height: 190px;">
+                                                                                <div class="d-flex align-items-center justify-content-center h-100" id="QRArea">
+                                                                                    <button type="button" class="border-0 bg-transparent w-100 " id="RegenerateQR"><img src="../../../images/qrcode 1.svg"></button>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <!-- <div class="row">
-                                                                            <div
-                                                                                class="col-md-12 d-flex justify-content-end align-items-center">
-                                                                                <button class="custom-img-btn"
-                                                                                    type="submit">
-                                                                                    <img
-                                                                                        src="../../../images/Static/save (3).svg" />
-                                                                                </button>
-                                                                            </div>
-                                                                        </div> -->
-                                                                    </div>
                                                                 </div>
                                                             </form>
                                                         </div>
@@ -1547,7 +1506,7 @@
                 });
             } else {
                 QRArea.innerHTML = `
-                <button type="button" class="border-0 bg-transparent" id="RegenerateQR">
+                <button type="button" class="border-0 bg-transparent w-100" id="RegenerateQR">
                     <img src="../../../images/Static/TechnicalConnect/qrcode 1.svg">
                 </button>`;
 
@@ -1561,7 +1520,7 @@
                             startQRSteps(QRArea);
                         } else {
                             QRArea.innerHTML = `
-                            <button type="button" class="border-0 bg-transparent" id="RegenerateQR">
+                            <button type="button" class="border-0 bg-transparent w-100" id="RegenerateQR">
                                 <img src="../../../images/Static/TechnicalConnect/qrcode 1.svg">
                             </button>`;
                             QRGenerated = true;
