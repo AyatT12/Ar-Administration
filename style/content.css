@@ -1434,7 +1434,22 @@ table p {
   background: rgba(250, 136, 13, 0.4);
 
 }
-
+/* ================================================================================  services => technical connect    ======================================================================================= */
+/* ================================================================================================================================================================================== */
+.cut-connect-btn-transparent{
+      background-color: transparent;
+    color: #6c757d;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    font-size: 13px;
+    padding: 4px 15px;
+    transition: all 0.3s ease;
+}
+.cut-connect-btn-transparent:hover {
+    background-color: #f8f9fa;
+    color: #dc3545;
+    border-color: #dc3545;
+}
 /* ================================================================================  Employees => Employees list  ======================================================================================= */
 /* ================================================================================================================================================================================== */
 #Creditlimit::-webkit-inner-spin-button,
@@ -2496,17 +2511,10 @@ textarea.form-control.is-valid {
 
 }
 
-.cut-connect-btn:hover {
-  color: var(--main-color);
-  border: 1px solid rgba(217, 217, 217, 1);
-}
-
 .policies-card {
-  height: 65vh;
-  min-height: 400px;
   box-shadow: 1px 1px 3px 1px rgba(255, 150, 38, 0.24);
   border-radius: 6px;
-  padding: 20px 10px;
+  padding: 10px 10px;
   overflow-y: scroll;
 }
 
