@@ -79,6 +79,8 @@ body {
   text-align: start;
   z-index: 9;
   width: auto;
+  right: auto;
+  left: 0;
 }
 
 .warnings {
@@ -568,11 +570,7 @@ body.dark .sidebar-right li a:hover .text {
     display: block;
   }
 }
-@media (max-width: 337px) {
-  .nav-container {
-    display: block !important;
-  }
-}
+
 
 
 

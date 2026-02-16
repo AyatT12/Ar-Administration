@@ -3224,7 +3224,6 @@ display: none;
 #DocumentsForm,
 #MaintenanceForm {
   height: auto;
-  overflow: visible;
 }
 
 .drop-zone {

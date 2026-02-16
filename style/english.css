@@ -55,6 +55,10 @@ body {
 .sidebar-right .nav-link .nav-text[data-bs-toggle=collapse]::after {
     float: right;
 }
+.navbar-nav .dropdown-menu{
+    right: 0;
+    left: auto;
+}
 /* Responsive */
 @media (max-width: 1024px) {
 
