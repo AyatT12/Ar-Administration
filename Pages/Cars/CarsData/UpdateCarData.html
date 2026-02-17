@@ -694,112 +694,87 @@
                                                                                 </button>
                                                                             </div>
                                                                             <div class="col-md-12" id="documentDetails">
-                                                                                <div
-                                                                                    class="row mt-2 align-items-center justify-content-between">
-                                                                                    <div class="col-md-5">
-                                                                                        <label for="Doc-number"
-                                                                                            class="form-label"> رقم
-                                                                                            المستند <i
-                                                                                                class="fa-solid fa-star-of-life RequirdStar"></i></label>
-                                                                                        <input type="text"
-                                                                                            id="Doc-number"
-                                                                                            class="form-control inputs custom-date-input"
-                                                                                            name="Doc-number" required>
+                                                                                <div class="row mt-2 align-items-center justify-content-between">
+                                                                                    <div class="col-md-auto" style="min-width: 25%;">
+                                                                                        <label for="Doc-number" class="form-label"> رقم
+                                                                                            المستند <i class="fa-solid fa-star-of-life RequirdStar"></i></label>
+                                                                                        <input type="text" id="Doc-number" class="form-control inputs custom-date-input" name="Doc-number" required>
                                                                                         <div class="invaild">
-                                                                                            <div
-                                                                                                class="invalid-feedback">
+                                                                                            <div class="invalid-feedback">
                                                                                                 الحقل مطلوب</div>
                                                                                         </div>
                                                                                     </div>
-                                                                                    <div class="col-md-5">
-                                                                                        <label for="Doc-Date"
-                                                                                            class="form-label"> تاريخها
-                                                                                            <i
-                                                                                                class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                    <div class="col-md-6">
+                                                                                        <div class="row">
+                                                                                            <div class="col-auto" style="min-width: 50%;">
+                                                                                                <label for="Doc-Date" class="form-label">
+                                                                                                    تاريخها
+                                                                                                    <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                                </label>
+                                                                                                <input type="date" id="Doc-Date" class="form-control inputs custom-date-input" name="Doc-Date"
+                                                                                                    value="2024-01-28" required>
+                                                                                                <div class="invaild">
+                                                                                                    <div class="invalid-feedback"> الحقل مطلوب</div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                            
+                                                                                    </div>
+                                                                                </div>
+                                                                            
+                                                                                <div class="row justify-content-between">
+                                                                                    <div class="col-md-auto" style="min-width: 25%;">
+                                                                                        <label for="start-Date" class="form-label">
+                                                                                            بدايتها
+                                                                                            <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                                         </label>
-                                                                                        <input type="date" id="Doc-Date"
-                                                                                            class="form-control inputs custom-date-input"
-                                                                                            name="Doc-Date"
+                                                                                        <input type="date" id="start-Date" class="form-control inputs custom-date-input" name="start-Date"
                                                                                             value="2024-01-28" required>
                                                                                         <div class="invaild">
-                                                                                            <div
-                                                                                                class="invalid-feedback">
-                                                                                                الحقل مطلوب</div>
+                                                                                            <div class="invalid-feedback">الحقل مطلوب</div>
                                                                                         </div>
                                                                                     </div>
-                                                                                </div>
-
-                                                                                <div
-                                                                                    class="row justify-content-between">
-                                                                                    <div class="col-md-5">
-                                                                                        <label for="start-Date"
-                                                                                            class="form-label">
-                                                                                            بدايتها <i
-                                                                                                class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                                        </label>
-                                                                                        <input type="date"
-                                                                                            id="start-Date"
-                                                                                            class="form-control inputs custom-date-input"
-                                                                                            name="start-Date"
-                                                                                            value="2024-01-28" required>
-                                                                                        <div class="invaild">
-                                                                                            <div
-                                                                                                class="invalid-feedback">
-                                                                                                الحقل مطلوب</div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="col-md-5">
-                                                                                        <label for="end-Date"
-                                                                                            class="form-label">
-                                                                                            نهايتها <i
-                                                                                                class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                                        </label>
-                                                                                        <input type="date" id="end-Date"
-                                                                                            class="form-control inputs custom-date-input"
-                                                                                            name="end-Date"
-                                                                                            value="2025-01-28" required>
-                                                                                        <div class="invaild">
-                                                                                            <div
-                                                                                                class="invalid-feedback">
-                                                                                                الحقل مطلوب</div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-
-                                                                                <div class="row align-items-end g-2">
-                                                                                    <div class="col-md-auto">
-                                                                                        <div class="row flex-column">
-                                                                                            <div class="col-lg-6">
-                                                                                                <label>الملاحظات</label>
+                                                                                    <div class="col-md-6">
+                                                                                        <div class="row">
+                                                                                            <div class="col-auto" style="min-width: 50%;">
+                                                                                                <label for="end-Date" class="form-label">
+                                                                                                    نهايتها
+                                                                                                    <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                                </label>
+                                                                                                <input type="date" id="end-Date" class="form-control inputs custom-date-input" name="end-Date"
+                                                                                                    value="2024-01-28" required>
+                                                                                                <div class="invaild">
+                                                                                                    <div class="invalid-feedback"> الحقل مطلوب</div>
+                                                                                                </div>
                                                                                             </div>
-                                                                                            <div
-                                                                                                class="col-auto d-flex justify-content-start">
-                                                                                                <textarea
-                                                                                                    class=" form-control textarea-inputs"
-                                                                                                    rows="1"
-                                                                                                    maxlength="100"
-                                                                                                    id="DocumentsNotes"
-                                                                                                    type="text"
-                                                                                                    name="Reasons">
-                                                                                                    </textarea>
+                                                                            
+                                                                                        </div>
+                                                                                    </div>
+                                                                            
+                                                                                    <div class="row align-items-end g-2">
+                                                                                        <div class="col-md-auto">
+                                                                                            <div class="row flex-column">
+                                                                                                <div class="col-lg-6">
+                                                                                                    <label>الملاحظات</label>
+                                                                                                </div>
+                                                                                                <div class="col-auto d-flex justify-content-start">
+                                                                                                    <textarea class=" form-control textarea-inputs" rows="1" maxlength="100" id="DocumentsNotes"
+                                                                                                        type="text" name="Reasons">
+                                                                                                                                                                                </textarea>
+                                                                                                </div>
                                                                                             </div>
                                                                                         </div>
+                                                                                        <div class="col-md-auto text-start">
+                                                                                            <button type="button" class="btn p-0" data-bs-toggle="modal" href="#Doc-photo-modal">
+                                                                                                <div class="systems-check">
+                                                                                                    <i class="fa-solid fa-file-image text-white"></i>
+                                                                                                </div>
+                                                                                            </button>
+                                                                                        </div>
                                                                                     </div>
-                                                                                    <div class="col-md-auto text-start">
-                                                                                        <button type="button"
-                                                                                            class="btn p-0"
-                                                                                            data-bs-toggle="modal"
-                                                                                            href="#Doc-photo-modal">
-                                                                                            <div class="systems-check">
-                                                                                                <i
-                                                                                                    class="fa-solid fa-file-image text-white"></i>
-                                                                                            </div>
-                                                                                        </button>
-                                                                                    </div>
+                                                                            
                                                                                 </div>
-
                                                                             </div>
-                                                                        </div>
                                                                     </form>
 
                                                                 </div>
@@ -853,88 +828,62 @@
                                                                                 id="Maintenance-Details">
                                                                                 <div
                                                                                     class="row justify-content-between">
-                                                                                    <div class="col-md-5">
-                                                                                        <label
-                                                                                            for="start-Date-Maintenance"
-                                                                                            class="form-label">
-                                                                                            بدايتها <i
-                                                                                                class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                    <div class="col-md-auto" style="min-width: 25%;">
+                                                                                        <label for="start-Date-Maintenance" class="form-label">
+                                                                                            بدايتها <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                                         </label>
-                                                                                        <input type="date"
-                                                                                            id="start-Date-Maintenance"
-                                                                                            class="form-control inputs custom-date-input"
-                                                                                            name="start-Date-Maintenance"
-                                                                                            required>
+                                                                                        <input type="date" id="start-Date-Maintenance" class="form-control inputs custom-date-input"
+                                                                                            name="start-Date-Maintenance" required>
                                                                                         <div class="invaild">
-                                                                                            <div
-                                                                                                class="invalid-feedback">
+                                                                                            <div class="invalid-feedback">
                                                                                                 الحقل مطلوب</div>
                                                                                         </div>
                                                                                     </div>
-                                                                                    <div class="col-md-5">
-                                                                                        <label
-                                                                                            for="end-Date-Maintenance"
-                                                                                            class="form-label">
-                                                                                            نهايتها <i
-                                                                                                class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                                        </label>
-                                                                                        <input type="date"
-                                                                                            id="end-Date-Maintenance"
-                                                                                            class="form-control inputs custom-date-input"
-                                                                                            name="end-Date-Maintenance"
-                                                                                            required>
-                                                                                        <div class="invaild">
-                                                                                            <div
-                                                                                                class="invalid-feedback">
-                                                                                                الحقل مطلوب</div>
+                                                                                    <div class="col-md-6">
+                                                                                        <div class="row">
+                                                                                            <div class="col-auto" style="min-width: 50%;">
+                                                                                                <label for="end-Date-Maintenance" class="form-label">
+                                                                                                    نهايتها <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                                </label>
+                                                                                                <input type="date" id="end-Date-Maintenance" class="form-control inputs custom-date-input"
+                                                                                                    name="end-Date-Maintenance" required>
+                                                                                                <div class="invaild">
+                                                                                                    <div class="invalid-feedback">
+                                                                                                        الحقل مطلوب</div>
+                                                                                                </div>
+                                                                                            </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="row">
-                                                                                    <div class="col-md-4">
-                                                                                        <label
-                                                                                            for="Current-read-Maintenance"
-                                                                                            class="form-label">
+                                                                                <div class="row justify-content-between">
+                                                                                    <div class="col-md-auto" style="min-width: 25%;">
+                                                                                        <label for="Current-read-Maintenance" class="form-label">
                                                                                             القراءة الحالية
                                                                                         </label>
-                                                                                        <input type="number"
-                                                                                            id="Current-read-Maintenance"
-                                                                                            class="form-control inputs number-input"
+                                                                                        <input type="number" id="Current-read-Maintenance" class="form-control inputs number-input"
                                                                                             name="Current-read-Maintenance">
                                                                                         <div class="invaild">
-                                                                                            <div
-                                                                                                class="invalid-feedback">
+                                                                                            <div class="invalid-feedback">
                                                                                                 الحقل مطلوب</div>
                                                                                         </div>
                                                                                     </div>
-                                                                                    <div class="col-md-4">
-                                                                                        <label for="Consumption"
-                                                                                            class="form-label">
-                                                                                            الاستهلاك (كم) <i
-                                                                                                class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                    <div class="col-md-auto" style="min-width: 25%;">
+                                                                                        <label for="Consumption" class="form-label">
+                                                                                            الاستهلاك (كم) <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                                         </label>
-                                                                                        <input type="number"
-                                                                                            id="Consumption"
-                                                                                            class="form-control inputs  number-input"
-                                                                                            name="Consumption" required>
+                                                                                        <input type="number" id="Consumption" class="form-control inputs  number-input" name="Consumption" required>
                                                                                         <div class="invaild">
-                                                                                            <div
-                                                                                                class="invalid-feedback">
+                                                                                            <div class="invalid-feedback">
                                                                                                 الحقل مطلوب</div>
                                                                                         </div>
                                                                                     </div>
-                                                                                    <div class="col-md-4">
-                                                                                        <label for="Consumption-up-to"
-                                                                                            class="form-label">
+                                                                                    <div class="col-md-auto" style="min-width: 25%;">
+                                                                                        <label for="Consumption-up-to" class="form-label">
                                                                                             الاستهلاك حتى (كم)
                                                                                         </label>
-                                                                                        <input type="number"
-                                                                                            id="Consumption-up-to"
-                                                                                            class="form-control inputs  number-input"
-                                                                                            name="Consumption-up-to">
+                                                                                        <input type="number" id="Consumption-up-to" class="form-control inputs  number-input" name="Consumption-up-to">
                                                                                         <div class="invaild">
-                                                                                            <div
-                                                                                                class="invalid-feedback">
+                                                                                            <div class="invalid-feedback">
                                                                                                 الحقل مطلوب</div>
                                                                                         </div>
                                                                                     </div>
@@ -945,10 +894,7 @@
                                                                                         <label>الملاحظات</label>
                                                                                     </div>
                                                                                     <div class="col d-flex justify-content-start">
-                                                                                        <textarea
-                                                                                            class=" form-control textarea-inputs"
-                                                                                            rows="1" maxlength="100"
-                                                                                            id="Maintenance-Notes" type="text"
+                                                                                        <textarea class=" form-control textarea-inputs" rows="1" maxlength="100" id="Maintenance-Notes" type="text"
                                                                                             name="Maintenance-Notes"></textarea>
                                                                                     </div>
                                                                                 </div>
