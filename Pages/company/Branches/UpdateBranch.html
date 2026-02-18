@@ -339,7 +339,7 @@
                                 <div class="row justify-content-center flex-1 min-h-0">
                                     <div class="col-lg-12 d-flex flex-column h-100">
                                         <div class="row my-2">
-                                            <div class="col-md-6">
+                                           <div class="col-md-6">
                                                 <h3> تحديث بيانات الفرع </h3>
                                             </div>
                                             <div class="col-md-6 save-col">
@@ -482,7 +482,7 @@
                                                                         <textarea class=" form-control textarea-inputs"
                                                                             rows="1" maxlength="100" id="Reasons"
                                                                             type="text"
-                                                                            name="Contract.RenterInfo.CrMasRenterInformationReasons"></textarea>
+                                                                            name="Reasons"></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -567,7 +567,7 @@
                                                                         <div class="form">
                                                                             <div class="row align-items-end">
                                                                                 <div
-                                                                                    class="col-md-7 col-lg-5 d-flex flex-wrap flex-md-nowrap align-items-baseline gap-2">
+                                                                                    class="col-md-7 col-lg-4 d-flex flex-wrap flex-md-nowrap align-items-baseline gap-2">
                                                                                     <label for="doc"
                                                                                         class="form-label">المستند</label>
                                                                                     <select
@@ -596,48 +596,36 @@
                                                                                         <img type="button"
                                                                                             src="../../../images/Static/save (3).svg">
                                                                                     </button>
+                                                                                    <div style="min-width: 146px;"></div>
                                                                                 </div>
                                                                                 <div class="col-md-12 mt-3">
-                                                                                    <div class="row mt-2">
-                                                                                        <div class="col-md-6">
-                                                                                            <label for="Doc-number"
-                                                                                                class="form-label">
-                                                                                                رقم المستند <i
-                                                                                                    class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                    <div class="row mt-2 justify-content-between">
+                                                                                        <div class="col-md-auto" style="min-width: 25%;">
+                                                                                            <label for="Doc-number" class="form-label">
+                                                                                                رقم المستند <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                                             </label>
-                                                                                            <input type="number"
-                                                                                                maxlength="50"
-                                                                                                id="Doc-number"
-                                                                                                class="form-control inputs number-input"
-                                                                                                name="Doc-number"
+                                                                                            <input type="number" maxlength="50" id="Doc-number" class="form-control inputs number-input" name="Doc-number"
                                                                                                 required>
                                                                                             <div class="invaild">
-                                                                                                <div
-                                                                                                    class="invalid-feedback">
+                                                                                                <div class="invalid-feedback">
                                                                                                     الحقل مطلوب </div>
                                                                                             </div>
                                                                                         </div>
-                                                                                        <div class="col-md-6">
-                                                                                            <label for="Doc-Date"
-                                                                                                class="form-label">
-                                                                                                تاريخه <i
-                                                                                                    class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                        <div class="col-md-auto" style="min-width: 25%;">
+                                                                                            <label for="Doc-Date" class="form-label">
+                                                                                                تاريخه <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                                             </label>
-                                                                                            <input type="date"
-                                                                                                id="Doc-Date"
-                                                                                                class="form-control inputs  custom-date-input"
-                                                                                                name="Doc-Date"
-                                                                                                required>
+                                                                                            <input type="date" id="Doc-Date" class="form-control inputs  custom-date-input" name="Doc-Date" required>
                                                                                             <div class="invaild">
-                                                                                                <div
-                                                                                                    class="invalid-feedback">
+                                                                                                <div class="invalid-feedback">
                                                                                                     الحقل مطلوب </div>
                                                                                             </div>
                                                                                         </div>
+                                                                                        <div class="col-auto" style="min-width: 25%;"></div>
                                                                                     </div>
 
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-6">
+                                                                                    <div class="row justify-content-between">
+                                                                                       <div class="col-md-auto" style="min-width: 25%;">
                                                                                             <label for="start-Date"
                                                                                                 class="form-label">
                                                                                                 بدايته <i
@@ -654,7 +642,7 @@
                                                                                                     الحقل مطلوب </div>
                                                                                             </div>
                                                                                         </div>
-                                                                                        <div class="col-md-6">
+                                                                                       <div class="col-md-auto" style="min-width: 25%;">
                                                                                             <label for="end-Date"
                                                                                                 class="form-label">
                                                                                                 نهايته <i
@@ -671,6 +659,7 @@
                                                                                                     الحقل مطلوب </div>
                                                                                             </div>
                                                                                         </div>
+                                                                                        <div class="col-auto" style="min-width: 25%;"></div>
                                                                                     </div>
 
                                                                                     <div class="row align-items-end g-2">
@@ -686,7 +675,7 @@
                                                                                                         maxlength="100"
                                                                                                         id="Documentnotes"
                                                                                                         type="text"
-                                                                                                        name="Contract.RenterInfo.CrMasRenterInformationReasons">
+                                                                                                        name="Reasons">
                                                                                                     </textarea>
                                                                                                 </div>
                                                                                             </div>
@@ -1549,7 +1538,7 @@
                 if (IDuploadContainer.querySelector("img")) {
                     systemsCheck.style.backgroundColor = "#049b04";
                 } else {
-                    systemsCheck.style.backgroundColor = "red";
+                    systemsCheck.style.backgroundColor = "#a0a6a9";
                 }
             }
         }
