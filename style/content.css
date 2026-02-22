@@ -2854,7 +2854,6 @@ textarea.form-control.is-valid {
 .CarPriceContent {
   height: 100%;
   align-content: space-between;
-  justify-content: space-between;
 }
 
 #Price-content-display {
@@ -3499,11 +3498,19 @@ display: none;
 }
 /* ================================================================================ Car Price  ======================================================================================= */
 /* ================================================================================================================================================================================== */
+/* .PriceInputs{
+    min-width: 100px;
+} */
  @media (min-width:991px) and (max-width:1399px) {
   .FixedSizeInput{
     width: 70px;
   }
   .FixedSizeInput2{
         width: 50px;
+  }
+ }
+ @media (min-width:1200px) {
+  .CarPriceContent{
+      justify-content: space-between;
   }
  }
