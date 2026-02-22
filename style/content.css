@@ -11,7 +11,7 @@
   --sidebar-color: #ffff;
   --primary-color: #39629C;
   --text-color: #000000;
-  --notify-color: #C32222;
+  --notify-color: #dc3545;
   --main-color: #FF9626;
   --border-color: #cccccc;
   --background-color: #fef8e8;
@@ -2471,13 +2471,13 @@ input[type="date"]::-webkit-datetime-edit-day-field {
 /* edits  */
 .RequirdStar {
   font-size: 7px;
-  color: #C32222;
+  color: #dc3545;
 }
 
 .invalid-feedback {
   margin-top: 0;
   padding-top: .25rem;
-  color: #C32222;
+  color: #dc3545;
 
 }
 
@@ -2854,6 +2854,7 @@ textarea.form-control.is-valid {
 .CarPriceContent {
   height: 100%;
   align-content: space-between;
+  justify-content: space-between;
 }
 
 #Price-content-display {
@@ -3498,6 +3499,14 @@ display: none;
 }
 /* ================================================================================ Car Price  ======================================================================================= */
 /* ================================================================================================================================================================================== */
-.PriceInputs{
+/* .PriceInputs{
     min-width: 100px;
-}
+} */
+ @media (max-width:1399px) {
+  .FixedSizeInput{
+    width: 70px;
+  }
+  .FixedSizeInput2{
+        width: 50px;
+  }
+ }
