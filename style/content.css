@@ -3498,19 +3498,25 @@ display: none;
 }
 /* ================================================================================ Car Price  ======================================================================================= */
 /* ================================================================================================================================================================================== */
-/* .PriceInputs{
-    min-width: 100px;
-} */
- @media (min-width:991px) and (max-width:1399px) {
-  .FixedSizeInput{
-    width: 70px;
-  }
-  .FixedSizeInput2{
-        width: 50px;
-  }
- }
- @media (min-width:1200px) {
-  .CarPriceContent{
-      justify-content: space-between;
-  }
+
+ @media (min-width:992px) and (max-width:1399px) {
+  .FixedSizeInput {
+     width: 55px;
+   }
+   .PriceInputsLabel {
+     min-width: 110px;
+   }
+
+   .PriceInputs {
+     width: 95px;
+   }
+   .PriceInputs2 {
+     width: 70px;
+   }
+   .fixedWidthCol{
+    min-width: 260px;
+   }
+   .fixedWidthCol2{
+    min-width: 227px;
+   }
  }
