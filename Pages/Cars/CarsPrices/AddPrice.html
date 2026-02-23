@@ -463,7 +463,7 @@
                                             <div class="col-md-12 d-flex flex-column flex-1 min-h-0 ">
                                                 <div class="row g-1">
                                                     <div class="col-6 col-md-3">
-                                                        <button class="btn PriceTabsBtn" type="button"
+                                                        <button class="btn PriceTabsBtn active" type="button"
                                                             onclick="showContent(0)"><img
                                                                 src="../../../images/Static/CarPrices/PriceIcon.svg"
                                                                 style="height: 24px;">السعر</button>
@@ -493,8 +493,8 @@
                                                     <!-- Hidden Content Data -->
                                                     <div id="content-container">
                                                         <main>
-                                                            <div class="row CarPriceContent ">
-                                                                <div class="col-lg-3">
+                                                            <div class="row CarPriceContent gx-lg-2 gx-xxl-4 ">
+                                                                <div class="col-lg-auto col-xxl-3 CarPriceInputCol">
                                                                     <div class="row gx-2">
                                                                         <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
                                                                             <label for="DailyRent" class="form-label">الإيجار اليومي
@@ -502,7 +502,8 @@
                                                                             </label>
                                                                         </div>
                                                                         <div class="col">
-                                                                            <input type="number" id="DailyRent" class="form-control inputs number-input PriceInputs" name="DailyRent"
+                                                                            <input type="number" id="DailyRent"
+                                                                                class="form-control inputs number-input PriceInputs PriceInputController" name="DailyRent"
                                                                                 data-section="0" required>
                                                                             <div class="invaild">
                                                                                 <div class="invalid-feedback">الحقل
@@ -512,7 +513,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-lg-3">
+                                                                <div class="col-lg-auto col-xxl-3 CarPriceInputCol">
                                                                     <div class="row gx-2">
                                                                         <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
                                                                             <label for="WeekRent" class="form-label">الإيجار الأسبوعي
@@ -520,7 +521,8 @@
                                                                             </label>
                                                                         </div>
                                                                         <div class="col">
-                                                                            <input type="number" id="WeekRent" class="form-control inputs number-input PriceInputs" name="WeekRent"
+                                                                            <input type="number" id="WeekRent"
+                                                                                class="form-control inputs number-input PriceInputs PriceInputController" name="WeekRent"
                                                                                 data-section="0" required>
                                                                             <div class="invaild">
                                                                                 <div class="invalid-feedback">الحقل
@@ -529,13 +531,15 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-lg-3">
+                                                                <div class="col-lg-auto col-xxl-3 CarPriceInputCol">
                                                                     <div class="row gx-2">
                                                                         <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
-                                                                            <label for="monthRent" class="form-label">الإيجار الشهري<i class="fa-solid fa-star-of-life RequirdStar"></i></label>
+                                                                            <label for="monthRent" class="form-label">الإيجار الشهري<i
+                                                                                    class="fa-solid fa-star-of-life RequirdStar"></i></label>
                                                                         </div>
                                                                         <div class="col">
-                                                                            <input type="number" id="monthRent" class="form-control inputs number-input PriceInputs" name="monthRent"
+                                                                            <input type="number" id="monthRent"
+                                                                                class="form-control inputs number-input PriceInputs PriceInputController" name="monthRent"
                                                                                 data-section="0" required>
                                                                             <div class="invaild">
                                                                                 <div class="invalid-feedback">الحقل
@@ -544,14 +548,16 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-lg-3">
+                                                                <div class="col-lg-auto col-xxl-3 CarPriceInputCol">
                                                                     <div class="row gx-2">
                                                                         <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
-                                                                            <label for="YearRent" class="form-label">الإيجار السنوي <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                            <label for="YearRent" class="form-label">الإيجار السنوي <i
+                                                                                    class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                             </label>
                                                                         </div>
                                                                         <div class="col">
-                                                                            <input type="number" id="YearRent" class="form-control inputs number-input PriceInputs" name="YearRent"
+                                                                            <input type="number" id="YearRent"
+                                                                                class="form-control inputs number-input PriceInputs PriceInputController" name="YearRent"
                                                                                 data-section="0" required>
                                                                             <div class="invaild">
                                                                                 <div class="invalid-feedback">الحقل
@@ -560,28 +566,15 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-lg-3">
+                                                                <div class="col-lg-auto col-xxl-3 CarPriceInputCol">
                                                                     <div class="row gx-2">
                                                                         <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
-                                                                            <label for="extraKilometer" class="form-label">الكيلو الإضافي <i class="fa-solid fa-star-of-life RequirdStar"></i></label>
+                                                                            <label for="extraKilometer" class="form-label">الكيلو الإضافي <i
+                                                                                    class="fa-solid fa-star-of-life RequirdStar"></i></label>
                                                                         </div>
                                                                         <div class="col">
-                                                                            <input type="number" id="extraKilometer" class="form-control inputs number-input PriceInputs"
-                                                                                name="extraKilometer" data-section="0" required>
-                                                                            <div class="invaild">
-                                                                                <div class="invalid-feedback">الحقل
-                                                                                    مطلوب</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-3">
-                                                                    <div class="row gx-2">
-                                                                        <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
-                                                                            <label for="extraHour" class="form-label">الساعة الإضافية <i class="fa-solid fa-star-of-life RequirdStar"></i></label>
-                                                                        </div>
-                                                                        <div class="col">
-                                                                            <input type="number" id="extraHour" class="form-control inputs number-input PriceInputs" name="extraHour"
+                                                                            <input type="number" id="extraKilometer"
+                                                                                class="form-control inputs number-input PriceInputs PriceInputController" name="extraKilometer"
                                                                                 data-section="0" required>
                                                                             <div class="invaild">
                                                                                 <div class="invalid-feedback">الحقل
@@ -590,28 +583,47 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-lg-3">
+                                                                <div class="col-lg-auto col-xxl-3 CarPriceInputCol">
+                                                                    <div class="row gx-2">
+                                                                        <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
+                                                                            <label for="extraHour" class="form-label">الساعة الإضافية <i
+                                                                                    class="fa-solid fa-star-of-life RequirdStar"></i></label>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <input type="number" id="extraHour"
+                                                                                class="form-control inputs number-input PriceInputs PriceInputController" name="extraHour"
+                                                                                data-section="0" required>
+                                                                            <div class="invaild">
+                                                                                <div class="invalid-feedback">الحقل
+                                                                                    مطلوب</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-auto col-xxl-3 CarPriceInputCol">
                                                                     <div class="row gx-2">
                                                                         <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
                                                                             <label for="extraDriver" class="form-label">السائق الإضافي</label>
                                                                         </div>
                                                                         <div class="col">
-                                                                            <input type="number" id="extraDriver" class="form-control inputs number-input PriceInputs" name="extraDriver"
-                                                                                data-section="0" >
+                                                                            <input type="number" id="extraDriver"
+                                                                                class="form-control inputs number-input PriceInputs PriceInputController" name="extraDriver"
+                                                                                data-section="0">
                                                                             <div class="invaild">
                                                                                 <div class="invalid-feedback">الحقل مطلوب</div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-lg-3">
+                                                                <div class="col-lg-auto col-xxl-3 CarPriceInputCol">
                                                                     <div class="row gx-2">
                                                                         <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
                                                                             <label for="PrivateDriver" class="form-label">السائق الخاص</label>
                                                                         </div>
                                                                         <div class="col">
-                                                                            <input type="number" id="PrivateDriver" class="form-control inputs number-input PriceInputs"
-                                                                                name="PrivateDriver" data-section="0">
+                                                                            <input type="number" id="PrivateDriver"
+                                                                                class="form-control inputs number-input PriceInputs PriceInputController" name="PrivateDriver"
+                                                                                data-section="0">
                                                                             <div class="invaild">
                                                                                 <div class="invalid-feedback">الحقل
                                                                                     مطلوب</div>
@@ -619,14 +631,16 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-lg-auto col-xxl-3">
+                                                                <div class="col-lg-auto col-xxl-3 CarPriceInputCol">
                                                                     <div class="row gx-2 PriceColumnRow">
                                                                         <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
-                                                                            <label for="taxRate" class="form-label">نسبة الضريبة <i class="fa-solid fa-star-of-life RequirdStar"></i></label>
+                                                                            <label for="taxRate" class="form-label">نسبة الضريبة <i
+                                                                                    class="fa-solid fa-star-of-life RequirdStar"></i></label>
                                                                         </div>
                                                                         <div class="col">
-                                                                            <input type="number" id="taxRate" class="form-control inputs number-input PriceInputs FixedSizeInput"
-                                                                                name="taxRate" data-section="0" required>
+                                                                            <input type="number" id="taxRate"
+                                                                                class="form-control inputs number-input PriceInputs PriceInputController" name="taxRate"
+                                                                                data-section="0" required>
                                                                             <div class="invaild">
                                                                                 <div class="invalid-feedback">الحقل
                                                                                     مطلوب</div>
@@ -634,14 +648,15 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-lg-auto col-xxl-3">
+                                                                <div class="col-lg-auto col-xxl-3 CarPriceInputCol">
                                                                     <div class="row gx-2 PriceColumnRow">
                                                                         <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
                                                                             <label for="AnotherFee" class="form-label"> رسوم حكومية </label>
                                                                         </div>
                                                                         <div class="col">
-                                                                            <input type="number" id="AnotherFee" class="form-control inputs number-input PriceInputs FixedSizeInput" name="AnotherFee"
-                                                                                data-section="0" >
+                                                                            <input type="number" id="AnotherFee"
+                                                                                class="form-control inputs number-input PriceInputs PriceInputController" name="AnotherFee"
+                                                                                data-section="0">
                                                                             <div class="invaild">
                                                                                 <div class="invalid-feedback">الحقل
                                                                                     مطلوب</div>
@@ -649,15 +664,16 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-
-                                                                <div class="col-lg-auto col-xxl-3">
+                                                        
+                                                                <div class="col-lg-auto col-xxl-3 CarPriceInputCol">
                                                                     <div class="row gx-2 PriceColumnRow">
                                                                         <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
                                                                             <label for="AnotherFee" class="form-label"> رسوم إدارية </label>
                                                                         </div>
                                                                         <div class="col">
-                                                                            <input type="number" id="AnotherFee" class="form-control inputs number-input PriceInputs FixedSizeInput"
-                                                                                name="AnotherFee" data-section="0">
+                                                                            <input type="number" id="AnotherFee"
+                                                                                class="form-control inputs number-input PriceInputs PriceInputController" name="AnotherFee"
+                                                                                data-section="0">
                                                                             <div class="invaild">
                                                                                 <div class="invalid-feedback">الحقل
                                                                                     مطلوب</div>
@@ -665,26 +681,26 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-
-                                                              <div class="col-lg-auto col-xxl-3">
+                                                        
+                                                                <div class="col-lg-auto col-xxl-3 CarPriceInputCol">
                                                                     <div class="row gx-2 PriceColumnRow">
                                                                         <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
                                                                             <label for="internalAuthorizationFee" class="form-label"> التفويض الداخلي / الخارجي </label>
                                                                         </div>
                                                                         <div class="col">
                                                                             <div class="row g-1 flex-nowrap">
-                                                                                <div class="col-auto">
+                                                                                <div class="col">
                                                                                     <input type="number" id="internalAuthorizationFee"
-                                                                                        class="form-control inputs number-input FixedSizeInput" name="internalAuthorizationFee"
-                                                                                        data-section="0" autocomplete="off" style="max-width: 80px;">
+                                                                                        class="form-control inputs number-input FixedSizeInput FixedPriceInputController"
+                                                                                        name="internalAuthorizationFee" data-section="0" autocomplete="off">
                                                                                     <div class="invaild">
                                                                                         <div class="invalid-feedback">الحقل مطلوب</div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="col-auto">
+                                                                                <div class="col">
                                                                                     <input type="number" id="externalAuthorizationFee"
-                                                                                        class="form-control inputs number-input FixedSizeInput" name="externalAuthorizationFee"
-                                                                                        data-section="0" autocomplete="off" style="max-width: 80px;">
+                                                                                        class="form-control inputs number-input FixedSizeInput FixedPriceInputController"
+                                                                                        name="externalAuthorizationFee" data-section="0" autocomplete="off">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -692,7 +708,7 @@
                                                                 </div>
                                                                 <div class="col-md-12">
                                                                     <div class="row gx-2">
-                                                                        <div class="col-lg-auto col-xxl-12 d-flex align-items-center centered-input-label PriceInputsLabel">
+                                                                        <div class="col-lg-auto col-xxl-12 d-flex align-items-center centered-input-label">
                                                                             <label for="notes">الملاحظات</label>
                                                                         </div>
                                                                         <div class="col d-flex justify-content-start">
@@ -704,15 +720,16 @@
                                                         </main>
                                                         <main style="display: none;">
                                                             <div class="row  CarPriceContent">
-                                                                <div class="col-lg-auto col-xxl-3">
-                                                                    <div class="row gx-2 PriceColumnRow">
+                                                                <div class="col-lg-auto col-xxl-3 CarPriceInputCol CarPriceInputCol2 fixedWidthCol">
+                                                                    <div class="row gx-2 PriceColumnRow justify-content-between">
                                                                         <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
                                                                             <label for="freeDailyKilometers" class="form-label">الكيلوات المجاني اليومي
                                                                                 <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                             </label>
                                                                         </div>
-                                                                        <div class="col">
-                                                                            <input type="number" id="freeDailyKilometers" class="form-control inputs number-input PriceInputs FixedSizeInput"
+                                                                        <div class="col-auto">
+                                                                            <input type="number" id="freeDailyKilometers"
+                                                                                class="form-control inputs number-input PriceInputs2 PriceInputController2"
                                                                                 name="freeDailyKilometers" data-section="1" required>
                                                                             <div class="invaild">
                                                                                 <div class="invalid-feedback">الحقل
@@ -721,7 +738,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-lg-auto col-xxl-3">
+                                                                <div class="col-lg-auto col-xxl-3 CarPriceInputCol ">
                                                                     <div class="row gx-2 PriceColumnRow">
                                                                         <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
                                                                             <label for="freeHours" class="form-label">الساعة المجانية
@@ -729,7 +746,8 @@
                                                                             </label>
                                                                         </div>
                                                                         <div class="col">
-                                                                            <input type="number" id="freeHours" class="form-control inputs number-input PriceInputs FixedSizeInput2" name="freeHours"
+                                                                            <input type="number" id="freeHours"
+                                                                                class="form-control inputs number-input PriceInputs2 PriceInputController2" name="freeHours"
                                                                                 data-section="1" required>
                                                                             <div class="invaild">
                                                                                 <div class="invalid-feedback">الحقل
@@ -738,16 +756,17 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-lg-auto col-xxl-3">
-                                                                    <div class="row gx-2 PriceColumnRow">
+                                                                <div class="col-lg-auto col-xxl-3 CarPriceInputCol CarPriceInputCol3 fixedWidthCol2 ">
+                                                                    <div class="row gx-2 PriceColumnRow justify-content-between">
                                                                         <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
                                                                             <label for="maxHours" class="form-label">الحد الأعلى للساعات
                                                                                 <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                             </label>
                                                                         </div>
-                                                                        <div class="col">
-                                                                            <input type="number" id="maxHours" class="form-control inputs number-input FixedSizeInput2" name="maxHours" data-section="1"
-                                                                                required>
+                                                                        <div class="col-auto">
+                                                                            <input type="number" id="maxHours"
+                                                                                class="form-control inputs number-input PriceInputs2 PriceInputController2" name="maxHours"
+                                                                                data-section="1" required>
                                                                             <div class="invaild">
                                                                                 <div class="invalid-feedback">الحقل
                                                                                     مطلوب</div>
@@ -755,15 +774,16 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-lg-auto col-xxl-3">
-                                                                    <div class="row gx-2 PriceColumnRow">
+                                                                <div class="col-lg-auto col-xxl-3 CarPriceInputCol CarPriceInputCol3 fixedWidthCol2">
+                                                                    <div class="row gx-2 PriceColumnRow justify-content-between">
                                                                         <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
                                                                             <label for="contractCancellationHours" class="form-label">ساعات إلغاء الحجز
                                                                                 <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                             </label>
                                                                         </div>
-                                                                        <div class="col">
-                                                                            <input type="number" id="contractCancellationHours" class="form-control inputs number-input PriceInputs FixedSizeInput"
+                                                                        <div class="col-auto">
+                                                                            <input type="number" id="contractCancellationHours"
+                                                                                class="form-control inputs number-input PriceInputs2 PriceInputController2"
                                                                                 name="contractCancellationHours" data-section="1" required>
                                                                             <div class="invaild">
                                                                                 <div class="invalid-feedback">الحقل
@@ -772,73 +792,73 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="row">
-                                                                    <div class="col-lg-3">
-                                                                        <div class="row gx-2">
-                                                                            <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
-                                                                                <label for="minDriverAge" class="form-label">أقل عمر للسائق
-                                                                                    <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                                </label>
-                                                                            </div>
-                                                                            <div class="col">
-                                                                                <input type="number" id="minDriverAge" class="form-control inputs number-input PriceInputs"
-                                                                                    name="minDriverAge" data-section="1" required>
-                                                                                <div class="invaild">
-                                                                                    <div class="invalid-feedback">الحقل
-                                                                                        مطلوب
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-3">
-                                                                        <div class="row gx-2">
-                                                                            <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
-                                                                                <label for="maxDriverAge" class="form-label">أكبر عمر للسائق
-                                                                                    <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                                                </label>
-                                                                            </div>
-                                                                            <div class="col">
-                                                                                <input type="number" id="maxDriverAge" class="form-control inputs number-input PriceInputs" name="maxDriverAge"
-                                                                                    data-section="1" required>
-                                                                                <div class="invaild">
-                                                                                    <div class="invalid-feedback">الحقل
-                                                                                        مطلوب
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-auto">
-                                                                        <div class="row flex-column h-100">
-                                                                            <div class="col d-flex">
-                                                                                <div class="d-flex gap-2 align-items-end"
-                                                                                    style="padding-bottom: calc((37px - 1.5em) / 2);">
-                                                                                    <input
-                                                                                        class="form-check-input checkbox"
-                                                                                        type="checkbox" value="checked"
-                                                                                        id="Sdad-Account"
-                                                                                        name="Sdad-Account">
-                                                                                    <label class="form-check-label"
-                                                                                        for="Sdad-Account">
-                                                                                        السماح بسائق إضافي
+                                                                <div class="col-12">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-auto col-xxl-3 CarPriceInputCol CarPriceInputCol2  fixedWidthCol">
+                                                                            <div class="row gx-2 PriceColumnRow justify-content-between">
+                                                                                <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
+                                                                                    <label for="minDriverAge" class="form-label">أقل عمر للسائق
+                                                                                        <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                                     </label>
                                                                                 </div>
+                                                                                <div class="col-auto">
+                                                                                    <input type="number" id="minDriverAge"
+                                                                                        class="form-control inputs number-input PriceInputs2 PriceInputController2"
+                                                                                        name="minDriverAge" data-section="1" required>
+                                                                                    <div class="invaild">
+                                                                                        <div class="invalid-feedback">الحقل
+                                                                                            مطلوب
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
                                                                             </div>
-                                                                            <div class="invaild">
+                                                                        </div>
+                                                                        <div class="col-lg-auto col-xxl-3 CarPriceInputCol">
+                                                                            <div class="row gx-2">
+                                                                                <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
+                                                                                    <label for="maxDriverAge" class="form-label">أكبر عمر للسائق
+                                                                                        <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="col">
+                                                                                    <input type="number" id="maxDriverAge"
+                                                                                        class="form-control inputs number-input PriceInputs2 PriceInputController2"
+                                                                                        name="maxDriverAge" data-section="1" required>
+                                                                                    <div class="invaild">
+                                                                                        <div class="invalid-feedback">الحقل
+                                                                                            مطلوب
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-auto">
+                                                                            <div class="row flex-column h-100">
+                                                                                <div class="col d-flex">
+                                                                                    <div class="d-flex gap-2 align-items-end" style="padding-bottom: calc((37px - 1.5em) / 2);">
+                                                                                        <input class="form-check-input checkbox" type="checkbox" value="checked"
+                                                                                            id="Sdad-Account" name="Sdad-Account">
+                                                                                        <label class="form-check-label" for="Sdad-Account">
+                                                                                            السماح بسائق إضافي
+                                                                                        </label>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="invaild">
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-lg-3">
-                                                                    <div class="row gx-2">
+                                                                <div class="col-lg-auto col-xxl-3 CarPriceInputCol CarPriceInputCol2 fixedWidthCol">
+                                                                    <div class="row gx-2 PriceColumnRow justify-content-between">
                                                                         <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
                                                                             <label for="accidentDeductible" class="form-label">تحمل الحادث
                                                                                 <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                             </label>
                                                                         </div>
-                                                                        <div class="col">
-                                                                            <input type="number" id="accidentDeductible" class="form-control inputs number-input PriceInputs"
+                                                                        <div class="col-auto">
+                                                                            <input type="number" id="accidentDeductible"
+                                                                                class="form-control inputs number-input PriceInputs2 PriceInputController2"
                                                                                 name="accidentDeductible" data-section="1" required>
                                                                             <div class="invaild">
                                                                                 <div class="invalid-feedback">الحقل
@@ -847,7 +867,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-lg-3">
+                                                                <div class="col-lg-auto col-xxl-3 CarPriceInputCol ">
                                                                     <div class="row gx-2">
                                                                         <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
                                                                             <label for="theftDeductible" class="form-label">تحمل
@@ -856,7 +876,8 @@
                                                                             </label>
                                                                         </div>
                                                                         <div class="col">
-                                                                            <input type="number" id="theftDeductible" class="form-control inputs number-input PriceInputs"
+                                                                            <input type="number" id="theftDeductible"
+                                                                                class="form-control inputs number-input PriceInputs2 PriceInputController2"
                                                                                 name="theftDeductible" data-section="1" required>
                                                                             <div class="invaild">
                                                                                 <div class="invalid-feedback">الحقل
@@ -865,15 +886,16 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-lg-3">
-                                                                    <div class="row gx-2">
+                                                                <div class="col-lg-auto col-xxl-3 CarPriceInputCol CarPriceInputCol3 fixedWidthCol2">
+                                                                    <div class="row gx-2 PriceColumnRow justify-content-between">
                                                                         <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
                                                                             <label for="drowningDeductible" class="form-label">تحمل الغرق
                                                                                 <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                             </label>
                                                                         </div>
-                                                                        <div class="col">
-                                                                            <input type="number" id="drowningDeductible" class="form-control inputs number-input PriceInputs"
+                                                                        <div class="col-auto">
+                                                                            <input type="number" id="drowningDeductible"
+                                                                                class="form-control inputs number-input PriceInputs2 PriceInputController2"
                                                                                 name="drowningDeductible" data-section="1" required>
                                                                             <div class="invaild">
                                                                                 <div class="invalid-feedback">الحقل
@@ -882,16 +904,17 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-lg-3">
-                                                                    <div class="row gx-2">
+                                                                <div class="col-lg-auto col-xxl-3 CarPriceInputCol CarPriceInputCol3 fixedWidthCol2">
+                                                                    <div class="row gx-2  PriceColumnRow justify-content-between">
                                                                         <div class="col-lg-auto col-xxl-12 centered-input-label PriceInputsLabel">
                                                                             <label for="fireDeductible" class="form-label">تحمل
                                                                                 الحريق
                                                                                 <i class="fa-solid fa-star-of-life RequirdStar"></i>
                                                                             </label>
                                                                         </div>
-                                                                        <div class="col">
-                                                                            <input type="number" id="fireDeductible" class="form-control inputs number-input PriceInputs"
+                                                                        <div class="col-auto">
+                                                                            <input type="number" id="fireDeductible"
+                                                                                class="form-control inputs number-input PriceInputs2 PriceInputController2"
                                                                                 name="fireDeductible" data-section="1" required>
                                                                             <div class="invaild">
                                                                                 <div class="invalid-feedback">الحقل
@@ -2224,31 +2247,61 @@
     </script>
     <script>
         function updateLabelCols() {
+            const screenWidth = window.innerWidth;
+            const isTargetRange = screenWidth >= 1200 && screenWidth <= 1399;
 
             const leftClosed = $('.sidebar-left').hasClass('closed');
             const rightClosed = $('.sidebar-right').hasClass('closed');
+            const bothClosed = leftClosed && rightClosed;
 
             const labels = $('.PriceInputsLabel');
             const labelsRow = $('.PriceColumnRow');
+            const inputsCol = $('.CarPriceInputCol');
+            const inputsCol2 = $('.CarPriceInputCol2');
+            const inputsCol3 = $('.CarPriceInputCol3');
+            const inputs = $('.PriceInputController');
+            const inputs2 = $('.PriceInputController2');
+            const Delegation = $('.FixedPriceInputController');
 
-            if (leftClosed && rightClosed) {
+            if (isTargetRange && bothClosed) {
                 labels.removeClass('col-lg-12').addClass('col-lg-auto');
                 labelsRow.removeClass('flex-column').addClass('flex-row');
-            }
-            else {
+                inputsCol.removeClass('col-lg-3 col-lg-6').addClass('col-lg-auto col-xxl-3');
+                inputsCol2.addClass('fixedWidthCol');
+                inputsCol3.addClass('fixedWidthCol2');
+                inputs.addClass('PriceInputs');
+                inputs2.addClass('PriceInputs2').removeClass('w-100');
+                Delegation.addClass('FixedSizeInput');
+
+            } else if (!isTargetRange && !bothClosed) {
                 labels.removeClass('col-lg-auto').addClass('col-lg-12');
                 labelsRow.addClass('flex-column').removeClass('flex-row');
+                inputsCol.removeClass('col-lg-auto col-xxl-3 col-lg-3').addClass('col-lg-6');
+                inputsCol2.removeClass('fixedWidthCol');
+                inputsCol3.removeClass('fixedWidthCol2');
+                inputs.removeClass('PriceInputs');
+                inputs2.removeClass('PriceInputs2').addClass('w-100');
+                Delegation.removeClass('FixedSizeInput');
+
+            } else {
+                labels.removeClass('col-lg-auto').addClass('col-lg-12');
+                labelsRow.addClass('flex-column').removeClass('flex-row');
+                inputsCol.removeClass('col-lg-auto col-xxl-3 col-lg-6').addClass('col-lg-3');
+                inputsCol2.removeClass('fixedWidthCol');
+                inputsCol3.removeClass('fixedWidthCol2');
+                inputs.removeClass('PriceInputs');
+                inputs2.removeClass('PriceInputs2').addClass('w-100');
+                Delegation.removeClass('FixedSizeInput');
             }
         }
 
         updateLabelCols();
 
-
         const observer = new MutationObserver(updateLabelCols);
-
         observer.observe(document.querySelector('.sidebar-left'), { attributes: true });
         observer.observe(document.querySelector('.sidebar-right'), { attributes: true });
 
+        window.addEventListener('resize', updateLabelCols);
     </script>
 </body>
 
