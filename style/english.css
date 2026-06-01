@@ -252,7 +252,10 @@ body {
 .techncal-connect-error {
     direction: ltr;
 }
-
+.whatsappWarninng{
+  border-left: none;
+  border-right: 2px dashed #cccccc88;
+}
 /*marquee*/
 
 .marquee-xmark {
@@ -322,3 +325,24 @@ body {
     background-position:right .75rem center;
 }
 
+
+/* ==========membership============= */
+.img-Membership-card {
+      padding: 0px 8px 0px 20px;
+}
+
+/* excel icon  */
+@media (max-width:1200px) {
+
+  .excel-icon {
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 0;
+  }
+}
+/* سياسة التأجير */
+.policy-state {
+    left: auto;
+    right: 10px;
+}
