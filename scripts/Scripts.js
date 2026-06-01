@@ -199,19 +199,45 @@ const tooltipList = [...tooltipTriggerList].map(
 
 // //***************************************************************** inputs collapses toggle *************************************************************************************** */
 const inputsAccordion = document.querySelectorAll(".inputs-accordion-item");
+const accordionContainer = document.querySelector(".inputs-accordion-container");
 
-inputsAccordion.forEach((item) => {
-  item
-    .querySelector(".inputs-accordion-item-header")
-    .addEventListener("click", () => {
-      item.classList.toggle("open");
-      inputsAccordion.forEach((otherElement) => {
-        if (otherElement !== item) {
+if (accordionContainer) {
+  inputsAccordion.forEach((item) => {
+    const header = item.querySelector(".inputs-accordion-item-header");
+    if (header) {
+      header.addEventListener("click", () => {
+        const wasOpen = item.classList.contains("open");
+        
+        inputsAccordion.forEach((otherElement) => {
           otherElement.classList.remove("open");
+        });
+        
+        if (!wasOpen) {
+          item.classList.add("open");
+          
+          setTimeout(() => {
+            header.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+            
+            setTimeout(() => {
+              const containerHeight = accordionContainer.clientHeight;
+              
+              if (containerHeight <= 700) {
+                const currentScroll = accordionContainer.scrollTop;
+                accordionContainer.scrollTo({
+                  top: currentScroll + 100, 
+                  behavior: "smooth"
+                });
+              }
+            }, 300);
+          }, 100);
         }
       });
-    });
-});
+    }
+  });
+}
 // //***************************************************************** move foucs between fields*************************************************************************************** */
 document.addEventListener("DOMContentLoaded", function () {
   const accordionItems = document.querySelectorAll(".inputs-accordion-item");
@@ -433,4 +459,3 @@ employeeNames.forEach((element) => {
   const limitedName = getFirstTwoWords(originalName);
   element.textContent = limitedName;
 });
-
