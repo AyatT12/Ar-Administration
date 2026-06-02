@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -352,7 +352,7 @@
             <main class="content-area px-3">
                 <div class="container d-flex flex-column InputsPageContainer">
                     <div class="row flex-column min-h-0 flex-1 position-relative">
-                        <div class="col-xxl-9 Data-container ">
+                        <div class="col-xxl-9 Data-container position-relative">
                             <form class="ContentForm needs-validation" novalidate>
                                 <div class="row justify-content-center flex-1 min-h-0">
                                     <div class="col-lg-12 d-flex flex-column h-100">
@@ -426,11 +426,18 @@
                                                                                     class="form-label"> تاريخ الميلاد <i
                                                                                         class="fa-solid fa-star-of-life RequirdStar"></i></label>
                                                                                 <input type="date" id="BirthDate"
+                                                                                    min="1926-04-09" max="2019-04-09"
                                                                                     class="form-control inputs custom-date-input"
-                                                                                    name="BirthDate" required>
+                                                                                    data-val="true"
+                                                                                    data-val-required="الحقل مطلوب"
+                                                                                    name="CrCasRenterPrivateDriverInformationBirthDate"
+                                                                                    value="" autocomplete="off"
+                                                                                    required>
                                                                                 <div class="invaild">
                                                                                     <div class="invalid-feedback">
-                                                                                        الحقل مطلوب
+                                                                                        <span class="text-danger"
+                                                                                            id="CrCasRenterPrivateDriverInformationBirthDate-Error">الحقل
+                                                                                            مطلوب</span>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -523,7 +530,7 @@
                                                                 </div>
 
                                                                 <div class="row">
-                                                                    <div class="col-md-6 position-relative ">
+                                                                    <div class="col-md-6  ">
                                                                         <label for="Nationlity"
                                                                             class="form-label">الجنسية <i
                                                                                 class="fa-solid fa-star-of-life RequirdStar"></i></label>
@@ -1471,9 +1478,31 @@
     <script src="../../../scripts/uploadPic2.js"></script>
     <script>
         const nationalities = [
-            { "text": "سعودي ", "value": "1700000003" },
-            { "text": "مصري", "value": "1700000004" },
-            { "text": "كوري جنوبي", "value": "1700000005" },
+            { "text": "سعودي", "value": "1700000001" },
+            { "text": "مصري", "value": "1700000002" },
+            { "text": "كوري جنوبي", "value": "1700000003" },
+            { "text": "إماراتي", "value": "1700000004" },
+            { "text": "أردني", "value": "1700000005" },
+            { "text": "كويتي", "value": "1700000006" },
+            { "text": "لبناني", "value": "1700000007" },
+            { "text": "سوري", "value": "1700000008" },
+            { "text": "عراقي", "value": "1700000009" },
+            { "text": "يمني", "value": "1700000010" },
+            { "text": "باكستاني", "value": "1700000011" },
+            { "text": "هندي", "value": "1700000012" },
+            { "text": "تركي", "value": "1700000013" },
+            { "text": "إندونيسي", "value": "1700000014" },
+            { "text": "فلسطيني", "value": "1700000015" },
+            { "text": "مغربي", "value": "1700000016" },
+            { "text": "تونسي", "value": "1700000017" },
+            { "text": "جزائري", "value": "1700000018" },
+            { "text": "سوداني", "value": "1700000019" },
+            { "text": "إثيوبي", "value": "1700000020" },
+            { "text": "نيجيري", "value": "1700000021" },
+            { "text": "أمريكي", "value": "1700000022" },
+            { "text": "بريطاني", "value": "1700000023" },
+            { "text": "فرنسي", "value": "1700000024" },
+
         ];
         const dataLists = { Nationalities: nationalities };
         $(document).ready(function () {
@@ -1483,7 +1512,6 @@
                 const $hiddenCode = $("#" + inputId + "-code");
                 const $error = $("#" + errorElementId);
 
-                // Arrow Initialization
                 const $arrow = $('<div class="autocomplete-arrow"></div>');
                 $('body').append($arrow);
 
@@ -1532,40 +1560,35 @@
                 function updateAutocompletePosition() {
                     if ($list.is(":visible")) {
                         const inputRect = $input[0].getBoundingClientRect();
-                        const viewportHeight = window.innerHeight;
                         const viewportWidth = window.innerWidth;
 
                         const visibleItems = $list.find('div').toArray().map(div => div.textContent);
                         const calculatedWidth = getMaxItemWidth(visibleItems);
                         $list.css('width', calculatedWidth + 'px');
 
-
                         let leftPosition;
                         if (isRTL) {
-
                             leftPosition = inputRect.left - (calculatedWidth - 230);
-
-                            if (leftPosition < 10) {
-                                leftPosition = 10;
-                            }
+                            if (leftPosition < 10) leftPosition = 10;
                         } else {
                             leftPosition = inputRect.right - (calculatedWidth - 230);
-
                             if (leftPosition + calculatedWidth > viewportWidth - 10) {
                                 leftPosition = viewportWidth - calculatedWidth - 10;
                             }
                         }
 
-                        const spaceBelow = viewportHeight - inputRect.bottom;
-                        const spaceAbove = inputRect.top;
-
-                        const maxHeight = Math.min(spaceBelow);
+                        const dataContainer = document.querySelector('.Data-container');
+                        const containerRect = dataContainer.getBoundingClientRect();
+                        const containerTop = containerRect.top;
+                        const maxHeight = containerRect.bottom - containerTop;
 
                         $list.css({
-                            'top': (inputRect.top + 3) + 'px',
+                            'position': 'fixed',
+                            'top': containerTop + 'px',
                             'left': leftPosition + 'px',
+                            'height': maxHeight + 'px',
                             'max-height': maxHeight + 'px',
-                            'height': 'auto'
+                            'overflow-y': 'auto'
                         });
 
                         updateArrowPosition();
@@ -1573,9 +1596,12 @@
                 }
                 function updateArrowPosition() {
                     const listRect = $list[0].getBoundingClientRect();
+                    const inputRect = $input[0].getBoundingClientRect();
+                    const inputMidY = inputRect.top + inputRect.height / 2;
+
                     let arrowStyle = {
                         'position': 'fixed', 'z-index': '10001', 'display': 'block',
-                        'pointer-events': 'none', 'top': (listRect.top + 10) + 'px'
+                        'pointer-events': 'none', 'top': (inputMidY - 8) + 'px'
                     };
 
                     if (isRTL) {
@@ -1593,7 +1619,6 @@
                     $arrow.css(arrowStyle);
                 }
 
-                // Input Logic with matchesFound check
                 $input.on("input", function () {
 
                     const value = this.value.trim().toLowerCase();
@@ -1675,6 +1700,25 @@
             setupAutocomplete("Nationlity", "autocomplete-Nationalities", dataLists.Nationalities);
         });
 
+    </script>
+    <script>
+        const language = document.documentElement.lang;
+        const dateInput = document.getElementById('BirthDate');
+        const errorSpan = document.getElementById('CrCasRenterPrivateDriverInformationBirthDate-Error');
+
+        errorSpan.textContent = language === 'ar' ? 'الحقل مطلوب' : 'This field is required';
+
+        dateInput.addEventListener('change', function () {
+            if (this.value == '') {
+                errorSpan.textContent = language === 'ar' ? 'الحقل مطلوب' : 'This field is required';
+            } else if (!this.validity.valid) {
+                errorSpan.textContent = language === 'ar'
+                    ? 'التاريخ خارج النطاق المسموح به، يجب أن يكون بين 1926 و 2019'
+                    : 'Date is out of range, must be between 1926 and 2019';
+            } else {
+                errorSpan.textContent = '';
+            }
+        });
     </script>
 </body>
 
