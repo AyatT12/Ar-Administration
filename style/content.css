@@ -3074,7 +3074,7 @@ display: none;
 /*  */
 .autocomplete-items {
   display: none;
-  position: fixed;
+  position: absolute;
   border: 1px solid #ced4da;
   z-index: 9999;
   background-color: #fff;
@@ -3087,13 +3087,14 @@ display: none;
 }
 
 .autocomplete-arrow {
-  position: fixed;
+  position: absolute;
   z-index: 10000;
   pointer-events: none;
   display: none;
   width: 0;
   height: 0;
 }
+
 
 .autocomplete-items div {
   padding: 8px 12px;
