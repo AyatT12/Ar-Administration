@@ -17,287 +17,49 @@
     <link rel="stylesheet" href="../../../style/content.css">
     <!-- <link rel="stylesheet" href="../../../style/english.css">  -->
     <style>
-        .content-area {
-            padding: 1.5rem;
-        }
-    
-        .save-col {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 8px;
-        }
-    
-        .custom-img-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 4px;
-        }
-    
-        /* ── Tabs ── */
-        .form-tabs {
-            display: flex;
-            gap: 0;
-            border-bottom: 2px solid #e8dcc8;
-            margin-bottom: 1.5rem;
-        }
-    
-        .form-tab {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 11px 24px;
-            font-size: 14px;
-            font-weight: 500;
-            color: #888;
-            cursor: pointer;
-            border: none;
-            background: none;
-            border-bottom: 2px solid transparent;
-            margin-bottom: -2px;
-            transition: color 0.15s, border-color 0.15s;
-            white-space: nowrap;
-        }
-    
-        .form-tab:hover {
-            color: #FF9626;
-        }
-    
-        .form-tab.active {
-            color: #FF9626;
-            border-bottom-color: #FF9626;
-        }
-    
-        .tab-num {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            font-size: 12px;
-            font-weight: 600;
-            background: #e8dcc8;
-            color: #888;
-            transition: background 0.15s, color 0.15s;
-        }
-    
-        .form-tab.Show .tab-num {
-            background: #FF9626;
-            color: #fff;
-        }
-    
-    
-    
-        .tab-divider {
-            display: flex;
-            align-items: center;
-            padding: 0 4px;
-            color: #ccc;
-            font-size: 18px;
-            margin-bottom: 2px;
-        }
-    
-        /* ── Tab panes ── */
-        .tab-pane {
-            display: none;
-        }
-    
-        .tab-pane.Show {
-            display: flex;
-            flex: 1;
-            min-height: 0;
-            flex-direction: column;
-            overflow-y: auto;
-            overflow-x: hidden;
-        }
-    
-        .tab-pane-row {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-    
         .verify-pill {
+            background: #eef2f7;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 0.2rem 0.8rem;
+            font-size: 0.7rem;
+            margin-right: 8px;
+            color: #2c3e50;
             display: inline-flex;
             align-items: center;
             gap: 5px;
-            background: #C8860A;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            padding: 4px 13px;
-            font-size: 11px;
-            cursor: pointer;
+            transition: 0.15s;
             white-space: nowrap;
-            transition: background 0.15s;
-            margin-right: 8px;
-        }
-    
-        .verify-pill:hover {
-            background: #a36d08;
+            font-weight: 500;
         }
     
         .verify-pill:disabled {
-            background: #ccc;
-            cursor: default;
+            opacity: 0.45;
+            cursor: not-allowed;
+            background: #e9edf4;
         }
     
-        .verify-pill.verified {
-            background: #3B6D11;
+        .verify-pill:not(:disabled):hover {
+            background: #d4dce8;
+            border-color: #a0b3cc;
         }
     
-        .otp-panel {
-            background: #fffaef;
-            border: 1px solid #C8860A;
-            border-radius: 10px;
-            padding: 14px 16px;
-            margin-top: 10px;
+        .verify-pill i {
+            font-size: 0.75rem;
         }
     
-        .otp-hint {
-            font-size: 12px;
-            color: #666;
-            margin-bottom: 12px;
-        }
-    
-        .otp-boxes {
-            display: flex;
-            gap: 8px;
-            direction: ltr;
-            justify-content: center;
-            margin-bottom: 12px;
-        }
-    
-        .otp-box {
-            width: 44px;
-            height: 48px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+        .otp-digit {
+            width: 0.8599999999999999em;
+            margin: 0.1em;
+            font-size: 2.0em;
             text-align: center;
-            font-size: 20px;
-            font-weight: 600;
-            background: #fff;
-            color: #333;
-            outline: none;
-            transition: border-color 0.15s;
-        }
-    
-        .otp-box:focus {
-            border-color: #C8860A;
-            border-width: 1.5px;
-        }
-    
-        .otp-box.filled {
-            border-color: #C8860A;
-        }
-    
-        .otp-box.ok {
-            border-color: #3B6D11;
-            background: #f3fae8;
-        }
-    
-        .otp-box.bad {
-            border-color: #c0392b;
-            background: #fff0f0;
-        }
-    
-        .otp-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-    
-        .resend-btn {
-            background: none;
-            border: none;
-            color: #C8860A;
-            font-size: 12px;
-            cursor: pointer;
-            text-decoration: underline;
-        }
-    
-        .resend-btn:disabled {
-            color: #aaa;
-            text-decoration: none;
-            cursor: default;
-        }
-    
-        .otp-confirm-btn {
-            background: #1a1a2e;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            padding: 7px 18px;
-            font-size: 12px;
-            cursor: pointer;
-        }
-    
-        .otp-confirm-btn:hover {
-            background: #333;
-        }
-    
-        .field-status {
-            font-size: 12px;
-            margin-top: 5px;
-        }
-    
-        .field-status.ok {
-            color: #3B6D11;
-        }
-    
-        .field-status.bad {
-            color: #c0392b;
-        }
-    
-        .field-status.info {
-            color: #C8860A;
-        }
-    
-        .tab-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 1.5rem;
-            padding-top: 1rem;
-        }
-    
-        .btn-next {
-            background: white;
+            appearance: textfield;
+            -webkit-appearance: textfield;
+            border: 0;
             color: #FF9626;
-            font-weight: bold;
-            border: none;
-            border-radius: 8px;
-            padding: 10px 0px;
-    
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: background 0.15s;
-        }
-    
-        .btn-prev {
-            background: white;
-            color: #FF9626;
-            font-weight: bold;
-            border: none;
-            border-radius: 8px;
-            padding: 10px 0px;
-    
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: background 0.15s;
-        }
-    
-        .form-card {
-            display: flex;
-            flex: 1;
-            min-height: 0;
-            flex-direction: column;
+            background-color: #F7F7F7;
+            border-radius: 6px;
+            border-bottom: 2px solid #39629C;
         }
     </style>
 </head>
@@ -626,261 +388,185 @@
             <main class="content-area px-3">
                 <div class="container d-flex flex-column InputsPageContainer">
                     <div class="row flex-column min-h-0 flex-1 position-relative">
-                        <div class="col-xxl-9 Data-container">
-                            <form class="ContentForm needs-validation" novalidate id="ownerForm">
+                        <div class="col-xxl-9 Data-container position-relative">
+                            <form class="ContentForm needs-validation" novalidate>
                                 <div class="row justify-content-center flex-1 min-h-0">
                                     <div class="col-lg-12 d-flex flex-column h-100">
-        
                                         <div class="row my-2">
                                             <div class="col-md-6">
                                                 <h3>إضافة مالك</h3>
                                             </div>
                                             <div class="col-md-6 save-col">
-                                                <button type="submit" class="custom-img-btn"> <img
-                                                        src="../../../images/Static/States/save.svg" /></button>
-                                                <button type="button" class="custom-img-btn"><a
-                                                        class="d-flex align-items-center" href="owners.html"><img
-                                                            class="Chevron"
-                                                            src="../../../images/Static/States/Chevron_Left.svg" /></a></button>
+                                                <button type="submit" class="custom-img-btn"> <img src="../../../images/Static/States/save.svg" /></button>
+                                                <button type="button" class="custom-img-btn"><a class="d-flex align-items-center" href="owners.html"><img
+                                                            class="Chevron" src="../../../images/Static/States/Chevron_Left.svg" /></a></button>
                                             </div>
                                         </div>
-        
-                                        <div class="form-card mt-3">
-        
-                                            <div class="form-tabs">
-                                                <button type="button" class="form-tab Show" id="tab1-btn" onclick="goTab(1)">
-                                                    <span class="tab-num">1</span>
-                                                    البيانات الأساسية
-                                                </button>
-                                                <span class="tab-divider"><i class="fa-solid fa-chevron-left"
-                                                        style="font-size:12px"></i></span>
-                                                <button type="button" class="form-tab" id="tab2-btn" onclick="goTab(2)">
-                                                    <span class="tab-num">2</span>
-                                                    التواصل والتحقق
-                                                </button>
-                                            </div>
-        
-                                            <div class="tab-pane Show" id="tab1">
-        
-                                                <div class="tab-pane-row">
-                                                    <div class="row g-3 mb-3 ">
-                                                        <div class="col-md-6">
-                                                            <label for="Identity" class="form-label">
-                                                                الهوية <i class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                            </label>
-                                                            <input type="text" id="Identity" class="form-control inputs"
-                                                                name="Identity" required>
-                                                            <div class="invaild">
-                                                                <div class="invalid-feedback">
-                                                                    الحقل مطلوب
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                        <main class="mt-3 g-3 inputs-accordion-container">
+                                            <div class="accordion inputs-accordion">
+                                                <div class=" inputs-accordion-item">
+                                                    <div class=" inputs-accordion-item-header">
+                                                        <span class="accordion-item-header-title"> <i
+                                                                class="fa-solid fa-check data-check"></i> البيانات
+                                                        </span>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                            viewBox="0 0 24 24" fill="none" stroke="#666666"
+                                                            stroke-width="3" stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="lucide lucide-chevron-down accordion-item-header-icon">
+                                                            <path d="m6 9 6 6 6-6" />
+                                                        </svg>
                                                     </div>
-        
-                                                    <div class="row g-3 mb-3">
-                                                        <div class="col-md-6">
-                                                            <label for="owner-name-ar" class="form-label">
-                                                                اسم المالك عربي <i
-                                                                    class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                            </label>
-                                                            <input type="text" id="owner-name-ar" class="form-control inputs"
-                                                                name="owner-name-ar" required>
-                                                            <div class="invaild">
-                                                                <div class="invalid-feedback">
-                                                                    الحقل مطلوب
+                                                    <div class="accordion-item-description-wrapper">
+                                                        <div class="accordion-item-description">
+                                                            <hr class="accordion-items-hr">
+                                                            <div class="container-fluid data-scroll-container">
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <label for="OwnerId" class="form-label">الهوية <i
+                                                                                class="fa-solid fa-star-of-life RequirdStar"></i></label>
+                                                                        <input type="text" id="OwnerId" class="form-control inputs" name="OwnerId" required>
+                                                                        <div class="invaild">
+                                                                            <div class="invalid-feedback">
+                                                                                الحقل مطلوب
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <label for="owner-name-en" class="form-label">
-                                                                اسم المالك إنجليزي <i
-                                                                    class="fa-solid fa-star-of-life RequirdStar"></i>
-                                                            </label>
-                                                            <input type="text" id="owner-name-en" class="form-control inputs"
-                                                                style="direction:ltr;text-align:right" name="owner-name-en"
-                                                                required>
-                                                            <div class="invaild">
-                                                                <div class="invalid-feedback">
-                                                                    الحقل مطلوب
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <label for="owner-name-ar" class="form-label">
+                                                                            اسم المالك عربي <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                        </label>
+                                                                        <input type="text" id="owner-name-ar" class="form-control inputs" name="owner-name-ar" maxlength="100" required>
+                                                                        <div class="invaild">
+                                                                            <div class="invalid-feedback">
+                                                                                الحقل مطلوب
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <label for="owner-name-en" class="form-label">
+                                                                            اسم المالك إنجليزي <i class="fa-solid fa-star-of-life RequirdStar"></i>
+                                                                        </label>
+                                                                        <input type="text" id="owner-name-en" class="form-control inputs"
+                                                                            style="direction:ltr;text-align:right" name="owner-name-en" maxlength="100" required>
+                                                                        <div class="invaild">
+                                                                            <div class="invalid-feedback">
+                                                                                الحقل مطلوب
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                    
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-        
-                                                    <div class="col-md-12 mt-4">
-                                                        <div class="row">
-                                                            <div class="col-lg-12">
-                                                                <label>الملاحظات</label>
-                                                            </div>
-                                                            <div class="col d-flex justify-content-start">
-                                                                <textarea class=" form-control textarea-inputs" rows="1"
-                                                                    maxlength="100" id="Reasons-tenant" type="text" name=""
-                                                                    autocomplete="off"></textarea>
+                                                    
+                                                                <div class="row align-items-center g-3 ">
+                                                                    <div class="col-md-12 ">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-12">
+                                                                                <label>الملاحظات</label>
+                                                                            </div>
+                                                                            <div class="col d-flex justify-content-start">
+                                                                                <textarea class=" form-control textarea-inputs" rows="1" maxlength="100" id="Documentnotes"
+                                                                                    type="text" name="Reasons"></textarea>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-        
-        
-                                                <div class="tab-nav">
-                                                    <span></span>
-                                                    <button type="button" class="btn-next" onclick="nextTab()">
-                                                        التالي <i class="fa-solid fa-chevron-left"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-        
-                                            <div class="tab-pane" id="tab2">
-        
-                                                <div class="row g-3 mb-1 tab-pane-row">
-                                                    <div class="col-md-6 input-group-col">
-                                                        <label for="phone2" class="form-label d-flex align-items-center">
-                                                            الجوال
-                                                            <button type="button" class="verify-pill" id="phonePill"
-                                                                onclick="sendPhoneOtp()" disabled>
-                                                                <i class="fa-solid fa-shield-halved" style="font-size:10px"></i>
-                                                                تحقق من الرقم
-                                                            </button>
-                                                        </label>
-                                                        <div class="input-group flex-nowrap">
-                                                            <input type="tel" class="form-control inputs tel-input" id="phone2"
-                                                                name="phone2" oninput="onPhoneInput()">
-                                                            <select class="input-group-text select-style counterCode"
-                                                                name="counterCode-phone2">
-                                                                <option value="+966">+966</option>
-                                                                <option value="+962">+962</option>
-                                                                <option value="+20">+20</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="field-status" id="phoneStatus"></div>
+                                                <div class="inputs-accordion-item">
+                                                    <div class="inputs-accordion-item-header">
+                                                        <span class="accordion-item-header-title"> <i class="fa-solid fa-check data-check"></i> وسائل التواصل
+                                                        </span>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#666666"
+                                                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                                                            class="lucide lucide-chevron-down accordion-item-header-icon">
+                                                            <path d="m6 9 6 6 6-6" />
+                                                        </svg>
                                                     </div>
-                                                    <div id="phoneOtpPanel" style="display:none" class="row mb-3">
-                                                        <div class="col-md-auto">
-                                                            <div class="otp-panel">
-                                                                <div class="otp-hint">
-                                                                    <i class="fa-solid fa-mobile-screen-button"
-                                                                        style="color:#C8860A;margin-left:4px"></i>
-                                                                    أدخل رمز التحقق المرسل إلى جوالك
+                                                    <div class="accordion-item-description-wrapper">
+                                                        <div class="accordion-item-description">
+                                                            <hr class="accordion-items-hr">
+                                                            <div class="container-fluid data-scroll-container">
+                                                                <div class="row">
+                                                                    <div class="col-md-6 input-group-col">
+                                                                        <label for="phone2" class="form-label d-flex align-items-center">
+                                                                            الجوال
+                                                                            <button type="button" class="verify-pill" id="phonePill" onclick="sendPhoneOtp()" disabled>
+                                                                                <i class="fa-solid fa-shield-halved" style="font-size:10px"></i>
+                                                                                تحقق من الرقم
+                                                                            </button>
+                                                                        </label>
+                                                                        <div class="input-group flex-nowrap">
+                                                                            <input type="tel" class="form-control inputs tel-input" id="phone2" name="phone2"
+                                                                                oninput="onPhoneInput()">
+                                                                            <select class="input-group-text select-style counterCode" name="counterCode-phone2">
+                                                                                <option value="+966">+966</option>
+                                                                                <option value="+962">+962</option>
+                                                                                <option value="+20">+20</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="invaild">
+                                                                            <div class="invalid-feedback">
+                                                                                الحقل مطلوب
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-                                                                <div class="otp-boxes">
-                                                                    <input class="otp-box" maxlength="1" id="p0"
-                                                                        oninput="otpKey(this,'p',0)">
-                                                                    <input class="otp-box" maxlength="1" id="p1"
-                                                                        oninput="otpKey(this,'p',1)">
-                                                                    <input class="otp-box" maxlength="1" id="p2"
-                                                                        oninput="otpKey(this,'p',2)">
-                                                                    <input class="otp-box" maxlength="1" id="p3"
-                                                                        oninput="otpKey(this,'p',3)">
-                                                                    <input class="otp-box" maxlength="1" id="p4"
-                                                                        oninput="otpKey(this,'p',4)">
-                                                                    <input class="otp-box" maxlength="1" id="p5"
-                                                                        oninput="otpKey(this,'p',5)">
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <label for="email" class="form-label d-flex align-items-center">
+                                                                            البريد الإلكتروني
+                                                                            <button type="button" class="verify-pill" id="emailPill" onclick="sendEmailOtp()" disabled>
+                                                                                <i class="fa-solid fa-shield-halved" style="font-size:10px"></i>
+                                                                                تحقق من البريد
+                                                                            </button>
+                                                                        </label>
+                                                                        <input type="email" id="email" class="form-control inputs" style="direction:ltr;text-align:right" name="email"
+                                                                            oninput="onEmailInput()">
+                                                                        <div class="invaild">
+                                                                            <div class="invalid-feedback">
+                                                                                الحقل مطلوب
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-                                                                <div class="otp-footer">
-                                                                    <button type="button" class="resend-btn" id="pResend"
-                                                                        disabled onclick="resendOtp('p')">
-                                                                        إعادة إرسال <span id="pCd"></span>
-                                                                    </button>
-                                                                    <button type="button" class="otp-confirm-btn"
-                                                                        onclick="confirmOtp('p')">تأكيد الرمز</button>
+                                                                <div class="row g-3 my-3 align-items-end">
+                                                                    <div class="col-auto d-flex gap-2 align-items-center">
+                                                                        <input class="form-check-input checkbox" type="checkbox" value="checked" id="sendContract" name="sendContract">
+                                                                        <label class="form-check-label" for="sendContract">إرسال
+                                                                            العقد</label>
+                                                                    </div>
+                                                                    <div class="col-auto d-flex gap-3 align-items-center">
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <input class="form-check-input" type="radio" name="sendWay" value="email" id="sendEmail">
+                                                                            <label class="form-check-label" for="sendEmail">بريد</label>
+                                                                        </div>
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <input class="form-check-input" type="radio" name="sendWay" value="whatsup" id="sendWhatsup">
+                                                                            <label class="form-check-label" for="sendWhatsup">واتساب</label>
+                                                                        </div>
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <input class="form-check-input" type="radio" name="sendWay" value="sms" id="sendSms">
+                                                                            <label class="form-check-label" for="sendSms">رسالة نصية</label>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                </div>
 
-                                                    <div class="col-md-6">
-                                                        <label for="email" class="form-label d-flex align-items-center">
-                                                            البريد الإلكتروني
-                                                            <button type="button" class="verify-pill" id="emailPill"
-                                                                onclick="sendEmailOtp()" disabled>
-                                                                <i class="fa-solid fa-shield-halved" style="font-size:10px"></i>
-                                                                تحقق من البريد
-                                                            </button>
-                                                        </label>
-                                                        <input type="email" id="email" class="form-control inputs"
-                                                            style="direction:ltr;text-align:right" name="email"
-                                                            oninput="onEmailInput()">
-                                                        <div class="field-status" id="emailStatus"></div>
-                                                    </div>
-                                                    <div id="emailOtpPanel" style="display:none" class="row mb-3">
-                                                        <div class="col-md-auto">
-                                                            <div class="otp-panel">
-                                                                <div class="otp-hint">
-                                                                    <i class="fa-solid fa-envelope"
-                                                                        style="color:#C8860A;margin-left:4px"></i>
-                                                                    أدخل رمز التحقق المرسل إلى بريدك الإلكتروني
-                                                                </div>
-                                                                <div class="otp-boxes">
-                                                                    <input class="otp-box" maxlength="1" id="e0"
-                                                                        oninput="otpKey(this,'e',0)">
-                                                                    <input class="otp-box" maxlength="1" id="e1"
-                                                                        oninput="otpKey(this,'e',1)">
-                                                                    <input class="otp-box" maxlength="1" id="e2"
-                                                                        oninput="otpKey(this,'e',2)">
-                                                                    <input class="otp-box" maxlength="1" id="e3"
-                                                                        oninput="otpKey(this,'e',3)">
-                                                                    <input class="otp-box" maxlength="1" id="e4"
-                                                                        oninput="otpKey(this,'e',4)">
-                                                                    <input class="otp-box" maxlength="1" id="e5"
-                                                                        oninput="otpKey(this,'e',5)">
-                                                                </div>
-                                                                <div class="otp-footer">
-                                                                    <button type="button" class="resend-btn" id="eResend"
-                                                                        disabled onclick="resendOtp('e')">
-                                                                        إعادة إرسال <span id="eCd"></span>
-                                                                    </button>
-                                                                    <button type="button" class="otp-confirm-btn"
-                                                                        onclick="confirmOtp('e')">تأكيد الرمز</button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-        
-                                                    <div class="row g-3 my-3 align-items-end">
-                                                        <div class="col-auto d-flex gap-2 align-items-center">
-                                                            <input class="form-check-input checkbox" type="checkbox"
-                                                                value="checked" id="sendContract" name="sendContract">
-                                                            <label class="form-check-label" for="sendContract">إرسال
-                                                                العقد</label>
-                                                        </div>
-                                                        <div class="col-auto d-flex gap-3 align-items-center">
-                                                            <div class="d-flex align-items-center gap-1">
-                                                                <input class="form-check-input" type="radio" name="sendWay"
-                                                                    value="email" id="sendEmail">
-                                                                <label class="form-check-label" for="sendEmail">بريد</label>
-                                                            </div>
-                                                            <div class="d-flex align-items-center gap-1">
-                                                                <input class="form-check-input" type="radio" name="sendWay"
-                                                                    value="whatsup" id="sendWhatsup">
-                                                                <label class="form-check-label" for="sendWhatsup">واتساب</label>
-                                                            </div>
-                                                            <div class="d-flex align-items-center gap-1">
-                                                                <input class="form-check-input" type="radio" name="sendWay"
-                                                                    value="sms" id="sendSms">
-                                                                <label class="form-check-label" for="sendSms">رسالة نصية</label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-        
-                                                </div>
-        
-                                                <div class="tab-nav">
-                                                    <button type="button" class="btn-prev" onclick="goTab(1)">
-                                                        <i class="fa-solid fa-chevron-right"></i> السابق
-                                                    </button>
-        
-                                                </div>
-        
-        
-        
                                             </div>
-        
-                                        </div>        
+                                        </main>
                                     </div>
                                 </div>
                             </form>
                         </div>
+
                     </div>
                 </div>
             </main>
@@ -894,14 +580,13 @@
                     <div class="menu">
                         <main>
                             <div class="accordion">
-        
+            
                                 <div class="accordion-item">
                                     <div class="accordion-item-header">
                                         <span class="accordion-item-header-title"> مستندات الشركة </span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            class="lucide lucide-chevron-down accordion-item-header-icon">
+                                            stroke-linejoin="round" class="lucide lucide-chevron-down accordion-item-header-icon">
                                             <path d="m6 9 6 6 6-6" />
                                         </svg>
                                     </div>
@@ -912,7 +597,7 @@
                                                     <div class="col-7">
                                                         <p>السجل التجاري</p>
                                                     </div>
-        
+            
                                                     <div class="col working">
                                                         <p> 2 </p>
                                                     </div>
@@ -921,12 +606,12 @@
                                                     </div>
                                                 </div>
                                                 <hr class="collapse-hr">
-        
+            
                                                 <div class="row collapse-row ">
                                                     <div class="col-7">
                                                         <p> اشتراك الغرفة التجارية </p>
                                                     </div>
-        
+            
                                                     <div class="col working">
                                                         <p> 5 </p>
                                                     </div>
@@ -935,12 +620,12 @@
                                                     </div>
                                                 </div>
                                                 <hr class="collapse-hr">
-        
+            
                                                 <div class="row collapse-row ">
                                                     <div class="col-7">
                                                         <p> تصريح هيئة النقل </p>
                                                     </div>
-        
+            
                                                     <div class="col working">
                                                         <p> 7 </p>
                                                     </div>
@@ -949,12 +634,12 @@
                                                     </div>
                                                 </div>
                                                 <hr class="collapse-hr">
-        
+            
                                                 <div class="row collapse-row ">
                                                     <div class="col-7">
                                                         <p> رخصة البلدية </p>
                                                     </div>
-        
+            
                                                     <div class="col working">
                                                         <p> 6 </p>
                                                     </div>
@@ -963,12 +648,12 @@
                                                     </div>
                                                 </div>
                                                 <hr class="collapse-hr">
-        
+            
                                                 <div class="row collapse-row ">
                                                     <div class="col-7">
                                                         <p> البريد الوطني</p>
                                                     </div>
-        
+            
                                                     <div class="col working">
                                                         <p> 4 </p>
                                                     </div>
@@ -976,7 +661,7 @@
                                                         <p> 5 </p>
                                                     </div>
                                                 </div>
-        
+            
                                             </div>
                                         </div>
                                     </div>
@@ -986,8 +671,7 @@
                                         <span class="accordion-item-header-title"> السيارات </span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            class="lucide lucide-chevron-down accordion-item-header-icon">
+                                            stroke-linejoin="round" class="lucide lucide-chevron-down accordion-item-header-icon">
                                             <path d="m6 9 6 6 6-6" />
                                         </svg>
                                     </div>
@@ -1029,7 +713,7 @@
                                                         <p> 500 </p>
                                                     </div>
                                                 </div>
-        
+            
                                             </div>
                                         </div>
                                     </div>
@@ -1039,8 +723,7 @@
                                         <span class="accordion-item-header-title"> العقود </span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            class="lucide lucide-chevron-down accordion-item-header-icon">
+                                            stroke-linejoin="round" class="lucide lucide-chevron-down accordion-item-header-icon">
                                             <path d="m6 9 6 6 6-6" />
                                         </svg>
                                     </div>
@@ -1054,14 +737,14 @@
                                                     <div class="col contract-ended ">
                                                         <p> 8 </p>
                                                     </div>
-        
+            
                                                 </div>
                                                 <hr class="collapse-hr">
                                                 <div class="row collapse-row">
                                                     <div class="col">
                                                         <p>تنتهي اليوم</p>
                                                     </div>
-        
+            
                                                     <div class="col ended">
                                                         <p> 15 </p>
                                                     </div>
@@ -1083,7 +766,7 @@
                                                     <div class="col later">
                                                         <p> 11 </p>
                                                     </div>
-        
+            
                                                 </div>
                                                 <hr class="collapse-hr">
                                                 <div class="row collapse-row">
@@ -1093,7 +776,7 @@
                                                     <div class="col working">
                                                         <p> 5 </p>
                                                     </div>
-        
+            
                                                 </div>
                                                 <hr class="collapse-hr">
                                                 <div class="row collapse-row">
@@ -1103,7 +786,7 @@
                                                     <div class="col working">
                                                         <p> 100 </p>
                                                     </div>
-        
+            
                                                 </div>
                                             </div>
                                         </div>
@@ -1115,8 +798,7 @@
                                         </span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            class="lucide lucide-chevron-down accordion-item-header-icon">
+                                            stroke-linejoin="round" class="lucide lucide-chevron-down accordion-item-header-icon">
                                             <path d="m6 9 6 6 6-6" />
                                         </svg>
                                     </div>
@@ -1141,8 +823,8 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-auto">
-                                                                        <p class="employee-name mb-1 p-0"
-                                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        <p class="employee-name mb-1 p-0" data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
                                                                             data-bs-custom-class="custom-tooltip"
                                                                             data-bs-title="صالح سلطان إبراهيم المحيسني">
                                                                             صالح سلطان إبراهيم المحيسني </p>
@@ -1181,8 +863,8 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-auto">
-                                                                        <p class="employee-name mb-1 p-0"
-                                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        <p class="employee-name mb-1 p-0" data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
                                                                             data-bs-custom-class="custom-tooltip"
                                                                             data-bs-title="صالح سلطان إبراهيم المحيسني">
                                                                             صالح سلطان إبراهيم المحيسني </p>
@@ -1221,8 +903,8 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-auto">
-                                                                        <p class="employee-name mb-1 p-0"
-                                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        <p class="employee-name mb-1 p-0" data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
                                                                             data-bs-custom-class="custom-tooltip"
                                                                             data-bs-title="صالح سلطان إبراهيم المحيسني">
                                                                             صالح سلطان إبراهيم المحيسني </p>
@@ -1261,8 +943,8 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-auto">
-                                                                        <p class="employee-name mb-1 p-0"
-                                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        <p class="employee-name mb-1 p-0" data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
                                                                             data-bs-custom-class="custom-tooltip"
                                                                             data-bs-title="صالح سلطان إبراهيم المحيسني">
                                                                             صالح سلطان إبراهيم المحيسني </p>
@@ -1301,8 +983,8 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-auto">
-                                                                        <p class="employee-name mb-1 p-0"
-                                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        <p class="employee-name mb-1 p-0" data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
                                                                             data-bs-custom-class="custom-tooltip"
                                                                             data-bs-title="صالح سلطان إبراهيم المحيسني">
                                                                             صالح سلطان إبراهيم المحيسني </p>
@@ -1341,8 +1023,8 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-auto">
-                                                                        <p class="employee-name mb-1 p-0"
-                                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        <p class="employee-name mb-1 p-0" data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
                                                                             data-bs-custom-class="custom-tooltip"
                                                                             data-bs-title="صالح سلطان إبراهيم المحيسني">
                                                                             صالح سلطان إبراهيم المحيسني </p>
@@ -1381,8 +1063,8 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-auto">
-                                                                        <p class="employee-name mb-1 p-0"
-                                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        <p class="employee-name mb-1 p-0" data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
                                                                             data-bs-custom-class="custom-tooltip"
                                                                             data-bs-title="صالح سلطان إبراهيم المحيسني">
                                                                             صالح سلطان إبراهيم المحيسني </p>
@@ -1421,8 +1103,8 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-auto">
-                                                                        <p class="employee-name mb-1 p-0"
-                                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        <p class="employee-name mb-1 p-0" data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
                                                                             data-bs-custom-class="custom-tooltip"
                                                                             data-bs-title="صالح سلطان إبراهيم المحيسني">
                                                                             صالح سلطان إبراهيم المحيسني </p>
@@ -1461,8 +1143,8 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-auto">
-                                                                        <p class="employee-name mb-1 p-0"
-                                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        <p class="employee-name mb-1 p-0" data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
                                                                             data-bs-custom-class="custom-tooltip"
                                                                             data-bs-title="صالح سلطان إبراهيم المحيسني">
                                                                             صالح سلطان إبراهيم المحيسني </p>
@@ -1501,8 +1183,8 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-auto">
-                                                                        <p class="employee-name mb-1 p-0"
-                                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        <p class="employee-name mb-1 p-0" data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
                                                                             data-bs-custom-class="custom-tooltip"
                                                                             data-bs-title="صالح سلطان إبراهيم المحيسني">
                                                                             صالح سلطان إبراهيم المحيسني </p>
@@ -1532,8 +1214,7 @@
                                         <span class="accordion-item-header-title"> مديونيات المستأجرين </span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            class="lucide lucide-chevron-down accordion-item-header-icon">
+                                            stroke-linejoin="round" class="lucide lucide-chevron-down accordion-item-header-icon">
                                             <path d="m6 9 6 6 6-6" />
                                         </svg>
                                     </div>
@@ -1557,8 +1238,8 @@
                                                         <p> 936.56 </p>
                                                     </div>
                                                 </div>
-        
-        
+            
+            
                                             </div>
                                         </div>
                                     </div>
@@ -1566,12 +1247,56 @@
                             </div>
                         </main>
                     </div>
-        
-        
+            
+            
                 </div>
             </aside>
-        </div>
-       
+            
+            </div>
+            <!-- ========== OTP MODAL ========== -->
+            <div class="modal fade otp-modal" id="otpModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" style="max-width: 440px;">
+                    <div class="modal-content">
+                        <div class="modal-header border-0 justify-content-end">
+                            <div class="row w-100">
+                                <div class="col-md-12 d-flex justify-content-end">
+                                    <button type="button" class="btn-close m-0 p-1" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <h5 class="modal-title card-title m-auto" id="model_title"> رمز التحقق</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-body text-center">
+                            <p>من فضلك ادخل رمز التحقق المرسل</p>
+                            <div class="otp-input-group" id="otpInputGroup">
+                                <input type="text" maxlength="1" class="otp-digit" data-index="0" autofocus>
+                                <input type="text" maxlength="1" class="otp-digit" data-index="1">
+                                <input type="text" maxlength="1" class="otp-digit" data-index="2">
+                                <input type="text" maxlength="1" class="otp-digit" data-index="3">
+                                <input type="text" maxlength="1" class="otp-digit" data-index="4">
+                                <input type="text" maxlength="1" class="otp-digit" data-index="5">
+                            </div>
+                            <div class="invalid-feedback d-block" id="otpError" style="display:none;">الرمز غير صحيح، حاول مجدداً
+                            </div>
+                        </div>
+            
+                        <div class="modal-footer border-0 justify-content-center mx-1">
+                            <div class="row w-100 g-2">
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-standard w-100" id="verifyOtpBtn"
+                                        onclick="verifyOtp()">تأكيد</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">إلغاء
+                                        الأمر</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -1598,6 +1323,7 @@
             }
         });
     </script>
+    <!-- script for send way options -->
     <script>
         const phone2Input = document.getElementById("phone2");
         const emailInput = document.getElementById("email");
@@ -1644,141 +1370,194 @@
 
         updateFormState();
     </script>
-    <script>
-        let currentTab = 1;
+    <!-- script for phone and email verification -->
+   <script>
+    (function() {
+      "use strict";
 
-        function goTab(n) {
-            document.getElementById('tab' + currentTab).classList.remove('Show');
-            document.getElementById('tab' + currentTab + '-btn').classList.remove('Show');
+      const phoneInput = document.getElementById('phone2');
+      const emailInput = document.getElementById('email');
+      const phonePill = document.getElementById('phonePill');
+      const emailPill = document.getElementById('emailPill');
+      const otpModalEl = document.getElementById('otpModal');
+      const phoneCountryCode = document.getElementById('phoneCountryCode');
+      let otpModal = new bootstrap.Modal(otpModalEl, { backdrop: 'static' });
+      const otpDigits = document.querySelectorAll('.otp-digit');
+      const otpError = document.getElementById('otpError');
 
-            currentTab = n;
-            document.getElementById('tab' + n).classList.add('Show');
-            document.getElementById('tab' + n + '-btn').classList.add('Show');
+
+      function disableInputAndSelect(inputEl, selectEl) {
+        inputEl.disabled = true;
+        if (selectEl) selectEl.disabled = true;
+        inputEl.style.backgroundColor = '#e9ecef';
+        inputEl.style.opacity = '0.7';
+        if (selectEl) {
+          selectEl.style.backgroundColor = '#e9ecef';
+          selectEl.style.opacity = '0.7';
+        }
+      }
+
+      function isValidPhone(value) {
+        const raw = value.replace(/\s/g, '');
+        return /^[+]?[\d]{7,15}$/.test(raw);
+      }
+
+      function isValidEmail(value) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+      }
+
+      function updateVerifyButtons() {
+        const phoneVal = phoneInput.value.trim();
+        const emailVal = emailInput.value.trim();
+
+        if (!phoneInput.disabled) {
+          phonePill.disabled = !isValidPhone(phoneVal);
+        } else {
+          phonePill.disabled = true;
         }
 
-        function nextTab() {
-            goTab(2);
+        if (!emailInput.disabled) {
+          emailPill.disabled = !isValidEmail(emailVal);
+        } else {
+          emailPill.disabled = true;
         }
+      }
 
-        const MOCK_OTP = '123456';
-        const timers = { p: null, e: null };
-        const verified = { p: false, e: false };
+      window.onPhoneInput = function() {
+        updateVerifyButtons();
+      };
 
-        function onPhoneInput() {
-            if (verified.p) return;
-            const v = document.getElementById('phone2').value.replace(/\s/g, '');
-            document.getElementById('phonePill').disabled = !/^[0-9]{8,12}$/.test(v);
+      window.onEmailInput = function() {
+        updateVerifyButtons();
+      };
+
+      updateVerifyButtons();
+
+      let currentOtpTarget = 'phone'; 
+      let currentTargetValue = '';
+
+      function openOtpModal(targetType, targetValue) {
+        currentOtpTarget = targetType;
+        currentTargetValue = targetValue;
+        otpError.style.display = 'none';
+        otpDigits.forEach(inp => inp.value = '');
+        setTimeout(() => otpDigits[0]?.focus(), 100);
+        otpModal.show();
+      }
+
+      window.sendPhoneOtp = function() {
+        if (phoneInput.disabled) return;
+        const phoneVal = phoneInput.value.trim();
+        if (!isValidPhone(phoneVal)) {
+          phonePill.disabled = true;
+          return;
         }
+        openOtpModal('phone', phoneVal);
+      };
 
-        function sendPhoneOtp() {
-            document.getElementById('phoneOtpPanel').style.display = 'block';
-            setStatus('phoneStatus', 'تم إرسال رمز التحقق إلى جوالك', 'info');
-            document.getElementById('phonePill').disabled = true;
-            document.getElementById('p0').focus();
-            startTimer('p');
+      window.sendEmailOtp = function() {
+        if (emailInput.disabled) return;
+        const emailVal = emailInput.value.trim();
+        if (!isValidEmail(emailVal)) {
+          emailPill.disabled = true;
+          return;
         }
+        openOtpModal('email', emailVal);
+      };
 
-        function onEmailInput() {
-            if (verified.e) return;
-            const v = document.getElementById('email').value.trim();
-            document.getElementById('emailPill').disabled = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-        }
-
-        function sendEmailOtp() {
-            document.getElementById('emailOtpPanel').style.display = 'block';
-            setStatus('emailStatus', 'تم إرسال رمز التحقق إلى بريدك الإلكتروني', 'info');
-            document.getElementById('emailPill').disabled = true;
-            document.getElementById('e0').focus();
-            startTimer('e');
-        }
-
-        function otpKey(el, t, i) {
-            el.value = el.value.replace(/[^0-9]/g, '');
-            el.classList.toggle('filled', !!el.value);
-            if (el.value && i < 5) document.getElementById(t + (i + 1)).focus();
-            if (i === 5 && el.value) confirmOtp(t);
-        }
-
-        function getOtp(t) {
-            return [0, 1, 2, 3, 4, 5].map(i => document.getElementById(t + i).value).join('');
-        }
-
-        function confirmOtp(t) {
-            const val = getOtp(t);
-            const boxes = [0, 1, 2, 3, 4, 5].map(i => document.getElementById(t + i));
-
-            if (val === MOCK_OTP) {
-                verified[t] = true;
-                boxes.forEach(b => { b.className = 'otp-box ok'; b.disabled = true; });
-                clearInterval(timers[t]);
-
-                setTimeout(() => {
-                    document.getElementById(t === 'p' ? 'phoneOtpPanel' : 'emailOtpPanel').style.display = 'none';
-                }, 600);
-
-                if (t === 'p') {
-                    document.getElementById('phone2').classList.add('is-valid');
-                    const pill = document.getElementById('phonePill');
-                    pill.innerHTML = '<i class="fa-solid fa-check" style="font-size:10px"></i> تم التحقق';
-                    pill.classList.add('verified');
-                    setStatus('phoneStatus', '✓ تم التحقق من الجوال بنجاح', 'ok');
-                } else {
-                    document.getElementById('email').classList.add('is-valid');
-                    const pill = document.getElementById('emailPill');
-                    pill.innerHTML = '<i class="fa-solid fa-check" style="font-size:10px"></i> تم التحقق';
-                    pill.classList.add('verified');
-                    setStatus('emailStatus', '✓ تم التحقق من البريد بنجاح', 'ok');
-                }
-            } else {
-                boxes.forEach(b => b.classList.add('bad'));
-                setTimeout(() => {
-                    boxes.forEach(b => { b.className = 'otp-box'; b.value = ''; });
-                }, 700);
-                setStatus(t === 'p' ? 'phoneStatus' : 'emailStatus', 'رمز غير صحيح، حاول مرة أخرى', 'bad');
-                document.getElementById(t + '0').focus();
-            }
-        }
-
-        function startTimer(t) {
-            let s = 60;
-            const resendId = t === 'p' ? 'pResend' : 'eResend';
-            const cdId = t === 'p' ? 'pCd' : 'eCd';
-            document.getElementById(resendId).disabled = true;
-            document.getElementById(cdId).textContent = '(' + s + 'ث)';
-            clearInterval(timers[t]);
-            timers[t] = setInterval(() => {
-                s--;
-                if (s <= 0) {
-                    clearInterval(timers[t]);
-                    document.getElementById(resendId).disabled = false;
-                    document.getElementById(cdId).textContent = '';
-                } else {
-                    document.getElementById(cdId).textContent = '(' + s + 'ث)';
-                }
-            }, 1000);
-        }
-
-        function resendOtp(t) {
-            [0, 1, 2, 3, 4, 5].forEach(i => {
-                const b = document.getElementById(t + i);
-                b.value = ''; b.className = 'otp-box';
-            });
-            document.getElementById(t + '0').focus();
-            startTimer(t);
-            setStatus(t === 'p' ? 'phoneStatus' : 'emailStatus', 'تم إعادة إرسال الرمز', 'info');
-        }
-
-        function setStatus(id, msg, type) {
-            const el = document.getElementById(id);
-            el.textContent = msg;
-            el.className = 'field-status ' + type;
-        }
-
-        document.querySelectorAll('.inputs').forEach(el => {
-            el.addEventListener('input', () => el.classList.remove('is-invalid'));
+      otpDigits.forEach((inp, idx) => {
+        inp.addEventListener('input', function(e) {
+          const val = this.value;
+          if (!/^[0-9]$/.test(val)) {
+            this.value = '';
+            return;
+          }
+          if (idx < otpDigits.length - 1 && val.length === 1) {
+            otpDigits[idx + 1].focus();
+          }
+          otpError.style.display = 'none';
         });
-    </script>
 
+        inp.addEventListener('keydown', function(e) {
+          if (e.key === 'Backspace' && this.value === '' && idx > 0) {
+            otpDigits[idx - 1].focus();
+          }
+        });
+
+        inp.addEventListener('paste', function(e) {
+          e.preventDefault();
+          const paste = (e.clipboardData || window.clipboardData).getData('text');
+          const digits = paste.replace(/\D/g, '').slice(0, otpDigits.length);
+          for (let i = 0; i < digits.length; i++) {
+            if (i < otpDigits.length) {
+              otpDigits[i].value = digits[i];
+            }
+          }
+          const nextIndex = Math.min(digits.length, otpDigits.length - 1);
+          otpDigits[nextIndex]?.focus();
+          otpError.style.display = 'none';
+        });
+      });
+
+      window.verifyOtp = function() {
+        let otpCode = '';
+        otpDigits.forEach(inp => otpCode += inp.value);
+        if (otpCode.length !== 6) {
+          otpError.textContent = 'يرجى إدخال الرمز المكون من 6 أرقام';
+          otpError.style.display = 'block';
+          return;
+        }
+        if (otpCode === '000000') {
+          otpError.textContent = 'الرمز غير صحيح، حاول مجدداً';
+          otpError.style.display = 'block';
+          return;
+        }
+
+        otpError.style.display = 'none';
+        otpModal.hide();
+
+        if (currentOtpTarget === 'phone') {
+
+          disableInputAndSelect(phoneInput, phoneCountryCode);
+          phonePill.innerHTML = `<i class="fa-solid fa-check-circle" style="color:#1e7e34;"></i> تم التحقق`;
+          phonePill.disabled = true;
+          phonePill.classList.add('verified-badge');
+          phonePill.style.background = '#d4edda';
+          phonePill.style.borderColor = '#b7d7b7';
+        } else if (currentOtpTarget === 'email') {
+          emailInput.disabled = true;
+          emailInput.style.backgroundColor = '#e9ecef';
+          emailInput.style.opacity = '0.7';
+          emailPill.innerHTML = `<i class="fa-solid fa-check-circle" style="color:#1e7e34;"></i> تم التحقق`;
+          emailPill.disabled = true;
+          emailPill.classList.add('verified-badge');
+          emailPill.style.background = '#d4edda';
+          emailPill.style.borderColor = '#b7d7b7';
+        }
+
+        updateVerifyButtons();
+      };
+
+      otpModalEl.addEventListener('hidden.bs.modal', function() {
+        otpError.style.display = 'none';
+        otpDigits.forEach(inp => inp.value = '');
+      });
+
+      otpDigits.forEach(inp => {
+        inp.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            document.getElementById('verifyOtpBtn').click();
+          }
+        });
+      });
+
+      otpModalEl.addEventListener('shown.bs.modal', function() {
+        setTimeout(() => otpDigits[0]?.focus(), 50);
+      });
+
+    })();
+  </script>
 </body>
 
 </html>
