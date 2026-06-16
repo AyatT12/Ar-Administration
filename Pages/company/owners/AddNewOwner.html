@@ -48,6 +48,11 @@
             font-size: 0.75rem;
         }
     
+        .input-group:has(.tel-input:disabled) .select-style {
+            background-color: #e9ecef !important;
+            opacity: 0.7;
+        }
+    
         .otp-digit {
             width: 0.8599999999999999em;
             margin: 0.1em;
@@ -1371,193 +1376,194 @@
         updateFormState();
     </script>
     <!-- script for phone and email verification -->
-   <script>
-    (function() {
-      "use strict";
+    <script>
+        (function () {
+            "use strict";
 
-      const phoneInput = document.getElementById('phone2');
-      const emailInput = document.getElementById('email');
-      const phonePill = document.getElementById('phonePill');
-      const emailPill = document.getElementById('emailPill');
-      const otpModalEl = document.getElementById('otpModal');
-      const phoneCountryCode = document.getElementById('phoneCountryCode');
-      let otpModal = new bootstrap.Modal(otpModalEl, { backdrop: 'static' });
-      const otpDigits = document.querySelectorAll('.otp-digit');
-      const otpError = document.getElementById('otpError');
+            const phoneInput = document.getElementById('phone2');
+            const emailInput = document.getElementById('email');
+            const phonePill = document.getElementById('phonePill');
+            const emailPill = document.getElementById('emailPill');
+            const otpModalEl = document.getElementById('otpModal');
+            const phoneCountryCode = document.getElementById('phoneCountryCode');
+            let otpModal = new bootstrap.Modal(otpModalEl, { backdrop: 'static' });
+            const otpDigits = document.querySelectorAll('.otp-digit');
+            const otpError = document.getElementById('otpError');
 
 
-      function disableInputAndSelect(inputEl, selectEl) {
-        inputEl.disabled = true;
-        if (selectEl) selectEl.disabled = true;
-        inputEl.style.backgroundColor = '#e9ecef';
-        inputEl.style.opacity = '0.7';
-        if (selectEl) {
-          selectEl.style.backgroundColor = '#e9ecef';
-          selectEl.style.opacity = '0.7';
-        }
-      }
-
-      function isValidPhone(value) {
-        const raw = value.replace(/\s/g, '');
-        return /^[+]?[\d]{7,15}$/.test(raw);
-      }
-
-      function isValidEmail(value) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-      }
-
-      function updateVerifyButtons() {
-        const phoneVal = phoneInput.value.trim();
-        const emailVal = emailInput.value.trim();
-
-        if (!phoneInput.disabled) {
-          phonePill.disabled = !isValidPhone(phoneVal);
-        } else {
-          phonePill.disabled = true;
-        }
-
-        if (!emailInput.disabled) {
-          emailPill.disabled = !isValidEmail(emailVal);
-        } else {
-          emailPill.disabled = true;
-        }
-      }
-
-      window.onPhoneInput = function() {
-        updateVerifyButtons();
-      };
-
-      window.onEmailInput = function() {
-        updateVerifyButtons();
-      };
-
-      updateVerifyButtons();
-
-      let currentOtpTarget = 'phone'; 
-      let currentTargetValue = '';
-
-      function openOtpModal(targetType, targetValue) {
-        currentOtpTarget = targetType;
-        currentTargetValue = targetValue;
-        otpError.style.display = 'none';
-        otpDigits.forEach(inp => inp.value = '');
-        setTimeout(() => otpDigits[0]?.focus(), 100);
-        otpModal.show();
-      }
-
-      window.sendPhoneOtp = function() {
-        if (phoneInput.disabled) return;
-        const phoneVal = phoneInput.value.trim();
-        if (!isValidPhone(phoneVal)) {
-          phonePill.disabled = true;
-          return;
-        }
-        openOtpModal('phone', phoneVal);
-      };
-
-      window.sendEmailOtp = function() {
-        if (emailInput.disabled) return;
-        const emailVal = emailInput.value.trim();
-        if (!isValidEmail(emailVal)) {
-          emailPill.disabled = true;
-          return;
-        }
-        openOtpModal('email', emailVal);
-      };
-
-      otpDigits.forEach((inp, idx) => {
-        inp.addEventListener('input', function(e) {
-          const val = this.value;
-          if (!/^[0-9]$/.test(val)) {
-            this.value = '';
-            return;
-          }
-          if (idx < otpDigits.length - 1 && val.length === 1) {
-            otpDigits[idx + 1].focus();
-          }
-          otpError.style.display = 'none';
-        });
-
-        inp.addEventListener('keydown', function(e) {
-          if (e.key === 'Backspace' && this.value === '' && idx > 0) {
-            otpDigits[idx - 1].focus();
-          }
-        });
-
-        inp.addEventListener('paste', function(e) {
-          e.preventDefault();
-          const paste = (e.clipboardData || window.clipboardData).getData('text');
-          const digits = paste.replace(/\D/g, '').slice(0, otpDigits.length);
-          for (let i = 0; i < digits.length; i++) {
-            if (i < otpDigits.length) {
-              otpDigits[i].value = digits[i];
+            function disableInputAndSelect(inputEl, selectEl) {
+                inputEl.disabled = true;
+                if (selectEl) selectEl.disabled = true;
+                inputEl.style.backgroundColor = '#e9ecef';
+                inputEl.style.opacity = '0.7';
+                if (selectEl) {
+                    selectEl.style.backgroundColor = '#e9ecef';
+                    selectEl.style.opacity = '0.7';
+                }
             }
-          }
-          const nextIndex = Math.min(digits.length, otpDigits.length - 1);
-          otpDigits[nextIndex]?.focus();
-          otpError.style.display = 'none';
-        });
-      });
 
-      window.verifyOtp = function() {
-        let otpCode = '';
-        otpDigits.forEach(inp => otpCode += inp.value);
-        if (otpCode.length !== 6) {
-          otpError.textContent = 'يرجى إدخال الرمز المكون من 6 أرقام';
-          otpError.style.display = 'block';
-          return;
-        }
-        if (otpCode === '000000') {
-          otpError.textContent = 'الرمز غير صحيح، حاول مجدداً';
-          otpError.style.display = 'block';
-          return;
-        }
+            function isValidPhone(value) {
+                const raw = value.replace(/\s/g, '');
+                return /^[+]?[\d]{7,15}$/.test(raw);
+            }
 
-        otpError.style.display = 'none';
-        otpModal.hide();
+            function isValidEmail(value) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+            }
 
-        if (currentOtpTarget === 'phone') {
+            function updateVerifyButtons() {
+                const phoneVal = phoneInput.value.trim();
+                const emailVal = emailInput.value.trim();
 
-          disableInputAndSelect(phoneInput, phoneCountryCode);
-          phonePill.innerHTML = `<i class="fa-solid fa-check-circle" style="color:#1e7e34;"></i> تم التحقق`;
-          phonePill.disabled = true;
-          phonePill.classList.add('verified-badge');
-          phonePill.style.background = '#d4edda';
-          phonePill.style.borderColor = '#b7d7b7';
-        } else if (currentOtpTarget === 'email') {
-          emailInput.disabled = true;
-          emailInput.style.backgroundColor = '#e9ecef';
-          emailInput.style.opacity = '0.7';
-          emailPill.innerHTML = `<i class="fa-solid fa-check-circle" style="color:#1e7e34;"></i> تم التحقق`;
-          emailPill.disabled = true;
-          emailPill.classList.add('verified-badge');
-          emailPill.style.background = '#d4edda';
-          emailPill.style.borderColor = '#b7d7b7';
-        }
+                if (!phoneInput.disabled) {
+                    phonePill.disabled = !isValidPhone(phoneVal);
+                } else {
+                    phonePill.disabled = true;
+                }
 
-        updateVerifyButtons();
-      };
+                if (!emailInput.disabled) {
+                    emailPill.disabled = !isValidEmail(emailVal);
+                } else {
+                    emailPill.disabled = true;
+                }
+            }
 
-      otpModalEl.addEventListener('hidden.bs.modal', function() {
-        otpError.style.display = 'none';
-        otpDigits.forEach(inp => inp.value = '');
-      });
+            window.onPhoneInput = function () {
+                updateVerifyButtons();
+            };
 
-      otpDigits.forEach(inp => {
-        inp.addEventListener('keydown', function(e) {
-          if (e.key === 'Enter') {
-            e.preventDefault();
-            document.getElementById('verifyOtpBtn').click();
-          }
-        });
-      });
+            window.onEmailInput = function () {
+                updateVerifyButtons();
+            };
 
-      otpModalEl.addEventListener('shown.bs.modal', function() {
-        setTimeout(() => otpDigits[0]?.focus(), 50);
-      });
+            updateVerifyButtons();
 
-    })();
-  </script>
+            let currentOtpTarget = 'phone';
+            let currentTargetValue = '';
+
+            function openOtpModal(targetType, targetValue) {
+                currentOtpTarget = targetType;
+                currentTargetValue = targetValue;
+                otpError.style.display = 'none';
+                otpDigits.forEach(inp => inp.value = '');
+                setTimeout(() => otpDigits[0]?.focus(), 100);
+                otpModal.show();
+            }
+
+            window.sendPhoneOtp = function () {
+                if (phoneInput.disabled) return;
+                const phoneVal = phoneInput.value.trim();
+                if (!isValidPhone(phoneVal)) {
+                    phonePill.disabled = true;
+                    return;
+                }
+                openOtpModal('phone', phoneVal);
+            };
+
+            window.sendEmailOtp = function () {
+                if (emailInput.disabled) return;
+                const emailVal = emailInput.value.trim();
+                if (!isValidEmail(emailVal)) {
+                    emailPill.disabled = true;
+                    return;
+                }
+                openOtpModal('email', emailVal);
+            };
+
+            otpDigits.forEach((inp, idx) => {
+                inp.addEventListener('input', function (e) {
+                    const val = this.value;
+                    if (!/^[0-9]$/.test(val)) {
+                        this.value = '';
+                        return;
+                    }
+                    if (idx < otpDigits.length - 1 && val.length === 1) {
+                        otpDigits[idx + 1].focus();
+                    }
+                    otpError.style.display = 'none';
+                });
+
+                inp.addEventListener('keydown', function (e) {
+                    if (e.key === 'Backspace' && this.value === '' && idx > 0) {
+                        otpDigits[idx - 1].focus();
+                    }
+                });
+
+                inp.addEventListener('paste', function (e) {
+                    e.preventDefault();
+                    const paste = (e.clipboardData || window.clipboardData).getData('text');
+                    const digits = paste.replace(/\D/g, '').slice(0, otpDigits.length);
+                    for (let i = 0; i < digits.length; i++) {
+                        if (i < otpDigits.length) {
+                            otpDigits[i].value = digits[i];
+                        }
+                    }
+                    const nextIndex = Math.min(digits.length, otpDigits.length - 1);
+                    otpDigits[nextIndex]?.focus();
+                    otpError.style.display = 'none';
+                });
+            });
+
+            window.verifyOtp = function () {
+                let otpCode = '';
+                otpDigits.forEach(inp => otpCode += inp.value);
+                if (otpCode.length !== 6) {
+                    otpError.textContent = 'يرجى إدخال الرمز المكون من 6 أرقام';
+                    otpError.style.display = 'block';
+                    return;
+                }
+                if (otpCode === '000000') {
+                    otpError.textContent = 'الرمز غير صحيح، حاول مجدداً';
+                    otpError.style.display = 'block';
+                    return;
+                }
+
+                otpError.style.display = 'none';
+                otpModal.hide();
+
+                if (currentOtpTarget === 'phone') {
+
+                    disableInputAndSelect(phoneInput, phoneCountryCode);
+                    phonePill.innerHTML = `<i class="fa-solid fa-check-circle" style="color:#1e7e34;"></i> تم التحقق`;
+                    phonePill.disabled = true;
+                    phonePill.classList.add('verified-badge');
+                    phonePill.style.background = '#d4edda';
+                    phonePill.style.borderColor = '#b7d7b7';
+
+                } else if (currentOtpTarget === 'email') {
+                    emailInput.disabled = true;
+                    emailInput.style.backgroundColor = '#e9ecef';
+                    emailInput.style.opacity = '0.7';
+                    emailPill.innerHTML = `<i class="fa-solid fa-check-circle" style="color:#1e7e34;"></i> تم التحقق`;
+                    emailPill.disabled = true;
+                    emailPill.classList.add('verified-badge');
+                    emailPill.style.background = '#d4edda';
+                    emailPill.style.borderColor = '#b7d7b7';
+                }
+
+                updateVerifyButtons();
+            };
+
+            otpModalEl.addEventListener('hidden.bs.modal', function () {
+                otpError.style.display = 'none';
+                otpDigits.forEach(inp => inp.value = '');
+            });
+
+            otpDigits.forEach(inp => {
+                inp.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        document.getElementById('verifyOtpBtn').click();
+                    }
+                });
+            });
+
+            otpModalEl.addEventListener('shown.bs.modal', function () {
+                setTimeout(() => otpDigits[0]?.focus(), 50);
+            });
+
+        })();
+    </script>
 </body>
 
 </html>
