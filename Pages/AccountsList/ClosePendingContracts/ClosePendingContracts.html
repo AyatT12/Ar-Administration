@@ -376,7 +376,7 @@
                                 <!-- Table -->
                                 <div class="table-wrapper">
                                     <div class="table-container">
-                                        <table class=" tables-style table table-borderless " id="Branches-table">
+                                        <table class=" tables-style table table-borderless " id="table">
                                             <thead class="sticky-top">
                                                 <tr>
                                                     <th>العقد</th>
@@ -1516,7 +1516,26 @@
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../../../scripts/Scripts.js"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var table = document.getElementById("table");
+            var rows = table.getElementsByTagName("tr");
+    
+            for (var i = 0; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName("td");
+    
+                if (cells.length > 0) {
+                    var lastTd = cells[cells.length-7];
 
+                    for (var j = 0; j < cells.length; j++) {
+                        cells[j].addEventListener("click", function () {
+                             window.location.href = "ActualClose.html";
+                        });
+                    }
+                }
+            }
+        });
+    </script>
 
 </body>
 

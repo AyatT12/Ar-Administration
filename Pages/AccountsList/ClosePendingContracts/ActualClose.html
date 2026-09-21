@@ -1,0 +1,2258 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> نظام الادارة - تسوية العقود المعلقة </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Cairo:500,400,700" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="../../../style/Layout.css">
+    <link rel="stylesheet" href="../../../style/content.css">
+
+    <!-- <link rel="stylesheet" href="../../../style/english.css">  -->
+
+</head>
+
+<body>
+    <div id="wrapper" class="Branches-wrapper d-flex flex-column ">
+        <!-- Top Navbar -->
+        <nav class="navbar navbar-expand-md navbar-light ">
+            <div class="nav-container container-fluid">
+                <!-- Company Logo -->
+                <div class="navbar-brand d-flex align-items-center gap-4">
+                    <a href="https://ayatt12.github.io/Ar-Administration/" class="Company-Logo"><img
+                            src="../../../images/Demo/DefualtCompany Logo.png" alt="Company Logo"
+                            class="Company-Logo-img"></a>
+                    <h1 class="m-0 Company-name">شركة كدي
+                        لتأجير السيارات</h1>
+                    <i class="fa-solid fa-bars toggle4 mobile-icon nav-icon" onclick="toggleSidebar('right')"></i>
+                </div>
+
+                <!-- User Information -->
+                <div class="icons-content">
+                    <div class="d-flex">
+                        <div class="navbar-nav">
+                            <div class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle d-flex align-items-center py-0 gap-2" href="#"
+                                    id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="userName text-start d-flex flex-column text-dark">
+                                        <span style="font-weight: 700;"> عيسى هاني مبروك عزام </span>
+                                        <span style="font-weight: 400;">مشرف على الفروع</span>
+                                    </div>
+                                    <img src="../../../images/Demo/Employee_Picture.svg" alt="User Avatar"
+                                        class="rounded-circle User-Avatar">
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                    <li><a class="dropdown-item userDropdown-options"
+                                            href="https://ayatt12.github.io/Ar-Administration/Pages/Account/Account.html">حسابي
+                                            <img src="../../../images/Static/Topbar/AccountNavIcon.svg" /></a></li>
+                                    <li><a class="dropdown-item userDropdown-options"
+                                            href="https://ayatt12.github.io/Ar-Administration/Pages/Account/NewPassword.html">تغيير
+                                            كلمة السر <img
+                                                src="../../../images/Static/Topbar/PasswordNavIcon.svg" /></a>
+                                    </li>
+                                    <li><a class="dropdown-item userDropdown-options"
+                                            href="https://ayatt12.github.io/login_v2/Systems.html"> الأنظمه <img
+                                                src="../../../images/Static/Topbar/SystemsNavIcon.svg" /></a></li>
+
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item userDropdown-options "
+                                            href="https://ayatt12.github.io/login_v2/index.html">تسجيل الخروج <img
+                                                class="logout"
+                                                src="../../../images/Static/Topbar/LogoutNavIcon.svg" /></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="col lang-button-col">
+                            <input type="checkbox" id="myCheckbox" class="d-none">
+                            <h5 for="myCheckbox" class="lang-button mx-2" id="checkboxLabel"> En</h5>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </nav>
+        <!-- Main Container -->
+        <div class="main-container">
+            <!-- Right Sidebar (Navigation) -->
+            <aside class="sidebar-right closed" id="rightSidebar">
+                <div class="toggle-btn" id="toggle-RightSide-Btn">
+                    <i class="bx bx-chevron-right toggle"></i>
+                </div>
+                <div class="menu-bar">
+                    <div class="menu">
+                        <ul class="menu-links">
+                            <li class="nav-link">
+                                <img src="../../../images/Static/SideNavIcons/comany.svg" data-bs-toggle="collapse"
+                                    data-bs-target="#company-items" aria-expanded="false" aria-controls="#company-items"
+                                    class="icon" />
+                                <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#company-items" aria-expanded="false"
+                                    aria-controls="#company-items">الشركة </span>
+                            </li>
+
+                            <div id="company-items" class="collapse">
+                                <div class="bg-white gap-3 collapse-inner rounded">
+                                    <a class="collapse-item" href="../../../Pages/company/Branches/Branches.html">
+                                        الفروع <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/company/owners/owners.html">
+                                        الملاك <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                </div>
+                            </div>
+
+                            <li class="nav-link">
+                                <img src="../../../images/Static/SideNavIcons/cars.svg" data-bs-toggle="collapse"
+                                    data-bs-target="#Cars-items" aria-expanded="false" aria-controls="#Cars-items"
+                                    class="icon" />
+                                <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#Cars-items" aria-expanded="false" aria-controls="#Cars-items">
+                                    السيارات </span>
+                            </li>
+                            <div id="Cars-items" class="collapse">
+                                <div class="bg-white gap-3 collapse-inner rounded">
+                                    <a class="collapse-item" href="../../../Pages/Cars/CarsData/CarsData.html"> بيانات
+                                        السيارات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/Cars/CarRepair/CarRepair.html"> تصليح
+                                        السيارة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/Cars/CarTransfer/CarTransfer.html">
+                                        نقل
+                                        السيارة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/Cars/ChangeOwner/ChangeOwner.html">
+                                        تغيير المالك <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/Cars/SalesProcedures/SalesProcedures.html"> إجراءات البيع
+                                        <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/Cars/CarsPrices/Prices.html"> الأسعار
+                                        <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                </div>
+                            </div>
+
+                            <li class="nav-link">
+                                <a>
+                                    <img src="../../../images/Static/SideNavIcons/tenants.svg" data-bs-toggle="collapse"
+                                        data-bs-target="#tenant-items" aria-expanded="false"
+                                        aria-controls="#tenant-items" class="icon" />
+                                    <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#tenant-items" aria-expanded="false"
+                                        aria-controls="#tenant-items"> المستأجرين </span>
+                                </a>
+                            </li>
+                            <div id="tenant-items" class="collapse">
+                                <div class="bg-white gap-3 collapse-inner rounded">
+                                    <a class="collapse-item" href="../../../Pages/Tenants/TenantsData/TenantsData.html">
+                                        بيانات المستأجرين <i
+                                            class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/Tenants/TenantsContracts/TenantsContracts.html"> عقود
+                                        المستأجرين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/Tenants/Tenants' debts/Tenantsdebts.html"> مديونيات
+                                        المستأجرين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/Tenants/Messages/MessageTenants.html">
+                                        رسائل المستأجرين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+                                </div>
+                            </div>
+                            <li class="nav-link">
+                                <a>
+                                    <img src="../../../images/Static/SideNavIcons/accounts.svg"
+                                        data-bs-toggle="collapse" data-bs-target="#Accounts-items" aria-expanded="false"
+                                        aria-controls="#Accounts-items" class="icon" />
+                                    <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#Accounts-items" aria-expanded="false"
+                                        aria-controls="#Accounts-items"> الحسابات </span>
+                                </a>
+                            </li>
+                            <div id="Accounts-items" class="collapse">
+                                <div class="bg-white gap-3 collapse-inner rounded">
+                                    <a class="collapse-item"
+                                        href="../../../Pages/AccountsList/CashFeeding/Feed Box.html"> تغذية الصندوق <i
+                                            class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/AccountsList/Receipt Confirmation/Custody.html"> استلام
+                                        عهدة
+                                        <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+                                    <a class="collapse-item"
+                                        href="../../../Pages/AccountsList/Money from  tenant/Money from tenant.html">
+                                        مبالغ من مستأجر<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/AccountsList/Money to tenant/Money to tenant.html"> مبالغ
+                                        إلى مستأجر<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+                                    <a class="collapse-item active"
+                                        href="../../../Pages/AccountsList/ClosePendingContracts/ClosePendingContracts.html">
+                                        تسوية العقود
+                                        المعلقة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/AccountsList/Tax return/Tax return_edited.html"> الإقرار
+                                        الضريبي
+                                        <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                </div>
+                            </div>
+
+
+                            <li class="nav-link">
+                                <a>
+                                    <img src="../../../images/Static/SideNavIcons/reports.svg" data-bs-toggle="collapse"
+                                        data-bs-target="#reports-items" aria-expanded="false"
+                                        aria-controls="#reports-items" class="icon" />
+                                    <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#reports-items" aria-expanded="false"
+                                        aria-controls="#reports-items">التقارير </span>
+                                </a>
+                            </li>
+                            <div id="reports-items" class="collapse">
+                                <div class="bg-white gap-3 collapse-inner rounded">
+                                    <a class="collapse-item"
+                                        href="../../../Pages/reports/Administrative procedures.html"> الإجراءات الإدارية
+                                        <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/reports/DailyReports.html"> اليومية <i
+                                            class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/reports/Existing contracts.html">
+                                        العقود القائمة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/reports/Closed Contracts.html"> العقود
+                                        المغلقة <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item " href="../../../Pages/reports/Saved contracts.html"> العقود
+                                        المحفوظة و الملغاه<i
+                                            class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/reports/Cars contracts.html"> عقود
+                                        السيارات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/reports/Employee contracts.html"> عقود
+                                        الموظفين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/reports/Drivers contracts.html"> عقود
+                                        السائقين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/reports/Employee Financial movement.html"> الحركة المالية
+                                        للموظفين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/reports/Tenant Financial movement.html"> الحركة المالية
+                                        للمستأجرين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/reports/SalePoint Financial movement.html"> الحركة المالية
+                                        لنقاط البيع <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/reports/Covenant Movement.html"> حركة
+                                        تسليم العهد <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/reports/Cars_documents.html"> وثائق
+                                        السيارات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/reports/Cars_maintenance.html"> صيانة
+                                        السيارات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                </div>
+                            </div>
+                            <li class="nav-link">
+                                <a>
+                                    <img src="../../../images/Static/SideNavIcons/statics.svg" data-bs-toggle="collapse"
+                                        data-bs-target="#statics-items" aria-expanded="false"
+                                        aria-controls="#statics-items" class="icon" />
+                                    <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#statics-items" aria-expanded="false"
+                                        aria-controls="#statics-items"> الإحصائيات </span>
+                                </a>
+                            </li>
+                            <div id="statics-items" class="collapse">
+                                <div class="bg-white gap-3 collapse-inner rounded">
+                                    <a class="collapse-item" href="../../../Pages/statistics/Car statistics.html">
+                                        إحصائيات السيارات <i
+                                            class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/statistics/Tenants statistics.html">
+                                        إحصائيات المستأجرين <i
+                                            class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/statistics/Contracts statistics.html">
+                                        إحصائيات العقود<i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/statistics/Car Contracts statistics.html"> إحصائيات عقود
+                                        السيارات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/statistics/Tenants Contracts statistics.html"> إحصائيات
+                                        عقود
+                                        المستأجرين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                </div>
+                            </div>
+
+                            <li class="nav-link">
+                                <a>
+                                    <img src="../../../images/Static/SideNavIcons/employees.svg"
+                                        data-bs-toggle="collapse" data-bs-target="#employees-items"
+                                        aria-expanded="false" aria-controls="#employees-items" class="icon" />
+                                    <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#employees-items" aria-expanded="false"
+                                        aria-controls="#employees-items"> الموظفين </span>
+                                </a>
+                            </li>
+                            <div id="employees-items" class="collapse">
+                                <div class="bg-white gap-3 collapse-inner rounded">
+                                    <a class="collapse-item"
+                                        href="../../../Pages/employees/employees list/employees.html"> بيانات الموظفين
+                                        <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/employees/System Permissions/employees.html"> صلاحيات
+                                        النظام
+                                        <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/employees/Contract Permissions/employees.html">صلاحيات
+                                        العقود <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+                                </div>
+                            </div>
+
+                            <li class="nav-link">
+                                <a>
+                                    <img src="../../../images/Static/SideNavIcons/services.svg"
+                                        data-bs-toggle="collapse" data-bs-target="#services-items" aria-expanded="false"
+                                        aria-controls="#services-items" class="icon" />
+                                    <span class="text nav-text collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#services-items" aria-expanded="false"
+                                        aria-controls="#services-items">الخدمات</span>
+                                </a>
+                            </li>
+                            <div id="services-items" class="collapse">
+                                <div class="bg-white gap-3 collapse-inner rounded">
+                                    <a class="collapse-item" href="../../../Pages/Services/banks/Banks.html"> الحسابات
+                                        البنكية <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/Services/sellingPoints/sellingPoints.html"> نقاط البيع <i
+                                            class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item"
+                                        href="../../../Pages/Services/techncal-connect/techncal-connect.html"> الربط
+                                        التقني <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item "
+                                        href="../../../Pages/Services/Rental policy/Rental policy.html">
+                                        سياسة التأجير <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/Services/drivers/drivers.html">
+                                        السائقين <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+
+                                    <a class="collapse-item" href="../../../Pages/Services/Alerts/Alerts.html">
+                                        الإعدادات
+                                        <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                    <a class="collapse-item" href="../../../Pages/Services/Membership/Membership.html">
+                                        العضويات <i class="fa-solid fa-arrow-left inner-collapse-arrow"></i></a>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+
+
+                </div>
+
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="content-area px-3">
+                <div class="container d-flex flex-column" style="flex:1;min-height: 0;">
+                    <div class="row flex-column" style="flex: 1;min-height: 0; position: relative;">
+                        <div class="col-lg-12 Data-container ">
+                            <form class="ContentForm" id="SettlementForm">
+                                <!-- Content Header -->
+                                <div class="row my-2 h-100 flex-column justify-content-between">
+                                   <div class="col-md-12">
+                                    <div class="row">
+                                    <div class="col-md-auto save-col justify-content-start">
+                                        <button type="button" class="custom-img-btn"><a class="d-flex align-items-center" href="ClosePendingContracts.html"><img class="Chevron" src="../../../images/Static/States/Chevron_Left.svg" /></a></button>
+                                        <button type="submit" class="custom-img-btn"> <img src="../../../images/Static/States/save.svg" /></button>
+                                    </div>
+                                     <div class="col text-center">
+                                        <h3>تسوية العقد</h3>
+                                    </div>
+                                    </div>
+                                   </div>
+                                    <div class="col-md-12" style="flex: 1;min-height: 0;">
+                                        <div class="row justify-content-center content-row h-100">
+                                            <div class="col-md-12 px-md-4 h-100 d-flex flex-column">
+                                                <div class="w-100">
+                                                    <ul id="progressbar">
+                                                        <li class="active" id="Rental_terms">بنود التأجير</li>
+                                                        <li id="Expenses">المصروفات</li>
+                                                        <li id="compensation">التعويضات</li>
+                                                        <li id="payment"> الدفع</li>
+                                                    </ul>
+                                                </div>
+                                                <fieldset id="firstFieldset">
+                                                    <div class="form-card SettlementCard1  ">
+                                                        <div class="pdfs_Container d-flex mb-3 gap-3">
+                                                            <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
+                                                                target="_blank" class="pdf-anchor"><img
+                                                                    src="../../../images/Static/PdfIcons/contract.svg"
+                                                                    alt="pdf for contract details" class="pdf_img2"></a>
+                                                            <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
+                                                                target="_blank" class="pdf-anchor2"><img
+                                                                    src="../../../images/Static/PdfIcons/Invoice.svg"
+                                                                    alt="pdf for contract details" class="pdf_img"></a>
+                                                            <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
+                                                                target="_blank" class="pdf-anchor3"><img
+                                                                    src="../../../images/Static/PdfIcons/naql.svg"
+                                                                    alt="pdf for contract details" class="pdf_img3"></a>
+                                                        </div>
+                                                        <div class="row flex-row-reverse align-items-start"
+                                                            style="flex: 1;">
+                                                            <div class="col-md-12 col-lg-6 col-xxl-7">
+                                                                <div
+                                                                    class="row flex-row-reverse align-items-center g-2 mb-3 ">
+                                                                    <div class="col-auto">
+                                                                        <p class="mb-0">رقم العقد</P>
+                                                                    </div>
+                                                                    <div class="col-auto personal-data">
+                                                                        <p class="mb-0">24-1401-4001105-000078</P>
+                                                                    </div>
+                                                                    <div class="col-md-auto  search-icon-col">
+                                                                        <div class="col-sm-12 d-flex justify-content-end px-0">
+                                                                            <img src="../../../images/Static/settelment/Search_Icon.svg"
+                                                                                alt="seacrh-icon Image"
+                                                                                id="hover-image-Settlement">
+                                                                        </div>
+                                                                        <div class="dropdown-content settel-dropdown-content"
+                                                                            id="dropdown-content-Settlement">
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p> : المستأجر </p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p>عبدالمنعم عبدالحليم هشام
+                                                                                        الريس</p>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p> : السيارة</p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p> ى ر ر 8343 </p>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p> : بداية العقد </p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p>2024/12/29 18:12</p>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p> : نهاية العقد المتوقعة </p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p>2025/02/12 18:12</p>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p> : عدد الأيام المتوقعة</p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p>3</p>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p> : الساعات المجانية </p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p>2</p>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p> : الحد الأعلى للساعات</p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p>0</p>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p> : الكيلوات المجاني اليومي
+                                                                                    </p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p>2</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12  col-lg-auto  col-xxl-12">
+                                                                <div
+                                                                    class="row flex-row-reverse align-items-center g-2 mb-3 ">
+                                                                    <div class="col-auto">
+                                                                        <p class="mb-0">قيمة العقد </P>
+                                                                    </div>
+                                                                    <div class="col-auto personal-data">
+                                                                        <p class="mb-0"> 454.25</P>
+                                                                    </div>
+                                                                    <div class="col-md-auto  search-icon-col">
+                                                                        <div class="col-sm-12  d-flex justify-content-end px-0">
+                                                                            <img src="../../../images/Static/settelment/Search_Icon.svg"
+                                                                                alt="search-icon Image"
+                                                                                id="contract-value-Settlement2">
+                                                                        </div>
+                                                                        <div class="dropdown-content  settel-dropdown-content"
+                                                                            id="dropdown-content-Settlement2">
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p> ايجار </p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p>4.652.00</p>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p>خيارات</p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p>0.00</p>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p>اضافات </p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p> 0.00 </p>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p>رسوم التفويض</p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p> 10.00 </p>
+
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p>رسوم شموس</p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p>1.00</p>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p>رسوم حكومية</p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p>0.00</p>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p>رسوم إدارية</p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p>0.00</p>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p>رسوم أخرى</p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p>694.00 </p>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p>ضريبة</p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p>694.00 </p>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="row flex-row-reverse gx-2">
+                                                                    <div class="col-auto">
+                                                                        <p>فرع الاستلام </p>
+                                                                    </div>
+                                                                    <div class="col-auto personal-data">
+                                                                        <p>القصيم</P>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-5">
+                                                                <div class="row flex-row-reverse gx-2">
+                                                                    <div class="col-auto">
+                                                                        <p> فرع التسليم</p>
+                                                                    </div>
+                                                                    <div class="col-auto personal-data">
+                                                                        <p>العزيزة</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6  data-col-Settl flex-wrap">
+                                                                <div
+                                                                    class="row flex-row-reverse align-items-start w-100 gx-2">
+                                                                    <div class="col-auto centered-input-label">
+                                                                        <label for="contract_real_endTime"
+                                                                            class="form-label">
+                                                                            نهاية العقد</label>
+                                                                    </div>
+                                                                    <div class="col-md-5">
+                                                                        <input type="date" id="contract_real_endTime"
+                                                                            class="form-control inputs"
+                                                                            name="contract-end-date"
+                                                                            aria-describedby="inputGroupPrepend">
+                                                                        <div class="row requird-field-row-last">
+                                                                            <div class="invalid-feedback"> الحقل
+                                                                                مطلوب</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-5">
+                                                                <div
+                                                                    class="row flex-row-reverse align-items-center gx-2">
+                                                                    <div class="col-auto">
+                                                                        <p> عدد الأيام الفعلية</p>
+                                                                    </div>
+                                                                    <div class="col-auto personal-data">
+                                                                        <p>20</P>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-8 col-lg-6  data-col-Settl flex-wrap">
+                                                                <div
+                                                                    class="row flex-row-reverse align-items-start w-100 gx-2">
+                                                                    <div class="col-auto  centered-input-label">
+                                                                        <label for="Settlement-type" class="form-label"> نوع
+                                                                            التسوية</label>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <select class="form-select form-select-settel"
+                                                                            id="Settlement-type" name="Settlement type">
+                                                                            <option selected disabled></option>
+                                                                            <option value="0">تعليق ناتج عن حادث
+                                                                                مروري</option>
+                                                                            <option value="1"> اغلاق بانتهاء مدة
+                                                                                العقد</option>
+                                                                            <option value="1"> اغلاق بسبب استدعاء
+                                                                                تجاري قبل
+                                                                                انتهاء مدته</option>
+                                                                        </select>
+                                                                        <div class="row requird-field-row-last">
+                                                                            <div class="invalid-feedback"> الحقل
+                                                                                مطلوب</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4 col-lg-6 data-col-Settl mb-3">
+                                                                <div
+                                                                    class="col-auto  d-flex align-items-start gap-1 px-0">
+                                                                    <label class="form-check-label"
+                                                                        for="expenses">المصروفات</label>
+                                                                    <input
+                                                                        class="form-check-input Settlement-input-checkbox m-0"
+                                                                        type="checkbox" value="checked" id="expenses"
+                                                                        name="checked-expenses">
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="col-md-6 d-flex align-items-center justify-content-end">
+                                                                <div
+                                                                    class="row flex-row-reverse align-items-center gx-2">
+                                                                    <div class="col-auto ">
+                                                                        <p class="mb-md-0">ايام التأخير</p>
+                                                                    </div>
+                                                                    <div class="col-auto personal-data">
+                                                                        <p class="mb-md-0">12</P>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 d-flex gx-0 ">
+                                                                <div
+                                                                    class="row flex-row-reverse align-items-center gx-2 w-100">
+                                                                    <div class="col-auto">
+                                                                        <label for="Delay-fine" class="mb-md-0">
+                                                                            غرامة
+                                                                            التأخير</label>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <select class="form-select form-select-settel"
+                                                                            id="Delay-fine" name="Delay-fine">
+                                                                            <option selected> اعفاء</option>
+                                                                            <option value="0">غرامة ربع يوم
+                                                                            </option>
+                                                                            <option value="1"> غرامة نص يوم
+                                                                            </option>
+                                                                            <option value="2"> غرامة يوم </option>
+                                                                            <option value="2"> غرامة يوم و ساعتين و
+                                                                                25 دقيقة
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row button-row">
+                                                        <div class="col-auto">
+                                                            <img src="../../../images/Static/settelment/NextArrow.png"
+                                                                alt="Button Image" class="next"
+                                                                style="vertical-align: middle; ">
+                                                            <input type="button" name="next" class="next action-button"
+                                                                value="التالي" />
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                                <fieldset id="SecondFieldset">
+                                                    <div class="form-card form-card1">
+                                                        <div class="row expensesRow flex-lg-row-reverse">
+                                                            <div class="col-lg-6 expenses-compensation-TableColumn">
+                                                                <div class="TablesReferenceDiv">
+                                                                    <table class="table Expenses-compensation-Table"
+                                                                        id="Expenses-Data-Table">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th style="min-width: 200px;">
+                                                                                    البيان</th>
+                                                                                <th
+                                                                                    style="width: 110px; min-width: 110px;">
+                                                                                    القيمة</th>
+                                                                                <th> الخدمة </th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <textarea
+                                                                                        class="form-control check-table-notes"
+                                                                                        id="Expenses1" maxlength="100"
+                                                                                        name="Expenses1"></textarea>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <input type="text"
+                                                                                        class="form-control Table-inputs"
+                                                                                        name="ChangeOil">
+                                                                                </td>
+                                                                                <td>
+                                                                                    تغيير الزيت
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <textarea
+                                                                                        class="form-control check-table-notes"
+                                                                                        id="Expenses2" maxlength="100"
+                                                                                        name="Expenses2"></textarea>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <input type="text"
+                                                                                        class="form-control Table-inputs"
+                                                                                        name="TiresExpenses">
+
+                                                                                </td>
+                                                                                <td>
+                                                                                    الإطارات
+                                                                                </td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <textarea
+                                                                                        class="form-control check-table-notes"
+                                                                                        id="Expenses3" maxlength="100"
+                                                                                        name="Expenses3"></textarea>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <input type="text"
+                                                                                        class="form-control Table-inputs"
+                                                                                        name="Transportation">
+
+                                                                                </td>
+                                                                                <td>
+                                                                                    النقل
+                                                                                </td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <textarea
+                                                                                        class="form-control check-table-notes"
+                                                                                        id="Expenses4" maxlength="100"
+                                                                                        name="Expenses4"></textarea>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <input type="text"
+                                                                                        class="form-control Table-inputs"
+                                                                                        name="otherExpenses">
+                                                                                </td>
+                                                                                <td>
+                                                                                    أخرى
+                                                                                </td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <textarea
+                                                                                        class="form-control check-table-notes"
+                                                                                        id="Expenses5" maxlength="100"
+                                                                                        name="Expenses5"
+                                                                                        disabled></textarea>
+                                                                                </td>
+                                                                                <td>
+                                                                                </td>
+                                                                                <td>
+
+                                                                                </td>
+
+                                                                            </tr>
+                                                                            <tr class="total">
+                                                                                <td colspan="2">
+                                                                                    <p class="mb-0" id="TotalExpenses">
+                                                                                    </p>
+                                                                                </td>
+                                                                                <td scope="row">
+                                                                                    <p class="mb-0">المجموع</p>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                            <hr class="Seprate-Line" />
+                                                            <div class="col-lg-5 attachments-col">
+                                                                <div class="TablesReferenceDiv">
+                                                                    <table
+                                                                        class="table Expenses-compensation-Table attatchments-table "
+                                                                        id="Expenses-Attatchments-Table">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th colspan="2" class="text-center">
+                                                                                    المرفقات
+                                                                                </th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <div
+                                                                                        class="upload__box  upload__box2 d-flex ">
+                                                                                        <div
+                                                                                            class="upload_img-wrap_inner">
+                                                                                            <div class="upload__btn-box"
+                                                                                                id="Expenses-upload-box">
+                                                                                                <label
+                                                                                                    class="upload__btn">
+                                                                                                    <divc
+                                                                                                        lass="upload-container-checking Expenses-compensation-Upload">
+                                                                                                        <img class="upload-icon"
+                                                                                                            src="../../../images/Static/Settelment/Add.svg"
+                                                                                                            alt="Upload Icon"
+                                                                                                            id="addImage">
+                                                                                                        <input
+                                                                                                            type="file"
+                                                                                                            multiple
+                                                                                                            id="Expenses-images"
+                                                                                                            class="upload__inputfile ">
+                                                                                                    </divc>
+                                                                                                </label>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td> </td>
+                                                                                <td> </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row button-row">
+                                                        <div class="col-auto">
+                                                            <img src="../../../images/Static/settelment/NextArrow.png"
+                                                                alt="Button Image" class="next"
+                                                                style="vertical-align: middle; ">
+                                                            <input type="button" name="next" class="next action-button"
+                                                                value="التالي" />
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <input type="button" name="previous"
+                                                                class="previous action-button-previous"
+                                                                value="السابق" />
+                                                            <img src="../../../images/Static/settelment/BackArrow.png"
+                                                                alt="Button Image" class="previous"
+                                                                style="vertical-align: middle; ">
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                                <fieldset id="ThirdFieldset">
+                                                    <div class="form-card form-card1">
+                                                        <div class="row expensesRow flex-lg-row-reverse">
+                                                            <div class="col-lg-6 expenses-compensation-TableColumn">
+                                                                <div class="TablesReferenceDiv">
+                                                                    <table class="table Expenses-compensation-Table "
+                                                                        id="compensation-Data-Table">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th style="min-width: 200px;">
+                                                                                    البيان
+                                                                                </th>
+                                                                                <th
+                                                                                    style="width: 110px;min-width: 110px;">
+                                                                                    القيمة</th>
+                                                                                <th> الخدمة </th>
+
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <textarea
+                                                                                        class="form-control check-table-notes"
+                                                                                        id="compensation1"
+                                                                                        maxlength="100"
+                                                                                        name="compensation1"></textarea>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <input type="text"
+                                                                                        class="form-control Table-inputs"
+                                                                                        name="SpareParts">
+                                                                                </td>
+                                                                                <td>
+                                                                                    قطع الغيار
+                                                                                </td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <textarea
+                                                                                        class="form-control check-table-notes"
+                                                                                        id="compensation2"
+                                                                                        maxlength="100"
+                                                                                        name="compensation2"></textarea>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <input type="text"
+                                                                                        class="form-control Table-inputs"
+                                                                                        name="HandFare">
+                                                                                </td>
+                                                                                <td>
+                                                                                    أجرة اليد
+                                                                                </td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <textarea
+                                                                                        class="form-control check-table-notes"
+                                                                                        id="compensation3"
+                                                                                        maxlength="100"
+                                                                                        name="compensation3"></textarea>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <input type="text"
+                                                                                        class="form-control Table-inputs"
+                                                                                        name="Transportation">
+                                                                                </td>
+                                                                                <td>
+                                                                                    النقل
+                                                                                </td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <textarea
+                                                                                        class="form-control check-table-notes"
+                                                                                        id="compensation4"
+                                                                                        maxlength="100"
+                                                                                        name="compensation4"></textarea>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <input type="text"
+                                                                                        class="form-control Table-inputs "
+                                                                                        name="AdministrativeFees"
+                                                                                        value="">
+                                                                                </td>
+                                                                                <td>
+                                                                                    رسوم إدارية
+                                                                                </td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <textarea
+                                                                                        class="form-control check-table-notes"
+                                                                                        id="compensation5"
+                                                                                        maxlength="100"
+                                                                                        name="compensation5"></textarea>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <input type="text"
+                                                                                        class="form-control Table-inputs "
+                                                                                        name="otherCompensation">
+                                                                                </td>
+                                                                                <td>
+                                                                                    أخرى
+                                                                                </td>
+
+                                                                            </tr>
+                                                                            <tr class="total">
+                                                                                <td colspan="2">
+                                                                                    <p class="mb-0"
+                                                                                        id="TotalCompensation">
+                                                                                        183.50</p>
+                                                                                </td>
+                                                                                <td scope="row">
+                                                                                    <p class="mb-0">المجموع</p>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                            <hr class="Seprate-Line" />
+                                                            <div class="col-lg-5 attachments-col">
+                                                                <div class="TablesReferenceDiv">
+                                                                    <table
+                                                                        class="table Expenses-compensation-Table attatchments-table "
+                                                                        id="compensation-Attatchments-Table">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th colspan="2" class="text-center">
+                                                                                    المرفقات </th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <div
+                                                                                        class="upload__box  upload__box2 d-flex ">
+                                                                                        <div
+                                                                                            class="upload_img-wrap_inner">
+
+                                                                                            <div class="upload__btn-box"
+                                                                                                id="compensation-upload-box">
+                                                                                                <label
+                                                                                                    class="upload__btn">
+                                                                                                    <div
+                                                                                                        class="upload-container-checking Expenses-compensation-Upload">
+                                                                                                        <img class="upload-icon"
+                                                                                                            src="../../../images/Static/Settelment/Add.svg"
+                                                                                                            alt="Upload Icon"
+                                                                                                            id="addImage">
+                                                                                                        <input
+                                                                                                            type="file"
+                                                                                                            class="upload__inputfile"
+                                                                                                            id="compensation-images"
+                                                                                                            multiple>
+                                                                                                    </div>
+                                                                                                </label>
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                    </div>
+
+                                                                                </td>
+
+                                                                                <td>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                </td>
+                                                                                <td>
+
+                                                                                </td>
+
+                                                                            </tr>
+
+
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-evenly">
+                                                            <div class="col-md-5"></div>
+                                                            <div class="col-lg-6">
+                                                                <p style="color:red;margin: 0;" class="px-xxl-3"
+                                                                    id="ExpensesError"> ضد
+                                                                    الغير </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row button-row">
+                                                        <div class="col-auto">
+                                                            <img src="../../../images/Static/settelment/NextArrow.png"
+                                                                alt="Button Image" class="next"
+                                                                style="vertical-align: middle; ">
+                                                            <input type="button" name="next" class="next action-button"
+                                                                value="التالي" />
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <input type="button" name="previous"
+                                                                class="previous action-button-previous"
+                                                                value="السابق" />
+                                                            <img src="../../../images/Static/settelment/BackArrow.png"
+                                                                alt="Button Image" class="previous"
+                                                                style="vertical-align: middle; ">
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                                <fieldset id="FifthFieldset">
+                                                    <div class="form-card form-card5-settl">
+                                                        <div class="row data-col-Settl  mb-2 " style="flex: 1;">
+                                                            <div class="col-md-12 col-xl-12">
+                                                                <div
+                                                                    class="row flex-row-reverse align-items-center g-2">
+                                                                    <div class="col-auto ">
+                                                                        <p class="mb-0">رقم العقد </P>
+                                                                    </div>
+                                                                    <div class="col-auto personal-data">
+                                                                        <p class="mb-0">24-1401-4001105-000078</P>
+                                                                    </div>
+                                                                    <div class="col-md-5 col-lg-auto col-xxl-4  search-icon-col">
+                                                                        <div class="col-sm-12 d-flex justify-content-end px-0"> 
+                                                                            <img
+                                                                                src="../../../images/Static/settelment/Search_Icon.svg"
+                                                                                alt="search-icon Image"
+                                                                                id="contract-value-Settlement3">
+                                                                        </div>
+                                                                        <div class="dropdown-content settel-dropdown-content"
+                                                                            id="dropdown-content-Settlement3">
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p> : المستأجر </p>
+                                                                                </div>
+                                                                                <div class="col personal-data">
+                                                                                    <p>عبدالله عمر عامر العسعوس</p>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p> : السيارة</p>
+                                                                                </div>
+                                                                                <div class="col personal-data">
+                                                                                    <p>ل ق ب 4749</p>
+                                                                                </div>
+
+                                                                            </div>
+
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p>: عدد الايام</p>
+                                                                                </div>
+                                                                                <div class="col personal-data">
+                                                                                    <p>9</p>
+                                                                                </div>
+
+                                                                            </div>
+
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p> : المبلغ المحجوز</p>
+                                                                                </div>
+                                                                                <div class="col personal-data">
+                                                                                    <p>899.30</p>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p> : نسبة الخصم </p>
+                                                                                </div>
+                                                                                <div class="col personal-data">
+                                                                                    <p>%0</p>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p> : نسبة الضريبة</p>
+                                                                                </div>
+                                                                                <div class="col personal-data">
+                                                                                    <p> %12</p>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p> : قيمة الوقود ممتلئ</p>
+                                                                                </div>
+                                                                                <div class="col personal-data">
+                                                                                    <p> 400.00</p>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p> : حالة الخزان</p>
+                                                                                </div>
+                                                                                <div class="col personal-data">
+                                                                                    <p> ممتلئ </p>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p>: كيلوات زائدة </p>
+                                                                                </div>
+                                                                                <div class="col personal-data">
+                                                                                    <p> 4,050 </p>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p>: قيمة الكيلو الاضافي</p>
+                                                                                </div>
+                                                                                <div class="col personal-data">
+                                                                                    <p> 0.20 </p>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p>: أيام التأخير </p>
+                                                                                </div>
+                                                                                <div class="col personal-data">
+                                                                                    <p> 1 </p>
+                                                                                </div>
+
+                                                                            </div>
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div
+                                                                    class="row flex-row-reverse align-items-center g-2">
+                                                                    <div class="col-auto">
+                                                                        <p class="mb-0">قيمة العقد</P>
+                                                                    </div>
+                                                                    <div class="col-auto personal-data ">
+                                                                        <p class="mb-0">999,999.99</P>
+                                                                    </div>
+                                                                    <div class="col-md-auto  search-icon-col">
+                                                                        <div  class="col-sm-12 d-flex justify-content-end px-0">
+                                                                            <img src="../../../images/Static/settelment/Search_Icon.svg"
+                                                                                alt="search-icon Image"
+                                                                                id="contract-value-Settlement4">
+                                                                        </div>
+                                                                        <div class="settel-dropdown-content"
+                                                                            id="dropdown-content-Settlement4">
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p>: ايجار </p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p>4.652.00</p>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p>: رسوم التفويض</p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p> 10.00 </p>
+
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p>: رسوم إدارية</p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p>0.00</p>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p>: رسوم شموس</p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p>1.00</p>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p>: رسوم حكومية</p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p>0.00</p>
+                                                                                </div>
+
+                                                                            </div>
+
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p>: رسوم أخرى</p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p>694.00 </p>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p>: كيلوات زائدة</p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p>800.00 </p>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="row dropdown-content-row">
+                                                                                <div class="col-auto">
+                                                                                    <p>: غرامة التأخير (أيام)</p>
+                                                                                </div>
+                                                                                <div class="col-auto personal-data">
+                                                                                    <p>694.00 </p>
+                                                                                </div>
+
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div
+                                                                    class="row flex-row-reverse align-items-center gx-2">
+                                                                    <div class="col-auto ">
+                                                                        <p> بعد الخصم </p>
+                                                                    </div>
+                                                                    <div class="col-auto personal-data">
+                                                                        <p>1505.00</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div
+                                                                    class="row flex-row-reverse align-items-center gx-2">
+                                                                    <div class="col-auto ">
+                                                                        <p> القيمة المضافه </p>
+                                                                    </div>
+                                                                    <div class="col-auto personal-data ">
+                                                                        <p>225.75</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div
+                                                                    class="row flex-row-reverse align-items-center gx-2">
+                                                                    <div class="col-auto ">
+                                                                        <p>إجمالي العقد </p>
+                                                                    </div>
+                                                                    <div class="col-auto personal-data">
+                                                                        <p>1505.00</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div
+                                                                    class="row flex-row-reverse align-items-center gx-2">
+                                                                    <div class="col-auto ">
+                                                                        <p> المصروفات </p>
+                                                                    </div>
+                                                                    <div class="col-auto personal-data">
+                                                                        <p>0.00</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div
+                                                                    class="row flex-row-reverse align-items-center gx-2">
+                                                                    <div class="col-auto ">
+                                                                        <p> التعويضات </p>
+                                                                    </div>
+                                                                    <div class="col-auto personal-data">
+                                                                        <p>0.00</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div
+                                                                    class="row flex-row-reverse align-items-center gx-2">
+                                                                    <div class="col-auto ">
+                                                                        <p> الرصيد المتاح</p>
+                                                                    </div>
+                                                                    <div class="col-auto personal-data">
+                                                                        <p>00.96</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div
+                                                                    class="row flex-row-reverse align-items-center gx-2">
+                                                                    <div class="col-auto ">
+                                                                        <p> الباقي على المستأجر</p>
+                                                                    </div>
+                                                                    <div class="col-auto personal-data">
+                                                                        <p>1750.70</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-4">
+                                                                <div class="row flex-row-reverse g-2">
+                                                                    <div class="col-auto centered-input-label">
+                                                                        <label id="amount-paid" for="amount-paid-input">
+                                                                            المبلغ
+                                                                            المدفوع</label>
+                                                                    </div>
+                                                                    <div class="col col-auto">
+                                                                        <input type="tel"
+                                                                            class="form-control inputs"
+                                                                            id="amount-paid-input" name="amount-paid"
+                                                                            autocomplete="off">
+                                                                        <div class="row requird-field-row-last">
+                                                                            <div class="invalid-feedback"
+                                                                                style="display: none;"> الحقل مطلوب
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-4">
+                                                                <div class="row flex-row-reverse g-2">
+                                                                    <div class="col-auto centered-input-label"
+                                                                        style="justify-content: flex-end;">
+                                                                        <label id="payment-method"
+                                                                            for="payment-method-select">طريقة
+                                                                            الدفع</label>
+                                                                    </div>
+                                                                    <div class="col col-md-7">
+                                                                        <div class="offset">
+                                                                            <select class="form-select form-select-settel"
+                                                                                id="payment-method-select"
+                                                                                name="payment-method" required>
+                                                                                <option selected disabled></option>
+                                                                                <option value="نقدا"> نقدا</option>
+                                                                                <option value="فيزا"> ماسترد كارد
+                                                                                </option>
+                                                                            </select>
+                                                                            <div class="row requird-field-row-last">
+                                                                                <div class="invalid-feedback"
+                                                                                    style="display: none;"> الحقل
+                                                                                    مطلوب </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-4">
+                                                                <div class="row flex-row-reverse g-2">
+                                                                    <div class="col-auto centered-input-label"
+                                                                        style="justify-content: flex-end;">
+                                                                        <label id="selling-point"
+                                                                            for="selling-point-dropdown">
+                                                                            نقطة البيع</label>
+                                                                    </div>
+                                                                    <div class="col col-md-9">
+                                                                        <div class="offset">
+                                                                            <select class="form-select form-select-settel"
+                                                                                id="selling-point-dropdown"
+                                                                                name="selling-point" required>
+                                                                                <option selected disabled></option>
+                                                                                <option value="">ايرادات المستأجرين
+                                                                                    بمصرف
+                                                                                    الراجحي </option>
+                                                                            </select>
+                                                                            <div class="row requird-field-row-last">
+                                                                                <div class="invalid-feedback"
+                                                                                    style="display: none;"> الحقل
+                                                                                    مطلوب </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div
+                                                                    class="row gx-2 align-items-center flex-row-reverse">
+                                                                    <div class="col-auto">
+                                                                        <label id="notes" class="mb-0">الملاحظات</label>
+                                                                    </div>
+                                                                    <div class="col d-flex justify-content-end ">
+                                                                        <textarea class="form-control textarea-inputs"
+                                                                            rows="1" maxlength="100"
+                                                                            name="notes"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row button-row align-items-center justify-content-end">
+                                                        <div class="col-auto">
+                                                            <input type="button" name="previous"
+                                                                class="previous action-button-previous"
+                                                                value="السابق" />
+                                                            <img src="../../../images/Static/settelment/BackArrow.png"
+                                                                alt="Button Image" class="previous"
+                                                                style="vertical-align: middle;">
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </main>
+
+            <!-- Left Sidebar (Alerts) -->
+            <aside class="sidebar-left closed" id="leftSidebar">
+                <div class="toggle-div toggle2" onclick="toggleSidebar('left')">
+                    <span class="notification"> إشعارات </span>
+                </div>
+                <div class="menu-bar">
+                    <div class="menu">
+                        <main>
+                            <div class="accordion">
+
+                                <div class="accordion-item">
+                                    <div class="accordion-item-header">
+                                        <span class="accordion-item-header-title"> مستندات الشركة </span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chevron-down accordion-item-header-icon">
+                                            <path d="m6 9 6 6 6-6" />
+                                        </svg>
+                                    </div>
+                                    <div class="accordion-item-description-wrapper alerts-items-scroll">
+                                        <div class="accordion-item-description">
+                                            <div class="container-fluid">
+                                                <div class="row collapse-row ">
+                                                    <div class="col-7">
+                                                        <p>السجل التجاري</p>
+                                                    </div>
+
+                                                    <div class="col working">
+                                                        <p> 2 </p>
+                                                    </div>
+                                                    <div class="col ended">
+                                                        <p> 3 </p>
+                                                    </div>
+                                                </div>
+                                                <hr class="collapse-hr">
+
+                                                <div class="row collapse-row ">
+                                                    <div class="col-7">
+                                                        <p> اشتراك الغرفة التجارية </p>
+                                                    </div>
+
+                                                    <div class="col working">
+                                                        <p> 5 </p>
+                                                    </div>
+                                                    <div class="col ended">
+                                                        <p> 6 </p>
+                                                    </div>
+                                                </div>
+                                                <hr class="collapse-hr">
+
+                                                <div class="row collapse-row ">
+                                                    <div class="col-7">
+                                                        <p> تصريح هيئة النقل </p>
+                                                    </div>
+
+                                                    <div class="col working">
+                                                        <p> 7 </p>
+                                                    </div>
+                                                    <div class="col ended">
+                                                        <p> 5 </p>
+                                                    </div>
+                                                </div>
+                                                <hr class="collapse-hr">
+
+                                                <div class="row collapse-row ">
+                                                    <div class="col-7">
+                                                        <p> رخصة البلدية </p>
+                                                    </div>
+
+                                                    <div class="col working">
+                                                        <p> 6 </p>
+                                                    </div>
+                                                    <div class="col ended">
+                                                        <p> 3 </p>
+                                                    </div>
+                                                </div>
+                                                <hr class="collapse-hr">
+
+                                                <div class="row collapse-row ">
+                                                    <div class="col-7">
+                                                        <p> البريد الوطني</p>
+                                                    </div>
+
+                                                    <div class="col working">
+                                                        <p> 4 </p>
+                                                    </div>
+                                                    <div class="col ended">
+                                                        <p> 5 </p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-item-header">
+                                        <span class="accordion-item-header-title"> السيارات </span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chevron-down accordion-item-header-icon">
+                                            <path d="m6 9 6 6 6-6" />
+                                        </svg>
+                                    </div>
+                                    <div class="accordion-item-description-wrapper">
+                                        <div class="accordion-item-description">
+                                            <div class="container-fluid">
+                                                <div class="row collapse-row">
+                                                    <div class="col-5">
+                                                        <p>وثائق</p>
+                                                    </div>
+                                                    <div class="col working">
+                                                        <p> 3 </p>
+                                                    </div>
+                                                    <div class="col ended">
+                                                        <p> 5 </p>
+                                                    </div>
+                                                </div>
+                                                <hr class="collapse-hr">
+                                                <div class="row collapse-row">
+                                                    <div class="col-5">
+                                                        <p>صيانة</p>
+                                                    </div>
+                                                    <div class="col working">
+                                                        <p> 100 </p>
+                                                    </div>
+                                                    <div class="col ended">
+                                                        <p> 200 </p>
+                                                    </div>
+                                                </div>
+                                                <hr class="collapse-hr">
+                                                <div class="row collapse-row">
+                                                    <div class="col-5">
+                                                        <p>الأسعار</p>
+                                                    </div>
+                                                    <div class="col working">
+                                                        <p> 460 </p>
+                                                    </div>
+                                                    <div class="col ended">
+                                                        <p> 500 </p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-item-header">
+                                        <span class="accordion-item-header-title"> العقود </span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chevron-down accordion-item-header-icon">
+                                            <path d="m6 9 6 6 6-6" />
+                                        </svg>
+                                    </div>
+                                    <div class="accordion-item-description-wrapper alerts-items-scroll contracts">
+                                        <div class="accordion-item-description">
+                                            <div class="container-fluid">
+                                                <div class="row collapse-row">
+                                                    <div class="col ">
+                                                        <p> منتهية </p>
+                                                    </div>
+                                                    <div class="col contract-ended ">
+                                                        <p> 8 </p>
+                                                    </div>
+
+                                                </div>
+                                                <hr class="collapse-hr">
+                                                <div class="row collapse-row">
+                                                    <div class="col">
+                                                        <p>تنتهي اليوم</p>
+                                                    </div>
+
+                                                    <div class="col ended">
+                                                        <p> 15 </p>
+                                                    </div>
+                                                </div>
+                                                <hr class="collapse-hr">
+                                                <div class="row collapse-row">
+                                                    <div class="col">
+                                                        <p>تنتهي غدًا</p>
+                                                    </div>
+                                                    <div class="col working">
+                                                        <p> 7 </p>
+                                                    </div>
+                                                </div>
+                                                <hr class="collapse-hr">
+                                                <div class="row collapse-row">
+                                                    <div class="col">
+                                                        <p> تنتهي لاحقًا </p>
+                                                    </div>
+                                                    <div class="col later">
+                                                        <p> 11 </p>
+                                                    </div>
+
+                                                </div>
+                                                <hr class="collapse-hr">
+                                                <div class="row collapse-row">
+                                                    <div class="col-5">
+                                                        <p>محفوظة</p>
+                                                    </div>
+                                                    <div class="col working">
+                                                        <p> 5 </p>
+                                                    </div>
+
+                                                </div>
+                                                <hr class="collapse-hr">
+                                                <div class="row collapse-row">
+                                                    <div class="col-5">
+                                                        <p>معلقة</p>
+                                                    </div>
+                                                    <div class="col working">
+                                                        <p> 100 </p>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-item-header">
+                                        <span class="accordion-item-header-title"> الموظفين <div class="notify"></div>
+                                        </span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chevron-down accordion-item-header-icon">
+                                            <path d="m6 9 6 6 6-6" />
+                                        </svg>
+                                    </div>
+                                    <div class="accordion-item-description-wrapper alerts-items-scroll">
+                                        <div class="accordion-item-description">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col-auto p-1">
+                                                                <img
+                                                                    src="../../../images/Static/Green_Arrow_icon.svg" />
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div class="row">
+                                                                    <div class="col-auto p-0">
+                                                                        <div class="employeePhoto">
+                                                                            <img src="../../../images/Demo/Employee_Picture.svg"
+                                                                                alt="employee-photo"
+                                                                                class="employeePhoto border-0 w-100 h-100">
+                                                                            <div class="active_statue bg-success">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="employee-name mb-1 p-0"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
+                                                                            data-bs-custom-class="custom-tooltip"
+                                                                            data-bs-title="صالح سلطان إبراهيم المحيسني">
+                                                                            صالح سلطان إبراهيم المحيسني </p>
+                                                                        <div class="row EmployeeLastActive">
+                                                                            <div class="col-auto px-1">
+                                                                                <p> 11:30 </p>
+                                                                            </div>
+                                                                            <div class="col-auto px-1">
+                                                                                <p>2025/10/08</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">999,999
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col-auto p-1">
+                                                                <img
+                                                                    src="../../../images/Static/Green_Arrow_icon.svg" />
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div class="row">
+                                                                    <div class="col-auto p-0">
+                                                                        <div class="employeePhoto">
+                                                                            <img src="../../../images/Demo/Employee_Picture.svg"
+                                                                                alt="employee-photo"
+                                                                                class="employeePhoto border-0 w-100 h-100">
+                                                                            <div class="active_statue bg-success">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="employee-name mb-1 p-0"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
+                                                                            data-bs-custom-class="custom-tooltip"
+                                                                            data-bs-title="صالح سلطان إبراهيم المحيسني">
+                                                                            صالح سلطان إبراهيم المحيسني </p>
+                                                                        <div class="row EmployeeLastActive">
+                                                                            <div class="col-auto px-1">
+                                                                                <p> 11:30 </p>
+                                                                            </div>
+                                                                            <div class="col-auto px-1">
+                                                                                <p>2025/10/08</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">999,999
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col-auto p-1">
+                                                                <img
+                                                                    src="../../../images/Static/Green_Arrow_icon.svg" />
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div class="row">
+                                                                    <div class="col-auto p-0">
+                                                                        <div class="employeePhoto">
+                                                                            <img src="../../../images/Demo/Employee_Picture.svg"
+                                                                                alt="employee-photo"
+                                                                                class="employeePhoto border-0 w-100 h-100">
+                                                                            <div class="active_statue bg-success">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="employee-name mb-1 p-0"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
+                                                                            data-bs-custom-class="custom-tooltip"
+                                                                            data-bs-title="صالح سلطان إبراهيم المحيسني">
+                                                                            صالح سلطان إبراهيم المحيسني </p>
+                                                                        <div class="row EmployeeLastActive">
+                                                                            <div class="col-auto px-1">
+                                                                                <p> 11:30 </p>
+                                                                            </div>
+                                                                            <div class="col-auto px-1">
+                                                                                <p>2025/10/08</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">999,999
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col-auto p-1">
+                                                                <img
+                                                                    src="../../../images/Static/Green_Arrow_icon.svg" />
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div class="row">
+                                                                    <div class="col-auto p-0">
+                                                                        <div class="employeePhoto">
+                                                                            <img src="../../../images/Demo/Employee_Picture.svg"
+                                                                                alt="employee-photo"
+                                                                                class="employeePhoto border-0 w-100 h-100">
+                                                                            <div class="active_statue bg-success">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="employee-name mb-1 p-0"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
+                                                                            data-bs-custom-class="custom-tooltip"
+                                                                            data-bs-title="صالح سلطان إبراهيم المحيسني">
+                                                                            صالح سلطان إبراهيم المحيسني </p>
+                                                                        <div class="row EmployeeLastActive">
+                                                                            <div class="col-auto px-1">
+                                                                                <p> 11:30 </p>
+                                                                            </div>
+                                                                            <div class="col-auto px-1">
+                                                                                <p>2025/10/08</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">999,999
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col-auto p-1">
+                                                                <img
+                                                                    src="../../../images/Static/Green_Arrow_icon.svg" />
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div class="row">
+                                                                    <div class="col-auto p-0">
+                                                                        <div class="employeePhoto">
+                                                                            <img src="../../../images/Demo/Employee_Picture.svg"
+                                                                                alt="employee-photo"
+                                                                                class="employeePhoto border-0 w-100 h-100">
+                                                                            <div class="active_statue bg-success">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="employee-name mb-1 p-0"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
+                                                                            data-bs-custom-class="custom-tooltip"
+                                                                            data-bs-title="صالح سلطان إبراهيم المحيسني">
+                                                                            صالح سلطان إبراهيم المحيسني </p>
+                                                                        <div class="row EmployeeLastActive">
+                                                                            <div class="col-auto px-1">
+                                                                                <p> 11:30 </p>
+                                                                            </div>
+                                                                            <div class="col-auto px-1">
+                                                                                <p>2025/10/08</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">999,999
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col-auto p-1">
+                                                                <img
+                                                                    src="../../../images/Static/Green_Arrow_icon.svg" />
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div class="row">
+                                                                    <div class="col-auto p-0">
+                                                                        <div class="employeePhoto">
+                                                                            <img src="../../../images/Demo/Employee_Picture.svg"
+                                                                                alt="employee-photo"
+                                                                                class="employeePhoto border-0 w-100 h-100">
+                                                                            <div class="active_statue bg-success">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="employee-name mb-1 p-0"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
+                                                                            data-bs-custom-class="custom-tooltip"
+                                                                            data-bs-title="صالح سلطان إبراهيم المحيسني">
+                                                                            صالح سلطان إبراهيم المحيسني </p>
+                                                                        <div class="row EmployeeLastActive">
+                                                                            <div class="col-auto px-1">
+                                                                                <p> 11:30 </p>
+                                                                            </div>
+                                                                            <div class="col-auto px-1">
+                                                                                <p>2025/10/08</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">999,999
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col-auto p-1">
+                                                                <img
+                                                                    src="../../../images/Static/Green_Arrow_icon.svg" />
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div class="row">
+                                                                    <div class="col-auto p-0">
+                                                                        <div class="employeePhoto">
+                                                                            <img src="../../../images/Demo/Employee_Picture.svg"
+                                                                                alt="employee-photo"
+                                                                                class="employeePhoto border-0 w-100 h-100">
+                                                                            <div class="active_statue bg-success">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="employee-name mb-1 p-0"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
+                                                                            data-bs-custom-class="custom-tooltip"
+                                                                            data-bs-title="صالح سلطان إبراهيم المحيسني">
+                                                                            صالح سلطان إبراهيم المحيسني </p>
+                                                                        <div class="row EmployeeLastActive">
+                                                                            <div class="col-auto px-1">
+                                                                                <p> 11:30 </p>
+                                                                            </div>
+                                                                            <div class="col-auto px-1">
+                                                                                <p>2025/10/08</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">999,999
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col-auto p-1">
+                                                                <img
+                                                                    src="../../../images/Static/Green_Arrow_icon.svg" />
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div class="row">
+                                                                    <div class="col-auto p-0">
+                                                                        <div class="employeePhoto">
+                                                                            <img src="../../../images/Demo/Employee_Picture.svg"
+                                                                                alt="employee-photo"
+                                                                                class="employeePhoto border-0 w-100 h-100">
+                                                                            <div class="active_statue bg-success">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="employee-name mb-1 p-0"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
+                                                                            data-bs-custom-class="custom-tooltip"
+                                                                            data-bs-title="صالح سلطان إبراهيم المحيسني">
+                                                                            صالح سلطان إبراهيم المحيسني </p>
+                                                                        <div class="row EmployeeLastActive">
+                                                                            <div class="col-auto px-1">
+                                                                                <p> 11:30 </p>
+                                                                            </div>
+                                                                            <div class="col-auto px-1">
+                                                                                <p>2025/10/08</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">999,999
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col-auto p-1">
+                                                                <img
+                                                                    src="../../../images/Static/Green_Arrow_icon.svg" />
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div class="row">
+                                                                    <div class="col-auto p-0">
+                                                                        <div class="employeePhoto">
+                                                                            <img src="../../../images/Demo/Employee_Picture.svg"
+                                                                                alt="employee-photo"
+                                                                                class="employeePhoto border-0 w-100 h-100">
+                                                                            <div class="active_statue bg-success">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="employee-name mb-1 p-0"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
+                                                                            data-bs-custom-class="custom-tooltip"
+                                                                            data-bs-title="صالح سلطان إبراهيم المحيسني">
+                                                                            صالح سلطان إبراهيم المحيسني </p>
+                                                                        <div class="row EmployeeLastActive">
+                                                                            <div class="col-auto px-1">
+                                                                                <p> 11:30 </p>
+                                                                            </div>
+                                                                            <div class="col-auto px-1">
+                                                                                <p>2025/10/08</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">999,999
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col-auto p-1">
+                                                                <img
+                                                                    src="../../../images/Static/Green_Arrow_icon.svg" />
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div class="row">
+                                                                    <div class="col-auto p-0">
+                                                                        <div class="employeePhoto">
+                                                                            <img src="../../../images/Demo/Employee_Picture.svg"
+                                                                                alt="employee-photo"
+                                                                                class="employeePhoto border-0 w-100 h-100">
+                                                                            <div class="active_statue bg-success">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <p class="employee-name mb-1 p-0"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top"
+                                                                            data-bs-custom-class="custom-tooltip"
+                                                                            data-bs-title="صالح سلطان إبراهيم المحيسني">
+                                                                            صالح سلطان إبراهيم المحيسني </p>
+                                                                        <div class="row EmployeeLastActive">
+                                                                            <div class="col-auto px-1">
+                                                                                <p> 11:30 </p>
+                                                                            </div>
+                                                                            <div class="col-auto px-1">
+                                                                                <p>2025/10/08</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">999,999
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-item-header">
+                                        <span class="accordion-item-header-title"> مديونيات المستأجرين </span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chevron-down accordion-item-header-icon">
+                                            <path d="m6 9 6 6 6-6" />
+                                        </svg>
+                                    </div>
+                                    <div class="accordion-item-description-wrapper">
+                                        <div class="accordion-item-description">
+                                            <div class="container-fluid">
+                                                <div class="row collapse-row">
+                                                    <div class="col">
+                                                        <p>مدينون</p>
+                                                    </div>
+                                                    <div class="col-auto ">
+                                                        <p> 4,520.36 </p>
+                                                    </div>
+                                                </div>
+                                                <hr class="collapse-hr">
+                                                <div class="row collapse-row">
+                                                    <div class="col">
+                                                        <p>دائنون</p>
+                                                    </div>
+                                                    <div class="col-auto ">
+                                                        <p> 936.56 </p>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+
+
+                </div>
+            </aside>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="../../../scripts/Scripts.js"></script>
+    <script src="../../../scripts/Settlement.js"></script>
+
+
+</body>
+
+</html>
