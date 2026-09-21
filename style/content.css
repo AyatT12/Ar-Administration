@@ -3583,47 +3583,6 @@ textarea.form-control.is-valid {
   height: 25px;
 }
 
-.pdfs_Container {
-    position: absolute;
-    left: 0px;
-}
-.pdf_img {
-    position: absolute;
-    left: 20px;
-}
-
-.pdf-anchor {
-    width: fit-content;
-}
-
-.pdf_img2 {
-    position: absolute;
-    left: 90px;
-}
-
-.pdf-anchor2 {
-    width: fit-content;
-}
-
-.pdf_img3 {
-    position: absolute;
-    left: 165px;
-}
-
-.pdf-anchor3 {
-    width: fit-content;
-}
-
-@media (max-width:768px) {
-
-    .pdf_img,
-    .pdf_img2,
-    .pdf_img3,
-    .pdfs_Container {
-        position: static;
-    }
-
-}
 .form-select {
     background-position: left .75rem center !important;
     direction: rtl;

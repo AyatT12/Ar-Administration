@@ -380,27 +380,7 @@ body {
 .button-row img{
     transform: rotate(180deg);
 }
-.pdfs_Container {
-    position: absolute;
-    right: 0px;
-    left: auto;
-}
-.pdf_img {
-    position: absolute;
-    right: 20px;
-    left: auto;
 
-}
-.pdf_img2{
-    position: absolute;
-    right: 90px;  
-    left: auto;
-}
-.pdf_img3{
-    position: absolute;
-    right: 165px;  
-    left: auto;
-}
 .settel-dropdown-content{
     right: auto;
     left: 0px;
@@ -416,14 +396,5 @@ body {
         left: 0px;
         right: auto;
 
-    }
-}
-@media (max-width:768px) {
-
-    .pdf_img,
-    .pdf_img2,
-    .pdf_img3,
-    .pdfs_Container {
-        position: static;
     }
 }
