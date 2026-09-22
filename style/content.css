@@ -3582,7 +3582,9 @@ textarea.form-control.is-valid {
   justify-content: flex-end;
   height: 25px;
 }
-
+.pdfs_Container img{
+  height:55px;
+}
 .form-select {
     background-position: left .75rem center !important;
     direction: rtl;
@@ -3620,8 +3622,8 @@ textarea.form-control.is-valid {
     border: none;
     border-radius: 0px;
     cursor: pointer;
-    padding: 10px 5px;
-    margin: 10px 5px;
+    padding: 5px;
+    margin: 8px 0px 0px;
 }
 
 .action-button:focus{
@@ -3638,8 +3640,8 @@ box-shadow: none !important;
     border: 0 none;
     border-radius: 0px;
     cursor: pointer;
-    padding: 10px 5px;
-    margin: 10px 5px;
+    padding: 5px;
+    margin: 8px 0px 0px;
 }
 
 /*progressbar*/
@@ -3739,15 +3741,11 @@ box-shadow: none !important;
     background: #FF9626;
 }
 
-/* /////////////////////////////////////SettlementCard1//////////////////////////////////// */
-.SettlementCard1 {
-    /* gap:17px */
-}
-
 .data-col-Settl {
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: wrap;
+    align-content: space-between;
 }
 
 .Settlement-input-checkbox {
@@ -3921,7 +3919,6 @@ input[type="number"]:nth-child(n+4) {
     border: none;
     resize: none;
     width: 100%;
-    padding: .2rem 0rem;
     font-size: 14px;
     min-height: auto !important;
 }
@@ -3931,8 +3928,9 @@ input[type="number"]:nth-child(n+4) {
     box-shadow: none;
 }
 .check-table-notes{
-    height: 40px !important
-}
+    height: 33px !important;
+    padding: 0;
+  }
 .check-table-notes {
     background: transparent !important;
 }
@@ -4324,6 +4322,28 @@ footer {
 }
 .search-icon-col{
   position: relative;
+}
+.save-settelment{
+    color: #fff;
+    background-color: #FF9626;
+    border-color: #FF9626 !important;
+    padding: 0px 12px;
+    display: inline-block;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.28px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+.save-settelment:hover{
+    color: #FF9626;
+    background-color: #ffffff;
+    border-color: #FF9626 !important;
 }
 @media(max-width:991px) {
 
