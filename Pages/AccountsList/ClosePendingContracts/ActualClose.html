@@ -352,18 +352,17 @@
             <main class="content-area px-3">
                 <div class="container d-flex flex-column" style="flex:1;min-height: 0;">
                     <div class="row flex-column" style="flex: 1;min-height: 0; position: relative;">
-                        <div class="col-lg-12 Data-container ">
+                        <div class="col-lg-12 Data-container " style="padding: 8px;">
                             <form class="ContentForm" id="SettlementForm">
                                 <!-- Content Header -->
-                                <div class="row my-2 h-100 flex-column justify-content-between">
+                                <div class="row h-100 flex-column justify-content-between">
                                    <div class="col-md-12">
                                     <div class="row">
                                     <div class="col-md-auto save-col justify-content-start">
                                         <button type="button" class="custom-img-btn"><a class="d-flex align-items-center" href="ClosePendingContracts.html"><img class="Chevron" src="../../../images/Static/States/Chevron_Left.svg" /></a></button>
-                                        <button type="submit" class="custom-img-btn"> <img src="../../../images/Static/States/save.svg" /></button>
                                     </div>
                                      <div class="col text-center">
-                                        <h3>تسوية العقد</h3>
+                                        <h3>تسوية العقد المعلق</h3>
                                     </div>
                                     </div>
                                    </div>
@@ -379,24 +378,10 @@
                                                     </ul>
                                                 </div>
                                                 <fieldset id="firstFieldset">
-                                                    <div class="form-card SettlementCard1  ">
-                                                        <div class="pdfs_Container d-flex mb-3 gap-3">
-                                                            <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                target="_blank" class="pdf-anchor"><img
-                                                                    src="../../../images/Static/PdfIcons/contract.svg"
-                                                                    alt="pdf for contract details" class="pdf_img2"></a>
-                                                            <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                target="_blank" class="pdf-anchor2"><img
-                                                                    src="../../../images/Static/PdfIcons/Invoice.svg"
-                                                                    alt="pdf for contract details" class="pdf_img"></a>
-                                                            <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                                target="_blank" class="pdf-anchor3"><img
-                                                                    src="../../../images/Static/PdfIcons/naql.svg"
-                                                                    alt="pdf for contract details" class="pdf_img3"></a>
-                                                        </div>
+                                                    <div class="form-card" style="padding: 10px;">
                                                         <div class="row flex-row-reverse align-items-start"
                                                             style="flex: 1;">
-                                                            <div class="col-md-12 col-lg-6 col-xxl-7">
+                                                            <div class="col-auto" style="min-width: 50%;">
                                                                 <div
                                                                     class="row flex-row-reverse align-items-center g-2 mb-3 ">
                                                                     <div class="col-auto">
@@ -483,9 +468,24 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-12  col-lg-auto  col-xxl-12">
-                                                                <div
-                                                                    class="row flex-row-reverse align-items-center g-2 mb-3 ">
+                                                              <div class="col">
+                                                                <div class="pdfs_Container d-flex gap-3">
+                                                            <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
+                                                                target="_blank" class="pdf-anchor"><img
+                                                                    src="../../../images/Static/PdfIcons/contract.svg"
+                                                                    alt="pdf for contract details" class="pdf_img2"></a>
+                                                            <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
+                                                                target="_blank" class="pdf-anchor2"><img
+                                                                    src="../../../images/Static/PdfIcons/Invoice.svg"
+                                                                    alt="pdf for contract details" class="pdf_img"></a>
+                                                            <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
+                                                                target="_blank" class="pdf-anchor3"><img
+                                                                    src="../../../images/Static/PdfIcons/naql.svg"
+                                                                    alt="pdf for contract details" class="pdf_img3"></a>
+                                                        </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="row flex-row-reverse align-items-center g-2 mb-3 ">
                                                                     <div class="col-auto">
                                                                         <p class="mb-0">قيمة العقد </P>
                                                                     </div>
@@ -605,23 +605,13 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-6  data-col-Settl flex-wrap">
-                                                                <div
-                                                                    class="row flex-row-reverse align-items-start w-100 gx-2">
-                                                                    <div class="col-auto centered-input-label">
-                                                                        <label for="contract_real_endTime"
-                                                                            class="form-label">
-                                                                            نهاية العقد</label>
+                                                            <div class="col-md-6">
+                                                                <div class="row flex-row-reverse gx-2">
+                                                                    <div class="col-auto">
+                                                                        <p> نهاية العقد </p>
                                                                     </div>
-                                                                    <div class="col-md-5">
-                                                                        <input type="date" id="contract_real_endTime"
-                                                                            class="form-control inputs"
-                                                                            name="contract-end-date"
-                                                                            aria-describedby="inputGroupPrepend">
-                                                                        <div class="row requird-field-row-last">
-                                                                            <div class="invalid-feedback"> الحقل
-                                                                                مطلوب</div>
-                                                                        </div>
+                                                                    <div class="col-auto personal-data">
+                                                                        <p>2026/08/25</P>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -722,7 +712,7 @@
                                                     </div>
                                                 </fieldset>
                                                 <fieldset id="SecondFieldset">
-                                                    <div class="form-card form-card1">
+                                                    <div class="form-card" style="padding: 10px;">
                                                         <div class="row expensesRow flex-lg-row-reverse">
                                                             <div class="col-lg-6 expenses-compensation-TableColumn">
                                                                 <div class="TablesReferenceDiv">
@@ -863,7 +853,7 @@
                                                                                                     <divc
                                                                                                         lass="upload-container-checking Expenses-compensation-Upload">
                                                                                                         <img class="upload-icon"
-                                                                                                            src="../../../images/Static/settelment/Add.svg"
+                                                                                                            src="../../../images/Static/Settelment/Add.svg"
                                                                                                             alt="Upload Icon"
                                                                                                             id="addImage">
                                                                                                         <input
@@ -909,7 +899,7 @@
                                                     </div>
                                                 </fieldset>
                                                 <fieldset id="ThirdFieldset">
-                                                    <div class="form-card form-card1">
+                                                    <div class="form-card" style="padding: 10px;">
                                                         <div class="row expensesRow flex-lg-row-reverse">
                                                             <div class="col-lg-6 expenses-compensation-TableColumn">
                                                                 <div class="TablesReferenceDiv">
@@ -1123,7 +1113,7 @@
                                                     </div>
                                                 </fieldset>
                                                 <fieldset id="FifthFieldset">
-                                                    <div class="form-card form-card5-settl">
+                                                    <div class="form-card" style="padding: 10px;">
                                                         <div class="row data-col-Settl  mb-2 " style="flex: 1;">
                                                             <div class="col-md-12 col-xl-12">
                                                                 <div
@@ -1510,14 +1500,13 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
-                                                    <div class="row button-row align-items-center justify-content-end">
+                                                    <div class="row button-row align-items-center">
+                                                        <div class="col-auto pt-1 px-0  d-flex flex-wrap gap-1">
+                                                            <button type="button" class="btn check-btn save-settelment" id="SubmitFormBtn">حفظ</button>
+                                                        </div>
                                                         <div class="col-auto">
-                                                            <input type="button" name="previous"
-                                                                class="previous action-button-previous"
-                                                                value="السابق" />
-                                                            <img src="../../../images/Static/settelment/BackArrow.png"
-                                                                alt="Button Image" class="previous"
+                                                            <input type="button" name="previous" class="previous action-button-previous" value="السابق" />
+                                                            <img src="../../../images/Static/settelment/BackArrow.png" alt="Button Image" class="previous"
                                                                 style="vertical-align: middle;">
                                                         </div>
                                                     </div>
