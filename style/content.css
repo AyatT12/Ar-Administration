@@ -4352,3 +4352,10 @@ footer {
 
     }
 }
+@media(max-width:530px) {
+
+    .pdf_container_col{
+      min-width: 100%;
+      order:-1
+    }
+}
